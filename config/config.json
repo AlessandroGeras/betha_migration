@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "minertecnologia",
+    "password": "minertecnologia",
+    "database": "ora19",
+    "host": "localhost",
+    "dialect": "oracle",
+    "dialectOptions": {
+      "connectString": "localhost:1521/ora19"
+    }
+  },
+  "test": {
+    "username": "minertecnologia",
+    "password": "minertecnologia",
+    "database": "ora19",
+    "host": "localhost",
+    "dialect": "oracle",
+    "dialectOptions": {
+      "connectString": "localhost:1521/ora19"
+    }
+  },
+  "production": {
+    "username": "minertecnologia",
+    "password": "minertecnologia",
+    "database": "ora19",
+    "host": "localhost",
+    "dialect": "oracle",
+    "dialectOptions": {
+      "connectString": "localhost:1521/ora19"
+    }
+  }
+}
