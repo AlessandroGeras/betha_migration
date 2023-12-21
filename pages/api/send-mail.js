@@ -9,22 +9,22 @@ export default async function handler(req, res) {
 
   // Configurar o serviço de e-mail (substitua as informações conforme necessário)
   const transporter = nodemailer.createTransport({
-    host: 'smtp.example.com',
+    host: 'mail.estilofontana.com.br',
     port: 587,
     secure: false, // true para SSL, false para outros
     auth: {
-      user: 'seu-email@example.com',
-      pass: 'sua-senha',
+      user: 'esqueciminhasenha@estilofontana.com.br',
+      pass: 'eQNd6x2tTifPBIaX3ZcA',
     },
   });
 
   try {
     // Enviar e-mail
     await transporter.sendMail({
-      from: 'seu-email@example.com',
+      from: 'esqueciminhasenha@estilofontana.com.br',
       to: email,
       subject: 'Recuperação de Senha',
-      text: 'Enviamos instruções para recuperação de senha.',
+      text: 'Instruções para recuperação de senha.',
     });
 
     return res.status(200).json({ success: true });
