@@ -2,24 +2,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Image from 'next/image';
 import logo from '../public/img/logo2.png';
-
-const Home = () => {
-    return (
-        <div className="absolute top-[80px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
-            <p>Tela Inicial</p>
-            {/* Adicione mais opções de submenu, se necessário */}
-        </div>
-    );
-};
-
-const Prestadores = () => {
-    return (
-        <div className="absolute top-[123px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
-            <p>Prestadores</p>
-            {/* Adicione mais opções de submenu, se necessário */}
-        </div>
-    );
-};
+import DashboardComponent from '../components/dashboard';
 
 const Cadastros = () => {
     return (
@@ -34,10 +17,9 @@ const Cadastros = () => {
 
 const Documentos = () => {
     return (
-        <div className="absolute top-[209px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
-            <p>Lista Documentos</p>
-            {/* Adicione mais opções de submenu, se necessário */}
-        </div>
+        <button className="absolute top-[209px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
+            Lista Documentos
+        </button>
     );
 };
 
@@ -62,7 +44,7 @@ const Conta = () => {
 const Menu = () => {
     return (
         <div className="absolute top-[689px] left-[80px] bg-white px-8 py-[8px] shadow-md hover:bg-blue-500 hover:text-white">
-            <p>Abrir Menu</p>
+            <p>Sair</p>
             {/* Adicione mais opções de submenu, se necessário */}
         </div>
     );
@@ -76,9 +58,10 @@ const Dashboard = () => {
     const [isSubMenuOpenFinanceiro, setIsSubMenuOpenFinanceiro] = useState(false);
     const [isSubMenuOpenConta, setIsSubMenuOpenConta] = useState(false);
     const [isSubMenuOpenMenu, setIsSubMenuOpenMenu] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const router = useRouter();
     const { userData } = router.query;
-    const parsedUserData = Array.isArray(userData) ? null : JSON.parse(userData || "{}");
+    const [isViewDashboardOpen, setIsViewDashboardOpen] = useState(true);
 
     const toggleSubMenuHome = () => {
         setIsSubMenuOpenHome(!isSubMenuOpenHome);
@@ -108,12 +91,19 @@ const Dashboard = () => {
         setIsSubMenuOpenMenu(!isSubMenuOpenMenu);
     };
 
+    const toggleSidebar = () => {
+        //setIsSidebarOpen(!isSidebarOpen);
+    };
 
+    const documentosClick = () => {
+        // 👇️ toggle shown state
+        setIsViewDashboardOpen(current => !current);
+    };
 
     return (
-        <div className="bg-gray-100 min-h-screen flex">
+        <div className={`bg-gray-100 min-h-screen flex`}>
             {/* Barra Lateral */}
-            <div className="bg-white flex flex-col items-center">
+            <div className={`bg-white flex flex-col items-center ${isSidebarOpen ? 'sidebar-closed' : 'sidebar-open'}`}>
                 {/* Ícones na parte de cima */}
                 <div className="mb-8 w-full">
                     <div className="p-4 cursor-pointer">
@@ -123,13 +113,19 @@ const Dashboard = () => {
                         <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
                             <path d="M20.9141 7.96875L18.875 6.28125V2.90625C18.875 2.76562 18.7344 2.625 18.5938 2.625H17.4688C17.293 2.66016 17.1875 2.76562 17.1875 2.90625V4.91016L12.2305 0.832031C11.9492 0.585938 11.3867 0.410156 11 0.410156C10.5781 0.410156 10.0156 0.585938 9.73438 0.832031L1.05078 7.96875C0.945312 8.07422 0.875 8.25 0.875 8.39062C0.875 8.49609 0.910156 8.67188 0.980469 8.74219L1.36719 9.19922C1.4375 9.30469 1.64844 9.375 1.78906 9.375C1.89453 9.375 2.07031 9.33984 2.14062 9.26953L3.125 8.46094V15C3.125 15.6328 3.61719 16.125 4.25 16.125H8.75C9.34766 16.125 9.83984 15.6328 9.875 15V11.3438H12.125V15C12.125 15.6328 12.6172 16.125 13.25 16.125H17.75C18.3477 16.125 18.8398 15.6328 18.875 15.0352V8.46094L19.8242 9.26953C19.8945 9.33984 20.0703 9.41016 20.1758 9.41016C20.3164 9.41016 20.5273 9.30469 20.6328 9.19922L20.9844 8.74219C21.0547 8.67188 21.125 8.49609 21.125 8.39062C21.125 8.25 21.0195 8.07422 20.9141 7.96875ZM17.1523 14.4375H13.8125V10.7812C13.7773 10.1836 13.2852 9.69141 12.6875 9.65625H9.3125C8.67969 9.69141 8.1875 10.1836 8.1875 10.7812V14.4375H4.8125V7.08984L11 1.99219L17.1875 7.08984L17.1523 14.4375Z" />
                         </svg>
-                        {isSubMenuOpenHome && <Home />}
+                        {isSubMenuOpenHome &&
+                            <div className="absolute top-[80px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
+                                <p>Tela Inicial</p>
+                            </div>}
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuPrestadores} onMouseLeave={toggleSubMenuPrestadores}>
                         <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
                             <path d="M7.875 4.66016V6.34766L8.89453 7.40234C8.64844 6.17188 9.03516 4.94141 9.91406 4.0625C10.6172 3.32422 11.5664 2.97266 12.5508 2.97266H12.5859L10.582 4.97656L11.1094 8.14062L14.2734 8.66797L16.3125 6.66406C16.3125 7.64844 15.9258 8.63281 15.1875 9.33594C14.8711 9.6875 14.4844 9.93359 14.0977 10.1094C14.1328 10.1445 14.2031 10.2148 14.2734 10.25L15.3633 11.3398C15.7148 11.1289 16.0664 10.8477 16.3828 10.5312C17.7188 9.19531 18.2812 7.22656 17.8242 5.39844C17.7188 4.94141 17.4023 4.625 16.9805 4.48438C16.5234 4.37891 16.0664 4.51953 15.7852 4.80078L13.7109 6.875L12.5508 6.69922L12.375 5.53906L14.4492 3.5C14.7656 3.18359 14.8711 2.72656 14.7656 2.30469C14.625 1.88281 14.3086 1.53125 13.8516 1.42578C11.9883 0.96875 10.0547 1.49609 8.71875 2.86719C8.36719 3.21875 8.05078 3.60547 7.80469 4.0625H7.875V4.66016ZM3.72656 17.2109C3.26953 17.668 2.46094 17.668 2.00391 17.2109C1.79297 17 1.65234 16.6836 1.65234 16.3672C1.65234 16.0508 1.79297 15.7695 2.00391 15.5234L6.75 10.8125L5.55469 9.61719L0.84375 14.3281C0.28125 14.8906 0 15.6289 0 16.3672C0 17.1406 0.28125 17.8789 0.84375 18.4062C1.37109 18.9688 2.10938 19.25 2.88281 19.25C3.62109 19.25 4.35938 18.9688 4.92188 18.4062L8.4375 14.8906C8.12109 14.3281 7.91016 13.6953 7.91016 13.0273L3.72656 17.2109ZM17.6133 15.1719L13.5 11.0586C12.6562 10.25 11.4609 10.0742 10.4766 10.5664L6.75 6.83984V4.625L2.25 1.25L0 3.5L3.375 8H5.55469L9.28125 11.7617C8.82422 12.7461 8.96484 13.9414 9.77344 14.75L13.8867 18.8984C14.4141 19.3906 15.2227 19.3906 15.75 18.8984L17.6133 17.0352C18.1055 16.5078 18.1055 15.6992 17.6133 15.1719Z" />
                         </svg>
-                        {isSubMenuOpenPrestadores && <Prestadores />}
+                        {isSubMenuOpenPrestadores &&
+                            <div className="absolute top-[123px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
+                                <p>Prestadores</p>
+                            </div>}
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuCadastros} onMouseLeave={toggleSubMenuCadastros}>
                         <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
@@ -143,12 +139,12 @@ const Dashboard = () => {
                         </svg>
                         {isSubMenuOpenDocumentos && <Documentos />}
                     </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuFinanceiro} onMouseLeave={toggleSubMenuFinanceiro}>
+                    {/* <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuFinanceiro} onMouseLeave={toggleSubMenuFinanceiro}>
                         <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
                             <path d="M14.9375 11.5H12.6875C12.0547 11.5 11.5625 12.0273 11.5625 12.625V17.125C11.5625 17.7578 12.0547 18.25 12.6875 18.25H14.9375C15.5352 18.25 16.0625 17.7578 16.0625 17.125V12.625C16.0625 12.0273 15.5352 11.5 14.9375 11.5ZM14.375 16.5625H13.25V13.1875H14.375V16.5625ZM20.5625 7H18.3125C17.6797 7 17.1875 7.52734 17.1875 8.125V17.125C17.1875 17.7578 17.6797 18.25 18.3125 18.25H20.5625C21.1602 18.25 21.6875 17.7578 21.6875 17.125V8.125C21.6875 7.52734 21.1602 7 20.5625 7ZM20 16.5625H18.875V8.6875H20V16.5625ZM9.3125 7H7.0625C6.42969 7 5.9375 7.52734 5.9375 8.125V17.125C5.9375 17.7578 6.42969 18.25 7.0625 18.25H9.3125C9.91016 18.25 10.4375 17.7578 10.4375 17.125V8.125C10.4375 7.52734 9.91016 7 9.3125 7ZM8.75 16.5625H7.625V8.6875H8.75V16.5625ZM3.6875 12.625H1.4375C0.804688 12.625 0.3125 13.1523 0.3125 13.75V17.125C0.3125 17.7578 0.804688 18.25 1.4375 18.25H3.6875C4.28516 18.25 4.8125 17.7578 4.8125 17.125V13.75C4.8125 13.1523 4.28516 12.625 3.6875 12.625ZM3.125 16.5625H2V14.3125H3.125V16.5625ZM2.5625 9.25C3.47656 9.25 4.25 8.51172 4.25 7.5625C4.25 7.42188 4.21484 7.28125 4.17969 7.14062L7.73047 3.58984C7.87109 3.625 8.01172 3.625 8.1875 3.625C8.39844 3.625 8.57422 3.58984 8.78516 3.51953L12.125 6.19141C12.125 6.29688 12.125 6.36719 12.125 6.4375C12.125 7.38672 12.8633 8.125 13.8125 8.125C14.7266 8.125 15.5 7.38672 15.5 6.4375C15.5 6.36719 15.4648 6.29688 15.4648 6.19141L18.8047 3.51953C19.0156 3.58984 19.1914 3.625 19.4375 3.625C20.3516 3.625 21.125 2.88672 21.125 1.9375C21.125 1.02344 20.3516 0.25 19.4375 0.25C18.4883 0.25 17.75 1.02344 17.75 1.9375C17.75 2.04297 17.75 2.11328 17.75 2.21875L14.4102 4.89062C14.1992 4.82031 14.0234 4.75 13.7773 4.75C13.5664 4.75 13.3906 4.82031 13.1797 4.89062L9.83984 2.21875C9.83984 2.11328 9.875 2.04297 9.875 1.9375C9.875 1.02344 9.10156 0.25 8.1875 0.25C7.23828 0.25 6.5 1.02344 6.5 1.9375C6.5 2.11328 6.5 2.25391 6.53516 2.39453L2.98438 5.94531C2.84375 5.91016 2.70312 5.875 2.5625 5.875C1.61328 5.875 0.875 6.64844 0.875 7.5625C0.875 8.51172 1.61328 9.25 2.5625 9.25Z" />
                         </svg>
                         {isSubMenuOpenFinanceiro && <Financeiro />}
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Ícones na parte de baixo */}
@@ -165,7 +161,7 @@ const Dashboard = () => {
                             <path d="M9.00969 15.96H9.38769C9.53969 15.96 9.66569 15.94 9.76569 15.9C9.86569 15.856 9.95169 15.788 10.0237 15.696L12.4177 12.666C12.5177 12.538 12.6217 12.45 12.7297 12.402C12.8417 12.35 12.9817 12.324 13.1497 12.324H14.5417L11.6197 15.93C11.4477 16.15 11.2697 16.306 11.0857 16.398C11.2177 16.446 11.3357 16.514 11.4397 16.602C11.5477 16.686 11.6497 16.798 11.7457 16.938L14.7577 21H13.3357C13.1437 21 12.9997 20.974 12.9037 20.922C12.8117 20.866 12.7337 20.786 12.6697 20.682L10.2157 17.478C10.1397 17.37 10.0517 17.294 9.95169 17.25C9.85169 17.206 9.70769 17.184 9.51969 17.184H9.00969V21H7.39569V12.324H9.00969V15.96ZM25.0303 12.324V21H23.6083V15.396C23.6083 15.172 23.6203 14.93 23.6443 14.67L21.0223 19.596C20.8983 19.832 20.7083 19.95 20.4523 19.95H20.2243C19.9683 19.95 19.7783 19.832 19.6543 19.596L17.0023 14.652C17.0143 14.784 17.0243 14.914 17.0323 15.042C17.0403 15.17 17.0443 15.288 17.0443 15.396V21H15.6223V12.324H16.8403C16.9123 12.324 16.9743 12.326 17.0263 12.33C17.0783 12.334 17.1243 12.344 17.1643 12.36C17.2083 12.376 17.2463 12.402 17.2783 12.438C17.3143 12.474 17.3483 12.522 17.3803 12.582L19.9783 17.4C20.0463 17.528 20.1083 17.66 20.1643 17.796C20.2243 17.932 20.2823 18.072 20.3383 18.216C20.3943 18.068 20.4523 17.926 20.5123 17.79C20.5723 17.65 20.6363 17.516 20.7043 17.388L23.2663 12.582C23.2983 12.522 23.3323 12.474 23.3683 12.438C23.4043 12.402 23.4423 12.376 23.4823 12.36C23.5263 12.344 23.5743 12.334 23.6263 12.33C23.6783 12.326 23.7403 12.324 23.8123 12.324H25.0303Z" />
                         </svg>
                     </div>
-                    <div className="pl-[36px] pr-2 py-3 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
+                    <div className="pl-[36px] pr-2 py-3 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu} onClick={toggleSidebar}>
                         <svg width="10" height="17" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg" className="fill-gray-500 group-hover:fill-white">
                             <path d="M1.34375 0.621094L0.640625 1.28906C0.5 1.46484 0.5 1.74609 0.640625 1.88672L7.00391 8.25L0.640625 14.6484C0.5 14.7891 0.5 15.0703 0.640625 15.2461L1.34375 15.9141C1.51953 16.0898 1.76562 16.0898 1.94141 15.9141L9.32422 8.56641C9.46484 8.39062 9.46484 8.14453 9.32422 7.96875L1.94141 0.621094C1.76562 0.445312 1.51953 0.445312 1.34375 0.621094Z" />
                         </svg>
@@ -174,107 +170,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* Conteúdo da Dashboard */}
-            <div></div>
-            <div className="flex-1">
-                {/* Barra Superior Azul Fixada no Topo */}
-                <div className="bg-blue-500 text-white p-2 text-left mb-4 w-full">
-                    {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className='ml-2'>Página inicial</span>
-                </div>
-
-                <div className="flex items-center justify-center h-5/6 pt-28 px-20">
-                    <div className="container mx-auto">
-                        {/* Área de Documentos a Vencer */}
-                        <div className='items-center '>
-                            <div className="flex justify-center mt-[-40px] mb-24 px-26">
-                                {/* Três Divs Centralizadas Lado a Lado */}
-                                <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
-                                    <div className="mt-[-15px]">Quantidade de documentos ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">41</div>
-                                </div>
-                                <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
-                                    <div className="mt-[-15px]">Quantidade de terceiros ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">34</div>
-                                </div>
-                                <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
-                                    <div className="mt-[-15px]">Quantidade de colaboradores ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">647</div>
-                                </div>
-                            </div>
-
-                            <div className="flex justify-center px-32 relative top-[-30px]">
-                                {/* Duas Divs Centralizadas Lado a Lado */}
-                                <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
-                                    <div className="mt-[-15px] text-2xl text-gray-600">Documentos a vencer</div>
-                                    <div className="mt-2 text-gray-600 text-sm">Documentos com 30 dias ou menos da data de vencimento</div>
-                                    <div className='flex justify-center'>
-                                        <div className='px-10'></div>
-                                        <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-4 py-2 text-white">127</div>
-                                        <div className='px-10'></div>
-                                    </div>
-                                    <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-                                </div>
-                                <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
-                                    <div className="mt-[-15px] text-2xl text-gray-600">Documentos vencidos</div>
-                                    <div className="mt-2 text-gray-600 text-sm">Documentos com data inferior ao dia atual</div>
-                                    <div className='flex justify-center'>
-                                        <div className='px-10'></div>
-                                        <div className="mt-2 text-gray-600 text-5xl bg-red-700 px-[50px] py-2 text-white">3</div>
-                                        <div className='px-10'></div>
-                                    </div>
-                                    <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-                                </div>
-                            </div>
-
-                            <div className="flex justify-center px-32 relative top-[-10px]">
-                                {/* Duas Divs Centralizadas Lado a Lado */}
-                                <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
-                                    <div className="mt-[-15px] text-2xl text-gray-600">Documentos faltantes</div>
-                                    <div className="mt-2 text-gray-600 text-sm">Documentos solicitados e não enviados</div>
-                                    <div className='flex justify-center'>
-                                        <div className='px-10'></div>
-                                        <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-8 py-2 text-white">10</div>
-                                        <div className='px-10'></div>
-                                    </div>
-                                    <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-                                </div>
-                                <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
-                                    <div className="mt-[-15px] text-2xl text-gray-600">Documentos à analisar</div>
-                                    <div className="mt-2 text-gray-600 text-sm">Documentos pendentes de análise</div>
-                                    <div className='flex justify-center'>
-                                        <div className='px-10'></div>
-                                        <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-[50px] py-2 text-white">3</div>
-                                        <div className='px-10'></div>
-                                    </div>
-                                    <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        {/* Outros componentes da Dashboard */}
-                        {parsedUserData && (
-                            <div className="bg-white px-6 py-2 rounded shadow text-center mt-8 hidden">
-                                <p className="text-lg font-semibold">Informações do Usuário:</p>
-                                <div className="mt-2">
-                                    <p>
-                                        <span className="font-semibold">Nome:</span> {parsedUserData.nomeUsuario}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Username:</span> {parsedUserData.username}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Email:</span> {parsedUserData.email}
-                                    </p>
-                                    {/* Adicione outras informações conforme necessário */}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
+            <DashboardComponent />
         </div>
     );
 };
