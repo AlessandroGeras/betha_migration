@@ -28,6 +28,9 @@ const web_usuario = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    DS_TOKEN_VALIDACAO: {
+      type: Sequelize.STRING,
+    },
   },
   {
     tableName: "WEB_USUARIO",

@@ -8,6 +8,9 @@ import { useState } from 'react';
 const RecoverPassword = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -24,14 +27,34 @@ const RecoverPassword = () => {
 
       if (response.ok) {
         // Lógica para lidar com o sucesso do envio do e-mail
+        setModalColor('#3f5470');
+        setModalMessage('Email Enviado');
+        setShowModal(true);
         console.log('E-mail enviado com sucesso!');
       } else {
-        // Lógica para lidar com falhas no envio do e-mail
         console.error('Falha ao enviar o e-mail.');
+
+        if (response.status === 404) {
+          // Show modal for 500 status
+          setModalColor('#e53e3e');
+          setModalMessage('Email não encontrado.');
+          setShowModal(true);
+        }
+
+        if (response.status === 500) {
+          // Show modal for 500 status
+          setModalColor('#e53e3e');
+          setModalMessage('Erro ao enviar o email. Verifique sua conexão ou contate o administrador.');
+          setShowModal(true);
+        }
       }
     } catch (error) {
       console.error('Erro ao enviar o e-mail:', error);
     }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -73,6 +96,37 @@ const RecoverPassword = () => {
             <button type="submit" className="bg-blue-950 text-white p-2 rounded-xl">
               Recuperar
             </button>
+
+            {showModal && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                  {/* Pseudo-elemento para a barra lateral */}
+                  <style>
+                    {`
+                      .modal-content::before {
+                        content: '';
+                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                        width: 4px; /* Largura da barra lateral */
+                        height: 100%; /* Altura da barra lateral */
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                      }
+                    `}
+                  </style>
+
+                  <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700" onClick={closeModal}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
+
+                  <div className="text-red-500 text-md text-center flex-grow">
+                    {modalMessage}
+                  </div>
+                </div>
+              </div>
+            )}
           </form>
         </div>
       </div>
