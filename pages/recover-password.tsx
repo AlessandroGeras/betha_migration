@@ -9,8 +9,9 @@ const RecoverPassword = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const [modalMessage, setModalMessage] = useState('');
+  const [popupMessage, setModalMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e'); // Add a state for text color
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -28,15 +29,17 @@ const RecoverPassword = () => {
       if (response.ok) {
         // Lógica para lidar com o sucesso do envio do e-mail
         setModalColor('#3f5470');
-        setModalMessage('Email Enviado');
+        setTextColor('#3f5470');
+        setModalMessage('Email Enviado para '+email);
         setShowModal(true);
-        console.log('E-mail enviado com sucesso!');
+        console.log('E-mail enviado para ');
       } else {
         console.error('Falha ao enviar o e-mail.');
 
         if (response.status === 404) {
           // Show modal for 500 status
           setModalColor('#e53e3e');
+          setTextColor('#e53e3e');
           setModalMessage('Email não encontrado.');
           setShowModal(true);
         }
@@ -44,7 +47,8 @@ const RecoverPassword = () => {
         if (response.status === 500) {
           // Show modal for 500 status
           setModalColor('#e53e3e');
-          setModalMessage('Erro ao enviar o email. Verifique sua conexão ou contate o administrador.');
+          setTextColor('#e53e3e');
+          setModalMessage('Erro ao enviar o email. Verifique sua conexão ou contate o administrador');
           setShowModal(true);
         }
       }
@@ -121,8 +125,8 @@ const RecoverPassword = () => {
                     </svg>
                   </button>
 
-                  <div className="text-red-500 text-md text-center flex-grow">
-                    {modalMessage}
+                  <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                    {popupMessage}
                   </div>
                 </div>
               </div>
