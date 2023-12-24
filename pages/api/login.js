@@ -2,6 +2,7 @@ import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 
 dotenv.config();
 
@@ -75,7 +76,10 @@ export default async function handler(req, res) {
           console.log("senha:" + password);
           console.log("usuarioexterno:", usuarioexterno);
 
-          if (usuarioexterno.dataValues.DS_SENHA === password) {
+          //Comparar senha com Bcrypt
+          const storedHashedPassword = usuarioexterno.dataValues.DS_SENHA;
+          const passwordMatch = bcrypt.compareSync(password, storedHashedPassword);
+          if (passwordMatch) {
             // User status is valid, proceed with returning user data
             const userData = {
               username: usuarioexterno.ID_USUARIO,

@@ -2,6 +2,7 @@ import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 
 dotenv.config();
 
@@ -34,10 +35,11 @@ export default async function handler(req, res) {
 
       if (tokenEntry) {
         // Se correspondem, continue com a lógica para redefinir a senha
+        const hashedPassword = bcrypt.hashSync(newPassword, 10);
         console.log('Email e token válidos. Redefinir senha.');
-        await tokenEntry.update({ DS_SENHA: newPassword });
-        console.log('Token salvo na tabela de usuários.');
-        res.status(200).json({ success: true, message: 'Email e token válidos. Redefinir senha.' });
+        await tokenEntry.update({ DS_SENHA: hashedPassword });
+        console.log('Senha salva na tabela de usuários.');
+        res.status(200).json({ success: true, message: 'Senha redefinida' });
       } else {
         // Se não correspondem, retorne uma mensagem de erro
         console.log('Email ou token inválidos. Não é possível redefinir a senha.');
@@ -45,7 +47,7 @@ export default async function handler(req, res) {
       }
     } catch (error) {
       console.error('Erro ao verificar email e token:', error);
-      res.status(500).json({ success: false, message: 'Erro interno do servidor.' });
+      res.status(500).json({ success: false, message: 'Erro ao verificar email e token.' });
     }
   } else {
     res.status(405).json({ success: false, message: 'Método não permitido.' });

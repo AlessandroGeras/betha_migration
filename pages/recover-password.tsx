@@ -30,9 +30,9 @@ const RecoverPassword = () => {
         // Lógica para lidar com o sucesso do envio do e-mail
         setModalColor('#3f5470');
         setTextColor('#3f5470');
-        setModalMessage('Email Enviado para '+email);
+        setModalMessage('Email enviado para ' + email);
         setShowModal(true);
-        console.log('E-mail enviado para ');
+        console.log('E-mail enviado para ' + email);
       } else {
         console.error('Falha ao enviar o e-mail.');
 
@@ -119,7 +119,9 @@ const RecoverPassword = () => {
                     `}
                   </style>
 
-                  <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700" onClick={closeModal}>
+                  <button
+                    className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                    onClick={closeModal}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
