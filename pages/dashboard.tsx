@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logo from '../public/img/logo2.png';
 import DashboardComponent from '../components/dashboard';
@@ -7,6 +7,7 @@ import DocumentsComponent from '../components/documents';
 
 
 const Dashboard = () => {
+
     const [isSubMenuOpenHome, setIsSubMenuOpenHome] = useState(false); //Botões
     const [isSubMenuOpenPrestadores, setIsSubMenuOpenPrestadores] = useState(false);
     const [isSubMenuOpenCadastros, setIsSubMenuOpenCadastros] = useState(false);
@@ -15,11 +16,15 @@ const Dashboard = () => {
     const [isSubMenuOpenConta, setIsSubMenuOpenConta] = useState(false);
     const [isSubMenuOpenMenu, setIsSubMenuOpenMenu] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-    const router = useRouter();    
-    const [documents, setDocuments] = useState([]); //Pegar os documentos pela API
+    const router = useRouter();
     const { userData } = router.query;
+    const [triggeruseEffect, SettriggeruseEffect] = useState(false); //Atualizar o useEffect
     const [isViewDashboardOpen, setIsViewDashboardOpen] = useState(true); //Abrir as views
     const [isViewDocumentsOpen, setIsViewDocumentsOpen] = useState(false);
+    const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0 } }); //Paginação
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 10;
+    const [loading, setLoading] = useState(true);
 
     const toggleSubMenuHome = () => {
         setIsSubMenuOpenHome(!isSubMenuOpenHome);
@@ -53,10 +58,11 @@ const Dashboard = () => {
         //setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const dashboardClick = () => {        
+    const dashboardClick = () => {
         setIsViewDashboardOpen(true);
         setIsViewDocumentsOpen(false);
         toggleSubMenuHome();
+        refreshUseEffect();
     };
 
     const documentosClick = () => {
@@ -65,40 +71,38 @@ const Dashboard = () => {
         toggleSubMenuDocumentos();
     };
 
+    const refreshUseEffect = () => {
+        SettriggeruseEffect(!triggeruseEffect);
+    };
+
     useEffect(() => {
-        // Função assíncrona para buscar documentos
-        async function fetchDocuments() {
-          try {
-            // Faça a chamada para a API de documentos usando o fetch
-            const response = await fetch('/api/documents', {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-            });
-    
-            if (!response.ok) {
-              // Lide com erros de resposta, como exibição de uma mensagem de erro ao usuário
-              throw new Error(`Erro ao buscar documentos: ${response.status}`);
+        setLoading(true);
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+                const data = await response.json();
+                setDocuments(data);
+            } catch (error) {
+                console.error('Erro ao obter documentos:', error);
             }
-    
-            // Converta a resposta para JSON
-            const data = await response.json();
-            console.log("Documentos obtidos");
-    
-            // Atualize o estado com os documentos recebidos da API
-            setDocuments(data);
-          } catch (error:any ) {
-            // Lide com erros, como exibição de uma mensagem de erro ao usuário
-            console.error('Erro no servidors:', error.message);
-          }
-        }
-    
-        // Chame a função de busca de documentos
-        fetchDocuments();
-      }, []); // O segundo argumento vazio [] significa que este efeito ocorrerá apenas uma vez, quando o componente for montado
-    
-      // Renderize os documentos
+            finally {
+                setLoading(false); // Marca que os dados foram carregados
+            }
+        };
+
+        fetchData();
+    }, [triggeruseEffect]);
+
+    const { success, docs } = documents;
+    const totalPages = Math.ceil(docs.count / pageSize);
+
+    const goToPreviousPage = () => {
+        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    };
+
+    const goToNextPage = () => {
+        setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    };
 
     return (
         <div className={`bg-gray-100 min-h-screen flex`}>
@@ -180,8 +184,30 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {isViewDashboardOpen && <DashboardComponent />}
+            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} />}
             {isViewDocumentsOpen && <DocumentsComponent />}
+
+            {loading &&
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+
+                        {/* Pseudo-elemento para a barra lateral */}                       
+
+                        {/* Adicione o botão de fechamento estilo "X" */}
+                        <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+
+                        <div className="text-red-500 text-md text-center flex-grow">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+            }
+
+
         </div>
     );
 };

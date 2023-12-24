@@ -10,3 +10,13 @@
 .sidebar-closed {
     width: 80px; /* Largura desejada quando fechada */
 }
+
+.loading-content::before {
+    content: '';
+    background-color: #e53e3e; /* Cor vermelha desejada */
+    width: 4px; /* Largura da barra lateral */
+    height: 100%; /* Altura da barra lateral */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }

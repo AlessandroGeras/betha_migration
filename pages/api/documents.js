@@ -19,6 +19,11 @@ export default async function handler(req, res) {
       dialect: process.env.DIALECT || 'oracle',
     });
 
+    // Consulta para obter o total de documentos ativos
+    const activeDocsCount = await documents.count({
+      where: { STATUS: 'Ativo' }, // Ajuste conforme sua estrutura de dados
+    });
+
     // Configuração da paginação
     const page = parseInt(req.query.page) || 1; // Página atual
     const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
@@ -30,7 +35,15 @@ export default async function handler(req, res) {
     });
 
     if (docs) {
-      res.status(200).json({ success: true, message: 'Documentos encontrados', docs });
+      res.status(200).json({
+        success: true,
+        message: 'Documentos encontrados',
+        docs: {
+          rows: docs.rows,
+          count: docs.count,
+          activeCount: activeDocsCount,
+        },
+      });
     } else {
       res.status(400).json({ success: false, message: 'Não foi possível obter os documentos.' });
     }
