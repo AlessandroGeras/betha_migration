@@ -14,7 +14,6 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     // Obtenha os dados do corpo da solicitação
     const { username, password } = req.body;
-    console.log(req.body);
 
     let connection;
 
@@ -71,10 +70,7 @@ export default async function handler(req, res) {
 
         if (usuarioexterno) {
           console.log("Usuário externo");
-          // Usuário existe no banco de dados
-          console.log("senhatabela:" + usuarioexterno.dataValues.DS_SENHA);
-          console.log("senha:" + password);
-          console.log("usuarioexterno:", usuarioexterno);
+          // Usuário existe no banco de dados          
 
           //Comparar senha com Bcrypt
           const storedHashedPassword = usuarioexterno.dataValues.DS_SENHA;

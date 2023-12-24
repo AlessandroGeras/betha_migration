@@ -38,9 +38,8 @@ const web_usuario = connection.define(
   {
     tableName: "WEB_USUARIO",
     timestamps: false,
-    //para tabelas
   }
 );
 
-// Exporte o modelo usando a sintaxe ESM
+
 export default web_usuario;

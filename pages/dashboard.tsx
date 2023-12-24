@@ -1,12 +1,13 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import logo from '../public/img/logo2.png';
 import DashboardComponent from '../components/dashboard';
+import DocumentsComponent from '../components/documents';
 
 
 const Dashboard = () => {
-    const [isSubMenuOpenHome, setIsSubMenuOpenHome] = useState(false);
+    const [isSubMenuOpenHome, setIsSubMenuOpenHome] = useState(false); //Botões
     const [isSubMenuOpenPrestadores, setIsSubMenuOpenPrestadores] = useState(false);
     const [isSubMenuOpenCadastros, setIsSubMenuOpenCadastros] = useState(false);
     const [isSubMenuOpenDocumentos, setIsSubMenuOpenDocumentos] = useState(false);
@@ -14,9 +15,11 @@ const Dashboard = () => {
     const [isSubMenuOpenConta, setIsSubMenuOpenConta] = useState(false);
     const [isSubMenuOpenMenu, setIsSubMenuOpenMenu] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-    const router = useRouter();
+    const router = useRouter();    
+    const [documents, setDocuments] = useState([]); //Pegar os documentos pela API
     const { userData } = router.query;
-    const [isViewDashboardOpen, setIsViewDashboardOpen] = useState(true);
+    const [isViewDashboardOpen, setIsViewDashboardOpen] = useState(true); //Abrir as views
+    const [isViewDocumentsOpen, setIsViewDocumentsOpen] = useState(false);
 
     const toggleSubMenuHome = () => {
         setIsSubMenuOpenHome(!isSubMenuOpenHome);
@@ -50,10 +53,52 @@ const Dashboard = () => {
         //setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const documentosClick = () => {
-        // 👇️ toggle shown state
-        setIsViewDashboardOpen(current => !current);
+    const dashboardClick = () => {        
+        setIsViewDashboardOpen(true);
+        setIsViewDocumentsOpen(false);
+        toggleSubMenuHome();
     };
+
+    const documentosClick = () => {
+        setIsViewDocumentsOpen(true);
+        setIsViewDashboardOpen(false);
+        toggleSubMenuDocumentos();
+    };
+
+    useEffect(() => {
+        // Função assíncrona para buscar documentos
+        async function fetchDocuments() {
+          try {
+            // Faça a chamada para a API de documentos usando o fetch
+            const response = await fetch('/api/documents', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+    
+            if (!response.ok) {
+              // Lide com erros de resposta, como exibição de uma mensagem de erro ao usuário
+              throw new Error(`Erro ao buscar documentos: ${response.status}`);
+            }
+    
+            // Converta a resposta para JSON
+            const data = await response.json();
+            console.log("Documentos obtidos");
+    
+            // Atualize o estado com os documentos recebidos da API
+            setDocuments(data);
+          } catch (error:any ) {
+            // Lide com erros, como exibição de uma mensagem de erro ao usuário
+            console.error('Erro no servidors:', error.message);
+          }
+        }
+    
+        // Chame a função de busca de documentos
+        fetchDocuments();
+      }, []); // O segundo argumento vazio [] significa que este efeito ocorrerá apenas uma vez, quando o componente for montado
+    
+      // Renderize os documentos
 
     return (
         <div className={`bg-gray-100 min-h-screen flex`}>
@@ -69,7 +114,7 @@ const Dashboard = () => {
                             <path d="M20.9141 7.96875L18.875 6.28125V2.90625C18.875 2.76562 18.7344 2.625 18.5938 2.625H17.4688C17.293 2.66016 17.1875 2.76562 17.1875 2.90625V4.91016L12.2305 0.832031C11.9492 0.585938 11.3867 0.410156 11 0.410156C10.5781 0.410156 10.0156 0.585938 9.73438 0.832031L1.05078 7.96875C0.945312 8.07422 0.875 8.25 0.875 8.39062C0.875 8.49609 0.910156 8.67188 0.980469 8.74219L1.36719 9.19922C1.4375 9.30469 1.64844 9.375 1.78906 9.375C1.89453 9.375 2.07031 9.33984 2.14062 9.26953L3.125 8.46094V15C3.125 15.6328 3.61719 16.125 4.25 16.125H8.75C9.34766 16.125 9.83984 15.6328 9.875 15V11.3438H12.125V15C12.125 15.6328 12.6172 16.125 13.25 16.125H17.75C18.3477 16.125 18.8398 15.6328 18.875 15.0352V8.46094L19.8242 9.26953C19.8945 9.33984 20.0703 9.41016 20.1758 9.41016C20.3164 9.41016 20.5273 9.30469 20.6328 9.19922L20.9844 8.74219C21.0547 8.67188 21.125 8.49609 21.125 8.39062C21.125 8.25 21.0195 8.07422 20.9141 7.96875ZM17.1523 14.4375H13.8125V10.7812C13.7773 10.1836 13.2852 9.69141 12.6875 9.65625H9.3125C8.67969 9.69141 8.1875 10.1836 8.1875 10.7812V14.4375H4.8125V7.08984L11 1.99219L17.1875 7.08984L17.1523 14.4375Z" />
                         </svg>
                         {isSubMenuOpenHome &&
-                            <div className="absolute top-[80px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
+                            <div className="absolute top-[80px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white" onClick={dashboardClick}>
                                 <p>Tela Inicial</p>
                             </div>}
                     </div>
@@ -96,7 +141,7 @@ const Dashboard = () => {
                         <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
                             <path d="M14.9375 11.5H12.6875C12.0547 11.5 11.5625 12.0273 11.5625 12.625V17.125C11.5625 17.7578 12.0547 18.25 12.6875 18.25H14.9375C15.5352 18.25 16.0625 17.7578 16.0625 17.125V12.625C16.0625 12.0273 15.5352 11.5 14.9375 11.5ZM14.375 16.5625H13.25V13.1875H14.375V16.5625ZM20.5625 7H18.3125C17.6797 7 17.1875 7.52734 17.1875 8.125V17.125C17.1875 17.7578 17.6797 18.25 18.3125 18.25H20.5625C21.1602 18.25 21.6875 17.7578 21.6875 17.125V8.125C21.6875 7.52734 21.1602 7 20.5625 7ZM20 16.5625H18.875V8.6875H20V16.5625ZM9.3125 7H7.0625C6.42969 7 5.9375 7.52734 5.9375 8.125V17.125C5.9375 17.7578 6.42969 18.25 7.0625 18.25H9.3125C9.91016 18.25 10.4375 17.7578 10.4375 17.125V8.125C10.4375 7.52734 9.91016 7 9.3125 7ZM8.75 16.5625H7.625V8.6875H8.75V16.5625ZM3.6875 12.625H1.4375C0.804688 12.625 0.3125 13.1523 0.3125 13.75V17.125C0.3125 17.7578 0.804688 18.25 1.4375 18.25H3.6875C4.28516 18.25 4.8125 17.7578 4.8125 17.125V13.75C4.8125 13.1523 4.28516 12.625 3.6875 12.625ZM3.125 16.5625H2V14.3125H3.125V16.5625ZM2.5625 9.25C3.47656 9.25 4.25 8.51172 4.25 7.5625C4.25 7.42188 4.21484 7.28125 4.17969 7.14062L7.73047 3.58984C7.87109 3.625 8.01172 3.625 8.1875 3.625C8.39844 3.625 8.57422 3.58984 8.78516 3.51953L12.125 6.19141C12.125 6.29688 12.125 6.36719 12.125 6.4375C12.125 7.38672 12.8633 8.125 13.8125 8.125C14.7266 8.125 15.5 7.38672 15.5 6.4375C15.5 6.36719 15.4648 6.29688 15.4648 6.19141L18.8047 3.51953C19.0156 3.58984 19.1914 3.625 19.4375 3.625C20.3516 3.625 21.125 2.88672 21.125 1.9375C21.125 1.02344 20.3516 0.25 19.4375 0.25C18.4883 0.25 17.75 1.02344 17.75 1.9375C17.75 2.04297 17.75 2.11328 17.75 2.21875L14.4102 4.89062C14.1992 4.82031 14.0234 4.75 13.7773 4.75C13.5664 4.75 13.3906 4.82031 13.1797 4.89062L9.83984 2.21875C9.83984 2.11328 9.875 2.04297 9.875 1.9375C9.875 1.02344 9.10156 0.25 8.1875 0.25C7.23828 0.25 6.5 1.02344 6.5 1.9375C6.5 2.11328 6.5 2.25391 6.53516 2.39453L2.98438 5.94531C2.84375 5.91016 2.70312 5.875 2.5625 5.875C1.61328 5.875 0.875 6.64844 0.875 7.5625C0.875 8.51172 1.61328 9.25 2.5625 9.25Z" />
                         </svg>
-                        {isSubMenuOpenDocumentos && <button className="absolute top-[209px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
+                        {isSubMenuOpenDocumentos && <button className="absolute top-[209px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white" onClick={documentosClick}>
                             Lista Documentos
                         </button>}
                     </div>
@@ -135,7 +180,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <DashboardComponent />
+            {isViewDashboardOpen && <DashboardComponent />}
+            {isViewDocumentsOpen && <DocumentsComponent />}
         </div>
     );
 };
