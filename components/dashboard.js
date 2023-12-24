@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Dashboard = ({ activeDocumentsCount,activeDueDateCount }) => {
-    
+const Dashboard = ({ activeDocumentsCount, activeDueDateCount,activePastDueDateCount }) => {
+
+  const backgroundClass = activePastDueDateCount > 0 ? 'bg-red-500' : 'bg-green-500';
+
   return (
     <div className="flex-1" id="Dashboard">
       {/* Barra Superior Azul Fixada no Topo */}
@@ -18,7 +20,7 @@ const Dashboard = ({ activeDocumentsCount,activeDueDateCount }) => {
               {/* Três Divs Centralizadas Lado a Lado */}
               <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                 <div className="mt-[-15px]">Quantidade de documentos ativos</div>
-                <div className="mt-2 text-4xl text-gray-600">{ activeDocumentsCount }</div>
+                <div className="mt-2 text-4xl text-gray-600">{activeDocumentsCount}</div>
               </div>
               <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                 <div className="mt-[-15px]">Quantidade de terceiros ativos</div>
@@ -35,25 +37,20 @@ const Dashboard = ({ activeDocumentsCount,activeDueDateCount }) => {
               <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                 <div className="mt-[-15px] text-2xl text-gray-600">Documentos a vencer</div>
                 <div className="mt-2 text-gray-600 text-sm">Documentos com 30 dias ou menos da data de vencimento</div>
-                <div className='flex justify-center'>
-                  <div className='px-10'></div>
-                  <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-4 py-2 text-white">{activeDueDateCount}</div>
-                  <div className='px-10'></div>
+                <div className='mt-2 flex justify-center bg-yellow-500 mx-auto w-[115px]'>
+                  <div className="text-gray-600 text-5xl text-white py-2">{activeDueDateCount}</div>
                 </div>
                 <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
               </div>
               <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                 <div className="mt-[-15px] text-2xl text-gray-600">Documentos vencidos</div>
                 <div className="mt-2 text-gray-600 text-sm">Documentos com data inferior ao dia atual</div>
-                <div className='flex justify-center'>
-                  <div className='px-10'></div>
-                  <div className="mt-2 text-gray-600 text-5xl bg-red-700 px-[50px] py-2 text-white">3</div>
-                  <div className='px-10'></div>
+                <div className={`mt-2 flex justify-center mx-auto w-[115px] ${backgroundClass}`}>
+                  <div className="text-gray-600 text-5xl text-white py-2">{activePastDueDateCount}</div>
                 </div>
                 <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-              </div>
+              </div>            
             </div>
-
             <div className="flex justify-center px-32 relative top-[-10px]">
               {/* Duas Divs Centralizadas Lado a Lado */}
               <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
@@ -77,7 +74,7 @@ const Dashboard = ({ activeDocumentsCount,activeDueDateCount }) => {
                 <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
               </div>
             </div>
-          </div>          
+          </div>
         </div>
       </div>
     </div>

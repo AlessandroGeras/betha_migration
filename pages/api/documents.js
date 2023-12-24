@@ -26,7 +26,14 @@ export default async function handler(req, res) {
 
     // Consulta para obter o total de documentos com vencimento até 30 dias
     const dueDateCount = await connection.query(
-      `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30`,
+      `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30 AND "STATUS" = 'Ativo'`,
+      {
+        type: Sequelize.QueryTypes.SELECT,
+      }
+    );
+
+    const pastDueDateCount = await connection.query(
+      `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" < SYSDATE AND "STATUS" = 'Ativo'`,
       {
         type: Sequelize.QueryTypes.SELECT,
       }
@@ -52,7 +59,8 @@ export default async function handler(req, res) {
           rows: docs.rows,
           count: docs.count,
           activeCount: activeDocsCount,
-          due_date: dueDateCount[0].count, // Ajuste para obter o valor correto do resultado da consulta SQL
+          due_date: dueDateCount[0].count,
+          past_due_date: pastDueDateCount[0].count,
         },
       });
     } else {

@@ -94,7 +94,6 @@ const Dashboard = () => {
     }, [triggeruseEffect]);
 
     const { success, docs } = documents;
-    console.log("testeeeeeeeeeeeeeeeeee"+docs);
     const totalPages = Math.ceil(docs.count / pageSize);
 
     const goToPreviousPage = () => {
@@ -185,7 +184,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} />}
+            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} activePastDueDateCount={docs.past_due_date} />}
             {isViewDocumentsOpen && <DocumentsComponent />}
 
             {loading && (
@@ -193,7 +192,7 @@ const Dashboard = () => {
                     <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative animate-fadeIn">
                         {/* Pseudo-elemento para a barra lateral */}
                         <div className="text-blue-500 text-md text-center flex-grow">
-                            Loading...
+                            Carregando documentos...
                         </div>
                     </div>
                 </div>
