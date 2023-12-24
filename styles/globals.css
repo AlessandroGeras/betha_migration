@@ -13,10 +13,25 @@
 
 .loading-content::before {
     content: '';
-    background-color: #e53e3e; /* Cor vermelha desejada */
+    background-color:#3f5470; /* Cor vermelha desejada */
     width: 4px; /* Largura da barra lateral */
     height: 100%; /* Altura da barra lateral */
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  @layer components {
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease-in-out;
+    }
   }

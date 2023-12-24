@@ -24,6 +24,16 @@ export default async function handler(req, res) {
       where: { STATUS: 'Ativo' }, // Ajuste conforme sua estrutura de dados
     });
 
+    // Consulta para obter o total de documentos com vencimento até 30 dias
+    const dueDateCount = await connection.query(
+      `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30`,
+      {
+        type: Sequelize.QueryTypes.SELECT,
+      }
+    );
+
+    console.log(dueDateCount);
+
     // Configuração da paginação
     const page = parseInt(req.query.page) || 1; // Página atual
     const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
@@ -42,6 +52,7 @@ export default async function handler(req, res) {
           rows: docs.rows,
           count: docs.count,
           activeCount: activeDocsCount,
+          due_date: dueDateCount[0].count, // Ajuste para obter o valor correto do resultado da consulta SQL
         },
       });
     } else {

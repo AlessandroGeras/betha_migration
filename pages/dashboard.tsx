@@ -94,6 +94,7 @@ const Dashboard = () => {
     }, [triggeruseEffect]);
 
     const { success, docs } = documents;
+    console.log("testeeeeeeeeeeeeeeeeee"+docs);
     const totalPages = Math.ceil(docs.count / pageSize);
 
     const goToPreviousPage = () => {
@@ -184,28 +185,19 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} />}
+            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} />}
             {isViewDocumentsOpen && <DocumentsComponent />}
 
-            {loading &&
+            {loading && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-
-                        {/* Pseudo-elemento para a barra lateral */}                       
-
-                        {/* Adicione o botão de fechamento estilo "X" */}
-                        <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-
-                        <div className="text-red-500 text-md text-center flex-grow">
+                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative animate-fadeIn">
+                        {/* Pseudo-elemento para a barra lateral */}
+                        <div className="text-blue-500 text-md text-center flex-grow">
                             Loading...
                         </div>
                     </div>
                 </div>
-            }
+            )}
 
 
         </div>

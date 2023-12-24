@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dashboard = ({ activeDocumentsCount }) => {
+const Dashboard = ({ activeDocumentsCount,activeDueDateCount }) => {
     
   return (
     <div className="flex-1" id="Dashboard">
@@ -37,7 +37,7 @@ const Dashboard = ({ activeDocumentsCount }) => {
                 <div className="mt-2 text-gray-600 text-sm">Documentos com 30 dias ou menos da data de vencimento</div>
                 <div className='flex justify-center'>
                   <div className='px-10'></div>
-                  <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-4 py-2 text-white">127</div>
+                  <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-4 py-2 text-white">{activeDueDateCount}</div>
                   <div className='px-10'></div>
                 </div>
                 <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
