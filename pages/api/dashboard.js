@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -24,6 +25,14 @@ export default async function handler(req, res) {
       where: { STATUS: 'Ativo' }, // Ajuste conforme sua estrutura de dados
     });
 
+    const missingDocsCount = await documents.count({
+      where: { STATUS: 'Faltante' }, // Ajuste conforme sua estrutura de dados
+    });
+
+    const analiseDocsCount = await documents.count({
+      where: { STATUS: 'Em análise' }, // Ajuste conforme sua estrutura de dados
+    });
+
     // Consulta para obter o total de documentos com vencimento até 30 dias
     const dueDateCount = await connection.query(
       `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30 AND "STATUS" = 'Ativo'`,
@@ -39,7 +48,17 @@ export default async function handler(req, res) {
       }
     );
 
-    console.log(dueDateCount);
+    const employeesCount = await users.count({
+      where: { ID_ADM_GESTAO_TERCEIROS: 'N' }, // Ajuste conforme sua estrutura de dados
+    });
+
+    const outsourcedCount = await users.count({
+      where: { ID_ADM_GESTAO_TERCEIROS: 'S' }, // Ajuste conforme sua estrutura de dados
+    });
+
+
+
+
 
     // Configuração da paginação
     const page = parseInt(req.query.page) || 1; // Página atual
@@ -61,6 +80,10 @@ export default async function handler(req, res) {
           activeCount: activeDocsCount,
           due_date: dueDateCount[0].count,
           past_due_date: pastDueDateCount[0].count,
+          missingCount: missingDocsCount,
+          analiseCount:analiseDocsCount,
+          employeesCount:employeesCount,
+          outsourcedCount:outsourcedCount,
         },
       });
     } else {

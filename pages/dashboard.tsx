@@ -59,6 +59,7 @@ const Dashboard = () => {
     };
 
     const dashboardClick = () => {
+        setLoading(true);
         setIsViewDashboardOpen(true);
         setIsViewDocumentsOpen(false);
         toggleSubMenuHome();
@@ -79,7 +80,7 @@ const Dashboard = () => {
         setLoading(true);
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+                const response = await fetch(`/api/dashboard?page=${currentPage}&pageSize=${pageSize}`);
                 const data = await response.json();
                 setDocuments(data);
             } catch (error) {
@@ -106,6 +107,19 @@ const Dashboard = () => {
 
     return (
         <div className={`bg-gray-100 min-h-screen flex`}>
+            {loading && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
+                        {/* Pseudo-elemento para a barra lateral */}
+                        <div className="text-blue-500 text-md text-center flex-grow">
+                            <div className="flex items-center justify-center h-full text-4xl">
+                                Carregando documentos...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Barra Lateral */}
             <div className={`bg-white flex flex-col items-center ${isSidebarOpen ? 'sidebar-closed' : 'sidebar-open'}`}>
                 {/* Ícones na parte de cima */}
@@ -146,7 +160,7 @@ const Dashboard = () => {
                             <path d="M14.9375 11.5H12.6875C12.0547 11.5 11.5625 12.0273 11.5625 12.625V17.125C11.5625 17.7578 12.0547 18.25 12.6875 18.25H14.9375C15.5352 18.25 16.0625 17.7578 16.0625 17.125V12.625C16.0625 12.0273 15.5352 11.5 14.9375 11.5ZM14.375 16.5625H13.25V13.1875H14.375V16.5625ZM20.5625 7H18.3125C17.6797 7 17.1875 7.52734 17.1875 8.125V17.125C17.1875 17.7578 17.6797 18.25 18.3125 18.25H20.5625C21.1602 18.25 21.6875 17.7578 21.6875 17.125V8.125C21.6875 7.52734 21.1602 7 20.5625 7ZM20 16.5625H18.875V8.6875H20V16.5625ZM9.3125 7H7.0625C6.42969 7 5.9375 7.52734 5.9375 8.125V17.125C5.9375 17.7578 6.42969 18.25 7.0625 18.25H9.3125C9.91016 18.25 10.4375 17.7578 10.4375 17.125V8.125C10.4375 7.52734 9.91016 7 9.3125 7ZM8.75 16.5625H7.625V8.6875H8.75V16.5625ZM3.6875 12.625H1.4375C0.804688 12.625 0.3125 13.1523 0.3125 13.75V17.125C0.3125 17.7578 0.804688 18.25 1.4375 18.25H3.6875C4.28516 18.25 4.8125 17.7578 4.8125 17.125V13.75C4.8125 13.1523 4.28516 12.625 3.6875 12.625ZM3.125 16.5625H2V14.3125H3.125V16.5625ZM2.5625 9.25C3.47656 9.25 4.25 8.51172 4.25 7.5625C4.25 7.42188 4.21484 7.28125 4.17969 7.14062L7.73047 3.58984C7.87109 3.625 8.01172 3.625 8.1875 3.625C8.39844 3.625 8.57422 3.58984 8.78516 3.51953L12.125 6.19141C12.125 6.29688 12.125 6.36719 12.125 6.4375C12.125 7.38672 12.8633 8.125 13.8125 8.125C14.7266 8.125 15.5 7.38672 15.5 6.4375C15.5 6.36719 15.4648 6.29688 15.4648 6.19141L18.8047 3.51953C19.0156 3.58984 19.1914 3.625 19.4375 3.625C20.3516 3.625 21.125 2.88672 21.125 1.9375C21.125 1.02344 20.3516 0.25 19.4375 0.25C18.4883 0.25 17.75 1.02344 17.75 1.9375C17.75 2.04297 17.75 2.11328 17.75 2.21875L14.4102 4.89062C14.1992 4.82031 14.0234 4.75 13.7773 4.75C13.5664 4.75 13.3906 4.82031 13.1797 4.89062L9.83984 2.21875C9.83984 2.11328 9.875 2.04297 9.875 1.9375C9.875 1.02344 9.10156 0.25 8.1875 0.25C7.23828 0.25 6.5 1.02344 6.5 1.9375C6.5 2.11328 6.5 2.25391 6.53516 2.39453L2.98438 5.94531C2.84375 5.91016 2.70312 5.875 2.5625 5.875C1.61328 5.875 0.875 6.64844 0.875 7.5625C0.875 8.51172 1.61328 9.25 2.5625 9.25Z" />
                         </svg>
                         {isSubMenuOpenDocumentos && <button className="absolute top-[209px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white" onClick={documentosClick}>
-                            Lista Documentos
+                            Listar Documentos
                         </button>}
                     </div>
                     {/* <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuFinanceiro} onMouseLeave={toggleSubMenuFinanceiro}>
@@ -184,19 +198,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} activePastDueDateCount={docs.past_due_date} />}
-            {isViewDocumentsOpen && <DocumentsComponent />}
-
-            {loading && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative animate-fadeIn">
-                        {/* Pseudo-elemento para a barra lateral */}
-                        <div className="text-blue-500 text-md text-center flex-grow">
-                            Carregando documentos...
-                        </div>
-                    </div>
-                </div>
-            )}
+            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} activePastDueDateCount={docs.past_due_date} missingDocumentsCount={docs.missingCount} analiseDocumentsCount={docs.analiseCount} employeesCount={docs.employeesCount} outsourcedCount={docs.outsourcedCount}  />}
+            {isViewDocumentsOpen && <DocumentsComponent />}            
 
 
         </div>

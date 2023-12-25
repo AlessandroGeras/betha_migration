@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dashboard = ({ activeDocumentsCount, activeDueDateCount,activePastDueDateCount }) => {
+const Dashboard = ({ activeDocumentsCount, activeDueDateCount,activePastDueDateCount,missingDocumentsCount,analiseDocumentsCount,employeesCount,outsourcedCount  }) => {
 
   const backgroundClass = activePastDueDateCount > 0 ? 'bg-red-500' : 'bg-green-500';
 
@@ -24,11 +24,11 @@ const Dashboard = ({ activeDocumentsCount, activeDueDateCount,activePastDueDateC
               </div>
               <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                 <div className="mt-[-15px]">Quantidade de terceiros ativos</div>
-                <div className="mt-2 text-4xl text-gray-600">34</div>
+                <div className="mt-2 text-4xl text-gray-600">{outsourcedCount}</div>
               </div>
               <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                 <div className="mt-[-15px]">Quantidade de colaboradores ativos</div>
-                <div className="mt-2 text-4xl text-gray-600">647</div>
+                <div className="mt-2 text-4xl text-gray-600">{employeesCount}</div>
               </div>
             </div>
 
@@ -52,27 +52,23 @@ const Dashboard = ({ activeDocumentsCount, activeDueDateCount,activePastDueDateC
               </div>            
             </div>
             <div className="flex justify-center px-32 relative top-[-10px]">
-              {/* Duas Divs Centralizadas Lado a Lado */}
+              {/* Duas Divs Centralizadas Lado a Lado */}              
               <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                 <div className="mt-[-15px] text-2xl text-gray-600">Documentos faltantes</div>
                 <div className="mt-2 text-gray-600 text-sm">Documentos solicitados e não enviados</div>
-                <div className='flex justify-center'>
-                  <div className='px-10'></div>
-                  <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-8 py-2 text-white">10</div>
-                  <div className='px-10'></div>
+                <div className="mt-2 flex justify-center mx-auto w-[115px] bg-yellow-500">
+                  <div className="text-gray-600 text-5xl text-white py-2">{missingDocumentsCount}</div>
                 </div>
                 <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
               </div>
               <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                 <div className="mt-[-15px] text-2xl text-gray-600">Documentos à analisar</div>
                 <div className="mt-2 text-gray-600 text-sm">Documentos pendentes de análise</div>
-                <div className='flex justify-center'>
-                  <div className='px-10'></div>
-                  <div className="mt-2 text-gray-600 text-5xl bg-yellow-500 px-[50px] py-2 text-white">3</div>
-                  <div className='px-10'></div>
+                <div className="mt-2 flex justify-center mx-auto w-[115px] bg-yellow-500">
+                  <div className="text-gray-600 text-5xl text-white py-2">{analiseDocumentsCount}</div>
                 </div>
                 <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-              </div>
+              </div>            
             </div>
           </div>
         </div>
