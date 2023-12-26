@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
+import { IoMdAdd } from "react-icons/io";
 
 const Outsourced = ({ finishedLoading }) => {
   const [documents, setDocuments] = useState({
@@ -10,6 +11,7 @@ const Outsourced = ({ finishedLoading }) => {
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortColumn, setSortColumn] = useState('NM_USUARIO');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const columnWidths = {
     'NM_USUARIO': '350px',
@@ -18,6 +20,15 @@ const Outsourced = ({ finishedLoading }) => {
     'CIDADE': '320px',
     'UF': '60px',
     'TELEFONE': '150px',
+  };
+
+  const columnLabels = {
+    'NM_USUARIO': 'USUARIO',
+    'CNPJ': 'CNPJ',
+    'ENDEREÇO': 'ENDEREÇO',
+    'CIDADE': 'CIDADE',
+    'UF': 'UF',
+    'TELEFONE': 'TELEFONE',
   };
 
   const sortRows = (rows, column, order) => {
@@ -43,27 +54,62 @@ const Outsourced = ({ finishedLoading }) => {
     setCurrentPage(1);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
-        const data = await response.json();
-        const sortedRows = sortRows(data.docs.rows, sortColumn, sortOrder);
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-        setDocuments({
-          success: data.success,
-          docs: {
-            rows: sortedRows,
-            count: data.docs.count,
-            outsourcedCount: data.docs.outsourcedCount,
-          },
-        });
-      } catch (error) {
-        console.error('Erro ao obter documentos:', error);
-      } finally {
-        finishedLoading();
-      }
-    };
+  const handleSearch = () => {
+    setCurrentPage(1);
+
+    if (searchTerm === '') {
+      fetchData();
+    } else {
+      const filteredRows = documents.docs.rows.filter((document) =>
+        Object.values(document).some((value) =>
+          value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+
+      const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
+
+      setDocuments({
+        success: true,
+        docs: {
+          rows: sortedRows,
+          count: sortedRows.length,
+          outsourcedCount: documents.docs.outsourcedCount,
+        },
+      });
+    }
+  };
+
+  const handleClearSearch = () => {
+    setSearchTerm('');
+    fetchData();
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
+      const data = await response.json();
+      const sortedRows = sortRows(data.docs.rows, sortColumn, sortOrder);
+
+      setDocuments({
+        success: data.success,
+        docs: {
+          rows: sortedRows,
+          count: data.docs.count,
+          outsourcedCount: data.docs.outsourcedCount,
+        },
+      });
+    } catch (error) {
+      console.error('Erro ao obter documentos:', error);
+    } finally {
+      finishedLoading();
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, [currentPage, pageSize, sortColumn, sortOrder]);
 
@@ -85,6 +131,33 @@ const Outsourced = ({ finishedLoading }) => {
 
       {documents.success && (
         <div className="flex flex-col bg-gray-50">
+          <div className="flex items-center my-4">
+            <input
+              placeholder="Pesquisa rápida"
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchTermChange}
+              className="border border-gray-200 px-2 py-1"
+            />
+            <button
+              onClick={handleSearch}
+              className="border border-gray-200 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+            >
+              Pesquisar
+            </button>
+            <button
+              onClick={handleClearSearch}
+              className="border border-gray-200 px-2 py-1 ml-2 rounded bg-red-500 text-white"
+            >
+              Limpar Pesquisa
+            </button>
+            <button
+              className="border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+            >
+              <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
+            </button>
+          </div>
+
           <div className="flex text-gray-500">
             {Object.keys(columnWidths).map((column) => (
               <div
@@ -93,12 +166,12 @@ const Outsourced = ({ finishedLoading }) => {
                 style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '340px' : '320px') : columnWidths[column] }}
                 onClick={() => handleSort(column)}
               >
-                {column}
+                {columnLabels[column]}
                 <div className='ml-auto flex'>
                   {sortColumn === column && (
                     sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
                   )}
-                  <PiFunnelLight className='text-xl mt-0.5'/>
+                  <PiFunnelLight className='text-xl mt-0.5' />
                 </div>
               </div>
             ))}
@@ -128,15 +201,14 @@ const Outsourced = ({ finishedLoading }) => {
               className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
             >
               Página Anterior
-            </button>            
+            </button>
             <div className="flex items-center">
               <span className="mr-2">Registros por página:</span>
               {[10, 25, 50, 100].map((size) => (
                 <button
                   key={size}
-                  className={`px-2 py-1 border ${
-                    size === pageSize ? 'bg-blue-500 text-white' : ''
-                  }`}
+                  className={`px-2 py-1 border ${size === pageSize ? 'bg-blue-500 text-white' : ''
+                    }`}
                   onClick={() => handlePageSizeChange(size)}
                 >
                   {size}
