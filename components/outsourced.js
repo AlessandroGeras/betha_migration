@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
-import { IoMdAdd } from "react-icons/io";
+import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 
 const Outsourced = ({ finishedLoading }) => {
   const [documents, setDocuments] = useState({
@@ -14,6 +14,7 @@ const Outsourced = ({ finishedLoading }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const columnWidths = {
+    '': '30px', // Nova coluna vazia para a lupa
     'NM_USUARIO': '350px',
     'CNPJ': '200px',
     'ENDEREÇO': '355px',
@@ -23,6 +24,7 @@ const Outsourced = ({ finishedLoading }) => {
   };
 
   const columnLabels = {
+    '': '', // Cabeçalho vazio para a nova coluna
     'NM_USUARIO': 'USUARIO',
     'CNPJ': 'CNPJ',
     'ENDEREÇO': 'ENDEREÇO',
@@ -163,15 +165,19 @@ const Outsourced = ({ finishedLoading }) => {
               <div
                 key={column}
                 className={`header-cell border border-gray-200 py-1 pl-1 cursor-pointer flex`}
-                style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '340px' : '320px') : columnWidths[column] }}
+                style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                 onClick={() => handleSort(column)}
               >
                 {columnLabels[column]}
                 <div className='ml-auto flex'>
-                  {sortColumn === column && (
-                    sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                  {column !== '' && ( // Adiciona a condição para excluir o ícone na coluna vazia
+                    <>
+                      {sortColumn === column && (
+                        sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                      )}
+                      <PiFunnelLight className='text-xl mt-0.5' />
+                    </>
                   )}
-                  <PiFunnelLight className='text-xl mt-0.5' />
                 </div>
               </div>
             ))}
@@ -186,9 +192,13 @@ const Outsourced = ({ finishedLoading }) => {
                 <div
                   key={column}
                   className={`column-cell border border-gray-200 py-2 pl-1`}
-                  style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '340px' : '320px') : columnWidths[column] }}
+                  style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                 >
-                  {document[column]}
+                  {column === '' ? ( // Adiciona a condição para exibir a lupa na coluna vazia
+                    <IoIosSearch className='text-xl mt-0.5' />
+                  ) : (
+                    document[column]
+                  )}
                 </div>
               ))}
             </div>
