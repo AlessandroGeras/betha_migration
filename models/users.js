@@ -58,6 +58,14 @@ const web_usuario = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    NOME_TERCEIRO: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    STATUS: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   },
   {
     tableName: "WEB_USUARIO",

@@ -15,22 +15,28 @@ const Outsourced = ({ finishedLoading }) => {
 
   const columnWidths = {
     '': '30px', // Nova coluna vazia para a lupa
-    'NM_USUARIO': '350px',
+    'STATUS': '100px',
+    'NOME_TERCEIRO': '300px',
     'CNPJ': '200px',
     'ENDEREÇO': '355px',
     'CIDADE': '320px',
     'UF': '60px',
-    'TELEFONE': '150px',
+    'TELEFONE': '140px',
+    'NM_USUARIO': '350px',
+    'ST_EMAIL': '350px',
   };
 
   const columnLabels = {
     '': '', // Cabeçalho vazio para a nova coluna
-    'NM_USUARIO': 'USUARIO',
+    'STATUS': 'STATUS',
+    'NOME_TERCEIRO': 'NOME_TERCEIRO',
     'CNPJ': 'CNPJ',
     'ENDEREÇO': 'ENDEREÇO',
     'CIDADE': 'CIDADE',
     'UF': 'UF',
     'TELEFONE': 'TELEFONE',
+    'NM_USUARIO': 'USUARIO',
+    'ST_EMAIL': 'EMAIL',
   };
 
   const sortRows = (rows, column, order) => {
@@ -132,39 +138,41 @@ const Outsourced = ({ finishedLoading }) => {
       </div>
 
       {documents.success && (
-        <div className="flex flex-col bg-gray-50">
+        <div className=''>
           <div className="flex items-center my-4">
             <input
               placeholder="Pesquisa rápida"
               type="text"
               value={searchTerm}
               onChange={handleSearchTermChange}
-              className="border border-gray-200 px-2 py-1"
+              className="border border-gray-300 px-2 py-1"
             />
             <button
               onClick={handleSearch}
-              className="border border-gray-200 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+              className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
             >
               Pesquisar
             </button>
             <button
               onClick={handleClearSearch}
-              className="border border-gray-200 px-2 py-1 ml-2 rounded bg-red-500 text-white"
+              className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
             >
               Limpar Pesquisa
             </button>
             <button
-              className="border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+              className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
             >
               <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
             </button>
           </div>
+        <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-scroll">
+          
 
-          <div className="flex text-gray-500">
+          <div className="flex text-gray-500 bg-white w-[2000px]">
             {Object.keys(columnWidths).map((column) => (
               <div
                 key={column}
-                className={`header-cell border border-gray-200 py-1 pl-1 cursor-pointer flex`}
+                className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
                 style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                 onClick={() => handleSort(column)}
               >
@@ -185,13 +193,13 @@ const Outsourced = ({ finishedLoading }) => {
 
           {documents.docs.rows.map((document, index) => (
             <div
-              className={`flex text-gray-700 ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+              className={`flex text-gray-700 whitespace-nowrap w-[2000px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
               key={document.id || Math.random().toString()}
             >
               {Object.keys(columnWidths).map((column) => (
                 <div
                   key={column}
-                  className={`column-cell border border-gray-200 py-2 pl-1`}
+                  className={`column-cell border border-gray-300 py-2 pl-1`}
                   style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                 >
                   {column === '' ? ( // Adiciona a condição para exibir a lupa na coluna vazia
@@ -204,38 +212,46 @@ const Outsourced = ({ finishedLoading }) => {
             </div>
           ))}
 
-          <div className="flex mt-4 justify-between border-t border-gray-200 items-center">
-            <button
-              onClick={goToPreviousPage}
-              disabled={currentPage === 1}
-              className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
-            >
-              Página Anterior
-            </button>
-            <div className="flex items-center">
-              <span className="mr-2">Registros por página:</span>
-              {[10, 25, 50, 100].map((size) => (
-                <button
-                  key={size}
-                  className={`px-2 py-1 border ${size === pageSize ? 'bg-blue-500 text-white' : ''
-                    }`}
-                  onClick={() => handlePageSizeChange(size)}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-            <span className=''>Página {currentPage}</span>
-            <button
-              onClick={goToNextPage}
-              disabled={currentPage === totalPages}
-              className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
-            >
-              Próxima Página
-            </button>
-          </div>
+
+        </div>
         </div>
       )}
+
+
+
+
+
+
+      <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
+        <button
+          onClick={goToPreviousPage}
+          disabled={currentPage === 1}
+          className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+        >
+          Página Anterior
+        </button>
+        <div className="flex items-center">
+          <span className="mr-2">Registros por página:</span>
+          {[10, 25, 50, 100].map((size) => (
+            <button
+              key={size}
+              className={`px-2 py-1 border ${size === pageSize ? 'bg-blue-500 text-white' : ''
+                }`}
+              onClick={() => handlePageSizeChange(size)}
+            >
+              {size}
+            </button>
+          ))}
+        </div>
+        <span className=''>Página {currentPage}</span>
+        <button
+          onClick={goToNextPage}
+          disabled={currentPage === totalPages}
+          className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
+        >
+          Próxima Página
+        </button>
+      </div>
 
       {!documents.success && <p>Não foi possível obter os usuários terceirizados.</p>}
     </div>
