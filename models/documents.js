@@ -28,7 +28,7 @@ const documento = connection.define(
     VENCIMENTO: {
       type: Sequelize.DATE,
       allowNull: true,
-    },
+    },    
   },
   {
     tableName: "DOCUMENTOS",

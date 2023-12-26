@@ -9,7 +9,7 @@ const Dashboard = ({ activeDocumentsCount, activeDueDateCount,activePastDueDateC
       {/* Barra Superior Azul Fixada no Topo */}
       <div className="bg-blue-500 text-white p-2 text-left mb-4 w-full">
         {/* Conteúdo da Barra Superior, se necessário */}
-        <span className='ml-2'>Página inicial</span>
+        <span className='ml-2'>Página Inicial</span>
       </div>
 
       <div className="flex items-center justify-center h-5/6 pt-28 px-20">

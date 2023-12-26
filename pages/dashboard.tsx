@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logo from '../public/img/logo2.png';
@@ -13,12 +12,8 @@ const Dashboard = () => {
     const [isSubMenuOpenPrestadores, setIsSubMenuOpenPrestadores] = useState(false);
     const [isSubMenuOpenCadastros, setIsSubMenuOpenCadastros] = useState(false);
     const [isSubMenuOpenDocumentos, setIsSubMenuOpenDocumentos] = useState(false);
-    const [isSubMenuOpenFinanceiro, setIsSubMenuOpenFinanceiro] = useState(false);
     const [isSubMenuOpenConta, setIsSubMenuOpenConta] = useState(false);
     const [isSubMenuOpenMenu, setIsSubMenuOpenMenu] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-    const router = useRouter();
-    const { userData } = router.query;
     const [triggeruseEffect, SettriggeruseEffect] = useState(false); //Atualizar o useEffect
     const [isViewDashboardOpen, setIsViewDashboardOpen] = useState(true); //Abrir as views
     const [isViewDocumentsOpen, setIsViewDocumentsOpen] = useState(false);
@@ -56,17 +51,15 @@ const Dashboard = () => {
         setIsSubMenuOpenMenu(!isSubMenuOpenMenu);
     };
 
-    const toggleSidebar = () => {
-        //setIsSidebarOpen(!isSidebarOpen);
-    };
-
     const dashboardClick = () => {
-        setLoading(true);
-        setIsViewDashboardOpen(true);
-        setIsViewDocumentsOpen(false);
-        setIsViewOutsourcedOpen(false);
-        toggleSubMenuHome();
-        refreshUseEffect();
+        if (!isViewDashboardOpen) {
+            setLoading(true);
+            setIsViewDashboardOpen(true);
+            setIsViewDocumentsOpen(false);
+            setIsViewOutsourcedOpen(false);
+            toggleSubMenuHome();
+            refreshUseEffect();
+        }
     };
 
     const documentosClick = () => {
@@ -77,14 +70,21 @@ const Dashboard = () => {
     };
 
     const terceirosClick = () => {
-        setIsViewOutsourcedOpen(true);
-        setIsViewDocumentsOpen(false);
-        setIsViewDashboardOpen(false);
-        toggleSubMenuOutsourced();
-    };
+        if (!isViewOutsourcedOpen) {
+            setLoading(true);
+            setIsViewOutsourcedOpen(true);
+            setIsViewDocumentsOpen(false);
+            setIsViewDashboardOpen(false);
+            toggleSubMenuOutsourced();
+        };
+    }
 
     const refreshUseEffect = () => {
         SettriggeruseEffect(!triggeruseEffect);
+    };    
+
+    const handleModalToggle = () => {
+        setLoading(false);
     };
 
     useEffect(() => {
@@ -132,7 +132,7 @@ const Dashboard = () => {
             )}
 
             {/* Barra Lateral */}
-            <div className={`bg-white flex flex-col items-center ${isSidebarOpen ? 'sidebar-closed' : 'sidebar-open'}`}>
+            <div className="bg-white flex flex-col items-center">
                 {/* Ícones na parte de cima */}
                 <div className="mb-8 w-full">
                     <div className="p-4 cursor-pointer">
@@ -144,7 +144,7 @@ const Dashboard = () => {
                         </svg>
                         {isSubMenuOpenHome &&
                             <div className="absolute top-[80px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white" onClick={dashboardClick}>
-                                <p>Tela Inicial</p>
+                                <p>Página Inicial</p>
                             </div>}
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuPrestadores} onMouseLeave={toggleSubMenuPrestadores}>
@@ -176,12 +176,6 @@ const Dashboard = () => {
                             Listar Documentos
                         </button>}
                     </div>
-                    {/* <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuFinanceiro} onMouseLeave={toggleSubMenuFinanceiro}>
-                        <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
-                            <path d="M14.9375 11.5H12.6875C12.0547 11.5 11.5625 12.0273 11.5625 12.625V17.125C11.5625 17.7578 12.0547 18.25 12.6875 18.25H14.9375C15.5352 18.25 16.0625 17.7578 16.0625 17.125V12.625C16.0625 12.0273 15.5352 11.5 14.9375 11.5ZM14.375 16.5625H13.25V13.1875H14.375V16.5625ZM20.5625 7H18.3125C17.6797 7 17.1875 7.52734 17.1875 8.125V17.125C17.1875 17.7578 17.6797 18.25 18.3125 18.25H20.5625C21.1602 18.25 21.6875 17.7578 21.6875 17.125V8.125C21.6875 7.52734 21.1602 7 20.5625 7ZM20 16.5625H18.875V8.6875H20V16.5625ZM9.3125 7H7.0625C6.42969 7 5.9375 7.52734 5.9375 8.125V17.125C5.9375 17.7578 6.42969 18.25 7.0625 18.25H9.3125C9.91016 18.25 10.4375 17.7578 10.4375 17.125V8.125C10.4375 7.52734 9.91016 7 9.3125 7ZM8.75 16.5625H7.625V8.6875H8.75V16.5625ZM3.6875 12.625H1.4375C0.804688 12.625 0.3125 13.1523 0.3125 13.75V17.125C0.3125 17.7578 0.804688 18.25 1.4375 18.25H3.6875C4.28516 18.25 4.8125 17.7578 4.8125 17.125V13.75C4.8125 13.1523 4.28516 12.625 3.6875 12.625ZM3.125 16.5625H2V14.3125H3.125V16.5625ZM2.5625 9.25C3.47656 9.25 4.25 8.51172 4.25 7.5625C4.25 7.42188 4.21484 7.28125 4.17969 7.14062L7.73047 3.58984C7.87109 3.625 8.01172 3.625 8.1875 3.625C8.39844 3.625 8.57422 3.58984 8.78516 3.51953L12.125 6.19141C12.125 6.29688 12.125 6.36719 12.125 6.4375C12.125 7.38672 12.8633 8.125 13.8125 8.125C14.7266 8.125 15.5 7.38672 15.5 6.4375C15.5 6.36719 15.4648 6.29688 15.4648 6.19141L18.8047 3.51953C19.0156 3.58984 19.1914 3.625 19.4375 3.625C20.3516 3.625 21.125 2.88672 21.125 1.9375C21.125 1.02344 20.3516 0.25 19.4375 0.25C18.4883 0.25 17.75 1.02344 17.75 1.9375C17.75 2.04297 17.75 2.11328 17.75 2.21875L14.4102 4.89062C14.1992 4.82031 14.0234 4.75 13.7773 4.75C13.5664 4.75 13.3906 4.82031 13.1797 4.89062L9.83984 2.21875C9.83984 2.11328 9.875 2.04297 9.875 1.9375C9.875 1.02344 9.10156 0.25 8.1875 0.25C7.23828 0.25 6.5 1.02344 6.5 1.9375C6.5 2.11328 6.5 2.25391 6.53516 2.39453L2.98438 5.94531C2.84375 5.91016 2.70312 5.875 2.5625 5.875C1.61328 5.875 0.875 6.64844 0.875 7.5625C0.875 8.51172 1.61328 9.25 2.5625 9.25Z" />
-                        </svg>
-                        {isSubMenuOpenFinanceiro && <Financeiro />}
-                    </div> */}
                 </div>
 
                 {/* Ícones na parte de baixo */}
@@ -200,7 +194,7 @@ const Dashboard = () => {
                             <path d="M9.00969 15.96H9.38769C9.53969 15.96 9.66569 15.94 9.76569 15.9C9.86569 15.856 9.95169 15.788 10.0237 15.696L12.4177 12.666C12.5177 12.538 12.6217 12.45 12.7297 12.402C12.8417 12.35 12.9817 12.324 13.1497 12.324H14.5417L11.6197 15.93C11.4477 16.15 11.2697 16.306 11.0857 16.398C11.2177 16.446 11.3357 16.514 11.4397 16.602C11.5477 16.686 11.6497 16.798 11.7457 16.938L14.7577 21H13.3357C13.1437 21 12.9997 20.974 12.9037 20.922C12.8117 20.866 12.7337 20.786 12.6697 20.682L10.2157 17.478C10.1397 17.37 10.0517 17.294 9.95169 17.25C9.85169 17.206 9.70769 17.184 9.51969 17.184H9.00969V21H7.39569V12.324H9.00969V15.96ZM25.0303 12.324V21H23.6083V15.396C23.6083 15.172 23.6203 14.93 23.6443 14.67L21.0223 19.596C20.8983 19.832 20.7083 19.95 20.4523 19.95H20.2243C19.9683 19.95 19.7783 19.832 19.6543 19.596L17.0023 14.652C17.0143 14.784 17.0243 14.914 17.0323 15.042C17.0403 15.17 17.0443 15.288 17.0443 15.396V21H15.6223V12.324H16.8403C16.9123 12.324 16.9743 12.326 17.0263 12.33C17.0783 12.334 17.1243 12.344 17.1643 12.36C17.2083 12.376 17.2463 12.402 17.2783 12.438C17.3143 12.474 17.3483 12.522 17.3803 12.582L19.9783 17.4C20.0463 17.528 20.1083 17.66 20.1643 17.796C20.2243 17.932 20.2823 18.072 20.3383 18.216C20.3943 18.068 20.4523 17.926 20.5123 17.79C20.5723 17.65 20.6363 17.516 20.7043 17.388L23.2663 12.582C23.2983 12.522 23.3323 12.474 23.3683 12.438C23.4043 12.402 23.4423 12.376 23.4823 12.36C23.5263 12.344 23.5743 12.334 23.6263 12.33C23.6783 12.326 23.7403 12.324 23.8123 12.324H25.0303Z" />
                         </svg>
                     </div>
-                    <div className="pl-[36px] pr-2 py-3 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu} onClick={toggleSidebar}>
+                    <div className="pl-[36px] pr-2 py-3 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
                         <svg width="10" height="17" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg" className="fill-gray-500 group-hover:fill-white">
                             <path d="M1.34375 0.621094L0.640625 1.28906C0.5 1.46484 0.5 1.74609 0.640625 1.88672L7.00391 8.25L0.640625 14.6484C0.5 14.7891 0.5 15.0703 0.640625 15.2461L1.34375 15.9141C1.51953 16.0898 1.76562 16.0898 1.94141 15.9141L9.32422 8.56641C9.46484 8.39062 9.46484 8.14453 9.32422 7.96875L1.94141 0.621094C1.76562 0.445312 1.51953 0.445312 1.34375 0.621094Z" />
                         </svg>
@@ -211,9 +205,9 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} activePastDueDateCount={docs.past_due_date} missingDocumentsCount={docs.missingCount} analiseDocumentsCount={docs.analiseCount} employeesCount={docs.employeesCount} outsourcedCount={docs.outsourcedCount}  />}
-            {isViewDocumentsOpen && <DocumentsComponent />}    
-            {isViewOutsourcedOpen && <OutsourcedComponent />}        
+            {isViewDashboardOpen && <DashboardComponent activeDocumentsCount={docs.activeCount} activeDueDateCount={docs.due_date} activePastDueDateCount={docs.past_due_date} missingDocumentsCount={docs.missingCount} analiseDocumentsCount={docs.analiseCount} employeesCount={docs.employeesCount} outsourcedCount={docs.outsourcedCount} />}
+            {isViewDocumentsOpen && <DocumentsComponent />}
+            {isViewOutsourcedOpen && <OutsourcedComponent finishedLoading={handleModalToggle} />}
 
 
         </div>

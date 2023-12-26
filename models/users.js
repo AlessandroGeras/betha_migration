@@ -34,6 +34,30 @@ const web_usuario = connection.define(
     DS_SENHA: {
       type: Sequelize.STRING,
     },
+    ID_ADM_GESTAO_TERCEIROS: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    CNPJ: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ENDEREÇO: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    CIDADE: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    UF: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    TELEFONE: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   },
   {
     tableName: "WEB_USUARIO",
