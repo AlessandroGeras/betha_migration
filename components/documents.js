@@ -1,4 +1,3 @@
-// pages/Documents.tsx
 import React from 'react';
 
 const Documents = () => {

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import Sidebar from '@/components/sidebar';
 
-const Outsourced = ({ finishedLoading }) => {
+const Outsourced = () => {
   const [documents, setDocuments] = useState({
     success: false,
     docs: { rows: [], count: 0, outsourcedCount: 0 },
@@ -12,6 +13,8 @@ const Outsourced = ({ finishedLoading }) => {
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortColumn, setSortColumn] = useState('NM_USUARIO');
   const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [initialLoad, setInitialLoad] = useState(true);
 
   const columnWidths = {
     '': '30px', // Nova coluna vazia para a lupa
@@ -39,10 +42,10 @@ const Outsourced = ({ finishedLoading }) => {
     'ST_EMAIL': 'EMAIL',
   };
 
-  const sortRows = (rows, column, order) => {
+   const sortRows = (rows, column, order) => {
     return rows.slice().sort((a, b) => {
-      const valueA = a[column].toUpperCase();
-      const valueB = b[column].toUpperCase();
+      const valueA = String(a[column]).toUpperCase(); // Converta para string
+      const valueB = String(b[column]).toUpperCase(); // Converta para string
 
       return order === 'asc' ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
     });
@@ -113,13 +116,18 @@ const Outsourced = ({ finishedLoading }) => {
     } catch (error) {
       console.error('Erro ao obter documentos:', error);
     } finally {
-      finishedLoading();
+        setLoading(false);
+        setInitialLoad(false);
     }
   };
 
   useEffect(() => {
+    if (initialLoad) {
+        setLoading(true); // Ativa o modal apenas na primeira carga
+    }
     fetchData();
   }, [currentPage, pageSize, sortColumn, sortOrder]);
+
 
   const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
 
@@ -132,10 +140,26 @@ const Outsourced = ({ finishedLoading }) => {
   };
 
   return (
+    <div className='flex'>
+            <Sidebar />
+            
     <div className="flex-1" id="Dashboard">
       <div className="bg-blue-500 text-white p-2 text-left w-full">
         <span className='ml-2'>Terceiros</span>
       </div>
+
+      {loading && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
+                        {/* Pseudo-elemento para a barra lateral */}
+                        <div className="text-blue-500 text-md text-center flex-grow">
+                            <div className="flex items-center justify-center h-full text-4xl">
+                                Carregando documentos...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
       {documents.success && (
         <div className=''>
@@ -165,7 +189,7 @@ const Outsourced = ({ finishedLoading }) => {
               <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
             </button>
           </div>
-        <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-scroll">
+        <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-auto">
           
 
           <div className="flex text-gray-500 bg-white w-[2000px]">
@@ -218,10 +242,6 @@ const Outsourced = ({ finishedLoading }) => {
       )}
 
 
-
-
-
-
       <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
         <button
           onClick={goToPreviousPage}
@@ -254,6 +274,7 @@ const Outsourced = ({ finishedLoading }) => {
       </div>
 
       {!documents.success && <p>Não foi possível obter os usuários terceirizados.</p>}
+    </div>
     </div>
   );
 };
