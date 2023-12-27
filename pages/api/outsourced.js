@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     });
 
     const outsourcedCount = await users.count({
-      where: { ID_ADM_GESTAO_TERCEIROS: 'N' },
+      where: { ID_ADM_GESTAO_TERCEIROS: 'S' },
     });
 
     // Configuração da paginação
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     // Consulta paginada usando Sequelize com filtro
     const docs = await users.findAndCountAll({
-      where: { ID_ADM_GESTAO_TERCEIROS: 'N' }, // Adicionando a condição de filtro
+      where: { ID_ADM_GESTAO_TERCEIROS: 'S' }, // Adicionando a condição de filtro
       offset: (page - 1) * pageSize,
       limit: pageSize,
     });

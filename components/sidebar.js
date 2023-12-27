@@ -40,18 +40,7 @@ const Sidebar = () => {
 
     const toggleSubMenuMenu = () => {
         setIsSubMenuOpenMenu(!isSubMenuOpenMenu);
-    };
-
-    /* const dashboardClick = () => {
-        if (!isViewDashboardOpen) {
-            setLoading(true);
-            setIsViewDashboardOpen(true);
-            setIsViewDocumentsOpen(false);
-            setIsViewOutsourcedOpen(false);
-            toggleSubMenuHome();
-            refreshUseEffect();
-        }
-    }; */
+    };    
 
     const dashboardClick = () => {
         router.push('/dashboard');
@@ -62,21 +51,15 @@ const Sidebar = () => {
         setIsViewDashboardOpen(false);
         setIsViewOutsourcedOpen(false);
         toggleSubMenuDocumentos();
-    };
-
-    /* const terceirosClick = () => {
-        if (!isViewOutsourcedOpen) {
-            setLoading(true);
-            setIsViewOutsourcedOpen(true);
-            setIsViewDocumentsOpen(false);
-            setIsViewDashboardOpen(false);
-            toggleSubMenuOutsourced();
-        };
-    } */
+    };    
 
     const terceirosClick = () => {
         router.push('/outsourced');
     }   
+
+    const adicionarTerceirosClick = () => {
+        router.push('/add-outsourced');
+    }  
     
 
     return (
@@ -114,7 +97,7 @@ const Sidebar = () => {
                         </svg>
                         {isSubMenuOpenCadastros && <div className="absolute top-[166px] left-[80px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={terceirosClick}>Listar Terceiros</button>
-                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={terceirosClick}>Listar Terceiros</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={adicionarTerceirosClick}>Adicionar Terceiro</button>
                             <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={terceirosClick}>Listar Terceiros</button>
                             
                         </div>}

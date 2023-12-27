@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/api/validate-newpassword.js", "pages/banco.js", "pages/banco.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/api/store-newpassword.js", "pages/banco.js", "pages/banco.js"],
   "exclude": ["node_modules"],
 }

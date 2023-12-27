@@ -86,7 +86,7 @@ const PasswordResetForm = () => {
     } else {
       try {
         // Validação no lado do servidor (API)
-        const validateResponse = await fetch('/api/validate-newpassword', {
+        const validateResponse = await fetch('/api/store-newpassword', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

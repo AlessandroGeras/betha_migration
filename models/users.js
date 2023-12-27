@@ -66,12 +66,51 @@ const web_usuario = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    OBS_STATUS: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    ID_USUARIO_MEGA: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_ADM_RESERVA_SALA: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_ADM_VENDA: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_ADM_CONTRATO: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_GER_VENDA: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_ADM_SALA: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_ADM_BENS_TERCEIRO: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_CON_BENS_TERCEIRO: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    ID_CON_GESTAO_TERCEIROS: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   },
   {
     tableName: "WEB_USUARIO",
     timestamps: false,
   }
 );
-
 
 export default web_usuario;

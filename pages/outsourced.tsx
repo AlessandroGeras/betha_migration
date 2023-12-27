@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+
 
 const Outsourced = () => {
   const [documents, setDocuments] = useState({
@@ -15,6 +17,11 @@ const Outsourced = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [initialLoad, setInitialLoad] = useState(true);
+  const router = useRouter();
+
+  const adicionarTerceirosClick = () => {
+    router.push('/add-outsourced');
+  }
 
   const columnWidths = {
     '': '30px', // Nova coluna vazia para a lupa
@@ -42,7 +49,7 @@ const Outsourced = () => {
     'ST_EMAIL': 'EMAIL',
   };
 
-   const sortRows = (rows, column, order) => {
+  const sortRows = (rows, column, order) => {
     return rows.slice().sort((a, b) => {
       const valueA = String(a[column]).toUpperCase(); // Converta para string
       const valueB = String(b[column]).toUpperCase(); // Converta para string
@@ -116,14 +123,14 @@ const Outsourced = () => {
     } catch (error) {
       console.error('Erro ao obter documentos:', error);
     } finally {
-        setLoading(false);
-        setInitialLoad(false);
+      setLoading(false);
+      setInitialLoad(false);
     }
   };
 
   useEffect(() => {
     if (initialLoad) {
-        setLoading(true); // Ativa o modal apenas na primeira carga
+      setLoading(true); // Ativa o modal apenas na primeira carga
     }
     fetchData();
   }, [currentPage, pageSize, sortColumn, sortOrder]);
@@ -141,140 +148,141 @@ const Outsourced = () => {
 
   return (
     <div className='flex'>
-            <Sidebar />
-            
-    <div className="flex-1" id="Dashboard">
-      <div className="bg-blue-500 text-white p-2 text-left w-full">
-        <span className='ml-2'>Terceiros</span>
-      </div>
+      <Sidebar />
 
-      {loading && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
-                        {/* Pseudo-elemento para a barra lateral */}
-                        <div className="text-blue-500 text-md text-center flex-grow">
-                            <div className="flex items-center justify-center h-full text-4xl">
-                                Carregando documentos...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
+      <div className="flex-1" id="Dashboard">
+        <div className="bg-blue-500 text-white p-2 text-left w-full">
+          <span className='ml-2'>Terceiros</span>
+        </div>
 
-      {documents.success && (
-        <div className=''>
-          <div className="flex items-center my-4">
-            <input
-              placeholder="Pesquisa rápida"
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchTermChange}
-              className="border border-gray-300 px-2 py-1"
-            />
-            <button
-              onClick={handleSearch}
-              className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-            >
-              Pesquisar
-            </button>
-            <button
-              onClick={handleClearSearch}
-              className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
-            >
-              Limpar Pesquisa
-            </button>
-            <button
-              className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-            >
-              <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
-            </button>
-          </div>
-        <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-auto">
-          
-
-          <div className="flex text-gray-500 bg-white w-[2000px]">
-            {Object.keys(columnWidths).map((column) => (
-              <div
-                key={column}
-                className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
-                onClick={() => handleSort(column)}
-              >
-                {columnLabels[column]}
-                <div className='ml-auto flex'>
-                  {column !== '' && ( // Adiciona a condição para excluir o ícone na coluna vazia
-                    <>
-                      {sortColumn === column && (
-                        sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
-                      )}
-                      <PiFunnelLight className='text-xl mt-0.5' />
-                    </>
-                  )}
+        {loading && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
+              {/* Pseudo-elemento para a barra lateral */}
+              <div className="text-blue-500 text-md text-center flex-grow">
+                <div className="flex items-center justify-center h-full text-4xl">
+                  Carregando lista de Terceiros...
                 </div>
               </div>
-            ))}
+            </div>
           </div>
+        )}
 
-          {documents.docs.rows.map((document, index) => (
-            <div
-              className={`flex text-gray-700 whitespace-nowrap w-[2000px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
-              key={document.id || Math.random().toString()}
-            >
-              {Object.keys(columnWidths).map((column) => (
+        {documents.success && (
+          <div className=''>
+            <div className="flex items-center my-4">
+              <input
+                placeholder="Pesquisa rápida"
+                type="text"
+                value={searchTerm}
+                onChange={handleSearchTermChange}
+                className="border border-gray-300 px-2 py-1"
+              />
+              <button
+                onClick={handleSearch}
+                className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+              >
+                Pesquisar
+              </button>
+              <button
+                onClick={handleClearSearch}
+                className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
+              >
+                Limpar Pesquisa
+              </button>
+              <button
+                className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                onClick={adicionarTerceirosClick}
+              >
+                <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
+              </button>
+            </div>
+            <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-auto">
+
+
+              <div className="flex text-gray-500 bg-white w-[2000px]">
+                {Object.keys(columnWidths).map((column) => (
+                  <div
+                    key={column}
+                    className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
+                    style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                    onClick={() => handleSort(column)}
+                  >
+                    {columnLabels[column]}
+                    <div className='ml-auto flex'>
+                      {column !== '' && ( // Adiciona a condição para excluir o ícone na coluna vazia
+                        <>
+                          {sortColumn === column && (
+                            sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                          )}
+                          <PiFunnelLight className='text-xl mt-0.5' />
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {documents.docs.rows.map((document, index) => (
                 <div
-                  key={column}
-                  className={`column-cell border border-gray-300 py-2 pl-1`}
-                  style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                  className={`flex text-gray-700 whitespace-nowrap w-[2000px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                  key={document.id || Math.random().toString()}
                 >
-                  {column === '' ? ( // Adiciona a condição para exibir a lupa na coluna vazia
-                    <IoIosSearch className='text-xl mt-0.5' />
-                  ) : (
-                    document[column]
-                  )}
+                  {Object.keys(columnWidths).map((column) => (
+                    <div
+                      key={column}
+                      className={`column-cell border border-gray-300 py-2 pl-1`}
+                      style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                    >
+                      {column === '' ? ( // Adiciona a condição para exibir a lupa na coluna vazia
+                        <IoIosSearch className='text-xl mt-0.5' />
+                      ) : (
+                        document[column]
+                      )}
+                    </div>
+                  ))}
                 </div>
               ))}
+
+
             </div>
-          ))}
+          </div>
+        )}
 
 
+        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
+          <button
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+          >
+            Página Anterior
+          </button>
+          <div className="flex items-center">
+            <span className="mr-2">Registros por página:</span>
+            {[10, 25, 50, 100].map((size) => (
+              <button
+                key={size}
+                className={`px-2 py-1 border ${size === pageSize ? 'bg-blue-500 text-white' : ''
+                  }`}
+                onClick={() => handlePageSizeChange(size)}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+          <span className=''>Página {currentPage}</span>
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
+          >
+            Próxima Página
+          </button>
         </div>
-        </div>
-      )}
 
-
-      <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
-        <button
-          onClick={goToPreviousPage}
-          disabled={currentPage === 1}
-          className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
-        >
-          Página Anterior
-        </button>
-        <div className="flex items-center">
-          <span className="mr-2">Registros por página:</span>
-          {[10, 25, 50, 100].map((size) => (
-            <button
-              key={size}
-              className={`px-2 py-1 border ${size === pageSize ? 'bg-blue-500 text-white' : ''
-                }`}
-              onClick={() => handlePageSizeChange(size)}
-            >
-              {size}
-            </button>
-          ))}
-        </div>
-        <span className=''>Página {currentPage}</span>
-        <button
-          onClick={goToNextPage}
-          disabled={currentPage === totalPages}
-          className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
-        >
-          Próxima Página
-        </button>
+        {!documents.success && <p>Não foi possível obter os usuários terceirizados.</p>}
       </div>
-
-      {!documents.success && <p>Não foi possível obter os usuários terceirizados.</p>}
-    </div>
     </div>
   );
 };
