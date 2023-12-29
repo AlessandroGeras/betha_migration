@@ -60,6 +60,14 @@ const Sidebar = () => {
     const adicionarTerceirosClick = () => {
         router.push('/add-outsourced');
     }  
+
+    const categoriasTerceirosClick = () => {
+        router.push('/category-outsourced');
+    } 
+
+    const addCategoriasTerceirosClick = () => {
+        router.push('/add-category-outsourced');
+    } 
     
 
     return (
@@ -97,8 +105,9 @@ const Sidebar = () => {
                         </svg>
                         {isSubMenuOpenCadastros && <div className="absolute top-[166px] left-[80px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={terceirosClick}>Listar Terceiros</button>
-                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={adicionarTerceirosClick}>Adicionar Terceiro</button>
-                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={terceirosClick}>Listar Terceiros</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px] border-b-2 border-gray-300 ' onClick={adicionarTerceirosClick}>Incluir Terceiro</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={categoriasTerceirosClick}>Categorias Terceiro</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[200px] py-[9.5px]' onClick={addCategoriasTerceirosClick}>Incluir Categoria Terceiro</button>
                             
                         </div>}
                     </div>

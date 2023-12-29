@@ -23,6 +23,7 @@ export default async function handler(req, res) {
             email,
             telefone,
             uf,
+            principal,
         } = req.body;
 
         let connection;
@@ -79,6 +80,7 @@ export default async function handler(req, res) {
                 ID_CON_BENS_TERCEIRO: "N",
                 ID_ADM_GESTAO_TERCEIROS: "S",
                 ID_CON_GESTAO_TERCEIROS: "N",
+                CATEGORIA_PRINCIPAL: principal,
 
             });
             

@@ -106,6 +106,10 @@ const web_usuario = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    CATEGORIA_PRINCIPAL:{
+      type: Sequelize.STRING,
+      allowNull: false,
+    }
   },
   {
     tableName: "WEB_USUARIO",

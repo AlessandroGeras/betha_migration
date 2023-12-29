@@ -4,7 +4,7 @@ import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
-const Outsourced = () => {
+const CatergoyOutsourced = () => {
   const [documents, setDocuments] = useState({
     success: false,
     docs: { rows: [], count: 0, outsourcedCount: 0 },
@@ -18,34 +18,18 @@ const Outsourced = () => {
   const [initialLoad, setInitialLoad] = useState(true);
   const router = useRouter();  
 
-  const adicionarTerceirosClick = () => {
-    router.push('/add-outsourced');
+  const adicionarCategoriaClick = () => {
+    router.push('/add-category-outsourced');
   };
 
   const columnWidths = {
     '': '30px',
-    'STATUS': '100px',
-    'NOME_TERCEIRO': '300px',
-    'CNPJ': '200px',
-    'ENDEREÇO': '355px',
-    'CIDADE': '320px',
-    'UF': '60px',
-    'TELEFONE': '140px',
-    'NM_USUARIO': '350px',
-    'ST_EMAIL': '350px',
+    'CATEGORIA': '355px',
   };
 
   const columnLabels = {
     '': '',
-    'STATUS': 'STATUS',
-    'NOME_TERCEIRO': 'NOME_TERCEIRO',
-    'CNPJ': 'CNPJ',
-    'ENDEREÇO': 'ENDEREÇO',
-    'CIDADE': 'CIDADE',
-    'UF': 'UF',
-    'TELEFONE': 'TELEFONE',
-    'NM_USUARIO': 'USUARIO',
-    'ST_EMAIL': 'EMAIL',
+    'CATEGORIA': 'CATEGORIA',
   };
 
   const sortRows = (rows, column, order) => {
@@ -110,7 +94,7 @@ const Outsourced = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
+      const response = await fetch(`/api/category-outsourced?page=${currentPage}&pageSize=${pageSize}`);
       const data = await response.json();
       const sortedRows = sortRows(data.docs.rows, sortColumn, sortOrder);
 
@@ -123,7 +107,7 @@ const Outsourced = () => {
         },
       });
     } catch (error) {
-      console.error('Erro ao obter documentos:', error);
+      console.error('Erro ao obter as categorias de terceiros:', error);
     } finally {
       setLoading(false);
       setInitialLoad(false);
@@ -159,7 +143,7 @@ const Outsourced = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Terceiros</span>
+          <span className='ml-2'>Categorias de Terceiros</span>
         </div>
 
         {loading && (
@@ -167,7 +151,7 @@ const Outsourced = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de Terceiros...
+                  Carregando lista de categorias de Terceiros...
                 </div>
               </div>
             </div>
@@ -199,13 +183,13 @@ const Outsourced = () => {
               </button>
               <button
                 className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarTerceirosClick}
+                onClick={adicionarCategoriaClick}
               >
-                <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
+                <IoMdAdd className='text-xl mt-0.5' /> Nova Categoria
               </button>
             </div>
-            <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-auto">
-              <div className="flex text-gray-500 bg-white w-[2000px]">
+            <div className="flex flex-col h-[550px] overflow-x-scroll overflow-y-auto">
+              <div className="flex text-gray-500 bg-white ">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -229,7 +213,7 @@ const Outsourced = () => {
               </div>
               {documents.docs.rows.map((document, index) => (
                 <div
-                  className={`flex text-gray-700 whitespace-nowrap w-[2000px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                  className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   key={document.id || Math.random().toString()}
                 >
                   {Object.keys(columnWidths).map((column) => (
@@ -280,10 +264,10 @@ const Outsourced = () => {
             Próxima Página
           </button>
         </div>
-        {!documents.success && <p>Não foi possível obter os usuários terceirizados.</p>}
+        {!documents.success && <p>Não foi possível obter as categorias de Terceiros.</p>}
       </div>
     </div>
   );
 };
 
-export default Outsourced;
+export default CatergoyOutsourced;

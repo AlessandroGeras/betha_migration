@@ -92,11 +92,17 @@ export default async function handler(req, res) {
             res.status(200).json(userData);
           }
           else {
-            // User status is not valid
-            res.status(403).json({ error: 'Usuário ou senha inválido.' });
+            console.log("senha"+usuarioexterno.dataValues.DS_SENHA);
+            if (usuarioexterno.dataValues.DS_SENHA == "InformarSenha") {
+              res.status(401).json({ error: 'Esse é seu primeiro acesso. Clique em "Esqueceu a senha?" para obter uma senha válida.' });
+            }
+            else {
+              // User status is not valid
+              res.status(403).json({ error: 'Usuário ou senha inválido.' });
+            }
           }
         }
-        
+
         else {
           // Usuário não encontrado
           console.log('Usuário não encontrado.');
@@ -104,19 +110,19 @@ export default async function handler(req, res) {
         }
       }
 
-    } 
-    catch (error) {
-    console.error('Falha ao consultar o banco de dados:', error);
-    res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
-  } finally {
-    // Feche a conexão após a execução
-    if (connection) {
-      await connection.close();
     }
+    catch (error) {
+      console.error('Falha ao consultar o banco de dados:', error);
+      res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
+    } finally {
+      // Feche a conexão após a execução
+      if (connection) {
+        await connection.close();
+      }
+    }
+  } else {
+    res.status(405).json({ error: 'Método não permitido.' });
   }
-} else {
-  res.status(405).json({ error: 'Método não permitido.' });
-}
 }
 
 

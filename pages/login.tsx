@@ -31,9 +31,17 @@ const Login = () => {
           query: { userData: JSON.stringify(data) },
         });
       } else {
+
+        if (response.status === 401) {
+          // Primeiro acesso
+          setPopupMessage('Esse é seu primeiro acesso. Clique em "Esqueceu a senha?" para obter uma senha válida.');
+          setShowModal(true);
+        }  
+        else{ 
         console.error('Falha na autenticação');
         setPopupMessage('Usuário ou senha inválido');
         setShowModal(true);
+        }
       }
     } catch (error) {
       console.error('Erro durante a solicitação:', error);
@@ -57,13 +65,7 @@ const Login = () => {
         if (response.ok) {
           console.log('Solicitação de recuperação de senha enviada com sucesso.');
           router.push(`/recover-password?username=${encodeURIComponent(username)}`);
-        }
-
-        else if (response.status === 401) {
-          // Usuário não autorizado para recuperar senha
-          setPopupMessage('Somente usuários autorizados ao portal gestão de terceiros podem recuperar senha.');
-          setShowModal(true);
-        }        
+        }            
         
         else if (response.status === 403) {
           // Usuário não autorizado para recuperar senha

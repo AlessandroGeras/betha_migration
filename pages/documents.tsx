@@ -4,7 +4,7 @@ import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
-const Outsourced = () => {
+const Documents = () => {
   const [documents, setDocuments] = useState({
     success: false,
     docs: { rows: [], count: 0, outsourcedCount: 0 },
@@ -25,27 +25,20 @@ const Outsourced = () => {
   const columnWidths = {
     '': '30px',
     'STATUS': '100px',
-    'NOME_TERCEIRO': '300px',
-    'CNPJ': '200px',
-    'ENDEREÇO': '355px',
-    'CIDADE': '320px',
-    'UF': '60px',
-    'TELEFONE': '140px',
-    'NM_USUARIO': '350px',
-    'ST_EMAIL': '350px',
+    'TIPO_DOCUMENTO': '300px',
+    'TERCEIRO': '200px',
+    'COLABORADOR': '355px',
+    'VENCIMENTO': '320px',
   };
 
   const columnLabels = {
     '': '',
     'STATUS': 'STATUS',
-    'NOME_TERCEIRO': 'NOME_TERCEIRO',
+    'TIPO_DOCUMENTO': 'TIPO_DOCUMENTO',
     'CNPJ': 'CNPJ',
-    'ENDEREÇO': 'ENDEREÇO',
-    'CIDADE': 'CIDADE',
-    'UF': 'UF',
-    'TELEFONE': 'TELEFONE',
-    'NM_USUARIO': 'USUARIO',
-    'ST_EMAIL': 'EMAIL',
+    'TERCEIRO': 'TERCEIRO',
+    'COLABORADOR': 'COLABORADOR',
+    'VENCIMENTO':'VENCIMENTO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -110,7 +103,7 @@ const Outsourced = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
+      const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
       const data = await response.json();
       const sortedRows = sortRows(data.docs.rows, sortColumn, sortOrder);
 
@@ -167,7 +160,7 @@ const Outsourced = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de Terceiros...
+                  Carregando documentos...
                 </div>
               </div>
             </div>
@@ -201,7 +194,7 @@ const Outsourced = () => {
                 className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                 onClick={adicionarTerceirosClick}
               >
-                <IoMdAdd className='text-xl mt-0.5' /> Novo Terceiro
+                <IoMdAdd className='text-xl mt-0.5' /> Novo Documento
               </button>
             </div>
             <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-auto">
@@ -280,10 +273,10 @@ const Outsourced = () => {
             Próxima Página
           </button>
         </div>
-        {!documents.success && <p>Não foi possível obter os usuários terceirizados.</p>}
+        {!documents.success && <p>Não foi possível obter os documentos.</p>}
       </div>
     </div>
   );
 };
 
-export default Outsourced;
+export default Documents;
