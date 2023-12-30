@@ -63,11 +63,11 @@ const Dashboard = () => {
                                 {/* Três Divs Centralizadas Lado a Lado */}
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de documentos ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">{docs.activeCount}</div>
+                                    <div className="mt-2 text-4xl text-gray-600">{docs.activeDocumentsCount}</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de terceiros ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">{docs.outsourcedCount}</div>
+                                    <div className="mt-2 text-4xl text-gray-600">{docs.activeOutsourcedCount}</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de colaboradores ativos</div>

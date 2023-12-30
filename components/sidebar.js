@@ -47,11 +47,8 @@ const Sidebar = () => {
     };
 
     const documentosClick = () => {
-        setIsViewDocumentsOpen(true);
-        setIsViewDashboardOpen(false);
-        setIsViewOutsourcedOpen(false);
-        toggleSubMenuDocumentos();
-    };    
+        router.push('/documents');
+    }    
 
     const terceirosClick = () => {
         router.push('/outsourced');

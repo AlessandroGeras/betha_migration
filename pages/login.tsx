@@ -4,6 +4,7 @@ import Image from 'next/image';
 import fontana from '../public/img/fontana.png';
 import logo from '../public/img/logo.png';
 
+
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -25,6 +26,7 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
+        localStorage.setItem('FontanaUser', username);
 
         router.push({
           pathname: '/dashboard',

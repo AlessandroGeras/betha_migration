@@ -18,7 +18,7 @@ const RecoverPassword = () => {
 
     // Adicione lógica para enviar o e-mail para a rota send-mail
     try {
-      const response = await fetch('/api/send-mail', {
+      const response = await fetch('/api/send-mail-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

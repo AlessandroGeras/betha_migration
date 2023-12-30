@@ -21,8 +21,15 @@ export default async function handler(req, res) {
     });
 
     // Consulta para obter o total de documentos ativos
-    const activeDocsCount = await documents.count({
-      where: { STATUS: 'Ativo' }, // Ajuste conforme sua estrutura de dados
+    const activeDocumentsCount = await documents.count({
+      where: { STATUS: 'Ativo'}, // Ajuste conforme sua estrutura de dados
+    });
+
+    // Consulta para obter o total de terceiros ativos
+    const activeOutsourcedCount = await users.count({
+      where: { STATUS: 'Ativo',
+              ID_ADM_GESTAO_TERCEIROS: 'S'
+             }, // Ajuste conforme sua estrutura de dados
     });
 
     const missingDocsCount = await documents.count({
@@ -52,10 +59,6 @@ export default async function handler(req, res) {
       where: { ID_ADM_GESTAO_TERCEIROS: 'N' }, // Ajuste conforme sua estrutura de dados
     });
 
-    const outsourcedCount = await users.count({
-      where: { ID_ADM_GESTAO_TERCEIROS: 'S' }, // Ajuste conforme sua estrutura de dados
-    });
-
 
 
 
@@ -77,13 +80,13 @@ export default async function handler(req, res) {
         docs: {
           rows: docs.rows,
           count: docs.count,
-          activeCount: activeDocsCount,
+          activeOutsourcedCount: activeOutsourcedCount,
           due_date: dueDateCount[0].count,
           past_due_date: pastDueDateCount[0].count,
           missingCount: missingDocsCount,
           analiseCount:analiseDocsCount,
           employeesCount:employeesCount,
-          outsourcedCount:outsourcedCount,
+          activeDocumentsCount:activeDocumentsCount
         },
       });
     } else {

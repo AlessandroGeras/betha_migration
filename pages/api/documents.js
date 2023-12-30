@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
 
     // Consulta paginada usando Sequelize com filtro
-    const docs = await users.findAndCountAll({    
+    const docs = await documents.findAndCountAll({    
       offset: (page - 1) * pageSize,
       limit: pageSize,
     });
@@ -36,7 +36,6 @@ export default async function handler(req, res) {
         docs: {
           rows: docs.rows,
           count: docs.count,
-          outsourcedCount: outsourcedCount,
         },
       });
     } else {

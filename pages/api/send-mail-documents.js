@@ -1,0 +1,119 @@
+import documents from '../../models/documents';
+import users from '../../models/users';
+import cobrança from '../../models/cobrança';
+import Sequelize from 'sequelize-oracle';
+import Oracledb from 'oracledb';
+import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
+
+dotenv.config();
+
+Oracledb.initOracleClient({
+  libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
+});
+
+export default async function handler(req, res) {
+  let connection;
+
+  try {
+    // Estabeleça a conexão com o Oracle
+    connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
+      host: process.env.HOST,
+      dialect: process.env.DIALECT || 'oracle',
+    });
+
+    // Teste da conexão
+    await connection.authenticate();
+    console.log('Conexão com o Oracle estabelecida com sucesso.');
+
+    // Consulta ao banco de dados para obter documentos
+    const docs = await documents.findAll({
+      where: {
+        STATUS: ['Faltante', 'Vencido']
+      }
+    });
+
+    // Agrupar documentos por TERCEIRO
+    const documentosAgrupados = docs.reduce((acc, doc) => {
+      const terceiro = doc.TERCEIRO;
+
+      if (!acc[terceiro]) {
+        acc[terceiro] = [];
+      }
+
+      acc[terceiro].push({
+        STATUS: doc.STATUS,
+        TIPO_DOCUMENTO: doc.TIPO_DOCUMENTO,
+      });
+
+      return acc;
+    }, {});
+
+    // Consulta ao banco de dados para obter emails dos terceiros
+    const terceiros = Object.keys(documentosAgrupados);
+
+    const emailsDosTerceiros = await users.findAll({
+      where: {
+        NOME_TERCEIRO: terceiros
+      },
+      attributes: ['NOME_TERCEIRO', 'ST_EMAIL']
+    });
+
+    // Mapear emails dos terceiros
+    const mapaEmailsTerceiros = {};
+    emailsDosTerceiros.forEach(user => {
+      mapaEmailsTerceiros[user.NOME_TERCEIRO] = user.ST_EMAIL;
+    });
+
+    // Configurar o serviço de e-mail (substitua as informações conforme necessário)
+    const transporter = nodemailer.createTransport({
+      host: 'mail.estilofontana.com.br',
+      port: 587,
+      secure: false, // true para SSL, false para outros
+      auth: {
+        user: 'esqueciminhasenha@estilofontana.com.br',
+        pass: 'eQNd6x2tTifPBIaX3ZcA',
+      },
+    });
+
+    // Enviar e-mail para cada TERCEIRO com os documentos
+    for (const terceiro in documentosAgrupados) {
+      const emailTerceiro = mapaEmailsTerceiros[terceiro];
+      const documentos = documentosAgrupados[terceiro];
+
+      await transporter.sendMail({
+        from: 'esqueciminhasenha@estilofontana.com.br',
+        to: emailTerceiro,
+        subject: 'Pendência de Documentos - Portal Gestão de Terceiro',
+        html: `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>` +
+          documentos.map(doc => `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS}</p>`).join('') +
+          `<p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
+          `<p><a href="http://localhost:3000/" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
+          `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
+          `<h4>Portal Gestão de Terceiro</h4>`,
+      });
+      
+      console.log(`E-mail enviado com sucesso para ${terceiro} (${emailTerceiro}).`);
+    }
+
+    const currentDate = new Date();
+
+      await cobrança.create({
+        ULTIMA_COBRANCA: currentDate,
+      }, {
+        fields: ['ULTIMA_COBRANCA'], // Especifique os campos que deseja incluir
+      });
+
+    res.status(200).json({ message: "Cobranças automáticas concluídas" });
+
+  } catch (error) {
+    console.error('Erro durante a conexão com o Oracle:', error);
+    // Responda com uma mensagem de erro
+    res.status(500).json({ erro: 'Erro durante a conexão com o Oracle.' });
+  } finally {
+    // Certifique-se de fechar a conexão quando não for mais necessária
+    if (connection) {
+      await connection.close();
+    }
+  }
+}

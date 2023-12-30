@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
@@ -16,18 +17,20 @@ const Documents = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [initialLoad, setInitialLoad] = useState(true);
-  const router = useRouter();  
+  const [showModal, setShowModal] = useState(false);
+  const [popupMessage, setModalMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e');
+  const [forceEmail, setForceEmail] = useState(false);
 
-  const adicionarTerceirosClick = () => {
-    router.push('/add-outsourced');
-  };
+  const router = useRouter();
 
   const columnWidths = {
     '': '30px',
     'STATUS': '100px',
     'TIPO_DOCUMENTO': '300px',
-    'TERCEIRO': '200px',
-    'COLABORADOR': '355px',
+    'TERCEIRO': '345px',
+    'COLABORADOR': '340px',
     'VENCIMENTO': '320px',
   };
 
@@ -38,7 +41,7 @@ const Documents = () => {
     'CNPJ': 'CNPJ',
     'TERCEIRO': 'TERCEIRO',
     'COLABORADOR': 'COLABORADOR',
-    'VENCIMENTO':'VENCIMENTO',
+    'VENCIMENTO': 'VENCIMENTO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -123,11 +126,25 @@ const Documents = () => {
     }
   };
 
+  const fetchData2 = async () => {
+    try {
+      const response = await fetch(`/api/scheduler`);
+      const data = await response.json();
+
+    } catch (error) {
+      console.error('Erro ao iniciar o serviço de cobrança automática:', error);
+    } finally {
+      setLoading(false);
+      setInitialLoad(false);
+    }
+  };
+
   useEffect(() => {
     if (initialLoad) {
       setLoading(true);
     }
     fetchData();
+    fetchData2();
   }, [currentPage, pageSize, sortColumn, sortOrder]);
 
   const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
@@ -146,13 +163,87 @@ const Documents = () => {
     }
   };
 
+  const formatBrDate = (isoDate) => {
+    const date = new Date(isoDate);
+    return format(date, 'dd/MM/yyyy');
+  };
+
+
+  const cobrarDocumentosClick = async () => {
+
+    try {
+      const response = await fetch('http://localhost:3000/api/scheduler', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setForceEmail(true);
+        const messageWithLineBreaks = data.message.replace(/\n/g, '<br />');
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(messageWithLineBreaks);
+        setShowModal(true);
+
+      } else {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+    }
+  };
+
+  const enviarCobrançaClick = async () => {
+
+    closeModal();
+
+    try {
+      const response = await fetch('http://localhost:3000/api/send-mail-documents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok) {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+
+      } else {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setForceEmail(false);
+  };
+
   return (
     <div className='flex'>
       <Sidebar />
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Terceiros</span>
+          <span className='ml-2'>Documentos</span>
         </div>
 
         {loading && (
@@ -162,6 +253,54 @@ const Documents = () => {
                 <div className="flex items-center justify-center h-full text-4xl">
                   Carregando documentos...
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+              {/* Pseudo-elemento para a barra lateral */}
+              <style>
+                {`
+                      .modal-content::before {
+                        content: '';
+                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                        width: 4px; /* Largura da barra lateral */
+                        height: 100%; /* Altura da barra lateral */
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                      }
+                    `}
+              </style>
+
+              <button
+                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                onClick={closeModal}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+
+              <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+
+                {forceEmail && (<div className='flex'>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={enviarCobrançaClick}>                   
+                      <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                        Forçar cobrança automática agora
+                      </span>
+                  </button>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                    <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                      Fechar e permitir a cobrança às 18:00
+                    </span>
+                  </button>
+                </div>)}
+
+
               </div>
             </div>
           </div>
@@ -190,15 +329,29 @@ const Documents = () => {
               >
                 Limpar Pesquisa
               </button>
-              <button
-                className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarTerceirosClick}
-              >
-                <IoMdAdd className='text-xl mt-0.5' /> Novo Documento
-              </button>
+              <div className='flex ml-auto'>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex"
+
+                >
+                  <span className=''> Imprimir doc(s) </span>
+                </button>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
+
+                >
+                  <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de documento
+                </button>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                  onClick={cobrarDocumentosClick}
+                >
+                  <span className=''> Cobrar documentos </span>
+                </button>
+              </div>
             </div>
-            <div className="flex flex-col w-[1450px] h-[550px] overflow-x-scroll overflow-y-auto">
-              <div className="flex text-gray-500 bg-white w-[2000px]">
+            <div className="flex flex-col  h-[550px] overflow-x-scroll overflow-y-auto">
+              <div className="flex text-gray-500 bg-white ">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -222,7 +375,7 @@ const Documents = () => {
               </div>
               {documents.docs.rows.map((document, index) => (
                 <div
-                  className={`flex text-gray-700 whitespace-nowrap w-[2000px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                  className={`flex text-gray-700 whitespace-nowrap w-[1435px]  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   key={document.id || Math.random().toString()}
                 >
                   {Object.keys(columnWidths).map((column) => (
@@ -231,10 +384,12 @@ const Documents = () => {
                       className={`column-cell border border-gray-300 py-2 pl-1`}
                       style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                     >
-                      {column === '' ? (
-                        <IoIosSearch className='text-xl mt-0.5' />
-                      ) : (
-                        document[column]
+                      {column === 'VENCIMENTO' ? formatBrDate(document[column]) : (
+                        column === '' ? (
+                          <IoIosSearch className='text-xl mt-0.5' />
+                        ) : (
+                          document[column]
+                        )
                       )}
                     </div>
                   ))}
