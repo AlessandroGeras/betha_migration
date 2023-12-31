@@ -16,7 +16,8 @@ const CatergoyOutsourced = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [initialLoad, setInitialLoad] = useState(true);
-  const router = useRouter();  
+  const [filterOpen, setFilterOpen] = useState(false);
+  const router = useRouter();
 
   const adicionarCategoriaClick = () => {
     router.push('/add-category-outsourced');
@@ -41,12 +42,31 @@ const CatergoyOutsourced = () => {
     });
   };
 
-  const handleSort = (columnName) => {
-    if (columnName === sortColumn) {
-      setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  const handleSort = (columnName, event) => {
+    const isFilterIconClicked = event.target.classList.contains('filter-icon');
+
+    if (!isFilterIconClicked) {
+      if (columnName === sortColumn) {
+        setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+      } else {
+        setSortColumn(columnName);
+        setSortOrder('asc');
+      }
     } else {
-      setSortColumn(columnName);
-      setSortOrder('asc');
+      setFilterOpen((prevFilterOpen) => !prevFilterOpen);
+    }
+  };
+
+  const handleSearchByFilter = (column, value) => {
+    setSearchTerm(value);
+    setFilterOpen(false);
+    setCurrentPage(1);
+    fetchData(); // Chame a função fetchData para aplicar o filtro imediatamente
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSearchByFilter('CATEGORIA', searchTerm);
     }
   };
 
@@ -137,6 +157,28 @@ const CatergoyOutsourced = () => {
     }
   };
 
+  const handleFilterValue = (column) => {
+    const allColumnValues = documents.docs.rows.map((row) => row[column]);
+    const uniqueValues = Array.from(new Set(allColumnValues)).filter(Boolean);
+    return uniqueValues;
+  };
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        handleSearch();
+      }
+    };
+
+    // Adiciona um ouvinte de evento de tecla ao nível do documento
+    document.addEventListener('keypress', handleKeyPress);
+
+    // Remove o ouvinte de evento quando o componente é desmontado
+    return () => {
+      document.removeEventListener('keypress', handleKeyPress);
+    };
+  }, [handleSearch]);
+
   return (
     <div className='flex'>
       <Sidebar />
@@ -188,6 +230,7 @@ const CatergoyOutsourced = () => {
                 <IoMdAdd className='text-xl mt-0.5' /> Nova Categoria
               </button>
             </div>
+
             <div className="flex flex-col h-[550px] overflow-x-scroll overflow-y-auto">
               <div className="flex text-gray-500 bg-white ">
                 {Object.keys(columnWidths).map((column) => (
@@ -195,7 +238,7 @@ const CatergoyOutsourced = () => {
                     key={column}
                     className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
                     style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
-                    onClick={() => handleSort(column)}
+                    onClick={(event) => handleSort(column, event)}
                   >
                     {columnLabels[column]}
                     <div className='ml-auto flex'>
@@ -204,13 +247,39 @@ const CatergoyOutsourced = () => {
                           {sortColumn === column && (
                             sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
                           )}
-                          <PiFunnelLight className='text-xl mt-0.5' />
+                          <PiFunnelLight
+                            className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSort(column, e);
+                            }}
+                          />
                         </>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
+
+              {filterOpen && (
+                <div className={`flex text-gray-500 bg-white`}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}></div>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
+                    <div className="flex flex-col">
+                      {handleFilterValue('CATEGORIA').map((value) => (
+                        <div
+                          key={value}
+                          className="cursor-pointer py-1 px-2 hover:bg-gray-200"
+                          onClick={() => handleSearchByFilter('CATEGORIA', value)}
+                        >
+                          {value}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {documents.docs.rows.map((document, index) => (
                 <div
                   className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
@@ -234,6 +303,7 @@ const CatergoyOutsourced = () => {
             </div>
           </div>
         )}
+
         <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
           <button
             onClick={goToPreviousPage}
@@ -264,6 +334,7 @@ const CatergoyOutsourced = () => {
             Próxima Página
           </button>
         </div>
+
         {!documents.success && <p>Não foi possível obter as categorias de Terceiros.</p>}
       </div>
     </div>

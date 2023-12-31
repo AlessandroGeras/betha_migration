@@ -8,6 +8,7 @@ const documento = connection.define(
       type: Sequelize.INTEGER, // ou outro tipo apropriado para sua chave primária
       primaryKey: true,
       autoIncrement: true, // Defina como true se deseja que seja autoincrementável
+      allowNull: false, // Garanta que a coluna não aceite valores nulos
     },
     STATUS: {
       type: Sequelize.STRING,

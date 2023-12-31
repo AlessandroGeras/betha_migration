@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '@/components/sidebar';
+import Head from 'next/head';
 
 const Dashboard = () => {
 
@@ -34,6 +35,10 @@ const Dashboard = () => {
     return (
         <div className='flex'>
             <Sidebar />
+            <Head>
+                <title>Dashboard</title>
+            </Head>
+
 
             <div className="flex-1" id="Dashboard">
                 {/* Barra Superior Azul Fixada no Topo */}

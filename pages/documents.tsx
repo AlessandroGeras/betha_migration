@@ -25,6 +25,10 @@ const Documents = () => {
 
   const router = useRouter();
 
+  const addDocPendenteClick = () => {
+    router.push('/add-pending-document');
+};
+
   const columnWidths = {
     '': '30px',
     'STATUS': '100px',
@@ -338,7 +342,7 @@ const Documents = () => {
                 </button>
                 <button
                   className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
-
+                  onClick={addDocPendenteClick}
                 >
                   <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de documento
                 </button>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const AddOutsourced = () => {
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
 
-    const closeModal = () => {        
+    const closeModal = () => {
         setShowModal(false);
     };
 
@@ -62,7 +63,7 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if(formData.uf==""){
+        if (formData.uf == "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
@@ -127,10 +128,13 @@ const AddOutsourced = () => {
         <div className="flex h-screen">
             {/* Barra lateral */}
             <Sidebar />
+            <Head>
+                <title>Incluir Terceiro</title>
+            </Head>
 
             {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
-                <div className="bg-blue-500 text-white p-2 text-left mb-28 w-full">
+                <div className="bg-blue-500 text-white p-2 text-left mb-16 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
                     <span className="ml-2">Adicionar Terceiro</span>
                 </div>
@@ -308,6 +312,8 @@ const AddOutsourced = () => {
                         />
                     </div>
 
+                    <div className="col-span-2"></div>
+
                     <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
                             Categoria Principal <span className="text-red-500">*</span>
@@ -331,8 +337,13 @@ const AddOutsourced = () => {
                         </select>
                     </div>
 
+                    <div className="col-span-2"></div>
+
                     {/* Linha 6 (Botão Cadastrar) */}
-                    <div className="col-span-5 flex justify-center">
+                    <div className="col-span-1"></div>
+
+
+                    <div className="col-span-5 flex justify-center mt-4">
                         <button
                             type="submit"
                             onClick={handleSubmitCancel}
@@ -348,6 +359,8 @@ const AddOutsourced = () => {
                             Salvar
                         </button>
                     </div>
+
+                    <div className="col-span-1"></div>
                 </div>
             </div>
 

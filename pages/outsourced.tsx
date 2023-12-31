@@ -3,6 +3,7 @@ import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Head from 'next/head';
 
 const Outsourced = () => {
   const [documents, setDocuments] = useState({
@@ -156,6 +157,9 @@ const Outsourced = () => {
   return (
     <div className='flex'>
       <Sidebar />
+      <Head>
+        <title>Terceiros</title>
+      </Head>
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">

@@ -1,5 +1,5 @@
 import cron from 'node-cron';
-import cobrança from '../../models/cobrança';
+import cobrança from '../../models/billing';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -12,7 +12,7 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
-cron.schedule('37 14 * * 1-5', async () => {
+cron.schedule('00 18 * * 1-5', async () => {
   try {
     const currentDateTime = new Date();
     console.log(`Running a task every minute. Current time: ${currentDateTime}`);
