@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
 const CatergoyOutsourced = () => {
+  const [originalData, setOriginalData] = useState([]);
   const [documents, setDocuments] = useState({
     success: false,
     docs: { rows: [], count: 0, outsourcedCount: 0 },
@@ -17,7 +18,11 @@ const CatergoyOutsourced = () => {
   const [loading, setLoading] = useState(true);
   const [initialLoad, setInitialLoad] = useState(true);
   const [filterOpen, setFilterOpen] = useState(false);
+  const [selectedFilterValue, setSelectedFilterValue] = useState('');
   const router = useRouter();
+  const [appliedFilterValue, setAppliedFilterValue] = useState('');
+
+
 
   const adicionarCategoriaClick = () => {
     router.push('/add-category-outsourced');
@@ -52,23 +57,95 @@ const CatergoyOutsourced = () => {
         setSortColumn(columnName);
         setSortOrder('asc');
       }
+
+      const sortedRows = sortRows(documents.docs.rows, columnName, sortOrder);
+
+      setDocuments({
+        success: true,
+        docs: {
+          rows: sortedRows,
+          count: sortedRows.length,
+          outsourcedCount: documents.docs.outsourcedCount,
+        },
+      });
     } else {
       setFilterOpen((prevFilterOpen) => !prevFilterOpen);
     }
   };
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`/api/category-outsourced?page=${currentPage}&pageSize=${pageSize}`);
+      const data = await response.json();
+  
+      // Se houver um filtro aplicado, filtre os dados usando o filtro
+      const filteredRows = appliedFilterValue
+        ? data.docs.rows.filter((document) =>
+            Object.values(document).some((docValue) => {
+              if (docValue === null || docValue === undefined) {
+                return false;
+              }
+              return docValue.toString().toLowerCase().includes(appliedFilterValue.toLowerCase());
+            })
+          )
+        : data.docs.rows;
+  
+      const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
+  
+      // Armazene os dados originais
+      setOriginalData(data.docs.rows);
+  
+      setDocuments({
+        success: data.success,
+        docs: {
+          rows: sortedRows,
+          count: sortedRows.length,
+          outsourcedCount: data.docs.outsourcedCount,
+        },
+      });
+    } catch (error) {
+      console.error('Erro ao obter as categorias de terceiros:', error);
+    } finally {
+      setLoading(false);
+      setInitialLoad(false);
+    }
+  };
+  
+
+  useEffect(() => {
+    fetchData();
+  }, [sortColumn, sortOrder]);
+
   const handleSearchByFilter = (column, value) => {
     setSearchTerm(value);
     setFilterOpen(false);
     setCurrentPage(1);
-    fetchData(); // Chame a função fetchData para aplicar o filtro imediatamente
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      handleSearchByFilter('CATEGORIA', searchTerm);
+    setAppliedFilterValue(value);
+  
+    if (value === '') {
+      handleClearSearch();
+    } else {
+      const filteredRows = originalData.filter((document) =>
+        Object.values(document).some((docValue) => {
+          if (docValue === null || docValue === undefined) {
+            return false;
+          }
+          return docValue.toString().toLowerCase().includes(value.toLowerCase());
+        })
+      );
+  
+      const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
+  
+      setDocuments({
+        success: true,
+        docs: {
+          rows: sortedRows,
+          count: sortedRows.length,
+          outsourcedCount: documents.docs.outsourcedCount,
+        },
+      });
     }
-  };
+  };  
 
   const handlePageSizeChange = (size) => {
     setPageSize(size);
@@ -109,37 +186,17 @@ const CatergoyOutsourced = () => {
 
   const handleClearSearch = () => {
     setSearchTerm('');
-    fetchData();
+    setFilterOpen(false);
+
+    setDocuments({
+      success: true,
+      docs: {
+        rows: originalData,
+        count: originalData.length,
+        outsourcedCount: documents.docs.outsourcedCount,
+      },
+    });
   };
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`/api/category-outsourced?page=${currentPage}&pageSize=${pageSize}`);
-      const data = await response.json();
-      const sortedRows = sortRows(data.docs.rows, sortColumn, sortOrder);
-
-      setDocuments({
-        success: data.success,
-        docs: {
-          rows: sortedRows,
-          count: data.docs.count,
-          outsourcedCount: data.docs.outsourcedCount,
-        },
-      });
-    } catch (error) {
-      console.error('Erro ao obter as categorias de terceiros:', error);
-    } finally {
-      setLoading(false);
-      setInitialLoad(false);
-    }
-  };
-
-  useEffect(() => {
-    if (initialLoad) {
-      setLoading(true);
-    }
-    fetchData();
-  }, [currentPage, pageSize, sortColumn, sortOrder]);
 
   const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
 
@@ -170,10 +227,8 @@ const CatergoyOutsourced = () => {
       }
     };
 
-    // Adiciona um ouvinte de evento de tecla ao nível do documento
     document.addEventListener('keypress', handleKeyPress);
 
-    // Remove o ouvinte de evento quando o componente é desmontado
     return () => {
       document.removeEventListener('keypress', handleKeyPress);
     };
@@ -263,19 +318,29 @@ const CatergoyOutsourced = () => {
 
               {filterOpen && (
                 <div className={`flex text-gray-500 bg-white`}>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}></div>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
-                    <div className="flex flex-col">
-                      {handleFilterValue('CATEGORIA').map((value) => (
-                        <div
-                          key={value}
-                          className="cursor-pointer py-1 px-2 hover:bg-gray-200"
-                          onClick={() => handleSearchByFilter('CATEGORIA', value)}
-                        >
-                          {value}
-                        </div>
-                      ))}
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
+                    <div className="flex items-center">  
                     </div>
+                  </div>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
+                    <select
+                        value={selectedFilterValue}
+                        onChange={(e) => setSelectedFilterValue(e.target.value)}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CATEGORIA').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue)}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
                   </div>
                 </div>
               )}
@@ -314,18 +379,31 @@ const CatergoyOutsourced = () => {
           </button>
           <div className="flex items-center">
             <span className="mr-2">Registros por página:</span>
-            {[10, 25, 50, 100].map((size) => (
-              <button
-                key={size}
-                className={`px-2 py-1 border ${size === pageSize ? 'bg-blue-500 text-white' : ''
-                  }`}
-                onClick={() => handlePageSizeChange(size)}
-              >
-                {size}
-              </button>
-            ))}
+            <button
+              onClick={() => handlePageSizeChange(10)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+            >
+              10
+            </button>
+            <button
+              onClick={() => handlePageSizeChange(25)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+            >
+              25
+            </button>
+            <button
+              onClick={() => handlePageSizeChange(50)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+            >
+              50
+            </button>
+            <button
+              onClick={() => handlePageSizeChange(100)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+            >
+              100
+            </button>
           </div>
-          <span className=''>Página {currentPage}</span>
           <button
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
@@ -334,8 +412,6 @@ const CatergoyOutsourced = () => {
             Próxima Página
           </button>
         </div>
-
-        {!documents.success && <p>Não foi possível obter as categorias de Terceiros.</p>}
       </div>
     </div>
   );
