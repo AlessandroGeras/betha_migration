@@ -15,8 +15,7 @@ const Outsourced = () => {
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortColumn, setSortColumn] = useState('NM_USUARIO');
   const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [initialLoad, setInitialLoad] = useState(true);
+  const [loading, setLoading] = useState(true);  
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState('');
   const router = useRouter();
@@ -117,7 +116,6 @@ const Outsourced = () => {
       console.error('Erro ao obter as categorias de terceiros:', error);
     } finally {
       setLoading(false);
-      setInitialLoad(false);
     }
   };
 
