@@ -37,7 +37,7 @@ const Outsourced = () => {
     'CIDADE': '310px',
     'UF': '200px',
     'TELEFONE': '300px',
-    'NM_USUARIO': '400px',    
+    'NM_USUARIO': '400px',
   };
 
   const columnLabels = {
@@ -123,26 +123,44 @@ const Outsourced = () => {
 
 
   useEffect(() => {
+    console.log("useEffect1");
     fetchData();
-  }, [sortColumn, sortOrder]);
+  }, []);
+
+  /*   useEffect(() => {
+      console.log("useEffect1");
+      fetchData();
+    }, [sortColumn, sortOrder]); */
 
 
   const handleSearchByFilter = async (column, value) => {
+    console.log("filter");
     setFilterOpen(false);
     setCurrentPage(1);
 
     const availableValues = handleFilterValue(column);
+    console.log(value);
+    console.log(availableValues);
+    if (value == "") {
+      value = 'TODOS';
+    }
+
+    if (!availableValues.includes(value)) {
+      value = 'TODOS';
+    }
 
     // Verificar se o valor clicado está entre os valores disponíveis
     if (availableValues.includes(value) || value === 'TODOS') {
-      // O valor clicado é válido, aplicar o filtro diretamente
-      setAppliedFilterValue((prevFilters) => ({
-        ...prevFilters,
-        [column]: value,
-      }))
+      console.log("If1");
+      setAppliedFilterValue((prevFilters) => {
+        const updatedFilters = { ...prevFilters, [column]: value };
+        console.log('Novos Filtros:', updatedFilters); // Adicione esta linha
+        return updatedFilters;
+      })
     }
 
     else {
+      console.log("Else1");
       setAppliedFilterValue((prevFilters) => {
         const updatedFilters = { ...prevFilters, [column]: '' };
         return updatedFilters;
@@ -199,21 +217,21 @@ const Outsourced = () => {
 
   const handleSearch = () => {
     setCurrentPage(1);
-
+  
     if (searchTerm === '') {
       fetchData();
     } else {
       const filteredRows = documents.docs.rows.filter((document) =>
-        Object.values(document).some((value) => {
+        Object.entries(document).some(([key, value]) => {
           if (value === null || value === undefined) {
             return false;
           }
-          return value.toString().toLowerCase().includes(searchTerm.toLowerCase());
+          return key !== '' && String(value).toLowerCase() === searchTerm.toLowerCase();
         })
       );
-
+  
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-
+  
       setDocuments({
         success: true,
         docs: {
@@ -224,6 +242,7 @@ const Outsourced = () => {
       });
     }
   };
+  
 
   const handleClearSearch = () => {
     setSearchTerm('');
@@ -277,6 +296,7 @@ const Outsourced = () => {
 
 
   useEffect(() => {
+    console.log("useEffect3");
     const fetchDataWithFilter = async () => {
       try {
         //setLoading(true);
@@ -287,9 +307,22 @@ const Outsourced = () => {
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-          return filteredData.filter((document) =>
-            document[filterColumn].toString().toLowerCase().includes(filterColumnValue.toLowerCase())
-          );
+        
+          // Verificar se o valor do filtro é 'TODOS'
+          if (filterColumnValue === 'TODOS') {
+            return filteredData; // Não aplicar filtro se for 'TODOS'
+          }
+        
+          return filteredData.filter((document) => {
+            const columnValue = document[filterColumn];
+        
+            // Verificar se o valor da coluna não é nulo antes de chamar toString()
+            if (columnValue !== null && columnValue !== undefined) {
+              return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
+            }
+        
+            return false; // Se for nulo ou indefinido, não incluir no resultado
+          });
         }, data.docs.rows);
 
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
@@ -322,7 +355,7 @@ const Outsourced = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Categorias de Terceiros</span>
+          <span className='ml-2'>Terceiros</span>
         </div>
 
         {loading && (
@@ -330,7 +363,7 @@ const Outsourced = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de categorias de Terceiros...
+                  Carregando lista de Terceiros...
                 </div>
               </div>
             </div>
@@ -370,7 +403,7 @@ const Outsourced = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[5000px]">
+              <div className="flex text-gray-500 bg-white w-[2700px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -400,7 +433,7 @@ const Outsourced = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[5000px]`}>
+                <div className={`flex text-gray-500 w-[2700px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
                     <div className="flex items-center">
                     </div>
@@ -573,11 +606,11 @@ const Outsourced = () => {
                     </button>
                   </div>
 
-                 
 
-                 
 
-                 
+
+
+
                 </div>
               )}
 
@@ -585,7 +618,7 @@ const Outsourced = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[5000px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[2700px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
