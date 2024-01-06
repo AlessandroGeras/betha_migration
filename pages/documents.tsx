@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import { format } from 'date-fns';
 
-const Outsourced = () => {
+const Documents = () => {
   const [originalData, setOriginalData] = useState([]);
   const [documents, setDocuments] = useState({
     success: false,
@@ -624,4 +624,4 @@ const Outsourced = () => {
   );
 };
 
-export default Outsourced;
+export default Documents;

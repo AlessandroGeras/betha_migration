@@ -17,9 +17,12 @@ const Outsourced = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);  
   const [filterOpen, setFilterOpen] = useState(false);
-  const [selectedFilterValue, setSelectedFilterValue] = useState('');
+  const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+
+  
 
 
 
@@ -90,7 +93,7 @@ const Outsourced = () => {
     try {
       const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
       const data = await response.json();
-
+  
       // Se houver um filtro aplicado, filtre os dados usando o filtro
       const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, column) => {
         const filterValue = appliedFilterValue[column];
@@ -98,12 +101,13 @@ const Outsourced = () => {
           document[column].toString().toLowerCase().includes(filterValue.toLowerCase())
         );
       }, data.docs.rows);
-
+  
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-
-      // Armazene os dados originais
-      setOriginalData(data.docs.rows);
-
+  
+      // Atualize o estado filteredData
+      setFilteredData(sortedRows);
+  
+      // Atualize os documentos com os dados filtrados
       setDocuments({
         success: data.success,
         docs: {
@@ -118,73 +122,113 @@ const Outsourced = () => {
       setLoading(false);
     }
   };
-
+  
 
   useEffect(() => {
     console.log("useEffect1");
     fetchData();
   }, []);
 
-  /*   useEffect(() => {
-      console.log("useEffect1");
-      fetchData();
-    }, [sortColumn, sortOrder]); */
+
+  const applyFilters = (data, filters) => {
+    return data.filter((document) => {
+      // Verificar se todos os filtros são atendidos
+      return Object.entries(filters).every(([column, filterValue]) => {
+        const documentValue = document[column];
+  
+        // Verificar se o valor da coluna não é nulo antes de chamar toString()
+        if (documentValue !== null && documentValue !== undefined) {
+          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+        }
+  
+        return false; // Se for nulo ou indefinido, não incluir no resultado
+      });
+    });
+  };
+
 
 
   const handleSearchByFilter = async (column, value) => {
-    console.log("filter");
     setFilterOpen(false);
     setCurrentPage(1);
-
+  
     const availableValues = handleFilterValue(column);
-    console.log(value);
-    console.log(availableValues);
-    if (value == "") {
+  
+    if (value === "") {
       value = 'TODOS';
     }
-
+  
     if (!availableValues.includes(value)) {
       value = 'TODOS';
     }
-
-    // Verificar se o valor clicado está entre os valores disponíveis
+  
     if (availableValues.includes(value) || value === 'TODOS') {
-      console.log("If1");
       setAppliedFilterValue((prevFilters) => {
         const updatedFilters = { ...prevFilters, [column]: value };
-        console.log('Novos Filtros:', updatedFilters); // Adicione esta linha
         return updatedFilters;
-      })
-    }
-
-    else {
-      console.log("Else1");
+      });
+  
+      setSelectedFilterValue((prevSelectedFilters) => {
+        const updatedSelectedFilters = { ...prevSelectedFilters, [column]: value };
+        return updatedSelectedFilters;
+      });
+  
+      // Atualize o estado filteredData com os dados filtrados
+      const filteredRows = applyFilters(documents.docs.rows, appliedFilterValue);
+      const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
+      setFilteredData(sortedRows);
+  
+      // Atualize os documentos com os dados filtrados
+      setDocuments({
+        success: true,
+        docs: {
+          rows: sortedRows,
+          count: sortedRows.length,
+          outsourcedCount: documents.docs.outsourcedCount,
+        },
+      });
+    } else {
       setAppliedFilterValue((prevFilters) => {
         const updatedFilters = { ...prevFilters, [column]: '' };
         return updatedFilters;
-      })
-
-
-
+      });
+  
+      setSelectedFilterValue((prevSelectedFilters) => {
+        const updatedSelectedFilters = { ...prevSelectedFilters, [column]: '' };
+        return updatedSelectedFilters;
+      });
+  
       try {
-        //setLoading(true);
-
         const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
         const data = await response.json();
-
+  
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-          return filteredData.filter((document) =>
-            document[filterColumn].toString().toLowerCase().includes(filterColumnValue.toLowerCase())
-          );
+        
+          // Verificar se o valor do filtro é 'TODOS'
+          if (filterColumnValue === 'TODOS') {
+            return filteredData; // Não aplicar filtro se for 'TODOS'
+          }
+        
+          return filteredData.filter((document) => {
+            const columnValue = document[filterColumn];
+        
+            // Verificar se o valor da coluna não é nulo antes de chamar toString()
+            if (columnValue !== null && columnValue !== undefined) {
+              return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
+            }
+        
+            return false; // Se for nulo ou indefinido, não incluir no resultado
+          });
         }, data.docs.rows);
-
+  
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-
-        // Armazene os dados originais
-        setOriginalData(data.docs.rows);
-
+  
+        // Atualize o estado filteredData com os dados filtrados
+        setFilteredData(sortedRows);
+  
+        // Atualize os documentos com os dados filtrados
         setDocuments({
           success: data.success,
           docs: {
@@ -195,12 +239,9 @@ const Outsourced = () => {
         });
       } catch (error) {
         console.error('Erro ao obter as categorias de terceiros:', error);
-      } finally {
-        //setLoading(false);
       }
     }
-  };
-
+  }; 
 
 
 
@@ -245,16 +286,20 @@ const Outsourced = () => {
   const handleClearSearch = () => {
     setSearchTerm('');
     setFilterOpen(false);
-
+  
+    setAppliedFilterValue({});
+    setSelectedFilterValue({});
+  
     setDocuments({
       success: true,
       docs: {
-        rows: originalData,
-        count: originalData.length,
+        rows: filteredData, // Use filteredData em vez de originalData
+        count: filteredData.length,
         outsourcedCount: documents.docs.outsourcedCount,
       },
     });
   };
+  
 
   const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
 
@@ -438,8 +483,8 @@ const Outsourced = () => {
                   </div>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['STATUS']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'STATUS': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -450,7 +495,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('STATUS', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -459,8 +504,8 @@ const Outsourced = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['NOME_TERCEIRO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -471,7 +516,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -480,8 +525,8 @@ const Outsourced = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['CNPJ']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CNPJ': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -492,7 +537,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue['CNPJ'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -501,8 +546,8 @@ const Outsourced = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['ENDEREÇO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ENDEREÇO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -513,7 +558,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue['ENDEREÇO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -522,8 +567,8 @@ const Outsourced = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '310px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['CIDADE']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CIDADE': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -534,7 +579,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue['CIDADE'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -543,8 +588,8 @@ const Outsourced = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['UF']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'UF': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -555,7 +600,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('UF', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('UF', selectedFilterValue['UF'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -565,8 +610,8 @@ const Outsourced = () => {
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
                       value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
-                      className="border border-gray-300 px-2 py-1 rounded"
+                      value={selectedFilterValue['TELEFONE']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
                     >
                       <option value="">Todos</option>
                       {handleFilterValue('TELEFONE').map((value) => (
@@ -576,7 +621,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -585,8 +630,8 @@ const Outsourced = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
                     <select
-                      value={selectedFilterValue}
-                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      value={selectedFilterValue['NM_USUARIO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
@@ -597,7 +642,7 @@ const Outsourced = () => {
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue)}
+                      onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
