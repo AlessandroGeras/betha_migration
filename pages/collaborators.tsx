@@ -3,14 +3,10 @@ import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
-import { format } from 'date-fns';
 
-const Documents = () => {
+const Collaborators = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({
-    success: false,
-    docs: { rows: [], count: 0, outsourcedCount: 0 },
-  });
+  const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -22,33 +18,27 @@ const Documents = () => {
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [filteredData, setFilteredData] = useState([]);
-  const { status } = router.query;
+  const [isTokenVerified, setTokenVerified] = useState(false);
 
 
-
-
-
-  const adicionarDocumentoClick = () => {
-    router.push('/add-pending-document');
+  const adicionarColaboradorClick = () => {
+    router.push('/add-collaborator');
   };
 
   const columnWidths = {
     '': '30px',
     'STATUS': '200px',
-    'TIPO_DOCUMENTO': '300px',
-    'TERCEIRO': '350px',
-    'COLABORADOR': '300px',
-    'VENCIMENTO': '260px',
+    'NM_USUARIO': '500px',
+    'NOME_TERCEIRO': '420px',
+    'FUNCAO': '300px',
   };
 
   const columnLabels = {
     '': '',
     'STATUS': 'STATUS',
-    'TIPO_DOCUMENTO': 'TIPO_DOCUMENTO',
-    'CNPJ': 'CNPJ',
-    'TERCEIRO': 'TERCEIRO',
-    'COLABORADOR': 'COLABORADOR',
-    'VENCIMENTO': 'VENCIMENTO',
+    'NM_USUARIO': 'NOME',
+    'NOME_TERCEIRO': 'EMPRESA_TERCEIRO',
+    'FUNCAO': 'FUNÇÃO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -88,8 +78,31 @@ const Documents = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const response = await fetch(`/api/collaborators?page=${currentPage}&pageSize=${pageSize}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token }),
+      });
+
       const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      }
+      else {
+        setTokenVerified(true);
+      }
+
+
 
       // Se houver um filtro aplicado, filtre os dados usando o filtro
       const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, column) => {
@@ -116,9 +129,14 @@ const Documents = () => {
     } catch (error) {
       console.error('Erro ao obter as categorias de terceiros:', error);
     } finally {
-      setLoading(false);
+
     }
-  };  
+  };
+
+
+  /* useEffect(() => {
+    fetchData();
+  }, []); */
 
 
   const applyFilters = (data, filters) => {
@@ -190,8 +208,29 @@ const Documents = () => {
       });
 
       try {
-        const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+        const token = localStorage.getItem('Token');
+
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        const response = await fetch(`/api/collaborators?page=${currentPage}&pageSize=${pageSize}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+
         const data = await response.json();
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else {
+          setTokenVerified(true);
+        }
 
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
@@ -291,15 +330,18 @@ const Documents = () => {
     });
   };
 
-
-  const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
+  
+  const totalPages = Math.ceil(documents.docs.outsourcedCount / pageSize) || 1;
 
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   const goToNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    setCurrentPage((prevPage) => {
+      const nextPage = Math.min(prevPage + 1, totalPages);
+      return nextPage;
+    });
   };
 
   const handleKeyPress = (event) => {
@@ -330,50 +372,59 @@ const Documents = () => {
 
 
   useEffect(() => {
-    // Verifica se a variável status está presente na rota
-    if (status) {
-      // Atualiza o filtro da coluna STATUS com o valor de status
-      setAppliedFilterValue((prevFilters) => ({
-        ...prevFilters,
-        'STATUS': status,
-      }));
-    }
-  }, [status]);
-  
-  useEffect(() => {
     const fetchDataWithFilter = async () => {
       try {
-        setLoading(true);
-  
-        const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+        //setLoading(true);
+        const token = localStorage.getItem('Token');
+
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        const response = await fetch(`/api/collaborators?page=${currentPage}&pageSize=${pageSize}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+
         const data = await response.json();
-  
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else {
+          setTokenVerified(true);
+        }
+
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-  
+
           // Verificar se o valor do filtro é 'TODOS'
           if (filterColumnValue === 'TODOS') {
             return filteredData; // Não aplicar filtro se for 'TODOS'
           }
-  
+
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
-  
+
             // Verificar se o valor da coluna não é nulo antes de chamar toString()
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
-  
+
             return false; // Se for nulo ou indefinido, não incluir no resultado
           });
-        }, data.docs.rows);
-  
+        }, data.docs.rows);        
+
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
         // Armazene os dados originais
         setOriginalData(data.docs.rows);
-  
+
         setDocuments({
           success: data.success,
           docs: {
@@ -388,18 +439,11 @@ const Documents = () => {
         setLoading(false);
       }
     };
-  
+
     fetchDataWithFilter();
   }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
-  
-  
-  
 
-  const formatBrDate = (isoDate) => {
-    const date = new Date(isoDate);
-    return format(date, 'dd/MM/yyyy');
-  };
-
+  const { success, docs } = documents;
 
   return (
     <div className='flex'>
@@ -407,7 +451,7 @@ const Documents = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Documentos</span>
+          <span className='ml-2'>Colaboradores</span>
         </div>
 
         {loading && (
@@ -415,7 +459,7 @@ const Documents = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de Documentos...
+                  Carregando lista de Colaboradores...
                 </div>
               </div>
             </div>
@@ -447,9 +491,9 @@ const Documents = () => {
               </button>
               <button
                 className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarDocumentoClick}
+                onClick={adicionarColaboradorClick}
               >
-                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Documento
+                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Colaborador
               </button>
             </div>
 
@@ -511,89 +555,71 @@ const Documents = () => {
                     </button>
                   </div>
 
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                    <select
+                      value={selectedFilterValue['NM_USUARIO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('NM_USUARIO').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '420px' }}>
+                    <select
+                      value={selectedFilterValue['NOME_TERCEIRO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('NOME_TERCEIRO').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
-                      value={selectedFilterValue['TIPO_DOCUMENTO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TIPO_DOCUMENTO': e.target.value })}
+                      value={selectedFilterValue['FUNCAO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'FUNCAO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('TIPO_DOCUMENTO').map((value) => (
+                      {handleFilterValue('FUNCAO').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
+                      onClick={() => handleSearchByFilter('FUNCAO', selectedFilterValue['FUNCAO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
-                  </div>
+                  </div>                
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
-                    <select
-                      value={selectedFilterValue['TERCEIRO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TERCEIRO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('TERCEIRO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
-                    <select
-                      value={selectedFilterValue['COLABORADOR']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('COLABORADOR').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
-                    <select
-                      value={selectedFilterValue['VENCIMENTO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'VENCIMENTO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('VENCIMENTO').map((value) => (
-                        <option key={value} value={value}>
-                          {formatBrDate(value)}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
 
 
 
@@ -613,12 +639,10 @@ const Documents = () => {
                         className={`column-cell border border-gray-300 py-2 pl-1`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === 'VENCIMENTO' ? formatBrDate(document[column]) : (
-                          column === '' ? (
-                            <IoIosSearch className='text-xl mt-0.5' />
-                          ) : (
-                            document[column]
-                          )
+                        {column === '' ? (
+                          <IoIosSearch className='text-xl mt-0.5' />
+                        ) : (
+                          document[column]
                         )}
                       </div>
                     ))}
@@ -664,10 +688,12 @@ const Documents = () => {
               100
             </button>
           </div>
+          <span className="px-4 py-2  rounded text-gray-500">
+                  Página {currentPage} de {totalPages}
+          </span>
           <button
             onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>
@@ -677,4 +703,4 @@ const Documents = () => {
   );
 };
 
-export default Documents;
+export default Collaborators;

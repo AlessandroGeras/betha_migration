@@ -72,7 +72,7 @@ const AddCategoryOutsourced = () => {
                 formData: formData
               };
 
-            const response = await fetch('/api/store-category-outsourced', {
+            const response = await fetch('/api/store-category-collaborators', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,12 +95,10 @@ const AddCategoryOutsourced = () => {
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
                 throw new Error('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
-            }
-
-            const responseData = await response.json();
+            }            
 
             // Lógica adicional após o envio bem-sucedido, se necessário
-            console.log('Categoria criada com sucesso!', responseData);
+            console.log('Categoria criada com sucesso!', data);
             setPopupMessage('Categoria criada com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
@@ -111,7 +109,7 @@ const AddCategoryOutsourced = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/category-outsourced');
+        router.push('/category-collaborators');
     };
 
     return (
@@ -123,7 +121,7 @@ const AddCategoryOutsourced = () => {
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-28 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Categoria de Terceiro</span>
+                    <span className="ml-2">Adicionar Categoria de Colaboradores</span>
                 </div>
                 <div className="grid grid-cols-1 gap-4 w-2/4 mx-auto">
                     {/* Linha 1 */}

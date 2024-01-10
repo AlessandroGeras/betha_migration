@@ -4,7 +4,7 @@ import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
-const CategoyOutsourced = () => {
+const CategoryDocuments = () => {
   const [originalData, setOriginalData] = useState([]);
   const [documents, setDocuments] = useState({
     success: false,
@@ -85,7 +85,7 @@ const CategoyOutsourced = () => {
         return;
       }
 
-      const response = await fetch(`/api/category-outsourced?page=${currentPage}&pageSize=${pageSize}`, {
+      const response = await fetch(`/api/category-documents?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -263,7 +263,7 @@ const CategoyOutsourced = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Categorias de Terceiros</span>
+          <span className='ml-2'>Categorias de Documentos</span>
         </div>
 
         {loading && (
@@ -271,7 +271,7 @@ const CategoyOutsourced = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de categorias de Terceiros...
+                  Carregando lista de categorias de Documentos...
                 </div>
               </div>
             </div>
@@ -440,4 +440,4 @@ const CategoyOutsourced = () => {
   );
 };
 
-export default CategoyOutsourced;
+export default CategoryDocuments;

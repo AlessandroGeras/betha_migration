@@ -1,4 +1,4 @@
-import categoryOutsourced from '../../models/categoryOutsourced';
+import categoryCollaborators from '../../models/categoryCollaborators';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -14,10 +14,10 @@ Oracledb.initOracleClient({
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const {
-            nome,
+            formData: { nome },
             tipo_documento,
             token
-        } = req.body;
+          } = req.body;
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -34,7 +34,9 @@ export default async function handler(req, res) {
                 dialect: process.env.DIALECT || 'oracle',
             });
 
-            const Store = await categoryOutsourced.create({
+            
+            
+            const Store = await categoryCollaborators.create({
                 CATEGORIA: nome,
             }, {
                 fields: ['CATEGORIA'], // Especifique os campos que deseja incluir

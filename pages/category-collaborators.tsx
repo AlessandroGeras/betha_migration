@@ -4,7 +4,7 @@ import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
-const CategoyOutsourced = () => {
+const CatergoyOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
   const [documents, setDocuments] = useState({
     success: false,
@@ -26,7 +26,7 @@ const CategoyOutsourced = () => {
 
 
   const adicionarCategoriaClick = () => {
-    router.push('/add-category-outsourced');
+    router.push('/add-category-collaborators');
   };
 
   const columnWidths = {
@@ -85,7 +85,7 @@ const CategoyOutsourced = () => {
         return;
       }
 
-      const response = await fetch(`/api/category-outsourced?page=${currentPage}&pageSize=${pageSize}`, {
+      const response = await fetch(`/api/category-collaborators?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -257,13 +257,13 @@ const CategoyOutsourced = () => {
     };
   }, [handleSearch]);
 
-  return isTokenVerified && (
+  return (
     <div className='flex'>
       <Sidebar />
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Categorias de Terceiros</span>
+          <span className='ml-2'>Categorias de Colaboratores</span>
         </div>
 
         {loading && (
@@ -271,7 +271,7 @@ const CategoyOutsourced = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de categorias de Terceiros...
+                  Carregando lista de categorias de Colaboradores...
                 </div>
               </div>
             </div>
@@ -440,4 +440,4 @@ const CategoyOutsourced = () => {
   );
 };
 
-export default CategoyOutsourced;
+export default CatergoyOutsourced;

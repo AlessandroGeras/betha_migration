@@ -35,7 +35,8 @@ export default async function handler(req, res) {
         });
 
         const usersfound = await users.findAndCountAll({
-            where: { ID_ADM_GESTAO_TERCEIROS: 'S' },
+            where: { ID_ADM_GESTAO_TERCEIROS: 'S',
+                     COLABORADOR_TERCEIRO: 'N' },
             offset: (page - 1) * pageSize,
             limit: pageSize,
         });

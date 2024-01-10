@@ -19,6 +19,10 @@ const AddOutsourced = () => {
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
 
+    const handleSubmitCancel = () => {
+        router.push('/documents');
+    };
+
     const closeModal = () => {
         setShowModal(false);
     };
@@ -225,6 +229,7 @@ const AddOutsourced = () => {
                         {/* Linha 6 (Botão Cadastrar) */}
                         <div className="col-span-4 flex justify-center">
                             <button
+                                onClick={handleSubmitCancel}
                                 type="submit"
                                 className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                             >

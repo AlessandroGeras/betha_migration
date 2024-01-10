@@ -27,11 +27,9 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('FontanaUser', username);
+        localStorage.setItem('Token', data.token);
+        router.push('/dashboard');
 
-        router.push({
-          pathname: '/dashboard',
-          query: { userData: JSON.stringify(data) },
-        });
       } else {
 
         if (response.status === 401) {
@@ -40,6 +38,7 @@ const Login = () => {
           setShowModal(true);
         }  
         else{ 
+          console.log("pau");
         console.error('Falha na autenticação');
         setPopupMessage('Usuário ou senha inválido');
         setShowModal(true);

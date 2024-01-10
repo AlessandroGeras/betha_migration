@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       });
 
       const outsourcedCount = await users.count({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'S',
+        where: { ID_ADM_GESTAO_TERCEIROS: 'N',
                  COLABORADOR_TERCEIRO: 'N' },
       });
 
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
       // Consulta paginada usando Sequelize com filtro
       const docs = await users.findAndCountAll({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'S',
+        where: { ID_ADM_GESTAO_TERCEIROS: 'N',
                  COLABORADOR_TERCEIRO: 'N' }, // Adicionando a condição de filtro
         offset: (page - 1) * pageSize,
         limit: pageSize,
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       if (docs) {
         res.status(200).json({
           success: true,
-          message: 'Terceiros encontrados',
+          message: 'Usuários encontrados',
           docs: {
             rows: docs.rows,
             count: docs.count,
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
           },
         });
       } else {
-        res.status(400).json({ success: false, message: 'Não foi possível obter os usuários terceirizados.' });
+        res.status(400).json({ success: false, message: 'Não foi possível obter os usuários.' });
       }
     } catch (error) {
       if (error.name === 'TokenExpiredError') {

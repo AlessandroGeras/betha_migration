@@ -1,21 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 const Dashboard = () => {
-
     const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0 } }); //Paginação
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 10;
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
+    const [isTokenVerified, setTokenVerified] = useState(false);
 
 
     useEffect(() => {
         setLoading(true);
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/dashboard?page=${currentPage}&pageSize=${pageSize}`);
+                const token = localStorage.getItem('Token');
+
+                if (!token) {
+                    // Se o token não estiver presente, redirecione para a página de login
+                    console.log("sem token");
+                    router.push('/login');
+                    return;
+                }
+
+                const response = await fetch(`/api/dashboard?page=${currentPage}&pageSize=${pageSize}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token }),
+                });
+
+
                 const data = await response.json();
+                if (response.status === 401) {
+                    console.log("401");
+                    router.push('/login');
+                }
+
+
+
+                setTokenVerified(true);
                 setDocuments(data);
             } catch (error) {
                 console.error('Erro ao obter documentos:', error);
@@ -32,7 +59,7 @@ const Dashboard = () => {
     const totalPages = Math.ceil((docs?.count ?? 0) / pageSize);
 
 
-    return (
+    return docs && (
         <div className='flex'>
             <Sidebar />
             <Head>

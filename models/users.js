@@ -109,6 +109,14 @@ const web_usuario = connection.define(
     CATEGORIA_PRINCIPAL:{
       type: Sequelize.STRING,
       allowNull: false,
+    },
+    FUNCAO:{
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    COLABORADOR_TERCEIRO:{
+      type: Sequelize.STRING,
+      allowNull: true,
     }
   },
   {

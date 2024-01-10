@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 
-const AddCategoryOutsourced = () => {
+const AddCategoryDocuments = () => {
     const [formData, setFormData] = useState({
         nome: '',
         tipo_documento: [], // Agora é um array para armazenar valores múltiplos
@@ -72,7 +72,7 @@ const AddCategoryOutsourced = () => {
                 formData: formData
               };
 
-            const response = await fetch('/api/store-category-outsourced', {
+            const response = await fetch('/api/store-category-documents', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ const AddCategoryOutsourced = () => {
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-28 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Categoria de Terceiro</span>
+                    <span className="ml-2">Adicionar Categoria de Documentos</span>
                 </div>
                 <div className="grid grid-cols-1 gap-4 w-2/4 mx-auto">
                     {/* Linha 1 */}
@@ -251,4 +251,4 @@ const AddCategoryOutsourced = () => {
     );
 };
 
-export default AddCategoryOutsourced;
+export default AddCategoryDocuments;

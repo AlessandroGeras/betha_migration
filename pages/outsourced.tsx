@@ -6,28 +6,23 @@ import Sidebar from '@/components/sidebar';
 
 const Outsourced = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({
-    success: false,
-    docs: { rows: [], count: 0, outsourcedCount: 0 },
-  });
+  const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortColumn, setSortColumn] = useState('NM_USUARIO');
   const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(true);  
+  const [loading, setLoading] = useState(true);
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [filteredData, setFilteredData] = useState([]);
-
-  
-
+  const [isTokenVerified, setTokenVerified] = useState(false);
 
 
-  const adicionarCategoriaClick = () => {
-    router.push('/add-category-outsourced');
+  const adicionarTerceiroClick = () => {
+    router.push('/add-outsourced');
   };
 
   const columnWidths = {
@@ -91,9 +86,32 @@ const Outsourced = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token }),
+      });
+
       const data = await response.json();
-  
+      if (response.status === 401) {
+        router.push('/login');
+      }
+      else {
+        setTokenVerified(true);
+      }
+
+
+
       // Se houver um filtro aplicado, filtre os dados usando o filtro
       const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, column) => {
         const filterValue = appliedFilterValue[column];
@@ -101,12 +119,12 @@ const Outsourced = () => {
           document[column].toString().toLowerCase().includes(filterValue.toLowerCase())
         );
       }, data.docs.rows);
-  
+
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
       // Atualize o estado filteredData
       setFilteredData(sortedRows);
-  
+
       // Atualize os documentos com os dados filtrados
       setDocuments({
         success: data.success,
@@ -119,15 +137,14 @@ const Outsourced = () => {
     } catch (error) {
       console.error('Erro ao obter as categorias de terceiros:', error);
     } finally {
-      setLoading(false);
+
     }
   };
-  
 
-  useEffect(() => {
-    console.log("useEffect1");
+
+  /* useEffect(() => {
     fetchData();
-  }, []);
+  }, []); */
 
 
   const applyFilters = (data, filters) => {
@@ -135,12 +152,12 @@ const Outsourced = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-  
+
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
           return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
         }
-  
+
         return false; // Se for nulo ou indefinido, não incluir no resultado
       });
     });
@@ -151,33 +168,33 @@ const Outsourced = () => {
   const handleSearchByFilter = async (column, value) => {
     setFilterOpen(false);
     setCurrentPage(1);
-  
+
     const availableValues = handleFilterValue(column);
-  
+
     if (value === "") {
       value = 'TODOS';
     }
-  
+
     if (!availableValues.includes(value)) {
       value = 'TODOS';
     }
-  
+
     if (availableValues.includes(value) || value === 'TODOS') {
       setAppliedFilterValue((prevFilters) => {
         const updatedFilters = { ...prevFilters, [column]: value };
         return updatedFilters;
       });
-  
+
       setSelectedFilterValue((prevSelectedFilters) => {
         const updatedSelectedFilters = { ...prevSelectedFilters, [column]: value };
         return updatedSelectedFilters;
       });
-  
+
       // Atualize o estado filteredData com os dados filtrados
       const filteredRows = applyFilters(documents.docs.rows, appliedFilterValue);
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
       setFilteredData(sortedRows);
-  
+
       // Atualize os documentos com os dados filtrados
       setDocuments({
         success: true,
@@ -192,42 +209,63 @@ const Outsourced = () => {
         const updatedFilters = { ...prevFilters, [column]: '' };
         return updatedFilters;
       });
-  
+
       setSelectedFilterValue((prevSelectedFilters) => {
         const updatedSelectedFilters = { ...prevSelectedFilters, [column]: '' };
         return updatedSelectedFilters;
       });
-  
+
       try {
-        const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
+        const token = localStorage.getItem('Token');
+
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+
         const data = await response.json();
-  
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else {
+          setTokenVerified(true);
+        }
+
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-        
+
           // Verificar se o valor do filtro é 'TODOS'
           if (filterColumnValue === 'TODOS') {
             return filteredData; // Não aplicar filtro se for 'TODOS'
           }
-        
+
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
-        
+
             // Verificar se o valor da coluna não é nulo antes de chamar toString()
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
-        
+
             return false; // Se for nulo ou indefinido, não incluir no resultado
           });
         }, data.docs.rows);
-  
+
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
         // Atualize o estado filteredData com os dados filtrados
         setFilteredData(sortedRows);
-  
+
         // Atualize os documentos com os dados filtrados
         setDocuments({
           success: data.success,
@@ -241,7 +279,7 @@ const Outsourced = () => {
         console.error('Erro ao obter as categorias de terceiros:', error);
       }
     }
-  }; 
+  };
 
 
 
@@ -256,7 +294,7 @@ const Outsourced = () => {
 
   const handleSearch = () => {
     setCurrentPage(1);
-  
+
     if (searchTerm === '') {
       fetchData();
     } else {
@@ -268,9 +306,9 @@ const Outsourced = () => {
           return key !== '' && String(value).toLowerCase() === searchTerm.toLowerCase();
         })
       );
-  
+
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
       setDocuments({
         success: true,
         docs: {
@@ -281,15 +319,15 @@ const Outsourced = () => {
       });
     }
   };
-  
+
 
   const handleClearSearch = () => {
     setSearchTerm('');
     setFilterOpen(false);
-  
+
     setAppliedFilterValue({});
     setSelectedFilterValue({});
-  
+
     setDocuments({
       success: true,
       docs: {
@@ -299,16 +337,19 @@ const Outsourced = () => {
       },
     });
   };
-  
 
-  const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
+  
+  const totalPages = Math.ceil(documents.docs.outsourcedCount / pageSize) || 1;
 
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   const goToNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    setCurrentPage((prevPage) => {
+      const nextPage = Math.min(prevPage + 1, totalPages);
+      return nextPage;
+    });
   };
 
   const handleKeyPress = (event) => {
@@ -339,34 +380,53 @@ const Outsourced = () => {
 
 
   useEffect(() => {
-    console.log("useEffect3");
     const fetchDataWithFilter = async () => {
       try {
         //setLoading(true);
+        const token = localStorage.getItem('Token');
 
-        const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`);
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        const response = await fetch(`/api/outsourced?page=${currentPage}&pageSize=${pageSize}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+
         const data = await response.json();
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else {
+          setTokenVerified(true);
+        }
 
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-        
+
           // Verificar se o valor do filtro é 'TODOS'
           if (filterColumnValue === 'TODOS') {
             return filteredData; // Não aplicar filtro se for 'TODOS'
           }
-        
+
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
-        
+
             // Verificar se o valor da coluna não é nulo antes de chamar toString()
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
-        
+
             return false; // Se for nulo ou indefinido, não incluir no resultado
           });
-        }, data.docs.rows);
+        }, data.docs.rows);        
 
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
 
@@ -384,13 +444,14 @@ const Outsourced = () => {
       } catch (error) {
         console.error('Erro ao obter as categorias de terceiros:', error);
       } finally {
-        //setLoading(false);
+        setLoading(false);
       }
     };
 
     fetchDataWithFilter();
   }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
 
+  const { success, docs } = documents;
 
   return (
     <div className='flex'>
@@ -437,10 +498,10 @@ const Outsourced = () => {
                 Limpar Pesquisa
               </button>
               <button
-                className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarCategoriaClick}
+                className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                onClick={adicionarTerceiroClick}
               >
-                <IoMdAdd className='text-xl mt-0.5' /> Nova Categoria
+                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Terceiro
               </button>
             </div>
 
@@ -688,7 +749,7 @@ const Outsourced = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
@@ -719,10 +780,12 @@ const Outsourced = () => {
               100
             </button>
           </div>
+          <span className="px-4 py-2  rounded text-gray-500">
+                  Página {currentPage} de {totalPages}
+          </span>
           <button
             onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>

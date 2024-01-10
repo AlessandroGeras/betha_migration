@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import categoria_colaboradores from '../../models/categoryCollaborators';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -29,20 +29,13 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
-      const outsourcedCount = await users.count({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'S',
-                 COLABORADOR_TERCEIRO: 'N' },
-      });
-
       // Configuração da paginação
-      const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
       const page = parseInt(req.query.page) || 1; // Página atual
-      
+      const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
 
       // Consulta paginada usando Sequelize com filtro
-      const docs = await users.findAndCountAll({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'S',
-                 COLABORADOR_TERCEIRO: 'N' }, // Adicionando a condição de filtro
+      const docs = await categoria_colaboradores.findAndCountAll({
+        attributes: ['CATEGORIA'],
         offset: (page - 1) * pageSize,
         limit: pageSize,
       });
@@ -50,18 +43,17 @@ export default async function handler(req, res) {
       if (docs) {
         res.status(200).json({
           success: true,
-          message: 'Terceiros encontrados',
+          message: 'Categorias encontradas',
           docs: {
             rows: docs.rows,
             count: docs.count,
-            outsourcedCount: outsourcedCount,
           },
         });
       } else {
-        res.status(400).json({ success: false, message: 'Não foi possível obter os usuários terceirizados.' });
+        res.status(400).json({ success: false, message: 'Não foi possível obter as categorias de Colaboradores.' });
       }
     } catch (error) {
-      if (error.name === 'TokenExpiredError') {
+     if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);
         res.status(401).json({ success: false, message: 'Token expirado' });
       } else {
