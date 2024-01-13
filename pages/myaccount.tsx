@@ -5,8 +5,7 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        status: 'Ativo',
-        observacoes: '',
+        id_user: '',
         cpf: '',
         usuario: '',
         sobrenome: '',
@@ -15,16 +14,45 @@ const AddOutsourced = () => {
         email: '',
         telefone: '',
         uf: '',
-        principal:'',
+        password: '',
+        confirmPassword: '',
+        ID_ADM_GESTAO_TERCEIROS: '',
+
     });
 
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [isButtonEnabled, setButtonEnabled] = useState(true);
+
+    const validatePassword = (password: string) => {
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+        const hasMinimumLength = password.length >= 8;
+
+        return {
+            hasUpperCase,
+            hasLowerCase,
+            hasNumber,
+            hasSpecialChar,
+            hasMinimumLength,
+        };
+    };
+
+    const passwordValidation = validatePassword(newPassword);
+
+
+
+    const handleEnableButton = (e) => {
+        setButtonEnabled(!isButtonEnabled);
+    };
 
     const closeModal = () => {
         setShowModal(false);
@@ -32,8 +60,7 @@ const AddOutsourced = () => {
 
     const resetForm = () => {
         setFormData({
-            status: 'Ativo',
-            observacoes: '',
+            id_user: '',
             cpf: '',
             usuario: '',
             sobrenome: '',
@@ -42,7 +69,9 @@ const AddOutsourced = () => {
             email: '',
             telefone: '',
             uf: '',
-            principal:'',
+            password: '',
+            confirmPassword: '',
+            ID_ADM_GESTAO_TERCEIROS: '',
         });
     }
 
@@ -62,42 +91,98 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.uf == "" || formData.principal == "") {
-            setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+        if (formData.uf == "") {
+            setPopupMessage('Não foi possível alterar seus dados pessoais. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
-            
         }
 
+        if (!isButtonEnabled) {
+            if (!passwordValidation.hasUpperCase) {
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                setPopupMessage('A senha deve conter pelo menos uma letra maiúscula');
+                return;
+            } else if (!passwordValidation.hasLowerCase) {
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                setPopupMessage('A senha deve conter pelo menos uma letra minúscula');
+                return;
+            } else if (!passwordValidation.hasNumber) {
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                setPopupMessage('A senha deve conter pelo menos um número');
+                return;
+            } else if (!passwordValidation.hasSpecialChar) {
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                setPopupMessage('A senha deve conter pelo menos um caractere especial');
+                return;
+            } else if (!passwordValidation.hasMinimumLength) {
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                setPopupMessage('A senha deve ter no mínimo 8 caracteres');
+                return;
+            } else if (newPassword !== confirmPassword) {
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                setPopupMessage('As senhas não conferem');
+                return;
+            }
+        }
+
+
+
         try {
-            const response = await fetch('/api/store-user', {
+            const response = await fetch('/api/update-myaccount', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     ...formData,
+                    password: newPassword,
                 }),
             });
 
             if (!response.ok) {
-                setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                setPopupMessage('Não foi possível alterar seus dados pessoais. Verifique se os dados estão preenchidos.');
                 setShowModal(true);
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
-                throw new Error('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                throw new Error('Não foi possível alterar seus dados pessoas. Verifique se os dados estão preenchidos.');
             }
 
-            const responseData = await response.json();
+            resetForm();
+            const data = await response.json();
+            console.log(data.user);
 
-            console.log('Usuário criado com sucesso!', responseData);
-            setPopupMessage('Usuário criado com sucesso!');
+            setFormData({
+                cpf: data.user.CPF,
+                usuario: data.user.NM_USUARIO,
+                sobrenome: data.user.SOBRENOME,
+                endereco: data.user.ENDEREÇO,
+                cidade: data.user.CIDADE,
+                email: data.user.ST_EMAIL,
+                telefone: data.user.TELEFONE,
+                uf: data.user.UF,
+                id_user: data.user.ID_USUARIO,
+                ID_ADM_GESTAO_TERCEIROS: data.user.ID_ADM_GESTAO_TERCEIROS,
+            });
+
+
+            setPopupMessage('Dados pessoais alterados com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
-            setTextColor('#3f5470');
-            resetForm();
+            setTextColor('#3f5470');           
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
@@ -111,6 +196,7 @@ const AddOutsourced = () => {
         const fetchCategoriaOptions = async () => {
             try {
                 const token = localStorage.getItem('Token');
+                const nome = localStorage.getItem('FontanaUser');
 
                 if (!token) {
                     // Se o token não estiver presente, redirecione para a página de login
@@ -119,12 +205,17 @@ const AddOutsourced = () => {
                     return;
                 }
 
-                const response = await fetch(`/api/category-collaborators`, {
+                const requestBody = {
+                    token: token,
+                    nome: nome,
+                };
+
+                const response = await fetch('/api/myaccount', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token }),
+                    body: JSON.stringify(requestBody),
                 });
 
                 const data = await response.json();
@@ -135,9 +226,20 @@ const AddOutsourced = () => {
                     setTokenVerified(true);
                 }
 
-                setCategoriaOptions(data.success ? data.docs.rows : []);
+                setFormData({
+                    cpf: data.user.CPF,
+                    usuario: data.user.NM_USUARIO,
+                    sobrenome: data.user.SOBRENOME,
+                    endereco: data.user.ENDEREÇO,
+                    cidade: data.user.CIDADE,
+                    email: data.user.ST_EMAIL,
+                    telefone: data.user.TELEFONE,
+                    uf: data.user.UF,
+                    id_user: data.user.ID_USUARIO,
+                    ID_ADM_GESTAO_TERCEIROS: data.user.ID_ADM_GESTAO_TERCEIROS,
+                });
             } catch (error) {
-                console.error('Erro ao obter opções de categoria:', error);
+                console.error('Erro ao alterar os dados pessoais:', error);
             }
         };
 
@@ -150,49 +252,38 @@ const AddOutsourced = () => {
             {/* Barra lateral */}
             <Sidebar />
             <Head>
-                <title>Adicionar Usuário</title>
+                <title>Alterar dados pessoais</title>
             </Head>
 
             {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-16 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Usuário</span>
+                    <span className="ml-2">Alterar dados pessoais</span>
                 </div>
+
                 <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
                     {/* Linha 1 */}
-                    <div className="col-span-3">
-                        <label htmlFor="status" className="block text-sm font-medium text-gray-700">
-                            Status <span className="text-red-500">*</span>
+
+                    {/* Linha 2 */}
+
+                    {/* Linha 3 */}
+                    <div className="col-span-4">
+                        <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
+                            Nome de Contato <span className="text-red-500">*</span>
                         </label>
-                        <select
-                            name="status"
-                            id="status"
-                            value={formData.status}
+                        <input
+                            type="text"
+                            name="usuario"
+                            id="usuario"
+                            required
+                            disabled
+                            value={formData.usuario}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            required
-                        >
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
-                        </select>
-                    </div>
-
-                    <div className="col-span-4 row-span-2">
-                        <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
-                            Obs. Status
-                        </label>
-                        <textarea
-                            name="observacoes"
-                            id="observacoes"
-                            value={formData.observacoes}
-                            onChange={handleInputChange}
-                            rows={4}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
                         />
                     </div>
 
-                    {/* Linha 2 */}
                     <div className="col-span-3">
                         <label htmlFor="cpf" className="block text-sm font-medium text-gray-700">
                             CPF <span className="text-red-500">*</span>
@@ -207,37 +298,7 @@ const AddOutsourced = () => {
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             maxLength="11"
                             required
-                        />
-                    </div>
-
-                    {/* Linha 3 */}
-                    <div className="col-span-4">
-                        <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
-                            Nome de Contato <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="usuario"
-                            id="usuario"
-                            required
-                            value={formData.usuario}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>
-
-                    <div className="col-span-3">
-                        <label htmlFor="sobrenome" className="block text-sm font-medium text-gray-700">
-                            Sobrenome <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="sobrenome"
-                            id="sobrenome"
-                            required
-                            value={formData.sobrenome}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            disabled
                         />
                     </div>
 
@@ -318,45 +379,80 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    
 
-                    
-
-                    {/* Linha 6 (Botão Função) */}
-                    <div className="col-span-2"></div>
-
-                    <div className="col-span-3">
-                        <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
-                            Função <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            name="principal"
-                            id="principal"
-                            value={formData.principal}
-                            onChange={(e) => handleInputChange(e)}
-                            required
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                    {/* Linha 6 (Senha, Confirmação de Senha) */}
+                    {formData.ID_ADM_GESTAO_TERCEIROS == 'S' && (<div className="col-span-2 mt-[22px]">
+                        <button
+                            type="button"
+                            onClick={handleEnableButton}
+                            className="bg-green-500 text-white p-2 rounded-md focus:outline-none"
                         >
-                            <option value="" disabled selected>
-                                Selecione uma categoria
-                            </option>
-                            {categoriaOptions.map((categoria) => (
-                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
-                                    {categoria.CATEGORIA}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                            Habilitar troca de senha
+                        </button>
+                    </div>)}
 
-                    <div className="col-span-2"></div>
+                    {formData.ID_ADM_GESTAO_TERCEIROS == 'S' && (<div className="col-span-2">
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                            Senha
+                        </label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                            required
+                            disabled={isButtonEnabled}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>)}
+
+                    {formData.ID_ADM_GESTAO_TERCEIROS == 'S' && (<div className="col-span-2">
+                        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+                            Confirmar Senha
+                        </label>
+                        <input
+                            type="password"
+                            name="confirmPassword"
+                            id="confirmPassword"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                            disabled={isButtonEnabled}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>)}
+
+                    {newPassword && (<div className="text-sm mt-1 col-span-3"></div>)}
+
+                    {newPassword && (
+                        <div className="text-sm mt-1 col-span-2">
+                            <span className={passwordValidation.hasUpperCase ? 'text-blue-500' : 'text-red-500'}>
+                                {passwordValidation.hasUpperCase ? '✔' : 'X'} Uma letra maiúscula
+                            </span>
+                            <br />
+                            <span className={passwordValidation.hasLowerCase ? 'text-blue-500' : 'text-red-500'}>
+                                {passwordValidation.hasLowerCase ? '✔' : 'X'} Uma letra minúscula
+                            </span>
+                            <br />
+                            <span className={passwordValidation.hasNumber ? 'text-blue-500' : 'text-red-500'}>
+                                {passwordValidation.hasNumber ? '✔' : 'X'} Um número
+                            </span>
+                            <br />
+                            <span className={passwordValidation.hasSpecialChar ? 'text-blue-500' : 'text-red-500'}>
+                                {passwordValidation.hasSpecialChar ? '✔' : 'X'} Um caractere especial
+                            </span>
+                            <br />
+                            <span className={passwordValidation.hasMinimumLength ? 'text-blue-500' : 'text-red-500'}>
+                                {passwordValidation.hasMinimumLength ? '✔' : 'X'} Pelo menos 8 caracteres
+                            </span>
+                        </div>
+                    )}
+
+                    {newPassword && (<div className="text-sm mt-1 col-span-2"></div>)}
 
 
-
-
-                    {/* Linha 7 (Botão Cadastrar) */}
-                    <div className="col-span-1"></div>
-
-
+                    {/* Linha 7 (Botão Habilitar) */}
                     <div className="col-span-7 flex justify-center mt-4">
                         <button
                             type="submit"
@@ -370,13 +466,15 @@ const AddOutsourced = () => {
                             onClick={handleSubmitSuccess}
                             className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                         >
-                            Salvar
+                            Alterar Cadastro
                         </button>
                     </div>
 
                     <div className="col-span-1"></div>
                 </div>
             </div>
+
+
 
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">

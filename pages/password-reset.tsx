@@ -44,11 +44,11 @@ const PasswordResetForm = () => {
 
   const passwordValidation = validatePassword(newPassword);
 
-  const resetForm = () => {
+  /* const resetForm = () => {
     setEmail('');
     setNewPassword('');
     setConfirmPassword('');
-  };
+  }; */
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

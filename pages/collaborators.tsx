@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Link from 'next/link';
 
 const Collaborators = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -19,14 +21,89 @@ const Collaborators = () => {
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
+  const [userID, setUserID] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e');
 
 
   const adicionarColaboradorClick = () => {
     router.push('/add-collaborator');
   };
 
+  const deleteAccountClick = (document) => {
+    setPopupMessage('Tem certeza que deseja excluir a conta <span style="color: red;">' + document.NM_USUARIO + '</span>?');
+    setShowModal(true);
+    setShowModal2(true);
+    setModalColor('#3f5470');
+    setTextColor('#3f5470');
+    setUserID(document);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setShowModal2(false);
+  };
+
+
+  const deleteAccount = async () => {
+    try {
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const usuario = userID.ID_USUARIO;
+
+      const response = await fetch(`/api/delete-user`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, usuario }),
+      });
+
+      const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      } else {
+        setTokenVerified(true);
+
+        // Atualize o estado após excluir com sucesso
+        const updatedDocs = {
+          success: true,
+          docs: {
+            rows: documents.docs.rows.filter((user) => user.ID_USUARIO !== usuario),
+            count: documents.docs.count - 1,
+            outsourcedCount: documents.docs.outsourcedCount,
+          },
+        };
+
+        setDocuments(updatedDocs);
+
+        // Atualize também o estado filteredData
+        setFilteredData(updatedDocs.docs.rows);
+
+        setPopupMessage('Conta excluída');
+        setShowModal(true);
+        setShowModal2(false);
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+      }
+    } catch (error) {
+      console.error('Erro ao excluir a conta:', error);
+    } finally {
+
+    }
+  };
+
   const columnWidths = {
-    '': '30px',
+    '': '59px',
     'STATUS': '200px',
     'NM_USUARIO': '500px',
     'NOME_TERCEIRO': '420px',
@@ -330,7 +407,7 @@ const Collaborators = () => {
     });
   };
 
-  
+
   const totalPages = Math.ceil(documents.docs.outsourcedCount / pageSize) || 1;
 
   const goToPreviousPage = () => {
@@ -418,7 +495,7 @@ const Collaborators = () => {
 
             return false; // Se for nulo ou indefinido, não incluir no resultado
           });
-        }, data.docs.rows);        
+        }, data.docs.rows);
 
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
 
@@ -461,6 +538,55 @@ const Collaborators = () => {
                 <div className="flex items-center justify-center h-full text-4xl">
                   Carregando lista de Colaboradores...
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+              {/* Pseudo-elemento para a barra lateral */}
+              <style>
+                {`
+                      .modal-content::before {
+                        content: '';
+                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                        width: 4px; /* Largura da barra lateral */
+                        height: 100%; /* Altura da barra lateral */
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                      }
+                    `}
+              </style>
+
+              <button
+                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                onClick={closeModal}>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+
+              <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+
+                {showModal2 && (
+                  <div className='flex'>
+                    <button className="mx-auto mt-4 w-[300px]" onClick={deleteAccount}>
+                      <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                        Sim, excluir a conta
+                      </span>
+                    </button>
+                    <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                      <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                        Não, cancelar e sair
+                      </span>
+                    </button>
+                  </div>)}
+
+
               </div>
             </div>
           </div>
@@ -530,7 +656,7 @@ const Collaborators = () => {
 
               {filterOpen && (
                 <div className={`flex text-gray-500 w-[1440px]`}>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
                   </div>
@@ -616,7 +742,7 @@ const Collaborators = () => {
                     >
                       Aplicar
                     </button>
-                  </div>                
+                  </div>
 
 
 
@@ -636,11 +762,15 @@ const Collaborators = () => {
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
-                        className={`column-cell border border-gray-300 py-2 pl-1`}
+                        className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === '' ? (
-                          <IoIosSearch className='text-xl mt-0.5' />
+                        {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-collaborator', query: { id: document.ID_USUARIO } }}>
+                          <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                        </Link>
+                          <button onClick={() => deleteAccountClick(document)}>
+                            <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                          </button></div>
                         ) : (
                           document[column]
                         )}
@@ -689,7 +819,7 @@ const Collaborators = () => {
             </button>
           </div>
           <span className="px-4 py-2  rounded text-gray-500">
-                  Página {currentPage} de {totalPages}
+            Página {currentPage} de {totalPages}
           </span>
           <button
             onClick={goToNextPage}

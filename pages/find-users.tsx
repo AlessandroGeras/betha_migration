@@ -3,10 +3,21 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 
-const AddOutsourced = () => {
+const AccountUsers = () => {
+
+    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [função, setFunção] = useState('');
+    const [showModal, setShowModal] = useState(false);
+    const [popupMessage, setPopupMessage] = useState('');
+    const [modalColor, setModalColor] = useState('#e53e3e');
+    const [textColor, setTextColor] = useState('#e53e3e');
+    const router = useRouter();
+    const [isTokenVerified, setTokenVerified] = useState(false);
+    const { id } = router.query;
+
+
     const [formData, setFormData] = useState({
-        status: 'Ativo',
-        observacoes: '',
+        id_user: '',
         cpf: '',
         usuario: '',
         sobrenome: '',
@@ -15,16 +26,9 @@ const AddOutsourced = () => {
         email: '',
         telefone: '',
         uf: '',
-        principal:'',
+        principal: '',
+        status:'',
     });
-
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
-    const [showModal, setShowModal] = useState(false);
-    const [popupMessage, setPopupMessage] = useState('');
-    const [modalColor, setModalColor] = useState('#e53e3e');
-    const [textColor, setTextColor] = useState('#e53e3e');
-    const router = useRouter();
-    const [isTokenVerified, setTokenVerified] = useState(false);
 
     const closeModal = () => {
         setShowModal(false);
@@ -32,8 +36,7 @@ const AddOutsourced = () => {
 
     const resetForm = () => {
         setFormData({
-            status: 'Ativo',
-            observacoes: '',
+            id_user: '',
             cpf: '',
             usuario: '',
             sobrenome: '',
@@ -42,7 +45,8 @@ const AddOutsourced = () => {
             email: '',
             telefone: '',
             uf: '',
-            principal:'',
+            principal: '',
+            status:'',
         });
     }
 
@@ -62,17 +66,16 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.uf == "" || formData.principal == "") {
-            setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+        if (formData.uf == "") {
+            setPopupMessage('Não foi possível alterar o cadastro. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
-            
         }
 
         try {
-            const response = await fetch('/api/store-user', {
+            const response = await fetch('/api/update-users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -83,21 +86,35 @@ const AddOutsourced = () => {
             });
 
             if (!response.ok) {
-                setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                setPopupMessage('Não foi possível alterar o cadastro. Verifique se os dados estão preenchidos.');
                 setShowModal(true);
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
-                throw new Error('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                throw new Error('Não foi possível alterar o cadastro. Verifique se os dados estão preenchidos.');
             }
 
-            const responseData = await response.json();
+            resetForm();
+            const data = await response.json();
 
-            console.log('Usuário criado com sucesso!', responseData);
-            setPopupMessage('Usuário criado com sucesso!');
+            setFormData({
+                cpf: data.user.CPF,
+                usuario: data.user.NM_USUARIO,
+                sobrenome: data.user.SOBRENOME,
+                endereco: data.user.ENDEREÇO,
+                cidade: data.user.CIDADE,
+                email: data.user.ST_EMAIL,
+                telefone: data.user.TELEFONE,
+                uf: data.user.UF,
+                id_user: data.user.ID_USUARIO,
+                principal:data.user.FUNCAO,
+                status:data.user.STATUS,
+            });
+
+
+            setPopupMessage('Cadastro alterado com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
@@ -108,23 +125,29 @@ const AddOutsourced = () => {
     };
 
     useEffect(() => {
+
+        if (!id) {
+            return;
+        }
+
         const fetchCategoriaOptions = async () => {
             try {
                 const token = localStorage.getItem('Token');
 
                 if (!token) {
                     // Se o token não estiver presente, redirecione para a página de login
-                    console.log("sem token");
                     router.push('/login');
                     return;
                 }
 
-                const response = await fetch(`/api/category-collaborators`, {
+                const response = await fetch('/api/find-users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token }),
+                    body: JSON.stringify({
+                        ...formData, token, id
+                    }),
                 });
 
                 const data = await response.json();
@@ -135,14 +158,31 @@ const AddOutsourced = () => {
                     setTokenVerified(true);
                 }
 
-                setCategoriaOptions(data.success ? data.docs.rows : []);
+                setFormData({
+                    cpf: data.user.CPF,
+                    usuario: data.user.NM_USUARIO,
+                    sobrenome: data.user.SOBRENOME,
+                    endereco: data.user.ENDEREÇO,
+                    cidade: data.user.CIDADE,
+                    email: data.user.ST_EMAIL,
+                    telefone: data.user.TELEFONE,
+                    uf: data.user.UF,
+                    id_user: data.user.ID_USUARIO,
+                    status:data.user.STATUS,
+                });
+
+                if (data) {
+                    setCategoriaOptions(data.docs.rows ?? []);
+                    setFunção(data.user.FUNCAO);
+                }
+
             } catch (error) {
-                console.error('Erro ao obter opções de categoria:', error);
+                console.error('Erro ao alterar os dados pessoais:', error);
             }
         };
 
         fetchCategoriaOptions();
-    }, []);
+    }, [id]);
 
 
     return (
@@ -150,65 +190,20 @@ const AddOutsourced = () => {
             {/* Barra lateral */}
             <Sidebar />
             <Head>
-                <title>Adicionar Usuário</title>
+                <title>Alterar Cadastro</title>
             </Head>
 
             {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-16 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Usuário</span>
+                    <span className="ml-2">Alterar cadastro de usuário</span>
                 </div>
+
                 <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
                     {/* Linha 1 */}
-                    <div className="col-span-3">
-                        <label htmlFor="status" className="block text-sm font-medium text-gray-700">
-                            Status <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            name="status"
-                            id="status"
-                            value={formData.status}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            required
-                        >
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
-                        </select>
-                    </div>
-
-                    <div className="col-span-4 row-span-2">
-                        <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
-                            Obs. Status
-                        </label>
-                        <textarea
-                            name="observacoes"
-                            id="observacoes"
-                            value={formData.observacoes}
-                            onChange={handleInputChange}
-                            rows={4}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
-                        />
-                    </div>
 
                     {/* Linha 2 */}
-                    <div className="col-span-3">
-                        <label htmlFor="cpf" className="block text-sm font-medium text-gray-700">
-                            CPF <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="cpf"
-                            id="cpf"
-                            value={formData.cpf}
-                            onChange={handleInputChange}
-                            placeholder="000.000.000-00"
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="11"
-                            required
-                        />
-                    </div>
 
                     {/* Linha 3 */}
                     <div className="col-span-4">
@@ -227,17 +222,19 @@ const AddOutsourced = () => {
                     </div>
 
                     <div className="col-span-3">
-                        <label htmlFor="sobrenome" className="block text-sm font-medium text-gray-700">
-                            Sobrenome <span className="text-red-500">*</span>
+                        <label htmlFor="cpf" className="block text-sm font-medium text-gray-700">
+                            CPF <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
-                            name="sobrenome"
-                            id="sobrenome"
-                            required
-                            value={formData.sobrenome}
+                            name="cpf"
+                            id="cpf"
+                            value={formData.cpf}
                             onChange={handleInputChange}
+                            placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            maxLength="11"
+                            required
                         />
                     </div>
 
@@ -318,12 +315,29 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    
 
-                    
+                    <div className="col-span-1"></div>                    
 
-                    {/* Linha 6 (Botão Função) */}
-                    <div className="col-span-2"></div>
+                    <div className="col-span-2">
+                        <label htmlFor="status" className="block text-sm font-medium text-gray-700">
+                            Status <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="status"
+                            id="status"
+                            value={formData.status}
+                            onChange={handleInputChange}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            required
+                        >
+                            <option value="Ativo" selected={formData.status === "Ativo"}>
+                                Ativo
+                            </option>
+                            <option value="Inativo" selected={formData.status === "Inativo"}>
+                                Inativo
+                            </option>
+                        </select>
+                    </div>                    
 
                     <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
@@ -337,26 +351,20 @@ const AddOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         >
-                            <option value="" disabled selected>
+                            <option value="" disabled>
                                 Selecione uma categoria
                             </option>
                             {categoriaOptions.map((categoria) => (
-                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
+                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA} selected={função === categoria.CATEGORIA}>
                                     {categoria.CATEGORIA}
                                 </option>
                             ))}
                         </select>
-                    </div>
+                    </div>      
 
-                    <div className="col-span-2"></div>
+                    <div className="col-span-1"></div>                 
 
-
-
-
-                    {/* Linha 7 (Botão Cadastrar) */}
-                    <div className="col-span-1"></div>
-
-
+                    {/* Linha 7 (Botão Habilitar) */}
                     <div className="col-span-7 flex justify-center mt-4">
                         <button
                             type="submit"
@@ -370,13 +378,15 @@ const AddOutsourced = () => {
                             onClick={handleSubmitSuccess}
                             className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                         >
-                            Salvar
+                            Alterar Cadastro
                         </button>
                     </div>
 
                     <div className="col-span-1"></div>
                 </div>
             </div>
+
+
 
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -421,4 +431,4 @@ const AddOutsourced = () => {
     );
 };
 
-export default AddOutsourced;
+export default AccountUsers;

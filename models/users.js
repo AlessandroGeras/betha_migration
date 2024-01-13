@@ -117,6 +117,10 @@ const web_usuario = connection.define(
     COLABORADOR_TERCEIRO:{
       type: Sequelize.STRING,
       allowNull: true,
+    },
+    CPF:{
+      type: Sequelize.STRING,
+      allowNull: true,
     }
   },
   {

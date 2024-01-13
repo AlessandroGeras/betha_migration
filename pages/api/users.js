@@ -27,6 +27,9 @@ export default async function handler(req, res) {
       connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
         host: process.env.HOST,
         dialect: process.env.DIALECT || 'oracle',
+        dialectOptions: {
+          connectTimeout: 5000, // Tempo limite em milissegundos (5 segundos)
+        },
       });
 
       const outsourcedCount = await users.count({

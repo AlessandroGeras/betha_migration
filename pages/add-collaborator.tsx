@@ -7,8 +7,7 @@ const AddOutsourced = () => {
     const [formData, setFormData] = useState({
         status: 'Ativo',
         observacoes: '',
-        cnpj: '',
-        nomeTerceiro: '',
+        cpf: '',
         usuario: '',
         sobrenome: '',
         endereco: '',
@@ -16,9 +15,11 @@ const AddOutsourced = () => {
         email: '',
         telefone: '',
         uf: '',
-        principal: '',
+        principal:'',
+        nome_terceiro: '',
     });
 
+    const [enterprises, setEnterprises] = useState([]);
     const [categoriaOptions, setCategoriaOptions] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -35,8 +36,7 @@ const AddOutsourced = () => {
         setFormData({
             status: 'Ativo',
             observacoes: '',
-            cnpj: '',
-            nomeTerceiro: '',
+            cpf: '',
             usuario: '',
             sobrenome: '',
             endereco: '',
@@ -44,18 +44,23 @@ const AddOutsourced = () => {
             email: '',
             telefone: '',
             uf: '',
-            principal: '',
+            principal:'',
+            nome_terceiro: '',
         });
     }
+
+    const handleSelectChange = (e) => {
+        setFormData({ ...formData, nome_terceiro: e.target.value });
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
 
-        if (name === 'cnpj') {
-            const formattedCNPJ = value
-                .replace(/\D/g, '')
-                .replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-            setFormData({ ...formData, [name]: formattedCNPJ });
+        if (name === 'cpf') {
+            const formattedCPF = value
+                .replace(/\D/g, '') // Remove caracteres não numéricos
+                .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação para CPF
+            setFormData({ ...formData, [name]: formattedCPF });
         } else {
             setFormData({ ...formData, [name]: value });
         }
@@ -64,23 +69,23 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.uf == "") {
+        if (formData.uf == "" || formData.principal == "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
+            
         }
 
         try {
-            const response = await fetch('/api/store-outsourced', {
+            const response = await fetch('/api/store-collaborator', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     ...formData,
-                    principal: formData.principal,
                 }),
             });
 
@@ -106,7 +111,7 @@ const AddOutsourced = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/outsourced');
+        router.push('/collaborators');
     };
 
     useEffect(() => {
@@ -121,7 +126,7 @@ const AddOutsourced = () => {
                     return;
                 }
 
-                const response = await fetch(`/api/category-outsourced`, {
+                const response = await fetch(`/api/category-collaborators`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -135,6 +140,7 @@ const AddOutsourced = () => {
                 }
                 else {
                     setTokenVerified(true);
+                    setEnterprises(data.uniqueEnterprises);
                 }
 
                 setCategoriaOptions(data.success ? data.docs.rows : []);
@@ -147,19 +153,19 @@ const AddOutsourced = () => {
     }, []);
 
 
-    return isTokenVerified &&(
+    return (
         <div className="flex h-screen">
             {/* Barra lateral */}
             <Sidebar />
             <Head>
-                <title>Incluir Colaborador</title>
+                <title>Adicionar Usuário</title>
             </Head>
 
             {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-16 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Colaborador de Terceiro</span>
+                    <span className="ml-2">Adicionar Usuário</span>
                 </div>
                 <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
                     {/* Linha 1 */}
@@ -196,39 +202,24 @@ const AddOutsourced = () => {
 
                     {/* Linha 2 */}
                     <div className="col-span-3">
-                        <label htmlFor="cnpj" className="block text-sm font-medium text-gray-700">
-                            CNPJ <span className="text-red-500">*</span>
+                        <label htmlFor="cpf" className="block text-sm font-medium text-gray-700">
+                            CPF <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
-                            name="cnpj"
-                            id="cnpj"
-                            value={formData.cnpj}
+                            name="cpf"
+                            id="cpf"
+                            value={formData.cpf}
                             onChange={handleInputChange}
-                            placeholder="00.000.000/0000-00"
+                            placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="18"
+                            maxLength="11"
                             required
                         />
                     </div>
 
                     {/* Linha 3 */}
-                    <div className="col-span-3">
-                        <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
-                            Nome Terceiro <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="nomeTerceiro"
-                            id="nomeTerceiro"
-                            value={formData.nomeTerceiro}
-                            onChange={handleInputChange}
-                            required
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>
-
-                    <div className="col-span-2">
+                    <div className="col-span-4">
                         <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
                             Nome de Contato <span className="text-red-500">*</span>
                         </label>
@@ -243,7 +234,7 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    <div className="col-span-2">
+                    <div className="col-span-3">
                         <label htmlFor="sobrenome" className="block text-sm font-medium text-gray-700">
                             Sobrenome <span className="text-red-500">*</span>
                         </label>
@@ -291,7 +282,7 @@ const AddOutsourced = () => {
 
                     <div className="col-span-1">
                         <label htmlFor="uf" className="block text-sm font-medium text-gray-700">
-                            UF
+                            UF <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
@@ -335,11 +326,39 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    <div className="col-span-2"></div>
+                    
+
+                    
+
+                    {/* Linha 6 (Botão Função) */}
+                    <div className="col-span-3">
+                        <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
+                            Nome Terceiro <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="nomeTerceiro"
+                            id="nomeTerceiro"
+                            value={formData.nome_terceiro}
+                            onChange={(e) => handleSelectChange(e)}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            <option value="" disabled>
+                                Selecione uma empresa
+                            </option>
+                            {enterprises.map((empresa, index) => (
+                                <option key={index} value={empresa}>
+                                    {empresa}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="col-span-1"></div>
 
                     <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
-                            Categoria Principal <span className="text-red-500">*</span>
+                            Função <span className="text-red-500">*</span>
                         </label>
                         <select
                             name="principal"
@@ -349,7 +368,7 @@ const AddOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         >
-                            <option value="" disabled>
+                            <option value="" disabled selected>
                                 Selecione uma categoria
                             </option>
                             {categoriaOptions.map((categoria) => (
@@ -362,11 +381,14 @@ const AddOutsourced = () => {
 
                     <div className="col-span-2"></div>
 
-                    {/* Linha 6 (Botão Cadastrar) */}
+
+
+
+                    {/* Linha 7 (Botão Cadastrar) */}
                     <div className="col-span-1"></div>
 
 
-                    <div className="col-span-5 flex justify-center mt-4">
+                    <div className="col-span-7 flex justify-center mt-4">
                         <button
                             type="submit"
                             onClick={handleSubmitCancel}

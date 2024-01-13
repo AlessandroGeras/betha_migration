@@ -147,7 +147,7 @@ const AddOutsourced = () => {
     }, []);
 
 
-    return isTokenVerified &&(
+    return (
         <div className="flex h-screen">
             {/* Barra lateral */}
             <Sidebar />

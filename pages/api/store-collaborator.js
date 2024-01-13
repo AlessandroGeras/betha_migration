@@ -22,8 +22,11 @@ export default async function handler(req, res) {
             email,
             telefone,
             uf,
-            principal
+            principal,
+            nome_terceiro,
         } = req.body;
+
+        
 
         let connection;
 
@@ -63,8 +66,8 @@ export default async function handler(req, res) {
                 CIDADE: cidade,
                 UF: uf,
                 TELEFONE: telefone,
-                ID_USUARIO_INTERNO: "S",
-                ID_ADM_GESTAO_TERCEIROS: "N",
+                ID_USUARIO_INTERNO: "N",
+                ID_ADM_GESTAO_TERCEIROS: "S",
                 ID_USUARIO: idUsuario,
                 ID_USUARIO_MEGA: 0,
                 ID_ADM_RESERVA_SALA: "N",
@@ -75,13 +78,13 @@ export default async function handler(req, res) {
                 ID_CAD_ORCAMENTO: "N",
                 ID_ADM_SALA: "N",
                 ID_ADM_BENS_TERCEIRO: "N",
-                ID_CON_BENS_TERCEIRO: "N",
-                ID_ADM_GESTAO_TERCEIROS: "N",
+                ID_CON_BENS_TERCEIRO: "N",                
                 ID_CON_GESTAO_TERCEIROS: "N",
                 CATEGORIA_PRINCIPAL: "N/A",
-                NOME_TERCEIRO: "N/A",
+                NOME_TERCEIRO: nome_terceiro,
                 CNPJ: "N/A",
                 FUNCAO:principal,
+                COLABORADOR_TERCEIRO: "S",
             });
 
 

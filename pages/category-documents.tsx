@@ -26,7 +26,7 @@ const CategoryDocuments = () => {
 
 
   const adicionarCategoriaClick = () => {
-    router.push('/add-category-outsourced');
+    router.push('/add-category-documents');
   };
 
   const columnWidths = {
@@ -257,7 +257,7 @@ const CategoryDocuments = () => {
     };
   }, [handleSearch]);
 
-  return isTokenVerified && (
+  return (
     <div className='flex'>
       <Sidebar />
 

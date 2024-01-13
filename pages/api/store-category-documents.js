@@ -1,4 +1,4 @@
-import categoryOutsourced from '../../models/categoryOutsourced';
+import categoria_documentos from '../../models/categoryDocuments';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -14,7 +14,7 @@ Oracledb.initOracleClient({
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const {
-            nome,
+            formData: { nome },
             tipo_documento,
             token
         } = req.body;
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
                 dialect: process.env.DIALECT || 'oracle',
             });
 
-            const Store = await categoryOutsourced.create({
+            const Store = await categoria_documentos.create({
                 CATEGORIA: nome,
             }, {
                 fields: ['CATEGORIA'], // Especifique os campos que deseja incluir

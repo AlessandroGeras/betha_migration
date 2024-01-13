@@ -94,7 +94,23 @@ const Sidebar = () => {
         router.push('/add-user');
     };
 
+    const myaccount = () => {
+        router.push('/myaccount');
+    };
 
+    const docCategoryClick = () => {
+        router.push('/category-documents');
+    };
+
+    const addDocCategoryClick = () => {
+        router.push('/add-category-documents');
+    };
+
+    const exitClick = () => {
+        localStorage.removeItem('FontanaUser');
+        localStorage.removeItem('Token');
+        router.push('/login');
+    }
 
     return (
         <div className={`bg-gray-100 min-h-screen flex z-50`}>
@@ -146,7 +162,9 @@ const Sidebar = () => {
                         </svg>
                         {isSubMenuOpenDocumentos && <div className="absolute top-[209px] left-[80px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[9.5px]' onClick={documentosClick}>Listar Docs</button>
-                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[9.5px] border-b-2 border-gray-300 ' onClick={addDocPendenteClick}>Incluir Doc Pendente</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[9.5px] border-b-2 border-gray-300' onClick={addDocPendenteClick}>Incluir Doc Pendente</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[9.5px]' onClick={docCategoryClick}>Categoria de Docs</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[9.5px]' onClick={addDocCategoryClick}>Criar Categoria de Doc</button>
                         </div>}
 
                     </div>
@@ -158,7 +176,7 @@ const Sidebar = () => {
                         <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-[#747474] group-hover:fill-white">
                             <path d="M11.375 12.625H11.1992C10.7773 12.625 10.3555 12.7305 9.93359 12.8711C9.40625 13.0469 8.52734 13.2227 7.96484 13.2227C7.4375 13.2227 6.55859 13.0469 6.03125 12.8711C5.60938 12.7305 5.1875 12.6602 4.76562 12.6602H4.625C2.12891 12.6602 0.125 14.6641 0.125 17.125C0.125 17.7578 0.617188 18.25 1.25 18.25H14.75C15.3477 18.25 15.875 17.7578 15.875 17.125C15.875 14.6641 13.8359 12.625 11.375 12.625ZM1.84766 16.5625C2.09375 15.332 3.32422 14.3477 4.625 14.3125H4.76562C4.94141 14.3125 5.1875 14.3828 5.46875 14.4883C6.13672 14.6992 7.26172 14.875 7.96484 14.875C8.70312 14.875 9.82812 14.6992 10.4961 14.4883C10.7773 14.3828 11.0234 14.3125 11.1992 14.3125H11.375C12.6406 14.3477 13.8711 15.332 14.1172 16.5625H1.84766ZM2.05859 8.125C2.51562 8.125 2.86719 7.77344 2.86719 7.31641V7C2.86719 4.1875 5.15234 1.90234 8 1.90234C10.8125 1.90234 13.0977 4.1875 13.0977 7V7.45703C13.0977 8.79297 12.0078 9.88281 10.6719 9.88281H9.86328C9.72266 9.28516 9.125 8.79297 8.52734 8.79297H7.4375C6.66406 8.79297 6.06641 9.39062 6.06641 10.1641C6.06641 10.9023 6.66406 11.5352 7.4375 11.5352C7.4375 11.5352 7.4375 11.5352 7.4375 11.5H10.6719C12.9219 11.5 14.7148 9.70703 14.75 7.45703V7C14.75 3.30859 11.6914 0.25 8 0.25C4.27344 0.25 1.25 3.30859 1.25 7V7.31641C1.25 7.77344 1.60156 8.125 2.05859 8.125ZM8 4.75C9.23047 4.78516 10.2148 5.76953 10.25 7C10.2148 7.35156 10.1094 7.84375 9.93359 8.125C10.1797 8.30078 10.3906 8.51172 10.5664 8.75781H10.6719C11.1289 8.75781 11.5156 8.51172 11.7266 8.16016C11.832 7.80859 11.9375 7.42188 11.9375 7C11.9375 4.85547 10.1445 3.0625 8 3.0625C5.82031 3.0625 4.0625 4.85547 4.0625 7C4.0625 8.01953 4.41406 8.89844 5.04688 9.60156C5.15234 9.07422 5.60938 8.40625 6.03125 8.125C5.85547 7.84375 5.75 7.35156 5.75 7C5.75 5.76953 6.73438 4.78516 8 4.75Z" />
                         </svg>
-                        {isSubMenuOpenConta && <button className="absolute top-[589.5px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white">
+                        {isSubMenuOpenConta && <button className="absolute top-[589.5px] left-[80px] bg-white px-8 py-[9.5px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
                             <p>Minha Conta</p>
                         </button>}
                     </div>
@@ -172,9 +190,9 @@ const Sidebar = () => {
                         <svg width="10" height="17" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg" className="fill-gray-500 group-hover:fill-white">
                             <path d="M1.34375 0.621094L0.640625 1.28906C0.5 1.46484 0.5 1.74609 0.640625 1.88672L7.00391 8.25L0.640625 14.6484C0.5 14.7891 0.5 15.0703 0.640625 15.2461L1.34375 15.9141C1.51953 16.0898 1.76562 16.0898 1.94141 15.9141L9.32422 8.56641C9.46484 8.39062 9.46484 8.14453 9.32422 7.96875L1.94141 0.621094C1.76562 0.445312 1.51953 0.445312 1.34375 0.621094Z" />
                         </svg>
-                        {isSubMenuOpenMenu && <div className="absolute top-[689px] left-[80px] bg-white px-8 py-[8px] shadow-md hover:bg-blue-500 hover:text-white">
+                        {isSubMenuOpenMenu && <button className="absolute top-[689px] left-[80px] bg-white px-8 py-[8px] shadow-md hover:bg-blue-500 hover:text-white" onClick={exitClick}>
                             <p>Sair</p>
-                        </div>}
+                        </button>}
                     </div>
                 </div>
             </div>
