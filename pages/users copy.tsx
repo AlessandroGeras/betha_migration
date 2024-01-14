@@ -27,8 +27,6 @@ const Users = () => {
   const [popupMessage, setPopupMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
-  const [getAll, setGetAll] = useState(false);
-
 
 
   const adicionarUsuarioClick = () => {
@@ -53,15 +51,15 @@ const Users = () => {
   const deleteAccount = async () => {
     try {
       const token = localStorage.getItem('Token');
-
+  
       if (!token) {
         // Se o token não estiver presente, redirecione para a página de login
         router.push('/login');
         return;
       }
-
+  
       const usuario = userID.ID_USUARIO;
-
+  
       const response = await fetch(`/api/delete-user`, {
         method: 'POST',
         headers: {
@@ -69,13 +67,13 @@ const Users = () => {
         },
         body: JSON.stringify({ token, usuario }),
       });
-
+  
       const data = await response.json();
       if (response.status === 401) {
         router.push('/login');
       } else {
         setTokenVerified(true);
-
+  
         // Atualize o estado após excluir com sucesso
         const updatedDocs = {
           success: true,
@@ -85,12 +83,12 @@ const Users = () => {
             outsourcedCount: documents.docs.outsourcedCount,
           },
         };
-
+  
         setDocuments(updatedDocs);
-
+  
         // Atualize também o estado filteredData
         setFilteredData(updatedDocs.docs.rows);
-
+  
         setPopupMessage('Conta excluída');
         setShowModal(true);
         setShowModal2(false);
@@ -100,10 +98,10 @@ const Users = () => {
     } catch (error) {
       console.error('Erro ao excluir a conta:', error);
     } finally {
-
+      
     }
   };
-
+  
 
 
 
@@ -169,13 +167,13 @@ const Users = () => {
         router.push('/login');
         return;
       }
-      console.log("api1");
+
       const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token, getAll }),
+        body: JSON.stringify({ token }),
       });
 
       const data = await response.json();
@@ -295,7 +293,7 @@ const Users = () => {
           router.push('/login');
           return;
         }
-        console.log("api2");
+
         const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
@@ -462,13 +460,13 @@ const Users = () => {
           router.push('/login');
           return;
         }
-        console.log("api3");
+
         const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token, getAll }),
+          body: JSON.stringify({ token }),
         });
 
         const data = await response.json();
@@ -521,10 +519,9 @@ const Users = () => {
     };
 
     fetchDataWithFilter();
-  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
 
   const { success, docs } = documents;
-
 
   return (
     <div className='flex'>
@@ -811,59 +808,49 @@ const Users = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
           <div className="flex items-center">
             <span className="mr-2">Registros por página:</span>
             <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll==false ? 'bg-blue-700' : ''}`}
+              onClick={() => handlePageSizeChange(10)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
             >
               10
             </button>
             <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll==false ? 'bg-blue-700' : ''}`}
+              onClick={() => handlePageSizeChange(25)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
             >
               25
             </button>
             <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll==false ? 'bg-blue-700' : ''}`}
+              onClick={() => handlePageSizeChange(50)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
             >
               50
             </button>
             <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll==false ? 'bg-blue-700' : ''}`}
+              onClick={() => handlePageSizeChange(100)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
             >
               100
             </button>
             <button
-              className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll==true ? 'bg-blue-700' : ''}`}
-              onClick={() => {
-                setLoading(true);
-                setGetAll(true);
-                fetchData(); // Execute a função fetchData após definir getAll como true
-              }}
+              onClick={() => handlePageSizeChange(1000)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 1000 ? 'bg-blue-700' : ''}`}
             >
               Todos
             </button>
           </div>
-          {!getAll ? (
-            <span className="px-4 py-2 rounded text-gray-500">
-              Página {currentPage} de {totalPages}
-            </span>
-          ) : (
-            <span className="px-4 py-2 rounded text-gray-500">
-              Página 1 de 1
-            </span>
-          )}
+          <span className="px-4 py-2  rounded text-gray-500">
+            Página {currentPage} de {totalPages}
+          </span>
           <button
             onClick={goToNextPage}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>

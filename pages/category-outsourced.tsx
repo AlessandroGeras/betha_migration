@@ -499,7 +499,7 @@ const CategoryOutsourced = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[2700px]">
+              <div className="flex text-gray-500 bg-white w-[500px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -529,7 +529,7 @@ const CategoryOutsourced = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[2700px]`}>
+                <div className={`flex text-gray-500 w-[500px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
@@ -564,7 +564,7 @@ const CategoryOutsourced = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[2700px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[500px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
@@ -595,7 +595,7 @@ const CategoryOutsourced = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
@@ -625,13 +625,19 @@ const CategoryOutsourced = () => {
             >
               100
             </button>
+            <button
+              onClick={() => handlePageSizeChange(1000)}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 1000 ? 'bg-blue-700' : ''}`}
+            >
+              Todos
+            </button>
           </div>
           <span className="px-4 py-2  rounded text-gray-500">
             Página {currentPage} de {totalPages}
           </span>
           <button
             onClick={goToNextPage}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>
