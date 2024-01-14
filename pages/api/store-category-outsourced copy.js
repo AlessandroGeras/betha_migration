@@ -14,9 +14,9 @@ Oracledb.initOracleClient({
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const {
+            nome,
             tipo_documento,
-            token,
-            formData:{nome}
+            token
         } = req.body;
 
         if (!token) {
@@ -32,9 +32,7 @@ export default async function handler(req, res) {
             connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
                 host: process.env.HOST,
                 dialect: process.env.DIALECT || 'oracle',
-            });    
-            
-            console.log(nome);
+            });            
 
             const Store = await categoryOutsourced.create({
                 CATEGORIA: nome,

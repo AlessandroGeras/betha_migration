@@ -29,6 +29,8 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
+      const outsourcedCount = await categoria_terceiros.count();
+
       // Configuração da paginação
       const page = parseInt(req.query.page) || 1; // Página atual
       const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
@@ -47,6 +49,7 @@ export default async function handler(req, res) {
           docs: {
             rows: docs.rows,
             count: docs.count,
+            outsourcedCount: outsourcedCount,
           },
         });
       } else {

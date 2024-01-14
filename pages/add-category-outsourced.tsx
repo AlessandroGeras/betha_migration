@@ -67,6 +67,8 @@ const AddCategoryOutsourced = () => {
                 return;
             }
 
+            console.log('Valor de formData.nome:', formData.nome);
+
             const requestBody = {
                 token: token,
                 formData: formData
@@ -95,12 +97,10 @@ const AddCategoryOutsourced = () => {
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
                 throw new Error('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
-            }
-
-            const responseData = await response.json();
+            }            
 
             // Lógica adicional após o envio bem-sucedido, se necessário
-            console.log('Categoria criada com sucesso!', responseData);
+            console.log('Categoria criada com sucesso!', data);
             setPopupMessage('Categoria criada com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
