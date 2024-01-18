@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -10,9 +10,31 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
+const getAllDocs = async (pageSize) => {
+  let allDocs = [];
+  let offset = 0;
+
+  while (true) {
+    const result = await outsourceds.findAll({
+      where: {COLABORADOR_TERCEIRO: 'S'},
+      offset,
+      limit: pageSize,
+    });
+
+    if (result.length === 0) {
+      break; // Saia do loop se não houver mais resultados
+    }
+
+    allDocs = [...allDocs, ...result];
+    offset += pageSize;
+  }
+
+  return allDocs;
+};
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token } = req.body;
+    const { token,getAll } = req.body;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -32,36 +54,50 @@ export default async function handler(req, res) {
         },
       });
 
-      const outsourcedCount = await users.count({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'S',
-                 COLABORADOR_TERCEIRO: 'S' },
+      const outsourcedCount = await outsourceds.count({
+        where: {COLABORADOR_TERCEIRO: 'S'},
       });
 
       // Configuração da paginação
       const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
       const page = parseInt(req.query.page) || 1; // Página atual
-      
 
-      // Consulta paginada usando Sequelize com filtro
-      const docs = await users.findAndCountAll({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'S',
-                 COLABORADOR_TERCEIRO: 'S' }, // Adicionando a condição de filtro
-        offset: (page - 1) * pageSize,
-        limit: pageSize,
-      });
+      if (getAll) {
+        // Se getAll for true, busca todos os registros
+        const allDocs = await getAllDocs(pageSize);
 
-      if (docs) {
         res.status(200).json({
           success: true,
-          message: 'Colaboradores encontrados',
+          message: 'Todos os usuários encontrados',
           docs: {
-            rows: docs.rows,
-            count: docs.count,
+            rows: allDocs,
+            count: allDocs.length,
             outsourcedCount: outsourcedCount,
           },
         });
-      } else {
-        res.status(400).json({ success: false, message: 'Não foi possível obter a lista de colaboradores.' });
+      }
+      else {
+
+        // Consulta paginada usando Sequelize com filtro
+        const docs = await outsourceds.findAndCountAll({
+          where: {COLABORADOR_TERCEIRO: 'S'}, // Adicionando a condição de filtro
+          offset: (page - 1) * pageSize,
+          limit: pageSize,
+        });
+
+        if (docs) {
+          res.status(200).json({
+            success: true,
+            message: 'Colaboradores encontrados',
+            docs: {
+              rows: docs.rows,
+              count: docs.count,
+              outsourcedCount: outsourcedCount,
+            },
+          });
+        } else {
+          res.status(400).json({ success: false, message: 'Não foi possível obter a lista de colaboradores.' });
+        }
       }
     } catch (error) {
       if (error.name === 'TokenExpiredError') {

@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       });
 
       // Exclua o usuário
-      const result = await connection.query(`DELETE FROM WEB_USUARIO WHERE ID_USUARIO = :id`, {
+      const result = await connection.query(`DELETE FROM WEB_TERCEIRO WHERE ID_USUARIO = :id AND COLABORADOR_TERCEIRO = 'S'`, {
         replacements: { id: usuario },
         type: Sequelize.QueryTypes.DELETE,
       });

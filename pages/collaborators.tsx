@@ -27,6 +27,7 @@ const Collaborators = () => {
   const [popupMessage, setPopupMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
+  const [getAll, setGetAll] = useState(false);
 
 
   const adicionarColaboradorClick = () => {
@@ -60,7 +61,7 @@ const Collaborators = () => {
 
       const usuario = userID.ID_USUARIO;
 
-      const response = await fetch(`/api/delete-user`, {
+      const response = await fetch(`/api/delete-collaborator`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,17 +106,30 @@ const Collaborators = () => {
   const columnWidths = {
     '': '59px',
     'STATUS': '200px',
-    'NM_USUARIO': '500px',
-    'NOME_TERCEIRO': '420px',
-    'FUNCAO': '300px',
+    'NM_USUARIO': '400px',
+    'NOME_TERCEIRO': '500px',
+    'CPF': '300px',
+    'ENDEREÇO': '500px',
+    'CIDADE': '310px',
+    'UF': '200px',
+    'TELEFONE': '299px',
+    'FUNCAO': '350px',
+    'ID_USUARIO': '350px',
   };
 
   const columnLabels = {
     '': '',
     'STATUS': 'STATUS',
-    'NM_USUARIO': 'NOME',
-    'NOME_TERCEIRO': 'EMPRESA_TERCEIRO',
-    'FUNCAO': 'FUNÇÃO',
+    'NM_USUARIO': 'USUARIO',
+    'NOME_TERCEIRO': 'NOME_TERCEIRO',
+    'CPF': 'CPF',
+    'ENDEREÇO': 'ENDEREÇO',
+    'CIDADE': 'CIDADE',
+    'UF': 'UF',
+    'TELEFONE': 'TELEFONE',
+    'FUNCAO': 'FUNCAO',
+    'ID_USUARIO': 'ID_USUARIO',
+
   };
 
   const sortRows = (rows, column, order) => {
@@ -155,6 +169,10 @@ const Collaborators = () => {
 
   const fetchData = async () => {
     try {
+      if (getAll && documents.docs.count > 100) {
+        setLoading(true);
+      }
+
       const token = localStorage.getItem('Token');
 
       if (!token) {
@@ -168,7 +186,7 @@ const Collaborators = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ token, getAll }),
       });
 
       const data = await response.json();
@@ -210,10 +228,6 @@ const Collaborators = () => {
     }
   };
 
-
-  /* useEffect(() => {
-    fetchData();
-  }, []); */
 
 
   const applyFilters = (data, filters) => {
@@ -451,7 +465,10 @@ const Collaborators = () => {
   useEffect(() => {
     const fetchDataWithFilter = async () => {
       try {
-        //setLoading(true);
+        if (getAll && documents.docs.count > 100) {
+          setLoading(true);
+        }
+
         const token = localStorage.getItem('Token');
 
         if (!token) {
@@ -465,7 +482,7 @@ const Collaborators = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token }),
+          body: JSON.stringify({ token, getAll }),
         });
 
         const data = await response.json();
@@ -518,7 +535,7 @@ const Collaborators = () => {
     };
 
     fetchDataWithFilter();
-  }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
 
   const { success, docs } = documents;
 
@@ -625,7 +642,7 @@ const Collaborators = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[1440px]">
+              <div className="flex text-gray-500 bg-white w-[3400px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -655,7 +672,7 @@ const Collaborators = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[1440px]`}>
+                <div className={`flex text-gray-500 w-[3400px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
@@ -681,7 +698,7 @@ const Collaborators = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
                     <select
                       value={selectedFilterValue['NM_USUARIO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
@@ -702,7 +719,7 @@ const Collaborators = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '420px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
                     <select
                       value={selectedFilterValue['NOME_TERCEIRO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
@@ -725,19 +742,145 @@ const Collaborators = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
-                      value={selectedFilterValue['FUNCAO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'FUNCAO': e.target.value })}
+                      value={selectedFilterValue['CNPJ']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CNPJ': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('FUNCAO').map((value) => (
+                      {handleFilterValue('CNPJ').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('FUNCAO', selectedFilterValue['FUNCAO'])}
+                      onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue['CNPJ'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                    <select
+                      value={selectedFilterValue['ENDEREÇO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ENDEREÇO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('ENDEREÇO').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue['ENDEREÇO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '310px' }}>
+                    <select
+                      value={selectedFilterValue['CIDADE']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CIDADE': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('CIDADE').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue['CIDADE'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                    <select
+                      value={selectedFilterValue['UF']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'UF': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('UF').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('UF', selectedFilterValue['UF'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
+                    <select
+                      value={selectedFilterValue}
+                      value={selectedFilterValue['TELEFONE']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('TELEFONE').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                    <select
+                      value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('CATEGORIA_PRINCIPAL').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('CATEGORIA_PRINCIPAL', selectedFilterValue['CATEGORIA_PRINCIPAL'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                    <select
+                      value={selectedFilterValue['ID_USUARIO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('ID_USUARIO').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -756,7 +899,7 @@ const Collaborators = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
@@ -787,43 +930,59 @@ const Collaborators = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
           <div className="flex items-center">
             <span className="mr-2">Registros por página:</span>
             <button
-              onClick={() => handlePageSizeChange(10)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               10
             </button>
             <button
-              onClick={() => handlePageSizeChange(25)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               25
             </button>
             <button
-              onClick={() => handlePageSizeChange(50)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               50
             </button>
             <button
-              onClick={() => handlePageSizeChange(100)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               100
             </button>
+            <button
+              className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
+              onClick={() => {
+                setLoading(true);
+                setGetAll(true);
+                fetchData(); // Execute a função fetchData após definir getAll como true
+              }}
+            >
+              Todos
+            </button>
           </div>
-          <span className="px-4 py-2  rounded text-gray-500">
-            Página {currentPage} de {totalPages}
-          </span>
+          {!getAll ? (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página {currentPage} de {totalPages}
+            </span>
+          ) : (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página 1 de 1
+            </span>
+          )}
           <button
             onClick={goToNextPage}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>

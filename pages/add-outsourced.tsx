@@ -17,6 +17,7 @@ const AddOutsourced = () => {
         telefone: '',
         uf: '',
         principal: '',
+        id_usuario: '',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState([]);
@@ -45,6 +46,7 @@ const AddOutsourced = () => {
             telefone: '',
             uf: '',
             principal: '',
+            id_usuario: '',
         });
     }
 
@@ -64,7 +66,7 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.uf == "") {
+        if (formData.uf == "" || formData.principal =="") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
@@ -121,12 +123,14 @@ const AddOutsourced = () => {
                     return;
                 }
 
+                const getAll=true;
+
                 const response = await fetch(`/api/category-outsourced`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token }),
+                    body: JSON.stringify({ token,getAll }),
                 });
 
                 const data = await response.json();
@@ -213,7 +217,7 @@ const AddOutsourced = () => {
                     </div>
 
                     {/* Linha 3 */}
-                    <div className="col-span-3">
+                    <div className="col-span-4">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
                             Nome Terceiro <span className="text-red-500">*</span>
                         </label>
@@ -228,9 +232,24 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    <div className="col-span-2">
+                    <div className="col-span-3">
+                        <label htmlFor="id_usuario" className="block text-sm font-medium text-gray-700">
+                            ID Usuário <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="id_usuario"
+                            id="id_usuario"
+                            value={formData.id_usuario}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>
+
+                    <div className="col-span-4">
                         <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
-                            Nome de Contato <span className="text-red-500">*</span>
+                            Nome do Contato <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
@@ -242,21 +261,7 @@ const AddOutsourced = () => {
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
-
-                    <div className="col-span-2">
-                        <label htmlFor="sobrenome" className="block text-sm font-medium text-gray-700">
-                            Sobrenome <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="sobrenome"
-                            id="sobrenome"
-                            required
-                            value={formData.sobrenome}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>
+                    
 
                     {/* Linha 4 (Endereço, Cidade) */}
                     <div className="col-span-3">
@@ -304,7 +309,22 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    {/* Linha 5 (Email, Telefone, UF) */}
+                    {/* Linha 5 (Email, Telefone, UF) */}  
+                    <div className="col-span-3">
+                        <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
+                            Telefone <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="telefone"
+                            id="telefone"
+                            value={formData.telefone}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>  
+
                     <div className="col-span-3">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                             Email <span className="text-red-500">*</span>
@@ -318,26 +338,9 @@ const AddOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
+                    </div>                  
 
                     <div className="col-span-4">
-                        <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
-                            Telefone <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="telefone"
-                            id="telefone"
-                            value={formData.telefone}
-                            onChange={handleInputChange}
-                            required
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>
-
-                    <div className="col-span-2"></div>
-
-                    <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
                             Categoria Principal <span className="text-red-500">*</span>
                         </label>

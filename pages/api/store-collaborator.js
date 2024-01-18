@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -24,6 +24,7 @@ export default async function handler(req, res) {
             uf,
             principal,
             nome_terceiro,
+            id_usuario
         } = req.body;
 
         
@@ -35,56 +36,26 @@ export default async function handler(req, res) {
             connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
                 host: process.env.HOST,
                 dialect: process.env.DIALECT || 'oracle',
-            });
-
-            const removerAcentos = (str) => {
-                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            };
-
-            const formatarNomeCompleto = (nome, sobrenome) => {
-                // Capitaliza a primeira letra do nome
-                const nomeFormatado = nome.charAt(0).toUpperCase() + nome.slice(1);
-
-                // Capitaliza a primeira letra do sobrenome
-                const sobrenomeFormatado = sobrenome.charAt(0).toUpperCase() + sobrenome.slice(1);
-
-                // Retorna o nome completo formatado
-                return `${nomeFormatado} ${sobrenomeFormatado}`;
-            };
+            });  
 
 
-            const idUsuario = `${removerAcentos(usuario)}.${removerAcentos(sobrenome)}`.toLowerCase();
-            const nomeCompleto = formatarNomeCompleto(usuario, sobrenome);
-
-            const Store = await users.create({
+            const Store = await outsourceds.create({
                 STATUS: status,
                 CPF: cpf,
                 ENDEREÇO: endereco,
                 ST_EMAIL: email,
                 OBS_STATUS: observacoes,
-                NM_USUARIO: nomeCompleto,
+                NM_USUARIO: usuario,
                 CIDADE: cidade,
                 UF: uf,
                 TELEFONE: telefone,
-                ID_USUARIO_INTERNO: "N",
-                ID_ADM_GESTAO_TERCEIROS: "S",
-                ID_USUARIO: idUsuario,
-                ID_USUARIO_MEGA: 0,
-                ID_ADM_RESERVA_SALA: "N",
-                ID_ADM_VENDA: "N",
-                ID_ADM_CONTRATO: "N",
-                ID_GER_VENDA: "N",
-                ID_CAD_PRODUTO: "N",
-                ID_CAD_ORCAMENTO: "N",
-                ID_ADM_SALA: "N",
-                ID_ADM_BENS_TERCEIRO: "N",
-                ID_CON_BENS_TERCEIRO: "N",                
-                ID_CON_GESTAO_TERCEIROS: "N",
+                ID_USUARIO: id_usuario,    
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_terceiro,
                 CNPJ: "N/A",
                 FUNCAO:principal,
                 COLABORADOR_TERCEIRO: "S",
+                ID_USUARIO_INTERNO: "N",
             });
 
 

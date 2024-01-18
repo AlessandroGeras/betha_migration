@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Dashboard = () => {
     const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0 } }); //Paginação
@@ -112,17 +113,21 @@ const Dashboard = () => {
                                 <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos a vencer</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos com 30 dias ou menos da data de vencimento</div>
-                                    <div className='mt-2 flex justify-center bg-yellow-500 mx-auto w-[115px]'>
-                                        <div className="text-gray-600 text-5xl text-white py-2">{docs.due_date}</div>
-                                    </div>
+                                    <Link href="/documents?due_date=due_date_30">
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.due_date === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.due_date}</div>
+                                        </div>
+                                    </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos vencidos</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos com data inferior ao dia atual</div>
-                                    <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.past_due_date === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
-                                        <div className="text-gray-600 text-5xl text-white py-2">{docs.past_due_date}</div>
-                                    </div>
+                                    <Link href="/documents?due_date=due_date">
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.past_due_date === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.past_due_date}</div>
+                                        </div>
+                                    </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
                                 </div>
                             </div>
@@ -131,17 +136,21 @@ const Dashboard = () => {
                                 <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos faltantes</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos solicitados e não enviados</div>
-                                    <div className="mt-2 flex justify-center mx-auto w-[115px] bg-yellow-500">
-                                        <div className="text-gray-600 text-5xl text-white py-2">{docs.missingCount}</div>
-                                    </div>
+                                    <Link href="/documents?due_date=missing">
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.missingCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.missingCount}</div>
+                                        </div>
+                                    </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos à analisar</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos pendentes de análise</div>
-                                    <div className="mt-2 flex justify-center mx-auto w-[115px] bg-yellow-500">
-                                        <div className="text-gray-600 text-5xl text-white py-2">{docs.analiseCount}</div>
-                                    </div>
+                                    <Link href="/documents?due_date=analysis">
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.analiseCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.analiseCount}</div>
+                                        </div>
+                                    </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
                                 </div>
                             </div>
@@ -151,7 +160,7 @@ const Dashboard = () => {
 
 
             </div>
-        </div>
+        </div >
     );
 };
 

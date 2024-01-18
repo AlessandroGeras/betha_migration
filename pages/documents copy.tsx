@@ -5,6 +5,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
+import { format } from 'date-fns';
 
 const Users = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -24,42 +25,40 @@ const Users = () => {
   const [isTokenVerified, setTokenVerified] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
-  const [popupMessage, setPopupMessage] = useState('');
+  const [popupMessage, setModalMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
+  const [getAll, setGetAll] = useState(false);
+  const [forceEmail, setForceEmail] = useState(false);
 
 
-  const adicionarUsuarioClick = () => {
-    router.push('/add-user');
-  };
+
+  const addDocPendenteClick = () => {
+    router.push('/add-pending-document');
+};
 
   const deleteAccountClick = (document) => {
-    setPopupMessage('Tem certeza que deseja excluir a conta <span style="color: red;">' + document.NM_USUARIO + '</span>?');
+    setModalMessage('Tem certeza que deseja excluir a conta <span style="color: red;">' + document.NM_USUARIO + '</span>?');
     setShowModal(true);
     setShowModal2(true);
     setModalColor('#3f5470');
     setTextColor('#3f5470');
     setUserID(document);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setShowModal2(false);
-  };
+  };  
 
 
   const deleteAccount = async () => {
     try {
       const token = localStorage.getItem('Token');
-  
+
       if (!token) {
         // Se o token não estiver presente, redirecione para a página de login
         router.push('/login');
         return;
       }
-  
+
       const usuario = userID.ID_USUARIO;
-  
+
       const response = await fetch(`/api/delete-user`, {
         method: 'POST',
         headers: {
@@ -67,13 +66,13 @@ const Users = () => {
         },
         body: JSON.stringify({ token, usuario }),
       });
-  
+
       const data = await response.json();
       if (response.status === 401) {
         router.push('/login');
       } else {
         setTokenVerified(true);
-  
+
         // Atualize o estado após excluir com sucesso
         const updatedDocs = {
           success: true,
@@ -83,13 +82,13 @@ const Users = () => {
             outsourcedCount: documents.docs.outsourcedCount,
           },
         };
-  
+
         setDocuments(updatedDocs);
-  
+
         // Atualize também o estado filteredData
         setFilteredData(updatedDocs.docs.rows);
-  
-        setPopupMessage('Conta excluída');
+
+        setModalMessage('Conta excluída');
         setShowModal(true);
         setShowModal2(false);
         setModalColor('#3f5470');
@@ -98,29 +97,30 @@ const Users = () => {
     } catch (error) {
       console.error('Erro ao excluir a conta:', error);
     } finally {
-      
+
     }
   };
-  
+
 
 
 
   const columnWidths = {
     '': '59px',
     'STATUS': '200px',
-    'NM_USUARIO': '400px',
-    'ST_EMAIL': '500px',
-    'TELEFONE': '250px',
-    'FUNCAO': '300px',
+    'TIPO_DOCUMENTO': '300px',
+    'TERCEIRO': '350px',
+    'COLABORADOR': '300px',
+    'VENCIMENTO': '260px',
   };
 
   const columnLabels = {
     '': '',
     'STATUS': 'STATUS',
-    'NM_USUARIO': 'USUARIO',
-    'ST_EMAIL': 'EMAIL',
-    'TELEFONE': 'TELEFONE',
-    'FUNCAO': 'FUNCAO',
+    'TIPO_DOCUMENTO': 'TIPO_DOCUMENTO',
+    'CNPJ': 'CNPJ',
+    'TERCEIRO': 'TERCEIRO',
+    'COLABORADOR': 'COLABORADOR',
+    'VENCIMENTO': 'VENCIMENTO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -160,6 +160,10 @@ const Users = () => {
 
   const fetchData = async () => {
     try {
+      if (getAll && documents.docs.count > 100) {
+        setLoading(true);
+      }
+
       const token = localStorage.getItem('Token');
 
       if (!token) {
@@ -168,12 +172,12 @@ const Users = () => {
         return;
       }
 
-      const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
+      const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ token, getAll }),
       });
 
       const data = await response.json();
@@ -212,7 +216,7 @@ const Users = () => {
     } catch (error) {
       console.error('Erro ao obter as categorias de terceiros:', error);
     } finally {
-
+      //setLoading(false);
     }
   };
 
@@ -293,8 +297,7 @@ const Users = () => {
           router.push('/login');
           return;
         }
-
-        const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
+        const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -452,7 +455,9 @@ const Users = () => {
   useEffect(() => {
     const fetchDataWithFilter = async () => {
       try {
-        //setLoading(true);
+        if (getAll && documents.docs.count > 100) {
+          setLoading(true);
+        }
         const token = localStorage.getItem('Token');
 
         if (!token) {
@@ -461,12 +466,12 @@ const Users = () => {
           return;
         }
 
-        const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
+        const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token }),
+          body: JSON.stringify({ token, getAll }),
         });
 
         const data = await response.json();
@@ -519,9 +524,86 @@ const Users = () => {
     };
 
     fetchDataWithFilter();
-  }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
 
   const { success, docs } = documents;
+
+  const formatBrDate = (isoDate) => {
+    const date = new Date(isoDate);
+    return format(date, 'dd/MM/yyyy');
+  };
+
+  const cobrarDocumentosClick = async () => {
+
+    try {
+      const response = await fetch('http://localhost:3000/api/scheduler', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setForceEmail(true);
+        const messageWithLineBreaks = data.message.replace(/\n/g, '<br />');
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(messageWithLineBreaks);
+        setShowModal(true);
+        setShowModal2(true);
+
+      } else {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+        setShowModal2(true);
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+    }
+  };
+
+  const enviarCobrançaClick = async () => {
+
+    closeModal();
+
+    try {
+      const response = await fetch('http://localhost:3000/api/send-mail-documents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok) {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+
+      } else {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setShowModal2(false);
+    setForceEmail(false);
+  };
+
 
   return (
     <div className='flex'>
@@ -529,7 +611,7 @@ const Users = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Usuários</span>
+          <span className='ml-2'>Documentos</span>
         </div>
 
         {loading && (
@@ -537,14 +619,14 @@ const Users = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de Usuários...
+                  Carregando lista de Documentos...
                 </div>
               </div>
             </div>
           </div>
         )}
 
-        {showModal && (
+{showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
               {/* Pseudo-elemento para a barra lateral */}
@@ -565,7 +647,7 @@ const Users = () => {
               <button
                 className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
                 onClick={closeModal}>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
               </button>
@@ -573,19 +655,18 @@ const Users = () => {
               <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
                 <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
 
-                {showModal2 && (
-                  <div className='flex'>
-                    <button className="mx-auto mt-4 w-[300px]" onClick={deleteAccount}>
+                {forceEmail && (<div className='flex'>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={enviarCobrançaClick}>                   
                       <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                        Sim, excluir a conta
+                        Forçar cobrança automática agora
                       </span>
-                    </button>
-                    <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
-                      <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                        Não, cancelar e sair
-                      </span>
-                    </button>
-                  </div>)}
+                  </button>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                    <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                      Fechar e permitir a cobrança às 18:00
+                    </span>
+                  </button>
+                </div>)}
 
 
               </div>
@@ -595,7 +676,7 @@ const Users = () => {
 
         {documents.success && (
           <div className=''>
-            <div className="flex items-center my-4 w-[1440px]">
+            <div className="flex items-center my-4">
               <input
                 placeholder="Pesquisa rápida"
                 type="text"
@@ -616,17 +697,31 @@ const Users = () => {
               >
                 Limpar Pesquisa
               </button>
-              <button
-                className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarUsuarioClick}
-              >
-                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Usuario
-              </button>
+              <div className='flex ml-auto'>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex"
+
+                >
+                  <span className=''> Imprimir doc(s) </span>
+                </button>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
+                  onClick={addDocPendenteClick}
+                >
+                  <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de documento
+                </button>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                  onClick={cobrarDocumentosClick}
+                >
+                  <span className=''> Cobrar documentos </span>
+                </button>
+              </div>
             </div>
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[1550px]">
+              <div className="flex text-gray-500 bg-white w-[1440px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -656,7 +751,7 @@ const Users = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[1550px]`}>
+                <div className={`flex text-gray-500 w-[1440px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
@@ -682,21 +777,21 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
-                      value={selectedFilterValue['NM_USUARIO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
+                      value={selectedFilterValue['TIPO_DOCUMENTO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TIPO_DOCUMENTO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('NM_USUARIO').map((value) => (
+                      {handleFilterValue('TIPO_DOCUMENTO').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
+                      onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -705,42 +800,21 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
                     <select
-                      value={selectedFilterValue['ST_EMAIL']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ST_EMAIL': e.target.value })}
+                      value={selectedFilterValue['TERCEIRO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TERCEIRO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('ST_EMAIL').map((value) => (
+                      {handleFilterValue('TERCEIRO').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('ST_EMAIL', selectedFilterValue['ST_EMAIL'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
-                    <select
-                      value={selectedFilterValue['TELEFONE']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('TELEFONE').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
+                      onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -749,19 +823,40 @@ const Users = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
-                      value={selectedFilterValue['FUNCAO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'FUNCAO': e.target.value })}
+                      value={selectedFilterValue['COLABORADOR']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('FUNCAO').map((value) => (
+                      {handleFilterValue('COLABORADOR').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('FUNCAO', selectedFilterValue['FUNCAO'])}
+                      onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
+                    <select
+                      value={selectedFilterValue['VENCIMENTO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'VENCIMENTO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('VENCIMENTO').map((value) => (
+                        <option key={value} value={value}>
+                          {formatBrDate(value)}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -777,7 +872,7 @@ const Users = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[1550px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
@@ -786,14 +881,19 @@ const Users = () => {
                         className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-users', query: { id: document.ID_USUARIO } }}>
-                          <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
-                        </Link>
-                          <button onClick={() => deleteAccountClick(document)}>
-                            <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
-                          </button></div>
-                        ) : (
-                          document[column]
+                        {column === 'VENCIMENTO' ? formatBrDate(document[column]) : (
+                          column === '' ? (
+                            <div className='flex justify-center'>
+                              <Link href={{ pathname: '/find-users', query: { id: document.ID_USUARIO } }}>
+                                <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                              </Link>
+                              <button onClick={() => deleteAccountClick(document)}>
+                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                              </button>
+                            </div>
+                          ) : (
+                            document[column]
+                          )
                         )}
                       </div>
                     ))}
@@ -808,49 +908,59 @@ const Users = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
           <div className="flex items-center">
             <span className="mr-2">Registros por página:</span>
             <button
-              onClick={() => handlePageSizeChange(10)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               10
             </button>
             <button
-              onClick={() => handlePageSizeChange(25)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               25
             </button>
             <button
-              onClick={() => handlePageSizeChange(50)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               50
             </button>
             <button
-              onClick={() => handlePageSizeChange(100)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               100
             </button>
             <button
-              onClick={() => handlePageSizeChange(1000)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 1000 ? 'bg-blue-700' : ''}`}
+              className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
+              onClick={() => {
+                setLoading(true);
+                setGetAll(true);
+                fetchData(); // Execute a função fetchData após definir getAll como true
+              }}
             >
               Todos
             </button>
           </div>
-          <span className="px-4 py-2  rounded text-gray-500">
-            Página {currentPage} de {totalPages}
-          </span>
+          {!getAll ? (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página {currentPage} de {totalPages}
+            </span>
+          ) : (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página 1 de 1
+            </span>
+          )}
           <button
             onClick={goToNextPage}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>

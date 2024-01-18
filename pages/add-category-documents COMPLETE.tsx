@@ -132,59 +132,58 @@ const AddCategoryDocuments = () => {
                 <div className="bg-blue-500 text-white p-2 text-left mb-28 w-full">
                     <span className="ml-2">Adicionar Categoria de Documentos</span>
                 </div>
-                <div className="flex justify-center">
-                    <div className="grid grid-cols-4 gap-4 w-[300px] mx-auto">
-                        <div className="col-span-4">
-                            <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
-                                Nome da Categoria<span className="text-red-500">*</span>
-                            </label>
-                            <input
-                                type="text"
-                                name="categoria"
-                                id="categoria"
-                                onChange={handleInputChange}
-                                required
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            />
-                        </div>
+                <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
+                    <div className="col-span-3">
+                        <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
+                            Nome da Categoria<span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="categoria"
+                            id="categoria"
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>
 
-                        <div className="col-span-5"></div>
+                    <div className="col-span-4"></div>
 
-                        <div className="col-span-4">
-                            <label htmlFor="numeração" className="block text-sm font-medium text-gray-700">
-                                Numeração<span className="text-red-500">*</span>
-                            </label>
-                            <select
-                                name="numeração"
-                                id="numeração"
-                                onChange={handleInputChange}
-                                required
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            >
-                                <option value="S">Sim</option>
-                                <option value="N">Não</option>
-                            </select>
-                        </div>
+                    <div className="col-span-3">
+                        <label htmlFor="numeração" className="block text-sm font-medium text-gray-700">
+                            Numeração<span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="numeração"
+                            id="numeração"
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            <option value="S">Sim</option>
+                            <option value="N">Não</option>
+                        </select>
+                    </div>
 
-                        <div className="col-span-5"></div>
+                    <div className="col-span-4"></div>
 
-                        <div className="col-span-4">
-                            <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
-                                Formato Vencimento<span className="text-red-500">*</span>
-                            </label>
-                            <select
-                                name="vencimento"
-                                id="vencimento"
-                                onChange={handleInputChange}
-                                required
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            >
-                                <option value="Fixo">Dia fixo</option>
-                                <option value="Periodo">Período</option>
-                            </select>
-                        </div>
+                    <div className="col-span-2">
+                        <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
+                            Formato Vencimento<span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="vencimento"
+                            id="vencimento"
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            <option value="Fixo">Dia fixo</option>
+                            <option value="Periodo">Período</option>
+                        </select>
+                    </div>
 
-                        {/* <div className="col-span-1" style={{ visibility: formData.vencimento === 'Periodo' ? 'hidden' : 'visible' }}>
+                    {/* <div className="col-span-1" style={{ visibility: formData.vencimento === 'Periodo' ? 'hidden' : 'visible' }}>
                         <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
                             Dia fixo<span className="text-red-500">*</span>
                         </label>
@@ -200,7 +199,7 @@ const AddCategoryDocuments = () => {
                         />
                     </div> */}
 
-                        {/* <div className="col-span-4">
+                    {/* <div className="col-span-2">
                         <label htmlFor="notificação" className="block text-sm font-medium text-gray-700">
                             Notificação antecipada<span className="text-red-500">*</span>
                         </label>
@@ -215,8 +214,8 @@ const AddCategoryDocuments = () => {
                     </div> */}
 
 
-                        {/* {formData.vencimento === 'Periodo' && (
-                        <div className="col-span-4">
+                    {/* {formData.vencimento === 'Periodo' && (
+                        <div className="col-span-3">
                             <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
                                 Data de Vencimento<span className="text-red-500">*</span>
                             </label>
@@ -232,7 +231,7 @@ const AddCategoryDocuments = () => {
                         </div>
                     )} */}
 
-                        {/* {formData.vencimento === 'Periodo' && (<div className="col-span-4">
+                    {/* {formData.vencimento === 'Periodo' && (<div className="col-span-2">
                         <label htmlFor="diasAntecipacao" className="block text-sm font-medium text-gray-700">
                             Quant. dias<span className="text-red-500">*</span>
                         </label>
@@ -246,42 +245,37 @@ const AddCategoryDocuments = () => {
                         />
                     </div>)} */}
 
-                        <div className="col-span-5"></div>
+                    <div className="col-span-3">
+                        <label htmlFor="auditoria" className="block text-sm font-medium text-gray-700">
+                            Doc para auditoria<span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="auditoria"
+                            id="auditoria"
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            <option value="S">Sim</option>
+                            <option value="N">Não</option>
+                        </select>
+                    </div>
 
-                        <div className="col-span-4">
-                            <label htmlFor="auditoria" className="block text-sm font-medium text-gray-700">
-                                Doc para auditoria<span className="text-red-500">*</span>
-                            </label>
-                            <select
-                                name="auditoria"
-                                id="auditoria"
-                                onChange={handleInputChange}
-                                required
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            >
-                                <option value="S">Sim</option>
-                                <option value="N">Não</option>
-                            </select>
-                        </div>
-
-                        <div className="col-span-5"></div>
-
-                        <div className="col-span-4 flex justify-center">
-                            <button
-                                type="button"
-                                onClick={handleSubmitCancel}
-                                className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                            >
-                                Cancelar
-                            </button>
-                            <button
-                                type="button"
-                                onClick={handleSubmitSuccess}
-                                className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                            >
-                                Salvar
-                            </button>
-                        </div>
+                    <div className="col-span-5 flex justify-center">
+                        <button
+                            type="button"
+                            onClick={handleSubmitCancel}
+                            className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            Cancelar
+                        </button>
+                        <button
+                            type="button"
+                            onClick={handleSubmitSuccess}
+                            className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            Salvar
+                        </button>
                     </div>
                 </div>
             </div>

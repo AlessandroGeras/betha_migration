@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { FaTrashAlt } from "react-icons/fa";
+import { HiPrinter } from "react-icons/hi2";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Link from 'next/link';
 import { format } from 'date-fns';
 
-const Documents = () => {
+const Users = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({
-    success: false,
-    docs: { rows: [], count: 0, outsourcedCount: 0 },
-  });
+  const [userID, setUserID] = useState('');
+  const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -22,18 +23,91 @@ const Documents = () => {
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [filteredData, setFilteredData] = useState([]);
-  const { status } = router.query;
+  const [isTokenVerified, setTokenVerified] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+  const [popupMessage, setModalMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e');
+  const [getAll, setGetAll] = useState(false);
+  const [forceEmail, setForceEmail] = useState(false);
+  const { due_date } = router.query;
+  const [dueDateFetchCompleted, setDueDateFetchCompleted] = useState(false);
 
 
 
-
-
-  const adicionarDocumentoClick = () => {
+  const addDocPendenteClick = () => {
     router.push('/add-pending-document');
   };
 
+  const deleteAccountClick = (document) => {
+    setModalMessage('Tem certeza que deseja excluir a conta <span style="color: red;">' + document.NM_USUARIO + '</span>?');
+    setShowModal(true);
+    setShowModal2(true);
+    setModalColor('#3f5470');
+    setTextColor('#3f5470');
+    setUserID(document);
+  };
+
+
+  const deleteAccount = async () => {
+    try {
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const usuario = userID.ID_USUARIO;
+
+      const response = await fetch(`/api/delete-user`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, usuario }),
+      });
+
+      const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      } else {
+        setTokenVerified(true);
+
+        // Atualize o estado após excluir com sucesso
+        const updatedDocs = {
+          success: true,
+          docs: {
+            rows: documents.docs.rows.filter((user) => user.ID_USUARIO !== usuario),
+            count: documents.docs.count - 1,
+            outsourcedCount: documents.docs.outsourcedCount,
+          },
+        };
+
+        setDocuments(updatedDocs);
+
+        // Atualize também o estado filteredData
+        setFilteredData(updatedDocs.docs.rows);
+
+        setModalMessage('Conta excluída');
+        setShowModal(true);
+        setShowModal2(false);
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+      }
+    } catch (error) {
+      console.error('Erro ao excluir a conta:', error);
+    } finally {
+
+    }
+  };
+
+
+
   const columnWidths = {
-    '': '30px',
+    '': '69px',
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '300px',
     'TERCEIRO': '350px',
@@ -88,8 +162,56 @@ const Documents = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+      /* if (getAll && documents.docs.count > 100) {
+        setLoading(true);
+      } */
+      setLoading(true);
+
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      let endpoint;
+      switch (due_date) {
+        case 'due_date_30':
+          endpoint = `/api/documents-due_date_30?page=${currentPage}&pageSize=${pageSize}`;
+          break;
+        case 'due_date':
+          endpoint = `/api/documents-due_date?page=${currentPage}&pageSize=${pageSize}`;
+          break;
+        case 'due_date':
+          endpoint = `/api/documents-missing?page=${currentPage}&pageSize=${pageSize}`;
+          break;
+        case 'analysis':
+          endpoint = `/api/documents-analysis?page=${currentPage}&pageSize=${pageSize}`;
+          break;
+        default:
+          endpoint = `/api/documents?page=${currentPage}&pageSize=${pageSize}`;
+          break;
+      }
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, getAll }),
+      });
+
       const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      }
+      else {
+        setTokenVerified(true);
+        setUserID(data.user.ID_USUARIO);
+      }
+
+
 
       // Se houver um filtro aplicado, filtre os dados usando o filtro
       const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, column) => {
@@ -116,9 +238,9 @@ const Documents = () => {
     } catch (error) {
       console.error('Erro ao obter as categorias de terceiros:', error);
     } finally {
-      setLoading(false);
+      //setLoading(false);
     }
-  };  
+  };
 
 
   const applyFilters = (data, filters) => {
@@ -144,6 +266,27 @@ const Documents = () => {
     setCurrentPage(1);
 
     const availableValues = handleFilterValue(column);
+
+    if (value === "Próximos 30 dias") {
+      router.query.due_date = "due_date_30";
+      return
+    }
+
+    if (value === "Vencidos") {
+      router.query.due_date = "due_date";
+      return
+    }
+
+    if (value === "Faltantes") {
+      router.query.due_date = "missing";
+      return
+    }
+
+    if (value === "Em Análise") {
+      router.query.due_date = "analysis";
+      return
+    }
+
 
     if (value === "") {
       value = 'TODOS';
@@ -190,8 +333,50 @@ const Documents = () => {
       });
 
       try {
-        const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+        setLoading(true);
+
+        const token = localStorage.getItem('Token');
+
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        let endpoint;
+        switch (due_date) {
+          case 'due_date_30':
+            endpoint = `/api/documents-due_date_30?page=${currentPage}&pageSize=${pageSize}`;
+            break;
+          case 'due_date':
+            endpoint = `/api/documents-due_date?page=${currentPage}&pageSize=${pageSize}`;
+            break;
+          case 'missing':
+            endpoint = `/api/documents-missing?page=${currentPage}&pageSize=${pageSize}`;
+            break;
+          case 'analysis':
+            endpoint = `/api/documents-analysis?page=${currentPage}&pageSize=${pageSize}`;
+            break;
+          default:
+            endpoint = `/api/documents?page=${currentPage}&pageSize=${pageSize}`;
+            break;
+        }
+
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token, getAll }),
+        });
+
         const data = await response.json();
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else {
+          setTokenVerified(true);
+        }
 
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
@@ -275,6 +460,8 @@ const Documents = () => {
 
 
   const handleClearSearch = () => {
+    router.query.due_date = '';
+
     setSearchTerm('');
     setFilterOpen(false);
 
@@ -292,14 +479,17 @@ const Documents = () => {
   };
 
 
-  const totalPages = Math.ceil((documents.docs && documents.docs.count) / pageSize) || 1;
+  const totalPages = Math.ceil(documents.docs.outsourcedCount / pageSize) || 1;
 
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   const goToNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    setCurrentPage((prevPage) => {
+      const nextPage = Math.min(prevPage + 1, totalPages);
+      return nextPage;
+    });
   };
 
   const handleKeyPress = (event) => {
@@ -311,69 +501,144 @@ const Documents = () => {
   const handleFilterValue = (column) => {
     const allColumnValues = documents.docs.rows.map((row) => row[column]);
     const uniqueValues = Array.from(new Set(allColumnValues)).filter(Boolean);
+
+    if (due_date == "due_date_30" || due_date == "due_date" || due_date == "missing" || due_date == "analysis") {
+      if (column === 'VENCIMENTO') {
+        return [...uniqueValues];
+      }
+    }
+
+    else {
+      console.log("BBBBB" + column);
+      if (column === 'VENCIMENTO') {
+        return ['Próximos 30 dias', "Vencidos", "Faltantes", "Em Análise", ...uniqueValues];
+      }
+      return [...uniqueValues];
+    }
+
     return uniqueValues;
   };
 
   useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.key === 'Enter') {
-        handleSearch();
-      }
-    };
-
-    document.addEventListener('keypress', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keypress', handleKeyPress);
-    };
-  }, [handleSearch]);
-
-
-  useEffect(() => {
-    // Verifica se a variável status está presente na rota
-    if (status) {
-      // Atualiza o filtro da coluna STATUS com o valor de status
-      setAppliedFilterValue((prevFilters) => ({
-        ...prevFilters,
-        'STATUS': status,
-      }));
-    }
-  }, [status]);
-  
-  useEffect(() => {
     const fetchDataWithFilter = async () => {
       try {
         setLoading(true);
-  
-        const response = await fetch(`/api/documents?page=${currentPage}&pageSize=${pageSize}`);
+        /* if (getAll && documents.docs.count > 100) {
+          setLoading(true);
+        } */
+
+        const token = localStorage.getItem('Token');
+
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        let endpoint;
+
+        if (due_date) {
+          switch (due_date) {
+            case 'due_date_30':
+              endpoint = `/api/documents-due_date_30?page=${currentPage}&pageSize=${pageSize}`;
+              break;
+            case 'due_date':
+              endpoint = `/api/documents-due_date?page=${currentPage}&pageSize=${pageSize}`;
+              break;
+            case 'missing':
+              endpoint = `/api/documents-missing?page=${currentPage}&pageSize=${pageSize}`;
+              break;
+            case 'analysis':
+              endpoint = `/api/documents-analysis?page=${currentPage}&pageSize=${pageSize}`;
+              break;
+            default:
+              endpoint = `/api/documents?page=${currentPage}&pageSize=${pageSize}`;
+              break;
+          }
+
+          const responseDueDate = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ token, getAll }),
+          });
+
+          const dataDueDate = await responseDueDate.json();
+
+          const filteredRowsDueDate = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
+            const filterColumnValue = appliedFilterValue[filterColumn];
+
+            if (filterColumnValue === 'TODOS') {
+              return filteredData;
+            }
+
+            return filteredData.filter((document) => {
+              const columnValue = document[filterColumn];
+
+              if (columnValue !== null && columnValue !== undefined) {
+                return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
+              }
+
+              return false;
+            });
+          }, dataDueDate.docs.rows);
+
+          const sortedRowsDueDate = sortRows(filteredRowsDueDate, sortColumn, sortOrder);
+
+          setDocuments({
+            success: dataDueDate.success,
+            docs: {
+              rows: sortedRowsDueDate,
+              count: sortedRowsDueDate.length,
+              outsourcedCount: dataDueDate.docs.outsourcedCount,
+            },
+          });
+
+          setDueDateFetchCompleted(true);
+        } else {
+          // Restante do código permanece o mesmo, mas agora é executado apenas na ausência de due_date
+          endpoint = `/api/documents?page=${currentPage}&pageSize=${pageSize}`;
+        }
+
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token, getAll }),
+        });
+
         const data = await response.json();
-  
-        // Se houver um filtro aplicado, filtre os dados usando o filtro
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else {
+          setTokenVerified(true);
+        }
+
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-  
-          // Verificar se o valor do filtro é 'TODOS'
+
           if (filterColumnValue === 'TODOS') {
-            return filteredData; // Não aplicar filtro se for 'TODOS'
+            return filteredData;
           }
-  
+
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
-  
-            // Verificar se o valor da coluna não é nulo antes de chamar toString()
+
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
-  
-            return false; // Se for nulo ou indefinido, não incluir no resultado
+
+            return false;
           });
         }, data.docs.rows);
-  
+
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
-        // Armazene os dados originais
+
         setOriginalData(data.docs.rows);
-  
+
         setDocuments({
           success: data.success,
           docs: {
@@ -382,23 +647,118 @@ const Documents = () => {
             outsourcedCount: data.docs.outsourcedCount,
           },
         });
+
       } catch (error) {
         console.error('Erro ao obter as categorias de terceiros:', error);
       } finally {
         setLoading(false);
       }
     };
-  
+
     fetchDataWithFilter();
-  }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
-  
-  
-  
+
+  }, [router.query.due_date, getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+
+
+
+  const { success, docs } = documents;
 
   const formatBrDate = (isoDate) => {
-    const date = new Date(isoDate);
-    return format(date, 'dd/MM/yyyy');
+    // Lógica especial para 'Todos' e 'Próximos 30 dias'
+    if (isoDate === 'TODOS' || isoDate === 'Próximos 30 dias' || isoDate === 'Vencidos' || isoDate === 'Faltantes' || isoDate === 'Em Análise') {
+      return isoDate;
+    }
+
+    try {
+      // Tenta criar uma instância de Date
+      const date = new Date(isoDate);
+
+      // Verifica se a data é válida
+      if (isNaN(date.getTime())) {
+        console.error('Data inválida:', isoDate);
+        throw new Error('Data inválida');
+      }
+
+      // Se a data for válida, formata como desejado
+      return format(date, 'dd/MM/yyyy');
+    } catch (error) {
+      console.error('Erro ao formatar a data:', error);
+      return 'Data inválida';
+    }
   };
+
+
+  const cobrarDocumentosClick = async () => {
+
+    try {
+      const response = await fetch('http://localhost:3000/api/scheduler', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setForceEmail(true);
+        const messageWithLineBreaks = data.message.replace(/\n/g, '<br />');
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(messageWithLineBreaks);
+        setShowModal(true);
+        setShowModal2(true);
+
+      } else {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+        setShowModal2(true);
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+    }
+  };
+
+  const enviarCobrançaClick = async () => {
+
+    closeModal();
+
+    try {
+      const response = await fetch('http://localhost:3000/api/send-mail-documents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok) {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+
+      } else {
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setModalMessage(data.message);
+        setShowModal(true);
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setShowModal2(false);
+    setForceEmail(false);
+  };
+
 
 
   return (
@@ -407,7 +767,18 @@ const Documents = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Documentos</span>
+          {due_date === "due_date_30" ? (
+            <span className='ml-2'>Documentos A Vencer - View Dinâmica</span>
+          ) : due_date === "due_date" ? (
+            <span className='ml-2'>Documentos Vencidos - View Dinâmica</span>
+          ) : due_date === "missing" ? (
+            <span className='ml-2'>Documentos Faltantes - View Dinâmica</span>
+          ) : due_date === "analysis" ? (
+            <span className='ml-2'>Documentos Em Análise - View Dinâmica</span>
+          ) : (
+            <span className='ml-2'>Documentos</span>
+          )}
+
         </div>
 
         {loading && (
@@ -422,9 +793,57 @@ const Documents = () => {
           </div>
         )}
 
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+              {/* Pseudo-elemento para a barra lateral */}
+              <style>
+                {`
+                      .modal-content::before {
+                        content: '';
+                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                        width: 4px; /* Largura da barra lateral */
+                        height: 100%; /* Altura da barra lateral */
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                      }
+                    `}
+              </style>
+
+              <button
+                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                onClick={closeModal}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+
+              <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+
+                {forceEmail && (<div className='flex'>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={enviarCobrançaClick}>
+                    <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                      Forçar cobrança automática agora
+                    </span>
+                  </button>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                    <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                      Fechar e permitir a cobrança às 18:00
+                    </span>
+                  </button>
+                </div>)}
+
+
+              </div>
+            </div>
+          </div>
+        )}
+
         {documents.success && (
           <div className=''>
-            <div className="flex items-center my-4 w-[1440px]">
+            <div className="flex items-center my-4">
               <input
                 placeholder="Pesquisa rápida"
                 type="text"
@@ -445,17 +864,25 @@ const Documents = () => {
               >
                 Limpar Pesquisa
               </button>
-              <button
-                className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarDocumentoClick}
-              >
-                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Documento
-              </button>
+              <div className='flex ml-auto'>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
+                  onClick={addDocPendenteClick}
+                >
+                  <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de documento
+                </button>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                  onClick={cobrarDocumentosClick}
+                >
+                  <span className=''> Cobrar documentos </span>
+                </button>
+              </div>
             </div>
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[1440px]">
+              <div className="flex text-gray-500 bg-white w-[1450px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -485,8 +912,8 @@ const Documents = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[1440px]`}>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
+                <div className={`flex text-gray-500 w-[1450px]`}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
                   </div>
@@ -531,6 +958,8 @@ const Documents = () => {
                       Aplicar
                     </button>
                   </div>
+
+
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
                     <select
@@ -581,11 +1010,17 @@ const Documents = () => {
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('VENCIMENTO').map((value) => (
-                        <option key={value} value={value}>
+                      {handleFilterValue('VENCIMENTO').map((value, index) => (
+                        <option
+                          key={value}
+                          value={value}
+                          className={index >= 0 && index <= 3 && !(due_date === "due_date_30" || due_date === "due_date" || due_date === "missing" || due_date === "analysis") ? 'bg-blue-100' : ''}
+                        >
                           {formatBrDate(value)}
                         </option>
                       ))}
+
+
                     </select>
                     <button
                       onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
@@ -604,18 +1039,28 @@ const Documents = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[1450px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
-                        className={`column-cell border border-gray-300 py-2 pl-1`}
+                        className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
                         {column === 'VENCIMENTO' ? formatBrDate(document[column]) : (
                           column === '' ? (
-                            <IoIosSearch className='text-xl mt-0.5' />
+                            <div className='flex justify-center'>
+                              <Link href={{ pathname: '/find-users', query: { id: document.ID_USUARIO } }}>
+                                <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                              </Link>
+                              <button onClick={() => deleteAccountClick(document)}>
+                                <HiPrinter className='mt-0.5 w-[18px] mr-0.5' />
+                              </button>
+                              <button onClick={() => deleteAccountClick(document)}>
+                                <FaTrashAlt className='mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                              </button>
+                            </div>
                           ) : (
                             document[column]
                           )
@@ -633,41 +1078,59 @@ const Documents = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
           <div className="flex items-center">
             <span className="mr-2">Registros por página:</span>
             <button
-              onClick={() => handlePageSizeChange(10)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               10
             </button>
             <button
-              onClick={() => handlePageSizeChange(25)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               25
             </button>
             <button
-              onClick={() => handlePageSizeChange(50)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               50
             </button>
             <button
-              onClick={() => handlePageSizeChange(100)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll == false ? 'bg-blue-700' : ''}`}
             >
               100
             </button>
+            <button
+              className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
+              onClick={() => {
+                setLoading(true);
+                setGetAll(true);
+                fetchData(); // Execute a função fetchData após definir getAll como true
+              }}
+            >
+              Todos
+            </button>
           </div>
+          {!getAll ? (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página {currentPage} de {totalPages}
+            </span>
+          ) : (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página 1 de 1
+            </span>
+          )}
           <button
             onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>
@@ -677,4 +1140,4 @@ const Documents = () => {
   );
 };
 
-export default Documents;
+export default Users;

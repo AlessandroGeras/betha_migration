@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
+import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Link from 'next/link';
 
-const Users = () => {    
+const Users = () => {
+  const [originalData, setOriginalData] = useState([]);
+  const [userID, setUserID] = useState('');
   const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -17,46 +22,107 @@ const Users = () => {
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
-  const [getAll, setGetAll] = useState(false);   
+  const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e');
+  const [getAll, setGetAll] = useState(false);
+
+
+
+  const adicionarUsuarioClick = () => {
+    router.push('/add-user');
+  };
+
+  const deleteAccountClick = (document) => {
+    setPopupMessage('Tem certeza que deseja excluir a conta <span style="color: red;">' + document.NM_USUARIO + '</span>?');
+    setShowModal(true);
+    setShowModal2(true);
+    setModalColor('#3f5470');
+    setTextColor('#3f5470');
+    setUserID(document);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setShowModal2(false);
+  };
+
+
+  const deleteAccount = async () => {
+    try {
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const usuario = userID.ID_USUARIO;
+
+      const response = await fetch(`/api/delete-user`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, usuario }),
+      });
+
+      const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      } else {
+        setTokenVerified(true);
+
+        // Atualize o estado após excluir com sucesso
+        const updatedDocs = {
+          success: true,
+          docs: {
+            rows: documents.docs.rows.filter((user) => user.ID_USUARIO !== usuario),
+            count: documents.docs.count - 1,
+            outsourcedCount: documents.docs.outsourcedCount,
+          },
+        };
+
+        setDocuments(updatedDocs);
+
+        // Atualize também o estado filteredData
+        setFilteredData(updatedDocs.docs.rows);
+
+        setPopupMessage('Conta excluída');
+        setShowModal(true);
+        setShowModal2(false);
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+      }
+    } catch (error) {
+      console.error('Erro ao excluir a conta:', error);
+    } finally {
+
+    }
+  };
+
+
+
 
   const columnWidths = {
-    'ID_USUARIO': '300px',
+    '': '59px',
+    'STATUS': '200px',
     'NM_USUARIO': '400px',
     'ST_EMAIL': '500px',
-    'ID_USUARIO_MEGA': '200px',
-    'ID_ADM_RESERVA_SALA': '200px',
-    'ID_ADM_VENDA': '200px',
-    'ID_ADM_CONTRATO': '200px',
-    'ID_GER_VENDA': '200px',
-    'ID_CAD_PRODUTO': '200px',
-    'ID_CAD_ORCAMENTO': '200px',
-    'ID_ADM_SALA': '200px',
-    'ID_ADM_BENS_TERCEIRO': '200px',
-    'ID_CON_BENS_TERCEIRO': '200px',
-    'ID_RECEBE_MATERIAL_OBRA': '250px',
-    'ID_VISUALIZAR_NOTAS': '200px',
-    'ID_CON_GESTAO_TERCEIROS': '250px',
-    'ID_ADM_GESTAO_TERCEIROS': '250px',
+    'TELEFONE': '250px',
+    'FUNCAO': '300px',
   };
 
   const columnLabels = {
-    'ID_USUARIO': 'ID_USUARIO',
-    'NM_USUARIO': 'NM_USUARIO',
-    'ST_EMAIL': 'ST_EMAIL',
-    'ID_USUARIO_MEGA': 'ID_USUARIO_MEGA',
-    'ID_ADM_RESERVA_SALA': 'ID_ADM_RESERVA_SALA',
-    'ID_ADM_VENDA': 'ID_ADM_VENDA',
-    'ID_ADM_CONTRATO': 'ID_ADM_CONTRATO',
-    'ID_GER_VENDA': 'ID_GER_VENDA',
-    'ID_CAD_PRODUTO': 'ID_CAD_PRODUTO',
-    'ID_CAD_ORCAMENTO': 'ID_CAD_ORCAMENTO',
-    'ID_ADM_SALA': 'ID_ADM_SALA',
-    'ID_ADM_BENS_TERCEIRO': 'ID_ADM_BENS_TERCEIRO',
-    'ID_CON_BENS_TERCEIRO': 'ID_CON_BENS_TERCEIRO',
-    'ID_RECEBE_MATERIAL_OBRA': 'ID_RECEBE_MATERIAL_OBRA',
-    'ID_VISUALIZAR_NOTAS': 'ID_VISUALIZAR_NOTAS',
-    'ID_CON_GESTAO_TERCEIROS': 'ID_CON_GESTAO_TERCEIROS',
-    'ID_ADM_GESTAO_TERCEIROS': 'ID_ADM_GESTAO_TERCEIROS',
+    '': '',
+    'STATUS': 'STATUS',
+    'NM_USUARIO': 'USUARIO',
+    'ST_EMAIL': 'EMAIL',
+    'TELEFONE': 'TELEFONE',
+    'FUNCAO': 'FUNCAO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -122,6 +188,7 @@ const Users = () => {
       }
       else {
         setTokenVerified(true);
+        setUserID(data.user.ID_USUARIO);
       }
 
 
@@ -339,7 +406,7 @@ const Users = () => {
     setDocuments({
       success: true,
       docs: {
-        rows: filteredData,
+        rows: filteredData, // Use filteredData em vez de originalData
         count: filteredData.length,
         outsourcedCount: documents.docs.outsourcedCount,
       },
@@ -438,7 +505,10 @@ const Users = () => {
           });
         }, data.docs.rows);
 
-        const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);        
+        const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
+
+        // Armazene os dados originais
+        setOriginalData(data.docs.rows);
 
         setDocuments({
           success: data.success,
@@ -481,7 +551,55 @@ const Users = () => {
             </div>
           </div>
         )}
-        
+
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+              {/* Pseudo-elemento para a barra lateral */}
+              <style>
+                {`
+                      .modal-content::before {
+                        content: '';
+                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                        width: 4px; /* Largura da barra lateral */
+                        height: 100%; /* Altura da barra lateral */
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                      }
+                    `}
+              </style>
+
+              <button
+                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                onClick={closeModal}>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+
+              <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+
+                {showModal2 && (
+                  <div className='flex'>
+                    <button className="mx-auto mt-4 w-[300px]" onClick={deleteAccount}>
+                      <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                        Sim, excluir a conta
+                      </span>
+                    </button>
+                    <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                      <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                        Não, cancelar e sair
+                      </span>
+                    </button>
+                  </div>)}
+
+
+              </div>
+            </div>
+          </div>
+        )}
 
         {documents.success && (
           <div className=''>
@@ -505,12 +623,18 @@ const Users = () => {
                 className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
               >
                 Limpar Pesquisa
-              </button>             
+              </button>
+              <button
+                className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                onClick={adicionarUsuarioClick}
+              >
+                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Usuario
+              </button>
             </div>
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[4150px]">
+              <div className="flex text-gray-500 bg-white w-[1550px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -540,22 +664,26 @@ const Users = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[4150px]`}>                  
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                <div className={`flex text-gray-500 w-[1550px]`}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
+                    <div className="flex items-center">
+                    </div>
+                  </div>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                     <select
-                      value={selectedFilterValue['ID_USUARIO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
+                      value={selectedFilterValue['STATUS']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'STATUS': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('ID_USUARIO').map((value) => (
+                      {handleFilterValue('STATUS').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
+                      onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -606,294 +734,42 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_USUARIO_MEGA']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO_MEGA': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_USUARIO_MEGA').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_USUARIO_MEGA', selectedFilterValue['ID_USUARIO_MEGA'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_ADM_RESERVA_SALA']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_RESERVA_SALA': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_ADM_RESERVA_SALA').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_ADM_RESERVA_SALA', selectedFilterValue['ID_ADM_RESERVA_SALA'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_ADM_VENDA']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_VENDA': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_ADM_VENDA').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_ADM_VENDA', selectedFilterValue['ID_ADM_VENDA'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_ADM_CONTRATO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_CONTRATO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_ADM_CONTRATO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_ADM_CONTRATO', selectedFilterValue['ID_ADM_CONTRATO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_GER_VENDA']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_GER_VENDA': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_GER_VENDA').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_GER_VENDA', selectedFilterValue['ID_GER_VENDA'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_CAD_PRODUTO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CAD_PRODUTO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_CAD_PRODUTO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_CAD_PRODUTO', selectedFilterValue['ID_CAD_PRODUTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_CAD_ORCAMENTO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CAD_ORCAMENTO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_CAD_ORCAMENTO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_CAD_ORCAMENTO', selectedFilterValue['ID_CAD_ORCAMENTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_ADM_SALA']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_SALA': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_ADM_SALA').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_ADM_SALA', selectedFilterValue['ID_ADM_SALA'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_ADM_BENS_TERCEIRO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_BENS_TERCEIRO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_ADM_BENS_TERCEIRO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_ADM_BENS_TERCEIRO', selectedFilterValue['ID_ADM_BENS_TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['ID_CON_BENS_TERCEIRO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CON_BENS_TERCEIRO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_CON_BENS_TERCEIRO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_CON_BENS_TERCEIRO', selectedFilterValue['ID_CON_BENS_TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
                     <select
-                      value={selectedFilterValue['ID_RECEBE_MATERIAL_OBRA']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_RECEBE_MATERIAL_OBRA': e.target.value })}
+                      value={selectedFilterValue['TELEFONE']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('ID_RECEBE_MATERIAL_OBRA').map((value) => (
+                      {handleFilterValue('TELEFONE').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('ID_RECEBE_MATERIAL_OBRA', selectedFilterValue['ID_RECEBE_MATERIAL_OBRA'])}
+                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
                     <select
-                      value={selectedFilterValue['ID_VISUALIZAR_NOTAS']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_VISUALIZAR_NOTAS': e.target.value })}
+                      value={selectedFilterValue['FUNCAO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'FUNCAO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('ID_VISUALIZAR_NOTAS').map((value) => (
+                      {handleFilterValue('FUNCAO').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('ID_VISUALIZAR_NOTAS', selectedFilterValue['ID_VISUALIZAR_NOTAS'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
-                    <select
-                      value={selectedFilterValue['ID_CON_GESTAO_TERCEIROS']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CON_GESTAO_TERCEIROS': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_CON_GESTAO_TERCEIROS').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_CON_GESTAO_TERCEIROS', selectedFilterValue['ID_CON_GESTAO_TERCEIROS'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
-                    <select
-                      value={selectedFilterValue['ID_ADM_GESTAO_TERCEIROS']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_GESTAO_TERCEIROS': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_ADM_GESTAO_TERCEIROS').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_ADM_GESTAO_TERCEIROS', selectedFilterValue['ID_ADM_GESTAO_TERCEIROS'])}
+                      onClick={() => handleSearchByFilter('FUNCAO', selectedFilterValue['FUNCAO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
@@ -909,7 +785,7 @@ const Users = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[4150px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[1550px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
@@ -918,7 +794,12 @@ const Users = () => {
                         className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === '' ? (<div className='flex justify-center'></div>
+                        {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-users', query: { id: document.ID_USUARIO } }}>
+                          <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                        </Link>
+                          <button onClick={() => deleteAccountClick(document)}>
+                            <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                          </button></div>
                         ) : (
                           document[column]
                         )}

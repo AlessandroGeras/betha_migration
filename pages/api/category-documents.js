@@ -1,5 +1,5 @@
 import categoria_documentos from '../../models/categoryDocuments';
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -34,9 +34,8 @@ export default async function handler(req, res) {
             limit: pageSize,
         });
 
-        const usersfound = await users.findAndCountAll({
-            where: { ID_ADM_GESTAO_TERCEIROS: 'S',
-                     COLABORADOR_TERCEIRO: 'N' },
+        const usersfound = await outsourceds.findAndCountAll({
+            where: {COLABORADOR_TERCEIRO: 'N' },
             offset: (page - 1) * pageSize,
             limit: pageSize,
         });

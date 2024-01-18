@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 require('dotenv').config();
 
 export default async function handler(req, res) {
@@ -13,11 +13,14 @@ export default async function handler(req, res) {
 
   try {
     // Atualizar o token na tabela de usuários
-    const user = await users.findOne({ where: { ST_EMAIL: email } });
+    const user = await outsourceds.findOne({ where: { ST_EMAIL: email } });
 
     if (user) {
       // Salvar o token na tabela de usuários
-      await user.update({ DS_TOKEN_VALIDACAO: token });
+      await outsourceds.update(
+        { DS_TOKEN_VALIDACAO: token },
+        { where: { ST_EMAIL: email } }
+      );
       console.log('Token salvo na tabela de usuários.');
 
       // Configurar o serviço de e-mail (substitua as informações conforme necessário)

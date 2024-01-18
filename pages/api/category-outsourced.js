@@ -10,9 +10,32 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
+const getAllDocs = async (pageSize) => {
+  let allDocs = [];
+  let offset = 0;
+
+  while (true) {
+    const result = await categoria_terceiros.findAll({
+      attributes: ['CATEGORIA'],
+      offset,
+      limit: pageSize,
+      order: [['CATEGORIA', 'ASC']], // Ordena por ordem alfabética
+    });
+
+    if (result.length === 0) {
+      break; // Saia do loop se não houver mais resultados
+    }
+
+    allDocs = [...allDocs, ...result];
+    offset += pageSize;
+  }
+
+  return allDocs;
+};
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token } = req.body;
+    const { token,getAll } = req.body;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -35,6 +58,23 @@ export default async function handler(req, res) {
       const page = parseInt(req.query.page) || 1; // Página atual
       const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
 
+      if (getAll) {
+        // Se getAll for true, busca todos os registros
+        const allDocs = await getAllDocs(pageSize);
+
+        res.status(200).json({
+          success: true,
+          message: 'Categorias encontradas',
+          docs: {
+            rows: allDocs,
+            count: allDocs.length,
+            outsourcedCount: outsourcedCount,
+          },
+        });
+      }
+
+      else{
+
       // Consulta paginada usando Sequelize com filtro
       const docs = await categoria_terceiros.findAndCountAll({
         attributes: ['CATEGORIA'],
@@ -55,7 +95,8 @@ export default async function handler(req, res) {
       } else {
         res.status(400).json({ success: false, message: 'Não foi possível obter as categorias de Terceiros.' });
       }
-    } catch (error) {
+    }
+   } catch (error) {
      if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);
         res.status(401).json({ success: false, message: 'Token expirado' });

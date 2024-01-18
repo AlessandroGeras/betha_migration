@@ -27,6 +27,7 @@ const Outsourced = () => {
   const [popupMessage, setPopupMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
+  const [getAll, setGetAll] = useState(false);
 
 
   const adicionarTerceiroClick = () => {
@@ -60,7 +61,7 @@ const Outsourced = () => {
 
       const usuario = userID.ID_USUARIO;
 
-      const response = await fetch(`/api/delete-user`, {
+      const response = await fetch(`/api/delete-outsourced`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -112,6 +113,8 @@ const Outsourced = () => {
     'UF': '200px',
     'TELEFONE': '299px',
     'NM_USUARIO': '400px',
+    'CATEGORIA_PRINCIPAL': '350px',
+    'ID_USUARIO': '350px',
   };
 
   const columnLabels = {
@@ -124,6 +127,8 @@ const Outsourced = () => {
     'UF': 'UF',
     'TELEFONE': 'TELEFONE',
     'NM_USUARIO': 'USUARIO',
+    'CATEGORIA_PRINCIPAL': 'CATEGORIA_PRINCIPAL',
+    'ID_USUARIO': 'ID_USUARIO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -163,6 +168,10 @@ const Outsourced = () => {
 
   const fetchData = async () => {
     try {
+      if(getAll && documents.docs.count>100){
+        setLoading(true);
+      }
+
       const token = localStorage.getItem('Token');
 
       if (!token) {
@@ -176,7 +185,7 @@ const Outsourced = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ token,getAll }),
       });
 
       const data = await response.json();
@@ -293,6 +302,10 @@ const Outsourced = () => {
       });
 
       try {
+        if(getAll && documents.docs.count>100){
+          setLoading(true);
+        }
+
         const token = localStorage.getItem('Token');
 
         if (!token) {
@@ -459,7 +472,10 @@ const Outsourced = () => {
   useEffect(() => {
     const fetchDataWithFilter = async () => {
       try {
-        //setLoading(true);
+        if(getAll){
+        setLoading(true && documents.docs.count>100);
+      }
+
         const token = localStorage.getItem('Token');
 
         if (!token) {
@@ -473,7 +489,7 @@ const Outsourced = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token }),
+          body: JSON.stringify({ token,getAll }),
         });
 
         const data = await response.json();
@@ -526,7 +542,7 @@ const Outsourced = () => {
     };
 
     fetchDataWithFilter();
-  }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
 
   const { success, docs } = documents;
 
@@ -633,7 +649,7 @@ const Outsourced = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[2700px]">
+              <div className="flex text-gray-500 bg-white w-[3400px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -663,7 +679,7 @@ const Outsourced = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[2700px]`}>
+                <div className={`flex text-gray-500 w-[3400px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
@@ -836,6 +852,48 @@ const Outsourced = () => {
                     </button>
                   </div>
 
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                    <select
+                      value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('CATEGORIA_PRINCIPAL').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('CATEGORIA_PRINCIPAL', selectedFilterValue['CATEGORIA_PRINCIPAL'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                    <select
+                      value={selectedFilterValue['ID_USUARIO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('ID_USUARIO').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
 
 
 
@@ -848,7 +906,7 @@ const Outsourced = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[2700px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
@@ -879,43 +937,59 @@ const Outsourced = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
           >
             Página Anterior
           </button>
           <div className="flex items-center">
             <span className="mr-2">Registros por página:</span>
             <button
-              onClick={() => handlePageSizeChange(10)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll==false ? 'bg-blue-700' : ''}`}
             >
               10
             </button>
             <button
-              onClick={() => handlePageSizeChange(25)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll==false ? 'bg-blue-700' : ''}`}
             >
               25
             </button>
             <button
-              onClick={() => handlePageSizeChange(50)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll==false ? 'bg-blue-700' : ''}`}
             >
               50
             </button>
             <button
-              onClick={() => handlePageSizeChange(100)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+              onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
+              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll==false ? 'bg-blue-700' : ''}`}
             >
               100
             </button>
+            <button
+              className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
+              onClick={() => {
+                setLoading(true);
+                setGetAll(true);
+                fetchData(); // Execute a função fetchData após definir getAll como true
+              }}
+            >
+              Todos
+            </button>
           </div>
-          <span className="px-4 py-2  rounded text-gray-500">
-            Página {currentPage} de {totalPages}
-          </span>
+          {!getAll ? (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página {currentPage} de {totalPages}
+            </span>
+          ) : (
+            <span className="px-4 py-2 rounded text-gray-500">
+              Página 1 de 1
+            </span>
+          )}
           <button
             onClick={goToNextPage}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
+            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
           >
             Próxima Página
           </button>

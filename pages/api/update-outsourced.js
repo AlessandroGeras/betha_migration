@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
             });
 
 
-            const existingUser = await users.findOne({ where: { ID_USUARIO: id_user } });
+            const existingUser = await outsourceds.findOne({ where: { ID_USUARIO: id_user } });
             const user = existingUser;    
 
             existingUser.ENDEREÇO = endereco;

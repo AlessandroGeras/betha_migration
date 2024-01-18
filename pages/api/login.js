@@ -1,4 +1,5 @@
 import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -26,7 +27,7 @@ export default async function handler(req, res) {
       const usuariointerno = await users.findOne({
         where: {
           ID_USUARIO: username,
-          ID_ADM_GESTAO_TERCEIROS: 'N',
+          ID_USUARIO_INTERNO: 'S',
         },
       });
 
@@ -54,13 +55,14 @@ export default async function handler(req, res) {
           res.status(403).json({ error: 'Usuário não tem permissão para acessar.' });
         }
       } else {
-        const usuarioexterno = await users.findOne({
+        const usuarioexterno = await outsourceds.findOne({
           attributes: ['DS_SENHA'],
           where: {
             ID_USUARIO: username,
-            ID_ADM_GESTAO_TERCEIROS: 'S',
+            ID_USUARIO_INTERNO: 'N',
           },
         });
+        
 
         if (usuarioexterno) {
           const storedHashedPassword = usuarioexterno.dataValues.DS_SENHA;
@@ -91,6 +93,7 @@ export default async function handler(req, res) {
             }
           }
         } else {
+          console.log("bbbbbbbbbbbbbbbbbbbbbbbbbb"+usuarioexterno);
           console.log('Usuário não encontrado.');
           res.status(404).json({ error: 'Usuário não encontrado.' });
         }

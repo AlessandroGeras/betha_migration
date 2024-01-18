@@ -1,8 +1,8 @@
 import Sequelize from 'sequelize-oracle';
 import connection from "../config/database.mjs";
 
-const web_usuario = connection.define(
-  "WEB_USUARIO",
+const web_terceiro = connection.define(
+  "WEB_TERCEIRO",
   {
     ID_USUARIO: {
       type: Sequelize.STRING,
@@ -12,14 +12,6 @@ const web_usuario = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_CAD_PRODUTO: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
-    ID_CAD_ORCAMENTO: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
     ST_EMAIL: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -27,60 +19,66 @@ const web_usuario = connection.define(
     ID_USUARIO_INTERNO: {
       type: Sequelize.STRING,
       allowNull: false,
-    }, 
-    ID_USUARIO_MEGA: {
+    },
+    DS_TOKEN_VALIDACAO: {
+      type: Sequelize.STRING,
+    },
+    DS_SENHA: {
+      type: Sequelize.STRING,
+    },
+    CNPJ: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_ADM_RESERVA_SALA: {
+    ENDEREÇO: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_ADM_VENDA: {
+    CIDADE: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_ADM_CONTRATO: {
+    UF: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_GER_VENDA: {
+    TELEFONE: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_ADM_SALA: {
+    NOME_TERCEIRO: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_ADM_BENS_TERCEIRO: {
+    STATUS: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    ID_CON_BENS_TERCEIRO: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },    
-    ID_RECEBE_MATERIAL_OBRA: {
+    OBS_STATUS: {
       type: Sequelize.STRING,
       allowNull: true,
     },
-    ID_VISUALIZAR_NOTAS: {
+    CATEGORIA_PRINCIPAL: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    FUNCAO: {
       type: Sequelize.STRING,
       allowNull: true,
     },
-    ID_CON_GESTAO_TERCEIROS: {
+    COLABORADOR_TERCEIRO: {
       type: Sequelize.STRING,
       allowNull: true,
     },
-    ID_ADM_GESTAO_TERCEIROS: {
+    CPF: {
       type: Sequelize.STRING,
       allowNull: true,
     },
   },
   {
-    tableName: "WEB_USUARIO",
+    tableName: "WEB_TERCEIRO",
     timestamps: false,
   }
 );
 
-export default web_usuario;
+export default web_terceiro;

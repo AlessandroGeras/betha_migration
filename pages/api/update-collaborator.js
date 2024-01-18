@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -30,8 +30,6 @@ export default async function handler(req, res) {
 
         let connection;
 
-        console.log(usuario);
-
         try {
             // Estabeleça a conexão com o Oracle
             connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
@@ -40,7 +38,10 @@ export default async function handler(req, res) {
             });
 
 
-            const existingUser = await users.findOne({ where: { ID_USUARIO: id_user } });
+            const existingUser = await outsourceds.findOne({ where: {
+                ID_USUARIO: id_user,
+                COLABORADOR_TERCEIRO: 'S',
+             }});
             const user = existingUser;    
 
             existingUser.ENDEREÇO = endereco;

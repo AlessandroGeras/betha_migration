@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import categoria_colaboradores from '../../models/categoryCollaborators';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
@@ -28,9 +28,10 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
-      const user = await users.findOne({
+      const user = await outsourceds.findOne({
         where: {
-          ID_USUARIO: id
+          ID_USUARIO: id,
+          COLABORADOR_TERCEIRO: 'S',
         },
       });
 
@@ -44,7 +45,7 @@ export default async function handler(req, res) {
         let allEnterprises = [];
       
         while (true) {
-          const result = await users.findAll({
+          const result = await outsourceds.findAll({
             limit,
             offset,
           });

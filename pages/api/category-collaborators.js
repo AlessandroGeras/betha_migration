@@ -1,5 +1,5 @@
 import categoria_colaboradores from '../../models/categoryCollaborators';
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -11,9 +11,53 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
+const getAllDocs = async (pageSize) => {
+  let allDocs = [];
+  let offset = 0;
+
+  while (true) {
+    const result = await categoria_colaboradores.findAll({
+      attributes: ['CATEGORIA'],
+      offset,
+      limit: pageSize,
+    });
+
+    if (result.length === 0) {
+      break; // Saia do loop se não houver mais resultados
+    }
+
+    allDocs = [...allDocs, ...result];
+    offset += pageSize;
+  }
+
+  return allDocs;
+};
+
+const getAllEnterprises = async () => {
+  let offset = 0;
+  let limit = 100;
+  let allEnterprises = [];
+
+  while (true) {
+    const result = await outsourceds.findAll({
+      limit,
+      offset,
+    });
+
+    if (result.length === 0) {
+      break; // Saia do loop se não houver mais resultados
+    }
+
+    allEnterprises = [...allEnterprises, ...result];
+    offset += limit;
+  }
+
+  return allEnterprises;
+};
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token } = req.body;
+    const { token,getAll } = req.body;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -30,9 +74,37 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
+      const outsourcedCount = await categoria_colaboradores.count();
+
       // Configuração da paginação
       const page = parseInt(req.query.page) || 1; // Página atual
       const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
+
+      if (getAll) {
+        // Se getAll for true, busca todos os registros
+        const allDocs = await getAllDocs(pageSize);
+        const enterprise = await getAllEnterprises();
+
+        // Filtrar os valores nulos e "N/A"
+      const filteredEnterprises = enterprise
+      .filter(user => user.NOME_TERCEIRO !== null && user.NOME_TERCEIRO !== 'N/A');
+    
+    // Obter valores distintos
+    const uniqueEnterprises = [...new Set(filteredEnterprises.map(user => user.NOME_TERCEIRO))];
+
+        res.status(200).json({
+          success: true,
+          message: 'Todos as categorias encontradas',
+          docs: {
+            rows: allDocs,
+            count: allDocs.length,
+            outsourcedCount: outsourcedCount,
+          },
+          uniqueEnterprises,
+        });
+      }
+
+      else{
 
       // Consulta paginada usando Sequelize com filtro
       const docs = await categoria_colaboradores.findAndCountAll({
@@ -41,53 +113,21 @@ export default async function handler(req, res) {
         limit: pageSize,
       });
 
-
-      const getAllEnterprises = async () => {
-        let offset = 0;
-        let limit = 100;
-        let allEnterprises = [];
-      
-        while (true) {
-          const result = await users.findAll({
-            limit,
-            offset,
-          });
-      
-          if (result.length === 0) {
-            break; // Saia do loop se não houver mais resultados
-          }
-      
-          allEnterprises = [...allEnterprises, ...result];
-          offset += limit;
-        }
-      
-        return allEnterprises;
-      };
-      
-      const enterprise = await getAllEnterprises();
-      
-      // Filtrar os valores nulos e "N/A"
-      const filteredEnterprises = enterprise
-        .filter(user => user.NOME_TERCEIRO !== null && user.NOME_TERCEIRO !== 'N/A');
-      
-      // Obter valores distintos
-      const uniqueEnterprises = [...new Set(filteredEnterprises.map(user => user.NOME_TERCEIRO))];
-
-
-      if (docs && uniqueEnterprises) {
+      if (docs) {
         res.status(200).json({
           success: true,
           message: 'Categorias encontradas',
           docs: {
             rows: docs.rows,
             count: docs.count,
+            outsourcedCount: outsourcedCount,
           },
-          uniqueEnterprises,
         });
       } else {
-        res.status(400).json({ success: false, message: 'Não foi possível obter as categorias de Colaboradores.' });
+        res.status(400).json({ success: false, message: 'Não foi possível obter a lista de categorias.' });
       }
-    } catch (error) {
+    }
+   } catch (error) {
      if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);
         res.status(401).json({ success: false, message: 'Token expirado' });

@@ -1,6 +1,6 @@
 import documents from '../../models/documents';
 import users from '../../models/users';
-import cobrança from '../../models/cobrança';
+import cobrança from '../../models/billing';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';

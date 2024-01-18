@@ -1,5 +1,6 @@
 import documents from '../../models/documents';
 import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -36,8 +37,8 @@ export default async function handler(req, res) {
       });
 
       // Consulta para obter o total de terceiros ativos
-      const activeOutsourcedCount = await users.count({
-        where: { STATUS: 'Ativo', ID_ADM_GESTAO_TERCEIROS: 'S',COLABORADOR_TERCEIRO: 'N' }, // Ajuste conforme sua estrutura de dados
+      const activeOutsourcedCount = await outsourceds.count({
+        where: { STATUS: 'Ativo', COLABORADOR_TERCEIRO: 'N' }, // Ajuste conforme sua estrutura de dados
       });
 
       const missingDocsCount = await documents.count({
@@ -50,7 +51,7 @@ export default async function handler(req, res) {
 
       // Consulta para obter o total de documentos com vencimento até 30 dias
       const dueDateCount = await connection.query(
-        `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30 AND "STATUS" = 'Ativo'`,
+        `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30`,
         {
           type: Sequelize.QueryTypes.SELECT,
         }
@@ -63,8 +64,8 @@ export default async function handler(req, res) {
         }
       );
 
-      const employeesCount = await users.count({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'N',COLABORADOR_TERCEIRO: 'N' }, // Ajuste conforme sua estrutura de dados
+      const employeesCount = await outsourceds.count({
+        where: { STATUS: 'Ativo', COLABORADOR_TERCEIRO: 'S' }, // Ajuste conforme sua estrutura de dados
       });
 
       // Configuração da paginação

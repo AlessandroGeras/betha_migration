@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       });
 
       // Verifique se o email e o token correspondem a uma entrada na tabela
-      const tokenEntry = await users.findOne({
+      const tokenEntry = await outsourceds.findOne({
         where: {
           ST_EMAIL: email,
           DS_TOKEN_VALIDACAO: token,

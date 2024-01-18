@@ -16,10 +16,6 @@ const getAllDocs = async (pageSize) => {
 
   while (true) {
     const result = await users.findAll({
-      where: {
-        ID_ADM_GESTAO_TERCEIROS: 'N',
-        COLABORADOR_TERCEIRO: 'N'
-      },
       offset,
       limit: pageSize,
     });
@@ -57,9 +53,7 @@ export default async function handler(req, res) {
         },
       });
 
-      const outsourcedCount = await users.count({
-        where: { ID_ADM_GESTAO_TERCEIROS: 'N', COLABORADOR_TERCEIRO: 'N' },
-      });
+      const outsourcedCount = await users.count();
 
       // Configuração da paginação
       const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
@@ -81,7 +75,6 @@ export default async function handler(req, res) {
       } else {
         // Consulta paginada usando Sequelize com filtro
         const docs = await users.findAndCountAll({
-          where: { ID_ADM_GESTAO_TERCEIROS: 'N', COLABORADOR_TERCEIRO: 'N' }, // Adicionando a condição de filtro
           offset: (page - 1) * pageSize,
           limit: pageSize,
         });

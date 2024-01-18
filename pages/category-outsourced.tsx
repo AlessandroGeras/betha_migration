@@ -449,7 +449,7 @@ const CategoryOutsourced = () => {
 
       <div className="flex-1" id="Dashboard">
         <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Terceiros</span>
+          <span className='ml-2'>Categoria de Terceiros</span>
         </div>
 
         {loading && (
@@ -457,7 +457,7 @@ const CategoryOutsourced = () => {
             <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
               <div className="text-blue-500 text-md text-center flex-grow">
                 <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de Terceiros...
+                  Carregando lista de Categoria de Terceiros...
                 </div>
               </div>
             </div>
@@ -624,13 +624,7 @@ const CategoryOutsourced = () => {
               className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
             >
               100
-            </button>
-            <button
-              onClick={() => handlePageSizeChange(1000)}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 1000 ? 'bg-blue-700' : ''}`}
-            >
-              Todos
-            </button>
+            </button>            
           </div>
           <span className="px-4 py-2  rounded text-gray-500">
             Página {currentPage} de {totalPages}

@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -25,10 +25,10 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
-      const usuario = await users.findOne({
+      const usuario = await outsourceds.findOne({
         where: {
           ID_USUARIO: username,
-          ID_ADM_GESTAO_TERCEIROS: 'S', // Add this condition to check for "S"
+          ID_USUARIO_INTERNO: 'N', // Add this condition to check for "S"
         },
       });
 
