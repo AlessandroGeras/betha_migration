@@ -6,7 +6,24 @@ const categoria_documentos = connection.define(
   {
     CATEGORIA: {
       type: Sequelize.STRING,
+      primaryKey: true,
       allowNull: false,
+    },
+    NUMERACAO: {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+    },
+    FORMATO_VENCIMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    AUDITORIA: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    NOTIFICACAO: {
+      type: Sequelize.STRING,
+      allowNull: true,
     },
   },
   {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '@/components/sidebar';
+import { useRouter } from 'next/router';
 
 const AddCategoryDocuments = () => {
     const [formData, setFormData] = useState({
@@ -14,7 +15,8 @@ const AddCategoryDocuments = () => {
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
-    const [isTokenVerified, setTokenVerified] = useState(false);
+    const [isTokenVerified, setTokenVerified] = useState(false);    
+    const router = useRouter();
 
     const closeModal = () => {
         setFormData({
@@ -183,7 +185,7 @@ const AddCategoryDocuments = () => {
                         </select>
                     </div>
 
-                    {/* <div className="col-span-1" style={{ visibility: formData.vencimento === 'Periodo' ? 'hidden' : 'visible' }}>
+                    <div className="col-span-1" style={{ visibility: formData.vencimento === 'Periodo' ? 'hidden' : 'visible' }}>
                         <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
                             Dia fixo<span className="text-red-500">*</span>
                         </label>
@@ -197,9 +199,9 @@ const AddCategoryDocuments = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div> */}
+                    </div>
 
-                    {/* <div className="col-span-2">
+                    <div className="col-span-2">
                         <label htmlFor="notificação" className="block text-sm font-medium text-gray-700">
                             Notificação antecipada<span className="text-red-500">*</span>
                         </label>
@@ -211,10 +213,10 @@ const AddCategoryDocuments = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div> */}
+                    </div>
 
 
-                    {/* {formData.vencimento === 'Periodo' && (
+                    {formData.vencimento === 'Periodo' && (
                         <div className="col-span-3">
                             <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
                                 Data de Vencimento<span className="text-red-500">*</span>
@@ -229,9 +231,9 @@ const AddCategoryDocuments = () => {
                                 min={new Date().toISOString().split('T')[0]}
                             />
                         </div>
-                    )} */}
+                    )}
 
-                    {/* {formData.vencimento === 'Periodo' && (<div className="col-span-2">
+                    {formData.vencimento === 'Periodo' && (<div className="col-span-2">
                         <label htmlFor="diasAntecipacao" className="block text-sm font-medium text-gray-700">
                             Quant. dias<span className="text-red-500">*</span>
                         </label>
@@ -243,7 +245,7 @@ const AddCategoryDocuments = () => {
                             readOnly
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>)} */}
+                    </div>)}
 
                     <div className="col-span-3">
                         <label htmlFor="auditoria" className="block text-sm font-medium text-gray-700">

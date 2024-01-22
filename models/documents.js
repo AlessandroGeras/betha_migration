@@ -22,14 +22,14 @@ const documento = connection.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
-    COLABORADOR: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
     VENCIMENTO: {
       type: Sequelize.DATE,
       allowNull: true,
-    },    
+    },
+    NOTIFICACAO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: "DOCUMENTOS",

@@ -7,6 +7,11 @@ const categoria_terceiros = connection.define(
     CATEGORIA: {
       type: Sequelize.STRING,
       allowNull: false,
+      primaryKey: true,
+    },
+    TIPO_DOCUMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
     },
   },
   {

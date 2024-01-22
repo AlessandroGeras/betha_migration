@@ -111,8 +111,8 @@ const Users = () => {
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '300px',
     'TERCEIRO': '350px',
-    'COLABORADOR': '300px',
     'VENCIMENTO': '260px',
+    'NOTIFICACAO': '260px',
   };
 
   const columnLabels = {
@@ -121,8 +121,8 @@ const Users = () => {
     'TIPO_DOCUMENTO': 'TIPO_DOCUMENTO',
     'CNPJ': 'CNPJ',
     'TERCEIRO': 'TERCEIRO',
-    'COLABORADOR': 'COLABORADOR',
     'VENCIMENTO': 'VENCIMENTO',
+    'NOTIFICACAO': 'NOTIFICACAO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -882,7 +882,7 @@ const Users = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[1450px]">
+              <div className="flex text-gray-500 bg-white w-[1440px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -912,7 +912,7 @@ const Users = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[1450px]`}>
+                <div className={`flex text-gray-500 w-[1440px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
@@ -982,26 +982,6 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
-                    <select
-                      value={selectedFilterValue['COLABORADOR']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('COLABORADOR').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
                     <select
@@ -1030,17 +1010,36 @@ const Users = () => {
                     </button>
                   </div>
 
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
+                    <select
+                      value={selectedFilterValue['NOTIFICACAO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOTIFICACAO': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('NOTIFICACAO').map((value) => (
+                        <option key={value} value={value}>
+                          {formatBrDate(value)}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('NOTIFICACAO', selectedFilterValue['NOTIFICACAO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
 
 
                 </div>
               )}
 
               {documents.docs.rows.map((document, index) => (
-                /* Tamanho total tabela registros */
-                <div className='w-[1440px]'>
+                <div className='w-[1440px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[1450px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
-                    key={document.id || Math.random().toString()}
+                    className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
@@ -1048,7 +1047,9 @@ const Users = () => {
                         className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === 'VENCIMENTO' ? formatBrDate(document[column]) : (
+                        {column === 'VENCIMENTO' || column ==='NOTIFICACAO' ? (
+                          document[column] !== null ? formatBrDate(document[column]) : ''
+                        ) : (
                           column === '' ? (
                             <div className='flex justify-center'>
                               <Link href={{ pathname: '/find-users', query: { id: document.ID_USUARIO } }}>

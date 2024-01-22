@@ -1,9 +1,11 @@
 import categoria_documentos from '../../models/categoryDocuments';
+import categoria_colaboradores from '../../models/categoryOutsourced';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
+import categoria_terceiros from '../../models/categoryOutsourced';
 
 dotenv.config();
 
@@ -58,7 +60,12 @@ const getAllEnterprises = async () => {
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { token, getAll } = req.body;
+        let { token, getAll,id } = req.body;
+        let category=null;
+
+        if(id==undefined){
+            id=false;
+        }
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -78,7 +85,18 @@ export default async function handler(req, res) {
             // Verificar se a conexão foi bem-sucedida
             await connection.authenticate();
 
-            const outsourcedCount = await categoria_documentos.count();
+            const outsourcedCount = await categoria_documentos.count();  
+
+            if(id!=false){
+            category = await categoria_terceiros.findOne({
+              where: {
+                CATEGORIA: id
+              },
+            });
+        }        
+        else{
+            id=null;
+        }
 
             // Configuração da paginação
             const page = parseInt(req.query.page) || 1; // Página atual
@@ -95,6 +113,7 @@ export default async function handler(req, res) {
 
                 // Obter valores distintos
                 const uniqueEnterprises = [...new Set(filteredEnterprises.map(user => user.NOME_TERCEIRO))];
+                
 
                 res.status(200).json({
                     success: true,
@@ -105,6 +124,7 @@ export default async function handler(req, res) {
                         outsourcedCount: outsourcedCount,
                     },
                     uniqueEnterprises,
+                    category,
                 });
             }
 

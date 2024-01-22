@@ -21,6 +21,7 @@ const AddOutsourced = () => {
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
     const { id } = router.query;
+    const [loading, setLoading] = useState(true);
 
     const closeModal = () => {
         setShowModal(false);
@@ -37,9 +38,8 @@ const AddOutsourced = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-       
-            setFormData({ ...formData, [name]: value });
-        
+
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSelectChange = (e) => {
@@ -47,15 +47,16 @@ const AddOutsourced = () => {
 
         if (formData.categorias.includes(selectedCategoria)) {
             const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
-            setFormData({ ...formData, categorias: updatedCategorias });
+            setFormData({ ...formData, categorias: updatedCategorias, categoria: updatedCategorias });
         } else {
-            setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
+            setFormData({ ...formData, categoria: selectedCategoria, categorias: [...formData.categorias, selectedCategoria] });
+
         }
     };
 
     const removeCategoria = (removedCategoria) => {
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-        setFormData({ ...formData, categorias: updatedCategorias });
+        setFormData({ ...formData, categorias: updatedCategorias, categoria: updatedCategorias });
     };
 
     const handleSubmitSuccess = async (e) => {
@@ -77,13 +78,13 @@ const AddOutsourced = () => {
                 return;
             }
 
-            const response = await fetch('/api/store-category-outsourced', {
+            const response = await fetch('/api/update-category-outsourced', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,token
+                    ...formData, token
                 }),
             });
 
@@ -97,11 +98,10 @@ const AddOutsourced = () => {
 
             const responseData = await response.json();
 
-            setPopupMessage('Categoria criada com sucesso!');
+            setPopupMessage('Categoria alterada com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
@@ -114,13 +114,19 @@ const AddOutsourced = () => {
     useEffect(() => {
         const fetchCategoriaOptions = async () => {
             try {
+                setLoading(true);
+
+                if (!id) {
+                    return
+                }                
+
                 const token = localStorage.getItem('Token');
 
                 if (!token) {
                     router.push('/login');
                     return;
-                }                
-               
+                }
+
                 const getAll = true;
 
                 const response = await fetch(`/api/find-category-outsourced`, {
@@ -128,14 +134,13 @@ const AddOutsourced = () => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token, getAll }),
+                    body: JSON.stringify({ token, getAll, id }),
                 });
 
                 const data = await response.json();
                 if (response.status === 401) {
                     router.push('/login');
                 } else {
-                    
                     setTokenVerified(true);
                     setEnterprises(data.uniqueEnterprises);
 
@@ -149,10 +154,16 @@ const AddOutsourced = () => {
                         };
                     });
 
-                    setCategoriaDetails(updatedCategoriaDetails); 
-                   
+                    setCategoriaDetails(updatedCategoriaDetails);
+                    setFormData({
+                        categorias: data.category.TIPO_DOCUMENTO.split(', ').map((tipo) => tipo.trim()), // Converter a string em um array
+                        nomeTerceiro: '',
+                        categoria: [],
+                        categoria_terceiro: id,
+                    });
                 }
                 setCategoriaOptions(data.success ? data.docs.rows : []);
+                setLoading(false);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
             }
@@ -165,15 +176,27 @@ const AddOutsourced = () => {
         <div className="flex h-screen">
             <Sidebar />
             <Head>
-                <title>Adicionar categoria</title>
+                <title>Alterar categoria</title>
             </Head>
+
+            {loading && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
+                        <div className="text-blue-500 text-md text-center flex-grow">
+                            <div className="flex items-center justify-center h-full text-4xl">
+                                Carregando categoria de Terceiro...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
-                    <span className="ml-2">Adicionar categoria de Terceiro</span>
+                    <span className="ml-2">Alterar categoria de Terceiro</span>
                 </div>
                 <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
-                <div className="col-span-7">
+                    <div className="col-span-7">
                         <label htmlFor="categoria_terceiro" className="block text-sm font-medium text-gray-700">
                             Categoria de Terceiro <span className="text-red-500">*</span>
                         </label>
@@ -183,11 +206,11 @@ const AddOutsourced = () => {
                             id="categoria_terceiro"
                             onChange={handleInputChange}
                             required
+                            disabled
                             value={formData.categoria_terceiro}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
-
 
                     <div className="col-span-7">
                         <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
@@ -230,10 +253,6 @@ const AddOutsourced = () => {
                             </div>
                         )}
                     </div>
-
-                    
-
-
 
                     <div className="col-span-7 flex justify-center mt-4">
                         <button

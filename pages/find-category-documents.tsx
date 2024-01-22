@@ -5,21 +5,19 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        categorias: [],
-        nomeTerceiro: '',
         categoria: '',
-        categoria_terceiro: '',
+        numeração: 'Sim',
+        formato_vencimento: 'Fixo',
+        auditoria: 'Não',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState([]);
-    const [categoriaDetails, setCategoriaDetails] = useState({});
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
-    const [enterprises, setEnterprises] = useState([]);
     const { id } = router.query;
 
     const closeModal = () => {
@@ -28,76 +26,56 @@ const AddOutsourced = () => {
 
     const resetForm = () => {
         setFormData({
-            categorias: [],
-            nomeTerceiro: '',
             categoria: '',
-            categoria_terceiro: '',
+            numeração: 'Sim',
+            formato_vencimento: 'Fixo',
+            auditoria: 'Não',
         });
-    };
+    }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-       
-            setFormData({ ...formData, [name]: value });
-        
-    };
 
-    const handleSelectChange = (e) => {
-        const selectedCategoria = e.target.value;
+        setFormData({ ...formData, [name]: value });
 
-        if (formData.categorias.includes(selectedCategoria)) {
-            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
-            setFormData({ ...formData, categorias: updatedCategorias });
-        } else {
-            setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-        }
-    };
-
-    const removeCategoria = (removedCategoria) => {
-        const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-        setFormData({ ...formData, categorias: updatedCategorias });
     };
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.categoria_terceiro === "" || formData.categorias.length === 0) {
-            setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
-            setShowModal(true);
-            setModalColor('#e53e3e');
-            setTextColor('#e53e3e');
-            return;
-        }
 
         try {
             const token = localStorage.getItem('Token');
 
             if (!token) {
+                // Se o token não estiver presente, redirecione para a página de login
+                console.log("sem token");
                 router.push('/login');
                 return;
             }
 
-            const response = await fetch('/api/store-category-outsourced', {
+            const response = await fetch('/api/update-category-documents', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,token
+                    ...formData, token,id
                 }),
             });
 
             if (!response.ok) {
-                setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
+                setPopupMessage('Não foi possível alterar a categoria. Verifique se os dados estão preenchidos.');
                 setShowModal(true);
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
-                throw new Error('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
+                throw new Error('Não foi possível alterar a categoria. Verifique se os dados estão preenchidos.');
             }
 
             const responseData = await response.json();
 
-            setPopupMessage('Categoria criada com sucesso!');
+            console.log('Categoria alterada com sucesso!', responseData);
+            setPopupMessage('Categoria alterada com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
@@ -108,50 +86,50 @@ const AddOutsourced = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/category-outsourced');
+        router.push('/category-documents');
     };
 
     useEffect(() => {
         const fetchCategoriaOptions = async () => {
             try {
+                if(!id){
+                    return
+                }
+
                 const token = localStorage.getItem('Token');
 
                 if (!token) {
+                    // Se o token não estiver presente, redirecione para a página de login
+                    console.log("sem token");
                     router.push('/login');
                     return;
-                }                
-               
-                const getAll = true;
+                }
 
-                const response = await fetch(`/api/find-category-outsourced`, {
+                const response = await fetch(`/api/find-category-documents`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token, getAll }),
+                    body: JSON.stringify({ token,id }),
                 });
 
                 const data = await response.json();
+                console.log(data.docs);
                 if (response.status === 401) {
                     router.push('/login');
-                } else {
-                    
-                    setTokenVerified(true);
-                    setEnterprises(data.uniqueEnterprises);
-
-                    const updatedCategoriaDetails = {};
-
-                    data.docs.rows.forEach((categoria) => {
-                        updatedCategoriaDetails[categoria.CATEGORIA] = {
-                            campo1: categoria.NUMERACAO,
-                            campo2: categoria.FORMATO_VENCIMENTO,
-                            campo3: categoria.AUDITORIA,
-                        };
-                    });
-
-                    setCategoriaDetails(updatedCategoriaDetails); 
-                   
                 }
+                else {
+                    setTokenVerified(true);
+
+                    setFormData({
+                        
+                        categoria: data.docs.CATEGORIA,  
+                        numeração: data.docs.NUMERACAO,  
+                        formato_vencimento: data.docs.FORMATO_VENCIMENTO, 
+                        auditoria: data.docs.AUDITORIA,  
+                    });
+                }
+
                 setCategoriaOptions(data.success ? data.docs.rows : []);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
@@ -161,77 +139,93 @@ const AddOutsourced = () => {
         fetchCategoriaOptions();
     }, [id]);
 
+
     return (
         <div className="flex h-screen">
+            {/* Barra lateral */}
             <Sidebar />
             <Head>
-                <title>Adicionar categoria</title>
+                <title>Alterar Categoria</title>
             </Head>
 
+            {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
-                    <span className="ml-2">Adicionar categoria de Terceiro</span>
+                    {/* Conteúdo da Barra Superior, se necessário */}
+                    <span className="ml-2">Alterar Categoria de Terceiro</span>
                 </div>
                 <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
-                <div className="col-span-7">
-                        <label htmlFor="categoria_terceiro" className="block text-sm font-medium text-gray-700">
-                            Categoria de Terceiro <span className="text-red-500">*</span>
+                    {/* Linha 1 */}
+                    <div className="col-span-7">
+                        <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
+                            Tipo de Documento <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
-                            name="categoria_terceiro"
-                            id="categoria_terceiro"
-                            onChange={handleInputChange}
+                            name="categoria"
+                            id="categoria"
                             required
-                            value={formData.categoria_terceiro}
+                            value={formData.categoria}
+                            onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
 
 
-                    <div className="col-span-7">
-                        <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
-                            Tipo de Documento <span className="text-red-500">*</span>
+
+
+
+
+                  {/*   <div className="col-span-7">
+                        <label htmlFor="numeração" className="block text-sm font-medium text-gray-700">
+                            Informar numeração <span className="text-red-500">*</span>
                         </label>
                         <select
-                            name="categoria"
-                            id="categoria"
-                            value={formData.categoria}
-                            onChange={(e) => handleSelectChange(e)}
-                            required
+                            name="numeração"
+                            id="numeração"
+                            value={formData.numeração}
+                            onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            required
                         >
-                            <option value="" disabled selected>
-                                Selecione um documento
-                            </option>
-                            {categoriaOptions.map((categoria) => (
-                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
-                                    {categoria.CATEGORIA}
-                                </option>
-                            ))}
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
                         </select>
-                        {formData.categorias.length > 0 && (
-                            <div className="mt-2">
-                                <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
-                                <ul className="list-disc pl-4">
-                                    {formData.categorias.map((selectedCategoria) => (
-                                        <li key={selectedCategoria} className="flex items-center justify-between">
-                                            {selectedCategoria}
-                                            <button
-                                                type="button"
-                                                onClick={() => removeCategoria(selectedCategoria)}
-                                                className="text-red-500"
-                                            >
-                                                Remover
-                                            </button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
+                    </div> */}
 
-                    
+                   {/*  <div className="col-span-7">
+                        <label htmlFor="formato_vencimento" className="block text-sm font-medium text-gray-700">
+                            Informar numeração <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="formato_vencimento"
+                            id="formato_vencimento"
+                            value={formData.formato_vencimento}
+                            onChange={handleInputChange}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            required
+                        >
+                            <option value="Fixo">Fixo</option>
+                            <option value="Período">Período</option>
+                        </select>
+                    </div> */}
+
+                    <div className="col-span-7">
+                        <label htmlFor="auditoria" className="block text-sm font-medium text-gray-700">
+                            Doc. para auditoria <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="auditoria"
+                            id="auditoria"
+                            value={formData.auditoria}
+                            onChange={handleInputChange}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            required
+                        >
+                            <option value="Não">Não</option>
+                            <option value="Sim">Sim</option>
+                        </select>
+                    </div>
 
 
 
@@ -251,24 +245,27 @@ const AddOutsourced = () => {
                             Salvar
                         </button>
                     </div>
+
+                    <div className="col-span-1"></div>
                 </div>
             </div>
 
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                        {/* Pseudo-elemento para a barra lateral */}
                         <style>
                             {`
-                            .modal-content::before {
-                                content: '';
-                                background-color: ${modalColor};
-                                width: 4px;
-                                height: 100%;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                            }
-                        `}
+                .modal-content::before {
+                  content: '';
+                  background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                  width: 4px; /* Largura da barra lateral */
+                  height: 100%; /* Altura da barra lateral */
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+              `}
                         </style>
 
                         <button

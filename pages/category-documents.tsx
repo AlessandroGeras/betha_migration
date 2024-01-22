@@ -3,6 +3,7 @@ import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Link from 'next/link';
 
 const CategoryDocuments = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -380,7 +381,9 @@ const CategoryDocuments = () => {
                       style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                     >
                       {column === '' ? (
+                        <Link href={{ pathname: '/find-category-documents', query: { id: document.CATEGORIA } }}>
                         <IoIosSearch className='text-xl mt-0.5' />
+                        </Link>
                       ) : (
                         document[column]
                       )}

@@ -1,9 +1,9 @@
-import categoryOutsourced from '../../models/categoryOutsourced';
+import categoria_documentos from '../../models/categoryDocuments';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-
 
 dotenv.config();
 
@@ -13,16 +13,11 @@ Oracledb.initOracleClient({
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const {
-            categoria_terceiro,
-            categorias = [],
-            token,
-        } = req.body;
+        const { categoria, numeração, formato_vencimento, auditoria, token } = req.body;
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
         }
-
         let connection;
 
         try {
@@ -32,30 +27,28 @@ export default async function handler(req, res) {
             connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
                 host: process.env.HOST,
                 dialect: process.env.DIALECT || 'oracle',
-            }); 
-
-            const Store = await categoryOutsourced.create({
-                CATEGORIA: categoria_terceiro,
-                TIPO_DOCUMENTO: categorias.join(', '),
-            }, {
-                fields: ['CATEGORIA','TIPO_DOCUMENTO'],
             });
 
 
-            if (Store) {
-                res.status(200).json({ success: true, message: 'Categoria criada.' });
-            }
-            else {
-                console.log('Falha ao criar a categoria.');
-                res.status(400).json({ success: false, message: 'Falha ao criar a categoria.' });
-            }
+            const existingCategory = await categoria_documentos.findOne({ where: { CATEGORIA: categoria } });
+
+            existingCategory.CATEGORIA = categoria;
+            existingCategory.NUMERACAO = numeração;
+            existingCategory.FORMATO_VENCIMENTO = formato_vencimento;
+            existingCategory.AUDITORIA = auditoria;
+
+            await existingCategory.save();
+
+            res.status(200).json({ success: true, message: 'Categoria alterada' });
+
         } catch (error) {
             if (error.name === 'TokenExpiredError') {
                 console.error('Token expirado:', error);
                 res.status(401).json({ success: false, message: 'Token expirado' });
-            } else {
-                console.error('Erro ao contatar o servidor:', error);
-                res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
+            }
+            else {
+                console.error('Erro ao alterar os dados da categoria:', error);
+                res.status(500).json({ success: false, message: 'Erro ao alterar os dados da categoria.' });
             }
         }
     } else {
