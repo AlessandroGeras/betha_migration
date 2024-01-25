@@ -33,8 +33,17 @@ const Users = () => {
   const [forceEmail, setForceEmail] = useState(false);
   const { due_date } = router.query;
   const [dueDateFetchCompleted, setDueDateFetchCompleted] = useState(false);
+  const [viewAll, setViewAll] = useState(true);
 
-
+  useEffect(() => {
+    const userRole = localStorage.getItem('role');
+    if (userRole == 'internal') {
+      setViewAll(true);
+    }
+    else {
+      setViewAll(false);
+    }
+  }, []);
 
   const addDocPendenteClick = () => {
     router.push('/add-pending-document');
@@ -277,7 +286,7 @@ const Users = () => {
       return
     }
 
-    if (value === "Faltantes") {
+    if (value === "Pendentes") {
       router.query.due_date = "missing";
       return
     }
@@ -509,9 +518,8 @@ const Users = () => {
     }
 
     else {
-      console.log("BBBBB" + column);
       if (column === 'VENCIMENTO') {
-        return ['Próximos 30 dias', "Vencidos", "Faltantes", "Em Análise", ...uniqueValues];
+        return ['Próximos 30 dias', "Vencidos", "Pendentes", "Em Análise", ...uniqueValues];
       }
       return [...uniqueValues];
     }
@@ -528,6 +536,8 @@ const Users = () => {
         } */
 
         const token = localStorage.getItem('Token');
+        const id = localStorage.getItem('FontanaUser');
+        const role = localStorage.getItem('role');
 
         if (!token) {
           // Se o token não estiver presente, redirecione para a página de login
@@ -561,7 +571,7 @@ const Users = () => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ token, getAll }),
+            body: JSON.stringify({ token, getAll, id, role }),
           });
 
           const dataDueDate = await responseDueDate.json();
@@ -597,6 +607,8 @@ const Users = () => {
 
           setDueDateFetchCompleted(true);
         } else {
+
+
           // Restante do código permanece o mesmo, mas agora é executado apenas na ausência de due_date
           endpoint = `/api/documents?page=${currentPage}&pageSize=${pageSize}`;
         }
@@ -606,7 +618,7 @@ const Users = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token, getAll }),
+          body: JSON.stringify({ token, getAll, id, role }),
         });
 
         const data = await response.json();
@@ -665,7 +677,7 @@ const Users = () => {
 
   const formatBrDate = (isoDate) => {
     // Lógica especial para 'Todos' e 'Próximos 30 dias'
-    if (isoDate === 'TODOS' || isoDate === 'Próximos 30 dias' || isoDate === 'Vencidos' || isoDate === 'Faltantes' || isoDate === 'Em Análise') {
+    if (isoDate === 'TODOS' || isoDate === 'Próximos 30 dias' || isoDate === 'Vencidos' || isoDate === 'Pendentes' || isoDate === 'Em Análise') {
       return isoDate;
     }
 
@@ -772,7 +784,7 @@ const Users = () => {
           ) : due_date === "due_date" ? (
             <span className='ml-2'>Documentos Vencidos - View Dinâmica</span>
           ) : due_date === "missing" ? (
-            <span className='ml-2'>Documentos Faltantes - View Dinâmica</span>
+            <span className='ml-2'>Documentos Pendentes - View Dinâmica</span>
           ) : due_date === "analysis" ? (
             <span className='ml-2'>Documentos Em Análise - View Dinâmica</span>
           ) : (
@@ -1047,20 +1059,26 @@ const Users = () => {
                         className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === 'VENCIMENTO' || column ==='NOTIFICACAO' ? (
+                        {column === 'VENCIMENTO' || column === 'NOTIFICACAO' ? (
                           document[column] !== null ? formatBrDate(document[column]) : ''
                         ) : (
                           column === '' ? (
                             <div className='flex justify-center'>
-                              <Link href={{ pathname: '/find-users', query: { id: document.ID_USUARIO } }}>
-                                <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
-                              </Link>
-                              <button onClick={() => deleteAccountClick(document)}>
-                                <HiPrinter className='mt-0.5 w-[18px] mr-0.5' />
-                              </button>
-                              <button onClick={() => deleteAccountClick(document)}>
-                                <FaTrashAlt className='mt-0.5 w-[12px] text-red-500 mx-0.5' />
-                              </button>
+                              {!viewAll && document.STATUS == 'Pendente' && (
+                                <Link href={{ pathname: '/find-document', query: { id: document.ID_DOCUMENTO } }}>
+                                  <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                                </Link>
+                              )}
+                              {!document.STATUS == 'Pendente' && (
+                                <button onClick={() => deleteAccountClick(document)}>
+                                  <HiPrinter className='mt-0.5 w-[18px] mr-0.5' />
+                                </button>
+                              )}
+                              {viewAll && document.STATUS == 'Pendente' && (
+                                <button onClick={() => deleteAccountClick(document)}>
+                                  <FaTrashAlt className='mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                                </button>
+                              )}
                             </div>
                           ) : (
                             document[column]

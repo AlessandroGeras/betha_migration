@@ -1,4 +1,5 @@
 import categoria_documentos from '../../models/categoryDocuments';
+import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
@@ -58,7 +59,8 @@ const getAllEnterprises = async () => {
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { token, getAll } = req.body;
+        const { token, getAll,id } = req.body;
+        let findAdmin = null;
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -77,6 +79,17 @@ export default async function handler(req, res) {
 
             // Verificar se a conexão foi bem-sucedida
             await connection.authenticate();
+
+            findAdmin = await users.findOne({
+                where: {
+                  ID_USUARIO: id,
+                  ID_USUARIO_INTERNO: 'S',
+                },
+              });
+        
+              if(findAdmin == null){
+                res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
+              }
 
             const outsourcedCount = await categoria_documentos.count();
 

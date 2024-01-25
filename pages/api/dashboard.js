@@ -14,7 +14,8 @@ Oracledb.initOracleClient({
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token } = req.body;
+    const { token, id, role } = req.body;
+    let findOutsourced, missingDocsCount, analiseDocsCount, dueDateCount, pastDueDateCount = null;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -31,6 +32,15 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
+      if (role == "external") {
+        findOutsourced = await outsourceds.findOne({
+          where: {
+            ID_USUARIO: id,
+            ID_USUARIO_INTERNO: 'N',
+          },
+        });
+      }
+
       // Consulta para obter o total de documentos ativos
       const activeDocumentsCount = await documents.count({
         where: { STATUS: 'Ativo' }, // Ajuste conforme sua estrutura de dados
@@ -41,32 +51,61 @@ export default async function handler(req, res) {
         where: { STATUS: 'Ativo', COLABORADOR_TERCEIRO: 'N' }, // Ajuste conforme sua estrutura de dados
       });
 
-      const missingDocsCount = await documents.count({
-        where: { STATUS: 'Faltante' }, // Ajuste conforme sua estrutura de dados
-      });
-
-      const analiseDocsCount = await documents.count({
-        where: { STATUS: 'Em análise' }, // Ajuste conforme sua estrutura de dados
-      });
-
-      // Consulta para obter o total de documentos com vencimento até 30 dias
-      const dueDateCount = await connection.query(
-        `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30`,
-        {
-          type: Sequelize.QueryTypes.SELECT,
-        }
-      );
-
-      const pastDueDateCount = await connection.query(
-        `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" < SYSDATE AND "STATUS" = 'Ativo'`,
-        {
-          type: Sequelize.QueryTypes.SELECT,
-        }
-      );
-
       const employeesCount = await outsourceds.count({
         where: { STATUS: 'Ativo', COLABORADOR_TERCEIRO: 'S' }, // Ajuste conforme sua estrutura de dados
       });
+
+
+      if (role == "internal") {
+        missingDocsCount = await documents.count({
+          where: { STATUS: 'Pendente' }, // Ajuste conforme sua estrutura de dados
+        });
+
+        analiseDocsCount = await documents.count({
+          where: { STATUS: 'Em análise' }, // Ajuste conforme sua estrutura de dados
+        });
+
+        // Consulta para obter o total de documentos com vencimento até 30 dias
+        dueDateCount = await connection.query(
+          `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30`,
+          {
+            type: Sequelize.QueryTypes.SELECT,
+          }
+        );
+
+        pastDueDateCount = await connection.query(
+          `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" < SYSDATE AND "STATUS" = 'Ativo'`,
+          {
+            type: Sequelize.QueryTypes.SELECT,
+          }
+        );
+      }
+      else {
+        missingDocsCount = await documents.count({
+          where: { STATUS: 'Pendente', TERCEIRO: findOutsourced.NOME_TERCEIRO }, // Ajuste conforme sua estrutura de dados
+        });
+
+        analiseDocsCount = await documents.count({
+          where: { STATUS: 'Em análise' }, // Ajuste conforme sua estrutura de dados
+        });
+
+        // Consulta para obter o total de documentos com vencimento até 30 dias
+        const dueDateCount = await connection.query(
+          `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30 AND "TERCEIRO" = :terceiro`,
+          {
+            replacements: { terceiro: findOutsourced.NOME_TERCEIRO },
+            type: Sequelize.QueryTypes.SELECT,
+          }
+        );
+
+        const pastDueDateCount = await connection.query(
+          `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" < SYSDATE AND "STATUS" = 'Ativo' AND "TERCEIRO" = :terceiro`,
+          {
+            replacements: { terceiro: findOutsourced.NOME_TERCEIRO },
+            type: Sequelize.QueryTypes.SELECT,
+          }
+        );
+      }
 
       // Configuração da paginação
       const page = parseInt(req.query.page) || 1; // Página atual
@@ -86,8 +125,8 @@ export default async function handler(req, res) {
             rows: docs.rows,
             count: docs.count,
             activeOutsourcedCount: activeOutsourcedCount,
-            due_date: dueDateCount[0].count,
-            past_due_date: pastDueDateCount[0].count,
+            due_date: dueDateCount && dueDateCount[0] ? dueDateCount[0].count : 0,
+            past_due_date: pastDueDateCount && pastDueDateCount[0] ? pastDueDateCount[0].count : 0,
             missingCount: missingDocsCount,
             analiseCount: analiseDocsCount,
             employeesCount: employeesCount,

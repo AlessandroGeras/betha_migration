@@ -1,5 +1,5 @@
 import documents from '../../models/documents';
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import cobrança from '../../models/billing';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     // Consulta ao banco de dados para obter documentos
     const docs = await documents.findAll({
       where: {
-        STATUS: ['Faltante', 'Vencido']
+        STATUS: ['Pendente', 'Vencido']
       }
     });
 
@@ -49,20 +49,22 @@ export default async function handler(req, res) {
       return acc;
     }, {});
 
-    // Consulta ao banco de dados para obter emails dos terceiros
+    // Consulta ao banco de dados para obter emails e IDs dos terceiros
     const terceiros = Object.keys(documentosAgrupados);
 
-    const emailsDosTerceiros = await users.findAll({
+    const terceirosData = await outsourceds.findAll({
       where: {
         NOME_TERCEIRO: terceiros
       },
-      attributes: ['NOME_TERCEIRO', 'ST_EMAIL']
+      attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO']
     });
 
-    // Mapear emails dos terceiros
+    // Mapear emails e IDs dos terceiros
     const mapaEmailsTerceiros = {};
-    emailsDosTerceiros.forEach(user => {
+    const mapaIDTerceiros = {};
+    terceirosData.forEach(user => {
       mapaEmailsTerceiros[user.NOME_TERCEIRO] = user.ST_EMAIL;
+      mapaIDTerceiros[user.NOME_TERCEIRO] = user.ID_USUARIO;
     });
 
     // Configurar o serviço de e-mail (substitua as informações conforme necessário)
@@ -80,6 +82,7 @@ export default async function handler(req, res) {
     for (const terceiro in documentosAgrupados) {
       const emailTerceiro = mapaEmailsTerceiros[terceiro];
       const documentos = documentosAgrupados[terceiro];
+      const idTerceiro = mapaIDTerceiros[terceiro];
 
       await transporter.sendMail({
         from: 'esqueciminhasenha@estilofontana.com.br',
@@ -87,7 +90,9 @@ export default async function handler(req, res) {
         subject: 'Pendência de Documentos - Portal Gestão de Terceiro',
         html: `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>` +
           documentos.map(doc => `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS}</p>`).join('') +
-          `<p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
+          `<hr><p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
+          `<p>Seu ID: ${idTerceiro}</p>` +
+          `<p>Se for seu primeiro acesso, digite seu nome de usuário e clique em "Esqueceu a senha?" para redefinir a nova senha por e-mail.</p>` +
           `<p><a href="http://localhost:3000/" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
           `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
           `<h4>Portal Gestão de Terceiro</h4>`,

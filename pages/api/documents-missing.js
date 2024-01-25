@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -10,27 +11,30 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
-const getAllDocs = async (pageSize) => {
+const getAllDocs = async (pageSize, findOutsourced) => {
   let allDocs = [];
   let offset = 0;
 
   while (true) {
     try {
       const result = await documents.findAll({
-        where: Sequelize.literal("STATUS = 'Faltante'"),
+        where: {
+          STATUS: 'Pendente',
+          ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
+        },
         offset,
         limit: pageSize,
       });
 
       if (result.length === 0) {
-        break; // Exit the loop if there are no more results
+        break; // Sai do loop se não houver mais resultados
       }
 
       allDocs = [...allDocs, ...result];
       offset += pageSize;
     } catch (error) {
-      console.error('Error fetching documents:', error);
-      throw error; // Re-throw the error to be caught by the outer try-catch block
+      console.error('Erro ao obter documentos:', error);
+      throw error; // Re-lança o erro para ser capturado pelo bloco try-catch externo
     }
   }
 
@@ -39,11 +43,12 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token, getAll } = req.body;
-
+    const { token, getAll, id, role } = req.body;
+    let findOutsourced = null;  
+    
     if (!token) {
       return res.redirect(302, '/login');
-    }
+    }    
 
     let connection;
 
@@ -58,6 +63,16 @@ export default async function handler(req, res) {
         },
       });
 
+      if (role == "external") {
+        findOutsourced = await outsourceds.findOne({
+          where: {
+            ID_USUARIO: id,
+            ID_USUARIO_INTERNO: 'N',
+          },
+        });
+      }           
+      
+
       const outsourcedCount = await documents.count();
 
       const pageSize = parseInt(req.query.pageSize) || 10;
@@ -65,7 +80,7 @@ export default async function handler(req, res) {
 
       if (getAll) {
         try {
-          const allDocs = await getAllDocs(pageSize);    
+          const allDocs = await getAllDocs(pageSize, findOutsourced);
 
           res.status(200).json({
             success: true,
@@ -77,13 +92,16 @@ export default async function handler(req, res) {
             },
           });
         } catch (error) {
-          console.error('Error fetching all documents:', error);
+          console.error('Erro ao obter todos os documentos:', error);
           res.status(500).json({ success: false, message: 'Erro ao obter todos os documentos' });
         }
       } else {
         try {
           const docs = await documents.findAndCountAll({
-            where: Sequelize.literal("STATUS = 'Faltante'"),
+            where: {
+              STATUS: 'Pendente',
+              ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
+            },
             offset: (page - 1) * pageSize,
             limit: pageSize,
           });
@@ -91,7 +109,7 @@ export default async function handler(req, res) {
           if (docs) {
             res.status(200).json({
               success: true,
-              message: 'Documentos encontrados faltante',
+              message: 'Documentos pendentes encontrados',
               docs: {
                 rows: docs.rows,
                 count: docs.count,
@@ -102,20 +120,20 @@ export default async function handler(req, res) {
             res.status(400).json({ success: false, message: 'Não foi possível obter os documentos.' });
           }
         } catch (error) {
-          console.error('Error fetching paginated documents:', error);
+          console.error('Erro ao obter os documentos paginados:', error);
           res.status(500).json({ success: false, message: 'Erro ao obter os documentos paginados' });
         }
       }
     } catch (error) {
       if (error.name === 'TokenExpiredError') {
-        console.error('Token expired:', error);
+        console.error('Token expirado:', error);
         res.status(401).json({ success: false, message: 'Token expirado' });
       } else {
-        console.error('Error contacting the server:', error);
+        console.error('Erro ao contatar o servidor:', error);
         res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
       }
     } finally {
-      // Close the database connection if it was established
+      // Fecha a conexão do banco de dados se estiver estabelecida
       if (connection) {
         await connection.close();
       }

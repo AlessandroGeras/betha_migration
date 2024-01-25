@@ -42,7 +42,7 @@ export default async function handler(req, res) {
 
           
           const token = jwt.sign({ userId: usuariointerno.id }, process.env.SECRET, { expiresIn: '5h' });
-          console.log(token);
+          const role = "internal";
 
           // Defina os cabeçalhos CORS manualmente
           res.setHeader('Access-Control-Allow-Origin', '*');
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
           res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept');          
 
           // Envie os dados do usuário e o token JWT
-          res.status(200).json({ userData, token });
+          res.status(200).json({ userData, token,role });
         } else {
           res.status(403).json({ error: 'Usuário não tem permissão para acessar.' });
         }
@@ -76,7 +76,7 @@ export default async function handler(req, res) {
             };
             
             const token = jwt.sign({ userId: usuarioexterno.id }, process.env.SECRET, { expiresIn: '5h' });
-            console.log(token);
+            const role = "external";
 
             // Defina os cabeçalhos CORS manualmente
             res.setHeader('Access-Control-Allow-Origin', '*');
@@ -84,7 +84,7 @@ export default async function handler(req, res) {
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept');            
 
             // Envie os dados do usuário e o token JWT
-            res.status(200).json({ userData, token });
+            res.status(200).json({ userData, token,role });
           } else {
             if (usuarioexterno.dataValues.DS_SENHA === 'InformarSenha') {
               res.status(401).json({ error: 'Esse é seu primeiro acesso. Clique em "Esqueceu a senha?" para obter uma senha válida.' });
@@ -93,8 +93,6 @@ export default async function handler(req, res) {
             }
           }
         } else {
-          console.log("bbbbbbbbbbbbbbbbbbbbbbbbbb"+usuarioexterno);
-          console.log('Usuário não encontrado.');
           res.status(404).json({ error: 'Usuário não encontrado.' });
         }
       }

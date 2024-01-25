@@ -30,6 +30,18 @@ const documento = connection.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
+    DOCUMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    ANEXO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    FORMATO_VENCIMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: "DOCUMENTOS",

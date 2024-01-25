@@ -1,8 +1,10 @@
 import categoria_terceiros from '../../models/categoryOutsourced';
+import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
+
 
 dotenv.config();
 
@@ -35,7 +37,8 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token,getAll } = req.body;
+    const { token,getAll,id } = req.body;
+    let findAdmin = null;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -51,6 +54,17 @@ export default async function handler(req, res) {
         host: process.env.HOST,
         dialect: process.env.DIALECT || 'oracle',
       });
+
+      findAdmin = await users.findOne({
+        where: {
+          ID_USUARIO: id,
+          ID_USUARIO_INTERNO: 'S',
+        },
+      });
+
+      if(findAdmin == null){
+        res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
+      }
 
       const outsourcedCount = await categoria_terceiros.count();
 

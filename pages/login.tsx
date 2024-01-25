@@ -24,8 +24,10 @@ const Login = () => {
         body: JSON.stringify({ username, password }),
       });
 
-      if (response.ok) {
+      if (response.ok) {        
         const data = await response.json();
+        console.log(data.role);
+        localStorage.setItem('role', data.role);
         localStorage.setItem('FontanaUser', username);
         localStorage.setItem('Token', data.token);
         router.push('/dashboard');

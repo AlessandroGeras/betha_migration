@@ -168,7 +168,7 @@ const Outsourced = () => {
 
   const fetchData = async () => {
     try {
-      if(getAll && documents.docs.count>100){
+      if (getAll && documents.docs.count > 100) {
         setLoading(true);
       }
 
@@ -185,7 +185,7 @@ const Outsourced = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token,getAll }),
+        body: JSON.stringify({ token, getAll }),
       });
 
       const data = await response.json();
@@ -302,7 +302,7 @@ const Outsourced = () => {
       });
 
       try {
-        if(getAll && documents.docs.count>100){
+        if (getAll && documents.docs.count > 100) {
           setLoading(true);
         }
 
@@ -472,11 +472,12 @@ const Outsourced = () => {
   useEffect(() => {
     const fetchDataWithFilter = async () => {
       try {
-        if(getAll){
-        setLoading(true && documents.docs.count>100);
-      }
+        if (getAll) {
+          setLoading(true && documents.docs.count > 100);
+        }
 
         const token = localStorage.getItem('Token');
+        const id = localStorage.getItem('FontanaUser');
 
         if (!token) {
           // Se o token não estiver presente, redirecione para a página de login
@@ -489,12 +490,15 @@ const Outsourced = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token,getAll }),
+          body: JSON.stringify({ token, getAll, id }),
         });
 
         const data = await response.json();
         if (response.status === 401) {
           router.push('/login');
+        }
+        else if (response.status === 403) {
+          router.push('/403');
         }
         else {
           setTokenVerified(true);
@@ -547,32 +551,35 @@ const Outsourced = () => {
   const { success, docs } = documents;
 
   return (
-    <div className='flex'>
-      <Sidebar />
+    <div>
 
-      <div className="flex-1" id="Dashboard">
-        <div className="bg-blue-500 text-white p-2 text-left w-full">
-          <span className='ml-2'>Terceiros</span>
-        </div>
-
-        {loading && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
-              <div className="text-blue-500 text-md text-center flex-grow">
-                <div className="flex items-center justify-center h-full text-4xl">
-                  Carregando lista de Terceiros...
-                </div>
+      {loading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
+            <div className="text-blue-500 text-md text-center flex-grow">
+              <div className="flex items-center justify-center h-full text-4xl">
+                Carregando lista de Terceiros...
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-              {/* Pseudo-elemento para a barra lateral */}
-              <style>
-                {`
+      {documents.success && (<div>
+        <div className='flex'>
+          <Sidebar />
+
+          <div className="flex-1" id="Dashboard">
+            <div className="bg-blue-500 text-white p-2 text-left w-full">
+              <span className='ml-2'>Terceiros</span>
+            </div>
+
+            {showModal && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                  {/* Pseudo-elemento para a barra lateral */}
+                  <style>
+                    {`
                       .modal-content::before {
                         content: '';
                         background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
@@ -583,418 +590,420 @@ const Outsourced = () => {
                         left: 0;
                       }
                     `}
-              </style>
+                  </style>
 
-              <button
-                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
-                onClick={closeModal}>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
+                  <button
+                    className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                    onClick={closeModal}>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
 
-              <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
-                <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+                  <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                    <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
 
-                {showModal2 && (
-                  <div className='flex'>
-                    <button className="mx-auto mt-4 w-[300px]" onClick={deleteAccount}>
-                      <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                        Sim, excluir a conta
-                      </span>
-                    </button>
-                    <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
-                      <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                        Não, cancelar e sair
-                      </span>
-                    </button>
-                  </div>)}
+                    {showModal2 && (
+                      <div className='flex'>
+                        <button className="mx-auto mt-4 w-[300px]" onClick={deleteAccount}>
+                          <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                            Sim, excluir a conta
+                          </span>
+                        </button>
+                        <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                          <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                            Não, cancelar e sair
+                          </span>
+                        </button>
+                      </div>)}
 
 
-              </div>
-            </div>
-          </div>
-        )}
-
-        {documents.success && (
-          <div className=''>
-            <div className="flex items-center my-4 w-[1440px]">
-              <input
-                placeholder="Pesquisa rápida"
-                type="text"
-                value={searchTerm}
-                onChange={handleSearchTermChange}
-                onKeyPress={handleKeyPress}
-                className="border border-gray-300 px-2 py-1"
-              />
-              <button
-                onClick={handleSearch}
-                className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-              >
-                Pesquisar
-              </button>
-              <button
-                onClick={handleClearSearch}
-                className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
-              >
-                Limpar Pesquisa
-              </button>
-              <button
-                className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                onClick={adicionarTerceiroClick}
-              >
-                <IoMdAdd className='text-xl mt-0.5' /> Adicionar Terceiro
-              </button>
-            </div>
-
-            <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
-              {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[3400px]">
-                {Object.keys(columnWidths).map((column) => (
-                  <div
-                    key={column}
-                    className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                    style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
-                    onClick={(event) => handleSort(column, event)}
-                  >
-                    {columnLabels[column]}
-                    <div className='ml-auto flex'>
-                      {column !== '' && (
-                        <>
-                          {sortColumn === column && (
-                            sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
-                          )}
-                          <PiFunnelLight
-                            className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleSort(column, e);
-                            }}
-                          />
-                        </>
-                      )}
-                    </div>
                   </div>
-                ))}
-              </div>
-
-              {filterOpen && (
-                <div className={`flex text-gray-500 w-[3400px]`}>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
-                    <div className="flex items-center">
-                    </div>
-                  </div>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['STATUS']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'STATUS': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('STATUS').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
-                    <select
-                      value={selectedFilterValue['NOME_TERCEIRO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('NOME_TERCEIRO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
-                    <select
-                      value={selectedFilterValue['CNPJ']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CNPJ': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('CNPJ').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue['CNPJ'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
-                    <select
-                      value={selectedFilterValue['ENDEREÇO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ENDEREÇO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ENDEREÇO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue['ENDEREÇO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '310px' }}>
-                    <select
-                      value={selectedFilterValue['CIDADE']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CIDADE': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('CIDADE').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue['CIDADE'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['UF']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'UF': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('UF').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('UF', selectedFilterValue['UF'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
-                    <select
-                      value={selectedFilterValue}
-                      value={selectedFilterValue['TELEFONE']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('TELEFONE').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
-                    <select
-                      value={selectedFilterValue['NM_USUARIO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('NM_USUARIO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
-                    <select
-                      value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('CATEGORIA_PRINCIPAL').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('CATEGORIA_PRINCIPAL', selectedFilterValue['CATEGORIA_PRINCIPAL'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
-                    <select
-                      value={selectedFilterValue['ID_USUARIO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_USUARIO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-
-
-
-
-
                 </div>
-              )}
+              </div>
+            )}
 
-              {documents.docs.rows.map((document, index) => (
-                /* Tamanho total tabela registros */
-                <div className='w-[1440px]'>
-                  <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
-                    key={document.id || Math.random().toString()}
+            {documents.success && (
+              <div className=''>
+                <div className="flex items-center my-4 w-[1440px]">
+                  <input
+                    placeholder="Pesquisa rápida"
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchTermChange}
+                    onKeyPress={handleKeyPress}
+                    className="border border-gray-300 px-2 py-1"
+                  />
+                  <button
+                    onClick={handleSearch}
+                    className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                   >
+                    Pesquisar
+                  </button>
+                  <button
+                    onClick={handleClearSearch}
+                    className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
+                  >
+                    Limpar Pesquisa
+                  </button>
+                  <button
+                    className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                    onClick={adicionarTerceiroClick}
+                  >
+                    <IoMdAdd className='text-xl mt-0.5' /> Adicionar Terceiro
+                  </button>
+                </div>
+
+                <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
+                  {/* Cabeçalho */}
+                  <div className="flex text-gray-500 bg-white w-[3400px]">
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
-                        className={`column-cell border border-gray-300 py-2`}
+                        className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                        onClick={(event) => handleSort(column, event)}
                       >
-                        {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-outsourced', query: { id: document.ID_USUARIO } }}>
-                          <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
-                        </Link>
-                          <button onClick={() => deleteAccountClick(document)}>
-                            <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
-                          </button></div>
-                        ) : (
-                          document[column]
-                        )}
+                        {columnLabels[column]}
+                        <div className='ml-auto flex'>
+                          {column !== '' && (
+                            <>
+                              {sortColumn === column && (
+                                sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                              )}
+                              <PiFunnelLight
+                                className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleSort(column, e);
+                                }}
+                              />
+                            </>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
+
+                  {filterOpen && (
+                    <div className={`flex text-gray-500 w-[3400px]`}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
+                        <div className="flex items-center">
+                        </div>
+                      </div>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                        <select
+                          value={selectedFilterValue['STATUS']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'STATUS': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('STATUS').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                        <select
+                          value={selectedFilterValue['NOME_TERCEIRO']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('NOME_TERCEIRO').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                        <select
+                          value={selectedFilterValue['CNPJ']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CNPJ': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('CNPJ').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue['CNPJ'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                        <select
+                          value={selectedFilterValue['ENDEREÇO']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ENDEREÇO': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('ENDEREÇO').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue['ENDEREÇO'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '310px' }}>
+                        <select
+                          value={selectedFilterValue['CIDADE']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CIDADE': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('CIDADE').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue['CIDADE'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                        <select
+                          value={selectedFilterValue['UF']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'UF': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('UF').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('UF', selectedFilterValue['UF'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
+                        <select
+                          value={selectedFilterValue}
+                          value={selectedFilterValue['TELEFONE']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('TELEFONE').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
+                        <select
+                          value={selectedFilterValue['NM_USUARIO']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('NM_USUARIO').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                        <select
+                          value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('CATEGORIA_PRINCIPAL').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('CATEGORIA_PRINCIPAL', selectedFilterValue['CATEGORIA_PRINCIPAL'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                        <select
+                          value={selectedFilterValue['ID_USUARIO']}
+                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
+                          className="border border-gray-300 px-2 py-1 rounded"
+                        >
+                          <option value="">Todos</option>
+                          {handleFilterValue('ID_USUARIO').map((value) => (
+                            <option key={value} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+
+
+
+
+
+                    </div>
+                  )}
+
+                  {documents.docs.rows.map((document, index) => (
+                    /* Tamanho total tabela registros */
+                    <div className='w-[1440px]'>
+                      <div
+                        className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        key={document.id || Math.random().toString()}
+                      >
+                        {Object.keys(columnWidths).map((column) => (
+                          <div
+                            key={column}
+                            className={`column-cell border border-gray-300 py-2`}
+                            style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                          >
+                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-outsourced', query: { id: document.ID_USUARIO } }}>
+                              <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                            </Link>
+                              <button onClick={() => deleteAccountClick(document)}>
+                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                              </button></div>
+                            ) : (
+                              document[column]
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            )}
+
+            <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
+              <button
+                onClick={goToPreviousPage}
+                disabled={currentPage === 1}
+                className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
+              >
+                Página Anterior
+              </button>
+              <div className="flex items-center">
+                <span className="mr-2">Registros por página:</span>
+                <button
+                  onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll == false ? 'bg-blue-700' : ''}`}
+                >
+                  10
+                </button>
+                <button
+                  onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll == false ? 'bg-blue-700' : ''}`}
+                >
+                  25
+                </button>
+                <button
+                  onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll == false ? 'bg-blue-700' : ''}`}
+                >
+                  50
+                </button>
+                <button
+                  onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll == false ? 'bg-blue-700' : ''}`}
+                >
+                  100
+                </button>
+                <button
+                  className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
+                  onClick={() => {
+                    setLoading(true);
+                    setGetAll(true);
+                    fetchData(); // Execute a função fetchData após definir getAll como true
+                  }}
+                >
+                  Todos
+                </button>
+              </div>
+              {!getAll ? (
+                <span className="px-4 py-2 rounded text-gray-500">
+                  Página {currentPage} de {totalPages}
+                </span>
+              ) : (
+                <span className="px-4 py-2 rounded text-gray-500">
+                  Página 1 de 1
+                </span>
+              )}
+              <button
+                onClick={goToNextPage}
+                className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
+              >
+                Próxima Página
+              </button>
             </div>
           </div>
-        )}
-
-        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
-          <button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage === 1 || getAll ? 'invisible' : ''}`}
-          >
-            Página Anterior
-          </button>
-          <div className="flex items-center">
-            <span className="mr-2">Registros por página:</span>
-            <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(10) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 && getAll==false ? 'bg-blue-700' : ''}`}
-            >
-              10
-            </button>
-            <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(25) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 && getAll==false ? 'bg-blue-700' : ''}`}
-            >
-              25
-            </button>
-            <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(50) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 && getAll==false ? 'bg-blue-700' : ''}`}
-            >
-              50
-            </button>
-            <button
-              onClick={() => { setGetAll(false); handlePageSizeChange(100) }}
-              className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 && getAll==false ? 'bg-blue-700' : ''}`}
-            >
-              100
-            </button>
-            <button
-              className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
-              onClick={() => {
-                setLoading(true);
-                setGetAll(true);
-                fetchData(); // Execute a função fetchData após definir getAll como true
-              }}
-            >
-              Todos
-            </button>
-          </div>
-          {!getAll ? (
-            <span className="px-4 py-2 rounded text-gray-500">
-              Página {currentPage} de {totalPages}
-            </span>
-          ) : (
-            <span className="px-4 py-2 rounded text-gray-500">
-              Página 1 de 1
-            </span>
-          )}
-          <button
-            onClick={goToNextPage}
-            className={`border border-gray-200 px-4 py-2 rounded bg-blue-600 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount || getAll ? 'invisible' : ''}`}
-          >
-            Próxima Página
-          </button>
         </div>
-      </div>
+      </div>)}
     </div>
   );
 };

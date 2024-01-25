@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import { format } from 'date-fns';
 
 const Users = () => {
   const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
@@ -20,43 +21,60 @@ const Users = () => {
   const [getAll, setGetAll] = useState(false);
 
   const columnWidths = {
-    'ID_USUARIO': '300px',
-    'NM_USUARIO': '400px',
-    'ST_EMAIL': '500px',
-    'ID_USUARIO_MEGA': '200px',
-    'ID_ADM_RESERVA_SALA': '200px',
-    'ID_ADM_VENDA': '200px',
-    'ID_ADM_CONTRATO': '200px',
-    'ID_GER_VENDA': '200px',
-    'ID_CAD_PRODUTO': '200px',
-    'ID_CAD_ORCAMENTO': '200px',
-    'ID_ADM_SALA': '200px',
-    'ID_ADM_BENS_TERCEIRO': '200px',
-    'ID_CON_BENS_TERCEIRO': '200px',
-    'ID_RECEBE_MATERIAL_OBRA': '250px',
-    'ID_VISUALIZAR_NOTAS': '200px',
-    'ID_CON_GESTAO_TERCEIROS': '250px',
-    'ID_ADM_GESTAO_TERCEIROS': '250px',
+    'ORG_IN_CODIGO': '200px',
+    'FIL_IN_CODIGO': '200px',
+    'CTO_IN_CODIGO': '200px',
+    'CTO_CH_STATUS': '200px',
+    'CTO_DT_INICIO': '200px',
+    'CTO_DT_FINAL': '200px',
+    'AGN_IN_CODIGO': '200px',
+    'AGN_ST_NOME': '500px',
+    'AGN_ST_CGC': '300px',
+    'PRO_IN_REDUZIDO': '200px',
+    'PRO_ST_DESCRICAO': '400px',
+    'CTO_VL_CONTRATO': '400px',
+    'CTO_VL_SALDO_CONTRATO': '400px',
+    'CTO_BO_LIBERADOAPPROVO': '300px',
+    'MED_IN_CODIGO': '200px',
+    'MED_IN_NROFORMULARIO': '300px',
+    'MED_DT_MEDICAO': '200px',
+    'MED_DT_PAGAMENTO': '200px',
+    'MED_CH_SITUACAO': '200px',
+    'NF_ST_NOTA': '300px',
+    'NF_ST_SERIE': '200px',
+    'NF_DT_EMISSAO': '200px',
+    'NF_DT_ENTRADA': '200px',
+    'NF_RE_VALOR': '200px',
+    'SITUACAO': '200px',
+
   };
 
   const columnLabels = {
-    'ID_USUARIO': 'ID_USUARIO',
-    'NM_USUARIO': 'NM_USUARIO',
-    'ST_EMAIL': 'ST_EMAIL',
-    'ID_USUARIO_MEGA': 'ID_USUARIO_MEGA',
-    'ID_ADM_RESERVA_SALA': 'ID_ADM_RESERVA_SALA',
-    'ID_ADM_VENDA': 'ID_ADM_VENDA',
-    'ID_ADM_CONTRATO': 'ID_ADM_CONTRATO',
-    'ID_GER_VENDA': 'ID_GER_VENDA',
-    'ID_CAD_PRODUTO': 'ID_CAD_PRODUTO',
-    'ID_CAD_ORCAMENTO': 'ID_CAD_ORCAMENTO',
-    'ID_ADM_SALA': 'ID_ADM_SALA',
-    'ID_ADM_BENS_TERCEIRO': 'ID_ADM_BENS_TERCEIRO',
-    'ID_CON_BENS_TERCEIRO': 'ID_CON_BENS_TERCEIRO',
-    'ID_RECEBE_MATERIAL_OBRA': 'ID_RECEBE_MATERIAL_OBRA',
-    'ID_VISUALIZAR_NOTAS': 'ID_VISUALIZAR_NOTAS',
-    'ID_CON_GESTAO_TERCEIROS': 'ID_CON_GESTAO_TERCEIROS',
-    'ID_ADM_GESTAO_TERCEIROS': 'ID_ADM_GESTAO_TERCEIROS',
+    'ORG_IN_CODIGO': 'ORG_IN_CODIGO',
+    'FIL_IN_CODIGO': 'FIL_IN_CODIGO',
+    'CTO_IN_CODIGO': 'CTO_IN_CODIGO',
+    'CTO_CH_STATUS': 'CTO_CH_STATUS',
+    'CTO_DT_INICIO': 'CTO_DT_INICIO',
+    'CTO_DT_FINAL': 'CTO_DT_FINAL',
+    'AGN_IN_CODIGO': 'AGN_IN_CODIGO',
+    'AGN_ST_NOME': 'AGN_ST_NOME',
+    'AGN_ST_CGC': 'AGN_ST_CGC',
+    'PRO_IN_REDUZIDO': 'PRO_IN_REDUZIDO',
+    'PRO_ST_DESCRICAO': 'PRO_ST_DESCRICAO',
+    'CTO_VL_CONTRATO': 'CTO_VL_CONTRATO',
+    'CTO_VL_SALDO_CONTRATO': 'CTO_VL_SALDO_CONTRATO',
+    'CTO_BO_LIBERADOAPPROVO': 'CTO_BO_LIBERADOAPPROVO',
+    'MED_IN_CODIGO': 'MED_IN_CODIGO',
+    'MED_IN_NROFORMULARIO': 'MED_IN_NROFORMULARIO',
+    'MED_DT_MEDICAO': 'MED_DT_MEDICAO',
+    'MED_DT_PAGAMENTO': 'MED_DT_PAGAMENTO',
+    'MED_CH_SITUACAO': 'MED_CH_SITUACAO',
+    'NF_ST_NOTA': 'NF_ST_NOTA',
+    'NF_ST_SERIE': 'NF_ST_SERIE',
+    'NF_DT_EMISSAO': 'NF_DT_EMISSAO',
+    'NF_DT_ENTRADA': 'NF_DT_ENTRADA',
+    'NF_RE_VALOR': 'NF_RE_VALOR',
+    'SITUACAO': 'SITUACAO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -108,7 +126,7 @@ const Users = () => {
         return;
       }
 
-      const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
+      const response = await fetch(`/api/nf?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -232,7 +250,7 @@ const Users = () => {
           router.push('/login');
           return;
         }
-        const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
+        const response = await fetch(`/api/nf?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -402,7 +420,7 @@ const Users = () => {
           return;
         }
 
-        const response = await fetch(`/api/users?page=${currentPage}&pageSize=${pageSize}`, {
+        const response = await fetch(`/api/nf?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -464,6 +482,16 @@ const Users = () => {
 
   const { success, docs } = documents;
 
+  const formatBrDate = (isoDate) => {
+    const date = new Date(isoDate);
+    return format(date, 'dd/MM/yyyy');
+  };
+
+  const formatarNumero = (numero) => {
+    const numeroFormatado = parseFloat(numero).toFixed(16);
+    return numeroFormatado.replace(/\.?0+$/, '');  // Remover zeros à direita
+  };
+
 
   return (
     <div>
@@ -473,7 +501,7 @@ const Users = () => {
           <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
             <div className="text-blue-500 text-md text-center flex-grow">
               <div className="flex items-center justify-center h-full text-4xl">
-                Carregando lista de Usuários...
+                Carregando nota fiscal - medições...
               </div>
             </div>
           </div>
@@ -486,7 +514,7 @@ const Users = () => {
 
           <div className="flex-1" id="Dashboard">
             <div className="bg-blue-500 text-white p-2 text-left w-full">
-              <span className='ml-2'>Usuários</span>
+              <span className='ml-2'>Nota Fiscal - Medições</span>
             </div>
 
 
@@ -516,7 +544,7 @@ const Users = () => {
 
               <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
                 {/* Cabeçalho */}
-                <div className="flex text-gray-500 bg-white w-[4150px]">
+                <div className="flex text-gray-500 bg-white w-[9000px]">
                   {Object.keys(columnWidths).map((column) => (
                     <div
                       key={column}
@@ -546,22 +574,213 @@ const Users = () => {
                 </div>
 
                 {filterOpen && (
-                  <div className={`flex text-gray-500 w-[4150px]`}>
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                  <div className={`flex text-gray-500 w-[9000px]`}>
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_USUARIO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
+                        value={selectedFilterValue['ORG_IN_CODIGO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ORG_IN_CODIGO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_USUARIO').map((value) => (
+                        {handleFilterValue('ORG_IN_CODIGO').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
+                        onClick={() => handleSearchByFilter('ORG_IN_CODIGO', selectedFilterValue['ORG_IN_CODIGO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['FIL_IN_CODIGO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'FIL_IN_CODIGO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('FIL_IN_CODIGO').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('FIL_IN_CODIGO', selectedFilterValue['FIL_IN_CODIGO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['CTO_IN_CODIGO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_IN_CODIGO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CTO_IN_CODIGO').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CTO_IN_CODIGO', selectedFilterValue['CTO_IN_CODIGO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['CTO_CH_STATUS']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_CH_STATUS': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CTO_CH_STATUS').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CTO_CH_STATUS', selectedFilterValue['CTO_CH_STATUS'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['CTO_DT_INICIO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_DT_INICIO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CTO_DT_INICIO').map((value) => (
+                          <option key={value} value={value}>
+                            {formatBrDate(value)}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CTO_DT_INICIO', selectedFilterValue['CTO_DT_INICIO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['CTO_DT_FINAL']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_DT_FINAL': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CTO_DT_FINAL').map((value) => (
+                          <option key={value} value={value}>
+                            {formatBrDate(value)}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CTO_DT_FINAL', selectedFilterValue['CTO_DT_FINAL'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['AGN_IN_CODIGO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'AGN_IN_CODIGO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('AGN_IN_CODIGO').map((value) => (
+                          <option key={value} value={value}>
+                             {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('AGN_IN_CODIGO', selectedFilterValue['AGN_IN_CODIGO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                      <select
+                        value={selectedFilterValue['AGN_ST_NOME']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'AGN_ST_NOME': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('AGN_ST_NOME').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('AGN_ST_NOME', selectedFilterValue['AGN_ST_NOME'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                      <select
+                        value={selectedFilterValue['AGN_ST_CGC']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'AGN_ST_CGC': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('AGN_ST_CGC').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('AGN_ST_CGC', selectedFilterValue['AGN_ST_CGC'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      <select
+                        value={selectedFilterValue['PRO_IN_REDUZIDO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'PRO_IN_REDUZIDO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('PRO_IN_REDUZIDO').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('PRO_IN_REDUZIDO', selectedFilterValue['PRO_IN_REDUZIDO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -570,42 +789,82 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
                       <select
-                        value={selectedFilterValue['NM_USUARIO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
+                        value={selectedFilterValue['PRO_ST_DESCRICAO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'PRO_ST_DESCRICAO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('NM_USUARIO').map((value) => (
+                        {handleFilterValue('PRO_ST_DESCRICAO').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
+                        onClick={() => handleSearchByFilter('PRO_ST_DESCRICAO', selectedFilterValue['PRO_ST_DESCRICAO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
                       </button>
                     </div>
 
-
-
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
                       <select
-                        value={selectedFilterValue['ST_EMAIL']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ST_EMAIL': e.target.value })}
+                        value={selectedFilterValue['CTO_VL_CONTRATO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_VL_CONTRATO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ST_EMAIL').map((value) => (
+                        {handleFilterValue('CTO_VL_CONTRATO').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ST_EMAIL', selectedFilterValue['ST_EMAIL'])}
+                        onClick={() => handleSearchByFilter('CTO_VL_CONTRATO', selectedFilterValue['CTO_VL_CONTRATO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
+                      <select
+                        value={formatarNumero(selectedFilterValue['CTO_VL_SALDO_CONTRATO'])}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_VL_SALDO_CONTRATO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CTO_VL_SALDO_CONTRATO').map((value) => (
+                          <option key={value} value={value}>
+                            {formatarNumero(value)}  {/* Aplicando a formatação ao valor da opção */}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CTO_VL_SALDO_CONTRATO', formatarNumero(selectedFilterValue['CTO_VL_SALDO_CONTRATO']))}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                      <select
+                        value={selectedFilterValue['CTO_BO_LIBERADOAPPROVO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CTO_BO_LIBERADOAPPROVO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('CTO_BO_LIBERADOAPPROVO').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('CTO_BO_LIBERADOAPPROVO', selectedFilterValue['CTO_BO_LIBERADOAPPROVO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -614,19 +873,40 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_USUARIO_MEGA']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO_MEGA': e.target.value })}
+                        value={selectedFilterValue['MED_IN_CODIGO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'MED_IN_CODIGO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_USUARIO_MEGA').map((value) => (
+                        {handleFilterValue('MED_IN_CODIGO').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_USUARIO_MEGA', selectedFilterValue['ID_USUARIO_MEGA'])}
+                        onClick={() => handleSearchByFilter('MED_IN_CODIGO', selectedFilterValue['MED_IN_CODIGO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                      <select
+                        value={selectedFilterValue['MED_IN_NROFORMULARIO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'MED_IN_NROFORMULARIO': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('MED_IN_NROFORMULARIO').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('MED_IN_NROFORMULARIO', selectedFilterValue['MED_IN_NROFORMULARIO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -635,19 +915,19 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_ADM_RESERVA_SALA']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_RESERVA_SALA': e.target.value })}
+                        value={selectedFilterValue['MED_DT_MEDICAO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'MED_DT_MEDICAO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_ADM_RESERVA_SALA').map((value) => (
+                        {handleFilterValue('MED_DT_MEDICAO').map((value) => (
                           <option key={value} value={value}>
-                            {value}
+                            {formatBrDate(value)}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_ADM_RESERVA_SALA', selectedFilterValue['ID_ADM_RESERVA_SALA'])}
+                        onClick={() => handleSearchByFilter('MED_DT_MEDICAO', selectedFilterValue['MED_DT_MEDICAO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -656,19 +936,19 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_ADM_VENDA']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_VENDA': e.target.value })}
+                        value={selectedFilterValue['MED_DT_PAGAMENTO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'MED_DT_PAGAMENTO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_ADM_VENDA').map((value) => (
+                        {handleFilterValue('MED_DT_PAGAMENTO').map((value) => (
                           <option key={value} value={value}>
-                            {value}
+                            {formatBrDate(value)}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_ADM_VENDA', selectedFilterValue['ID_ADM_VENDA'])}
+                        onClick={() => handleSearchByFilter('MED_DT_PAGAMENTO', selectedFilterValue['MED_DT_PAGAMENTO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -677,19 +957,40 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_ADM_CONTRATO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_CONTRATO': e.target.value })}
+                        value={selectedFilterValue['MED_CH_SITUACAO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'MED_CH_SITUACAO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_ADM_CONTRATO').map((value) => (
+                        {handleFilterValue('MED_CH_SITUACAO').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_ADM_CONTRATO', selectedFilterValue['ID_ADM_CONTRATO'])}
+                        onClick={() => handleSearchByFilter('MED_CH_SITUACAO', selectedFilterValue['MED_CH_SITUACAO'])}
+                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+
+                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                      <select
+                        value={selectedFilterValue['NF_ST_NOTA']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NF_ST_NOTA': e.target.value })}
+                        className="border border-gray-300 px-2 py-1 rounded"
+                      >
+                        <option value="">Todos</option>
+                        {handleFilterValue('NF_ST_NOTA').map((value) => (
+                          <option key={value} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={() => handleSearchByFilter('NF_ST_NOTA', selectedFilterValue['NF_ST_NOTA'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -698,19 +999,19 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_GER_VENDA']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_GER_VENDA': e.target.value })}
+                        value={selectedFilterValue['NF_ST_SERIE']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NF_ST_SERIE': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_GER_VENDA').map((value) => (
+                        {handleFilterValue('NF_ST_SERIE').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_GER_VENDA', selectedFilterValue['ID_GER_VENDA'])}
+                        onClick={() => handleSearchByFilter('NF_ST_SERIE', selectedFilterValue['NF_ST_SERIE'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -719,19 +1020,19 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_CAD_PRODUTO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CAD_PRODUTO': e.target.value })}
+                        value={selectedFilterValue['NF_DT_EMISSAO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NF_DT_EMISSAO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_CAD_PRODUTO').map((value) => (
+                        {handleFilterValue('NF_DT_EMISSAO').map((value) => (
                           <option key={value} value={value}>
-                            {value}
+                            {formatBrDate(value)}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_CAD_PRODUTO', selectedFilterValue['ID_CAD_PRODUTO'])}
+                        onClick={() => handleSearchByFilter('NF_DT_EMISSAO', selectedFilterValue['NF_DT_EMISSAO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -740,19 +1041,19 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_CAD_ORCAMENTO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CAD_ORCAMENTO': e.target.value })}
+                        value={selectedFilterValue['NF_DT_ENTRADA']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NF_DT_ENTRADA': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_CAD_ORCAMENTO').map((value) => (
+                        {handleFilterValue('NF_DT_ENTRADA').map((value) => (
                           <option key={value} value={value}>
-                            {value}
+                            {formatBrDate(value)}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_CAD_ORCAMENTO', selectedFilterValue['ID_CAD_ORCAMENTO'])}
+                        onClick={() => handleSearchByFilter('NF_DT_ENTRADA', selectedFilterValue['NF_DT_ENTRADA'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -761,19 +1062,19 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_ADM_SALA']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_SALA': e.target.value })}
+                        value={selectedFilterValue['NF_RE_VALOR']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NF_RE_VALOR': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_ADM_SALA').map((value) => (
+                        {handleFilterValue('NF_RE_VALOR').map((value) => (
                           <option key={value} value={value}>
-                            {value}
+                             {parseFloat(value).toFixed(2)}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_ADM_SALA', selectedFilterValue['ID_ADM_SALA'])}
+                        onClick={() => handleSearchByFilter('NF_RE_VALOR', selectedFilterValue['NF_RE_VALOR'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -782,129 +1083,35 @@ const Users = () => {
 
                     <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
                       <select
-                        value={selectedFilterValue['ID_ADM_BENS_TERCEIRO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_BENS_TERCEIRO': e.target.value })}
+                        value={selectedFilterValue['SITUACAO']}
+                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'SITUACAO': e.target.value })}
                         className="border border-gray-300 px-2 py-1 rounded"
                       >
                         <option value="">Todos</option>
-                        {handleFilterValue('ID_ADM_BENS_TERCEIRO').map((value) => (
+                        {handleFilterValue('SITUACAO').map((value) => (
                           <option key={value} value={value}>
                             {value}
                           </option>
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('ID_ADM_BENS_TERCEIRO', selectedFilterValue['ID_ADM_BENS_TERCEIRO'])}
+                        onClick={() => handleSearchByFilter('SITUACAO', selectedFilterValue['SITUACAO'])}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
                       </button>
                     </div>
 
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                      <select
-                        value={selectedFilterValue['ID_CON_BENS_TERCEIRO']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CON_BENS_TERCEIRO': e.target.value })}
-                        className="border border-gray-300 px-2 py-1 rounded"
-                      >
-                        <option value="">Todos</option>
-                        {handleFilterValue('ID_CON_BENS_TERCEIRO').map((value) => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={() => handleSearchByFilter('ID_CON_BENS_TERCEIRO', selectedFilterValue['ID_CON_BENS_TERCEIRO'])}
-                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                      >
-                        Aplicar
-                      </button>
-                    </div>
 
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
-                      <select
-                        value={selectedFilterValue['ID_RECEBE_MATERIAL_OBRA']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_RECEBE_MATERIAL_OBRA': e.target.value })}
-                        className="border border-gray-300 px-2 py-1 rounded"
-                      >
-                        <option value="">Todos</option>
-                        {handleFilterValue('ID_RECEBE_MATERIAL_OBRA').map((value) => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={() => handleSearchByFilter('ID_RECEBE_MATERIAL_OBRA', selectedFilterValue['ID_RECEBE_MATERIAL_OBRA'])}
-                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                      >
-                        Aplicar
-                      </button>
-                    </div>
 
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                      <select
-                        value={selectedFilterValue['ID_VISUALIZAR_NOTAS']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_VISUALIZAR_NOTAS': e.target.value })}
-                        className="border border-gray-300 px-2 py-1 rounded"
-                      >
-                        <option value="">Todos</option>
-                        {handleFilterValue('ID_VISUALIZAR_NOTAS').map((value) => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={() => handleSearchByFilter('ID_VISUALIZAR_NOTAS', selectedFilterValue['ID_VISUALIZAR_NOTAS'])}
-                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                      >
-                        Aplicar
-                      </button>
-                    </div>
 
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
-                      <select
-                        value={selectedFilterValue['ID_CON_GESTAO_TERCEIROS']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_CON_GESTAO_TERCEIROS': e.target.value })}
-                        className="border border-gray-300 px-2 py-1 rounded"
-                      >
-                        <option value="">Todos</option>
-                        {handleFilterValue('ID_CON_GESTAO_TERCEIROS').map((value) => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={() => handleSearchByFilter('ID_CON_GESTAO_TERCEIROS', selectedFilterValue['ID_CON_GESTAO_TERCEIROS'])}
-                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                      >
-                        Aplicar
-                      </button>
-                    </div>
 
-                    <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '250px' }}>
-                      <select
-                        value={selectedFilterValue['ID_ADM_GESTAO_TERCEIROS']}
-                        onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_ADM_GESTAO_TERCEIROS': e.target.value })}
-                        className="border border-gray-300 px-2 py-1 rounded"
-                      >
-                        <option value="">Todos</option>
-                        {handleFilterValue('ID_ADM_GESTAO_TERCEIROS').map((value) => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={() => handleSearchByFilter('ID_ADM_GESTAO_TERCEIROS', selectedFilterValue['ID_ADM_GESTAO_TERCEIROS'])}
-                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                      >
-                        Aplicar
-                      </button>
-                    </div>
+
+
+
+
+
+
 
 
 
@@ -915,7 +1122,7 @@ const Users = () => {
                   /* Tamanho total tabela registros */
                   <div className='w-[1440px]'>
                     <div
-                      className={`flex text-gray-700 whitespace-nowrap w-[4150px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                      className={`flex text-gray-700 whitespace-nowrap w-[9000px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       key={document.id || Math.random().toString()}
                     >
                       {Object.keys(columnWidths).map((column) => (
@@ -924,7 +1131,18 @@ const Users = () => {
                           className={`column-cell border border-gray-300 py-2`}
                           style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                         >
-                          {column === '' ? (<div className='flex justify-center'></div>
+                          {column === 'CTO_DT_INICIO' || column === 'CTO_DT_FINAL' || column === 'MED_DT_MEDICAO' || column === 'MED_DT_PAGAMENTO' || column === 'NF_DT_EMISSAO' || column === 'NF_DT_ENTRADA' ? (
+                            <div className=''>
+                              {formatBrDate(document[column])}
+                            </div>
+                          ) : column === 'CTO_VL_SALDO_CONTRATO' || column === 'CTO_VL_CONTRATO' ? (
+                            <div className=''>
+                              {formatarNumero(document[column])}
+                            </div>
+                          ) : column === 'NF_RE_VALOR' ? (
+                            <div className=''>
+                              {parseFloat(document[column]).toFixed(2)} {/* Garante 3 casas decimais */}
+                            </div>
                           ) : (
                             document[column]
                           )}
@@ -971,7 +1189,7 @@ const Users = () => {
                 >
                   100
                 </button>
-                <button
+                {/* <button
                   className={`border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex ${getAll == true ? 'bg-blue-700' : ''}`}
                   onClick={() => {
                     setLoading(true);
@@ -980,11 +1198,12 @@ const Users = () => {
                   }}
                 >
                   Todos
-                </button>
+                </button> */}
               </div>
               {!getAll ? (
-                <span className="px-4 py-2 rounded text-gray-500">
+                <span className="px-4 py-2 rounded text-gray-500 text-center">
                   Página {currentPage} de {totalPages}
+                  <p>Total de registros: {docs.outsourcedCount}</p>
                 </span>
               ) : (
                 <span className="px-4 py-2 rounded text-gray-500">

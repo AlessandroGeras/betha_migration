@@ -11,6 +11,17 @@ const Dashboard = () => {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
+    const [viewAll, setViewAll] = useState(true);
+
+    useEffect(() => {
+        const userRole = localStorage.getItem('role');
+        if (userRole == 'internal') {
+            setViewAll(true);
+        }
+        else {
+            setViewAll(false);
+        }
+    }, []);
 
 
     useEffect(() => {
@@ -18,10 +29,11 @@ const Dashboard = () => {
         const fetchData = async () => {
             try {
                 const token = localStorage.getItem('Token');
+                const id = localStorage.getItem('FontanaUser');
+                const role = localStorage.getItem('role');
 
                 if (!token) {
                     // Se o token não estiver presente, redirecione para a página de login
-                    console.log("sem token");
                     router.push('/login');
                     return;
                 }
@@ -31,7 +43,7 @@ const Dashboard = () => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token }),
+                    body: JSON.stringify({ token, id, role }),
                 });
 
 
@@ -92,7 +104,7 @@ const Dashboard = () => {
                     <div className="container mx-auto">
                         {/* Área de Documentos a Vencer */}
                         <div className='items-center '>
-                            <div className="flex justify-center mt-[-40px] mb-24 px-26">
+                        {viewAll && (<div className="flex justify-center mt-[-40px] mb-24 px-26">
                                 {/* Três Divs Centralizadas Lado a Lado */}
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de documentos ativos</div>
@@ -106,7 +118,7 @@ const Dashboard = () => {
                                     <div className="mt-[-15px]">Quantidade de colaboradores ativos</div>
                                     <div className="mt-2 text-4xl text-gray-600">{docs.employeesCount}</div>
                                 </div>
-                            </div>
+                            </div>)}
 
                             <div className="flex justify-center px-32 relative top-[-30px]">
                                 {/* Duas Divs Centralizadas Lado a Lado */}
@@ -115,7 +127,7 @@ const Dashboard = () => {
                                     <div className="mt-2 text-gray-600 text-sm">Documentos com 30 dias ou menos da data de vencimento</div>
                                     <Link href="/documents?due_date=due_date_30">
                                         <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.due_date === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.due_date}</div>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.due_date}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
@@ -125,7 +137,7 @@ const Dashboard = () => {
                                     <div className="mt-2 text-gray-600 text-sm">Documentos com data inferior ao dia atual</div>
                                     <Link href="/documents?due_date=due_date">
                                         <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.past_due_date === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.past_due_date}</div>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.past_due_date}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
@@ -134,25 +146,25 @@ const Dashboard = () => {
                             <div className="flex justify-center px-32 relative top-[-10px]">
                                 {/* Duas Divs Centralizadas Lado a Lado */}
                                 <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
-                                    <div className="mt-[-15px] text-2xl text-gray-600">Documentos faltantes</div>
+                                    <div className="mt-[-15px] text-2xl text-gray-600">Documentos pendentes</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos solicitados e não enviados</div>
                                     <Link href="/documents?due_date=missing">
                                         <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.missingCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.missingCount}</div>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.missingCount}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
                                 </div>
-                                <div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
+                                {viewAll && (<div className="mx-2 my-2 flex-1 bg-white px-14 py-3 mx-4 rounded shadow text-center">
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos à analisar</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos pendentes de análise</div>
                                     <Link href="/documents?due_date=analysis">
                                         <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.analiseCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2">{docs.analiseCount}</div>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.analiseCount}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
-                                </div>
+                                </div>)}
                             </div>
                         </div>
                     </div>

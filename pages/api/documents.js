@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -10,12 +11,15 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
-const getAllDocs = async (pageSize) => {
+const getAllDocs = async (pageSize, findOutsourced) => {
   let allDocs = [];
   let offset = 0;
 
   while (true) {
     const result = await documents.findAll({
+      where: {
+        ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
+      },
             offset,
       limit: pageSize,
     });
@@ -33,7 +37,8 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token, getAll } = req.body; // Adicionando um parâmetro getAll
+    const { token, getAll,id, role } = req.body; // Adicionando um parâmetro getAll
+    let findOutsourced = null;  
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -53,6 +58,15 @@ export default async function handler(req, res) {
         },
       });
 
+      if (role == "external") {
+        findOutsourced = await outsourceds.findOne({
+          where: {
+            ID_USUARIO: id,
+            ID_USUARIO_INTERNO: 'N',
+          },
+        });
+      }  
+
       const outsourcedCount = await documents.count();
 
       // Configuração da paginação
@@ -61,7 +75,7 @@ export default async function handler(req, res) {
 
       if (getAll) {
         // Se getAll for true, busca todos os registros
-        const allDocs = await getAllDocs(pageSize);
+        const allDocs = await getAllDocs(pageSize, findOutsourced);
 
         res.status(200).json({
           success: true,
@@ -74,7 +88,10 @@ export default async function handler(req, res) {
         });
       } else {
         // Consulta paginada usando Sequelize com filtro
-        const docs = await documents.findAndCountAll({         
+        const docs = await documents.findAndCountAll({ 
+          where: {
+            ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
+          },                  
           offset: (page - 1) * pageSize,
           limit: pageSize,
         });

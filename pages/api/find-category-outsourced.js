@@ -1,5 +1,6 @@
 import categoria_documentos from '../../models/categoryDocuments';
 import categoria_colaboradores from '../../models/categoryOutsourced';
+import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
@@ -60,8 +61,9 @@ const getAllEnterprises = async () => {
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        let { token, getAll,id } = req.body;
+        let { token, getAll,id,id_user } = req.body;
         let category=null;
+        let findAdmin = null;
 
         if(id==undefined){
             id=false;
@@ -81,6 +83,17 @@ export default async function handler(req, res) {
                 host: process.env.HOST,
                 dialect: process.env.DIALECT || 'oracle',
             });
+
+            findAdmin = await users.findOne({
+                where: {
+                  ID_USUARIO: id_user,
+                  ID_USUARIO_INTERNO: 'S',
+                },
+              });
+        
+              if(findAdmin == null){
+                res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
+              }
 
             // Verificar se a conexão foi bem-sucedida
             await connection.authenticate();

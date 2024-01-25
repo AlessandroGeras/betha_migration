@@ -12,10 +12,9 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
-cron.schedule('00 18 * * 1-5', async () => {
+cron.schedule('07 14 * * 1-5', async () => {
   try {
-    const currentDateTime = new Date();
-    console.log(`Running a task every minute. Current time: ${currentDateTime}`);
+    console.log("Serviço de cobrança de e-mails ativo");
 
     // Fazer o fetch para a API
     const response = await fetch('http://localhost:3000/api/send-mail-documents', {

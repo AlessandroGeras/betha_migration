@@ -1,4 +1,5 @@
 import outsourceds from '../../models/outsourceds';
+import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -36,7 +37,8 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token,getAll } = req.body;
+    const { token,getAll,id } = req.body;
+    let findAdmin = null;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -45,7 +47,7 @@ export default async function handler(req, res) {
     let connection;
 
     try {
-      jwt.verify(token, process.env.SECRET);
+      jwt.verify(token, process.env.SECRET);      
 
       // Estabeleça a conexão com o Oracle
       connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
@@ -55,6 +57,17 @@ export default async function handler(req, res) {
           connectTimeout: 5000, // Tempo limite em milissegundos (5 segundos)
         },
       });
+
+      findAdmin = await users.findOne({
+        where: {
+          ID_USUARIO: id,
+          ID_USUARIO_INTERNO: 'S',
+        },
+      });
+
+      if(findAdmin == null){
+        res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
+      }
 
       const outsourcedCount = await outsourceds.count({
         where: {COLABORADOR_TERCEIRO: 'N' },

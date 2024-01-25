@@ -37,9 +37,9 @@ const AddOutsourced = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-       
-            setFormData({ ...formData, [name]: value });
-        
+
+        setFormData({ ...formData, [name]: value });
+
     };
 
     const handleSelectChange = (e) => {
@@ -83,7 +83,7 @@ const AddOutsourced = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,token
+                    ...formData, token
                 }),
             });
 
@@ -115,12 +115,13 @@ const AddOutsourced = () => {
         const fetchCategoriaOptions = async () => {
             try {
                 const token = localStorage.getItem('Token');
+                const id_user = localStorage.getItem('FontanaUser');
 
                 if (!token) {
                     router.push('/login');
                     return;
-                }                
-               
+                }
+
                 const getAll = true;
 
                 const response = await fetch(`/api/find-category-outsourced`, {
@@ -128,14 +129,19 @@ const AddOutsourced = () => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ token, getAll }),
+                    body: JSON.stringify({ token, getAll, id, id_user }),
                 });
 
                 const data = await response.json();
+
+                console.log(data);
                 if (response.status === 401) {
                     router.push('/login');
+                }
+                else if (response.status === 403) {
+                    router.push('/403');
                 } else {
-                    
+
                     setTokenVerified(true);
                     setEnterprises(data.uniqueEnterprises);
 
@@ -149,8 +155,8 @@ const AddOutsourced = () => {
                         };
                     });
 
-                    setCategoriaDetails(updatedCategoriaDetails); 
-                   
+                    setCategoriaDetails(updatedCategoriaDetails);
+
                 }
                 setCategoriaOptions(data.success ? data.docs.rows : []);
             } catch (error) {
@@ -162,103 +168,106 @@ const AddOutsourced = () => {
     }, [id]);
 
     return (
-        <div className="flex h-screen">
-            <Sidebar />
-            <Head>
-                <title>Adicionar categoria</title>
-            </Head>
+        <div>
 
-            <div className="flex-1 items-center justify-center bg-gray-50">
-                <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
-                    <span className="ml-2">Adicionar categoria de Terceiro</span>
-                </div>
-                <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
-                <div className="col-span-7">
-                        <label htmlFor="categoria_terceiro" className="block text-sm font-medium text-gray-700">
-                            Categoria de Terceiro <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="categoria_terceiro"
-                            id="categoria_terceiro"
-                            onChange={handleInputChange}
-                            required
-                            value={formData.categoria_terceiro}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>
+            {isTokenVerified && (<div>
+                <div className="flex h-screen">
+                    <Sidebar />
+                    <Head>
+                        <title>Adicionar categoria</title>
+                    </Head>
 
-
-                    <div className="col-span-7">
-                        <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
-                            Tipo de Documento <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            name="categoria"
-                            id="categoria"
-                            value={formData.categoria}
-                            onChange={(e) => handleSelectChange(e)}
-                            required
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        >
-                            <option value="" disabled selected>
-                                Selecione um documento
-                            </option>
-                            {categoriaOptions.map((categoria) => (
-                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
-                                    {categoria.CATEGORIA}
-                                </option>
-                            ))}
-                        </select>
-                        {formData.categorias.length > 0 && (
-                            <div className="mt-2">
-                                <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
-                                <ul className="list-disc pl-4">
-                                    {formData.categorias.map((selectedCategoria) => (
-                                        <li key={selectedCategoria} className="flex items-center justify-between">
-                                            {selectedCategoria}
-                                            <button
-                                                type="button"
-                                                onClick={() => removeCategoria(selectedCategoria)}
-                                                className="text-red-500"
-                                            >
-                                                Remover
-                                            </button>
-                                        </li>
-                                    ))}
-                                </ul>
+                    <div className="flex-1 items-center justify-center bg-gray-50">
+                        <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
+                            <span className="ml-2">Adicionar categoria de Terceiro</span>
+                        </div>
+                        <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
+                            <div className="col-span-7">
+                                <label htmlFor="categoria_terceiro" className="block text-sm font-medium text-gray-700">
+                                    Categoria de Terceiro <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="categoria_terceiro"
+                                    id="categoria_terceiro"
+                                    onChange={handleInputChange}
+                                    required
+                                    value={formData.categoria_terceiro}
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
                             </div>
-                        )}
+
+
+                            <div className="col-span-7">
+                                <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
+                                    Tipo de Documento <span className="text-red-500">*</span>
+                                </label>
+                                <select
+                                    name="categoria"
+                                    id="categoria"
+                                    value={formData.categoria}
+                                    onChange={(e) => handleSelectChange(e)}
+                                    required
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    <option value="" disabled selected>
+                                        Selecione um documento
+                                    </option>
+                                    {categoriaOptions.map((categoria) => (
+                                        <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
+                                            {categoria.CATEGORIA}
+                                        </option>
+                                    ))}
+                                </select>
+                                {formData.categorias.length > 0 && (
+                                    <div className="mt-2">
+                                        <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
+                                        <ul className="list-disc pl-4">
+                                            {formData.categorias.map((selectedCategoria) => (
+                                                <li key={selectedCategoria} className="flex items-center justify-between">
+                                                    {selectedCategoria}
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeCategoria(selectedCategoria)}
+                                                        className="text-red-500"
+                                                    >
+                                                        Remover
+                                                    </button>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+
+
+
+
+
+                            <div className="col-span-7 flex justify-center mt-4">
+                                <button
+                                    type="submit"
+                                    onClick={handleSubmitCancel}
+                                    className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    Cancelar
+                                </button>
+                                <button
+                                    type="submit"
+                                    onClick={handleSubmitSuccess}
+                                    className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    Salvar
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    
-
-
-
-                    <div className="col-span-7 flex justify-center mt-4">
-                        <button
-                            type="submit"
-                            onClick={handleSubmitCancel}
-                            className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                        >
-                            Cancelar
-                        </button>
-                        <button
-                            type="submit"
-                            onClick={handleSubmitSuccess}
-                            className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                        >
-                            Salvar
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                        <style>
-                            {`
+                    {showModal && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                                <style>
+                                    {`
                             .modal-content::before {
                                 content: '';
                                 background-color: ${modalColor};
@@ -269,29 +278,31 @@ const AddOutsourced = () => {
                                 left: 0;
                             }
                         `}
-                        </style>
+                                </style>
 
-                        <button
-                            className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
-                            onClick={closeModal}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
+                                <button
+                                    className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                                    onClick={closeModal}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        className="h-5 w-5"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
 
-                        <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
-                            {popupMessage}
+                                <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                                    {popupMessage}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </div>
-            )}
+            </div>)}
         </div>
     );
 };

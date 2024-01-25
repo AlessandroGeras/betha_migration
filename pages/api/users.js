@@ -33,7 +33,8 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token, getAll } = req.body; // Adicionando um parâmetro getAll
+    const { token, getAll,id } = req.body; // Adicionando um parâmetro getAll
+    let findAdmin = null;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -42,7 +43,7 @@ export default async function handler(req, res) {
     let connection;
 
     try {
-      jwt.verify(token, process.env.SECRET);
+      jwt.verify(token, process.env.SECRET);      
 
       // Estabeleça a conexão com o Oracle
       connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
@@ -52,6 +53,17 @@ export default async function handler(req, res) {
           connectTimeout: 5000, // Tempo limite em milissegundos (5 segundos)
         },
       });
+
+      findAdmin = await users.findOne({
+        where: {
+          ID_USUARIO: id,
+          ID_USUARIO_INTERNO: 'S',
+        },
+      });
+
+      if(findAdmin == null){
+        res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
+      }
 
       const outsourcedCount = await users.count();
 
