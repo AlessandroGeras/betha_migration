@@ -27,7 +27,7 @@ const documento = connection.define(
       allowNull: true,
     },
     NOTIFICACAO: {
-      type: Sequelize.STRING,
+      type: Sequelize.DATE,
       allowNull: true,
     },
     DOCUMENTO: {
@@ -39,6 +39,26 @@ const documento = connection.define(
       allowNull: true,
     },
     FORMATO_VENCIMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    USUARIO_INCLUSAO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    USUARIO_ANALISE: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    DATA_INCLUSAO: {
+      type: Sequelize.DATE,
+      allowNull: true,
+    },
+    DATA_ANALISE: {
+      type: Sequelize.DATE,
+      allowNull: true,
+    },
+    MOTIVO: {
       type: Sequelize.STRING,
       allowNull: true,
     },

@@ -20,4 +20,12 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/uploads/:path*',
+        destination: '/api/uploads/:path*', // Aponta para o seu endpoint de API
+      },
+    ];
+  },
 };

@@ -58,7 +58,10 @@ export default async function handler(req, res) {
 
       if (role == "internal") {
         missingDocsCount = await documents.count({
-          where: { STATUS: 'Pendente' }, // Ajuste conforme sua estrutura de dados
+          where: Sequelize.or(
+            { STATUS: 'Pendente' },
+            { STATUS: 'Reprovado' }
+          ), // Ajuste conforme sua estrutura de dados
         });
 
         analiseDocsCount = await documents.count({
@@ -82,7 +85,11 @@ export default async function handler(req, res) {
       }
       else {
         missingDocsCount = await documents.count({
-          where: { STATUS: 'Pendente', TERCEIRO: findOutsourced.NOME_TERCEIRO }, // Ajuste conforme sua estrutura de dados
+          where: Sequelize.or(
+            { STATUS: 'Pendente' },
+            { STATUS: 'Reprovado' }
+          ),
+          TERCEIRO: findOutsourced.NOME_TERCEIRO // Ajuste conforme sua estrutura de dados
         });
 
         analiseDocsCount = await documents.count({

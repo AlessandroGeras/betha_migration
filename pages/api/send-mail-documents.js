@@ -5,6 +5,7 @@ import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
+const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = require('date-fns');
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ Oracledb.initOracleClient({
 export default async function handler(req, res) {
   let connection;
 
+  const currentDate = new Date();
+
   try {
     // Estabeleça a conexão com o Oracle
     connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
@@ -24,12 +27,12 @@ export default async function handler(req, res) {
 
     // Teste da conexão
     await connection.authenticate();
-    console.log('Conexão com o Oracle estabelecida com sucesso.');
+    console.log('Serviço de cobrança de email iniciado.');
 
     // Consulta ao banco de dados para obter documentos
     const docs = await documents.findAll({
       where: {
-        STATUS: ['Pendente', 'Vencido']
+        STATUS: ['Pendente', 'Reprovado', 'Ativo']
       }
     });
 
@@ -44,6 +47,9 @@ export default async function handler(req, res) {
       acc[terceiro].push({
         STATUS: doc.STATUS,
         TIPO_DOCUMENTO: doc.TIPO_DOCUMENTO,
+        MOTIVO: doc.MOTIVO,
+        NOTIFICACAO: doc.NOTIFICACAO, // Adicione a propriedade NOTIFICACAO
+        VENCIMENTO: doc.VENCIMENTO // Adicione a propriedade VENCIMENTO
       });
 
       return acc;
@@ -84,30 +90,54 @@ export default async function handler(req, res) {
       const documentos = documentosAgrupados[terceiro];
       const idTerceiro = mapaIDTerceiros[terceiro];
 
+      // Filtrar documentos ativos com data de notificação menor ou igual à data atual ou sem data de notificação definida
+      const docsFiltrados = documentos.filter(doc => {
+        // Se o status do documento for 'Pendente' ou 'Reprovado', mantenha-o
+        if (doc.STATUS === 'Pendente' || doc.STATUS === 'Reprovado') {
+          return true;
+        }
+
+        // Se a data de notificação não estiver definida ou for menor ou igual à data atual, o documento é considerado válido
+        return !doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate;
+      });
+
+      // Construir o corpo do e-mail para os documentos filtrados
+      let emailBody = `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>`;
+      emailBody += docsFiltrados.map(doc => {
+        let docInfo;
+        if (doc.STATUS === 'Reprovado') {
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS} - ${doc.MOTIVO}</p>`;
+        } else if (doc.STATUS === 'Ativo') {
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}: Documento a vencer - ${format(new Date(doc.VENCIMENTO), 'dd/MM/yy')}</p>`;
+        } else { // Pendente ou outros status
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS}</p>`;
+        }
+        return docInfo;
+      }).join('');
+      emailBody += `<hr><p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
+        `<p>Seu ID: ${idTerceiro}</p>` +
+        `<p>Se for seu primeiro acesso, digite seu nome de usuário e clique em "Esqueceu a senha?" para redefinir a nova senha por e-mail.</p>` +
+        `<p><a href="http://localhost:3000/" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
+        `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
+        `<h4>Portal Gestão de Terceiro</h4>`;
+
+      // Enviar o e-mail
       await transporter.sendMail({
         from: 'esqueciminhasenha@estilofontana.com.br',
         to: emailTerceiro,
         subject: 'Pendência de Documentos - Portal Gestão de Terceiro',
-        html: `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>` +
-          documentos.map(doc => `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS}</p>`).join('') +
-          `<hr><p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
-          `<p>Seu ID: ${idTerceiro}</p>` +
-          `<p>Se for seu primeiro acesso, digite seu nome de usuário e clique em "Esqueceu a senha?" para redefinir a nova senha por e-mail.</p>` +
-          `<p><a href="http://localhost:3000/" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
-          `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
-          `<h4>Portal Gestão de Terceiro</h4>`,
+        html: emailBody,
       });
-      
+
       console.log(`E-mail enviado com sucesso para ${terceiro} (${emailTerceiro}).`);
     }
+    
 
-    const currentDate = new Date();
-
-      await cobrança.create({
-        ULTIMA_COBRANCA: currentDate,
-      }, {
-        fields: ['ULTIMA_COBRANCA'], // Especifique os campos que deseja incluir
-      });
+    await cobrança.create({
+      ULTIMA_COBRANCA: currentDate,
+    }, {
+      fields: ['ULTIMA_COBRANCA'], // Especifique os campos que deseja incluir
+    });
 
     res.status(200).json({ message: "Cobranças automáticas concluídas" });
 

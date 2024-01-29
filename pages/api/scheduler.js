@@ -12,7 +12,7 @@ Oracledb.initOracleClient({
   libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
 });
 
-cron.schedule('07 14 * * 1-5', async () => {
+cron.schedule('02 14 * * 0-7', async () => {
   try {
     console.log("Serviço de cobrança de e-mails ativo");
 
@@ -51,7 +51,7 @@ export default async function handler(req, res) {
       order: [['ULTIMA_COBRANCA', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
     });    
 
-    const formattedDate = format(new Date(ultimaCobranca.dataValues.ULTIMA_COBRANCA), 'dd/MM/yyyy');
+    const formattedDate = ultimaCobranca ? format(new Date(ultimaCobranca.ULTIMA_COBRANCA), 'dd/MM/yyyy') : 'Sem registros anteriores.';
 
     res.status(200).json({
       message: `Serviço de cobrança automático de emails agendado de segunda à sexta para as 18:00.\nÚltima cobrança automática: ${formattedDate}`

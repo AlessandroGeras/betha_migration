@@ -32,8 +32,74 @@ const Users = () => {
   const [getAll, setGetAll] = useState(false);
   const [forceEmail, setForceEmail] = useState(false);
   const { due_date } = router.query;
-  const [dueDateFetchCompleted, setDueDateFetchCompleted] = useState(false);
+  //const [dueDateFetchCompleted, setDueDateFetchCompleted] = useState(false);
   const [viewAll, setViewAll] = useState(true);
+  const [fileUrl, setFileUrl] = useState('');
+
+  const printClick = async (id) => {
+
+    try {
+
+      if (!id) {
+        return
+      }
+
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        router.push('/login');
+        return;
+      }
+
+      const getAll = true;
+
+      const response = await fetch(`/api/find-document`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, id }),
+      });
+
+      const data = await response.json();
+
+      if (response.status === 401) {
+        setModalMessage('Não foi possível obter o documento para impressão.');
+        setShowModal(true);
+        setModalColor('#e53e3e');
+        setTextColor('#e53e3e');
+      } else {
+
+
+
+        try {
+          if (data.docs.ANEXO) {
+            const apiUrl = `/api/upload?filename=${data.docs.ANEXO}`;
+            console.log("apiUrl", apiUrl);
+
+            const pegardoc = await fetch(apiUrl);
+
+            if (!pegardoc.ok) {
+              throw new Error('Erro ao buscar anexo');
+            }
+
+            window.open(pegardoc.url, '_blank');
+          }
+        } catch (error: any) {
+          console.error('Error:', error.message);
+        }
+
+        setTokenVerified(true);
+        setLoading(false);
+
+      }
+    } catch (error) {
+      console.error('Erro ao obter opções de documento:', error);
+    }
+  };
+
+
+
 
   useEffect(() => {
     const userRole = localStorage.getItem('role');
@@ -1064,13 +1130,13 @@ const Users = () => {
                         ) : (
                           column === '' ? (
                             <div className='flex justify-center'>
-                              {!viewAll && document.STATUS == 'Pendente' && (
+                              {((!viewAll && (document.STATUS == 'Pendente' || document.STATUS == 'Reprovado')) || (viewAll && document.STATUS != 'Pendente') || document.STATUS == 'Ativo') && (
                                 <Link href={{ pathname: '/find-document', query: { id: document.ID_DOCUMENTO } }}>
                                   <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                                 </Link>
                               )}
-                              {!document.STATUS == 'Pendente' && (
-                                <button onClick={() => deleteAccountClick(document)}>
+                              {(viewAll && document.STATUS != 'Pendente') && (
+                                <button onClick={() => printClick(document.ID_DOCUMENTO)}>
                                   <HiPrinter className='mt-0.5 w-[18px] mr-0.5' />
                                 </button>
                               )}

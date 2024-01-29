@@ -18,10 +18,11 @@ const getAllDocs = async (pageSize, findOutsourced) => {
   while (true) {
     try {
       const result = await documents.findAll({
-        where: {
-          STATUS: 'Pendente',
-          ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
-        },
+        where: Sequelize.or(
+          { STATUS: 'Pendente' },
+          { STATUS: 'Reprovado' }
+        ),
+        ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir        
         offset,
         limit: pageSize,
       });
@@ -44,11 +45,11 @@ const getAllDocs = async (pageSize, findOutsourced) => {
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { token, getAll, id, role } = req.body;
-    let findOutsourced = null;  
-    
+    let findOutsourced = null;
+
     if (!token) {
       return res.redirect(302, '/login');
-    }    
+    }
 
     let connection;
 
@@ -70,8 +71,8 @@ export default async function handler(req, res) {
             ID_USUARIO_INTERNO: 'N',
           },
         });
-      }           
-      
+      }
+
 
       const outsourcedCount = await documents.count();
 
@@ -98,10 +99,11 @@ export default async function handler(req, res) {
       } else {
         try {
           const docs = await documents.findAndCountAll({
-            where: {
-              STATUS: 'Pendente',
-              ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
-            },
+            where: Sequelize.or(
+              { STATUS: 'Pendente' },
+              { STATUS: 'Reprovado' }
+            ),
+            ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir           
             offset: (page - 1) * pageSize,
             limit: pageSize,
           });

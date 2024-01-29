@@ -17,7 +17,7 @@ const getAllDocs = async (pageSize) => {
   while (true) {
     try {
       const result = await documents.findAll({
-        where: Sequelize.literal("STATUS = 'Em Análise'"),
+        where: Sequelize.literal("STATUS = 'Em análise'"),
         offset,
         limit: pageSize,
       });
@@ -83,7 +83,7 @@ export default async function handler(req, res) {
       } else {
         try {
           const docs = await documents.findAndCountAll({
-            where: Sequelize.literal("STATUS = 'Em Análise'"),
+            where: Sequelize.literal("STATUS = 'Em análise'"),
             offset: (page - 1) * pageSize,
             limit: pageSize,
           });
