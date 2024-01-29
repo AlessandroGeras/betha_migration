@@ -10,7 +10,7 @@ import jwt from 'jsonwebtoken';  // Importe o módulo JWT
 dotenv.config();
 
 Oracledb.initOracleClient({
-  libDir: 'C:\\Users\\aless\\Downloads\\instantclient-basic-windows.x64-21.12.0.0.0dbru\\instantclient_21_12',
+  libDir: '../../instantclient_21_12',
 });
 
 export default async function handler(req, res) {
