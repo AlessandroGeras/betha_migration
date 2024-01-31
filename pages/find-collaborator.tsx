@@ -6,7 +6,7 @@ import Head from 'next/head';
 const AccountUsers = () => {
 
     const [enterprises, setEnterprises] = useState([]);
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
     const [função, setFunção] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -244,7 +244,7 @@ const AccountUsers = () => {
                             onChange={handleInputChange}
                             placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="11"
+                            maxLength={11}
                             required
                         />
                     </div>

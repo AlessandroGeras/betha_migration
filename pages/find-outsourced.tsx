@@ -28,8 +28,8 @@ const AccountUsers = () => {
         uf: '',
         principal: '',
         status: '',
-        obs_status:'',
-        nome_terceiro:'',
+        obs_status: '',
+        nome_terceiro: '',
     });
 
     const closeModal = () => {
@@ -49,8 +49,8 @@ const AccountUsers = () => {
             uf: '',
             principal: '',
             status: '',
-            obs_status:'',
-            nome_terceiro:'',
+            obs_status: '',
+            nome_terceiro: '',
         });
     }
 
@@ -113,7 +113,7 @@ const AccountUsers = () => {
                 principal: data.user.CATEGORIA_PRINCIPAL,
                 status: data.user.STATUS,
                 obs_status: data.user.OBS_STATUS,
-                nome_terceiro:data.user.NOME_TERCEIRO,
+                nome_terceiro: data.user.NOME_TERCEIRO,
             });
 
 
@@ -174,9 +174,9 @@ const AccountUsers = () => {
                     telefone: data.user.TELEFONE,
                     uf: data.user.UF,
                     id_user: data.user.ID_USUARIO,
-                    status:data.user.STATUS,
-                    obs_status:data.user.OBS_STATUS,
-                    nome_terceiro:data.user.NOME_TERCEIRO,
+                    status: data.user.STATUS,
+                    obs_status: data.user.OBS_STATUS,
+                    nome_terceiro: data.user.NOME_TERCEIRO,
                     principal: data.user.CATEGORIA_PRINCIPAL,
                 });
 
@@ -258,7 +258,7 @@ const AccountUsers = () => {
                             onChange={handleInputChange}
                             placeholder="00.000.000/0000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="18"
+                            maxLength={18}
                             required
                         />
                     </div>
@@ -292,7 +292,7 @@ const AccountUsers = () => {
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>                    
+                    </div>
 
                     {/* Linha 4 (Endereço, Cidade) */}
                     <div className="col-span-3">
@@ -388,7 +388,7 @@ const AccountUsers = () => {
                             <option value="" disabled>
                                 Selecione uma categoria
                             </option>
-                            {categoriaOptions.map((categoria) => (
+                            {categoriaOptions.length > 0 && categoriaOptions.map((categoria: any) => (
                                 <option key={categoria.CATEGORIA} value={categoria.CATEGORIA} selected={formData.principal === categoria.CATEGORIA}>
                                     {categoria.CATEGORIA}
                                 </option>

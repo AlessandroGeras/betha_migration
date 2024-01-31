@@ -8,7 +8,10 @@ import Link from 'next/link';
 
 const CategoryOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
+  const [documents, setDocuments] = useState<{ success: boolean; docs: { rows: Document[]; count: number; outsourcedCount: number } }>({
+  success: false,
+  docs: { rows: [], count: 0, outsourcedCount: 0 },
+});
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -18,8 +21,8 @@ const CategoryOutsourced = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
-  const [appliedFilterValue, setAppliedFilterValue] = useState('');
-  const [filteredData, setFilteredData] = useState([]);
+  const [appliedFilterValue, setAppliedFilterValue] = useState({});
+  const [filteredData, setFilteredData] = useState<Item[]>([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
@@ -29,6 +32,14 @@ const CategoryOutsourced = () => {
   const closeModal = () => {
     setShowModal(false);
   };
+
+  interface Document {
+    CATEGORIA: string;
+  }
+
+  interface Item {
+    CATEGORIA: string; // Adicione outras propriedades, se houver
+  }
 
 
   const adicionarTerceiroClick = () => {
@@ -75,8 +86,10 @@ const CategoryOutsourced = () => {
           }));
 
           // Se estiver usando filtros, atualize também o estado de filteredData
-          const updatedFilteredData = filteredData.filter(row => row.CATEGORIA !== categoria);
-          setFilteredData(updatedFilteredData);
+          if (filteredData.length > 0) {
+            const updatedFilteredData = filteredData.filter(row => row.CATEGORIA !== categoria);
+            setFilteredData(updatedFilteredData);
+          }
         }
 
         setModalColor('#3f5470');
@@ -200,13 +213,16 @@ const CategoryOutsourced = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-
+  
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
-          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          // Verificar se filterValue é do tipo string
+          if (typeof filterValue === 'string') {
+            return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          }
         }
-
-        return false; // Se for nulo ou indefinido, não incluir no resultado
+  
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
@@ -665,7 +681,7 @@ const CategoryOutsourced = () => {
                     </div>
                   )}
 
-                  {documents.docs.rows.map((document, index) => (
+                  {documents.docs.rows.map((document:any, index) => (
                     /* Tamanho total tabela registros */
                     <div className='w-[1440px]'>
                       <div

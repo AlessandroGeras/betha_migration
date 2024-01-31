@@ -45,10 +45,10 @@ export default async function handler(req, res) {
             const user = existingUser;    
 
             existingUser.ENDEREÇO = endereco;
-            existingUser.ST_EMAIL = email;
+           /*  existingUser.ST_EMAIL = email; */
             existingUser.CIDADE = cidade;
             existingUser.UF = uf;
-            existingUser.TELEFONE = telefone;
+            /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
             existingUser.NW_USER = usuario;
             existingUser.FUNCAO = principal;

@@ -108,15 +108,15 @@ const Dashboard = () => {
                                 {/* Três Divs Centralizadas Lado a Lado */}
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de documentos ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">{docs.activeDocumentsCount}</div>
+                                    <div className="mt-2 text-4xl text-gray-600">{(docs as any).activeDocumentsCount}</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de terceiros ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">{docs.activeOutsourcedCount}</div>
+                                    <div className="mt-2 text-4xl text-gray-600">{(docs as any).activeOutsourcedCount}</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center">
                                     <div className="mt-[-15px]">Quantidade de colaboradores ativos</div>
-                                    <div className="mt-2 text-4xl text-gray-600">{docs.employeesCount}</div>
+                                    <div className="mt-2 text-4xl text-gray-600">{(docs as any).employeesCount}</div>
                                 </div>
                             </div>)}
 
@@ -126,8 +126,8 @@ const Dashboard = () => {
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos a vencer</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos com 30 dias ou menos da data de vencimento</div>
                                     <Link href="/documents?due_date=due_date_30">
-                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.due_date === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.due_date}</div>
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${(docs as any).due_date === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{(docs as any).due_date}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
@@ -136,8 +136,8 @@ const Dashboard = () => {
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos vencidos</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos com data inferior ao dia atual</div>
                                     <Link href="/documents?due_date=due_date">
-                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.past_due_date === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.past_due_date}</div>
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${(docs as any).past_due_date === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{(docs as any).past_due_date}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
@@ -149,8 +149,8 @@ const Dashboard = () => {
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos pendentes</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos solicitados e não enviados</div>
                                     <Link href="/documents?due_date=missing">
-                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.missingCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.missingCount}</div>
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${(docs as any).missingCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{(docs as any).missingCount}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>
@@ -159,8 +159,8 @@ const Dashboard = () => {
                                     <div className="mt-[-15px] text-2xl text-gray-600">Documentos à analisar</div>
                                     <div className="mt-2 text-gray-600 text-sm">Documentos pendentes de análise</div>
                                     <Link href="/documents?due_date=analysis">
-                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${docs.analiseCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
-                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{docs.analiseCount}</div>
+                                        <div className={`mt-2 flex justify-center mx-auto w-[115px] ${(docs as any).analiseCount === 0 ? 'bg-green-500' : 'bg-yellow-500'}`}>
+                                            <div className="text-gray-600 text-5xl text-white py-2 mt-[-6px]">{(docs as any).analiseCount}</div>
                                         </div>
                                     </Link>
                                     <div className='text-xs mt-2 text-gray-600'>Clique no número para listar os documentos</div>

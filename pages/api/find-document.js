@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import configuration from '../../models/configuration';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
@@ -34,11 +35,16 @@ export default async function handler(req, res) {
         },
       });
 
+      const notificacao = await configuration.findOne({
+        attributes: ['NOTIFICACAO'],
+        order: [['NOTIFICACAO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
+      });
+
       if (!docs) {
         return res.status(403).json({ error: 'Falha ao localizar o documento.' });
       }
 
-      res.status(200).json({ docs });
+      res.status(200).json({ docs,notificacao });
     } catch (error) {
       if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);

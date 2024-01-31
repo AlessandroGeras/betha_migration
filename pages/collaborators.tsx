@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Collaborators = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
+  const [documents, setDocuments] = useState({ success: false, docs: { rows: [] as User[], count: 0, outsourcedCount: 0 } });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -18,16 +18,29 @@ const Collaborators = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
-  const [appliedFilterValue, setAppliedFilterValue] = useState('');
-  const [filteredData, setFilteredData] = useState([]);
+  const [appliedFilterValue, setAppliedFilterValue] = useState({});
+  const [filteredData, setFilteredData] = useState<User[]>([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
-  const [userID, setUserID] = useState('');
+  const [userID, setUserID] = useState({ ID_USUARIO: '' });
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
   const [getAll, setGetAll] = useState(false);
+  const [isAdmin, setIsAdmin] = useState('');
+
+  useEffect(() => {    
+    const userPermission = localStorage.getItem('permission');  
+
+    if (userPermission == 'read') {
+        setIsAdmin('read');
+    }
+}, []);
+
+  interface User {
+    ID_USUARIO: string;
+  }
 
 
   const adicionarColaboradorClick = () => {
@@ -235,13 +248,16 @@ const Collaborators = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-
+  
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
-          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          // Verificar se filterValue é do tipo string
+          if (typeof filterValue === 'string') {
+            return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          }
         }
-
-        return false; // Se for nulo ou indefinido, não incluir no resultado
+  
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
@@ -632,12 +648,12 @@ const Collaborators = () => {
               >
                 Limpar Pesquisa
               </button>
-              <button
+              {isAdmin != "read" && (<button
                 className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                 onClick={adicionarColaboradorClick}
               >
                 <IoMdAdd className='text-xl mt-0.5' /> Adicionar Colaborador
-              </button>
+              </button>)}
             </div>
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
@@ -825,8 +841,7 @@ const Collaborators = () => {
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
-                    <select
-                      value={selectedFilterValue}
+                    <select                      
                       value={selectedFilterValue['TELEFONE']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
                     >
@@ -895,7 +910,7 @@ const Collaborators = () => {
                 </div>
               )}
 
-              {documents.docs.rows.map((document, index) => (
+              {documents.docs.rows.map((document:any, index) => (
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div

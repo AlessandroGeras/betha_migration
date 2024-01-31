@@ -18,16 +18,29 @@ const Outsourced = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
-  const [appliedFilterValue, setAppliedFilterValue] = useState('');
+  const [appliedFilterValue, setAppliedFilterValue] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
-  const [userID, setUserID] = useState('');
+  const [userID, setUserID] = useState<User>({ ID_USUARIO: '' });
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
   const [getAll, setGetAll] = useState(false);
+  const [isAdmin, setIsAdmin] = useState('');
+
+  interface User {
+    ID_USUARIO: string;
+  }
+
+  useEffect(() => {    
+    const userPermission = localStorage.getItem('permission');  
+
+    if (userPermission == 'read') {
+        setIsAdmin('read');
+    }
+}, []);
 
 
   const adicionarTerceiroClick = () => {
@@ -79,7 +92,7 @@ const Outsourced = () => {
         const updatedDocs = {
           success: true,
           docs: {
-            rows: documents.docs.rows.filter((user) => user.ID_USUARIO !== usuario),
+            rows: documents.docs.rows.filter((user: User) => user.ID_USUARIO !== usuario),
             count: documents.docs.count - 1,
             outsourcedCount: documents.docs.outsourcedCount,
           },
@@ -238,13 +251,16 @@ const Outsourced = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-
+  
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
-          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          // Verificar se filterValue é do tipo string
+          if (typeof filterValue === 'string') {
+            return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          }
         }
-
-        return false; // Se for nulo ou indefinido, não incluir no resultado
+  
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
@@ -255,7 +271,7 @@ const Outsourced = () => {
     setFilterOpen(false);
     setCurrentPage(1);
 
-    const availableValues = handleFilterValue(column);
+    const availableValues: Array<string> = handleFilterValue(column);
 
     if (value === "") {
       value = 'TODOS';
@@ -646,12 +662,12 @@ const Outsourced = () => {
                   >
                     Limpar Pesquisa
                   </button>
-                  <button
+                  {isAdmin != "read" && (<button
                     className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                     onClick={adicionarTerceiroClick}
                   >
                     <IoMdAdd className='text-xl mt-0.5' /> Adicionar Terceiro
-                  </button>
+                  </button>)}
                 </div>
 
                 <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
@@ -819,7 +835,6 @@ const Outsourced = () => {
 
                       <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
                         <select
-                          value={selectedFilterValue}
                           value={selectedFilterValue['TELEFONE']}
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
                         >
@@ -909,7 +924,7 @@ const Outsourced = () => {
                     </div>
                   )}
 
-                  {documents.docs.rows.map((document, index) => (
+                  {documents.docs.rows.map((document:any, index) => (
                     /* Tamanho total tabela registros */
                     <div className='w-[1440px]'>
                       <div

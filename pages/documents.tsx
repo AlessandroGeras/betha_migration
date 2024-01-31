@@ -8,10 +8,11 @@ import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
 
+
 const Users = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [userID, setUserID] = useState('');
-  const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
+  const [userID, setUserID] = useState<User>({ ID_DOCUMENTO: '' });
+  const [documents, setDocuments] = useState({ success: false, docs: { rows: [] as Document[], count: 0, outsourcedCount: 0 } });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -21,8 +22,8 @@ const Users = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
-  const [appliedFilterValue, setAppliedFilterValue] = useState('');
-  const [filteredData, setFilteredData] = useState([]);
+  const [appliedFilterValue, setAppliedFilterValue] = useState({});
+  const [filteredData, setFilteredData] = useState<Document[]>([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
@@ -34,7 +35,21 @@ const Users = () => {
   const { due_date } = router.query;
   //const [dueDateFetchCompleted, setDueDateFetchCompleted] = useState(false);
   const [viewAll, setViewAll] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(true);
   const [fileUrl, setFileUrl] = useState('');
+  
+
+interface Document {
+  ID_DOCUMENTO: string;
+    ID_USUARIO: string;
+    id: string;
+    STATUS: string;
+}
+
+interface User {
+  ID_DOCUMENTO: string;
+}
+  
 
   const printClick = async (id) => {
 
@@ -103,12 +118,17 @@ const Users = () => {
 
   useEffect(() => {
     const userRole = localStorage.getItem('role');
+    const userPermission = localStorage.getItem('permission');
     if (userRole == 'internal') {
       setViewAll(true);
     }
     else {
       setViewAll(false);
     }
+
+    if (userPermission == 'read') {
+      setIsAdmin(false);
+    }    
   }, []);
 
   const addDocPendenteClick = () => {
@@ -116,7 +136,7 @@ const Users = () => {
   };
 
   const deleteAccountClick = (document) => {
-    setModalMessage('Tem certeza que deseja excluir a conta <span style="color: red;">' + document.NM_USUARIO + '</span>?');
+    setModalMessage('Tem certeza que deseja excluir o documento <span style="color: red;">' + document.TIPO_DOCUMENTO + '</span>?');
     setShowModal(true);
     setShowModal2(true);
     setModalColor('#3f5470');
@@ -125,7 +145,7 @@ const Users = () => {
   };
 
 
-  const deleteAccount = async () => {
+  const deletarDocumento = async () => {
     try {
       const token = localStorage.getItem('Token');
 
@@ -135,9 +155,9 @@ const Users = () => {
         return;
       }
 
-      const usuario = userID.ID_USUARIO;
+      const usuario = userID.ID_DOCUMENTO;
 
-      const response = await fetch(`/api/delete-user`, {
+      const response = await fetch(`/api/delete-document`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -155,7 +175,7 @@ const Users = () => {
         const updatedDocs = {
           success: true,
           docs: {
-            rows: documents.docs.rows.filter((user) => user.ID_USUARIO !== usuario),
+            rows: documents.docs.rows.filter((user) => user.ID_DOCUMENTO !== usuario),
             count: documents.docs.count - 1,
             outsourcedCount: documents.docs.outsourcedCount,
           },
@@ -166,14 +186,14 @@ const Users = () => {
         // Atualize também o estado filteredData
         setFilteredData(updatedDocs.docs.rows);
 
-        setModalMessage('Conta excluída');
+        setModalMessage('Documento excluido');
         setShowModal(true);
         setShowModal2(false);
         setModalColor('#3f5470');
         setTextColor('#3f5470');
       }
     } catch (error) {
-      console.error('Erro ao excluir a conta:', error);
+      console.error('Erro ao excluir o documento:', error);
     } finally {
 
     }
@@ -323,13 +343,16 @@ const Users = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-
+  
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
-          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          // Verificar se filterValue é do tipo string
+          if (typeof filterValue === 'string') {
+            return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          }
         }
-
-        return false; // Se for nulo ou indefinido, não incluir no resultado
+  
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
@@ -671,7 +694,7 @@ const Users = () => {
             },
           });
 
-          setDueDateFetchCompleted(true);
+          //setDueDateFetchCompleted(true);
         } else {
 
 
@@ -913,6 +936,19 @@ const Users = () => {
                   </button>
                 </div>)}
 
+                {showModal2 && (<div className='flex'>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={deletarDocumento}>
+                    <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                      Excluir documento
+                    </span>
+                  </button>
+                  <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                    <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                      Cancelar e fechar
+                    </span>
+                  </button>
+                </div>)}
+
 
               </div>
             </div>
@@ -942,7 +978,7 @@ const Users = () => {
               >
                 Limpar Pesquisa
               </button>
-              <div className='flex ml-auto'>
+              {viewAll && isAdmin && (<div className='flex ml-auto'>
                 <button
                   className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
                   onClick={addDocPendenteClick}
@@ -955,7 +991,7 @@ const Users = () => {
                 >
                   <span className=''> Cobrar documentos </span>
                 </button>
-              </div>
+              </div>)}
             </div>
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
@@ -1140,7 +1176,7 @@ const Users = () => {
                                   <HiPrinter className='mt-0.5 w-[18px] mr-0.5' />
                                 </button>
                               )}
-                              {viewAll && document.STATUS == 'Pendente' && (
+                              {viewAll && document.STATUS == 'Pendente' && isAdmin && (
                                 <button onClick={() => deleteAccountClick(document)}>
                                   <FaTrashAlt className='mt-0.5 w-[12px] text-red-500 mx-0.5' />
                                 </button>

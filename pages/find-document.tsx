@@ -43,10 +43,20 @@ const FindDocument = () => {
     const [isFinished, setIsFinished] = useState(false);
     const [canRenew, setCanRenew] = useState(false);
     const [fileUrl, setFileUrl] = useState('');
-    const iframeRef = useRef(null);
+    const iframeRef = useRef<HTMLIFrameElement | null>(null);
+    const [adminNotification, setAdminNotification] = useState(0);
+    const [isAdmin, setIsAdmin] = useState('');
+
+    useEffect(() => {
+        const userPermission = localStorage.getItem('permission');
+
+        if (userPermission == 'read') {
+            setIsAdmin('read');
+        }
+    }, []);
 
     const handlePrint = () => {
-        if (iframeRef.current) {
+        if (iframeRef.current !== null && iframeRef.current.contentWindow !== null) {
             const iframeWindow = iframeRef.current.contentWindow;
             iframeWindow.focus();
             iframeWindow.print();
@@ -79,16 +89,6 @@ const FindDocument = () => {
         }
     };
 
-    const handleCheckboxChange = (value) => {
-        const isSelected = formData.tipo_documento.includes(value);
-
-        setFormData((prevData) => ({
-            ...prevData,
-            tipo_documento: isSelected
-                ? prevData.tipo_documento.filter((item) => item !== value)
-                : [...prevData.tipo_documento, value],
-        }));
-    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -114,8 +114,8 @@ const FindDocument = () => {
     };
 
     const calculateDaysAntecipation = () => {
-        const dataVencimento = new Date(formData.dataVencimento);
-        const dataAtual = new Date();
+        const dataVencimento = new Date(formData.dataVencimento).getTime(); // Convert to milliseconds
+        const dataAtual = new Date().getTime(); // Convert to milliseconds
         const diffInMilliseconds = dataVencimento - dataAtual;
         const diffInDays = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
 
@@ -162,14 +162,17 @@ const FindDocument = () => {
                     router.push('/login');
                 } else {
 
-                    const vencimento = new Date(data.docs.VENCIMENTO);
-                    const notificacao = data.docs.NOTIFICACAO ? new Date(data.docs.NOTIFICACAO) : null;
+                    const vencimento = new Date(data.docs.VENCIMENTO).getTime(); // Convert to milliseconds
+                    const notificacao = data.docs.NOTIFICACAO ? new Date(data.docs.NOTIFICACAO).getTime() : null; // Convert to milliseconds or null
                     const diffInMilliseconds = notificacao ? vencimento - notificacao : 0;
                     const diffInDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-                    const notificacaoDias = notificacao ? diffInDays : 7;
+                    const notificacaoDias = notificacao ? diffInDays : data.notificacao.NOTIFICACAO;
 
-                    const isNotificationBeforeOrEqualToday = notificacao ? notificacao <= new Date() : false;
+                    const isNotificationBeforeOrEqualToday = notificacao ? notificacao <= new Date().getTime() : false;
                     setCanRenew(isNotificationBeforeOrEqualToday);
+
+                    setAdminNotification(data.notificacao.NOTIFICACAO);
+
 
 
                     setFormData({
@@ -190,6 +193,7 @@ const FindDocument = () => {
                         motivo: data.docs.MOTIVO,
                         usuario_analise: data.docs.USUARIO_ANALISE,
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
+                        arquivo: null // or provide the appropriate value for arquivo here
                     });
                 }
 
@@ -227,13 +231,19 @@ const FindDocument = () => {
         e.preventDefault();
 
 
-        if (formData.identificacao === "" || formData.vencimento === "Fixo" && (formData.dia === "" || parseInt(formData.dia) > 31) || formData.notificacao === "" || !formData.arquivo) {
-            setPopupMessage('Não foi possível criar aaaaaa categoria. Verifique se os dados estão corretos e preenchidos.');
-            setShowModal(true);
-            setModalColor('#e53e3e');
-            setTextColor('#e53e3e');
-            return;
+        if (formData.identificacao === "" || formData.vencimento === "Fixo" || !formData.arquivo) {
+            if (formData.dia === 0 || formData.dia > 31 || formData.dia === null || formData.dia === undefined) {
+                if (formData.dia === null || formData.dia === undefined || formData.dia<0) {
+                    setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão corretos e preenchidos.');
+                    setShowModal(true);
+                    setModalColor('#e53e3e');
+                    setTextColor('#e53e3e');
+                    return;
+                }
+            }
         }
+
+
 
         try {
             const token = localStorage.getItem('Token');
@@ -329,15 +339,15 @@ const FindDocument = () => {
             if (!token) {
                 router.push('/login');
                 return;
-            } 
-            
+            }
+
 
             const requestBody = {
                 token: token,
                 formData: formData,
                 id: id,
                 role: role,
-                analysis:analysis,
+                analysis: analysis,
             };
 
             const response = await fetch('/api/update-pending-document-analysis', {
@@ -587,8 +597,8 @@ const FindDocument = () => {
                                 onChange={handleInputChange}
                                 value={formData.notificacao}
                                 required
-                                 {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
-                                min="7"
+                                {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
+                                min={adminNotification}
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
@@ -685,14 +695,14 @@ const FindDocument = () => {
                     >
                         Salvar
                     </button>)}
-                    {(isAnalysis == "Em análise" && viewAll) && (<button
+                    {(isAnalysis == "Em análise" && viewAll && isAdmin != "read") && (<button
                         type="button"
                         onClick={handleSubmitReprove}
                         className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                     >
                         Rejeitar
                     </button>)}
-                    {(isAnalysis == "Em análise" && viewAll) && (<button
+                    {(isAnalysis == "Em análise" && viewAll && isAdmin != "read") && (<button
                         type="button"
                         onClick={handleSubmitAprove}
                         className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"

@@ -21,7 +21,7 @@ const AddOutsourced = () => {
     });
 
     const [enterprises, setEnterprises] = useState([]);
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
@@ -217,7 +217,7 @@ const AddOutsourced = () => {
                             onChange={handleInputChange}
                             placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="11"
+                            maxLength={11} // Alterado para um número
                             required
                         />
                     </div>
@@ -240,13 +240,12 @@ const AddOutsourced = () => {
 
                     <div className="col-span-4">
                         <label htmlFor="id_usuario" className="block text-sm font-medium text-gray-700">
-                            ID Usuário <span className="text-red-500">*</span>
+                            ID Usuário (Opcional para login no sistema) {/* <span className="text-red-500">*</span> */}
                         </label>
                         <input
                             type="text"
                             name="id_usuario"
                             id="id_usuario"
-                            required
                             value={formData.id_usuario}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
@@ -300,7 +299,7 @@ const AddOutsourced = () => {
                     </div>
 
                     {/* Linha 5 (Email, Telefone, UF) */}
-                    <div className="col-span-3">
+                    {/* <div className="col-span-3">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                             Email <span className="text-red-500">*</span>
                         </label>
@@ -313,9 +312,9 @@ const AddOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
+                    </div>* /}
 
-                    <div className="col-span-4">
+                   {/* <div className="col-span-4">
                         <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
                             Telefone <span className="text-red-500">*</span>
                         </label>
@@ -328,7 +327,7 @@ const AddOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
+                    </div> /}
 
 
 
@@ -336,29 +335,6 @@ const AddOutsourced = () => {
 
                     {/* Linha 6 (Botão Função) */}
                     <div className="col-span-3">
-                        <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
-                            Nome Terceiro <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            name="nomeTerceiro"
-                            id="nomeTerceiro"
-                            value={formData.nome_terceiro}
-                            onChange={(e) => handleSelectChange(e)}
-                            required
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        >
-                            <option value="" disabled>
-                                Selecione uma empresa
-                            </option>
-                            {enterprises.map((empresa, index) => (
-                                <option key={index} value={empresa}>
-                                    {empresa}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className="col-span-4">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
                             Função <span className="text-red-500">*</span>
                         </label>
@@ -376,6 +352,29 @@ const AddOutsourced = () => {
                             {categoriaOptions.map((categoria) => (
                                 <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
                                     {categoria.CATEGORIA}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="col-span-4 invisible">
+                        <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
+                            Nome Terceiro <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="nomeTerceiro"
+                            id="nomeTerceiro"
+                            value={formData.nome_terceiro}
+                            onChange={(e) => handleSelectChange(e)}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        >
+                            <option value="" disabled>
+                                Selecione uma empresa
+                            </option>
+                            {enterprises.map((empresa, index) => (
+                                <option key={index} value={empresa}>
+                                    {empresa}
                                 </option>
                             ))}
                         </select>

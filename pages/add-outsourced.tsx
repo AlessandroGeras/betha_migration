@@ -20,7 +20,7 @@ const AddOutsourced = () => {
         id_usuario: '',
     });
 
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
@@ -219,7 +219,7 @@ const AddOutsourced = () => {
                                     onChange={handleInputChange}
                                     placeholder="00.000.000/0000-00"
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                    maxLength="18"
+                                    maxLength={18}
                                     required
                                 />
                             </div>

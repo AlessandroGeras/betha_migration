@@ -43,12 +43,12 @@ export default async function handler(req, res) {
                 STATUS: status,
                 CPF: cpf,
                 ENDEREÇO: endereco,
-                ST_EMAIL: email,
+                /* ST_EMAIL: email, */
                 OBS_STATUS: observacoes,
                 NM_USUARIO: usuario,
                 CIDADE: cidade,
                 UF: uf,
-                TELEFONE: telefone,
+                /* TELEFONE: telefone, */
                 ID_USUARIO: id_usuario,    
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_terceiro,

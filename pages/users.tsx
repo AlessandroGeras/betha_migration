@@ -14,7 +14,7 @@ const Users = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
-  const [appliedFilterValue, setAppliedFilterValue] = useState('');
+  const [appliedFilterValue, setAppliedFilterValue] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
   const [getAll, setGetAll] = useState(false);
@@ -161,13 +161,16 @@ const Users = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-
+  
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
-          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          // Verificar se filterValue é do tipo string
+          if (typeof filterValue === 'string') {
+            return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          }
         }
-
-        return false; // Se for nulo ou indefinido, não incluir no resultado
+  
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
@@ -178,7 +181,7 @@ const Users = () => {
     setFilterOpen(false);
     setCurrentPage(1);
 
-    const availableValues = handleFilterValue(column);
+    const availableValues: Array<string> = handleFilterValue(column);
 
     if (value === "") {
       value = 'TODOS';
@@ -911,7 +914,7 @@ const Users = () => {
                   </div>
                 )}
 
-                {documents.docs.rows.map((document, index) => (
+                {documents.docs.rows.map((document:any, index) => (
                   /* Tamanho total tabela registros */
                   <div className='w-[1440px]'>
                     <div

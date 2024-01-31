@@ -176,6 +176,8 @@ const AddOutsourced = () => {
                 uf: data.user.UF,
                 id_user: data.user.ID_USUARIO,
                 ID_ADM_GESTAO_TERCEIROS: data.user.ID_ADM_GESTAO_TERCEIROS,
+                password: '', // Default or empty string
+                confirmPassword: '', // Default or empty string
             });
 
 
@@ -236,6 +238,8 @@ const AddOutsourced = () => {
                     telefone: data.user.TELEFONE,
                     uf: data.user.UF,
                     id_user: data.user.ID_USUARIO,
+                    password: '', // Adicione as chaves que estão faltando com valores padrão
+                    confirmPassword: '',
                     ID_ADM_GESTAO_TERCEIROS: data.user.ID_ADM_GESTAO_TERCEIROS,
                 });
             } catch (error) {
@@ -296,7 +300,7 @@ const AddOutsourced = () => {
                             onChange={handleInputChange}
                             placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="11"
+                            maxLength={11}
                             required
                             disabled
                         />

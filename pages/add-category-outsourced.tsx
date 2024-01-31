@@ -5,13 +5,13 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        categorias: [],
+        categorias: [] as string[],
         nomeTerceiro: '',
         categoria: '',
         categoria_terceiro: '',
     });
 
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
     const [categoriaDetails, setCategoriaDetails] = useState({});
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');

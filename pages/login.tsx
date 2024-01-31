@@ -30,6 +30,7 @@ const Login = () => {
         localStorage.setItem('role', data.role);
         localStorage.setItem('FontanaUser', username);
         localStorage.setItem('Token', data.token);
+        localStorage.setItem('permission', data.permission);
         router.push('/dashboard');
 
       } else {
@@ -39,8 +40,17 @@ const Login = () => {
           setPopupMessage('Esse é seu primeiro acesso. Clique em "Esqueceu a senha?" para obter uma senha válida.');
           setShowModal(true);
         }  
+        else if (response.status === 403) {
+          // Primeiro acesso
+          setPopupMessage('Usuário ou senha inválido.');
+          setShowModal(true);
+        }  
+        else if (response.status === 404) {
+          // Primeiro acesso
+          setPopupMessage('Usuário sem permissão para acesso.');
+          setShowModal(true);
+        }  
         else{ 
-          console.log("pau");
         console.error('Falha na autenticação');
         setPopupMessage('Usuário ou senha inválido');
         setShowModal(true);

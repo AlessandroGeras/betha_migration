@@ -5,13 +5,13 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        categorias: [],
+        categorias: [] as string[],
         nomeTerceiro: '',
         categoria: '',
         categoria_terceiro: '',
     });
 
-    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
     const [categoriaDetails, setCategoriaDetails] = useState({});
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -47,7 +47,7 @@ const AddOutsourced = () => {
 
         if (formData.categorias.includes(selectedCategoria)) {
             const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
-            setFormData({ ...formData, categorias: updatedCategorias, categoria: updatedCategorias });
+            setFormData({ ...formData, categorias: updatedCategorias });
         } else {
             setFormData({ ...formData, categoria: selectedCategoria, categorias: [...formData.categorias, selectedCategoria] });
 
@@ -56,7 +56,7 @@ const AddOutsourced = () => {
 
     const removeCategoria = (removedCategoria) => {
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-        setFormData({ ...formData, categorias: updatedCategorias, categoria: updatedCategorias });
+        setFormData({ ...formData, categorias: updatedCategorias });
     };
 
     const handleSubmitSuccess = async (e) => {
@@ -112,65 +112,65 @@ const AddOutsourced = () => {
     };
 
     useEffect(() => {
-        const fetchCategoriaOptions = async () => {
-            try {
-                setLoading(true);
+    const fetchCategoriaOptions = async () => {
+        try {
+            setLoading(true);
 
-                if (!id) {
-                    return
-                }                
+            if (!id) {
+                return;
+            }
 
-                const token = localStorage.getItem('Token');
+            const token = localStorage.getItem('Token');
 
-                if (!token) {
-                    router.push('/login');
-                    return;
-                }
+            if (!token) {
+                router.push('/login');
+                return;
+            }
 
-                const getAll = true;
+            const getAll = true;
 
-                const response = await fetch(`/api/find-category-outsourced`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ token, getAll, id }),
+            const response = await fetch(`/api/find-category-outsourced`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ token, getAll, id }),
+            });
+
+            const data = await response.json();
+            if (response.status === 401) {
+                router.push('/login');
+            } else {
+                setTokenVerified(true);
+                setEnterprises(data.uniqueEnterprises);
+
+                const updatedCategoriaDetails = {};
+
+                data.docs.rows.forEach((categoria) => {
+                    updatedCategoriaDetails[categoria.CATEGORIA] = {
+                        campo1: categoria.NUMERACAO,
+                        campo2: categoria.FORMATO_VENCIMENTO,
+                        campo3: categoria.AUDITORIA,
+                    };
                 });
 
-                const data = await response.json();
-                if (response.status === 401) {
-                    router.push('/login');
-                } else {
-                    setTokenVerified(true);
-                    setEnterprises(data.uniqueEnterprises);
-
-                    const updatedCategoriaDetails = {};
-
-                    data.docs.rows.forEach((categoria) => {
-                        updatedCategoriaDetails[categoria.CATEGORIA] = {
-                            campo1: categoria.NUMERACAO,
-                            campo2: categoria.FORMATO_VENCIMENTO,
-                            campo3: categoria.AUDITORIA,
-                        };
-                    });
-
-                    setCategoriaDetails(updatedCategoriaDetails);
-                    setFormData({
-                        categorias: data.category.TIPO_DOCUMENTO.split(', ').map((tipo) => tipo.trim()), // Converter a string em um array
-                        nomeTerceiro: '',
-                        categoria: [],
-                        categoria_terceiro: id,
-                    });
-                }
-                setCategoriaOptions(data.success ? data.docs.rows : []);
-                setLoading(false);
-            } catch (error) {
-                console.error('Erro ao obter opções de categoria:', error);
+                setCategoriaDetails(updatedCategoriaDetails);
+                setFormData({
+                    categorias: data.category.TIPO_DOCUMENTO.split(', ').map((tipo) => tipo.trim()),
+                    nomeTerceiro: '',
+                    categoria: '', // Definindo categoria como uma string vazia aqui
+                    categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
+                });
             }
-        };
+            setCategoriaOptions(data.success ? data.docs.rows : []);
+            setLoading(false);
+        } catch (error) {
+            console.error('Erro ao obter opções de categoria:', error);
+        }
+    };
 
-        fetchCategoriaOptions();
-    }, [id]);
+    fetchCategoriaOptions();
+}, [id]);
 
     return (
         <div className="flex h-screen">

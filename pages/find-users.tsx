@@ -159,16 +159,17 @@ const AccountUsers = () => {
                 }
 
                 setFormData({
-                    cpf: data.user.CPF,
-                    usuario: data.user.NM_USUARIO,
-                    sobrenome: data.user.SOBRENOME,
-                    endereco: data.user.ENDEREÇO,
-                    cidade: data.user.CIDADE,
-                    email: data.user.ST_EMAIL,
-                    telefone: data.user.TELEFONE,
-                    uf: data.user.UF,
-                    id_user: data.user.ID_USUARIO,
-                    status:data.user.STATUS,
+                    cpf: data.user.CPF || '',
+                    usuario: data.user.NM_USUARIO || '',
+                    sobrenome: data.user.SOBRENOME || '',
+                    endereco: data.user.ENDEREÇO || '',
+                    cidade: data.user.CIDADE || '',
+                    email: data.user.ST_EMAIL || '',
+                    telefone: data.user.TELEFONE || '',
+                    uf: data.user.UF || '',
+                    id_user: data.user.ID_USUARIO || '',
+                    principal: data.user.FUNCAO || '', // Adicione a propriedade principal aqui
+                    status: data.user.STATUS || '',
                 });
 
                 if (data) {
@@ -233,7 +234,7 @@ const AccountUsers = () => {
                             onChange={handleInputChange}
                             placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            maxLength="11"
+                            maxLength={11}
                             required
                         />
                     </div>
@@ -354,8 +355,8 @@ const AccountUsers = () => {
                             <option value="" disabled>
                                 Selecione uma categoria
                             </option>
-                            {categoriaOptions.map((categoria) => (
-                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA} selected={função === categoria.CATEGORIA}>
+                            {categoriaOptions.length > 0 && categoriaOptions.map((categoria: any) => (
+                                <option key={categoria.CATEGORIA} value={categoria.CATEGORIA} selected={formData.principal === categoria.CATEGORIA}>
                                     {categoria.CATEGORIA}
                                 </option>
                             ))}

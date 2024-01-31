@@ -5,7 +5,7 @@ import Sidebar from '@/components/sidebar';
 const AddCategoryOutsourced = () => {
     const [formData, setFormData] = useState({
         nome: '',
-        tipo_documento: [], // Agora é um array para armazenar valores múltiplos
+        tipo_documento: [] as string[], // Agora é um array para armazenar valores múltiplos
     });
 
     const [showModal, setShowModal] = useState(false);
@@ -39,13 +39,13 @@ const AddCategoryOutsourced = () => {
         }));
     };
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
         const { name, value } = e.target;
 
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmitSuccess = async (e) => {
+    const handleSubmitSuccess = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
         if (!formData.nome) {

@@ -376,7 +376,7 @@ const CategoryDocuments = () => {
                     </div>
                   )}
 
-                  {documents.docs.rows.map((document, index) => (
+                  {documents.docs.rows.map((document: any, index) => (
                     <div
                       className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       key={document.id || Math.random().toString()}

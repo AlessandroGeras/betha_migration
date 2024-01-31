@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Users = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [userID, setUserID] = useState('');
+  const [userID, setUserID] = useState<User>({ ID_USUARIO: '' });
   const [documents, setDocuments] = useState({ success: false, docs: { rows: [], count: 0, outsourcedCount: 0 }, });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -19,7 +19,7 @@ const Users = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedFilterValue, setSelectedFilterValue] = useState({});
   const router = useRouter();
-  const [appliedFilterValue, setAppliedFilterValue] = useState('');
+  const [appliedFilterValue, setAppliedFilterValue] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   const [isTokenVerified, setTokenVerified] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -28,6 +28,10 @@ const Users = () => {
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
   const [getAll, setGetAll] = useState(false);
+
+  interface User {
+    ID_USUARIO: string;
+  }
 
 
 
@@ -80,7 +84,7 @@ const Users = () => {
         const updatedDocs = {
           success: true,
           docs: {
-            rows: documents.docs.rows.filter((user) => user.ID_USUARIO !== usuario),
+            rows: documents.docs.rows.filter((user: User) => user.ID_USUARIO !== usuario),
             count: documents.docs.count - 1,
             outsourcedCount: documents.docs.outsourcedCount,
           },
@@ -228,13 +232,16 @@ const Users = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-
+  
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
-          return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          // Verificar se filterValue é do tipo string
+          if (typeof filterValue === 'string') {
+            return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
+          }
         }
-
-        return false; // Se for nulo ou indefinido, não incluir no resultado
+  
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
@@ -245,7 +252,7 @@ const Users = () => {
     setFilterOpen(false);
     setCurrentPage(1);
 
-    const availableValues = handleFilterValue(column);
+    const availableValues: Array<string> = handleFilterValue(column);
 
     if (value === "") {
       value = 'TODOS';
@@ -781,7 +788,7 @@ const Users = () => {
                 </div>
               )}
 
-              {documents.docs.rows.map((document, index) => (
+              {documents.docs.rows.map((document:any, index) => (
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]'>
                   <div
