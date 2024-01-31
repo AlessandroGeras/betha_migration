@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+/instantclient_21_12
 
 # testing
 /coverage
