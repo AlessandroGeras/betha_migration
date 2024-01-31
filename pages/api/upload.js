@@ -9,8 +9,10 @@ export const config = {
   },
 };
 
-export default async (req, res) => {
+// Função de tratamento de requisições
+const handleRequest = async (req, res) => {
   if (req.method === 'POST') {
+    // Se o método HTTP for POST, a solicitação é para fazer upload de um arquivo
     const form = new IncomingForm();
 
     form.parse(req, (err, fields, files) => {
@@ -20,37 +22,37 @@ export default async (req, res) => {
         return;
       }
 
-      // Access the uploaded file through files.anexo
+      // Acessa o arquivo enviado através de files.anexo
       const uploadedFile = files.anexo[0];
 
-      // Specify the directory where you want to save the uploaded files
+      // Especifique o diretório onde você deseja salvar os arquivos enviados
       const uploadDir = path.join(process.cwd(), 'uploads');
 
-      // Create the directory if it doesn't exist
+      // Crie o diretório se ele não existir
       if (!fs.existsSync(uploadDir)) {
         fs.mkdirSync(uploadDir);
       }
 
-      // Generate a unique filename using uuid
+      // Gere um nome de arquivo único usando uuid
       const uniqueFilename = uuidv4();
 
-      // Specify the path where you want to save the uploaded file
+      // Especifique o caminho onde você deseja salvar o arquivo enviado
       const filePath = path.join(uploadDir, `${uniqueFilename}_${uploadedFile.originalFilename}`);
 
-      // Create a read stream from the uploaded file
+      // Crie um fluxo de leitura a partir do arquivo enviado
       const readStream = fs.createReadStream(uploadedFile.filepath);
 
-      // Create a write stream to the destination path
+      // Crie um fluxo de escrita para o caminho de destino
       const writeStream = fs.createWriteStream(filePath);
 
-      // Pipe the read stream to the write stream
+      // Encaminhe o fluxo de leitura para o fluxo de escrita
       readStream.pipe(writeStream);
 
-      // Event handler for when the write stream is finished
+      // Manipulador de eventos para quando o fluxo de escrita for concluído
       writeStream.on('finish', () => {
-        // You can now do whatever you want with the file, e.g., save it to a database
+        // Agora você pode fazer o que quiser com o arquivo, por exemplo, salvá-lo em um banco de dados
 
-        // Send a response back to the client
+        // Envie uma resposta de volta para o cliente
         res.status(200).json({ message: 'File uploaded successfully!', filename: `${uniqueFilename}_${uploadedFile.originalFilename}` });
       });
     });
@@ -62,26 +64,29 @@ export default async (req, res) => {
       return res.status(400).json({ message: 'Bad Request: Filename is required for GET requests.' });
     }
 
-    // Specify the directory where os arquivos foram carregados
+    // Especifique o diretório onde os arquivos foram enviados
     const uploadDir = path.join(process.cwd(), 'uploads');
 
-    // Specify the path to the requested file
+    // Especifique o caminho para o arquivo solicitado
     const filePath = path.join(uploadDir, filename);
 
     try {
-      // Verifica se o arquivo existe
+      // Verifique se o arquivo existe
       fs.accessSync(filePath, fs.constants.F_OK);
 
-      // Create a read stream from the file
+      // Crie um fluxo de leitura a partir do arquivo
       const fileStream = fs.createReadStream(filePath);
 
-      // Pipe the file stream to the response stream
+      // Encaminhe o fluxo de arquivo para o fluxo de resposta
       fileStream.pipe(res);
     } catch (error) {
-      // Se o arquivo não existe, retorna um erro 404
+      // Se o arquivo não existir, retorne um erro 404
       res.status(404).json({ message: 'File not found' });
     }
   } else {
+    // Se o método HTTP não for GET nem POST, retorne um erro 405 (Método não permitido)
     res.status(405).json({ message: 'Method Not Allowed' });
   }
 };
+
+export default handleRequest;

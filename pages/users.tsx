@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
@@ -303,7 +303,7 @@ const Users = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1);
 
     if (searchTerm === '') {
@@ -320,16 +320,17 @@ const Users = () => {
 
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
 
-      setDocuments({
+      setDocuments((prevDocuments) => ({
+        ...prevDocuments,
         success: true,
         docs: {
+          ...prevDocuments.docs,
           rows: sortedRows,
           count: sortedRows.length,
-          outsourcedCount: documents.docs.outsourcedCount,
         },
-      });
+      }));
     }
-  };
+  }, [searchTerm, fetchData, documents.docs.rows, sortColumn, sortOrder, setCurrentPage, setDocuments]);
 
 
   const handleClearSearch = () => {
@@ -463,7 +464,7 @@ const Users = () => {
     };
 
     fetchDataWithFilter();
-  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder,documents.docs.count,router]);
 
   const { success, docs } = documents;
 
@@ -916,7 +917,7 @@ const Users = () => {
 
                 {documents.docs.rows.map((document:any, index) => (
                   /* Tamanho total tabela registros */
-                  <div className='w-[1440px]'>
+                  <div className='w-[1440px]' key={document.id || index}>
                     <div
                       className={`flex text-gray-700 whitespace-nowrap w-[4150px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       key={document.id || Math.random().toString()}

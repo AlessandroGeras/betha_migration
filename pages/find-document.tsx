@@ -126,7 +126,7 @@ const FindDocument = () => {
         if (formData.vencimento === 'Periodo') {
             calculateDaysAntecipation();
         }
-    }, [formData.dataVencimento, formData.vencimento]);
+    }, [formData.dataVencimento, formData.vencimento,calculateDaysAntecipation]);
 
 
 
@@ -225,7 +225,7 @@ const FindDocument = () => {
         };
 
         fetchCategoriaOptions();
-    }, [id]);
+    }, [id,router]);
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();

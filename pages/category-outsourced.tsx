@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { FaTrashAlt } from "react-icons/fa";
@@ -9,9 +9,9 @@ import Link from 'next/link';
 const CategoryOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
   const [documents, setDocuments] = useState<{ success: boolean; docs: { rows: Document[]; count: number; outsourcedCount: number } }>({
-  success: false,
-  docs: { rows: [], count: 0, outsourcedCount: 0 },
-});
+    success: false,
+    docs: { rows: [], count: 0, outsourcedCount: 0 },
+  });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -213,7 +213,7 @@ const CategoryOutsourced = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-  
+
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
           // Verificar se filterValue é do tipo string
@@ -221,7 +221,7 @@ const CategoryOutsourced = () => {
             return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
           }
         }
-  
+
         return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
@@ -356,7 +356,7 @@ const CategoryOutsourced = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1);
 
     if (searchTerm === '') {
@@ -382,7 +382,7 @@ const CategoryOutsourced = () => {
         },
       });
     }
-  };
+  }, [searchTerm, documents, sortColumn, sortOrder, fetchData]);
 
 
   const handleClearSearch = () => {
@@ -517,7 +517,7 @@ const CategoryOutsourced = () => {
     };
 
     fetchDataWithFilter();
-  }, [appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [router, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
 
   const { success, docs } = documents;
 
@@ -681,12 +681,10 @@ const CategoryOutsourced = () => {
                     </div>
                   )}
 
-                  {documents.docs.rows.map((document:any, index) => (
-                    /* Tamanho total tabela registros */
-                    <div className='w-[1440px]'>
+                  {documents.docs.rows.map((document: any, index) => (
+                    <div className='w-[1440px]' key={document.id || index}>
                       <div
                         className={`flex text-gray-700 whitespace-nowrap w-[500px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
-                        key={document.id || Math.random().toString()}
                       >
                         {Object.keys(columnWidths).map((column) => (
                           <div

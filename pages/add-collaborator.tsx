@@ -154,7 +154,7 @@ const AddOutsourced = () => {
         };
 
         fetchCategoriaOptions();
-    }, []);
+    }, [router]);
 
 
     return (

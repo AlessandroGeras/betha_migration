@@ -758,7 +758,7 @@ interface User {
 
     fetchDataWithFilter();
 
-  }, [router.query.due_date, getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [router.query.due_date, getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder,router,due_date]);
 
 
 

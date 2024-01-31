@@ -183,7 +183,7 @@ const AccountUsers = () => {
         };
 
         fetchCategoriaOptions();
-    }, [id]);
+    }, [id,formData,router]);
 
 
     return (

@@ -61,7 +61,7 @@ const FindDocument = () => {
             }
         };
         fetchCategoriaOptions();
-    }, []);
+    }, [router]);
 
    const handleSubmitSuccess = async (e) => {
     e.preventDefault();

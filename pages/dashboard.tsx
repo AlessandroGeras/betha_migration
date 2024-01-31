@@ -66,7 +66,7 @@ const Dashboard = () => {
         };
 
         fetchData();
-    }, []);
+    }, [router,currentPage]);
 
     const { success, docs } = documents;
     const totalPages = Math.ceil((docs?.count ?? 0) / pageSize);

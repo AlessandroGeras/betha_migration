@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
@@ -23,8 +23,6 @@ const CategoryDocuments = () => {
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [isTokenVerified, setTokenVerified] = useState(false);
-
-
 
   const adicionarCategoriaClick = () => {
     router.push('/add-category-documents');
@@ -75,7 +73,7 @@ const CategoryDocuments = () => {
     }
   };
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const token = localStorage.getItem('Token');
       const id = localStorage.getItem('FontanaUser');
@@ -137,12 +135,11 @@ const CategoryDocuments = () => {
       setLoading(false);
       setInitialLoad(false);
     }
-  };
-
+  }, [router, currentPage, pageSize, sortColumn, sortOrder, appliedFilterValue]);
 
   useEffect(() => {
     fetchData();
-  }, [sortColumn, sortOrder]);
+  }, [fetchData]);
 
   const handleSearchByFilter = (column, value) => {
     setSearchTerm(value);
@@ -184,7 +181,7 @@ const CategoryDocuments = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1);
 
     if (searchTerm === '') {
@@ -210,7 +207,7 @@ const CategoryDocuments = () => {
         },
       });
     }
-  };
+  }, [searchTerm, fetchData, documents, sortColumn, sortOrder]);
 
   const handleClearSearch = () => {
     setSearchTerm('');
@@ -264,7 +261,6 @@ const CategoryDocuments = () => {
 
   return (
     <div>
-
       {loading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="loading-content bg-white p-8 mx-auto my-4 rounded-lg w-full h-full relative flex flex-row relative animate-fadeIn">
@@ -277,177 +273,172 @@ const CategoryDocuments = () => {
         </div>
       )}
 
-      {isTokenVerified && (<div>
-        <div className='flex'>
-          <Sidebar />
+      {isTokenVerified && (
+        <div>
+          <div className='flex'>
+            <Sidebar />
 
-          <div className="flex-1" id="Dashboard">
-            <div className="bg-blue-500 text-white p-2 text-left w-full">
-              <span className='ml-2'>Categorias de Documentos</span>
-            </div>
+            <div className="flex-1" id="Dashboard">
+              <div className="bg-blue-500 text-white p-2 text-left w-full">
+                <span className='ml-2'>Categorias de Documentos</span>
+              </div>
 
-            {documents.success && (
-              <div className=''>
-                <div className="flex items-center my-4">
-                  <input
-                    placeholder="Pesquisa rápida"
-                    type="text"
-                    value={searchTerm}
-                    onChange={handleSearchTermChange}
-                    onKeyPress={handleKeyPress}
-                    className="border border-gray-300 px-2 py-1"
-                  />
-                  <button
-                    onClick={handleSearch}
-                    className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                  >
-                    Pesquisar
-                  </button>
-                  <button
-                    onClick={handleClearSearch}
-                    className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
-                  >
-                    Limpar Pesquisa
-                  </button>
-                  <button
-                    className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
-                    onClick={adicionarCategoriaClick}
-                  >
-                    <IoMdAdd className='text-xl mt-0.5' /> Nova Categoria
-                  </button>
-                </div>
-
-                <div className="flex flex-col h-[550px] overflow-x-scroll overflow-y-auto">
-                  <div className="flex text-gray-500 bg-white ">
-                    {Object.keys(columnWidths).map((column) => (
-                      <div
-                        key={column}
-                        className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                        style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
-                        onClick={(event) => handleSort(column, event)}
-                      >
-                        {columnLabels[column]}
-                        <div className='ml-auto flex'>
-                          {column !== '' && (
-                            <>
-                              {sortColumn === column && (
-                                sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
-                              )}
-                              {/* <PiFunnelLight
-                            className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleSort(column, e);
-                            }}
-                          /> */}
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    ))}
+              {documents.success && (
+                <div className=''>
+                  <div className="flex items-center my-4">
+                    <input
+                      placeholder="Pesquisa rápida"
+                      type="text"
+                      value={searchTerm}
+                      onChange={handleSearchTermChange}
+                      onKeyPress={handleKeyPress}
+                      className="border border-gray-300 px-2 py-1"
+                    />
+                    <button
+                      onClick={handleSearch}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Pesquisar
+                    </button>
+                    <button
+                      onClick={handleClearSearch}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-red-500 text-white"
+                    >
+                      Limpar Pesquisa
+                    </button>
+                    <button
+                      className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                      onClick={adicionarCategoriaClick}
+                    >
+                      <IoMdAdd className='text-xl mt-0.5' /> Nova Categoria
+                    </button>
                   </div>
 
-                  {filterOpen && (
-                    <div className={`flex text-gray-500 bg-white`}>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
-                        <div className="flex items-center">
-                        </div>
-                      </div>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
-                        <select
-                          value={selectedFilterValue}
-                          onChange={(e) => setSelectedFilterValue(e.target.value)}
-                          className="border border-gray-300 px-2 py-1 rounded"
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('CATEGORIA').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue)}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
-                    </div>
-                  )}
-
-                  {documents.docs.rows.map((document: any, index) => (
-                    <div
-                      className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
-                      key={document.id || Math.random().toString()}
-                    >
+                  <div className="flex flex-col h-[550px] overflow-x-scroll overflow-y-auto">
+                    <div className="flex text-gray-500 bg-white ">
                       {Object.keys(columnWidths).map((column) => (
                         <div
                           key={column}
-                          className={`column-cell border border-gray-300 py-2 pl-1`}
+                          className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
                           style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                          onClick={(event) => handleSort(column, event)}
                         >
-                          {column === '' ? (
-                            <Link href={{ pathname: '/find-category-documents', query: { id: document.CATEGORIA } }}>
-                              <IoIosSearch className='text-xl mt-0.5' />
-                            </Link>
-                          ) : (
-                            document[column]
-                          )}
+                          {columnLabels[column]}
+                          <div className='ml-auto flex'>
+                            {column !== '' && (
+                              <>
+                                {sortColumn === column && (
+                                  sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                                )}
+                              </>
+                            )}
+                          </div>
                         </div>
                       ))}
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
-            <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
-              <button
-                onClick={goToPreviousPage}
-                disabled={currentPage === 1}
-                className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
-              >
-                Página Anterior
-              </button>
-              <div className="flex items-center">
-                <span className="mr-2">Registros por página:</span>
+                    {filterOpen && (
+                      <div className={`flex text-gray-500 bg-white`}>
+                        <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
+                          <div className="flex items-center">
+                          </div>
+                        </div>
+                        <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
+                          <select
+                            value={selectedFilterValue}
+                            onChange={(e) => setSelectedFilterValue(e.target.value)}
+                            className="border border-gray-300 px-2 py-1 rounded"
+                          >
+                            <option value="">Todos</option>
+                            {handleFilterValue('CATEGORIA').map((value) => (
+                              <option key={value} value={value}>
+                                {value}
+                              </option>
+                            ))}
+                          </select>
+                          <button
+                            onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue)}
+                            className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                          >
+                            Aplicar
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {documents.docs.rows.map((document:any, index) => (
+                      <div
+                        className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        key={document.id || Math.random().toString()}
+                      >
+                        {Object.keys(columnWidths).map((column) => (
+                          <div
+                            key={column}
+                            className={`column-cell border border-gray-300 py-2 pl-1`}
+                            style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                          >
+                            {column === '' ? (
+                              <Link href={{ pathname: '/find-category-documents', query: { id: document.CATEGORIA } }}>
+                                <IoIosSearch className='text-xl mt-0.5' />
+                              </Link>
+                            ) : (
+                              document[column]
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4">
                 <button
-                  onClick={() => handlePageSizeChange(10)}
-                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+                  onClick={goToPreviousPage}
+                  disabled={currentPage === 1}
+                  className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
                 >
-                  10
+                  Página Anterior
                 </button>
+                <div className="flex items-center">
+                  <span className="mr-2">Registros por página:</span>
+                  <button
+                    onClick={() => handlePageSizeChange(10)}
+                    className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+                  >
+                    10
+                  </button>
+                  <button
+                    onClick={() => handlePageSizeChange(25)}
+                    className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+                  >
+                    25
+                  </button>
+                  <button
+                    onClick={() => handlePageSizeChange(50)}
+                    className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+                  >
+                    50
+                  </button>
+                  <button
+                    onClick={() => handlePageSizeChange(100)}
+                    className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+                  >
+                    100
+                  </button>
+                </div>
                 <button
-                  onClick={() => handlePageSizeChange(25)}
-                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+                  onClick={goToNextPage}
+                  disabled={currentPage === totalPages}
+                  className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
                 >
-                  25
-                </button>
-                <button
-                  onClick={() => handlePageSizeChange(50)}
-                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
-                >
-                  50
-                </button>
-                <button
-                  onClick={() => handlePageSizeChange(100)}
-                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
-                >
-                  100
+                  Próxima Página
                 </button>
               </div>
-              <button
-                onClick={goToNextPage}
-                disabled={currentPage === totalPages}
-                className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === totalPages ? 'invisible' : ''}`}
-              >
-                Próxima Página
-              </button>
             </div>
           </div>
         </div>
-      </div>)}
+      )}
     </div>
   );
 };

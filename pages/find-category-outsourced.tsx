@@ -170,7 +170,7 @@ const AddOutsourced = () => {
     };
 
     fetchCategoriaOptions();
-}, [id]);
+}, [id,router]);
 
     return (
         <div className="flex h-screen">

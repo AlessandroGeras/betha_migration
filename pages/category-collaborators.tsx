@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { useRouter } from 'next/router';
@@ -22,8 +22,6 @@ const CatergoyOutsourced = () => {
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [isTokenVerified, setTokenVerified] = useState(false);
-
-
 
   const adicionarCategoriaClick = () => {
     router.push('/add-category-collaborators');
@@ -79,7 +77,6 @@ const CatergoyOutsourced = () => {
       const token = localStorage.getItem('Token');
 
       if (!token) {
-        // Se o token não estiver presente, redirecione para a página de login
         console.log("sem token");
         router.push('/login');
         return;
@@ -101,7 +98,6 @@ const CatergoyOutsourced = () => {
         setTokenVerified(true);  
       }   
   
-      // Se houver um filtro aplicado, filtre os dados usando o filtro
       const filteredRows = appliedFilterValue
         ? data.docs.rows.filter((document) =>
             Object.values(document).some((docValue) => {
@@ -115,7 +111,6 @@ const CatergoyOutsourced = () => {
   
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
   
-      // Armazene os dados originais
       setOriginalData(data.docs.rows);
   
       setDocuments({
@@ -139,7 +134,7 @@ const CatergoyOutsourced = () => {
     fetchData();
   }, [sortColumn, sortOrder]);
 
-  const handleSearchByFilter = (column, value) => {
+  const handleSearchByFilter = (value) => {
     setSearchTerm(value);
     setFilterOpen(false);
     setCurrentPage(1);
@@ -179,7 +174,7 @@ const CatergoyOutsourced = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1);
 
     if (searchTerm === '') {
@@ -205,7 +200,7 @@ const CatergoyOutsourced = () => {
         },
       });
     }
-  };
+  }, [documents, fetchData, searchTerm, sortColumn, sortOrder]);
 
   const handleClearSearch = () => {
     setSearchTerm('');
@@ -359,7 +354,7 @@ const CatergoyOutsourced = () => {
                         ))}
                       </select>
                       <button
-                        onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue)}
+                        onClick={() => handleSearchByFilter(selectedFilterValue)}
                         className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                       >
                         Aplicar
@@ -368,7 +363,7 @@ const CatergoyOutsourced = () => {
                 </div>
               )}
 
-              {documents.docs.rows.map((document: any, index) => (
+              {documents.docs.rows.map((document:any, index) => (
                 <div
                   className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   key={document.id || Math.random().toString()}

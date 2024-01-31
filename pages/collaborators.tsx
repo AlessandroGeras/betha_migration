@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { FaTrashAlt } from "react-icons/fa";
@@ -391,9 +391,9 @@ const Collaborators = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1);
-
+  
     if (searchTerm === '') {
       fetchData();
     } else {
@@ -405,9 +405,9 @@ const Collaborators = () => {
           return key !== '' && String(value).toLowerCase() === searchTerm.toLowerCase();
         })
       );
-
+  
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-
+  
       setDocuments({
         success: true,
         docs: {
@@ -417,7 +417,7 @@ const Collaborators = () => {
         },
       });
     }
-  };
+  }, [searchTerm, documents, sortColumn, sortOrder, fetchData]);
 
 
   const handleClearSearch = () => {
@@ -484,15 +484,15 @@ const Collaborators = () => {
         if (getAll && documents.docs.count > 100) {
           setLoading(true);
         }
-
+  
         const token = localStorage.getItem('Token');
-
+  
         if (!token) {
           // Se o token não estiver presente, redirecione para a página de login
           router.push('/login');
           return;
         }
-
+  
         const response = await fetch(`/api/collaborators?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
@@ -500,7 +500,7 @@ const Collaborators = () => {
           },
           body: JSON.stringify({ token, getAll }),
         });
-
+  
         const data = await response.json();
         if (response.status === 401) {
           router.push('/login');
@@ -508,33 +508,33 @@ const Collaborators = () => {
         else {
           setTokenVerified(true);
         }
-
+  
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-
+  
           // Verificar se o valor do filtro é 'TODOS'
           if (filterColumnValue === 'TODOS') {
             return filteredData; // Não aplicar filtro se for 'TODOS'
           }
-
+  
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
-
+  
             // Verificar se o valor da coluna não é nulo antes de chamar toString()
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
-
+  
             return false; // Se for nulo ou indefinido, não incluir no resultado
           });
         }, data.docs.rows);
-
+  
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-
+  
         // Armazene os dados originais
         setOriginalData(data.docs.rows);
-
+  
         setDocuments({
           success: data.success,
           docs: {
@@ -549,9 +549,10 @@ const Collaborators = () => {
         setLoading(false);
       }
     };
-
+  
     fetchDataWithFilter();
-  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder, documents.docs.count, router]);
+  
 
   const { success, docs } = documents;
 
@@ -912,7 +913,7 @@ const Collaborators = () => {
 
               {documents.docs.rows.map((document:any, index) => (
                 /* Tamanho total tabela registros */
-                <div className='w-[1440px]'>
+                <div className='w-[1440px]' key={document.id || index}>
                   <div
                     className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
