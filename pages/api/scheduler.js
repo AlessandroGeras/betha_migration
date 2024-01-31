@@ -17,7 +17,7 @@ cron.schedule('02 14 * * 0-7', async () => {
     console.log("Serviço de cobrança de e-mails ativo");
 
     // Fazer o fetch para a API
-    const response = await fetch('http://localhost:3000/api/send-mail-documents', {
+    const response = await fetch('/api/send-mail-documents', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

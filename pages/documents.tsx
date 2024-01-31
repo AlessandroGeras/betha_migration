@@ -792,7 +792,7 @@ interface User {
   const cobrarDocumentosClick = async () => {
 
     try {
-      const response = await fetch('http://localhost:3000/api/scheduler', {
+      const response = await fetch('/api/scheduler', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -827,7 +827,7 @@ interface User {
     closeModal();
 
     try {
-      const response = await fetch('http://localhost:3000/api/send-mail-documents', {
+      const response = await fetch('/api/send-mail-documents', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
