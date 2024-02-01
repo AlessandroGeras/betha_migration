@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://192.168.0.224:5051/api/login', {
+      const response = await fetch('http://192.168.0.224:5051/api/teste', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,7 +26,8 @@ const Login = () => {
 
       if (response.ok) {        
         const data = await response.json();
-        console.log(data.role);
+        console.log(response);
+        console.log(data);
         localStorage.setItem('role', data.role);
         localStorage.setItem('FontanaUser', username);
         localStorage.setItem('Token', data.token);
