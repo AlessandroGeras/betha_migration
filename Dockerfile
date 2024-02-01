@@ -7,8 +7,8 @@ WORKDIR /usr/src/app
 
 WORKDIR /tmp
 RUN apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get install -y alien libaio1 cifs-utils
-RUN wget https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.3-ba>RUN alien -i --scripts oracle-instantclient*.rpm
-RUN rm -f oracle-instantclient19.3*.rpm && apt-get -y autoremove && apt-get -y clean
+RUN wget https://download.oracle.com/otn_software/linux/instantclient/2113000/oracle-instantclient-basic-21.13.0.0.0-1.el8.x86_64.rpm>RUN alien -i --scripts oracle-instantclient*.rpm
+RUN rm -f oracle-instantclient-basic-21.13*.rpm && apt-get -y autoremove && apt-get -y clean
 
 # Copie o package.json e o package-lock.json (se existir)
 COPY package*.json ./
