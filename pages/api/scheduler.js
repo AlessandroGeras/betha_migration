@@ -9,7 +9,7 @@ import { format } from 'date-fns';
 dotenv.config();
 
 Oracledb.initOracleClient({
-  libDir: '../../instantclient_21_12',
+  libDir: '../../../opt/oracle/instantclient_19_16',
 });
 
 cron.schedule('02 14 * * 0-7', async () => {

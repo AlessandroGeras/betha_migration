@@ -7,7 +7,7 @@ dotenv.config();
 
 //Oracle Instant Client
 Oracledb.initOracleClient({
-  libDir: '../../instantclient_21_12',
+  libDir: '../../../opt/oracle/instantclient_19_16',
 });
 
 export default async function handler(req, res) {

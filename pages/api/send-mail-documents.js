@@ -10,7 +10,7 @@ const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = req
 dotenv.config();
 
 Oracledb.initOracleClient({
-  libDir: '../../instantclient_21_12',
+  libDir: '../../../opt/oracle/instantclient_19_16',
 });
 
 export default async function handler(req, res) {

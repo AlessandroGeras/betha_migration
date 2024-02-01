@@ -9,8 +9,8 @@ import jwt from 'jsonwebtoken';
 dotenv.config();
 
 Oracledb.initOracleClient({
-    libDir: '../../instantclient_21_12',
-});
+    libDir: '../../../opt/oracle/instantclient_19_16',
+  });
 
 const getAllDocs = async (pageSize) => {
     let allDocs = [];
