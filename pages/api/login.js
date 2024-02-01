@@ -16,7 +16,7 @@ Oracledb.initOracleClient({
 }); */
 
 Oracledb.initOracleClient({
-  libDir: '../../instantclient_19_16',
+  libDir: '../../../opt/oracle/instantclient_19_16',
 });
 
 export default async function handler(req, res) {
