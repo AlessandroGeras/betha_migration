@@ -9,8 +9,14 @@ import jwt from 'jsonwebtoken';  // Importe o módulo JWT
 
 dotenv.config();
 
+/* const path = require('path');
+const oracleLibDir = path.resolve('/opt/oracle/instantclient_19_16');
 Oracledb.initOracleClient({
-  libDir: '../../../../opt/oracle/instantclient_19_16',
+    libDir: oracleLibDir,
+}); */
+
+Oracledb.initOracleClient({
+  libDir: '/opt/oracle/instantclient_19_16',
 });
 
 export default async function handler(req, res) {
