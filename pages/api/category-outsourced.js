@@ -12,6 +12,8 @@ Oracledb.initOracleClient({
   libDir: '../../../opt/oracle/instantclient_19_16',
 });
 
+// Oraclebd.initOracleClient({ libdir: "C:\\instantclient_19_64Bits" });
+
 const getAllDocs = async (pageSize) => {
   let allDocs = [];
   let offset = 0;
