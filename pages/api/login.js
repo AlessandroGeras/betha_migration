@@ -16,7 +16,7 @@ Oracledb.initOracleClient({
 }); */
 
 Oracledb.initOracleClient({
-  libDir: '/projeto_portal_terceiro/Miner/instantclient_19_16',
+  libDir: '../../instantclient_19_16',
 });
 
 export default async function handler(req, res) {
