@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       report = error;
       console.error('Erro ao inicializar o cliente Oracle:', error); // Exibe o erro no console
     }
-
+ 
     res.status(200).json({ report });
   }
 }

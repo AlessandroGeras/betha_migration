@@ -16,7 +16,7 @@ Oracledb.initOracleClient({
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { username, password } = req.body;
-    let connection,permission;
+    let connection,permission; 
 
     try {
       connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
