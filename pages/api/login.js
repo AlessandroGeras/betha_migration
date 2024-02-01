@@ -14,15 +14,15 @@ try {
   Oracledb.initOracleClient({
     libDir: '/usr/lib/oracle/21/client64',
   });
-  res.status(200).json({ Sucesso:'Cliente Oracle inicializado com sucesso.' });
+  report = 'Cliente Oracle inicializado com sucesso.';
 } catch (error) {
-  res.status(403).json({ error });
+  report = error;
 }
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { username, password } = req.body;
-    let connection,permission;
+    let connection, permission;
 
     try {
       connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
@@ -44,37 +44,38 @@ export default async function handler(req, res) {
           const userData = {
             username: usuariointerno.ID_USUARIO,
             email: usuariointerno.ST_EMAIL,
-            nomeUsuario: usuariointerno.NM_USUARIO,};
+            nomeUsuario: usuariointerno.NM_USUARIO,
+          };
 
-            switch(usuariointerno.ID_ADM_GESTAO_TERCEIROS.trim()) {              
-              case '0':
-                console.log("Opção 0 - Sem permissão para acesso");
-                res.status(404).json({ error: 'Usuário não tem permissão para acessar.' });
-                break;
-              case '1':
-                console.log("Opção 1 - Permissão de leitura");
-                permission = "read";
-                break;
-              case '2':
-                console.log("Opção 2 - Admin");
-                permission = "admin";
-                break;
-              default:
-                console.log("Opção inválida: " + usuariointerno.ID_ADM_GESTAO_TERCEIROS);
-            }
-          
+          switch (usuariointerno.ID_ADM_GESTAO_TERCEIROS.trim()) {
+            case '0':
+              console.log("Opção 0 - Sem permissão para acesso");
+              res.status(404).json({ error: 'Usuário não tem permissão para acessar.' });
+              break;
+            case '1':
+              console.log("Opção 1 - Permissão de leitura");
+              permission = "read";
+              break;
+            case '2':
+              console.log("Opção 2 - Admin");
+              permission = "admin";
+              break;
+            default:
+              console.log("Opção inválida: " + usuariointerno.ID_ADM_GESTAO_TERCEIROS);
+          }
+
           const token = jwt.sign({ userId: usuariointerno.id }, process.env.SECRET, { expiresIn: '5h' });
           const role = "internal";
 
           // Defina os cabeçalhos CORS manualmente
           res.setHeader('Access-Control-Allow-Origin', '*');
           res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, POST, GET, DELETE, PUT');
-          res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept');          
+          res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept');
 
           // Envie os dados do usuário e o token JWT
-          res.status(200).json({ userData, token,role,permission });
+          res.status(200).json({ userData, token, role, permission });
         } else {
-          res.status(403).json({ error: 'Usuário ou senha inválido.' });
+          res.status(403).json({ report });
         }
       } else {
         const usuarioexterno = await outsourceds.findOne({
@@ -84,7 +85,7 @@ export default async function handler(req, res) {
             ID_USUARIO_INTERNO: 'N',
           },
         });
-        
+
 
         if (usuarioexterno) {
           const storedHashedPassword = usuarioexterno.dataValues.DS_SENHA;
@@ -96,7 +97,7 @@ export default async function handler(req, res) {
               email: usuarioexterno.ST_EMAIL,
               nomeUsuario: usuarioexterno.NM_USUARIO,
             };
-            
+
             const token = jwt.sign({ userId: usuarioexterno.id }, process.env.SECRET, { expiresIn: '5h' });
             const role = "external";
             permission = "outsourced";
@@ -104,15 +105,15 @@ export default async function handler(req, res) {
             // Defina os cabeçalhos CORS manualmente
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, POST, GET, DELETE, PUT');
-            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept');            
+            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept');
 
             // Envie os dados do usuário e o token JWT
-            res.status(200).json({ userData, token,role,permission });
+            res.status(200).json({ userData, token, role, permission });
           } else {
             if (usuarioexterno.dataValues.DS_SENHA === 'InformarSenha') {
               res.status(401).json({ error: 'Esse é seu primeiro acesso. Clique em "Esqueceu a senha?" para obter uma senha válida.' });
             } else {
-              res.status(403).json({ error: 'Usuário ou senha inválido.' });
+              res.status(403).json({ report });
             }
           }
         } else {
@@ -120,8 +121,7 @@ export default async function handler(req, res) {
         }
       }
     } catch (error) {
-      console.error('Falha ao consultar o banco de dados:', error);
-      res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
+      res.status(500).json({ report });
     } finally {
       if (connection) {
         await connection.close();
