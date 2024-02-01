@@ -11,7 +11,7 @@ dotenv.config();
 
 try {
   Oracledb.initOracleClient({
-    libDir: '../../../opt/oracle/instantclient_19_16',
+    libDir: '/usr/lib/oracle/21/client64/lib',
   });
   console.log('Cliente Oracle inicializado com sucesso.');
 } catch (error) {
