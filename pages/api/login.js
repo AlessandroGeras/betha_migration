@@ -15,7 +15,7 @@ Oracledb.initOracleClient({
     libDir: oracleLibDir,
 }); */
 
-Oraclebd.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

@@ -10,9 +10,7 @@ import categoria_terceiros from '../../models/categoryOutsourced';
 
 dotenv.config();
 
-Oracledb.initOracleClient({
-    libDir: '../../../opt/oracle/instantclient_19_16',
-  });
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 const getAllDocs = async (pageSize) => {
     let allDocs = [];
