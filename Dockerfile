@@ -1,19 +1,17 @@
 # Use a imagem oficial do Node.js versão 20 como base
-# FROM node:18
-FROM node:latest
+FROM node:18
 
 # Crie e defina o diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
 
 # Copie o package.json e o package-lock.json (se existir)
-# COPY package*.json ./
-COPY . .
+COPY package*.json ./
 
 # Instale as dependências
 RUN npm install
 
 # Copie os arquivos da aplicação para o diretório de trabalho
-#COPY . .
+COPY . .
 
 # Construa o projeto Next.js
 RUN npm run build
