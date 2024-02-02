@@ -1,21 +1,15 @@
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
+const Oracledb = require("oracledb");
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-if (Oracledb) {
-  console.log('O pacote oracledb foi importado com sucesso.');
-} else {
-  console.error('Falha ao importar o pacote oracledb.');
-}
-
-
-dotenv.config();
 
 Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
+
+dotenv.config();
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
