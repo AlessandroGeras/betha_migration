@@ -4,7 +4,13 @@ import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';  // Importe o módulo JWT
+import jwt from 'jsonwebtoken';
+
+if (Oracledb) {
+  console.log('O pacote oracledb foi importado com sucesso.');
+} else {
+  console.error('Falha ao importar o pacote oracledb.');
+}
 
 
 dotenv.config();
