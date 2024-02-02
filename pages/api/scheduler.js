@@ -8,9 +8,7 @@ import { format } from 'date-fns';
 
 dotenv.config();
 
-Oracledb.initOracleClient({
-  libDir: '../../../opt/oracle/instantclient_19_16',
-});
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 cron.schedule('02 14 * * 0-7', async () => {
   try {

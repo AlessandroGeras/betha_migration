@@ -8,9 +8,7 @@ import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
-Oracledb.initOracleClient({
-  libDir: '../../../opt/oracle/instantclient_19_16',
-});
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 // Oraclebd.initOracleClient({ libdir: "C:\\instantclient_19_64Bits" });
 

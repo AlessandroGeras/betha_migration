@@ -9,9 +9,7 @@ import jwt from 'jsonwebtoken';  // Importe o módulo JWT
 
 dotenv.config();
 
-Oracledb.initOracleClient({
-  libDir: '../../../opt/oracle/instantclient_19_16',
-});
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

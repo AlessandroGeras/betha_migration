@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-Oraclebd.initOracleClient({ libDir: '../../../opt/oracle/instantclient_19_16' });
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 const connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
   host: process.env.HOST,

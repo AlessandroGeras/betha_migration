@@ -9,9 +9,7 @@ const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = req
 
 dotenv.config();
 
-Oracledb.initOracleClient({
-  libDir: '../../../opt/oracle/instantclient_19_16',
-});
+Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 
 // Função para calcular o próximo vencimento
