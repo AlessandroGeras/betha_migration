@@ -10,9 +10,6 @@ COPY package*.json ./
 # Instale as dependências
 RUN npm install
 
-# Instale a biblioteca oracledb
-RUN npm install oracledb
-
 # Copie os arquivos da aplicação para o diretório de trabalho
 COPY . .
 
