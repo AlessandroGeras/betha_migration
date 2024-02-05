@@ -1,6 +1,6 @@
 # Use a imagem oficial do Node.js versão 20 como base
 # FROM node:18
-FROM  levonet/instantclient-node:19.6-10-slim
+FROM  ghcr.io/oracle/oraclelinux8-instantclient:19
 
 # Crie e defina o diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
