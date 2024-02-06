@@ -1,7 +1,8 @@
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
-import Sequelize from 'sequelize-oracle';
-import dotenv from 'dotenv';
+//import Sequelize from 'sequelize-oracle';
+//import dotenv from 'dotenv';
+import connection from '../../config/database.mjs';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -23,10 +24,7 @@ export default async function handler(req, res) {
     let connection,permission;
 
     try {
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-      });
+      await sequelize.authenticate();
 
       const usuariointerno = await users.findOne({
         where: {
