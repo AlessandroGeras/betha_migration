@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
+Oracledb.initOracleClient( {libdir: '/opt/oracle/instantclient_21_13'} )
 
 dotenv.config();
 
