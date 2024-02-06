@@ -1,7 +1,6 @@
 import categoria_documentos from '../../models/categoryDocuments';
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
-import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -64,19 +63,10 @@ export default async function handler(req, res) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
         }
 
-        let connection;
-
         try {
-            jwt.verify(token, process.env.SECRET);
+            jwt.verify(token, process.env.SECRET);           
 
-            // Estabeleça a conexão com o Oracle
-            connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-                host: process.env.HOST,
-                dialect: process.env.DIALECT || 'oracle',
-            });
-
-            // Verificar se a conexão foi bem-sucedida
-            await connection.authenticate();
+            
 
             findAdmin = await users.findOne({
                 where: {
@@ -156,10 +146,7 @@ export default async function handler(req, res) {
                 res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
             }
         } finally {
-            // Fechar a conexão no final, se estiver aberta
-            if (connection) {
-                connection.close();
-            }
+            // Fechar a conexão no final, se estiver aberta            
         }
     }
 }

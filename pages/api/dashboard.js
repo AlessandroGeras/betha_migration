@@ -139,10 +139,7 @@ export default async function handler(req, res) {
         res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
       }
     } finally {
-      // Feche a conexão após a execução
-      if (connection) {
-        await connection.close();
-      }
+      // Feche a conexão após a execução      
     }
   }
 }
