@@ -1,13 +1,10 @@
 import categoria_documentos from '../../models/categoryDocuments';
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 const getAllDocs = async (pageSize) => {
     let allDocs = [];

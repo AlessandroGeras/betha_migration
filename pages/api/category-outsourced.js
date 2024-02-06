@@ -1,16 +1,10 @@
 import categoria_terceiros from '../../models/categoryOutsourced';
 import users from '../../models/users';
-import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
-
-// Oraclebd.initOracleClient({ libdir: "C:\\instantclient_19_64Bits" });
 
 const getAllDocs = async (pageSize) => {
   let allDocs = [];
