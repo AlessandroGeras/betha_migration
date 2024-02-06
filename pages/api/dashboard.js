@@ -2,13 +2,10 @@ import connection from "../../config/database.mjs";
 import documents from '../../models/documents';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
