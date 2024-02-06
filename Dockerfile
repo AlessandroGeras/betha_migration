@@ -1,9 +1,16 @@
-# Use a imagem oficial do Node.js versão 20 como base
-# FROM node:18
-FROM  ghcr.io/oracle/oraclelinux8-instantclient:19
+FROM node:18-buster-slim
 
-# Crie e defina o diretório de trabalho dentro do contêiner
-WORKDIR /usr/src/app
+WORKDIR /opt/oracle
+
+RUN apt-get update && \
+    apt-get install -y libaio1 unzip wget
+RUN wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip && \
+    unzip instantclient-basiclite-linuxx64.zip && \
+    rm -f instantclient-basiclite-linuxx64.zip && \
+    cd instantclient* && \
+    rm -f *jdbc* *occi* *mysql* *jar uidrvci genezi adrci && \
+    echo /opt/oracle/instantclient* > /etc/ld.so.conf.d/oracle-instantclient.conf && \
+    ldconfig
 
 # Copie o package.json e o package-lock.json (se existir)
 COPY package*.json ./
