@@ -3,7 +3,7 @@ import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';z
 
 dotenv.config();
 

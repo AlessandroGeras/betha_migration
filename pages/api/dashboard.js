@@ -1,5 +1,5 @@
+import connection from "../../config/database.mjs";
 import documents from '../../models/documents';
-import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
@@ -19,16 +19,8 @@ export default async function handler(req, res) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
     }
 
-    let connection;
-
     try {
-      jwt.verify(token, process.env.SECRET);
-
-      // Estabeleça a conexão com o Oracle
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-      });
+      jwt.verify(token, process.env.SECRET);      
 
       if (role == "external") {
         findOutsourced = await outsourceds.findOne({
