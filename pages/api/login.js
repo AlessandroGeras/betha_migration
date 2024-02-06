@@ -1,4 +1,4 @@
-import connection from "./db"; // Importa a conexão do arquivo db.js
+import connection from "../../config/database.mjs"; // Importa a conexão do arquivo db.js
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
