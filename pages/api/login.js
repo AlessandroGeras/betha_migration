@@ -5,7 +5,7 @@ import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-
+console.log(Oracledb);
 
 Oracledb.initOracleClient( {libdir: '/opt/oracle/instantclient_21_13'} )
 
