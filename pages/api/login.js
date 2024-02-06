@@ -1,17 +1,24 @@
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-console.log(Oracledb);
+import { error } from 'console';
 
-Oracledb.initOracleClient( {libdir: '/opt/oracle/instantclient_21_13'} )
+
+
 
 dotenv.config();
 
 export default async function handler(req, res) {
+  const Oracledb = require("oracledb");
+  try {
+    Oracledb.initOracleClient( {libdir: '/opt/oracle/instantclient_21_13'} )
+  } catch (error) {
+    console.error('Oracle connection');
+    console.error(error);
+  }
   if (req.method === 'POST') {
     const { username, password } = req.body;
     let connection,permission;
