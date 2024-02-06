@@ -4,21 +4,20 @@ import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { error } from 'console';
-
-
-
 
 dotenv.config();
 
-export default async function handler(req, res) {
-  const Oracledb = require("oracledb");
-  try {
-    Oracledb.initOracleClient( {libdir: '/opt/oracle/instantclient_21_13'} )
-  } catch (error) {
-    console.error('Oracle connection');
-    console.error(error);
-  }
+const oraclebd = require("oracledb")
+
+try {
+	await oraclebd.initOracleClient({ libDir: "/opt/oracle/instantclient_21_13" })
+} catch (error) {
+	console.error("Oracle connection")
+	console.error(error)
+}
+
+
+export default async function handler(req, res) {  
   if (req.method === 'POST') {
     const { username, password } = req.body;
     let connection,permission;
