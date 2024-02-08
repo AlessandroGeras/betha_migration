@@ -620,7 +620,7 @@ const CategoryOutsourced = () => {
 
                 <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
                   {/* Cabeçalho */}
-                  <div className="flex text-gray-500 bg-white w-[600px]">
+                  <div className="flex text-gray-500 bg-white w-[559pxpx]">
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
@@ -650,7 +650,7 @@ const CategoryOutsourced = () => {
                   </div>
 
                   {filterOpen && (
-                    <div className={`flex text-gray-500 w-[600px]`}>
+                    <div className={`flex text-gray-500 w-[559pxpx]`}>
                       <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                         <div className="flex items-center">
                         </div>
@@ -684,7 +684,7 @@ const CategoryOutsourced = () => {
                   {documents.docs.rows.map((document: any, index) => (
                     <div className='w-[1440px]' key={document.id || index}>
                       <div
-                        className={`flex text-gray-700 whitespace-nowrap w-[600px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        className={`flex text-gray-700 whitespace-nowrap w-[559pxpx] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       >
                         {Object.keys(columnWidths).map((column) => (
                           <div
@@ -692,7 +692,7 @@ const CategoryOutsourced = () => {
                             className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === '' ? (<div className='flex justify-center bg-red-500'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
+                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
                               <button onClick={() => deleteCategoria(document.CATEGORIA)}>
