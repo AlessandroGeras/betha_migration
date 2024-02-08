@@ -105,7 +105,7 @@ const CategoryOutsourced = () => {
 
 
   const columnWidths = {
-    '': '100px',
+    '': '59px',
     'CATEGORIA': '500px',
   };
 
@@ -651,7 +651,7 @@ const CategoryOutsourced = () => {
 
                   {filterOpen && (
                     <div className={`flex text-gray-500 w-[500px]`}>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '40px' }}>
                         <div className="flex items-center">
                         </div>
                       </div>
