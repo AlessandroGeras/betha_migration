@@ -420,8 +420,8 @@ const CatergoyOutsourced = () => {
               </button>
             </div>
 
-            <div className="flex flex-col h-[550px] overflow-x-scroll overflow-y-auto">
-              <div className="flex text-gray-500 bg-white ">
+            <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
+              <div className="flex text-gray-500 bg-white w-[500px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
