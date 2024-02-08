@@ -651,7 +651,7 @@ const CategoryOutsourced = () => {
 
                   {filterOpen && (
                     <div className={`flex text-gray-500 w-[500px]`}>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '40px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                         <div className="flex items-center">
                         </div>
                       </div>
@@ -692,7 +692,7 @@ const CategoryOutsourced = () => {
                             className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
+                            {column === '' ? (<div className='flex justify-center w-[100px]'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
                               <button onClick={() => deleteCategoria(document.CATEGORIA)}>
