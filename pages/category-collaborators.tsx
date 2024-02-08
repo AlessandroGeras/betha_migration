@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Link from 'next/link';
+
 
 const CatergoyOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({
+  const [documents, setDocuments] = useState<{ success: boolean; docs: { rows: Document[]; count: number; outsourcedCount: number } }>({
     success: false,
     docs: { rows: [], count: 0, outsourcedCount: 0 },
   });
@@ -22,6 +25,75 @@ const CatergoyOutsourced = () => {
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [isTokenVerified, setTokenVerified] = useState(false);
+  const [filteredData, setFilteredData] = useState<Item[]>([]);
+  const [showModal, setShowModal] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e');
+
+  interface Item {
+    CATEGORIA: string; // Adicione outras propriedades, se houver
+  }
+
+  interface Document {
+    CATEGORIA: string;
+  }
+
+  const deleteCategoria = async (categoria) => {
+    try {
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const response = await fetch(`/api/delete-category-collaborator?page=${currentPage}&pageSize=${pageSize}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, categoria }),
+      });
+
+      const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      }
+      else {
+        setTokenVerified(true);
+
+        // Se a exclusão for bem-sucedida, atualize o estado local
+        if (data.success) {
+          // Remova a categoria excluída de documents.docs.rows
+          const updatedRows = documents.docs.rows.filter(row => row.CATEGORIA !== categoria);
+
+          setDocuments(prevDocuments => ({
+            ...prevDocuments,
+            docs: {
+              ...prevDocuments.docs,
+              rows: updatedRows,
+              count: updatedRows.length,
+            },
+          }));
+
+          // Se estiver usando filtros, atualize também o estado de filteredData
+          if (filteredData.length > 0) {
+            const updatedFilteredData = filteredData.filter(row => row.CATEGORIA !== categoria);
+            setFilteredData(updatedFilteredData);
+          }
+        }
+
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setPopupMessage(data.message);
+        setShowModal(true);
+      }
+    } catch (error) {
+      console.error('Erro ao excluir a categoria:', error);
+    }
+  };
 
   const adicionarCategoriaClick = () => {
     router.push('/add-category-collaborators');
@@ -94,25 +166,25 @@ const CatergoyOutsourced = () => {
       if (response.status === 401) {
         router.push('/login');
       }
-      else{
-        setTokenVerified(true);  
-      }   
-  
+      else {
+        setTokenVerified(true);
+      }
+
       const filteredRows = appliedFilterValue
         ? data.docs.rows.filter((document) =>
-            Object.values(document).some((docValue) => {
-              if (docValue === null || docValue === undefined) {
-                return false;
-              }
-              return docValue.toString().toLowerCase().includes(appliedFilterValue.toLowerCase());
-            })
-          )
+          Object.values(document).some((docValue) => {
+            if (docValue === null || docValue === undefined) {
+              return false;
+            }
+            return docValue.toString().toLowerCase().includes(appliedFilterValue.toLowerCase());
+          })
+        )
         : data.docs.rows;
-  
+
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
       setOriginalData(data.docs.rows);
-  
+
       setDocuments({
         success: data.success,
         docs: {
@@ -128,7 +200,7 @@ const CatergoyOutsourced = () => {
       setInitialLoad(false);
     }
   };
-  
+
 
   useEffect(() => {
     fetchData();
@@ -139,7 +211,7 @@ const CatergoyOutsourced = () => {
     setFilterOpen(false);
     setCurrentPage(1);
     setAppliedFilterValue(value);
-  
+
     if (value === '') {
       handleClearSearch();
     } else {
@@ -151,9 +223,9 @@ const CatergoyOutsourced = () => {
           return docValue.toString().toLowerCase().includes(value.toLowerCase());
         })
       );
-  
+
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
       setDocuments({
         success: true,
         docs: {
@@ -163,7 +235,7 @@ const CatergoyOutsourced = () => {
         },
       });
     }
-  };  
+  };
 
   const handlePageSizeChange = (size) => {
     setPageSize(size);
@@ -337,33 +409,33 @@ const CatergoyOutsourced = () => {
               {filterOpen && (
                 <div className={`flex text-gray-500 bg-white`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
-                    <div className="flex items-center">  
+                    <div className="flex items-center">
                     </div>
                   </div>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
                     <select
-                        value={selectedFilterValue}
-                        onChange={(e) => setSelectedFilterValue(e.target.value)}
-                        className="border border-gray-300 px-2 py-1 rounded"
-                      >
-                        <option value="">Todos</option>
-                        {handleFilterValue('CATEGORIA').map((value) => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={() => handleSearchByFilter(selectedFilterValue)}
-                        className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                      >
-                        Aplicar
-                      </button>
+                      value={selectedFilterValue}
+                      onChange={(e) => setSelectedFilterValue(e.target.value)}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('CATEGORIA').map((value) => (
+                        <option key={value} value={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter(selectedFilterValue)}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
                   </div>
                 </div>
               )}
 
-              {documents.docs.rows.map((document:any, index) => (
+              {documents.docs.rows.map((document: any, index) => (
                 <div
                   className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   key={document.id || Math.random().toString()}
@@ -371,11 +443,15 @@ const CatergoyOutsourced = () => {
                   {Object.keys(columnWidths).map((column) => (
                     <div
                       key={column}
-                      className={`column-cell border border-gray-300 py-2 pl-1`}
+                      className={`column-cell border border-gray-300 py-2`}
                       style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                     >
-                      {column === '' ? (
-                        <IoIosSearch className='text-xl mt-0.5' />
+                      {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
+                        <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                      </Link>
+                        <button onClick={() => deleteCategoria(document.CATEGORIA)}>
+                          <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                        </button></div>
                       ) : (
                         document[column]
                       )}

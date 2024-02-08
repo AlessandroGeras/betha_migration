@@ -56,7 +56,7 @@ const CategoryOutsourced = () => {
         return;
       }
 
-      const response = await fetch(`/api/delete-category?page=${currentPage}&pageSize=${pageSize}`, {
+      const response = await fetch(`/api/delete-category-outsourced?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
