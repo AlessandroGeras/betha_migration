@@ -16,6 +16,7 @@ const getAllDocs = async (pageSize) => {
       offset,
       limit: pageSize,
       order: [['CATEGORIA', 'ASC']], // Ordena por ordem alfabética
+      timeout: 5000,
     });
 
     if (result.length === 0) {
@@ -80,6 +81,7 @@ export default async function handler(req, res) {
         attributes: ['CATEGORIA'],
         offset: (page - 1) * pageSize,
         limit: pageSize,
+        timeout: 5000,
       });
 
       if (docs) {
