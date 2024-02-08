@@ -84,7 +84,7 @@ export default async function handler(req, res) {
         });
 
         // Consulta para obter o total de documentos com vencimento até 30 dias
-        const dueDateCount = await connection.query(
+        dueDateCount = await connection.query(
           `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30 AND "TERCEIRO" = :terceiro`,
           {
             replacements: { terceiro: findOutsourced.NOME_TERCEIRO },
@@ -92,7 +92,7 @@ export default async function handler(req, res) {
           }
         );
 
-        const pastDueDateCount = await connection.query(
+        pastDueDateCount = await connection.query(
           `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" < SYSDATE AND "STATUS" = 'Ativo' AND "TERCEIRO" = :terceiro`,
           {
             replacements: { terceiro: findOutsourced.NOME_TERCEIRO },
