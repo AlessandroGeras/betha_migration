@@ -1,11 +1,9 @@
+import connection from "../../config/database.mjs";
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -15,17 +13,8 @@ export default async function handler(req, res) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
     }
 
-    let connection;
-
     try {
-      jwt.verify(token, process.env.SECRET);
-
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-      });
-
-
+      jwt.verify(token, process.env.SECRET);   
 
       // Exclua o usuário
       await connection.query(`DELETE FROM CATEGORIA_TERCEIROS WHERE CATEGORIA = :categoria`, {
@@ -45,9 +34,7 @@ export default async function handler(req, res) {
         res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
       }
     } finally {
-      if (connection) {
-        await connection.close();
-      }
+      
     }
   }
 }

@@ -1,13 +1,10 @@
 import documents from '../../models/documents';
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 const getAllDocs = async (pageSize, findOutsourced) => {
   let allDocs = [];
@@ -49,18 +46,8 @@ export default async function handler(req, res) {
       return res.redirect(302, '/login');
     }
 
-    let connection;
-
     try {
-      jwt.verify(token, process.env.SECRET);
-
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-        dialectOptions: {
-          connectTimeout: 5000,
-        },
-      });
+      jwt.verify(token, process.env.SECRET);     
 
       if (role == "external") {
         findOutsourced = await outsourceds.findOne({
@@ -134,9 +121,7 @@ export default async function handler(req, res) {
       }
     } finally {
       // Fecha a conexão do banco de dados se estiver estabelecida
-      if (connection) {
-        await connection.close();
-      }
+      
     }
   }
 }
