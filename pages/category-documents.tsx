@@ -452,7 +452,7 @@ const CategoryDocuments = () => {
                     </div>
 
                     {filterOpen && (
-                      <div className={`flex text-gray-500 bg-white`}>
+                      <div className={`flex text-gray-500 w-[500px]`}>
                         <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                           <div className="flex items-center">
                           </div>
@@ -482,7 +482,7 @@ const CategoryDocuments = () => {
 
                     {documents.docs.rows.map((document: any, index) => (
                       <div
-                        className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        className={`flex text-gray-700 whitespace-nowrap w-[500px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                         key={document.id || Math.random().toString()}
                       >
                         {Object.keys(columnWidths).map((column) => (
