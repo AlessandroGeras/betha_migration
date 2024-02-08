@@ -1,6 +1,6 @@
 import users from '../../models/users';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 

@@ -1,7 +1,7 @@
 import outsourceds from '../../models/outsourceds';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 

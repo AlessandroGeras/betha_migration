@@ -1,8 +1,8 @@
 import outsourceds from '../../models/outsourceds';
 import categoria_terceiros from '../../models/categoryOutsourced';
 import documents from '../../models/documents';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 

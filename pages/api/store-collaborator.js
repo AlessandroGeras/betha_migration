@@ -1,5 +1,6 @@
 import outsourceds from '../../models/outsourceds';
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 

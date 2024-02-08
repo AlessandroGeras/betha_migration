@@ -1,6 +1,5 @@
 import nf from '../../models/nf';
 import users from '../../models/users';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 

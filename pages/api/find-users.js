@@ -1,6 +1,5 @@
 import users from '../../models/users';
 import categoria_colaboradores from '../../models/categoryCollaborators';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';  // Importe o módulo JWT
 

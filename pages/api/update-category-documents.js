@@ -1,5 +1,4 @@
 import categoria_documentos from '../../models/categoryDocuments';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
