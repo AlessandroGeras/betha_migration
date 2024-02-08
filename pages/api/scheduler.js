@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 
 dotenv.config();
 
-cron.schedule('00 18 * * 0-7', async () => {
+cron.schedule('45 14 * * 0-7', async () => {
   try {
     console.log("Serviço de cobrança de e-mails ativo");
 
