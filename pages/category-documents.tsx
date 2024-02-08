@@ -495,7 +495,7 @@ const CategoryDocuments = () => {
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
                               <button onClick={() => deleteCategoria(document.CATEGORIA)}>
-                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5 rp-[5px]' />
+                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
                               </button></div>
                             ) : (
                               document[column]
