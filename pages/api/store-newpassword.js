@@ -10,10 +10,7 @@ export default async function handler(req, res) {
     // Obtenha os dados do corpo da solicitação
     const { email, newPassword, token } = req.body;
 
-    try {
-      console.log("token");
-      jwt.verify(token, process.env.SECRET);
-
+    try {   
       // Verifique se o email e o token correspondem a uma entrada na tabela
       const tokenEntry = await outsourceds.findOne({
         where: {
@@ -22,12 +19,8 @@ export default async function handler(req, res) {
         },
       });
 
-      console.log("tokenEntry1");
-
 
       if (tokenEntry) {
-        console.log("tokenEntry2"+tokenEntry);
-        console.log("newPassword"+newPassword);
         // Se correspondem, continue com a lógica para redefinir a senha
         const hashedPassword = bcrypt.hashSync(newPassword, 10);
         console.log('Email e token válidos. Redefinir senha.');
@@ -35,7 +28,6 @@ export default async function handler(req, res) {
         console.log('Senha salva na tabela de usuários.');
         res.status(200).json({ success: true, message: 'Senha redefinida' });
       } else {
-        console.log("pau");
         // Se não correspondem, retorne uma mensagem de erro
         console.log('Email ou token inválidos. Não é possível redefinir a senha.');
         res.status(400).json({ success: false, message: 'Email ou token inválidos. Não é possível redefinir a senha.' });
