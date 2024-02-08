@@ -808,14 +808,14 @@ interface User {
         setTextColor('#3f5470');
         setModalMessage(messageWithLineBreaks);
         setShowModal(true);
-        setShowModal2(true);
+        setShowModal2(false);
 
       } else {
         setModalColor('#3f5470');
         setTextColor('#3f5470');
         setModalMessage(data.message);
         setShowModal(true);
-        setShowModal2(true);
+        setShowModal2(false);
       }
     } catch (error) {
       console.error('Erro durante a solicitação:', error);
