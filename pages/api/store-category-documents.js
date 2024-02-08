@@ -1,12 +1,9 @@
 import categoria_documentos from '../../models/categoryDocuments';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -16,15 +13,8 @@ export default async function handler(req, res) {
         return res.redirect(302, '/login');
       }
   
-      let connection;
-  
       try {
-        jwt.verify(token, process.env.SECRET);
-  
-        connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-          host: process.env.HOST,
-          dialect: process.env.DIALECT || 'oracle',
-        });
+        jwt.verify(token, process.env.SECRET); 
   
         const store = await categoria_documentos.create({
           CATEGORIA: categoria,
@@ -56,9 +46,7 @@ export default async function handler(req, res) {
           res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
         }
       } finally {
-        if (connection) {
-          await connection.close();
-        }
+       
       }
     } else {
       res.status(405).json({ success: false, message: 'Método não permitido.' });

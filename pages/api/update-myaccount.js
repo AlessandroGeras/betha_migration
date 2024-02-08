@@ -1,12 +1,8 @@
 import users from '../../models/users';
-import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -21,14 +17,9 @@ export default async function handler(req, res) {
             password,
         } = req.body;
 
-        let connection;
 
         try {
-            // Estabeleça a conexão com o Oracle
-            connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-                host: process.env.HOST,
-                dialect: process.env.DIALECT || 'oracle',
-            });
+            jwt.verify(token, process.env.SECRET);   
 
 
             const existingUser = await users.findOne({ where: { ID_USUARIO: id_user } });

@@ -2,14 +2,11 @@ import documents from '../../models/documents';
 import outsourceds from '../../models/outsourceds';
 import cobrança from '../../models/billing';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = require('date-fns');
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   let connection;
@@ -145,8 +142,6 @@ export default async function handler(req, res) {
     res.status(500).json({ erro: 'Erro durante a conexão com o Oracle.' });
   } finally {
     // Certifique-se de fechar a conexão quando não for mais necessária
-    if (connection) {
-      await connection.close();
-    }
+    
   }
 }

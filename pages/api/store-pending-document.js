@@ -1,12 +1,9 @@
 import documents from '../../models/documents';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -20,17 +17,8 @@ export default async function handler(req, res) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
         }
 
-        let connection;
-
         try {
             jwt.verify(token, process.env.SECRET);
-
-            // Estabeleça a conexão com o Oracle
-            connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-                host: process.env.HOST,
-                dialect: process.env.DIALECT || 'oracle',
-            });
-
 
             const docs = await documents.findAll({
                 where: {

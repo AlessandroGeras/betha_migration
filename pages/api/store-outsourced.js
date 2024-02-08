@@ -2,18 +2,9 @@ import outsourceds from '../../models/outsourceds';
 import categoria_terceiros from '../../models/categoryOutsourced';
 import documents from '../../models/documents';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 
 dotenv.config();
-
-/* const path = require('path');
-const oracleLibDir = path.resolve('/opt/oracle/instantclient_19_16');
-Oracledb.initOracleClient({
-    libDir: oracleLibDir,
-}); */
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -33,16 +24,9 @@ export default async function handler(req, res) {
             id_usuario
         } = req.body;
 
-        let connection;
-
-        console.log("teste");
-
+        
         try {
-            // Estabeleça a conexão com o Oracle
-            connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-                host: process.env.HOST,
-                dialect: process.env.DIALECT || 'oracle',
-            });    
+            jwt.verify(token, process.env.SECRET);    
 
             // Criação da empresa
             const storeEmpresa = await outsourceds.create({
@@ -90,9 +74,7 @@ export default async function handler(req, res) {
             res.status(500).json({ success: false, message: 'Erro ao salvar o usuário Terceiro.' });
         } finally {
             // Certifique-se de fechar a conexão no bloco finally para garantir que a conexão seja fechada, independentemente do resultado
-            if (connection) {
-                await connection.close();
-            }
+            
         }
     } else {
         res.status(405).json({ success: false, message: 'Método não permitido.' });
