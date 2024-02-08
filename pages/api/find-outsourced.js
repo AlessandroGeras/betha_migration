@@ -3,8 +3,7 @@ import categoria_terceiros from '../../models/categoryOutsourced';
 import Sequelize from 'sequelize-oracle';
 import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';  // Importe o módulo JWT
+import jwt from 'jsonwebtoken';
 
 
 dotenv.config();
@@ -18,13 +17,9 @@ export default async function handler(req, res) {
       tipo_documento,
       token
     } = req.body;
-    let connection;
 
     try {
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-      });
+      jwt.verify(token, process.env.SECRET);      
 
       const user = await outsourceds.findOne({
         where: {
@@ -45,9 +40,7 @@ export default async function handler(req, res) {
       console.error('Falha ao consultar o banco de dados:', error);
       res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
     } finally {
-      if (connection) {
-        await connection.close();
-      }
+      
     }
   }
 }

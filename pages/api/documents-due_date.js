@@ -5,8 +5,6 @@ import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
-
 const getAllDocs = async (pageSize) => {
   let allDocs = [];
   let offset = 0;

@@ -1,15 +1,11 @@
 import users from '../../models/users';
 import categoria_colaboradores from '../../models/categoryCollaborators';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';  // Importe o módulo JWT
 
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -18,13 +14,9 @@ export default async function handler(req, res) {
       tipo_documento,
       token
     } = req.body;
-    let connection;
 
     try {
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-      });
+      jwt.verify(token, process.env.SECRET); 
 
       const user = await users.findOne({
         where: {
@@ -45,9 +37,7 @@ export default async function handler(req, res) {
       console.error('Falha ao consultar o banco de dados:', error);
       res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
     } finally {
-      if (connection) {
-        await connection.close();
-      }
+      
     }
   }
 }

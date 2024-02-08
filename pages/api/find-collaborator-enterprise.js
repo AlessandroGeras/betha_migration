@@ -1,14 +1,9 @@
 import outsourceds from '../../models/outsourceds';
-import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';  // Importe o módulo JWT
+import jwt from 'jsonwebtoken';
 
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -18,17 +13,13 @@ export default async function handler(req, res) {
       nome_terceiro,
       token
     } = req.body;
-    let connection;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
     }
 
     try {
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-      });  
+      jwt.verify(token, process.env.SECRET);  
 
       const docs = await outsourceds.findAndCountAll({
         attributes: ['NOME_TERCEIRO'],
@@ -81,9 +72,7 @@ export default async function handler(req, res) {
         res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
       }
     } finally {
-      if (connection) {
-        await connection.close();
-      }
+      
     }
   }
 }

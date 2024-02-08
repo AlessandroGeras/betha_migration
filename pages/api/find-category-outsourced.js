@@ -1,16 +1,11 @@
 import categoria_documentos from '../../models/categoryDocuments';
-import categoria_colaboradores from '../../models/categoryOutsourced';
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
-import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import categoria_terceiros from '../../models/categoryOutsourced';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 const getAllDocs = async (pageSize) => {
     let allDocs = [];
@@ -71,16 +66,8 @@ export default async function handler(req, res) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
         }
 
-        let connection;
-
         try {
-            jwt.verify(token, process.env.SECRET);
-
-            // Estabeleça a conexão com o Oracle
-            connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-                host: process.env.HOST,
-                dialect: process.env.DIALECT || 'oracle',
-            });
+            jwt.verify(token, process.env.SECRET);            
 
             findAdmin = await users.findOne({
                 where: {
@@ -91,10 +78,7 @@ export default async function handler(req, res) {
         
               if(findAdmin == null){
                 res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
-              }
-
-            // Verificar se a conexão foi bem-sucedida
-            await connection.authenticate();
+              }            
 
             const outsourcedCount = await categoria_documentos.count();  
 
@@ -177,9 +161,7 @@ export default async function handler(req, res) {
             }
         } finally {
             // Fechar a conexão no final, se estiver aberta
-            if (connection) {
-                connection.close();
-            }
+            
         }
     }
 }
