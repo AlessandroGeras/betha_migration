@@ -105,7 +105,7 @@ const CategoryOutsourced = () => {
 
 
   const columnWidths = {
-    '': '65px',
+    '': '100px',
     'CATEGORIA': '500px',
   };
 
