@@ -41,7 +41,7 @@ export default async function handler(req, res) {
         subject: 'Recuperação de Senha - Portal Gestão de Terceiro',
         html: `<p>Instruções para recuperação de senha do Portal Gestão de Terceiro:</p>
                <p>Clique no link abaixo para redefinir sua senha:</p>
-               <p><a href="http://localhost:3000/password-reset?token=${token}" style="color: #3498db; text-decoration: none; font-weight: bold;">Redefinir Senha</a></p>
+               <p><a href="http://192.168.0.224:5051/password-reset?token=${token}" style="color: #3498db; text-decoration: none; font-weight: bold;">Redefinir Senha</a></p>
                <p>O link possui validade de 1 hora, após isso será necessário fazer outra requisição de recuperação de senha.</p>
                <img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />
                <h4">Portal Gestão de Terceiro</h4>`,
