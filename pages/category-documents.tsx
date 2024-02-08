@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 
 const CategoryDocuments = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [documents, setDocuments] = useState({
+  const [documents, setDocuments] = useState<{ success: boolean; docs: { rows: Document[]; count: number; outsourcedCount: number } }>({
     success: false,
     docs: { rows: [], count: 0, outsourcedCount: 0 },
   });
@@ -23,14 +24,87 @@ const CategoryDocuments = () => {
   const router = useRouter();
   const [appliedFilterValue, setAppliedFilterValue] = useState('');
   const [isTokenVerified, setTokenVerified] = useState(false);
+  const [filteredData, setFilteredData] = useState<Item[]>([]);
+  const [showModal, setShowModal] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [modalColor, setModalColor] = useState('#e53e3e');
+  const [textColor, setTextColor] = useState('#e53e3e');
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  interface Item {
+    CATEGORIA: string; // Adicione outras propriedades, se houver
+  }
+
+  interface Document {
+    CATEGORIA: string;
+  }
+
+  const deleteCategoria = async (categoria) => {
+    try {
+      const token = localStorage.getItem('Token');
+
+      if (!token) {
+        // Se o token não estiver presente, redirecione para a página de login
+        router.push('/login');
+        return;
+      }
+
+      const response = await fetch(`/api/delete-category-collaborator?page=${currentPage}&pageSize=${pageSize}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, categoria }),
+      });
+
+      const data = await response.json();
+      if (response.status === 401) {
+        router.push('/login');
+      }
+      else {
+        setTokenVerified(true);
+
+        // Se a exclusão for bem-sucedida, atualize o estado local
+        if (data.success) {
+          // Remova a categoria excluída de documents.docs.rows
+          const updatedRows = documents.docs.rows.filter(row => row.CATEGORIA !== categoria);
+
+          setDocuments(prevDocuments => ({
+            ...prevDocuments,
+            docs: {
+              ...prevDocuments.docs,
+              rows: updatedRows,
+              count: updatedRows.length,
+            },
+          }));
+
+          // Se estiver usando filtros, atualize também o estado de filteredData
+          if (filteredData.length > 0) {
+            const updatedFilteredData = filteredData.filter(row => row.CATEGORIA !== categoria);
+            setFilteredData(updatedFilteredData);
+          }
+        }
+
+        setModalColor('#3f5470');
+        setTextColor('#3f5470');
+        setPopupMessage(data.message);
+        setShowModal(true);
+      }
+    } catch (error) {
+      console.error('Erro ao excluir a categoria:', error);
+    }
+  };
 
   const adicionarCategoriaClick = () => {
     router.push('/add-category-documents');
   };
 
   const columnWidths = {
-    '': '30px',
-    'CATEGORIA': '355px',
+    '': '59px',
+    'CATEGORIA': '500px',
   };
 
   const columnLabels = {
@@ -283,6 +357,46 @@ const CategoryDocuments = () => {
                 <span className='ml-2'>Categorias de Documentos</span>
               </div>
 
+              {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                    {/* Pseudo-elemento para a barra lateral */}
+                    <style>
+                      {`
+                .modal-content::before {
+                  content: '';
+                  background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                  width: 4px; /* Largura da barra lateral */
+                  height: 100%; /* Altura da barra lateral */
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+              `}
+                    </style>
+
+                    <button
+                      className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                      onClick={closeModal}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className="h-5 w-5"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+
+                    <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                      {popupMessage}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {documents.success && (
                 <div className=''>
                   <div className="flex items-center my-4">
@@ -339,11 +453,11 @@ const CategoryDocuments = () => {
 
                     {filterOpen && (
                       <div className={`flex text-gray-500 bg-white`}>
-                        <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
+                        <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                           <div className="flex items-center">
                           </div>
                         </div>
-                        <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
+                        <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '500px' }}>
                           <select
                             value={selectedFilterValue}
                             onChange={(e) => setSelectedFilterValue(e.target.value)}
@@ -366,7 +480,7 @@ const CategoryDocuments = () => {
                       </div>
                     )}
 
-                    {documents.docs.rows.map((document:any, index) => (
+                    {documents.docs.rows.map((document: any, index) => (
                       <div
                         className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                         key={document.id || Math.random().toString()}
@@ -374,13 +488,15 @@ const CategoryDocuments = () => {
                         {Object.keys(columnWidths).map((column) => (
                           <div
                             key={column}
-                            className={`column-cell border border-gray-300 py-2 pl-1`}
+                            className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === '' ? (
-                              <Link href={{ pathname: '/find-category-documents', query: { id: document.CATEGORIA } }}>
-                                <IoIosSearch className='text-xl mt-0.5' />
-                              </Link>
+                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
+                              <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                            </Link>
+                              <button onClick={() => deleteCategoria(document.CATEGORIA)}>
+                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                              </button></div>
                             ) : (
                               document[column]
                             )}

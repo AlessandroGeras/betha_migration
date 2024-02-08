@@ -31,6 +31,10 @@ const CatergoyOutsourced = () => {
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   interface Item {
     CATEGORIA: string; // Adicione outras propriedades, se houver
   }
@@ -100,8 +104,8 @@ const CatergoyOutsourced = () => {
   };
 
   const columnWidths = {
-    '': '30px',
-    'CATEGORIA': '355px',
+    '': '59px',
+    'CATEGORIA': '500px',
   };
 
   const columnLabels = {
@@ -345,6 +349,46 @@ const CatergoyOutsourced = () => {
           </div>
         )}
 
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+              {/* Pseudo-elemento para a barra lateral */}
+              <style>
+                {`
+                .modal-content::before {
+                  content: '';
+                  background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                  width: 4px; /* Largura da barra lateral */
+                  height: 100%; /* Altura da barra lateral */
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+              `}
+              </style>
+
+              <button
+                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                onClick={closeModal}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+
+              <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                {popupMessage}
+              </div>
+            </div>
+          </div>
+        )}
+
         {documents.success && (
           <div className=''>
             <div className="flex items-center my-4">
@@ -408,11 +452,11 @@ const CatergoyOutsourced = () => {
 
               {filterOpen && (
                 <div className={`flex text-gray-500 bg-white`}>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '30px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
                   </div>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '355px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer`} style={{ width: '500px' }}>
                     <select
                       value={selectedFilterValue}
                       onChange={(e) => setSelectedFilterValue(e.target.value)}
