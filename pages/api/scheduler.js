@@ -1,16 +1,13 @@
 import cron from 'node-cron';
 import cobrança from '../../models/billing';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import { format } from 'date-fns';
 
 
 dotenv.config();
 
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
-
-cron.schedule('02 14 * * 0-7', async () => {
+cron.schedule('00 18 * * 0-7', async () => {
   try {
     console.log("Serviço de cobrança de e-mails ativo");
 

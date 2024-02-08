@@ -1,12 +1,9 @@
 import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-//Oracle Instant Client
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

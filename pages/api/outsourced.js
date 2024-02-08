@@ -1,13 +1,10 @@
 import outsourceds from '../../models/outsourceds';
 import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 const getAllDocs = async (pageSize) => {
   let allDocs = [];
@@ -42,19 +39,8 @@ export default async function handler(req, res) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
     }
 
-    let connection;
-
     try {
-      jwt.verify(token, process.env.SECRET);      
-
-      // Estabeleça a conexão com o Oracle
-      connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT || 'oracle',
-        dialectOptions: {
-          connectTimeout: 5000, // Tempo limite em milissegundos (5 segundos)
-        },
-      });
+      jwt.verify(token, process.env.SECRET);       
 
       findAdmin = await users.findOne({
         where: {

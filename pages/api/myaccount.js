@@ -1,14 +1,10 @@
 import users from '../../models/users';
 import Sequelize from 'sequelize-oracle';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';  // Importe o módulo JWT
 
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -20,6 +16,8 @@ export default async function handler(req, res) {
     let connection;
 
     try {
+      jwt.verify(token, process.env.SECRET);   
+
       connection = new Sequelize(process.env.SERVER, process.env.USUARIO, process.env.PASSWORD, {
         host: process.env.HOST,
         dialect: process.env.DIALECT || 'oracle',
@@ -42,9 +40,7 @@ export default async function handler(req, res) {
       console.error('Falha ao consultar o banco de dados:', error);
       res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
     } finally {
-      if (connection) {
-        await connection.close();
-      }
+      
     }
   }
 }
