@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     const { email, newPassword, token } = req.body;
 
     try {
+      console.log("token");
       jwt.verify(token, process.env.SECRET);
 
       // Verifique se o email e o token correspondem a uma entrada na tabela
@@ -21,9 +22,11 @@ export default async function handler(req, res) {
         },
       });
 
+      console.log("tokenEntry1");
+
 
       if (tokenEntry) {
-        console.log("tokenEntry"+tokenEntry);
+        console.log("tokenEntry2"+tokenEntry);
         console.log("newPassword"+newPassword);
         // Se correspondem, continue com a lógica para redefinir a senha
         const hashedPassword = bcrypt.hashSync(newPassword, 10);
