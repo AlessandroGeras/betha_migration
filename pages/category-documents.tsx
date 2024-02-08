@@ -103,7 +103,7 @@ const CategoryDocuments = () => {
   };
 
   const columnWidths = {
-    '': '59px',
+    '': '60px',
     'CATEGORIA': '500px',
   };
 

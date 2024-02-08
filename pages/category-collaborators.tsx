@@ -104,7 +104,7 @@ const CatergoyOutsourced = () => {
   };
 
   const columnWidths = {
-    '': '59px',
+    '': '60px',
     'CATEGORIA': '500px',
   };
 
@@ -481,7 +481,7 @@ const CatergoyOutsourced = () => {
 
               {documents.docs.rows.map((document: any, index) => (
                 <div
-                  className={`flex text-gray-700 whitespace-nowrap w-[385px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                  className={`flex text-gray-700 whitespace-nowrap w-[500px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   key={document.id || Math.random().toString()}
                 >
                   {Object.keys(columnWidths).map((column) => (
