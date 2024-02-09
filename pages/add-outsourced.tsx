@@ -83,8 +83,7 @@ const AddOutsourced = () => {
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
-
-        console.log("Teste1");
+        
 
         if (formData.uf == "" || formData.categorias.length === 0) {
             console.log("uf",formData.uf);
@@ -96,8 +95,10 @@ const AddOutsourced = () => {
             setTextColor('#e53e3e');
             return;
         }
-        console.log("Teste3");
+        
         try {
+            const token = localStorage.getItem('Token');
+
             const response = await fetch('/api/store-outsourced', {
                 method: 'POST',
                 headers: {
@@ -106,6 +107,7 @@ const AddOutsourced = () => {
                 body: JSON.stringify({
                     ...formData,
                     principal: formData.principal,
+                    token,
                 }),
             });
 
