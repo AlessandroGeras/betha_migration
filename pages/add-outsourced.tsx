@@ -87,7 +87,9 @@ const AddOutsourced = () => {
         console.log("Teste1");
 
         if (formData.uf == "" || formData.principal == "" || formData.categorias.length === 0) {
-            console.log("Teste2");
+            console.log("uf",formData.uf);
+            console.log("principal",formData.principal);
+            console.log("lenght",formData.categorias.length);
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
