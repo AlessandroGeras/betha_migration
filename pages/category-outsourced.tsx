@@ -68,7 +68,7 @@ const CategoryOutsourced = () => {
       if (response.status === 400) {
         setModalColor('#e53e3e');
         setTextColor('#e53e3e');
-        setPopupMessage("A"+data.message);
+        setPopupMessage(data.message);
         setShowModal(true);
         return
       }
@@ -101,7 +101,7 @@ const CategoryOutsourced = () => {
 
         setModalColor('#3f5470');
         setTextColor('#3f5470');
-        setPopupMessage("B"+data.message);
+        setPopupMessage(data.message);
         setShowModal(true);
       }
     } catch (error) {
