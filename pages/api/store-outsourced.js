@@ -20,9 +20,8 @@ export default async function handler(req, res) {
             email,
             telefone,
             uf,
-            principal,
-            id_usuario,
-            categorias = [],
+            categorias, // Alteração da variável de "principal" para "categorias"
+            id_usuario
         } = req.body;
 
         
@@ -44,20 +43,12 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",                
                 ID_USUARIO: id_usuario,
-                CATEGORIA_PRINCIPAL: categorias.join(', '),
+                CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
             if (storeEmpresa) {
-                const category = await categoria_terceiros.findOne({
-                    where: {
-                        CATEGORIA: principal
-                    },
-                });
-
-                const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
-
-                for (const categoria of tipoDocumentos) {
+                for (const categoria of categorias) { // Iterando sobre as categorias
                     const storeDocumentos = await documents.create({
                         STATUS: "Pendente",
                         TIPO_DOCUMENTO: categoria,

@@ -86,7 +86,7 @@ const AddOutsourced = () => {
 
         console.log("Teste1");
 
-        if (formData.uf == "" || formData.principal == "" || formData.categorias.length === 0) {
+        if (formData.uf == "" || formData.categorias.length === 0) {
             console.log("uf",formData.uf);
             console.log("principal",formData.principal);
             console.log("lenght",formData.categorias.length);
