@@ -14,7 +14,17 @@ export default async function handler(req, res) {
     }
 
     try {
-      jwt.verify(token, process.env.SECRET);   
+      jwt.verify(token, process.env.SECRET);
+
+      const outsourcedFound = await Outsourced.findOne({
+        where: {
+          CATEGORIA_PRINCIPAL: categoria // Especifique os critérios de busca aqui
+        }
+      });
+
+      if(!outsourcedFound){
+        res.status(400).json({ success: false, message: 'Categoria em uso' });
+      }
 
       // Exclua o usuário
       await connection.query(`DELETE FROM CATEGORIA_TERCEIROS WHERE CATEGORIA = :categoria`, {
@@ -34,7 +44,7 @@ export default async function handler(req, res) {
         res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
       }
     } finally {
-      
+
     }
   }
 }
