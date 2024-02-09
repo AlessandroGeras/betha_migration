@@ -18,9 +18,7 @@ export default async function handler(req, res) {
       jwt.verify(token, process.env.SECRET);
 
       const outsourcedFound = await outsourceds.findOne({
-        where: {
-          CATEGORIA_PRINCIPAL: categoria // Especifique os critérios de busca aqui
-        }
+        where: sequelize.literal(`CATEGORIA_PRINCIPAL LIKE '%${categoria}%'`)
       });
 
       if(outsourcedFound){
