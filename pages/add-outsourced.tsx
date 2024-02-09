@@ -25,6 +25,7 @@ const AddOutsourced = () => {
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
+    const [selectedCategoriaPrincipal, setSelectedCategoriaPrincipal] = useState('');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
 
@@ -48,7 +49,8 @@ const AddOutsourced = () => {
             principal: '',
             id_usuario: '',
         });
-    }
+        setSelectedCategoriaPrincipal('');
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -60,6 +62,9 @@ const AddOutsourced = () => {
             setFormData({ ...formData, [name]: formattedCNPJ });
         } else {
             setFormData({ ...formData, [name]: value });
+            if (name === 'principal') {
+                setSelectedCategoriaPrincipal(value);
+            }
         }
     };
 
@@ -82,7 +87,7 @@ const AddOutsourced = () => {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    principal: formData.principal,
+                    principal: selectedCategoriaPrincipal,
                 }),
             });
 
@@ -355,8 +360,8 @@ const AddOutsourced = () => {
                                 <select
                                     name="principal"
                                     id="principal"
-                                    value={formData.principal}
-                                    onChange={(e) => handleInputChange(e)}
+                                    value={selectedCategoriaPrincipal}
+                                    onChange={handleInputChange}
                                     required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 >
