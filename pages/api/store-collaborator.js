@@ -15,6 +15,7 @@ export default async function handler(req, res) {
             endereco,
             cidade,
             email,
+            token,
             telefone,
             uf,
             principal,
