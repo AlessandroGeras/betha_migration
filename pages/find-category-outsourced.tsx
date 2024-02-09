@@ -89,11 +89,11 @@ const AddOutsourced = () => {
             });
 
             if (!response.ok) {
-                setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
+                setPopupMessage('A categoria precisa de pelo menos um tipo de documento.');
                 setShowModal(true);
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
-                throw new Error('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
+                throw new Error('A categoria precisa de pelo menos um tipo de documento.');
             }
 
             const responseData = await response.json();
