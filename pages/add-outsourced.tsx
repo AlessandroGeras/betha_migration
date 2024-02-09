@@ -28,6 +28,22 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
 
+    const handleSelectChange = (e) => {
+        const selectedCategoria = e.target.value;
+    
+        if (formData.categorias.includes(selectedCategoria)) {
+            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
+            setFormData({ ...formData, categorias: updatedCategorias });
+        } else {
+            setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
+        }
+    };
+
+    const removeCategoria = (removedCategoria) => {
+        const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
+        setFormData({ ...formData, categorias: updatedCategorias });
+    };
+
     const closeModal = () => {
         setShowModal(false);
     };
@@ -356,7 +372,7 @@ const AddOutsourced = () => {
                                     name="principal"
                                     id="principal"
                                     value={formData.principal}
-                                    onChange={(e) => handleInputChange(e)}
+                                    onChange={(e) => handleSelectChange(e)}
                                     required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 >
@@ -369,6 +385,25 @@ const AddOutsourced = () => {
                                         </option>
                                     ))}
                                 </select>
+                                {formData.principal.length > 0 && (
+                                    <div className="mt-2">
+                                        <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
+                                        <ul className="list-disc pl-4">
+                                            {formData.categorias.map((selectedCategoria) => (
+                                                <li key={selectedCategoria} className="flex items-center justify-between">
+                                                    {selectedCategoria}
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeCategoria(selectedCategoria)}
+                                                        className="text-red-500"
+                                                    >
+                                                        Remover
+                                                    </button>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="col-span-2"></div>
@@ -404,16 +439,16 @@ const AddOutsourced = () => {
                                 {/* Pseudo-elemento para a barra lateral */}
                                 <style>
                                     {`
-                .modal-content::before {
-                  content: '';
-                  background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
-                  width: 4px; /* Largura da barra lateral */
-                  height: 100%; /* Altura da barra lateral */
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                }
-              `}
+                                        .modal-content::before {
+                                        content: '';
+                                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
+                                        width: 4px; /* Largura da barra lateral */
+                                        height: 100%; /* Altura da barra lateral */
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        }
+                                    `}
                                 </style>
 
                                 <button
