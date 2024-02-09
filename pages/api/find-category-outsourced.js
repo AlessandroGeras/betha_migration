@@ -67,21 +67,7 @@ export default async function handler(req, res) {
         }
 
         try {
-            jwt.verify(token, process.env.SECRET);
-
-            findAdmin = await users.findOne({
-                where: {
-                    ID_USUARIO: id_user,
-                    ID_USUARIO_INTERNO: 'S',
-                },
-            });
-
-            console.log("findAdmin",findAdmin);
-            console.log("id_user",id_user);
-
-            if (findAdmin == null) {
-                res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
-            }
+            jwt.verify(token, process.env.SECRET);            
 
             const outsourcedCount = await categoria_documentos.count();
 
