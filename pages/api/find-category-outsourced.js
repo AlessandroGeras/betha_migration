@@ -54,12 +54,12 @@ const getAllEnterprises = async () => {
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        let { token, getAll,id,id_user } = req.body;
-        let category=null;
+        let { token, getAll, id, id_user } = req.body;
+        let category = null;
         let findAdmin = null;
 
-        if(id==undefined){
-            id=false;
+        if (id == undefined) {
+            id = false;
         }
 
         if (!token) {
@@ -67,31 +67,34 @@ export default async function handler(req, res) {
         }
 
         try {
-            jwt.verify(token, process.env.SECRET);            
+            jwt.verify(token, process.env.SECRET);
 
             findAdmin = await users.findOne({
                 where: {
-                  ID_USUARIO: id_user,
-                  ID_USUARIO_INTERNO: 'S',
+                    ID_USUARIO: id_user,
+                    ID_USUARIO_INTERNO: 'S',
                 },
-              });
-        
-              if(findAdmin == null){
-                res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
-              }            
-
-            const outsourcedCount = await categoria_documentos.count();  
-
-            if(id!=false){
-            category = await categoria_terceiros.findOne({
-              where: {
-                CATEGORIA: id
-              },
             });
-        }        
-        else{
-            id=null;
-        }
+
+            console.log("findAdmin",findAdmin);
+            console.log("id_user",id_user);
+
+            if (findAdmin == null) {
+                res.status(403).json({ success: false, message: 'Você não tem autorização para ver a página.' });
+            }
+
+            const outsourcedCount = await categoria_documentos.count();
+
+            if (id != false) {
+                category = await categoria_terceiros.findOne({
+                    where: {
+                        CATEGORIA: id
+                    },
+                });
+            }
+            else {
+                id = null;
+            }
 
             // Configuração da paginação
             const page = parseInt(req.query.page) || 1; // Página atual
@@ -108,7 +111,7 @@ export default async function handler(req, res) {
 
                 // Obter valores distintos
                 const uniqueEnterprises = [...new Set(filteredEnterprises.map(user => user.NOME_TERCEIRO))];
-                
+
 
                 res.status(200).json({
                     success: true,
@@ -161,7 +164,7 @@ export default async function handler(req, res) {
             }
         } finally {
             // Fechar a conexão no final, se estiver aberta
-            
+
         }
     }
 }
