@@ -70,6 +70,7 @@ const CategoryOutsourced = () => {
         setTextColor('#e53e3e');
         setPopupMessage(data.message);
         setShowModal(true);
+        return
       }
       if (response.status === 401) {
         router.push('/login');

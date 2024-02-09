@@ -23,13 +23,11 @@ export default async function handler(req, res) {
         }
       });
 
-      if(!outsourcedFound){
-        console.log("Achei");
+      if(outsourcedFound){
         res.status(400).json({ success: false, message: 'Categoria em uso' });
         return
       }
-
-      console.log("Fodeo");
+      
       // Exclua o usuário
       await connection.query(`DELETE FROM CATEGORIA_TERCEIROS WHERE CATEGORIA = :categoria`, {
         replacements: { categoria: categoria },
