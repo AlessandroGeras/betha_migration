@@ -52,7 +52,7 @@ const CategoryDocuments = () => {
         return;
       }
 
-      const response = await fetch(`/api/delete-category-collaborator?page=${currentPage}&pageSize=${pageSize}`, {
+      const response = await fetch(`/api/delete-category-document?page=${currentPage}&pageSize=${pageSize}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
