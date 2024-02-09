@@ -389,7 +389,7 @@ const AddOutsourced = () => {
                                 </select>
                                 {formData.categorias.length > 0 && (
                                     <div className="mt-2">
-                                        <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
+                                        <p className="text-sm font-medium text-gray-700">Categorias selecionadas:</p>
                                         <ul className="list-disc pl-4">
                                             {formData.categorias.map((selectedCategoria) => (
                                                 <li key={selectedCategoria} className="flex items-center justify-between">

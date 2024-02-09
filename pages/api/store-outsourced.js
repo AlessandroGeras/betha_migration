@@ -21,7 +21,8 @@ export default async function handler(req, res) {
             telefone,
             uf,
             principal,
-            id_usuario
+            id_usuario,
+            categorias = [],
         } = req.body;
 
         
@@ -43,7 +44,7 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",                
                 ID_USUARIO: id_usuario,
-                CATEGORIA_PRINCIPAL: principal,
+                CATEGORIA_PRINCIPAL: categorias.join(', '),
             });
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
