@@ -421,7 +421,7 @@ const CatergoyOutsourced = () => {
             </div>
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
-              <div className="flex text-gray-500 bg-white w-[500px]">
+              <div className="flex text-gray-500 bg-white w-[559px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -451,7 +451,7 @@ const CatergoyOutsourced = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[500px]`}>
+                <div className={`flex text-gray-500 w-[559px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
@@ -481,7 +481,7 @@ const CatergoyOutsourced = () => {
 
               {documents.docs.rows.map((document: any, index) => (
                 <div
-                  className={`flex text-gray-700 whitespace-nowrap w-[500px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                  className={`flex text-gray-700 whitespace-nowrap w-[559px] ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   key={document.id || Math.random().toString()}
                 >
                   {Object.keys(columnWidths).map((column) => (
