@@ -63,7 +63,7 @@ const AddOutsourced = () => {
         e.preventDefault();
 
         if (formData.categoria_terceiro === "" || formData.categorias.length === 0) {
-            setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
+            setPopupMessage('A categoria precisa de pelo menos um tipo de documento.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
