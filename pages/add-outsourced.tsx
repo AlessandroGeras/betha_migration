@@ -20,12 +20,13 @@ const AddOutsourced = () => {
         id_usuario: '',
     });
 
-    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
+    const [categoriaOptions, setCategoriaOptions] = useState([]);
+    const [categoriaPrincipalSelecionada, setCategoriaPrincipalSelecionada] = useState('');
+    const [categoriasPrincipaisSelecionadas, setCategoriasPrincipaisSelecionadas] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
-    const [selectedCategoriaPrincipal, setSelectedCategoriaPrincipal] = useState('');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
 
@@ -49,7 +50,7 @@ const AddOutsourced = () => {
             principal: '',
             id_usuario: '',
         });
-        setSelectedCategoriaPrincipal('');
+        setCategoriaPrincipalSelecionada('');
     };
 
     const handleInputChange = (e) => {
@@ -62,10 +63,11 @@ const AddOutsourced = () => {
             setFormData({ ...formData, [name]: formattedCNPJ });
         } else {
             setFormData({ ...formData, [name]: value });
-            if (name === 'principal') {
-                setSelectedCategoriaPrincipal(value);
-            }
         }
+    };
+
+    const handleCategoriaPrincipalChange = (e) => {
+        setCategoriaPrincipalSelecionada(e.target.value);
     };
 
     const handleSubmitSuccess = async (e) => {
@@ -87,7 +89,7 @@ const AddOutsourced = () => {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    principal: selectedCategoriaPrincipal,
+                    principal: formData.principal,
                 }),
             });
 
@@ -160,6 +162,16 @@ const AddOutsourced = () => {
         fetchCategoriaOptions();
     }, [router]);
 
+    const handleAddCategoriaPrincipal = () => {
+        if (categoriaPrincipalSelecionada && !categoriasPrincipaisSelecionadas.includes(categoriaPrincipalSelecionada)) {
+            setCategoriasPrincipaisSelecionadas([...categoriasPrincipaisSelecionadas, categoriaPrincipalSelecionada]);
+            setCategoriaPrincipalSelecionada('');
+        }
+    };
+
+    const handleRemoveCategoriaPrincipal = (categoria) => {
+        setCategoriasPrincipaisSelecionadas(categoriasPrincipaisSelecionadas.filter(item => item !== categoria));
+    };
 
     return (
         <div>
@@ -360,8 +372,8 @@ const AddOutsourced = () => {
                                 <select
                                     name="principal"
                                     id="principal"
-                                    value={selectedCategoriaPrincipal}
-                                    onChange={handleInputChange}
+                                    value={categoriaPrincipalSelecionada}
+                                    onChange={handleCategoriaPrincipalChange}
                                     required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 >
@@ -369,11 +381,32 @@ const AddOutsourced = () => {
                                         Selecione uma categoria
                                     </option>
                                     {categoriaOptions.map((categoria) => (
-                                        <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
-                                            {categoria.CATEGORIA}
+                                        <option key={categoria} value={categoria}>
+                                            {categoria}
                                         </option>
                                     ))}
                                 </select>
+                                <button
+                                    type="button"
+                                    onClick={handleAddCategoriaPrincipal}
+                                    className="mt-2 bg-blue-500 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    Adicionar Categoria
+                                </button>
+                                <ul>
+                                    {categoriasPrincipaisSelecionadas.map((categoria, index) => (
+                                        <li key={index}>
+                                            {categoria}
+                                            <button
+                                                type="button"
+                                                onClick={() => handleRemoveCategoriaPrincipal(categoria)}
+                                                className="ml-2 bg-red-500 text-white p-1 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                            >
+                                                Remover
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
                             <div className="col-span-2"></div>
