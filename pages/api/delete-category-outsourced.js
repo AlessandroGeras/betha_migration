@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       });
 
       if(outsourcedFound){
-        res.status(400).json({ success: false, message: 'Categoria em uso' });
+        res.status(400).json({message: 'Categoria em uso' });
         return
       }
       

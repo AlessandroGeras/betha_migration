@@ -66,6 +66,7 @@ const CategoryOutsourced = () => {
 
       const data = await response.json();
       if (response.status === 400) {
+        console.log("400A");
         setModalColor('#e53e3e');
         setTextColor('#e53e3e');
         setPopupMessage(data.message);
@@ -76,6 +77,7 @@ const CategoryOutsourced = () => {
         router.push('/login');
       }
       else {
+        console.log("400B");
         setTokenVerified(true);
 
         // Se a exclusão for bem-sucedida, atualize o estado local
