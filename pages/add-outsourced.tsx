@@ -18,6 +18,7 @@ const AddOutsourced = () => {
         uf: '',
         principal: '',
         id_usuario: '',
+        categorias: [] as string[],
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -63,6 +64,7 @@ const AddOutsourced = () => {
             uf: '',
             principal: '',
             id_usuario: '',
+            categorias: [],
         });
     }
 
@@ -82,7 +84,7 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.uf == "" || formData.principal == "") {
+        if (formData.uf == "" || formData.principal == "" || formData.categorias.length === 0) {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
@@ -385,7 +387,7 @@ const AddOutsourced = () => {
                                         </option>
                                     ))}
                                 </select>
-                                {formData.principal.length > 0 && (
+                                {formData.categorias.length > 0 && (
                                     <div className="mt-2">
                                         <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
                                         <ul className="list-disc pl-4">
