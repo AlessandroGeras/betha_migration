@@ -1,4 +1,5 @@
 import connection from "../../config/database.mjs";
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -16,7 +17,7 @@ export default async function handler(req, res) {
     try {
       jwt.verify(token, process.env.SECRET);
 
-      const outsourcedFound = await Outsourced.findOne({
+      const outsourcedFound = await outsourceds.findOne({
         where: {
           CATEGORIA_PRINCIPAL: categoria // Especifique os critérios de busca aqui
         }
