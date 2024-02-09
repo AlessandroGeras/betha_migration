@@ -79,7 +79,6 @@ const AddOutsourced = () => {
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
