@@ -84,14 +84,17 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
+        console.log("Teste1");
+
         if (formData.uf == "" || formData.principal == "" || formData.categorias.length === 0) {
+            console.log("Teste2");
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
         }
-
+        console.log("Teste3");
         try {
             const response = await fetch('/api/store-outsourced', {
                 method: 'POST',
