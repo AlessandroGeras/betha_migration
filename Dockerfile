@@ -1,5 +1,7 @@
 FROM node:18-buster-slim
 
+ENV TZ=America/Sao_Paulo
+
 WORKDIR /opt/oracle
 
 RUN apt-get update && \
