@@ -191,9 +191,9 @@ const Sidebar = () => {
                         {isSubMenuOpeColaboradores && <div className="absolute top-[168px] left-[68px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={colaboradoresClick}>Colaboradores de Terceiro</button>
                             {isAdmin && (<div>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={adicionarColaboradoresClick}>Adicionar Colaborador</button>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={categoriasColaboradoresClick}>Categorias Colaborador</button>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={adicionarcategoriasColaboradoresClick}>Criar Categoria Colaborador</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={adicionarColaboradoresClick}>Adicionar Colaborador</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={categoriasColaboradoresClick}>Categorias Colaborador</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={adicionarcategoriasColaboradoresClick}>Criar Categoria Colaborador</button>
                             </div>)}
                         </div>}
                     </div>
@@ -202,43 +202,45 @@ const Sidebar = () => {
                         {isSubMenuOpenCadastros && <div className="absolute top-[212px] left-[68px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={terceirosClick}>Listar Terceiros</button>
                             {isAdmin && (<div>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300 ' onClick={adicionarTerceirosClick}>Incluir Terceiro</button>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={categoriasTerceirosClick}>Categorias Terceiro</button>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addCategoriasTerceirosClick}>Criar Categoria Terceiro</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300 ' onClick={adicionarTerceirosClick}>Incluir Terceiro</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={categoriasTerceirosClick}>Categorias Terceiro</button>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addCategoriasTerceirosClick}>Criar Categoria Terceiro</button>
                             </div>)}
                         </div>}
                     </div>)}
                     {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuPrestadores} onMouseLeave={toggleSubMenuPrestadores}>
                         <FaUserFriends className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenPrestadores && <div className='absolute top-[256px] left-[68px] bg-white shadow-md text-center'>
-                            <button className="hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]" onClick={usuariosClick}><p>Usuários</p></button>
+                            <button className="hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]" onClick={usuariosClick}><p>Usuários</p></button>                           
                         </div>}
                     </div>)}
                     {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuNF} onMouseLeave={toggleSubMenuNF}>
                         <FaChartLine className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpeNF && <div className='absolute top-[300px] left-[68px] bg-white shadow-md text-center'>
-                            <button className="hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]" onClick={nfClick}><p>Nota Fiscal - Medições</p></button>
+                            <button className="hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]" onClick={nfClick}><p>Nota Fiscal - Medições</p></button>                           
                         </div>}
                     </div>)}
                 </div>
 
                 {/* Ícones na parte de baixo */}
-                <div className="mt-auto w-full">
-                    <div className="flex justify-between">
-                        {/* Ícones Inferiores 1 */}
-                        <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
-                            <FaWrench className='text-gray-500 text-xl group-hover:text-white' />
-                            {isSubMenuOpenConfiguração && <button className="absolute bottom-[69px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={configuração}>
-                                <p>Configurações</p>
-                            </button>}
-                        </div>
-                        {/* Ícones Inferiores 2 */}
-                        <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-red-500" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
-                            <FaDoorOpen className='text-gray-500 text-xl group-hover:text-white' />
-                            {isSubMenuOpenMenu && <button className="absolute bottom-[13px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-red-500 hover:text-white" onClick={exitClick}>
-                                <p>Sair</p>
-                            </button>}
-                        </div>
+                <div className='mt-auto w-full'>
+                    {viewAll && isAdmin && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
+                        <FaWrench className='text-gray-500 text-xl group-hover:text-white' />
+                        {isSubMenuOpenConfiguração && <button className="absolute top-[597.5px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={configuração}>
+                            <p>Configurações</p>
+                        </button>}
+                    </div>)}
+                    {permission != "read" && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
+                        <FaUser className='text-gray-500 text-xl group-hover:text-white' />
+                        {isSubMenuOpenConta && <button className="absolute top-[641.5px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
+                            <p>Minha Conta</p>
+                        </button>}
+                    </div>)}                    
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-red-500" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
+                        <FaDoorOpen className='text-gray-500 text-xl group-hover:text-white' />
+                        {isSubMenuOpenMenu && <button className="absolute top-[685.5px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-red-500 hover:text-white" onClick={exitClick}>
+                            <p>Sair</p>
+                        </button>}
                     </div>
                 </div>
             </div>
