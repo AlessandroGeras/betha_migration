@@ -21,10 +21,9 @@ export default async function handler(req, res) {
             email,
             telefone,
             uf,
-            categorias, // Alteração da variável de "principal" para "categorias"
+            categorias,
             id_usuario
         } = req.body;
-
 
         try {
             jwt.verify(token, process.env.SECRET);
@@ -69,15 +68,22 @@ export default async function handler(req, res) {
                     } else {
                         console.log('Falha ao criar usuário Terceiro.');
                         res.status(400).json({ success: false, message: 'Falha ao criar usuário Terceiro.' });
+                        return; // Adicionado para sair da função em caso de falha
                     }
-                } catch (error) {
-                    console.error('Erro ao salvar o usuário Terceiro:', error);
-                    res.status(500).json({ success: false, message: 'Erro ao salvar o usuário Terceiro.' });
-                } finally {
-                    // Certifique-se de fechar a conexão no bloco finally para garantir que a conexão seja fechada, independentemente do resultado
-
                 }
+                // Retorna sucesso apenas após o loop ter sido concluído com êxito
+                res.status(200).json({ success: true, message: 'Terceiro criado.' });
             } else {
-                res.status(405).json({ success: false, message: 'Método não permitido.' });
+                console.log('Falha ao criar usuário Terceiro.');
+                res.status(400).json({ success: false, message: 'Falha ao criar usuário Terceiro.' });
             }
+        } catch (error) {
+            console.error('Erro ao salvar o usuário Terceiro:', error);
+            res.status(500).json({ success: false, message: 'Erro ao salvar o usuário Terceiro.' });
+        } finally {
+            // Certifique-se de fechar a conexão no bloco finally para garantir que a conexão seja fechada, independentemente do resultado
         }
+    } else {
+        res.status(405).json({ success: false, message: 'Método não permitido.' });
+    }
+}
