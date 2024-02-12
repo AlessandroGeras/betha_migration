@@ -126,7 +126,7 @@ const FindDocument = () => {
         if (formData.vencimento === 'Periodo') {
             calculateDaysAntecipation();
         }
-    }, [formData.dataVencimento, formData.vencimento,calculateDaysAntecipation]);
+    }, [formData.dataVencimento, formData.vencimento, calculateDaysAntecipation]);
 
 
 
@@ -223,9 +223,13 @@ const FindDocument = () => {
                 console.error('Erro ao obter opções de documento:', error);
             }
         };
-        if(isAnalysis != "Pendente")
-        fetchCategoriaOptions();
-    }, [id,router]);
+       
+        console.log("Situação: "+isAnalysis);
+
+        if (isAnalysis != "Pendente") {
+            fetchCategoriaOptions();
+        }
+    }, [id, router]);
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
@@ -233,7 +237,7 @@ const FindDocument = () => {
 
         if (formData.identificacao === "" || formData.vencimento === "Fixo" || !formData.arquivo) {
             if (formData.dia === 0 || formData.dia > 31 || formData.dia === null || formData.dia === undefined) {
-                if (formData.dia === null || formData.dia === undefined || formData.dia<0) {
+                if (formData.dia === null || formData.dia === undefined || formData.dia < 0) {
                     setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão corretos e preenchidos.');
                     setShowModal(true);
                     setModalColor('#e53e3e');
