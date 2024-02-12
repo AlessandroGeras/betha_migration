@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://192.168.0.224:5051/api/login', {
+      const response = await fetch('https://gestao-terceiros.estilofontana.com.br/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
