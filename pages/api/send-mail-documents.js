@@ -74,7 +74,7 @@ export default async function handler(req, res) {
       port: 587,
       secure: false, // true para SSL, false para outros
       auth: {
-        user: 'esqueciminhasenha@estilofontana.com.br',
+        user: 'noreply@estilofontana.com.br',
         pass: 'eQNd6x2tTifPBIaX3ZcA',
       },
     });
@@ -112,13 +112,13 @@ export default async function handler(req, res) {
       emailBody += `<hr><p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
         `<p>Seu ID: ${idTerceiro}</p>` +
         `<p>Se for seu primeiro acesso, digite seu nome de usuário e clique em "Esqueceu a senha?" para redefinir a nova senha por e-mail.</p>` +
-        `<p><a href="http://192.168.0.224:5051" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
+        `<p><a href="https://gestao-terceiros.estilofontana.com.br" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
         `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
         `<h4>Portal Gestão de Terceiro</h4>`;
 
       // Enviar o e-mail
       await transporter.sendMail({
-        from: 'esqueciminhasenha@estilofontana.com.br',
+        from: 'noreply@estilofontana.com.br',
         to: emailTerceiro,
         subject: 'Pendência de Documentos - Portal Gestão de Terceiro',
         html: emailBody,
