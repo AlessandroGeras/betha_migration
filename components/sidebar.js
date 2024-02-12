@@ -239,7 +239,7 @@ const Sidebar = () => {
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-red-500 relative" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
                         <FaDoorOpen className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenMenu && (
-                            <div className="absolute bg-white shadow-md mt-2 ml-4 p-2 rounded">
+                            <div className="absolute bg-white shadow-md top-0 ml-4 p-2 rounded">
                                 <button className="hover:bg-red-500 hover:text-white block px-4 py-2" onClick={exitClick}>
                                     Sair
                                 </button>
