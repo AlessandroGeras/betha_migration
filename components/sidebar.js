@@ -226,19 +226,19 @@ const Sidebar = () => {
                 <div className='mt-auto w-full'>
                     {viewAll && isAdmin && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
                         <FaWrench className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenConfiguração && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={configuração}>
+                        {isSubMenuOpenConfiguração && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-blue-500 hover:text-white" onClick={configuração}>
                             <p>Configurações</p>
                         </button>}
                     </div>)}
                     {permission != "read" && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
                         <FaUser className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenConta && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
+                        {isSubMenuOpenConta && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
                             <p>Minha Conta</p>
                         </button>}
                     </div>)}                    
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-red-500 relative" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
                         <FaDoorOpen className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenMenu && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-red-500 hover:text-white" onClick={exitClick}>
+                        {isSubMenuOpenMenu && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-red-500 hover:text-white" onClick={exitClick}>
                             <p>Sair</p>
                         </button>}
                     </div>
