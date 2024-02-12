@@ -223,7 +223,7 @@ const FindDocument = () => {
                 console.error('Erro ao obter opções de documento:', error);
             }
         };
-
+        if(isAnalysis != "Pendente")
         fetchCategoriaOptions();
     }, [id,router]);
 
