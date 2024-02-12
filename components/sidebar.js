@@ -168,16 +168,16 @@ const Sidebar = () => {
                     <div className="p-4 cursor-pointer">
                         <Image src={logo} alt="ALT_TEXT" className="" />
                     </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuHome} onMouseLeave={toggleSubMenuHome}>
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuHome} onMouseLeave={toggleSubMenuHome}>
                         <FaHome className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenHome &&
-                            <div className="absolute top-[80px] left-[68px] bg-white w-[250px] text-center py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={dashboardClick}>
+                            <div className="absolute top-0 left-[68px] bg-white w-[250px] text-center py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={dashboardClick}>
                                 <p>Página Inicial</p>
                             </div>}
                     </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuDocumentos} onMouseLeave={toggleSubMenuDocumentos}>
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuDocumentos} onMouseLeave={toggleSubMenuDocumentos}>
                         <FaFileAlt className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenDocumentos && <div className="absolute top-[124px] left-[68px] bg-white shadow-md">
+                        {isSubMenuOpenDocumentos && <div className="absolute top-0 left-[68px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={documentosClick}>Listar Docs</button>
                             {viewAll && isAdmin && (<div>
                                 <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addDocPendenteClick}>Incluir Doc Pendente</button>
@@ -186,9 +186,9 @@ const Sidebar = () => {
                             </div>)}
                         </div>}
                     </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuColaboradores} onMouseLeave={toggleSubMenuColaboradores}>
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuColaboradores} onMouseLeave={toggleSubMenuColaboradores}>
                         <FaUsers className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpeColaboradores && <div className="absolute top-[168px] left-[68px] bg-white shadow-md">
+                        {isSubMenuOpeColaboradores && <div className="absolute top-0 left-[68px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={colaboradoresClick}>Colaboradores de Terceiro</button>
                             {isAdmin && (<div>
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={adicionarColaboradoresClick}>Adicionar Colaborador</button>
@@ -197,9 +197,9 @@ const Sidebar = () => {
                             </div>)}
                         </div>}
                     </div>
-                    {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuCadastros} onMouseLeave={toggleSubMenuCadastros}>
+                    {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuCadastros} onMouseLeave={toggleSubMenuCadastros}>
                         <FaHotel className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenCadastros && <div className="absolute top-[212px] left-[68px] bg-white shadow-md">
+                        {isSubMenuOpenCadastros && <div className="absolute top-0 left-[68px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={terceirosClick}>Listar Terceiros</button>
                             {isAdmin && (<div>
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300 ' onClick={adicionarTerceirosClick}>Incluir Terceiro</button>
@@ -208,15 +208,15 @@ const Sidebar = () => {
                             </div>)}
                         </div>}
                     </div>)}
-                    {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuPrestadores} onMouseLeave={toggleSubMenuPrestadores}>
+                    {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuPrestadores} onMouseLeave={toggleSubMenuPrestadores}>
                         <FaUserFriends className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenPrestadores && <div className='absolute top-[256px] left-[68px] bg-white shadow-md text-center'>
+                        {isSubMenuOpenPrestadores && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
                             <button className="hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]" onClick={usuariosClick}><p>Usuários</p></button>                           
                         </div>}
                     </div>)}
-                    {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuNF} onMouseLeave={toggleSubMenuNF}>
+                    {viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuNF} onMouseLeave={toggleSubMenuNF}>
                         <FaChartLine className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpeNF && <div className='absolute top-[300px] left-[68px] bg-white shadow-md text-center'>
+                        {isSubMenuOpeNF && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
                             <button className="hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]" onClick={nfClick}><p>Nota Fiscal - Medições</p></button>                           
                         </div>}
                     </div>)}
@@ -224,15 +224,15 @@ const Sidebar = () => {
 
                 {/* Ícones na parte de baixo */}
                 <div className='mt-auto w-full'>
-                    {viewAll && isAdmin && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
+                    {viewAll && isAdmin && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
                         <FaWrench className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenConfiguração && <button className="absolute top-[597.5px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={configuração}>
+                        {isSubMenuOpenConfiguração && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={configuração}>
                             <p>Configurações</p>
                         </button>}
                     </div>)}
-                    {permission != "read" && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
+                    {permission != "read" && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
                         <FaUser className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenConta && <button className="absolute top-[641.5px] left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
+                        {isSubMenuOpenConta && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
                             <p>Minha Conta</p>
                         </button>}
                     </div>)}                    
