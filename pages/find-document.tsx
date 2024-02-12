@@ -225,8 +225,9 @@ const FindDocument = () => {
         };
        
         console.log("Situação: "+isAnalysis);
+        console.log("Situação: "+formData.status);
 
-        if (isAnalysis != "Pendente") {
+        if (isAnalysis != "Pendente" || formData.status !="Pendente") {
             fetchCategoriaOptions();
         }
     }, [id, router]);
