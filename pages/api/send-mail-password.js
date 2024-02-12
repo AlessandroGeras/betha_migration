@@ -29,14 +29,14 @@ export default async function handler(req, res) {
         port: 587,
         secure: false, // true para SSL, false para outros
         auth: {
-          user: 'esqueciminhasenha@estilofontana.com.br',
+          user: 'noreply@estilofontana.com.br',
           pass: 'eQNd6x2tTifPBIaX3ZcA',
         },
       });
 
       // Enviar e-mail com corpo estilizado
       await transporter.sendMail({
-        from: 'esqueciminhasenha@estilofontana.com.br',
+        from: 'noreply@estilofontana.com.br',
         to: email,
         subject: 'Recuperação de Senha - Portal Gestão de Terceiro',
         html: `<p>Instruções para recuperação de senha do Portal Gestão de Terceiro:</p>
