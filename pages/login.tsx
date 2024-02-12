@@ -68,7 +68,7 @@ const Login = () => {
       setShowModal(true);
     } else {
       try {
-        const response = await fetch('http://192.168.0.224:5051/api/forgot-password', {
+        const response = await fetch('https://gestao-terceiros.estilofontana.com.br/api/forgot-password', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
