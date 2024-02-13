@@ -47,6 +47,7 @@ const FindDocument = () => {
     const [adminNotification, setAdminNotification] = useState(0);
     const [isAdmin, setIsAdmin] = useState('');
     const [showReproveButton, setShowReproveButton] = useState(false);
+    const [filename, setFilename] = useState('');
 
     useEffect(() => {
         const userPermission = localStorage.getItem('permission');
@@ -183,8 +184,6 @@ const FindDocument = () => {
 
                     setAdminNotification(data.notificacao.NOTIFICACAO);
 
-
-
                     setFormData({
                         documento: data.docs.TIPO_DOCUMENTO,
                         tipo_documento: [],
@@ -205,6 +204,8 @@ const FindDocument = () => {
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
                         arquivo: null // or provide the appropriate value for arquivo here
                     });
+
+                    setFilename(data.docs.ANEXO);
                 }
 
 
@@ -270,9 +271,8 @@ const FindDocument = () => {
             const newForm = new FormData();
             if (formData.arquivo) {
                 newForm.set('anexo', formData.arquivo);
-            
            
-
+           
             const resposta = await fetch('/api/upload', {
                 method: 'POST',
                 headers: {
@@ -281,6 +281,9 @@ const FindDocument = () => {
             });
 
             sendfile = await resposta.json();
+        }
+        else{
+            sendfile = filename;
         }
 
             const requestBody = {
