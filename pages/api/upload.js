@@ -26,12 +26,7 @@ const handleRequest = async (req, res) => {
       const uploadedFile = files.anexo[0];
 
       // Especifique o diretório onde você deseja salvar os arquivos enviados
-      const uploadDir = path.join(process.cwd(), 'uploads');
-
-      // Crie o diretório se ele não existir
-      if (!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir);
-      }
+      const uploadDir = '/projeto_portal_terceiro/Miner/uploads'; // Altere para o caminho desejado no host
 
       // Gere um nome de arquivo único usando uuid
       const uniqueFilename = uuidv4();
@@ -65,7 +60,7 @@ const handleRequest = async (req, res) => {
     }
 
     // Especifique o diretório onde os arquivos foram enviados
-    const uploadDir = path.join(process.cwd(), 'uploads');
+    const uploadDir = '/projeto_portal_terceiro/Miner/uploads'; // Altere para o caminho desejado no host
 
     // Especifique o caminho para o arquivo solicitado
     const filePath = path.join(uploadDir, filename);
