@@ -46,6 +46,10 @@ const handleRequest = async (req, res) => {
       // Manipulador de eventos para quando o fluxo de escrita for concluído
       writeStream.on('finish', () => {
         // Agora você pode fazer o que quiser com o arquivo, por exemplo, salvá-lo em um banco de dados
+        const savedFilePath = path.resolve(filePath);
+
+        // Log para indicar que o arquivo foi salvo com sucesso e mostrar o caminho
+        console.log(`Arquivo salvo com sucesso em: ${savedFilePath}`);
 
         // Envie uma resposta de volta para o cliente
         res.status(200).json({ message: 'File uploaded successfully!', filename: `${uniqueFilename}_${uploadedFile.originalFilename}` });
