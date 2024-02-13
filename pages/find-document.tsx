@@ -768,7 +768,7 @@ const FindDocument = () => {
 
                             {reproveAnalysis && (
                                 <div className='flex'>
-                                    {formData.motivo != "" && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                    {formData.motivo != "" || formData.motivo == null && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
                                         <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
                                             Reprovar o documento
                                         </span>
