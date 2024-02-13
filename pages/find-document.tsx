@@ -284,6 +284,7 @@ const FindDocument = () => {
         }
         else{
             sendfile = filename;
+            console.log("filename"+filename);
         }
 
             const requestBody = {
