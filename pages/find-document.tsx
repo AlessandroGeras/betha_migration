@@ -77,6 +77,10 @@ const FindDocument = () => {
         setIsAlalysis(formData.status);
     }, [formData.status]);
 
+    useEffect(() => {
+        setIsAlalysis(formData.status);
+    }, [formData.status]);
+
 
     const closeModal = () => {
         setShowModal(false);
@@ -126,7 +130,7 @@ const FindDocument = () => {
         if (formData.vencimento === 'Periodo') {
             calculateDaysAntecipation();
         }
-    }, [formData.dataVencimento, formData.vencimento,calculateDaysAntecipation]);
+    }, [formData.dataVencimento, formData.vencimento, calculateDaysAntecipation]);
 
 
 
@@ -218,7 +222,6 @@ const FindDocument = () => {
 
                 setTokenVerified(true);
                 setLoading(false);
-                console.log("Motivo"+formData.motivo);
 
             } catch (error) {
                 console.error('Erro ao obter opções de documento:', error);
@@ -226,7 +229,7 @@ const FindDocument = () => {
         };
 
         fetchCategoriaOptions();
-    }, [id,router]);
+    }, [id, router]);
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
@@ -234,7 +237,7 @@ const FindDocument = () => {
 
         if (formData.identificacao === "" || formData.vencimento === "Fixo" || !formData.arquivo) {
             if (formData.dia === 0 || formData.dia > 31 || formData.dia === null || formData.dia === undefined) {
-                if (formData.dia === null || formData.dia === undefined || formData.dia<0) {
+                if (formData.dia === null || formData.dia === undefined || formData.dia < 0) {
                     setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão corretos e preenchidos.');
                     setShowModal(true);
                     setModalColor('#e53e3e');
@@ -768,11 +771,13 @@ const FindDocument = () => {
 
                             {reproveAnalysis && (
                                 <div className='flex'>
-                                    {formData.motivo != "" || formData.motivo == null && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
-                                        <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                            Reprovar o documento
-                                        </span>
-                                    </button>)}
+                                    {formData.motivo === '' ? null : (
+                                        <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                            <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                                Reprovar o documento
+                                            </span>
+                                        </button>
+                                    )}
                                     <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
                                         <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
                                             Cancelar e voltar
