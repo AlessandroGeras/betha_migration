@@ -79,7 +79,7 @@ const FindDocument = () => {
     }, [formData.status]);
 
     useEffect(() => {
-        if(formData.motivo!="" || formData.motivo!=null){
+        if(formData.motivo!=="" || formData.motivo!=null){
             setShowReproveButton(true);
         }
         else{
