@@ -26,7 +26,7 @@ const handleRequest = async (req, res) => {
       const uploadedFile = files.anexo[0];
 
       // Especifique o diretório onde você deseja salvar os arquivos enviados
-      const uploadDir = 'uploads';
+      const uploadDir = '/projeto_portal_terceiro/Miner/uploads';
 
       // Gere um nome de arquivo único usando uuid
       const uniqueFilename = uuidv4();
