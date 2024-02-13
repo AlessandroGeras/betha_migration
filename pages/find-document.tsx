@@ -81,13 +81,10 @@ const FindDocument = () => {
     useEffect(() => {
         if(formData.motivo!=="" && formData.motivo!==null){
             setShowReproveButton(true);
-            console.log("Verdadeiro"+formData.motivo);
         }
         else{
             setShowReproveButton(false);
-            console.log("Falso");
-        }
-        console.log(showReproveButton);
+        }        
     }, [formData.motivo]);
 
 
@@ -628,7 +625,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>)}
-                        {(isAnalysis != "Pendente" && isAnalysis != "Em análise" && (isAnalysis != "Ativo" && viewAll)) && (<div className="mt-6">
+                        {(isAnalysis != "Pendente" && isAnalysis != "Em análise" && isAnalysis != "Ativo") && (<div className="mt-6">
                             <label htmlFor="motivo" className="block text-sm font-medium">
                                 Motivo<span className="text-red-500">*</span>
                             </label>
