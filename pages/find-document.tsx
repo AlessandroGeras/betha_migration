@@ -79,7 +79,7 @@ const FindDocument = () => {
     }, [formData.status]);
 
     useEffect(() => {
-        if(formData.motivo!==""){
+        if(formData.motivo!=="" && formData.motivo!==null){
             setShowReproveButton(true);
             console.log("Verdadeiro"+formData.motivo);
         }
