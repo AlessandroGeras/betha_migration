@@ -218,6 +218,7 @@ const FindDocument = () => {
 
                 setTokenVerified(true);
                 setLoading(false);
+                console.log("Motivo"+formData.motivo);
 
             } catch (error) {
                 console.error('Erro ao obter opções de documento:', error);
