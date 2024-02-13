@@ -271,6 +271,8 @@ const FindDocument = () => {
             if (formData.arquivo) {
                 newForm.set('anexo', formData.arquivo);
             }
+            console.log(formData.arquivo);
+            return
 
             const resposta = await fetch('/api/upload', {
                 method: 'POST',
@@ -280,7 +282,6 @@ const FindDocument = () => {
             });
 
             const sendfile = await resposta.json();
-            console.log(sendfile.filename);
 
             const requestBody = {
                 token: token,
