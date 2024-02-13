@@ -46,6 +46,7 @@ const FindDocument = () => {
     const iframeRef = useRef<HTMLIFrameElement | null>(null);
     const [adminNotification, setAdminNotification] = useState(0);
     const [isAdmin, setIsAdmin] = useState('');
+    const [showReproveButton, setShowReproveButton] = useState(false);
 
     useEffect(() => {
         const userPermission = localStorage.getItem('permission');
@@ -78,7 +79,12 @@ const FindDocument = () => {
     }, [formData.status]);
 
     useEffect(() => {
-        console.log("Motivo"+formData.motivo);
+        if(formData.motivo!="" || formData.motivo!=null){
+            setShowReproveButton(true);
+        }
+        else{
+            setShowReproveButton(false);
+        }
     }, [formData.motivo]);
 
 
@@ -772,11 +778,11 @@ const FindDocument = () => {
 
                             {reproveAnalysis && (
                                 <div className='flex'>
-                                    <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                    {showReproveButton && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
                                         <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
                                             Reprovar o documento
                                         </span>
-                                    </button>
+                                    </button>)}
                                     <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
                                         <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
                                             Cancelar e voltar
