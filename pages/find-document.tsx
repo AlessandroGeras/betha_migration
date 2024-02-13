@@ -260,7 +260,7 @@ const FindDocument = () => {
             const token = localStorage.getItem('Token');
             const id = localStorage.getItem('FontanaUser');
             const role = localStorage.getItem('role');
-            let sendfile = null;
+            let sendfile = '';
 
             if (!token) {
                 router.push('/login');
