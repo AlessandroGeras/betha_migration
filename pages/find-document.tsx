@@ -85,6 +85,7 @@ const FindDocument = () => {
         else{
             setShowReproveButton(false);
         }
+        console.log(showReproveButton);
     }, [formData.motivo]);
 
 
