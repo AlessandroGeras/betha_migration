@@ -242,7 +242,7 @@ const FindDocument = () => {
         e.preventDefault();
 
 
-        if (formData.identificacao === "" || formData.vencimento === "Fixo" || !formData.arquivo) {
+        if (formData.identificacao === "" || formData.vencimento === "Fixo" || (isAnalysis == "Pendente" && !formData.arquivo)) {
             if (formData.dia === 0 || formData.dia > 31 || formData.dia === null || formData.dia === undefined) {
                 if (formData.dia === null || formData.dia === undefined || formData.dia<0) {
                     setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão corretos e preenchidos.');
