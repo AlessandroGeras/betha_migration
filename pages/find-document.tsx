@@ -228,7 +228,6 @@ const FindDocument = () => {
 
                 setTokenVerified(true);
                 setLoading(false);
-                console.log("Motivo"+formData.motivo);
 
             } catch (error) {
                 console.error('Erro ao obter opções de documento:', error);
@@ -260,6 +259,7 @@ const FindDocument = () => {
             const token = localStorage.getItem('Token');
             const id = localStorage.getItem('FontanaUser');
             const role = localStorage.getItem('role');
+            let sendfile = null;
 
             if (!token) {
                 router.push('/login');
@@ -270,9 +270,8 @@ const FindDocument = () => {
             const newForm = new FormData();
             if (formData.arquivo) {
                 newForm.set('anexo', formData.arquivo);
-            }
-            console.log(formData.arquivo);
-            return
+            
+           
 
             const resposta = await fetch('/api/upload', {
                 method: 'POST',
@@ -281,7 +280,8 @@ const FindDocument = () => {
                 body: newForm,
             });
 
-            const sendfile = await resposta.json();
+            sendfile = await resposta.json();
+        }
 
             const requestBody = {
                 token: token,
