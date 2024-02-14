@@ -1,4 +1,5 @@
 import connection from "../../config/database.mjs";
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -14,8 +15,17 @@ export default async function handler(req, res) {
     }
 
     try {
-      jwt.verify(token, process.env.SECRET);   
+      jwt.verify(token, process.env.SECRET);
 
+      const outsourcedFound = await outsourceds.findOne({
+        where: Sequelize.literal(`FUNCAO LIKE '%${categoria}%'`)
+      });
+
+      if(outsourcedFound){
+        res.status(400).json({message: 'Categoria em uso' });
+        return
+      }
+      
       // Exclua o usuário
       await connection.query(`DELETE FROM CATEGORIA_COLABORADORES WHERE CATEGORIA = :categoria`, {
         replacements: { categoria: categoria },
@@ -34,7 +44,7 @@ export default async function handler(req, res) {
         res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
       }
     } finally {
-      
+
     }
   }
 }
