@@ -20,11 +20,25 @@ export default async function handler(req, res) {
             uf,
             principal,
             nome_terceiro,
-            id_usuario
-        } = req.body;        
+            id_usuario,
+            id,
+            role,
+        } = req.body;
 
         try {
-            jwt.verify(token, process.env.SECRET);   
+            jwt.verify(token, process.env.SECRET);
+
+            if (userRole == 'external') {
+                const findOutsourced = await outsourceds.findOne({
+                    where: {
+                        ID_USUARIO: id,
+                        ID_USUARIO_INTERNO: 'N',
+                    },
+                });
+                nome_terceiro = findOutsourced.NOME_TERCEIRO;
+            }
+
+
 
             const Store = await outsourceds.create({
                 STATUS: status,
@@ -36,11 +50,11 @@ export default async function handler(req, res) {
                 CIDADE: cidade,
                 UF: uf,
                 /* TELEFONE: telefone, */
-                ID_USUARIO: id_usuario,    
+                ID_USUARIO: id_usuario,
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_terceiro,
                 CNPJ: "N/A",
-                FUNCAO:principal,
+                FUNCAO: principal,
                 COLABORADOR_TERCEIRO: "S",
                 ID_USUARIO_INTERNO: "N",
             });

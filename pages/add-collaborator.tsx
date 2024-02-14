@@ -28,6 +28,18 @@ const AddOutsourced = () => {
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
+    const [viewAll, setViewAll] = useState(true);
+
+    useEffect(() => {
+        const userRole = localStorage.getItem('role');
+        if (userRole == 'internal') {
+            setViewAll(true);
+        }
+        else {
+            setViewAll(false);
+        }        
+    }, []);
+
 
     const closeModal = () => {
         setShowModal(false);
@@ -82,6 +94,8 @@ const AddOutsourced = () => {
 
         try {
             const token = localStorage.getItem('Token');
+            const id = localStorage.getItem('FontanaUser');
+            const role = localStorage.getItem('role');
 
             const response = await fetch('/api/store-collaborator', {
                 method: 'POST',
@@ -89,7 +103,7 @@ const AddOutsourced = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,token
+                    ...formData, token, id, role
                 }),
             });
 
@@ -242,7 +256,7 @@ const AddOutsourced = () => {
 
                     <div className="col-span-4">
                         <label htmlFor="id_usuario" className="block text-sm font-medium text-gray-700">
-                            ID Usuário (Opcional para login no sistema) {/* <span className="text-red-500">*</span> */}
+                            ID Usuário para identificação no sistema {/* <span className="text-red-500">*</span> */}
                         </label>
                         <input
                             type="text"
@@ -359,7 +373,7 @@ const AddOutsourced = () => {
                         </select>
                     </div>
 
-                    <div className="col-span-4 invisible">
+                    {viewAll && (<div className="col-span-4">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
                             Nome Terceiro <span className="text-red-500">*</span>
                         </label>
@@ -380,7 +394,7 @@ const AddOutsourced = () => {
                                 </option>
                             ))}
                         </select>
-                    </div>
+                    </div>)}
 
                     <div className="col-span-2"></div>
 

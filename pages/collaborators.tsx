@@ -927,9 +927,9 @@ const Collaborators = () => {
                         {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-collaborator', query: { id: document.ID_USUARIO } }}>
                           <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                         </Link>
-                          <button onClick={() => deleteAccountClick(document)}>
+                          {/* <button onClick={() => deleteAccountClick(document)}>
                             <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
-                          </button></div>
+                          </button> */}</div>
                         ) : (
                           document[column]
                         )}

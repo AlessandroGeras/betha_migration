@@ -90,7 +90,6 @@ interface User {
         try {
           if (data.docs.ANEXO) {
             const apiUrl = `/api/upload?filename=${data.docs.ANEXO}`;
-            console.log("apiUrl", apiUrl);
 
             const pegardoc = await fetch(apiUrl);
 
