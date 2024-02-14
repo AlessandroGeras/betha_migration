@@ -9,7 +9,7 @@ export const config = {
   },
 };
 
-const uploadDir = '/projeto_portal_terceiro/Miner/uploads'; // Caminho desejado no host
+const uploadDir = '/projeto_portal_terceiro/uploads'; // Caminho desejado no host
 
 const handleRequest = async (req, res) => {
   if (req.method === 'POST') {
