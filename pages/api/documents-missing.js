@@ -13,13 +13,7 @@ const getAllDocs = async (pageSize, findOutsourced) => {
   while (true) {
     try {
       const result = await documents.findAll({
-        where: Sequelize.and(
-          Sequelize.or(
-            { STATUS: 'Pendente' },
-            { STATUS: 'Reprovado' }
-          ),
-          ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}) // Adiciona a condição se findOutsourced existir
-        ),
+        where: Sequelize.literal(`(STATUS = 'Pendente' OR STATUS = 'Reprovado')${findOutsourced ? ` AND TERCEIRO = '${findOutsourced.NOME_TERCEIRO}'` : ''}`),
         offset,
         limit: pageSize,
       });
@@ -86,13 +80,7 @@ export default async function handler(req, res) {
       } else {
         try {
           const docs = await documents.findAndCountAll({
-            where: Sequelize.and(
-              Sequelize.or(
-                { STATUS: 'Pendente' },
-                { STATUS: 'Reprovado' }
-              ),
-              ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}) // Adiciona a condição se findOutsourced existir
-            ),
+            where: Sequelize.literal(`(STATUS = 'Pendente' OR STATUS = 'Reprovado')${findOutsourced ? ` AND TERCEIRO = '${findOutsourced.NOME_TERCEIRO}'` : ''}`),
             offset: (page - 1) * pageSize,
             limit: pageSize,
           });
