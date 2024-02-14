@@ -26,11 +26,10 @@ COPY . .
 # Construa o projeto Next.js
 RUN npm run build
 
-# Defina o diretório de uploads como um volume para armazenamento de arquivos
-VOLUME /uploads
-
 # Exponha a porta em que a aplicação irá escutar (geralmente 3000 por padrão)
 EXPOSE 5051
+
+VOLUME /projeto_portal_terceiro/Miner/uploads
 
 # Comando para iniciar a aplicação em modo de produção
 CMD ["npm", "start"]
