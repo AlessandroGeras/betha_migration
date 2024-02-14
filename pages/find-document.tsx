@@ -44,10 +44,10 @@ const FindDocument = () => {
     const [canRenew, setCanRenew] = useState(false);
     const [fileUrl, setFileUrl] = useState('');
     const iframeRef = useRef<HTMLIFrameElement | null>(null);
-    const [adminNotification, setAdminNotification] = useState(0);
     const [isAdmin, setIsAdmin] = useState('');
     const [showReproveButton, setShowReproveButton] = useState(false);
     const [filename, setFilename] = useState('');
+    const [minNotification, setMinNotification] = useState(0);
 
     useEffect(() => {
         const userPermission = localStorage.getItem('permission');
@@ -80,12 +80,12 @@ const FindDocument = () => {
     }, [formData.status]);
 
     useEffect(() => {
-        if(formData.motivo!=="" && formData.motivo!==null){
+        if (formData.motivo !== "" && formData.motivo !== null) {
             setShowReproveButton(true);
         }
-        else{
+        else {
             setShowReproveButton(false);
-        }        
+        }
     }, [formData.motivo]);
 
 
@@ -137,7 +137,7 @@ const FindDocument = () => {
         if (formData.vencimento === 'Periodo') {
             calculateDaysAntecipation();
         }
-    }, [formData.dataVencimento, formData.vencimento,calculateDaysAntecipation]);
+    }, [formData.dataVencimento, formData.vencimento, calculateDaysAntecipation]);
 
 
 
@@ -182,8 +182,6 @@ const FindDocument = () => {
                     const isNotificationBeforeOrEqualToday = notificacao ? notificacao <= new Date().getTime() : false;
                     setCanRenew(isNotificationBeforeOrEqualToday);
 
-                    setAdminNotification(data.notificacao.NOTIFICACAO);
-
                     setFormData({
                         documento: data.docs.TIPO_DOCUMENTO,
                         tipo_documento: [],
@@ -227,6 +225,22 @@ const FindDocument = () => {
                     // Tratar o erro, mostrar uma mensagem ao usuário, etc.
                 }
 
+                const resposta = await fetch(`/api/configuration`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+
+                });
+
+                const configuration = await resposta.json();
+
+                if (resposta.status === 401) {
+                    router.push('/login');
+                } else {
+                    setMinNotification(configuration.notificacao.NOTIFICACAO);
+                }
+
                 setTokenVerified(true);
                 setLoading(false);
 
@@ -236,7 +250,7 @@ const FindDocument = () => {
         };
 
         fetchCategoriaOptions();
-    }, [id,router]);
+    }, [id, router]);
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
@@ -244,7 +258,7 @@ const FindDocument = () => {
 
         if (formData.identificacao === "" || formData.vencimento === "Fixo" || (isAnalysis == "Pendente" && !formData.arquivo)) {
             if (formData.dia === 0 || formData.dia > 31 || formData.dia === null || formData.dia === undefined) {
-                if (formData.dia === null || formData.dia === undefined || formData.dia<0) {
+                if (formData.dia === null || formData.dia === undefined || formData.dia < 0) {
                     setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão corretos e preenchidos.');
                     setShowModal(true);
                     setModalColor('#e53e3e');
@@ -271,21 +285,21 @@ const FindDocument = () => {
             const newForm = new FormData();
             if (formData.arquivo) {
                 newForm.set('anexo', formData.arquivo);
-           
-           
-            const resposta = await fetch('/api/upload', {
-                method: 'POST',
-                headers: {
-                },
-                body: newForm,
-            });
 
-            sendfile = await resposta.json();
-        }
-        else{
-            sendfile = filename;
-            console.log("filename"+filename);
-        }
+
+                const resposta = await fetch('/api/upload', {
+                    method: 'POST',
+                    headers: {
+                    },
+                    body: newForm,
+                });
+
+                sendfile = await resposta.json();
+            }
+            else {
+                sendfile = filename;
+                console.log("filename" + filename);
+            }
 
             const requestBody = {
                 token: token,
@@ -614,7 +628,7 @@ const FindDocument = () => {
                                 value={formData.notificacao}
                                 required
                                 {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
-                                min={adminNotification}
+                                min={minNotification}
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
@@ -783,7 +797,7 @@ const FindDocument = () => {
 
                             {reproveAnalysis && (
                                 <div className='flex'>
-                                    {showReproveButton==true && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                    {showReproveButton == true && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
                                         <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
                                             Reprovar o documento
                                         </span>
