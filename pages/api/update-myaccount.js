@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -15,6 +15,7 @@ export default async function handler(req, res) {
             telefone,
             uf,
             password,
+            token,
         } = req.body;
 
 
@@ -22,17 +23,20 @@ export default async function handler(req, res) {
             jwt.verify(token, process.env.SECRET);   
 
 
-            const existingUser = await users.findOne({ where: { ID_USUARIO: id_user } });
+            const existingUser = await outsourceds.findOne({ where: { ID_USUARIO: id_user } });
             const user = existingUser;
 
-            const hashedPassword = bcrypt.hashSync(password, 10);
+            if(password){
+                const hashedPassword = bcrypt.hashSync(password, 10);
+                existingUser.DS_SENHA = hashedPassword;
+            }
 
+            existingUser.NM_USUARIO = usuario;
             existingUser.ENDEREÇO = endereco;
             existingUser.ST_EMAIL = email;
             existingUser.CIDADE = cidade;
             existingUser.UF = uf;
             existingUser.TELEFONE = telefone;
-            existingUser.DS_SENHA = hashedPassword;
 
             await existingUser.save();
 

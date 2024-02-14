@@ -142,6 +142,8 @@ const AddOutsourced = () => {
 
 
         try {
+            const token = localStorage.getItem('Token');
+
             const response = await fetch('/api/update-myaccount', {
                 method: 'POST',
                 headers: {
@@ -150,6 +152,7 @@ const AddOutsourced = () => {
                 body: JSON.stringify({
                     ...formData,
                     password: newPassword,
+                    token,
                 }),
             });
 
@@ -281,7 +284,6 @@ const AddOutsourced = () => {
                             name="usuario"
                             id="usuario"
                             required
-                            disabled
                             value={formData.usuario}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
@@ -290,7 +292,7 @@ const AddOutsourced = () => {
 
                     <div className="col-span-3">
                         <label htmlFor="cnpj" className="block text-sm font-medium text-gray-700">
-                            cnpj <span className="text-red-500">*</span>
+                            CNPJ
                         </label>
                         <input
                             type="text"
