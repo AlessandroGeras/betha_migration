@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { FaTrashAlt } from "react-icons/fa";
@@ -30,13 +30,13 @@ const Collaborators = () => {
   const [getAll, setGetAll] = useState(false);
   const [isAdmin, setIsAdmin] = useState('');
 
-  useEffect(() => {    
-    const userPermission = localStorage.getItem('permission');  
+  useEffect(() => {
+    const userPermission = localStorage.getItem('permission');
 
     if (userPermission == 'read') {
-        setIsAdmin('read');
+      setIsAdmin('read');
     }
-}, []);
+  }, []);
 
   interface User {
     ID_USUARIO: string;
@@ -185,6 +185,8 @@ const Collaborators = () => {
       }
 
       const token = localStorage.getItem('Token');
+      const id = localStorage.getItem('FontanaUser');
+      const role = localStorage.getItem('role');
 
       if (!token) {
         // Se o token não estiver presente, redirecione para a página de login
@@ -197,7 +199,7 @@ const Collaborators = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token, getAll }),
+        body: JSON.stringify({ token, getAll, id, role }),
       });
 
       const data = await response.json();
@@ -246,7 +248,7 @@ const Collaborators = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-  
+
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
           // Verificar se filterValue é do tipo string
@@ -254,7 +256,7 @@ const Collaborators = () => {
             return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
           }
         }
-  
+
         return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
@@ -314,6 +316,8 @@ const Collaborators = () => {
 
       try {
         const token = localStorage.getItem('Token');
+        const id = localStorage.getItem('FontanaUser');
+        const role = localStorage.getItem('role');
 
         if (!token) {
           // Se o token não estiver presente, redirecione para a página de login
@@ -326,7 +330,7 @@ const Collaborators = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token }),
+          body: JSON.stringify({ token, id, role }),
         });
 
         const data = await response.json();
@@ -391,7 +395,7 @@ const Collaborators = () => {
 
   const handleSearch = useCallback(() => {
     setCurrentPage(1);
-  
+
     if (searchTerm === '') {
       fetchData();
     } else {
@@ -403,9 +407,9 @@ const Collaborators = () => {
           return key !== '' && String(value).toLowerCase() === searchTerm.toLowerCase();
         })
       );
-  
+
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
       setDocuments({
         success: true,
         docs: {
@@ -482,23 +486,25 @@ const Collaborators = () => {
         if (getAll && documents.docs.count > 100) {
           setLoading(true);
         }
-  
+
         const token = localStorage.getItem('Token');
-  
+        const id = localStorage.getItem('FontanaUser');
+        const role = localStorage.getItem('role');
+
         if (!token) {
           // Se o token não estiver presente, redirecione para a página de login
           router.push('/login');
           return;
         }
-  
+
         const response = await fetch(`/api/collaborators?page=${currentPage}&pageSize=${pageSize}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token, getAll }),
+          body: JSON.stringify({ token, getAll,id,role }),
         });
-  
+
         const data = await response.json();
         if (response.status === 401) {
           router.push('/login');
@@ -506,33 +512,33 @@ const Collaborators = () => {
         else {
           setTokenVerified(true);
         }
-  
+
         // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
-  
+
           // Verificar se o valor do filtro é 'TODOS'
           if (filterColumnValue === 'TODOS') {
             return filteredData; // Não aplicar filtro se for 'TODOS'
           }
-  
+
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
-  
+
             // Verificar se o valor da coluna não é nulo antes de chamar toString()
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
-  
+
             return false; // Se for nulo ou indefinido, não incluir no resultado
           });
         }, data.docs.rows);
-  
+
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
-  
+
         // Armazene os dados originais
         setOriginalData(data.docs.rows);
-  
+
         setDocuments({
           success: data.success,
           docs: {
@@ -547,10 +553,10 @@ const Collaborators = () => {
         setLoading(false);
       }
     };
-  
+
     fetchDataWithFilter();
   }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder, documents.docs.count, router]);
-  
+
 
   const { success, docs } = documents;
 
@@ -837,7 +843,7 @@ const Collaborators = () => {
                     >
                       Aplicar
                     </button>
-                  </div>                 
+                  </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
                     <select
@@ -889,7 +895,7 @@ const Collaborators = () => {
                 </div>
               )}
 
-              {documents.docs.rows.map((document:any, index) => (
+              {documents.docs.rows.map((document: any, index) => (
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]' key={document.id || index}>
                   <div

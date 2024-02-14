@@ -4,13 +4,20 @@ import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
-const getAllDocs = async (pageSize) => {
+const getAllDocs = async (pageSize, user, role) => {
   let allDocs = [];
   let offset = 0;
+  let whereClause = {
+    COLABORADOR_TERCEIRO: 'S'
+  };
+
+  if (role === 'external' && user) {
+    whereClause.NOME_TERCEIRO = user.NOME_TERCEIRO;
+  }
 
   while (true) {
     const result = await outsourceds.findAll({
-      where: {COLABORADOR_TERCEIRO: 'S'},
+      where: whereClause,
       offset,
       limit: pageSize,
     });
@@ -28,7 +35,7 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token,getAll } = req.body;
+    const { token, getAll, id, role } = req.body;
 
     if (!token) {
       return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -38,18 +45,24 @@ export default async function handler(req, res) {
       jwt.verify(token, process.env.SECRET);      
 
       const outsourcedCount = await outsourceds.count({
-        where: {COLABORADOR_TERCEIRO: 'S'},
+        where: { COLABORADOR_TERCEIRO: 'S' },
       });
 
-      // Configuração da paginação
-      const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
-      const page = parseInt(req.query.page) || 1; // Página atual
+      // Verifica se o papel é "external"
+      if (role === 'external' && id) {
+        // Busca o usuário pelo ID
+        const user = await outsourceds.findOne({
+          where: { ID_USUARIO: id },
+        });
 
-      if (getAll) {
-        // Se getAll for true, busca todos os registros
-        const allDocs = await getAllDocs(pageSize);
+        if (!user) {
+          return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+        }
 
-        res.status(200).json({
+        const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
+        const allDocs = await getAllDocs(pageSize, user, role);
+
+        return res.status(200).json({
           success: true,
           message: 'Todos os usuários encontrados',
           docs: {
@@ -59,11 +72,17 @@ export default async function handler(req, res) {
           },
         });
       }
-      else {
 
-        // Consulta paginada usando Sequelize com filtro
+      // Se o papel não for "external" ou se getAll for verdadeiro, mantenha o código existente
+      if (!getAll) {
+        const pageSize = parseInt(req.query.pageSize) || 10; // Itens por página
+        const page = parseInt(req.query.page) || 1; // Página atual
+
         const docs = await outsourceds.findAndCountAll({
-          where: {COLABORADOR_TERCEIRO: 'S'}, // Adicionando a condição de filtro
+          where: {
+            COLABORADOR_TERCEIRO: 'S', // Filtro padrão
+            ...(role === 'external' && { NOME_TERCEIRO: user.NOME_TERCEIRO }) // Adiciona filtro apenas se o papel for "external"
+          },
           offset: (page - 1) * pageSize,
           limit: pageSize,
         });
