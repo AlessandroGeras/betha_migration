@@ -2,6 +2,7 @@ import documents from '../../models/documents';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import outsourceds from '../../models/outsourceds';
+import Sequelize from 'sequelize-oracle';
 
 dotenv.config();
 
