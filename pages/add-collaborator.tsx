@@ -256,7 +256,7 @@ const AddOutsourced = () => {
 
                     <div className="col-span-4">
                         <label htmlFor="id_usuario" className="block text-sm font-medium text-gray-700">
-                            ID Usuário para identificação no sistema {/* <span className="text-red-500">*</span> */}
+                            ID Usuário para identificação no sistema <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
