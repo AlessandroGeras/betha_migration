@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         try {
             jwt.verify(token, process.env.SECRET);
 
-            if (userRole == 'external') {
+            if (role == 'external') {
                 const findOutsourced = await outsourceds.findOne({
                     where: {
                         ID_USUARIO: id,
