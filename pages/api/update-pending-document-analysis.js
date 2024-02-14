@@ -22,8 +22,6 @@ export default async function handler(req, res) {
       jwt.verify(token, process.env.SECRET);     
 
       const existingDoc = await documents.findOne({ where: { ID_DOCUMENTO: id_documento } });
-      console.log("fffffffffffffffffffffffffff");
-      console.log(existingDoc);
 
       if (analysis == "Reprovado") {
         existingDoc.MOTIVO = motivo;

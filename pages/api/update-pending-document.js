@@ -93,6 +93,9 @@ export default async function handler(req, res) {
       if (findOutsourced.NOME_TERCEIRO == nome_terceiro) {
         const existingDoc = await documents.findOne({ where: { ID_DOCUMENTO: id_documento } });
 
+        console.log(existingDoc);
+        return
+
         existingDoc.DOCUMENTO = identificacao;
         existingDoc.FORMATO_VENCIMENTO = vencimento;
         existingDoc.VENCIMENTO = proximoVencimento;
