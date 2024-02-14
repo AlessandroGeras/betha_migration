@@ -95,7 +95,6 @@ const FindDocument = () => {
         setAproveAnalysis(false);
 
         if (isFinished) {
-            console.log("push-documents");
             router.push('/documents');
         }
     };
@@ -210,7 +209,6 @@ const FindDocument = () => {
                 try {
                     if (data.docs.ANEXO) {
                         const apiUrl = `/api/upload?filename=${data.docs.ANEXO}`;
-                        console.log("apiUrl", apiUrl);
 
                         const pegardoc = await fetch(apiUrl);
 
@@ -234,6 +232,8 @@ const FindDocument = () => {
                 });
 
                 const configuration = await resposta.json();
+
+                console.log("conf"+configuration);
 
                 if (resposta.status === 401) {
                     router.push('/login');
@@ -298,7 +298,6 @@ const FindDocument = () => {
             }
             else {
                 sendfile = filename;
-                console.log("filename" + filename);
             }
 
             const requestBody = {
