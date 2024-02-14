@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     try {
       jwt.verify(token, process.env.SECRET);      
 
-      if (role == "external") {
+      if (role === "external") {
         findOutsourced = await outsourceds.findOne({
           where: {
             ID_USUARIO: id,
@@ -42,8 +42,7 @@ export default async function handler(req, res) {
         where: { STATUS: 'Ativo', COLABORADOR_TERCEIRO: 'S' }, // Ajuste conforme sua estrutura de dados
       });
 
-
-      if (role == "internal") {
+      if (role === "internal") {
         missingDocsCount = await documents.count({
           where: Sequelize.or(
             { STATUS: 'Pendente' },
@@ -76,7 +75,7 @@ export default async function handler(req, res) {
             { STATUS: 'Pendente' },
             { STATUS: 'Reprovado' }
           ),
-          TERCEIRO: findOutsourced.NOME_TERCEIRO // Ajuste conforme sua estrutura de dados
+          TERCEIRO: findOutsourced ? findOutsourced.NOME_TERCEIRO : null // Ajuste conforme sua estrutura de dados
         });
 
         analiseDocsCount = await documents.count({
@@ -87,7 +86,7 @@ export default async function handler(req, res) {
         dueDateCount = await connection.query(
           `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" BETWEEN SYSDATE AND SYSDATE + 30 AND "TERCEIRO" = :terceiro`,
           {
-            replacements: { terceiro: findOutsourced.NOME_TERCEIRO },
+            replacements: { terceiro: findOutsourced ? findOutsourced.NOME_TERCEIRO : null },
             type: Sequelize.QueryTypes.SELECT,
           }
         );
@@ -95,7 +94,7 @@ export default async function handler(req, res) {
         pastDueDateCount = await connection.query(
           `SELECT COUNT(*) "count" FROM "DOCUMENTOS" WHERE "VENCIMENTO" < SYSDATE AND "STATUS" = 'Ativo' AND "TERCEIRO" = :terceiro`,
           {
-            replacements: { terceiro: findOutsourced.NOME_TERCEIRO },
+            replacements: { terceiro: findOutsourced ? findOutsourced.NOME_TERCEIRO : null },
             type: Sequelize.QueryTypes.SELECT,
           }
         );
@@ -107,6 +106,9 @@ export default async function handler(req, res) {
 
       // Consulta paginada usando Sequelize
       const docs = await documents.findAndCountAll({
+        where: {
+          ...(role === 'external' && { TERCEIRO: findOutsourced ? findOutsourced.NOME_TERCEIRO : null }) // Adiciona filtro apenas se o papel for "external"
+        },
         offset: (page - 1) * pageSize,
         limit: pageSize,
       });
