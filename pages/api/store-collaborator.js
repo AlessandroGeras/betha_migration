@@ -24,6 +24,7 @@ export default async function handler(req, res) {
             id,
             role,
         } = req.body;
+        let nome_empresa = '';
 
         try {
             jwt.verify(token, process.env.SECRET);
@@ -35,10 +36,10 @@ export default async function handler(req, res) {
                         ID_USUARIO_INTERNO: 'N',
                     },
                 });
-                nome_terceiro = findOutsourced.NOME_TERCEIRO;
+                nome_empresa = findOutsourced.NOME_TERCEIRO;
             }
 
-
+            nome_empresa = nome_terceiro;
 
             const Store = await outsourceds.create({
                 STATUS: status,
@@ -52,7 +53,7 @@ export default async function handler(req, res) {
                 /* TELEFONE: telefone, */
                 ID_USUARIO: id_usuario,
                 CATEGORIA_PRINCIPAL: "N/A",
-                NOME_TERCEIRO: nome_terceiro,
+                NOME_TERCEIRO: nome_empresa,
                 CNPJ: "N/A",
                 FUNCAO: principal,
                 COLABORADOR_TERCEIRO: "S",
