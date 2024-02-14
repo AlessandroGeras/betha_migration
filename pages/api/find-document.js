@@ -29,8 +29,6 @@ export default async function handler(req, res) {
         },
       });
 
-      console.log(categoria);
-
       const notificacao = await configuration.findOne({
         attributes: ['NOTIFICACAO'],
         order: [['NOTIFICACAO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
