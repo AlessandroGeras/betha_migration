@@ -27,7 +27,7 @@ COPY . .
 RUN npm run build
 
 # Defina o diretório de uploads como um volume para armazenamento de arquivos
-VOLUME /projeto_portal_terceiro/Miner/uploads
+VOLUME /uploads
 
 # Exponha a porta em que a aplicação irá escutar (geralmente 3000 por padrão)
 EXPOSE 5051
