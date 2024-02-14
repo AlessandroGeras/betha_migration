@@ -125,7 +125,6 @@ const Collaborators = () => {
     'ENDEREÇO': '500px',
     'CIDADE': '310px',
     'UF': '200px',
-    'TELEFONE': '299px',
     'FUNCAO': '350px',
     'ID_USUARIO': '350px',
   };
@@ -139,7 +138,6 @@ const Collaborators = () => {
     'ENDEREÇO': 'ENDEREÇO',
     'CIDADE': 'CIDADE',
     'UF': 'UF',
-    'TELEFONE': 'TELEFONE',
     'FUNCAO': 'FUNCAO',
     'ID_USUARIO': 'ID_USUARIO',
 
@@ -659,7 +657,7 @@ const Collaborators = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[3400px]">
+              <div className="flex text-gray-500 bg-white w-[3101px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -689,7 +687,7 @@ const Collaborators = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[3400px]`}>
+                <div className={`flex text-gray-500 w-[3101px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
@@ -839,27 +837,7 @@ const Collaborators = () => {
                     >
                       Aplicar
                     </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
-                    <select                      
-                      value={selectedFilterValue['TELEFONE']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('TELEFONE').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
+                  </div>                 
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
                     <select
@@ -915,7 +893,7 @@ const Collaborators = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]' key={document.id || index}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3101px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
