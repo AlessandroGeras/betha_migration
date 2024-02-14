@@ -230,7 +230,7 @@ const Sidebar = () => {
                             <p>Configurações</p>
                         </button>}
                     </div>)}
-                    {permission != "read" && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
+                    {!viewAll && (<div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
                         <FaUser className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenConta && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-blue-500 hover:text-white" onClick={myaccount}>
                             <p>Minha Conta</p>
