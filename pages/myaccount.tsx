@@ -229,7 +229,7 @@ const AddOutsourced = () => {
                 }
 
                 setFormData({
-                    CNPJ: data.user.CNPJ,
+                    cnpj: data.user.CNPJ,
                     usuario: data.user.NM_USUARIO,
                     sobrenome: data.user.SOBRENOME,
                     endereco: data.user.ENDEREÇO,
