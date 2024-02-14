@@ -14,7 +14,7 @@ const web_terceiro = connection.define(
     },
     ST_EMAIL: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     ID_USUARIO_INTERNO: {
       type: Sequelize.STRING,
@@ -44,7 +44,7 @@ const web_terceiro = connection.define(
     },
     TELEFONE: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     NOME_TERCEIRO: {
       type: Sequelize.STRING,
