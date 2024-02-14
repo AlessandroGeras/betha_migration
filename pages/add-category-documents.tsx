@@ -108,7 +108,7 @@ const AddOutsourced = () => {
 
             {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
-                <div className="bg-blue-500 text-white p-2 text-left mb-56 w-full">
+                <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
                     <span className="ml-2">Adicionar Usuário</span>
                 </div>
