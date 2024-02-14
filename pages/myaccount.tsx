@@ -6,7 +6,7 @@ import Head from 'next/head';
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
         id_user: '',
-        cpf: '',
+        cnpj: '',
         usuario: '',
         sobrenome: '',
         endereco: '',
@@ -61,7 +61,7 @@ const AddOutsourced = () => {
     const resetForm = () => {
         setFormData({
             id_user: '',
-            cpf: '',
+            cnpj: '',
             usuario: '',
             sobrenome: '',
             endereco: '',
@@ -78,11 +78,11 @@ const AddOutsourced = () => {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
 
-        if (name === 'cpf') {
-            const formattedCPF = value
+        if (name === 'cnpj') {
+            const formattedcnpj = value
                 .replace(/\D/g, '') // Remove caracteres não numéricos
-                .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação para CPF
-            setFormData({ ...formData, [name]: formattedCPF });
+                .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação para cnpj
+            setFormData({ ...formData, [name]: formattedcnpj });
         } else {
             setFormData({ ...formData, [name]: value });
         }
@@ -166,7 +166,7 @@ const AddOutsourced = () => {
             console.log(data.user);
 
             setFormData({
-                cpf: data.user.CPF,
+                cnpj: data.user.cnpj,
                 usuario: data.user.NM_USUARIO,
                 sobrenome: data.user.SOBRENOME,
                 endereco: data.user.ENDEREÇO,
@@ -229,7 +229,7 @@ const AddOutsourced = () => {
                 }
 
                 setFormData({
-                    cpf: data.user.CPF,
+                    CNPJ: data.user.CNPJ,
                     usuario: data.user.NM_USUARIO,
                     sobrenome: data.user.SOBRENOME,
                     endereco: data.user.ENDEREÇO,
@@ -289,14 +289,14 @@ const AddOutsourced = () => {
                     </div>
 
                     <div className="col-span-3">
-                        <label htmlFor="cpf" className="block text-sm font-medium text-gray-700">
-                            CPF <span className="text-red-500">*</span>
+                        <label htmlFor="cnpj" className="block text-sm font-medium text-gray-700">
+                            cnpj <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
-                            name="cpf"
-                            id="cpf"
-                            value={formData.cpf}
+                            name="cnpj"
+                            id="cnpj"
+                            value={formData.cnpj}
                             onChange={handleInputChange}
                             placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
