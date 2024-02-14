@@ -37,11 +37,10 @@ export default async function handler(req, res) {
                     },
                 });
                 nome_empresa = findOutsourced.NOME_TERCEIRO;
-                console.log(id);
-                console.log(findOutsourced);
             }
-
-            nome_empresa = nome_terceiro;
+            else {
+                nome_empresa = nome_terceiro;
+            }
 
             const Store = await outsourceds.create({
                 STATUS: status,
