@@ -164,7 +164,7 @@ const AddOutsourced = () => {
                 throw new Error('Não foi possível alterar seus dados pessoas. Verifique se os dados estão preenchidos.');
             }
 
-            resetForm();
+            //resetForm();
             const data = await response.json();
             console.log(data.user);
 
