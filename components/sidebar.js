@@ -189,9 +189,9 @@ const Sidebar = () => {
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuColaboradores} onMouseLeave={toggleSubMenuColaboradores}>
                         <FaUsers className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpeColaboradores && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={colaboradoresClick}>Colaboradores de Terceiro</button>
-                            {isAdmin && (<div>
+                            <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={colaboradoresClick}>Colaboradores de Terceiro</button>                          
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={adicionarColaboradoresClick}>Adicionar Colaborador</button>
+                            {viewAll && (<div>
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={categoriasColaboradoresClick}>Categorias Colaborador</button>
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={adicionarcategoriasColaboradoresClick}>Criar Categoria Colaborador</button>
                             </div>)}
