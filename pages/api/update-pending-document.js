@@ -1,4 +1,5 @@
 import outsourceds from '../../models/outsourceds';
+import categoria_documentos from '../../models/categoryDocuments';
 import documents from '../../models/documents';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -93,7 +94,9 @@ export default async function handler(req, res) {
       if (findOutsourced.NOME_TERCEIRO == nome_terceiro) {
         const existingDoc = await documents.findOne({ where: { ID_DOCUMENTO: id_documento } });
 
-        console.log(existingDoc);
+        const categoryDocuments = await categoria_documentos.findOne({ where: { CATEGORIA: existingDoc.TIPO_DOCUMENTO } });
+
+        console.log(categoryDocuments);
         return
 
         existingDoc.DOCUMENTO = identificacao;
