@@ -23,7 +23,13 @@ export default async function handler(req, res) {
         },
       });
 
-      console.log(docs);
+      const categoria = await categoria_documentos.findOne({
+        where: {
+          CATEGORIA: docs.TIPO_DOCUMENTO,
+        },
+      });
+
+      console.log(categoria);
 
       const notificacao = await configuration.findOne({
         attributes: ['NOTIFICACAO'],
@@ -34,7 +40,7 @@ export default async function handler(req, res) {
         return res.status(403).json({ error: 'Falha ao localizar o documento.' });
       }
 
-      res.status(200).json({ docs,notificacao });
+      res.status(200).json({ docs,notificacao,categoria });
     } catch (error) {
       if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);
