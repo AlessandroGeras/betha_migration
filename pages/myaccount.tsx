@@ -194,7 +194,7 @@ const AddOutsourced = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/users');
+        router.push('/dashboard');
     };
 
     useEffect(() => {
