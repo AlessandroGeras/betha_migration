@@ -71,7 +71,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      jwt.verify(token, process.env.SECRET);      
+      jwt.verify(token, process.env.SECRET);
 
       const findOutsourced = await outsourceds.findOne({
         where: {
@@ -96,13 +96,13 @@ export default async function handler(req, res) {
 
         const categoryDocuments = await categoria_documentos.findOne({ where: { CATEGORIA: existingDoc.TIPO_DOCUMENTO } });
 
-        console.log(categoryDocuments);
-        return
+        if (categoryDocuments.AUDITORIA == "Sim") {
+          existingDoc.FORMATO_VENCIMENTO = vencimento;
+          existingDoc.VENCIMENTO = proximoVencimento;
+          existingDoc.NOTIFICACAO = dataAntes;
+        }
 
         existingDoc.DOCUMENTO = identificacao;
-        existingDoc.FORMATO_VENCIMENTO = vencimento;
-        existingDoc.VENCIMENTO = proximoVencimento;
-        existingDoc.NOTIFICACAO = dataAntes;
         existingDoc.ANEXO = filename.filename;
         existingDoc.STATUS = "Em análise";
 
@@ -131,7 +131,7 @@ export default async function handler(req, res) {
         res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
       }
     } finally {
-      
+
     }
   } else {
     res.status(405).json({ success: false, message: 'Método não permitido.' });
