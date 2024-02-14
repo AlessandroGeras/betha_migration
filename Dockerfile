@@ -29,7 +29,7 @@ RUN npm run build
 # Exponha a porta em que a aplicação irá escutar (geralmente 3000 por padrão)
 EXPOSE 5051
 
-VOLUME /projeto_portal_terceiro/Miner/uploads
+VOLUME /projeto_portal_terceiro/Teste
 
 # Comando para iniciar a aplicação em modo de produção
 CMD ["npm", "start"]
