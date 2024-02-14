@@ -233,7 +233,7 @@ const FindDocument = () => {
 
                 const configuration = await resposta.json();
 
-                console.log("conf"+configuration);
+                console.log(configuration);
 
                 if (resposta.status === 401) {
                     router.push('/login');
