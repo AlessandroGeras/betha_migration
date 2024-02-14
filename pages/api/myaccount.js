@@ -1,4 +1,4 @@
-import users from '../../models/users';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';  // Importe o módulo JWT
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         dialect: process.env.DIALECT || 'oracle',
       });
 
-      const user = await users.findOne({
+      const user = await outsourceds.findOne({
         where: {
           ID_USUARIO: nome
         },
