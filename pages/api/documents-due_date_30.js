@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import outsourceds from '../../models/outsourceds';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
