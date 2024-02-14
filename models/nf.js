@@ -2,7 +2,7 @@ import Sequelize from 'sequelize-oracle';
 import connection from "../config/database.mjs";
 
 const nf = connection.define(
-  "WEB_NOTA_FISCAL_MEDICOES",
+  "WEB_NOTA_FISCAL_MEDICOES_OLD_09022024",
   {
     ORG_IN_CODIGO: {
       type: Sequelize.INTEGER,
@@ -84,7 +84,7 @@ const nf = connection.define(
     },
   },
   {
-    tableName: "WEB_NOTA_FISCAL_MEDICOES",
+    tableName: "WEB_NOTA_FISCAL_MEDICOES_OLD_09022024",
     timestamps: false,
   }
 );
