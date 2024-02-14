@@ -15,7 +15,7 @@ const getAllDocs = async (pageSize, user) => {
       const result = await documents.findAll({
         where: {
           VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
-          ...(user && { NOME_TERCEIRO: user.NOME_TERCEIRO }) // Adiciona filtro por NOME_TERCEIRO se user não for null ou undefined
+          ...(user && { TERCEIRO: user.NOME_TERCEIRO }) // Adiciona filtro por NOME_TERCEIRO se user não for null ou undefined
         },
         offset,
         limit: pageSize,
@@ -84,7 +84,7 @@ export default async function handler(req, res) {
             const docs = await documents.findAndCountAll({
               where: {
                 VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
-                NOME_TERCEIRO: user.NOME_TERCEIRO // Adiciona filtro por NOME_TERCEIRO
+                TERCEIRO: user.NOME_TERCEIRO // Adiciona filtro por NOME_TERCEIRO
               },
               offset: (page - 1) * pageSize,
               limit: pageSize,
