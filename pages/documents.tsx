@@ -37,19 +37,19 @@ const Users = () => {
   const [viewAll, setViewAll] = useState(true);
   const [isAdmin, setIsAdmin] = useState(true);
   const [fileUrl, setFileUrl] = useState('');
-  
 
-interface Document {
-  ID_DOCUMENTO: string;
+
+  interface Document {
+    ID_DOCUMENTO: string;
     ID_USUARIO: string;
     id: string;
     STATUS: string;
-}
+  }
 
-interface User {
-  ID_DOCUMENTO: string;
-}
-  
+  interface User {
+    ID_DOCUMENTO: string;
+  }
+
 
   const printClick = async (id) => {
 
@@ -127,7 +127,7 @@ interface User {
 
     if (userPermission == 'read') {
       setIsAdmin(false);
-    }    
+    }
   }, []);
 
   const addDocPendenteClick = () => {
@@ -262,6 +262,8 @@ interface User {
       setLoading(true);
 
       const token = localStorage.getItem('Token');
+      const id = localStorage.getItem('FontanaUser');
+      const role = localStorage.getItem('role');
 
       if (!token) {
         // Se o token não estiver presente, redirecione para a página de login
@@ -293,7 +295,7 @@ interface User {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token, getAll }),
+        body: JSON.stringify({ token, getAll,id,role }),
       });
 
       const data = await response.json();
@@ -342,7 +344,7 @@ interface User {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-  
+
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
           // Verificar se filterValue é do tipo string
@@ -350,7 +352,7 @@ interface User {
             return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
           }
         }
-  
+
         return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
@@ -433,6 +435,8 @@ interface User {
         setLoading(true);
 
         const token = localStorage.getItem('Token');
+        const id = localStorage.getItem('FontanaUser');
+        const role = localStorage.getItem('role');
 
         if (!token) {
           // Se o token não estiver presente, redirecione para a página de login
@@ -464,7 +468,7 @@ interface User {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token, getAll }),
+          body: JSON.stringify({ token, getAll,id,role }),
         });
 
         const data = await response.json();
@@ -757,7 +761,7 @@ interface User {
 
     fetchDataWithFilter();
 
-  }, [router.query.due_date, getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder,router,due_date]);
+  }, [router.query.due_date, getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder, router, due_date]);
 
 
 

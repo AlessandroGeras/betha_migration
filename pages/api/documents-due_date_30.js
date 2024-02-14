@@ -5,14 +5,19 @@ import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
-const getAllDocs = async (pageSize) => {
+const getAllDocs = async (pageSize, findOutsourced) => {
   let allDocs = [];
   let offset = 0;
 
   while (true) {
     try {
       const result = await documents.findAll({
-        where: Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
+        where: {
+          [Sequelize.Op.and]: [
+            Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
+            ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
+          ]
+        },
         offset,
         limit: pageSize,
       });
@@ -34,7 +39,8 @@ const getAllDocs = async (pageSize) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { token, getAll } = req.body;
+    const { token, getAll, id, role } = req.body;
+    let findOutsourced = null;
 
     if (!token) {
       return res.redirect(302, '/login');
@@ -43,6 +49,15 @@ export default async function handler(req, res) {
     try {
       jwt.verify(token, process.env.SECRET);
 
+      if (role == "external") {
+        findOutsourced = await outsourceds.findOne({
+          where: {
+            ID_USUARIO: id,
+            ID_USUARIO_INTERNO: 'N',
+          },
+        });
+      }
+
       const outsourcedCount = await documents.count();
 
       const pageSize = parseInt(req.query.pageSize) || 10;
@@ -50,7 +65,7 @@ export default async function handler(req, res) {
 
       if (getAll) {
         try {
-          const allDocs = await getAllDocs(pageSize);    
+          const allDocs = await getAllDocs(pageSize, findOutsourced);
 
           res.status(200).json({
             success: true,
@@ -68,7 +83,12 @@ export default async function handler(req, res) {
       } else {
         try {
           const docs = await documents.findAndCountAll({
-            where: Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
+            where: {
+              [Sequelize.Op.and]: [
+                Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
+                ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
+              ]
+            },
             offset: (page - 1) * pageSize,
             limit: pageSize,
           });
@@ -100,7 +120,7 @@ export default async function handler(req, res) {
         res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
       }
     } finally {
-      
+
     }
   }
 }
