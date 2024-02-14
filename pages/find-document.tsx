@@ -5,27 +5,7 @@ import { format } from 'date-fns';
 import { useRef } from 'react';
 
 
-const FindDocument = () => {
-    const [formData, setFormData] = useState({
-        documento: '',
-        tipo_documento: [],
-        vencimento: 'Fixo',
-        dataVencimento: new Date().toISOString().split('T')[0],
-        diasAntecipacao: '',
-        notificacao: 7,
-        auditoria: 'S',
-        identificacao: '',
-        status: '',
-        id_documento: '',
-        nome_terceiro: '',
-        dia: 0,
-        arquivo: null,
-        usuario_inclusao: '',
-        data_inclusao: new Date().toISOString().split('T')[0],
-        motivo: '',
-        usuario_analise: '',
-        data_analise: new Date().toISOString().split('T')[0],
-    });
+const FindDocument = () => {   
 
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -48,6 +28,27 @@ const FindDocument = () => {
     const [showReproveButton, setShowReproveButton] = useState(false);
     const [filename, setFilename] = useState('');
     const [minNotification, setMinNotification] = useState(0);
+
+    const [formData, setFormData] = useState({
+        documento: '',
+        tipo_documento: [],
+        vencimento: 'Fixo',
+        dataVencimento: new Date().toISOString().split('T')[0],
+        diasAntecipacao: '',
+        notificacao: minNotification,
+        auditoria: 'S',
+        identificacao: '',
+        status: '',
+        id_documento: '',
+        nome_terceiro: '',
+        dia: 0,
+        arquivo: null,
+        usuario_inclusao: '',
+        data_inclusao: new Date().toISOString().split('T')[0],
+        motivo: '',
+        usuario_analise: '',
+        data_analise: new Date().toISOString().split('T')[0],
+    });
 
     useEffect(() => {
         const userPermission = localStorage.getItem('permission');
