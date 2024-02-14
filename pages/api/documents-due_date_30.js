@@ -1,8 +1,8 @@
 import documents from '../../models/documents';
 import outsourceds from '../../models/outsourceds';
-import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
+import { Sequelize } from 'sequelize-oracle';
 
 dotenv.config();
 
@@ -14,24 +14,22 @@ const getAllDocs = async (pageSize, findOutsourced) => {
     try {
       const result = await documents.findAll({
         where: {
-          [Sequelize.Op.and]: [
-            Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
-            ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
-          ]
+          [Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30")]:
+            findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}, // Adiciona a condição se findOutsourced existir
         },
         offset,
         limit: pageSize,
       });
 
       if (result.length === 0) {
-        break; // Exit the loop if there are no more results
+        break;
       }
 
       allDocs = [...allDocs, ...result];
       offset += pageSize;
     } catch (error) {
-      console.error('Error fetching documents:', error);
-      throw error; // Re-throw the error to be caught by the outer try-catch block
+      console.error('Error fetching all documents:', error);
+      throw error;
     }
   }
 
@@ -59,8 +57,6 @@ export default async function handler(req, res) {
         });
       }
 
-      const outsourcedCount = await documents.count();
-
       const pageSize = parseInt(req.query.pageSize) || 10;
       const page = parseInt(req.query.page) || 1;
 
@@ -79,22 +75,20 @@ export default async function handler(req, res) {
           });
         } catch (error) {
           console.error('Error fetching all documents:', error);
-          res.status(500).json({ success: false, message: 'Erro ao obter todos os documentos' });
+          res.status(500).json({ success: false, message: 'Erro ao obter todos os documentos', error: error.message });
         }
       } else {
         try {
           const docs = await documents.findAndCountAll({
             where: {
-              [Sequelize.Op.and]: [
-                Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
-                ...(findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}), // Adiciona a condição se findOutsourced existir
-              ]
+              [Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30")]:
+                findOutsourced ? { TERCEIRO: findOutsourced.NOME_TERCEIRO } : {}, // Adiciona a condição se findOutsourced existir
             },
             offset: (page - 1) * pageSize,
             limit: pageSize,
           });
 
-          if (docs) {
+          if (docs.rows.length > 0) {
             res.status(200).json({
               success: true,
               message: 'Documentos encontrados',
@@ -109,7 +103,7 @@ export default async function handler(req, res) {
           }
         } catch (error) {
           console.error('Error fetching paginated documents:', error);
-          res.status(500).json({ success: false, message: 'Erro ao obter os documentos paginados' });
+          res.status(500).json({ success: false, message: 'Erro ao obter os documentos paginados', error: error.message });
         }
       }
     } catch (error) {
@@ -118,10 +112,8 @@ export default async function handler(req, res) {
         res.status(401).json({ success: false, message: 'Token expirado' });
       } else {
         console.error('Error contacting the server:', error);
-        res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
+        res.status(500).json({ success: false, message: 'Erro ao contatar o servidor', error: error.message });
       }
-    } finally {
-
     }
   }
 }
