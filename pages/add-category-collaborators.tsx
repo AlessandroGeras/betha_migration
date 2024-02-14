@@ -123,9 +123,9 @@ const AddCategoryOutsourced = () => {
                     {/* Conteúdo da Barra Superior, se necessário */}
                     <span className="ml-2">Adicionar Categoria de Colaboradores</span>
                 </div>
-                <div className="grid grid-cols-1 gap-4 w-2/4 mx-auto">
+                <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
                     {/* Linha 1 */}
-                    <div className="col-span-5">
+                    <div className="col-span-7">
                         <label htmlFor="nome" className="block text-sm font-medium text-gray-700">
                             Nome da Categoria<span className="text-red-500">*</span>
                         </label>
@@ -138,55 +138,10 @@ const AddCategoryOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
-
-                    {/* Linha 2 */}
-                    <div className="col-span-5 mx-auto">
-                        <label htmlFor="tipo_documento" className="block text-sm font-medium text-gray-700">
-                            Tipos de Documentos <span className="text-red-500">*</span>
-                        </label>
-                        <div className="mt-1 space-y-2">
-                            <div className="flex items-center">
-                                <input
-                                    type="checkbox"
-                                    id="Cartão CNPJ"
-                                    name="Cartão CNPJ"
-                                    value="Cartão CNPJ"
-                                    checked={formData.tipo_documento.includes('Cartão CNPJ')}
-                                    onChange={() => handleCheckboxChange('Cartão CNPJ')}
-                                    className="mr-1"
-                                />
-                                <label htmlFor="Cartão CNPJ" className="select-none">Cartão CNPJ</label>
-                            </div>
-                            <div className="flex items-center">
-                                <input
-                                    type="checkbox"
-                                    id="CND Estadual"
-                                    name="CND Estadual"
-                                    value="CND Estadual"
-                                    checked={formData.tipo_documento.includes('CND Estadual')}
-                                    onChange={() => handleCheckboxChange('CND Estadual')}
-                                    className="mr-1"
-                                />
-                                <label htmlFor="CND Estadual" className="select-none">CND Estadual</label>
-                            </div>
-                            <div className="flex items-center">
-                                <input
-                                    type="checkbox"
-                                    id="CND Federal"
-                                    name="CND Federal"
-                                    value="CND Federal"
-                                    checked={formData.tipo_documento.includes('CND Federal')}
-                                    onChange={() => handleCheckboxChange('CND Federal')}
-                                    className="mr-1"
-                                />
-                                <label htmlFor="CND Federal" className="select-none">CND Federal</label>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
 
                     {/* Linha 3 (Botão Cadastrar) */}
-                    <div className="col-span-5 flex justify-center">
+                    <div className="col-span-7 flex justify-center mt-4">
                         <button
                             type="button"
                             onClick={handleSubmitCancel}
