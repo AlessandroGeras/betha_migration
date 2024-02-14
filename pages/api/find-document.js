@@ -1,5 +1,6 @@
 import documents from '../../models/documents';
 import configuration from '../../models/configuration';
+import categoria_documentos from '../../models/categoryDocuments';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -21,6 +22,8 @@ export default async function handler(req, res) {
           ID_DOCUMENTO: id
         },
       });
+
+      console.log(docs);
 
       const notificacao = await configuration.findOne({
         attributes: ['NOTIFICACAO'],

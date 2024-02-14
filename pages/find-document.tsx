@@ -36,7 +36,7 @@ const FindDocument = () => {
         dataVencimento: new Date().toISOString().split('T')[0],
         diasAntecipacao: '',
         notificacao: minNotification,
-        auditoria: 'S',
+        auditoria: 'Não',
         identificacao: '',
         status: '',
         id_documento: '',
