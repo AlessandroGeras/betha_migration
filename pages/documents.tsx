@@ -213,10 +213,9 @@ const Users = () => {
     '': '',
     'STATUS': 'STATUS',
     'TIPO_DOCUMENTO': 'TIPO_DOCUMENTO',
-    'CNPJ': 'CNPJ',
     'TERCEIRO': 'TERCEIRO',
+    'COLABORADOR': 'COLABORADOR',
     'VENCIMENTO': 'VENCIMENTO',
-    'NOTIFICACAO': 'NOTIFICACAO',
   };
 
   const sortRows = (rows, column, order) => {
