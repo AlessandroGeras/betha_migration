@@ -8,23 +8,23 @@ dotenv.config();
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const {
-            formData: { nome },
-            tipo_documento,
-            token
-          } = req.body;
+            categoria_terceiro,
+            categorias = [],
+            token,
+        } = req.body;
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
         }
 
-
         try {
-            jwt.verify(token, process.env.SECRET);                
-            
+            jwt.verify(token, process.env.SECRET);            
+
             const Store = await categoryCollaborators.create({
-                CATEGORIA: nome,
+                CATEGORIA: categoria_terceiro,
+                TIPO_DOCUMENTO: categorias.join(', '),
             }, {
-                fields: ['CATEGORIA'], // Especifique os campos que deseja incluir
+                fields: ['CATEGORIA','TIPO_DOCUMENTO'],
             });
 
 
