@@ -15,7 +15,7 @@ const AddOutsourced = () => {
         email: '',
         telefone: '',
         uf: '',
-        principal: '',
+        principal: [] as string[],
         nome_terceiro: '',
         id_usuario: '',
     });
@@ -57,7 +57,7 @@ const AddOutsourced = () => {
             email: '',
             telefone: '',
             uf: '',
-            principal: '',
+            principal: [],
             nome_terceiro: '',
             id_usuario: '',
         });
