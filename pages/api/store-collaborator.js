@@ -1,4 +1,5 @@
 import outsourceds from '../../models/outsourceds';
+import categoria_colaboradores from '../../models/categoryCollaborators';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -25,6 +26,7 @@ export default async function handler(req, res) {
             role,
         } = req.body;
         let nome_empresa = '';
+        let categorias = principal;
 
         try {
             jwt.verify(token, process.env.SECRET);
@@ -56,22 +58,46 @@ export default async function handler(req, res) {
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_empresa,
                 CNPJ: "N/A",
-                FUNCAO: principal,
+                FUNCAO: principal.join(', '),
                 COLABORADOR_TERCEIRO: "S",
                 ID_USUARIO_INTERNO: "N",
             });
 
+            // Criação dos documentos apenas se a empresa for criada com sucesso
+            if (storeEmpresa) {
+                for (const categoria of categorias) {
+                    const category = await categoria_colaboradores.findOne({
+                        where: {
+                            CATEGORIA: categoria
+                        },
+                    });
 
-            if (Store) {
-                res.status(200).json({ success: true, message: 'Usuário criado.' });
-            }
-            else {
-                console.log('Falha ao criar usuário.');
-                res.status(400).json({ success: false, message: 'Falha ao criar usuário.' });
+                    if (category) {
+                        const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
+
+                        for (const tipoDocumento of tipoDocumentos) {
+                            const storeDocumentos = await documents.create({
+                                STATUS: "Pendente",
+                                TIPO_DOCUMENTO: tipoDocumento,
+                                TERCEIRO: nome_empresa,
+                                COLABORADOR:usuario,
+                            });
+                        }
+                    } else {
+                        console.log('Falha ao criar Colaborador.');
+                        res.status(400).json({ success: false, message: 'Falha ao criar Colaborador.' });
+                        return; // Adicionado para sair da função em caso de falha
+                    }
+                }
+                // Retorna sucesso apenas após o loop ter sido concluído com êxito
+                res.status(200).json({ success: true, message: 'Colaborador criado.' });
+            } else {
+                console.log('Falha ao criar Colaborador.');
+                res.status(400).json({ success: false, message: 'Falha ao criar Colaborador.' });
             }
         } catch (error) {
-            console.error('Erro ao salvar o usuário:', error);
-            res.status(500).json({ success: false, message: 'Erro ao salvar o usuário.' });
+            console.error('Falha ao criar Colaborador: ', error);
+            res.status(500).json({ success: false, message: 'Falha ao criar Colaborador.' });
         }
     } else {
         res.status(405).json({ success: false, message: 'Método não permitido.' });
