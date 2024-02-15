@@ -26,7 +26,7 @@ export default async function handler(req, res) {
             role,
         } = req.body;
         let nome_empresa = '';
-        let categorias = principal;
+        let categorias = Array.isArray(principal) ? principal : [principal];
 
         try {
             jwt.verify(token, process.env.SECRET);
@@ -58,13 +58,13 @@ export default async function handler(req, res) {
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_empresa,
                 CNPJ: "N/A",
-                FUNCAO: principal.join(', '),
+                FUNCAO: categorias.join(', '), // Use categorias em vez de principal
                 COLABORADOR_TERCEIRO: "S",
                 ID_USUARIO_INTERNO: "N",
             });
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
-            if (storeEmpresa) {
+            if (Store) {
                 for (const categoria of categorias) {
                     const category = await categoria_colaboradores.findOne({
                         where: {
@@ -80,7 +80,7 @@ export default async function handler(req, res) {
                                 STATUS: "Pendente",
                                 TIPO_DOCUMENTO: tipoDocumento,
                                 TERCEIRO: nome_empresa,
-                                COLABORADOR:usuario,
+                                COLABORADOR: usuario,
                             });
                         }
                     } else {
