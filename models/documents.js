@@ -62,6 +62,10 @@ const documento = connection.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
+    COLABORADOR: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: "DOCUMENTOS",

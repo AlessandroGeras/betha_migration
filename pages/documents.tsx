@@ -205,8 +205,8 @@ const Users = () => {
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '300px',
     'TERCEIRO': '350px',
+    'COLABORADOR': '260px',
     'VENCIMENTO': '260px',
-    'NOTIFICACAO': '260px',
   };
 
   const columnLabels = {
@@ -295,7 +295,7 @@ const Users = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token, getAll,id,role }),
+        body: JSON.stringify({ token, getAll, id, role }),
       });
 
       const data = await response.json();
@@ -468,7 +468,7 @@ const Users = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token, getAll,id,role }),
+          body: JSON.stringify({ token, getAll, id, role }),
         });
 
         const data = await response.json();
@@ -1099,6 +1099,27 @@ const Users = () => {
                     </button>
                   </div>
 
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
+                    <select
+                      value={selectedFilterValue['COLABORADOR']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
+                      className="border border-gray-300 px-2 py-1 rounded"
+                    >
+                      <option value="">Todos</option>
+                      {handleFilterValue('COLABORADOR').map((value) => (
+                        <option key={value} value={value}>
+                          {formatBrDate(value)}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
                     <select
@@ -1127,26 +1148,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
-                    <select
-                      value={selectedFilterValue['NOTIFICACAO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOTIFICACAO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('NOTIFICACAO').map((value) => (
-                        <option key={value} value={value}>
-                          {formatBrDate(value)}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('NOTIFICACAO', selectedFilterValue['NOTIFICACAO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
+
 
 
 
