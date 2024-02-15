@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        status: 'Ativo',
+        status: 'Pendente',
         observacoes: '',
         cpf: '',
         usuario: '',
@@ -201,8 +201,7 @@ const AddOutsourced = () => {
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             required
                         >
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
+                            <option value="Pendente">Pendente</option>
                         </select>
                     </div>
 

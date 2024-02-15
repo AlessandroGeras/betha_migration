@@ -1,55 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
+import Head from 'next/head';
 
-const AddCategoryOutsourced = () => {
+const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        nome: '',
-        tipo_documento: [] as string[], // Agora é um array para armazenar valores múltiplos
+        categorias: [] as string[],
+        nomeTerceiro: '',
+        categoria: '',
+        categoria_terceiro: '',
     });
 
+    const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
+    const [categoriaDetails, setCategoriaDetails] = useState({});
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
+    const [enterprises, setEnterprises] = useState([]);
+    const { id } = router.query;
 
     const closeModal = () => {
-        // Limpar os valores do formulário
-        setFormData({
-            nome: '',
-            tipo_documento: [],
-        });
-
-        // Fechar o modal
         setShowModal(false);
     };
 
-    const handleCheckboxChange = (value) => {
-        // Verifica se o valor já está no array
-        const isSelected = formData.tipo_documento.includes(value);
-
-        // Atualiza o estado com base na seleção/deseleção do checkbox
-        setFormData((prevData) => ({
-            ...prevData,
-            tipo_documento: isSelected
-                ? prevData.tipo_documento.filter((item) => item !== value)
-                : [...prevData.tipo_documento, value],
-        }));
+    const resetForm = () => {
+        setFormData({
+            categorias: [],
+            nomeTerceiro: '',
+            categoria: '',
+            categoria_terceiro: '',
+        });
     };
 
-    const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
+    const handleInputChange = (e) => {
         const { name, value } = e.target;
 
         setFormData({ ...formData, [name]: value });
+
     };
 
-    const handleSubmitSuccess = async (e: { preventDefault: () => void; }) => {
+    const handleSelectChange = (e) => {
+        const selectedCategoria = e.target.value;
+
+        if (formData.categorias.includes(selectedCategoria)) {
+            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
+            setFormData({ ...formData, categorias: updatedCategorias });
+        } else {
+            setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
+        }
+    };
+
+    const removeCategoria = (removedCategoria) => {
+        const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
+        setFormData({ ...formData, categorias: updatedCategorias });
+    };
+
+    const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (!formData.nome) {
-            setPopupMessage('O campo "Nome da Categoria" é obrigatório.');
+        if (formData.categoria_terceiro === "" || formData.categorias.length === 0) {
+            setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
@@ -57,37 +70,22 @@ const AddCategoryOutsourced = () => {
         }
 
         try {
-            // Enviar dados para a API usando fetch
             const token = localStorage.getItem('Token');
 
             if (!token) {
-                // Se o token não estiver presente, redirecione para a página de login
-                console.log("sem token");
                 router.push('/login');
                 return;
             }
-
-            const requestBody = {
-                token: token,
-                formData: formData
-              };
 
             const response = await fetch('/api/store-category-collaborators', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(requestBody),
+                body: JSON.stringify({
+                    ...formData, token
+                }),
             });
-
-            const data = await response.json();
-            if (response.status === 401) {
-                console.log("teste");
-                router.push('/login');
-            }
-            else {
-                setTokenVerified(true);
-            }            
 
             if (!response.ok) {
                 setPopupMessage('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
@@ -95,14 +93,15 @@ const AddCategoryOutsourced = () => {
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
                 throw new Error('Não foi possível criar a categoria. Verifique se os dados estão preenchidos.');
-            }            
+            }
 
-            // Lógica adicional após o envio bem-sucedido, se necessário
-            console.log('Categoria criada com sucesso!', data);
+            const responseData = await response.json();
+
             setPopupMessage('Categoria criada com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
+            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
@@ -112,96 +111,200 @@ const AddCategoryOutsourced = () => {
         router.push('/category-collaborators');
     };
 
-    return (
-        <div className="flex h-screen">
-            {/* Barra lateral */}
-            <Sidebar />
+    useEffect(() => {
+        const fetchCategoriaOptions = async () => {
+            try {
+                const token = localStorage.getItem('Token');
+                const id_user = localStorage.getItem('FontanaUser');
 
-            {/* Tabela principal */}
-            <div className="flex-1 items-center justify-center bg-gray-50">
-                <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
-                    {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Categoria de Colaboradores</span>
-                </div>
-                <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
-                    {/* Linha 1 */}
-                    <div className="col-span-7">
-                        <label htmlFor="nome" className="block text-sm font-medium text-gray-700">
-                            Nome da Categoria<span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="nome"
-                            id="nome"
-                            value={formData.nome}
-                            onChange={handleInputChange}
-                            required
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>                    
-
-                    {/* Linha 3 (Botão Cadastrar) */}
-                    <div className="col-span-7 flex justify-center mt-4">
-                        <button
-                            type="button"
-                            onClick={handleSubmitCancel}
-                            className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                        >
-                            Cancelar
-                        </button>
-                        <button
-                            type="button"
-                            onClick={handleSubmitSuccess}
-                            className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                        >
-                            Salvar
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Modal */}
-            {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                        {/* Pseudo-elemento para a barra lateral */}
-                        <style>
-                            {`
-                .modal-content::before {
-                  content: '';
-                  background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
-                  width: 4px; /* Largura da barra lateral */
-                  height: 100%; /* Altura da barra lateral */
-                  position: absolute;
-                  top: 0;
-                  left: 0;
+                if (!token) {
+                    router.push('/login');
+                    return;
                 }
-              `}
-                        </style>
 
-                        <button
-                            className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
-                            onClick={closeModal}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
+                const getAll = true;
 
-                        <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
-                            {popupMessage}
+                const response = await fetch(`/api/find-category-collaborators`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token, getAll, id, id_user }),
+                });
+
+                const data = await response.json();
+
+                console.log(data);
+                if (response.status === 401) {
+                    router.push('/login');
+                }
+                else if (response.status === 403) {
+                    router.push('/403');
+                } else {
+
+                    setTokenVerified(true);
+                    setEnterprises(data.uniqueEnterprises);
+
+                    const updatedCategoriaDetails = {};
+
+                    data.docs.rows.forEach((categoria) => {
+                        updatedCategoriaDetails[categoria.CATEGORIA] = {
+                            campo1: categoria.NUMERACAO,
+                            campo2: categoria.FORMATO_VENCIMENTO,
+                            campo3: categoria.AUDITORIA,
+                        };
+                    });
+
+                    setCategoriaDetails(updatedCategoriaDetails);
+
+                }
+                setCategoriaOptions(data.success ? data.docs.rows : []);
+            } catch (error) {
+                console.error('Erro ao obter opções de categoria:', error);
+            }
+        };
+
+        fetchCategoriaOptions();
+    }, [router]);
+
+    return (
+        <div>
+
+            {isTokenVerified && (<div>
+                <div className="flex h-screen">
+                    <Sidebar />
+                    <Head>
+                        <title>Adicionar categoria</title>
+                    </Head>
+
+                    <div className="flex-1 items-center justify-center bg-gray-50">
+                        <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
+                            <span className="ml-2">Adicionar categoria de Terceiro</span>
+                        </div>
+                        <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
+                            <div className="col-span-7">
+                                <label htmlFor="categoria_terceiro" className="block text-sm font-medium text-gray-700">
+                                    Categoria de Terceiro <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="categoria_terceiro"
+                                    id="categoria_terceiro"
+                                    onChange={handleInputChange}
+                                    required
+                                    value={formData.categoria_terceiro}
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
+                            </div>
+
+
+                            <div className="col-span-7">
+                                <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
+                                    Tipo de Documento <span className="text-red-500">*</span>
+                                </label>
+                                <select
+                                    name="categoria"
+                                    id="categoria"
+                                    value={formData.categoria}
+                                    onChange={(e) => handleSelectChange(e)}
+                                    required
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    <option value="" disabled selected>
+                                        Selecione um documento
+                                    </option>
+                                    {categoriaOptions.map((categoria) => (
+                                        <option key={categoria.CATEGORIA} value={categoria.CATEGORIA}>
+                                            {categoria.CATEGORIA}
+                                        </option>
+                                    ))}
+                                </select>
+                                {formData.categorias.length > 0 && (
+                                    <div className="mt-2">
+                                        <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
+                                        <ul className="list-disc pl-4">
+                                            {formData.categorias.map((selectedCategoria) => (
+                                                <li key={selectedCategoria} className="flex items-center justify-between">
+                                                    {selectedCategoria}
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeCategoria(selectedCategoria)}
+                                                        className="text-red-500"
+                                                    >
+                                                        Remover
+                                                    </button>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+
+
+
+
+
+                            <div className="col-span-7 flex justify-center mt-4">
+                                <button
+                                    type="submit"
+                                    onClick={handleSubmitCancel}
+                                    className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    Cancelar
+                                </button>
+                                <button
+                                    type="submit"
+                                    onClick={handleSubmitSuccess}
+                                    className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    Salvar
+                                </button>
+                            </div>
                         </div>
                     </div>
+
+                    {showModal && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                                <style>
+                                    {`
+                            .modal-content::before {
+                                content: '';
+                                background-color: ${modalColor};
+                                width: 4px;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+                        `}
+                                </style>
+
+                                <button
+                                    className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                                    onClick={closeModal}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        className="h-5 w-5"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+
+                                <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                                    {popupMessage}
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>)}
         </div>
     );
 };
 
-export default AddCategoryOutsourced;
+export default AddOutsourced;

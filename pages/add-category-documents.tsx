@@ -103,14 +103,14 @@ const AddOutsourced = () => {
             {/* Barra lateral */}
             <Sidebar />
             <Head>
-                <title>Adicionar Usuário</title>
+                <title>Adicionar Categoria</title>
             </Head>
 
             {/* Tabela principal */}
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Adicionar Usuário</span>
+                    <span className="ml-2">Adicionar Categoria</span>
                 </div>
                 <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
                     {/* Linha 1 */}
