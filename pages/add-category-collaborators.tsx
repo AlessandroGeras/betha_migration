@@ -124,7 +124,7 @@ const AddOutsourced = () => {
 
                 const getAll = true;
 
-                const response = await fetch(`/api/find-category-collaborators`, {
+                const response = await fetch(`/api/find-category-outsourced`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
