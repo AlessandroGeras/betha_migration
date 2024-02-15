@@ -8,10 +8,14 @@ const categoria_colaboradores = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    TIPO_DOCUMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: 'CATEGORIA_COLABORADORES',
-    timestamps: false,   
+    timestamps: false,
   }
 );
 
