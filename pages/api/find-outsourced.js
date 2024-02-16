@@ -14,9 +14,6 @@ export default async function handler(req, res) {
       token
     } = req.body;
 
-    console.log(id);
-    return
-
     try {
       jwt.verify(token, process.env.SECRET);      
 
