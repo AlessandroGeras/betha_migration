@@ -25,16 +25,15 @@ export default async function handler(req, res) {
         
 
         try {
-            jwt.verify(token, process.env.SECRET);   
-
-            console.log("User"+usuario);
-
+            jwt.verify(token, process.env.SECRET); 
 
             const existingUser = await outsourceds.findOne({ where: {
                 ID_USUARIO: id_user,
                 COLABORADOR_TERCEIRO: 'S',
              }});
             const user = existingUser;    
+
+            console.log(existingUser);
 
             existingUser.ENDEREÇO = endereco;
            /*  existingUser.ST_EMAIL = email; */
