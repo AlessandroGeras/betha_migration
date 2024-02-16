@@ -4,7 +4,7 @@ import cobrança from '../../models/billing';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
-const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = require('date-fns');
+import { parse, format } from 'date-fns';
 
 dotenv.config();
 
@@ -93,7 +93,15 @@ export default async function handler(req, res) {
         }
 
         // Se a data de notificação não estiver definida ou for menor ou igual à data atual, o documento é considerado válido
-        return !doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate;
+        if (!doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate) {
+          // Se o documento estiver ativo e o vencimento não estiver definido, descarte-o
+          if (doc.STATUS === 'Ativo' && doc.VENCIMENTO === null) {
+            return false;
+          }
+          return true;
+        }
+
+        return false;
       });
 
       // Construir o corpo do e-mail para os documentos filtrados
