@@ -41,7 +41,7 @@ const FindDocument = () => {
         status: '',
         id_documento: '',
         nome_terceiro: '',
-        dia: 0,
+        dia: 1,
         arquivo: null,
         usuario_inclusao: '',
         data_inclusao: new Date().toISOString().split('T')[0],
