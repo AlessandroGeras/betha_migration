@@ -4,8 +4,6 @@ import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
-
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const {
