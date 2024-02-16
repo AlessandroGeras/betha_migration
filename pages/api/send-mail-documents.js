@@ -104,7 +104,10 @@ export default async function handler(req, res) {
         return false;
       });
 
-      console.log(docsFiltrados);
+      if (docsFiltrados.length === 0) {
+        res.status(200).json({ message: "Cobranças automáticas concluídas" });
+        return
+      }
 
       // Construir o corpo do e-mail para os documentos filtrados
       let emailBody = `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>`;
