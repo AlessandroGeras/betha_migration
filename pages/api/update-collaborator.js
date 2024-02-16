@@ -20,6 +20,7 @@ export default async function handler(req, res) {
             status,
             obs_status,
             nome_terceiro,
+            token,
         } = req.body;
         
 

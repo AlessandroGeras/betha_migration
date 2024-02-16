@@ -82,13 +82,15 @@ const AccountUsers = () => {
         }
 
         try {
+            const token = localStorage.getItem('Token');
+
             const response = await fetch('/api/update-collaborator', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,
+                    ...formData,token
                 }),
             });
 
