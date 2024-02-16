@@ -178,7 +178,7 @@ const AddOutsourced = () => {
             {/* Barra lateral */}
             <Sidebar />
             <Head>
-                <title>Adicionar Colaboradoe</title>
+                <title>Adicionar Colaborador</title>
             </Head>
 
             {/* Tabela principal */}
