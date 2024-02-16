@@ -105,7 +105,7 @@ export default async function handler(req, res) {
       });
 
       if (docsFiltrados.length === 0) {
-        res.status(200).json({ message: "Cobranças automáticas concluídas" });
+        res.status(200).json({ message: "Não há cobranças para serem enviadas" });
         return
       }
 
