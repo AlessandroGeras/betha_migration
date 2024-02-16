@@ -96,7 +96,6 @@ export default async function handler(req, res) {
         if (!doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate) {
           // Se o documento estiver ativo e o vencimento não estiver definido, descarte-o
           if (doc.STATUS === 'Ativo' && doc.VENCIMENTO === null) {
-            console.log(doc);
             return false;
           }
           return true;
@@ -104,6 +103,8 @@ export default async function handler(req, res) {
 
         return false;
       });
+
+      console.log(docsFiltrados);
 
       // Construir o corpo do e-mail para os documentos filtrados
       let emailBody = `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>`;
