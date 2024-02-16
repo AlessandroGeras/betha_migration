@@ -96,7 +96,7 @@ export default async function handler(req, res) {
         if (!doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate) {
           // Se o documento estiver ativo e o vencimento não estiver definido, descarte-o
           if (doc.STATUS === 'Ativo' && doc.VENCIMENTO === null) {
-            console.log("Doc"+doc);
+            console.log(doc);
             return false;
           }
           return true;
