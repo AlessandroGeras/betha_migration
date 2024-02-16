@@ -71,9 +71,10 @@ export default async function handler(req, res) {
                             CATEGORIA: categoria
                         },
                     });
-
+                    console.log(category);
                     if (category) {
                         const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
+                        console.log(tipoDocumentos);
 
                         for (const tipoDocumento of tipoDocumentos) {
                             const storeDocumentos = await documents.create({
