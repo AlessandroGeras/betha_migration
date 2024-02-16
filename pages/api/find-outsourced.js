@@ -1,13 +1,10 @@
 import outsourceds from '../../models/outsourceds';
 import categoria_terceiros from '../../models/categoryOutsourced';
-import Oracledb from 'oracledb';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 
 dotenv.config();
-
-Oracledb.initOracleClient( {libdir: 'C:\\app\\instantclient_19_64Bits'} )
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
