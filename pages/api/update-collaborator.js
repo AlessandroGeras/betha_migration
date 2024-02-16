@@ -27,6 +27,8 @@ export default async function handler(req, res) {
         try {
             jwt.verify(token, process.env.SECRET);   
 
+            console.log("User"+usuario);
+
 
             const existingUser = await outsourceds.findOne({ where: {
                 ID_USUARIO: id_user,

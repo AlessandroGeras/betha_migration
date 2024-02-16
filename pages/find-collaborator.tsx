@@ -228,7 +228,6 @@ const AccountUsers = () => {
                             name="usuario"
                             id="usuario"
                             required
-                            disabled
                             value={formData.usuario}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
