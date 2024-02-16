@@ -31,17 +31,15 @@ export default async function handler(req, res) {
                 ID_USUARIO: id_user,
                 COLABORADOR_TERCEIRO: 'S',
              }});
-            const user = existingUser;    
-
-            console.log(existingUser);
-
+            const user = existingUser;  
+            
             existingUser.ENDEREÇO = endereco;
            /*  existingUser.ST_EMAIL = email; */
             existingUser.CIDADE = cidade;
             existingUser.UF = uf;
             /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
-            existingUser.NW_USER = usuario;
+            existingUser.NW_USUARIO = usuario;
             existingUser.FUNCAO = principal;
             existingUser.STATUS = status;
             existingUser.NOME_TERCEIRO = nome_terceiro;    
