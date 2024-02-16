@@ -65,6 +65,7 @@ export default async function handler(req, res) {
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
             if (Store) {
+                console.log("Gravação feito");
                 for (const categoria of categorias) {
                     const category = await categoria_colaboradores.findOne({
                         where: {
