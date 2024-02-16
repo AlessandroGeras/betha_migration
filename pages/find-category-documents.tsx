@@ -151,7 +151,7 @@ const AddOutsourced = () => {
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
                     {/* Conteúdo da Barra Superior, se necessário */}
-                    <span className="ml-2">Alterar Categoria de Terceiro</span>
+                    <span className="ml-2">Alterar Categoria de Documentos</span>
                 </div>
                 <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
                     {/* Linha 1 */}
@@ -164,6 +164,7 @@ const AddOutsourced = () => {
                             name="categoria"
                             id="categoria"
                             required
+                            disabled
                             value={formData.categoria}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
