@@ -194,7 +194,7 @@ const FindDocument = () => {
                         status: data.docs.STATUS,
                         id_documento: data.docs.ID_DOCUMENTO,
                         nome_terceiro: data.docs.TERCEIRO,
-                        dia: data.docs.VENCIMENTO ? new Date(data.docs.VENCIMENTO).getDate() : 0,
+                        dia: data.docs.VENCIMENTO ? new Date(data.docs.VENCIMENTO).getDate() : 1,
                         usuario_inclusao: data.docs.USUARIO_INCLUSAO,
                         data_inclusao: format(new Date(data.docs.DATA_INCLUSAO), 'yyyy-MM-dd'),
                         motivo: data.docs.MOTIVO,
