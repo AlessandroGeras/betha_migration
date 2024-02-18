@@ -13,14 +13,17 @@ export default async function handler(req, res) {
         }
 
         try {
-            jwt.verify(token, process.env.SECRET);   
+            jwt.verify(token, process.env.SECRET);
 
-            const existingCategory = await categoria_colaboradores.findOne({ where: { CATEGORIA: categoria_terceiro } });
+            const existingCategory = await categoria_colaboradores.findOne({
+                attributes: ['CATEGORIA', 'TIPO_DOCUMENTO'],
+                where: { CATEGORIA: categoria_terceiro }
+            });
 
             existingCategory.CATEGORIA = categoria_terceiro;
             existingCategory.TIPO_DOCUMENTO = categorias.join(', '),
 
-            await existingCategory.save();
+                await existingCategory.save();
 
             res.status(200).json({ success: true, message: 'Categoria alterada' });
 
