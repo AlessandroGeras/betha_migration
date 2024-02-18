@@ -108,7 +108,7 @@ const AddOutsourced = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/category-outsourced');
+        router.push('/category-collaborators');
     };
 
     useEffect(() => {
