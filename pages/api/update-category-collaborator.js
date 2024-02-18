@@ -6,7 +6,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { categoria_colaborador, categorias, token } = req.body;
+        const { categoria_terceiro, categorias, token } = req.body;
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -15,12 +15,9 @@ export default async function handler(req, res) {
         try {
             jwt.verify(token, process.env.SECRET);   
 
-            const existingCategory = await categoria_colaboradores.findOne({
-                attributes: ['CATEGORIA', 'TIPO_DOCUMENTO'],
-                 where: { CATEGORIA: categoria_colaborador }
-                 });
+            const existingCategory = await categoria_colaboradores.findOne({ where: { CATEGORIA: categoria_terceiro } });
 
-            existingCategory.CATEGORIA = categoria_colaborador;
+            existingCategory.CATEGORIA = categoria_terceiro;
             existingCategory.TIPO_DOCUMENTO = categorias.join(', '),
 
             await existingCategory.save();

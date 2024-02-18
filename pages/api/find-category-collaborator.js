@@ -58,13 +58,9 @@ export default async function handler(req, res) {
         let category = null;
         let findAdmin = null;
 
-        console.log(id);
-
         if (id == undefined) {
             id = false;
         }
-
-        console.log(id);
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -74,8 +70,6 @@ export default async function handler(req, res) {
             jwt.verify(token, process.env.SECRET);            
 
             const outsourcedCount = await categoria_documentos.count();
-
-            console.log(id);
 
             if (id != false) {
                 category = await categoria_colaboradores.findOne({
@@ -88,7 +82,7 @@ export default async function handler(req, res) {
             else {
                 id = null;
             }
-            console.log(category);
+            
 
             // Configuração da paginação
             const page = parseInt(req.query.page) || 1; // Página atual
