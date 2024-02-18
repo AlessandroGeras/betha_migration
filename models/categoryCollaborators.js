@@ -7,6 +7,7 @@ const categoria_colaboradores = connection.define(
     CATEGORIA: {
       type: Sequelize.STRING,
       allowNull: false,
+      primaryKey: true,
     },
     TIPO_DOCUMENTO: {
       type: Sequelize.STRING,
