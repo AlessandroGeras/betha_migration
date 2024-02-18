@@ -58,8 +58,6 @@ export default async function handler(req, res) {
         let category = null;
         let findAdmin = null;
 
-        console.log(id);
-
         if (id == undefined) {
             id = false;
         }
@@ -79,10 +77,11 @@ export default async function handler(req, res) {
                         CATEGORIA: id
                     },
                 });
-            }
+            }            
             else {
                 id = null;
             }
+            console.log(category);
 
             // Configuração da paginação
             const page = parseInt(req.query.page) || 1; // Página atual
