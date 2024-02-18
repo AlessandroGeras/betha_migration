@@ -65,6 +65,7 @@ export default async function handler(req, res) {
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
             if (Store) {
+                console.log("Criação de usuário OK");
                 for (const categoria of categorias) {
                     const category = await categoria_colaboradores.findOne({
                         where: {
@@ -72,6 +73,8 @@ export default async function handler(req, res) {
                         },
                     });
                     console.log(category);
+                    console.log("Categorias");
+                    return
                     if (category) {
                         const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
                         console.log(tipoDocumentos);
