@@ -46,9 +46,9 @@ export default async function handler(req, res) {
             existingUser.STATUS = status;
             existingUser.NOME_TERCEIRO = nome_terceiro;  
 
-            await existingUser.save();
+            const usersalvo = await existingUser.save();
 
-            console.log(existingUser);
+            console.log(usersalvo);
             return
 
             console.log("usuariosalvo"+existingUser.NW_USUARIO);
