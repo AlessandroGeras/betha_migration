@@ -102,7 +102,7 @@ const AccountUsers = () => {
                 throw new Error('Não foi possível alterar o cadastro. Verifique se os dados estão preenchidos.');
             }
 
-            resetForm();
+            //resetForm();
             const data = await response.json();
 
             setFormData({

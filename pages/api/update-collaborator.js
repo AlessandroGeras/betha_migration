@@ -29,10 +29,13 @@ export default async function handler(req, res) {
 
             console.log("usuario"+usuario);
 
-            const existingUser = await outsourceds.findOne({ where: {
-                ID_USUARIO: id_user,
-                COLABORADOR_TERCEIRO: 'S',
-             }});             
+            const existingUser = await outsourceds.findOne({ 
+                attributes: ['NW_USUARIO'],
+                where: {
+                    ID_USUARIO: id_user,
+                    COLABORADOR_TERCEIRO: 'S',
+                },                 
+            });             
             
             existingUser.ENDEREÇO = endereco;
            /*  existingUser.ST_EMAIL = email; */
@@ -40,6 +43,8 @@ export default async function handler(req, res) {
             existingUser.UF = uf;
             /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
+            console.log("usuarioantigo"+existingUser.NW_USUARIO);
+            console.log("usuarionovo"+usuario);
             existingUser.NW_USUARIO = usuario;
             existingUser.FUNCAO = principal;
             existingUser.STATUS = status;
@@ -47,7 +52,7 @@ export default async function handler(req, res) {
 
             const usersalvo = await existingUser.save();
 
-            console.log(usersalvo);
+            console.log("usuariosalvo"+usersalvo.NW_USUARIO);
 
             res.status(200).json({ usersalvo });
 
