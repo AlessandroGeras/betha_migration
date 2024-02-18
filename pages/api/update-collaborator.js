@@ -41,7 +41,7 @@ export default async function handler(req, res) {
             existingUser.UF = uf;
             /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
-            existingUser.NW_USUARIO = usuario;
+            existingUser.NW_USUARIO = "ufuufdufduf";
             existingUser.FUNCAO = principal;
             existingUser.STATUS = status;
             existingUser.NOME_TERCEIRO = nome_terceiro;    
