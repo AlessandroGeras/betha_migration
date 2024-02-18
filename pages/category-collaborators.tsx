@@ -699,7 +699,7 @@ const CategoryOutsourced = () => {
                             className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-documents', query: { id: document.CATEGORIA } }}>
+                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-collaborators', query: { id: document.CATEGORIA } }}>
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
                               <button onClick={() => deleteCategoria(document.CATEGORIA)}>
