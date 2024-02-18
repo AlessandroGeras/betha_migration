@@ -71,6 +71,8 @@ export default async function handler(req, res) {
 
             const outsourcedCount = await categoria_documentos.count();
 
+            console.log(id);
+
             if (id != false) {
                 category = await categoria_colaboradores.findOne({
                     attributes: ['CATEGORIA', 'TIPO_DOCUMENTO'],
