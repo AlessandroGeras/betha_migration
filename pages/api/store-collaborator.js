@@ -65,8 +65,7 @@ export default async function handler(req, res) {
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
             if (Store) {
-                console.log("Gravação feito");
-                /* for (const categoria of categorias) {
+                for (const categoria of categorias) {
                     const category = await categoria_colaboradores.findOne({
                         where: {
                             CATEGORIA: categoria
@@ -91,7 +90,7 @@ export default async function handler(req, res) {
                         return; // Adicionado para sair da função em caso de falha
                     }
                 }
-                // Retorna sucesso apenas após o loop ter sido concluído com êxito */
+                // Retorna sucesso apenas após o loop ter sido concluído com êxito
                 res.status(200).json({ success: true, message: 'Colaborador criado.' });
             } else {
                 console.log('Falha ao criar Colaborador.');
