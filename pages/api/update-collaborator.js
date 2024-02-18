@@ -34,6 +34,9 @@ export default async function handler(req, res) {
                 COLABORADOR_TERCEIRO: 'S',
              }});
             const user = existingUser;  
+
+            console.log(existingUser);
+            return
             
             existingUser.ENDEREÇO = endereco;
            /*  existingUser.ST_EMAIL = email; */
@@ -41,7 +44,7 @@ export default async function handler(req, res) {
             existingUser.UF = uf;
             /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
-            existingUser.NW_USUARIO = "ufuufdufduf";
+            existingUser.NW_USUARIO = usuario;
             existingUser.FUNCAO = principal;
             existingUser.STATUS = status;
             existingUser.NOME_TERCEIRO = nome_terceiro;    
