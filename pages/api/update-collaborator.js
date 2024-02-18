@@ -32,8 +32,7 @@ export default async function handler(req, res) {
             const existingUser = await outsourceds.findOne({ where: {
                 ID_USUARIO: id_user,
                 COLABORADOR_TERCEIRO: 'S',
-             }});
-            const user = existingUser;              
+             }});             
             
             existingUser.ENDEREÇO = endereco;
            /*  existingUser.ST_EMAIL = email; */
@@ -49,11 +48,8 @@ export default async function handler(req, res) {
             const usersalvo = await existingUser.save();
 
             console.log(usersalvo);
-            return
 
-            console.log("usuariosalvo"+existingUser.NW_USUARIO);
-
-            res.status(200).json({ user });
+            res.status(200).json({ usersalvo });
 
         } catch (error) {
             console.error('Erro ao alterar os dados de cadastro:', error);
