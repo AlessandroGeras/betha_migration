@@ -15,7 +15,10 @@ export default async function handler(req, res) {
         try {
             jwt.verify(token, process.env.SECRET);   
 
-            const existingCategory = await categoria_colaboradores.findOne({ where: { CATEGORIA: categoria_colaborador } });
+            const existingCategory = await categoria_colaboradores.findOne({
+                attributes: ['CATEGORIA', 'TIPO_DOCUMENTO'],
+                 where: { CATEGORIA: categoria_colaborador }
+                 });
 
             existingCategory.CATEGORIA = categoria_colaborador;
             existingCategory.TIPO_DOCUMENTO = categorias.join(', '),
