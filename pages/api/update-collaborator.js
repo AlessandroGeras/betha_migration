@@ -27,10 +27,7 @@ export default async function handler(req, res) {
         try {
             jwt.verify(token, process.env.SECRET); 
 
-            console.log("usuario"+usuario);
-
             const existingUser = await outsourceds.findOne({ 
-                attributes: ['NW_USUARIO'],
                 where: {
                     ID_USUARIO: id_user,
                     COLABORADOR_TERCEIRO: 'S',
@@ -43,16 +40,12 @@ export default async function handler(req, res) {
             existingUser.UF = uf;
             /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
-            console.log("usuarioantigo"+existingUser.NW_USUARIO);
-            console.log("usuarionovo"+usuario);
-            existingUser.NW_USUARIO = usuario;
+            existingUser.NM_USUARIO = usuario;
             existingUser.FUNCAO = principal;
             existingUser.STATUS = status;
             existingUser.NOME_TERCEIRO = nome_terceiro;  
 
             const usersalvo = await existingUser.save();
-
-            console.log("usuariosalvo"+usersalvo.NW_USUARIO);
 
             res.status(200).json({ usersalvo });
 
