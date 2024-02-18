@@ -45,9 +45,9 @@ export default async function handler(req, res) {
             existingUser.STATUS = status;
             existingUser.NOME_TERCEIRO = nome_terceiro;  
 
-            const usersalvo = await existingUser.save();
+            const user = await existingUser.save();
 
-            res.status(200).json({ usersalvo });
+            res.status(200).json({ user });
 
         } catch (error) {
             console.error('Erro ao alterar os dados de cadastro:', error);
