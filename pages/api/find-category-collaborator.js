@@ -58,9 +58,13 @@ export default async function handler(req, res) {
         let category = null;
         let findAdmin = null;
 
+        console.log(id);
+
         if (id == undefined) {
             id = false;
         }
+
+        console.log(id);
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
