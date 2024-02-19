@@ -44,7 +44,8 @@ export default async function handler(req, res) {
         TIPO_DOCUMENTO: doc.TIPO_DOCUMENTO,
         MOTIVO: doc.MOTIVO,
         NOTIFICACAO: doc.NOTIFICACAO, // Adicione a propriedade NOTIFICACAO
-        VENCIMENTO: doc.VENCIMENTO // Adicione a propriedade VENCIMENTO
+        VENCIMENTO: doc.VENCIMENTO, // Adicione a propriedade VENCIMENTO
+        COLABORADOR: doc.COLABORADOR,
       });
 
       return acc;
