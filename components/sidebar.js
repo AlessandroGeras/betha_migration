@@ -105,6 +105,10 @@ const Sidebar = () => {
         router.push('/add-pending-document');
     };
 
+    const addDocPendenteColaboradorClick = () => {
+        router.push('/add-pending-document-collaborator');
+    };
+
     const colaboradoresClick = () => {
         router.push('/collaborators');
     };
@@ -180,7 +184,8 @@ const Sidebar = () => {
                         {isSubMenuOpenDocumentos && <div className="absolute top-0 left-[68px] bg-white shadow-md">
                             <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={documentosClick}>Listar Docs</button>
                             {viewAll && isAdmin && (<div>
-                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addDocPendenteClick}>Incluir Doc Pendente</button>
+                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={addDocPendenteClick}>Incluir Pendência Terceiro</button>
+                                <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addDocPendenteColaboradorClick}>Incluir Pendência Colaborador</button>
                                 <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={docCategoryClick}>Categoria de Docs</button>
                                 <button className='hover:bg-blue-500 hover:text-white block w-[250px] py-[10px]' onClick={addDocCategoryClick}>Criar Categoria de Doc</button>
                             </div>)}
