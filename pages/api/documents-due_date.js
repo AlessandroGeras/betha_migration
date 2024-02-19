@@ -132,7 +132,8 @@ export default async function handler(req, res) {
           try {
             const docs = await documents.findAndCountAll({
               where: {
-                VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) < TRUNC(SYSDATE)")
+                VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) < TRUNC(SYSDATE)"),
+                STATUS: "Ativo",
               },
               offset: (page - 1) * pageSize,
               limit: pageSize,
