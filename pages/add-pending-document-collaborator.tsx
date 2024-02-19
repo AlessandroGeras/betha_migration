@@ -132,8 +132,8 @@ const AddOutsourced = () => {
         router.push('/documents');
     };
 
-    const filterCollaboratorsByEnterprise = (selectedEnterprise) => {
-        const filtered = collaborators.filter(collaborator => collaborator.enterprise === selectedEnterprise);
+    const filterCollaboratorsByEnterprise = (selectedEnterprise: any) => {
+        const filtered = collaborators.filter((collaborator: any) => collaborator.NOME_TERCEIRO === selectedEnterprise);
         setFilteredCollaborators(filtered);
     };
 
