@@ -51,6 +51,11 @@ const Login = () => {
           setPopupMessage('Usuário sem permissão para acesso.');
           setShowModal(true);
         }  
+        else if (response.status === 406) {
+          // Primeiro acesso
+          setPopupMessage('Usuário desativado.');
+          setShowModal(true);
+        }  
         else{ 
         console.error('Falha na autenticação');
         setPopupMessage('Usuário ou senha inválido');

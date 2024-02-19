@@ -68,6 +68,11 @@ export default async function handler(req, res) {
                 });
 
                 if (usuarioexterno) {
+                    if(usuarioexterno.STATUS){
+                        res.status(406).json({ error: 'Usuário desativado.' });
+                    }
+
+
                     const storedHashedPassword = usuarioexterno.dataValues.DS_SENHA;
                     const passwordMatch = bcrypt.compareSync(password, storedHashedPassword);
 
