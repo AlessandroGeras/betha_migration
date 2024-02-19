@@ -60,7 +60,7 @@ export default async function handler(req, res) {
         COLABORADOR_TERCEIRO: 'N',
         STATUS:'Ativo',
       },
-      attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO',]
+      attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO','STATUS']
     });
 
     // Mapear emails e IDs dos terceiros
