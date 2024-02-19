@@ -986,7 +986,7 @@ const Users = () => {
               </button>
               {viewAll && isAdmin && (<div className='flex ml-auto'>
                 <button
-                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex"
                   onClick={addDocPendenteClick}
                 >
                   <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de Terceiro
