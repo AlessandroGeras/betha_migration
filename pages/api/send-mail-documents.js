@@ -58,6 +58,7 @@ export default async function handler(req, res) {
       where: {
         NOME_TERCEIRO: terceiros,
         COLABORADOR_TERCEIRO: 'N',
+        STATUS:'Ativo',
       },
       attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO',]
     });
