@@ -15,7 +15,7 @@ const AccountUsers = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const { id } = router.query;
-    const [collaboratorDocs, setCollaboratorDocs] = useState([]);
+    const [collaboratorDocs, setCollaboratorDocs] = useState<CollaboratorDoc[]>([]);
 
 
     const [formData, setFormData] = useState({
@@ -32,6 +32,13 @@ const AccountUsers = () => {
         status: '',
         nome_terceiro: '',
     });
+
+    interface CollaboratorDoc {
+        TIPO_DOCUMENTO: string;
+        STATUS: string;
+        TERCEIRO: string;
+        // Add other properties here as needed
+    }
 
     const closeModal = () => {
         setShowModal(false);
