@@ -428,46 +428,53 @@ const AccountUsers = () => {
 
 
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-4 mb-12">
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className="p-4 border rounded-md">
+                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
+                            }`}>
                             <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: {doc.STATUS}</p>
+                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
                             {/* Adicione outras informações do documento aqui conforme necessário */}
                         </div>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className="p-4 border rounded-md">
+                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
+                            }`}>
                             <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: {doc.STATUS}</p>
+                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
                             {/* Adicione outras informações do documento aqui conforme necessário */}
                         </div>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className="p-4 border rounded-md">
+                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
+                            }`}>
                             <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: {doc.STATUS}</p>
+                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
                             {/* Adicione outras informações do documento aqui conforme necessário */}
                         </div>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className="p-4 border rounded-md">
+                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
+                            }`}>
                             <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: {doc.STATUS}</p>
+                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
                             {/* Adicione outras informações do documento aqui conforme necessário */}
                         </div>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className="p-4 border rounded-md">
+                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
+                            }`}>
                             <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: {doc.STATUS}</p>
+                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
                             {/* Adicione outras informações do documento aqui conforme necessário */}
                         </div>
                     ))}
+
+
                 </div>
 
 
