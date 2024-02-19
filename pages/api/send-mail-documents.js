@@ -115,11 +115,11 @@ export default async function handler(req, res) {
       emailBody += docsFiltrados.map(doc => {
         let docInfo;
         if (doc.STATUS === 'Reprovado') {
-          docInfo = `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS} - ${doc.MOTIVO}</p>`;
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: ${doc.STATUS} - ${doc.MOTIVO}</p>`;
         } else if (doc.STATUS === 'Ativo') {
-          docInfo = `<p>${doc.TIPO_DOCUMENTO}: Documento a vencer - ${format(new Date(doc.VENCIMENTO), 'dd/MM/yy')}</p>`;
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: Documento a vencer - ${format(new Date(doc.VENCIMENTO), 'dd/MM/yy')}</p>`;
         } else { // Pendente ou outros status
-          docInfo = `<p>${doc.TIPO_DOCUMENTO}: ${doc.STATUS}</p>`;
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: ${doc.STATUS}</p>`;
         }
         return docInfo;
       }).join('');
@@ -140,7 +140,7 @@ export default async function handler(req, res) {
 
       console.log(`E-mail enviado com sucesso para ${terceiro} (${emailTerceiro}).`);
     }
-    
+
 
     await cobrança.create({
       ULTIMA_COBRANCA: currentDate,
@@ -156,6 +156,6 @@ export default async function handler(req, res) {
     res.status(500).json({ erro: 'Erro durante a conexão com o Oracle.' });
   } finally {
     // Certifique-se de fechar a conexão quando não for mais necessária
-    
+
   }
 }
