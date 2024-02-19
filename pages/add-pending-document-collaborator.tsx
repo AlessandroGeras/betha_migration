@@ -9,6 +9,7 @@ const AddOutsourced = () => {
         nomeTerceiro: '',
         categoria: '',
         nome_terceiro: '',
+        colaborador:'',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -45,6 +46,7 @@ const AddOutsourced = () => {
             nomeTerceiro: '',
             categoria: '',
             nome_terceiro: '',
+            colaborador:'',
         });
     };
 
@@ -283,8 +285,8 @@ const AddOutsourced = () => {
                                 <select
                                     name="collaborator"
                                     id="collaborator"
-                                    value={formData.nome_terceiro}
-                                    onChange={(e) => setFormData({ ...formData, nome_terceiro: e.target.value })}
+                                    value={formData.colaborador}
+                                    onChange={(e) => setFormData({ ...formData, colaborador: e.target.value })}
                                     required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 >

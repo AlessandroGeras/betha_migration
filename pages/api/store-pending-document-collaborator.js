@@ -9,10 +9,11 @@ export default async function handler(req, res) {
         const {
             categorias,
             nome_terceiro,
-            token
+            token,
+            colaborador
         } = req.body;
 
-        console.log(nome_terceiro);
+        console.log(colaborador);
         return
 
         if (!token) {
