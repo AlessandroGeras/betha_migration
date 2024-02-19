@@ -23,7 +23,7 @@ const AddOutsourced = () => {
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
     const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
-    const [filteredCollaborators, setFilteredCollaborators] = useState([]);
+    const [filteredCollaborators, setFilteredCollaborators] = useState<any[]>([]);
 
     interface Collaborator {
         ID_USUARIO: string;
