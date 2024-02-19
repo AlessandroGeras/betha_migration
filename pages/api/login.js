@@ -68,7 +68,9 @@ export default async function handler(req, res) {
                 });
 
                 if (usuarioexterno) {
+                    console.log("Status"+usuarioexterno.STATUS);
                     if(usuarioexterno.STATUS=="Inativo"){
+                        console.log("Desabilitado");
                         res.status(406).json({ error: 'Usuário desativado.' });
                     }
 
