@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { useRef } from 'react';
 
 
-const FindDocument = () => {   
+const FindDocument = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -48,7 +48,7 @@ const FindDocument = () => {
         motivo: '',
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
-        colaborador:'',
+        colaborador: '',
     });
 
     useEffect(() => {
@@ -202,7 +202,7 @@ const FindDocument = () => {
                         usuario_analise: data.docs.USUARIO_ANALISE,
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
                         arquivo: null, // or provide the appropriate value for arquivo here
-                        colaborador:data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
+                        colaborador: data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
                     });
 
                     setFilename(data.docs.ANEXO);
@@ -432,7 +432,11 @@ const FindDocument = () => {
 
             <div className="flex-1 items-center justify-center bg-gray-50">
                 <div className="bg-blue-500 text-white p-2 text-left mb-[120px] w-full">
-                    <span className="ml-2">Documento - {formData.documento}</span>
+                    {formData.colaborador !== "" ? (
+                        <span className="ml-2">Documento Empresa - {formData.documento}</span>
+                    ) : (
+                        <span className="ml-2">Documento Colaborador - {formData.documento}</span>
+                    )}
                 </div>
 
                 {loading && (
@@ -563,7 +567,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
-                        {formData.auditoria=="Sim" && (<div className="mt-6">
+                        {formData.auditoria == "Sim" && (<div className="mt-6">
                             <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
                                 Formato Vencimento<span className="text-red-500">*</span>
                             </label>
@@ -580,7 +584,7 @@ const FindDocument = () => {
                                 <option value="Periodo">Período</option>
                             </select>
                         </div>)}
-                        {formData.auditoria=="Sim" && (<div className='flex gap-10 mt-6'>
+                        {formData.auditoria == "Sim" && (<div className='flex gap-10 mt-6'>
                             <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
                                 <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
                                     Dia fixo do mês<span className="text-red-500">*</span>
@@ -632,7 +636,7 @@ const FindDocument = () => {
                                 </div>
                             )}
                         </div>)}
-                        {formData.auditoria=="Sim" && (<div className="mt-6">
+                        {formData.auditoria == "Sim" && (<div className="mt-6">
                             <label htmlFor="notificacao" className="block text-sm font-medium text-gray-700">
                                 Receber notificação antecipada do vencimento em dias<span className="text-red-500">*</span>
                             </label>
