@@ -431,13 +431,14 @@ const FindDocument = () => {
             <Sidebar />
 
             <div className="flex-1 items-center justify-center bg-gray-50">
-                <div className="bg-blue-500 text-white p-2 text-left mb-[120px] w-full">
-                    {formData.colaborador !== "" ? (
+                <div className={`text-white p-2 text-left mb-[120px] w-full ${formData.colaborador == "" ? 'bg-blue-500' : 'bg-red-500'}`}>
+                    {formData.colaborador === "" ? (
                         <span className="ml-2">Documento Empresa - {formData.documento}</span>
                     ) : (
                         <span className="ml-2">Documento Colaborador - {formData.documento}</span>
                     )}
                 </div>
+
 
                 {loading && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
