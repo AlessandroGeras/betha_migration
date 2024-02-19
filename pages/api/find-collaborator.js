@@ -25,7 +25,7 @@ export default async function handler(req, res) {
         },
       });
 
-      const documents = await documents.findAll({
+      const collaboratorDocs = await documents.findAll({
         where: {
           TERCEIRO: user.NOME_TERCEIRO,
           COLABORADOR: user.NM_USUARIO,
@@ -71,7 +71,7 @@ export default async function handler(req, res) {
         return res.status(403).json({ error: 'Falha ao localizar o usuário.' });
       }
 
-      res.status(200).json({ user, docs, uniqueEnterprises,documents});
+      res.status(200).json({ user, docs, uniqueEnterprises,collaboratorDocs});
     } catch (error) {
       console.error('Falha ao consultar o banco de dados:', error);
       res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
