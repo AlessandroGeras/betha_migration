@@ -48,6 +48,7 @@ const FindDocument = () => {
         motivo: '',
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
+        colaborador:'',
     });
 
     useEffect(() => {
@@ -200,7 +201,8 @@ const FindDocument = () => {
                         motivo: data.docs.MOTIVO,
                         usuario_analise: data.docs.USUARIO_ANALISE,
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
-                        arquivo: null // or provide the appropriate value for arquivo here
+                        arquivo: null, // or provide the appropriate value for arquivo here
+                        colaborador:data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
                     });
 
                     setFilename(data.docs.ANEXO);
@@ -458,6 +460,20 @@ const FindDocument = () => {
                                 id="nome_terceiro"
                                 onChange={handleInputChange}
                                 value={formData.nome_terceiro}
+                                disabled
+                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            />
+                        </div>
+                        <div className="">
+                            <label htmlFor="colaborador" className="block text-sm font-medium text-gray-700">
+                                Terceiro<span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="colaborador"
+                                id="colaborador"
+                                onChange={handleInputChange}
+                                value={formData.colaborador}
                                 disabled
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
