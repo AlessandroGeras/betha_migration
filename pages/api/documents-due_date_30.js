@@ -14,12 +14,13 @@ const getAllDocs = async (pageSize, user) => {
     try {
       const result = await documents.findAll({
         where: {
-          VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
-          ...(user && { TERCEIRO: user.NOME_TERCEIRO }) // Adiciona filtro por NOME_TERCEIRO se user não for null ou undefined
+            VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) >= TRUNC(SYSDATE) AND TRUNC(VENCIMENTO) <= TRUNC(SYSDATE) + 30"),
+            STATUS: "Ativo", // Condição para incluir apenas documentos com status "ativo"
+            ...(user && { TERCEIRO: user.NOME_TERCEIRO }) // Adiciona filtro por NOME_TERCEIRO se user não for null ou undefined
         },
         offset,
         limit: pageSize,
-      });
+    });
 
       if (result.length === 0) {
         break; // Exit the loop if there are no more results

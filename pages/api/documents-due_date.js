@@ -15,6 +15,7 @@ const getAllDocs = async (pageSize, user) => {
       const result = await documents.findAll({
         where: {
           VENCIMENTO: Sequelize.literal("TRUNC(VENCIMENTO) < TRUNC(SYSDATE)"),
+          STATUS: "Ativo",
           ...(user && { TERCEIRO: user.NOME_TERCEIRO }) // Adiciona filtro por NOME_TERCEIRO se user não for null ou undefined
         },
         offset,
