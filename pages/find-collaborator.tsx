@@ -15,6 +15,7 @@ const AccountUsers = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const { id } = router.query;
+    const [collaboratorDocs, setCollaboratorDocs] = useState([]);
 
 
     const [formData, setFormData] = useState({
@@ -187,6 +188,7 @@ const AccountUsers = () => {
                     setCategoriaOptions(data.docs.rows ?? []);
                     setFunção(data.user.FUNCAO);
                     setEnterprises(data.uniqueEnterprises);
+                    setCollaboratorDocs(data.collaboratorDocs);
                 }
 
             } catch (error) {
@@ -344,7 +346,7 @@ const AccountUsers = () => {
                         />
                     </div> */}
 
-                    
+
 
                     {/* <div className="col-span-3 invisible">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
@@ -416,6 +418,25 @@ const AccountUsers = () => {
 
                     <div className="col-span-1"></div>
                 </div>
+
+
+
+                <div className="grid grid-cols-3 gap-4">
+                    {collaboratorDocs.map((doc, index) => (
+                        <div key={index} className="p-4 border rounded-md">
+                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                            <p>Status: {doc.STATUS}</p>
+                            <p>Terceiro: {doc.TERCEIRO}</p>
+                            {/* Adicione outras informações do documento aqui conforme necessário */}
+                        </div>
+                    ))}
+                </div>
+
+
+
+
+
+
             </div>
 
 
