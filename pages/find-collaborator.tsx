@@ -431,7 +431,7 @@ const AccountUsers = () => {
 
                 <div className="grid grid-cols-3 gap-4 pb-8">
                     {collaboratorDocs.map((doc, index) => (
-                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
+                        <Link key={index} href={`/find-document?id=${doc.ID_DOCUMENTO}`}>
                             <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
                                 <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
                                 <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
