@@ -58,7 +58,7 @@ export default async function handler(req, res) {
         NOME_TERCEIRO: terceiros,
         COLABORADOR_TERCEIRO: 'N',
       },
-      attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO']
+      attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO',]
     });
 
     // Mapear emails e IDs dos terceiros
@@ -119,6 +119,7 @@ export default async function handler(req, res) {
         } else if (doc.STATUS === 'Ativo') {
           docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: Documento a vencer - ${format(new Date(doc.VENCIMENTO), 'dd/MM/yy')}</p>`;
         } else { // Pendente ou outros status
+          console.log(doc);
           docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: ${doc.STATUS}</p>`;
         }
         return docInfo;
