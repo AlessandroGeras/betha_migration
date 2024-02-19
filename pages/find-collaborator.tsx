@@ -449,7 +449,7 @@ const AccountUsers = () => {
                 <div className="grid grid-cols-3 gap-4 pb-8">
                     {collaboratorDocs.map((doc, index) => (
                         <React.Fragment key={index}>
-                            {(!viewAll && doc.STATUS!="Em análise") || (viewAll && doc.STATUS!="Pendente") ? (
+                            {(!viewAll && doc.STATUS != "Em análise") || (viewAll && doc.STATUS != "Pendente") ? (
                                 <Link href={`/find-document?id=${doc.ID_DOCUMENTO}`}>
                                     <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
                                         <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
@@ -510,7 +510,9 @@ const AccountUsers = () => {
                     </div>
                 )}
             </div>
-            );
+        </div>
+    )
 };
 
-            export default AccountUsers;
+
+export default AccountUsers;
