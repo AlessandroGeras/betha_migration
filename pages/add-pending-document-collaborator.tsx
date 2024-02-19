@@ -22,16 +22,8 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
-    const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
-    const [filteredCollaborators, setFilteredCollaborators] = useState<{ name: string, enterprise: string }[]>([]);
-
-    interface Collaborator {
-        ID_USUARIO: string;
-        NM_USUARIO: string;
-        ST_EMAIL: string | null;
-        ID_USUARIO_INTERNO: string;
-        enterprise: string;
-    }
+    const [collaborators, setCollaborators] = useState([]);
+    const [filteredCollaborators, setFilteredCollaborators] = useState([]);
 
     const closeModal = () => {
         setShowModal(false);
@@ -288,7 +280,7 @@ const AddOutsourced = () => {
                                     <option value="" disabled selected>
                                         Selecione um colaborador
                                     </option>
-                                    {filteredCollaborators.map((collaborator, index) => (
+                                    {filteredCollaborators.map((collaborator: any, index: any) => (
                                         <option key={index} value={collaborator.NM_USUARIO}>
                                             {collaborator.NM_USUARIO}
                                         </option>
