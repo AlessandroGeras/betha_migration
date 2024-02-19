@@ -219,7 +219,7 @@ const AccountUsers = () => {
                     {/* Linha 2 */}
 
                     {/* Linha 3 */}
-                    <div className="col-span-4">
+                    <div className="col-span-3">
                         <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
                             Nome de Contato <span className="text-red-500">*</span>
                         </label>
@@ -247,6 +247,21 @@ const AccountUsers = () => {
                             placeholder="000.000.000-00"
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             maxLength={11}
+                            required
+                            disabled
+                        />
+                    </div>
+
+                    <div className="col-span-1">
+                        <label htmlFor="status" className="block text-sm font-medium text-gray-700">
+                            Status
+                        </label>
+                        <input
+                            name="status"
+                            id="status"
+                            value={formData.status}
+                            onChange={handleInputChange}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             required
                             disabled
                         />
@@ -329,22 +344,7 @@ const AccountUsers = () => {
                         />
                     </div> */}
 
-
-
-
-                    <div className="col-span-2">
-                        <label htmlFor="status" className="block text-sm font-medium text-gray-700">
-                            Status <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            name="status"
-                            id="status"
-                            value={formData.status}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            required
-                        />
-                    </div>
+                    
 
                     <div className="col-span-3 invisible">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
@@ -368,6 +368,8 @@ const AccountUsers = () => {
                             ))}
                         </select>
                     </div>
+
+                    <div className="col-span-2 invisible">
 
                     <div className="col-span-2">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
