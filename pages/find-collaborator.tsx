@@ -90,7 +90,7 @@ const AccountUsers = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,token
+                    ...formData, token
                 }),
             });
 
@@ -298,7 +298,7 @@ const AccountUsers = () => {
                         />
                     </div>
 
-                    
+
                     {/* <div className="col-span-3">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                             Email <span className="text-red-500">*</span>
@@ -336,21 +336,14 @@ const AccountUsers = () => {
                         <label htmlFor="status" className="block text-sm font-medium text-gray-700">
                             Status <span className="text-red-500">*</span>
                         </label>
-                        <select
+                        <input
                             name="status"
                             id="status"
                             value={formData.status}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             required
-                        >
-                            <option value="Ativo" selected={formData.status === "Ativo"}>
-                                Ativo
-                            </option>
-                            <option value="Inativo" selected={formData.status === "Inativo"}>
-                                Inativo
-                            </option>
-                        </select>
+                        />
                     </div>
 
                     <div className="col-span-3 invisible">
