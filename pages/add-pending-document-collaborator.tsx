@@ -21,9 +21,9 @@ const AddOutsourced = () => {
     const [textColor, setTextColor] = useState('#e53e3e');
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
-    const [enterprises, setEnterprises] = useState([]);
+    const [enterprises, setEnterprises] = useState<string[]>([]);
     const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
-    const [filteredCollaborators, setFilteredCollaborators] = useState<any[]>([]);
+    const [filteredCollaborators, setFilteredCollaborators] = useState<Collaborator[]>([]);
 
     interface Collaborator {
         ID_USUARIO: string;
@@ -169,7 +169,8 @@ const AddOutsourced = () => {
                     setTokenVerified(true);
                     setEnterprises(data.uniqueEnterprises);
                     setCollaborators(data.filteredCollaborators);
-                    setFilteredCollaborators(data.filteredCollaborators);
+                    setFilteredCollaborators([]); // Limpa os colaboradores filtrados ao carregar
+                    setCategoriaDetails({}); // Limpa os detalhes da categoria ao carregar
 
                     const updatedCategoriaDetails = {};
 
@@ -195,8 +196,7 @@ const AddOutsourced = () => {
 
     return (
         <div>
-
-            {isTokenVerified && (<div>
+            {isTokenVerified && (
                 <div className="flex h-screen">
                     <Sidebar />
                     <Head>
@@ -258,7 +258,10 @@ const AddOutsourced = () => {
                                     name="nomeTerceiro"
                                     id="nomeTerceiro"
                                     value={formData.nome_terceiro}
-                                    onChange={(e) => setFormData({ ...formData, nome_terceiro: e.target.value })}
+                                    onChange={(e) => {
+                                        setFormData({ ...formData, nome_terceiro: e.target.value });
+                                        filterCollaboratorsByEnterprise(e.target.value); // Filtra os colaboradores ao selecionar uma empresa
+                                    }}
                                     required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 >
@@ -288,7 +291,7 @@ const AddOutsourced = () => {
                                     <option value="" disabled selected>
                                         Selecione um colaborador
                                     </option>
-                                    {filteredCollaborators.map((collaborator: any, index: any) => (
+                                    {filteredCollaborators.map((collaborator: Collaborator, index: number) => (
                                         <option key={index} value={collaborator.NM_USUARIO}>
                                             {collaborator.NM_USUARIO}
                                         </option>
@@ -357,7 +360,7 @@ const AddOutsourced = () => {
                         </div>
                     )}
                 </div>
-            </div>)}
+            )}
         </div>
     );
 };
