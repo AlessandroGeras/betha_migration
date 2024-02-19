@@ -85,7 +85,7 @@ const AddOutsourced = () => {
                 return;
             }
 
-            const response = await fetch('/api/store-pending-document', {
+            const response = await fetch('/api/store-pending-document-collaborator', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
