@@ -22,8 +22,8 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
-    const [collaborators, setCollaborators] = useState([]);
-    const [filteredCollaborators, setFilteredCollaborators] = useState([]);
+    const [collaborators, setCollaborators] = useState<{ name: string, enterprise: string }[]>([]);
+    const [filteredCollaborators, setFilteredCollaborators] = useState<{ name: string, enterprise: string }[]>([]);
 
     const closeModal = () => {
         setShowModal(false);
