@@ -17,6 +17,8 @@ const AccountUsers = () => {
     const [isTokenVerified, setTokenVerified] = useState(false);
     const { id } = router.query;
     const [collaboratorDocs, setCollaboratorDocs] = useState<CollaboratorDoc[]>([]);
+    const [viewAll, setViewAll] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
 
 
     const [formData, setFormData] = useState({
@@ -41,6 +43,21 @@ const AccountUsers = () => {
         TERCEIRO: string;
         // Add other properties here as needed
     }
+
+    useEffect(() => {
+        const userRole = localStorage.getItem('role');
+        const userPermission = localStorage.getItem('permission');
+        if (userRole == 'internal') {
+            setViewAll(true);
+        }
+        else {
+            setViewAll(false);
+        }
+
+        if (userPermission == 'read') {
+            setIsAdmin(false);
+        }
+    }, []);
 
     const closeModal = () => {
         setShowModal(false);
@@ -414,7 +431,7 @@ const AccountUsers = () => {
                             onClick={handleSubmitCancel}
                             className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                         >
-                            Cancelar
+                            Voltar
                         </button>
                         <button
                             type="submit"
@@ -431,26 +448,34 @@ const AccountUsers = () => {
 
                 <div className="grid grid-cols-3 gap-4 pb-8">
                     {collaboratorDocs.map((doc, index) => (
-                        <Link key={index} href={`/find-document?id=${doc.ID_DOCUMENTO}`}>
-                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
-                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                                {/* Adicione outras informações do documento aqui conforme necessário */}
-                            </div>
-                        </Link>
-                    ))}   
+                        <React.Fragment key={index}>
+                            {(!viewAll && doc.STATUS!="Em análise") || (viewAll && doc.STATUS!="Pendente") ? (
+                                <Link href={`/find-document?id=${doc.ID_DOCUMENTO}`}>
+                                    <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                        <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                        <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                        {/* Adicione outras informações do documento aqui conforme necessário */}
+                                    </div>
+                                </Link>
+                            ) : (
+                                <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                    <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                    <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                    {/* Adicione outras informações do documento aqui conforme necessário */}
+                                </div>
+                            )}
+                        </React.Fragment>
+                    ))}
                 </div>
 
-            </div>
 
 
-
-            {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                        {/* Pseudo-elemento para a barra lateral */}
-                        <style>
-                            {`
+                {showModal && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                            {/* Pseudo-elemento para a barra lateral */}
+                            <style>
+                                {`
                 .modal-content::before {
                   content: '';
                   background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
@@ -461,31 +486,31 @@ const AccountUsers = () => {
                   left: 0;
                 }
               `}
-                        </style>
+                            </style>
 
-                        <button
-                            className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
-                            onClick={closeModal}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                className="h-5 w-5"
+                            <button
+                                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                                onClick={closeModal}
                             >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    className="h-5 w-5"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
 
-                        <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
-                            {popupMessage}
+                            <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                                {popupMessage}
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
-    );
+                )}
+            </div>
+            );
 };
 
-export default AccountUsers;
+            export default AccountUsers;
