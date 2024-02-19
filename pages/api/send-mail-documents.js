@@ -55,7 +55,8 @@ export default async function handler(req, res) {
 
     const terceirosData = await outsourceds.findAll({
       where: {
-        NOME_TERCEIRO: terceiros
+        NOME_TERCEIRO: terceiros,
+        COLABORADOR_TERCEIRO: 'N',
       },
       attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO']
     });
