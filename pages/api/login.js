@@ -60,7 +60,7 @@ export default async function handler(req, res) {
                 }
             } else {
                 const usuarioexterno = await outsourceds.findOne({
-                    attributes: ['DS_SENHA'],
+                    attributes: ['DS_SENHA','STATUS'],
                     where: {
                         ID_USUARIO: username,
                         ID_USUARIO_INTERNO: 'N',
