@@ -30,6 +30,7 @@ const AddOutsourced = () => {
         NM_USUARIO: string;
         ST_EMAIL: string | null;
         ID_USUARIO_INTERNO: string;
+        enterprise: string;
     }
 
     const closeModal = () => {
