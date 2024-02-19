@@ -63,6 +63,8 @@ export default async function handler(req, res) {
       attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO','STATUS']
     });
 
+    console.log(terceirosData);
+
     // Mapear emails e IDs dos terceiros
     const mapaEmailsTerceiros = {};
     const mapaIDTerceiros = {};
