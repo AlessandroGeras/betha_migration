@@ -346,7 +346,7 @@ const AccountUsers = () => {
 
                     
 
-                    <div className="col-span-3 invisible">
+                    {/* <div className="col-span-3 invisible">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
                             Nome Terceiro <span className="text-red-500">*</span>
                         </label>
@@ -367,9 +367,9 @@ const AccountUsers = () => {
                                 </option>
                             ))}
                         </select>
-                    </div>
+                    </div> */}
 
-                    <div className="col-span-2 invisible"></div>
+                    <div className="col-span-3 invisible"></div>
 
                     <div className="col-span-2">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
