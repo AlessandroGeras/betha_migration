@@ -369,7 +369,7 @@ const AccountUsers = () => {
                         </select>
                     </div>
 
-                    <div className="col-span-2 invisible">
+                    <div className="col-span-2 invisible"></div>
 
                     <div className="col-span-2">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
