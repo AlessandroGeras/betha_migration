@@ -134,6 +134,10 @@ const Users = () => {
     router.push('/add-pending-document');
   };
 
+  const addDocPendenteCollaboratorClick = () => {
+    router.push('/add-pending-document-collaborator');
+  };
+
   const deleteAccountClick = (document) => {
     setModalMessage('Tem certeza que deseja excluir o documento <span style="color: red;">' + document.TIPO_DOCUMENTO + '</span>?');
     setShowModal(true);
@@ -985,7 +989,13 @@ const Users = () => {
                   className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
                   onClick={addDocPendenteClick}
                 >
-                  <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de documento
+                  <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de Terceiro
+                </button>
+                <button
+                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex mx-2"
+                  onClick={addDocPendenteCollaboratorClick}
+                >
+                  <IoMdAdd className='text-xl mt-0.5' />Incluir pendências de Colaborador
                 </button>
                 <button
                   className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"

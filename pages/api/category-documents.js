@@ -51,6 +51,28 @@ const getAllEnterprises = async () => {
     return allEnterprises;
 };
 
+const getAllCollaborators = async () => {
+    let offset = 0;
+    let limit = 100;
+    let allEnterprises = [];
+
+    while (true) {
+        const result = await outsourceds.findAll({
+            limit,
+            offset,
+        });
+
+        if (result.length === 0) {
+            break; // Saia do loop se não houver mais resultados
+        }
+
+        allEnterprises = [...allEnterprises, ...result];
+        offset += limit;
+    }
+
+    return allEnterprises;
+};
+
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { token, getAll,id } = req.body;
@@ -86,6 +108,8 @@ export default async function handler(req, res) {
                 // Se getAll for true, busca todos os registros
                 const allDocs = await getAllDocs(pageSize);
                 const enterprise = await getAllEnterprises();
+                const collaborators = await getAllCollaborators();
+
 
                 // Filtrar os valores nulos e "N/A"
                 const filteredEnterprises = enterprise
@@ -93,6 +117,10 @@ export default async function handler(req, res) {
 
                 // Obter valores distintos
                 const uniqueEnterprises = [...new Set(filteredEnterprises.map(user => user.NOME_TERCEIRO))];
+
+                // Remover as empresas
+                const filteredCollaborators = collaborators
+                    .filter(user => user.COLABORADOR_TERCEIRO == 'S');
 
                 res.status(200).json({
                     success: true,
@@ -103,6 +131,7 @@ export default async function handler(req, res) {
                         outsourcedCount: outsourcedCount,
                     },
                     uniqueEnterprises,
+                    filteredCollaborators,
                 });
             }
 
