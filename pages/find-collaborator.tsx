@@ -433,7 +433,38 @@ const AccountUsers = () => {
                         <div key={index} className="p-4 border rounded-md">
                             <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
                             <p>Status: {doc.STATUS}</p>
-                            <p>Terceiro: {doc.TERCEIRO}</p>
+                            {/* Adicione outras informações do documento aqui conforme necessário */}
+                        </div>
+                    ))}
+
+                    {collaboratorDocs.map((doc, index) => (
+                        <div key={index} className="p-4 border rounded-md">
+                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                            <p>Status: {doc.STATUS}</p>
+                            {/* Adicione outras informações do documento aqui conforme necessário */}
+                        </div>
+                    ))}
+
+                    {collaboratorDocs.map((doc, index) => (
+                        <div key={index} className="p-4 border rounded-md">
+                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                            <p>Status: {doc.STATUS}</p>
+                            {/* Adicione outras informações do documento aqui conforme necessário */}
+                        </div>
+                    ))}
+
+                    {collaboratorDocs.map((doc, index) => (
+                        <div key={index} className="p-4 border rounded-md">
+                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                            <p>Status: {doc.STATUS}</p>
+                            {/* Adicione outras informações do documento aqui conforme necessário */}
+                        </div>
+                    ))}
+
+                    {collaboratorDocs.map((doc, index) => (
+                        <div key={index} className="p-4 border rounded-md">
+                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                            <p>Status: {doc.STATUS}</p>
                             {/* Adicione outras informações do documento aqui conforme necessário */}
                         </div>
                     ))}
