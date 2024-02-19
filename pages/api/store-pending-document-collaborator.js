@@ -13,9 +13,6 @@ export default async function handler(req, res) {
             colaborador
         } = req.body;
 
-        console.log(colaborador);
-        return
-
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
         }
@@ -27,7 +24,7 @@ export default async function handler(req, res) {
                 where: {
                     TERCEIRO: nome_terceiro,
                     STATUS: "Pendente",
-                    COLABORADOR: null,
+                    COLABORADOR: colaborador,
                 },
             });
 
@@ -50,6 +47,7 @@ export default async function handler(req, res) {
                         STATUS: "Pendente",
                         TIPO_DOCUMENTO: categoria,
                         TERCEIRO: nome_terceiro,
+                        COLABORADOR: colaborador,
                         // Adicione outros campos conforme necessário
                     });
 
