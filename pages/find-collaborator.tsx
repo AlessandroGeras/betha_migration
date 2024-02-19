@@ -369,9 +369,9 @@ const AccountUsers = () => {
                         </select>
                     </div> */}
 
-                    <div className="col-span-3 invisible"></div>
+                    <div className="col-span-2 invisible"></div>
 
-                    <div className="col-span-2">
+                    <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
                             Função <span className="text-red-500">*</span>
                         </label>
