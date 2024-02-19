@@ -352,6 +352,10 @@ const FindDocument = () => {
         router.push('/documents');
     };
 
+    const handleSubmitBack = () => {
+        router.back();
+    };
+
     const handleSubmitReprove = () => {
         setPopupMessage('Explique o motivo da reprovação do documento que será enviado ao Terceiro.');
         setShowModal(true);
@@ -732,6 +736,13 @@ const FindDocument = () => {
 
 
                 <div className="col-span-7 flex justify-center mt-10 pb-4">
+                    {formData.colaborador !== "" && (<button
+                        type="button"
+                        onClick={handleSubmitBack}
+                        className="bg-white mx-1 text-red-500 border solid border-red-500 p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Voltar
+                    </button>)}
                     <button
                         type="button"
                         onClick={handleSubmitCancel}
