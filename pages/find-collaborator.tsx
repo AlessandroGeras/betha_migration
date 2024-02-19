@@ -429,7 +429,7 @@ const AccountUsers = () => {
                 </div>
 
 
-                <div className="grid grid-cols-3 gap-4 pb-12">
+                <div className="grid grid-cols-3 gap-4 pb-8">
                     {collaboratorDocs.map((doc, index) => (
                         <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
                             <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
@@ -438,54 +438,8 @@ const AccountUsers = () => {
                                 {/* Adicione outras informações do documento aqui conforme necessário */}
                             </div>
                         </Link>
-                    ))}
-
-                    {collaboratorDocs.map((doc, index) => (
-                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
-                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
-                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                                {/* Adicione outras informações do documento aqui conforme necessário */}
-                            </div>
-                        </Link>
-                    ))}
-
-                    {collaboratorDocs.map((doc, index) => (
-                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
-                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
-                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                                {/* Adicione outras informações do documento aqui conforme necessário */}
-                            </div>
-                        </Link>
-                    ))}
-
-                    {collaboratorDocs.map((doc, index) => (
-                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
-                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
-                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                                {/* Adicione outras informações do documento aqui conforme necessário */}
-                            </div>
-                        </Link>
-                    ))}
-
-                    {collaboratorDocs.map((doc, index) => (
-                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
-                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
-                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                                {/* Adicione outras informações do documento aqui conforme necessário */}
-                            </div>
-                        </Link>
-                    ))}
-
+                    ))}   
                 </div>
-
-
-
-
-
 
             </div>
 
