@@ -22,8 +22,16 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
-    const [collaborators, setCollaborators] = useState([]);
+    const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
     const [filteredCollaborators, setFilteredCollaborators] = useState([]);
+
+    interface Collaborator {
+        ID_USUARIO: string;
+        NM_USUARIO: string;
+        ST_EMAIL: string | null;
+        ID_USUARIO_INTERNO: string;
+        enterprise: string;
+    }
 
     const closeModal = () => {
         setShowModal(false);
