@@ -452,7 +452,7 @@ const FindDocument = () => {
                     <div>
                         <div className="">
                             <label htmlFor="nome_terceiro" className="block text-sm font-medium text-gray-700">
-                                Terceiro<span className="text-red-500">*</span>
+                                Terceiro
                             </label>
                             <input
                                 type="text"
@@ -464,9 +464,9 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
-                        <div className="">
+                        {formData.colaborador !== "" && (<div className="">
                             <label htmlFor="colaborador" className="block text-sm font-medium text-gray-700">
-                                Terceiro<span className="text-red-500">*</span>
+                                Colaborador
                             </label>
                             <input
                                 type="text"
@@ -477,7 +477,7 @@ const FindDocument = () => {
                                 disabled
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
-                        </div>
+                        </div>)}
                         {isAnalysis != "Pendente" && (<div className="mt-6">
                             <div>
                                 <label htmlFor="usuario_inclusao" className="block text-sm font-medium text-gray-700">
