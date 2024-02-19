@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const AccountUsers = () => {
 
@@ -34,6 +35,7 @@ const AccountUsers = () => {
     });
 
     interface CollaboratorDoc {
+        ID_DOCUMENTO: number;
         TIPO_DOCUMENTO: string;
         STATUS: string;
         TERCEIRO: string;
@@ -427,53 +429,56 @@ const AccountUsers = () => {
                 </div>
 
 
-
-                <div className="grid grid-cols-3 gap-4 mb-12">
+                <div className="grid grid-cols-3 gap-4 pb-12">
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
-                            }`}>
-                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                            {/* Adicione outras informações do documento aqui conforme necessário */}
-                        </div>
+                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
+                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                {/* Adicione outras informações do documento aqui conforme necessário */}
+                            </div>
+                        </Link>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
-                            }`}>
-                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                            {/* Adicione outras informações do documento aqui conforme necessário */}
-                        </div>
+                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
+                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                {/* Adicione outras informações do documento aqui conforme necessário */}
+                            </div>
+                        </Link>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
-                            }`}>
-                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                            {/* Adicione outras informações do documento aqui conforme necessário */}
-                        </div>
+                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
+                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                {/* Adicione outras informações do documento aqui conforme necessário */}
+                            </div>
+                        </Link>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
-                            }`}>
-                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                            {/* Adicione outras informações do documento aqui conforme necessário */}
-                        </div>
+                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
+                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                {/* Adicione outras informações do documento aqui conforme necessário */}
+                            </div>
+                        </Link>
                     ))}
 
                     {collaboratorDocs.map((doc, index) => (
-                        <div key={index} className={`p-4 border rounded-md text-center ${doc.TIPO_DOCUMENTO !== "Ativo" ? "border-red-500" : "border-blue-500"
-                            }`}>
-                            <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
-                            <p>Status: <span className={doc.TIPO_DOCUMENTO !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
-                            {/* Adicione outras informações do documento aqui conforme necessário */}
-                        </div>
+                        <Link key={index} href={`/find-document/${doc.ID_DOCUMENTO}`}>
+                            <div className={`p-4 border rounded-md text-center ${doc.STATUS !== "Ativo" ? "border-red-500" : "border-blue-500"}`}>
+                                <p>Tipo de Documento: {doc.TIPO_DOCUMENTO}</p>
+                                <p>Status: <span className={doc.STATUS !== "Ativo" ? "text-red-500" : "text-blue-500"}>{doc.STATUS}</span></p>
+                                {/* Adicione outras informações do documento aqui conforme necessário */}
+                            </div>
+                        </Link>
                     ))}
-
 
                 </div>
 
