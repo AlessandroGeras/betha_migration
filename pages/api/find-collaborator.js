@@ -1,5 +1,6 @@
 import outsourceds from '../../models/outsourceds';
 import categoria_colaboradores from '../../models/categoryCollaborators';
+import documents from '../../models/documents';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -21,6 +22,13 @@ export default async function handler(req, res) {
         where: {
           ID_USUARIO: id,
           COLABORADOR_TERCEIRO: 'S',
+        },
+      });
+
+      const documents = await documents.findAll({
+        where: {
+          TERCEIRO: user.NOME_TERCEIRO,
+          COLABORADOR: user.NM_USUARIO,
         },
       });
 
@@ -63,7 +71,7 @@ export default async function handler(req, res) {
         return res.status(403).json({ error: 'Falha ao localizar o usuário.' });
       }
 
-      res.status(200).json({ user, docs, uniqueEnterprises});
+      res.status(200).json({ user, docs, uniqueEnterprises,documents});
     } catch (error) {
       console.error('Falha ao consultar o banco de dados:', error);
       res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });

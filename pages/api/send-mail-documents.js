@@ -120,7 +120,6 @@ export default async function handler(req, res) {
         } else if (doc.STATUS === 'Ativo') {
           docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: Documento a vencer - ${format(new Date(doc.VENCIMENTO), 'dd/MM/yy')}</p>`;
         } else { // Pendente ou outros status
-          console.log(doc);
           docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: ${doc.STATUS}</p>`;
         }
         return docInfo;
