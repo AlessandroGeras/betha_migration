@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
-        categoria:'',
+        categoria: '',
         numeração: 'Sim',
         formato_vencimento: 'Fixo',
         auditoria: 'Não',
@@ -25,7 +25,7 @@ const AddOutsourced = () => {
 
     const resetForm = () => {
         setFormData({
-            categoria:'',
+            categoria: '',
             numeração: 'Sim',
             formato_vencimento: 'Fixo',
             auditoria: 'Não',
@@ -34,24 +34,33 @@ const AddOutsourced = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-       
-            setFormData({ ...formData, [name]: value });
-        
+
+        setFormData({ ...formData, [name]: value });
+
     };
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
-       
+
+
+        if (formData.categoria.length > 350) {
+            setPopupMessage('Máximo 350 caracteres');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
 
         try {
             const token = localStorage.getItem('Token');
 
-                if (!token) {
-                    // Se o token não estiver presente, redirecione para a página de login
-                    console.log("sem token");
-                    router.push('/login');
-                    return;
-                }
+            if (!token) {
+                // Se o token não estiver presente, redirecione para a página de login
+                console.log("sem token");
+                router.push('/login');
+                return;
+            }
 
             const response = await fetch('/api/store-category-documents', {
                 method: 'POST',
@@ -59,7 +68,7 @@ const AddOutsourced = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...formData,token
+                    ...formData, token
                 }),
             });
 
@@ -126,6 +135,7 @@ const AddOutsourced = () => {
                             value={formData.categoria}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            max={350}
                         />
                     </div>
 
@@ -134,7 +144,7 @@ const AddOutsourced = () => {
 
 
 
-                   {/*  <div className="col-span-7">
+                    {/*  <div className="col-span-7">
                         <label htmlFor="numeração" className="block text-sm font-medium text-gray-700">
                             Informar numeração <span className="text-red-500">*</span>
                         </label>
@@ -184,7 +194,7 @@ const AddOutsourced = () => {
                             <option value="Sim">Sim</option>
                         </select>
                     </div>
-                    
+
 
 
                     <div className="col-span-7 flex justify-center mt-4">
