@@ -83,7 +83,7 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.principal.toString() === "" || formData.uf === "") {
+        if (formData.principal.toString() === "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
