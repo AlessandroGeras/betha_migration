@@ -554,7 +554,7 @@ const FindDocument = () => {
                         </div>
                         <div className="mt-6">
                             <label htmlFor="identificacao" className="block text-sm font-medium text-gray-700">
-                                Número/Identificação do Documento<span className="text-red-500">*</span>
+                                Número/Identificação do Documento/Data de Emissão<span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
