@@ -205,7 +205,7 @@ const AddOutsourced = () => {
                         </select>
                     </div>
 
-                    <div className="col-span-4 row-span-2">
+                    {viewAll && (<div className="col-span-4 row-span-2">
                         <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
                             Obs. Status
                         </label>
@@ -217,7 +217,7 @@ const AddOutsourced = () => {
                             rows={4}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
                         />
-                    </div>
+                    </div>)}
 
                     {/* Linha 2 */}
                     <div className="col-span-3">

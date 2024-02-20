@@ -34,6 +34,7 @@ const AccountUsers = () => {
         principal: '',
         status: '',
         nome_terceiro: '',
+        observacoes: '',
     });
 
     interface CollaboratorDoc {
@@ -77,6 +78,7 @@ const AccountUsers = () => {
             principal: '',
             status: '',
             nome_terceiro: '',
+            observacoes: '',
         });
     }
 
@@ -208,6 +210,7 @@ const AccountUsers = () => {
                     status: data.user.STATUS,
                     nome_terceiro: data.user.NOME_TERCEIRO,
                     principal: data.user.FUNCAO,
+                    observacoes: data.user.OBS_STATUS,
                 });
 
                 if (data) {
@@ -296,7 +299,7 @@ const AccountUsers = () => {
                     </div>
 
                     {/* Linha 4 (Endereço, Cidade) */}
-                   {/*  <div className="col-span-3">
+                    {/*  <div className="col-span-3">
                         <label htmlFor="endereco" className="block text-sm font-medium text-gray-700">
                             Endereço <span className="text-red-500">*</span>
                         </label>
@@ -397,7 +400,19 @@ const AccountUsers = () => {
                         </select>
                     </div> */}
 
-                    <div className="col-span-2 invisible"></div>
+                    {viewAll && (<div className="col-span-4 row-span-2">
+                        <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
+                            Obs. Status
+                        </label>
+                        <textarea
+                            name="observacoes"
+                            id="observacoes"
+                            value={formData.observacoes}
+                            onChange={handleInputChange}
+                            rows={4}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
+                        />
+                    </div>)}
 
                     <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
