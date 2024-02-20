@@ -121,7 +121,7 @@ const AddOutsourced = () => {
                     {/* Conteúdo da Barra Superior, se necessário */}
                     <span className="ml-2">Adicionar Categoria</span>
                 </div>
-                <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
+                <div className="grid grid-cols-7 gap-4 w-[1300px] mx-auto">
                     {/* Linha 1 */}
                     <div className="col-span-7">
                         <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
