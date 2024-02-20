@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       }
 
 
-      
+
 
       if (analysis == "Ativo") {
         existingDoc.STATUS = "Ativo";
@@ -43,6 +43,7 @@ export default async function handler(req, res) {
               STATUS: ['Pendente', 'Reprovado', 'Em análise'],
             }
           });
+          console.log("pendingDocs"+pendingDocs);
 
           if (!pendingDocs) {
             const existingUser = await outsourceds.findOne({
@@ -53,6 +54,7 @@ export default async function handler(req, res) {
             });
             existingUser.STATUS = "Ativo";
           }
+          console.log("existingUser"+existingUser);
         }
 
         else {
