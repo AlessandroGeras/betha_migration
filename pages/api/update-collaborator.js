@@ -18,7 +18,7 @@ export default async function handler(req, res) {
             uf,
             principal,
             status,
-            obs_status,
+            observacoes,
             nome_terceiro,
             token,
         } = req.body;
@@ -32,16 +32,14 @@ export default async function handler(req, res) {
                     ID_USUARIO: id_user,
                     COLABORADOR_TERCEIRO: 'S',
                 },                 
-            });             
-
-            console.log(obs_status);
+            });  
             
             /* existingUser.ENDEREÇO = endereco; */
            /*  existingUser.ST_EMAIL = email; */
            /*  existingUser.CIDADE = cidade; */
             /* existingUser.UF = uf; */
             /* existingUser.TELEFONE = telefone; */
-            existingUser.OBS_STATUS = obs_status;
+            existingUser.OBS_STATUS = observacoes;
             existingUser.CPF = cpf;
             existingUser.NM_USUARIO = usuario;
             existingUser.FUNCAO = principal;
