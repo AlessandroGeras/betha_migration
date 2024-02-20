@@ -32,15 +32,15 @@ const web_terceiro = connection.define(
     },
     ENDEREÇO: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     CIDADE: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     UF: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     TELEFONE: {
       type: Sequelize.STRING,
