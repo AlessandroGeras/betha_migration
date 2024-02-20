@@ -249,7 +249,7 @@ const AccountUsers = () => {
                     {/* Linha 3 */}
                     <div className="col-span-3">
                         <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
-                            Nome de Contato <span className="text-red-500">*</span>
+                            Nome do Colaborador <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
@@ -296,7 +296,7 @@ const AccountUsers = () => {
                     </div>
 
                     {/* Linha 4 (Endereço, Cidade) */}
-                    <div className="col-span-3">
+                   {/*  <div className="col-span-3">
                         <label htmlFor="endereco" className="block text-sm font-medium text-gray-700">
                             Endereço <span className="text-red-500">*</span>
                         </label>
@@ -339,7 +339,7 @@ const AccountUsers = () => {
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
+                    </div> */}
 
 
                     {/* <div className="col-span-3">

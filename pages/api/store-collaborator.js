@@ -48,12 +48,12 @@ export default async function handler(req, res) {
             const Store = await outsourceds.create({
                 STATUS: status,
                 CPF: cpf,
-                ENDEREÇO: endereco,
+                /* ENDEREÇO: endereco, */
                 /* ST_EMAIL: email, */
                 OBS_STATUS: observacoes,
                 NM_USUARIO: usuario,
-                CIDADE: cidade,
-                UF: uf,
+                /* CIDADE: cidade, */
+                /* UF: uf, */
                 /* TELEFONE: telefone, */
                 ID_USUARIO: id_usuario,
                 CATEGORIA_PRINCIPAL: "N/A",

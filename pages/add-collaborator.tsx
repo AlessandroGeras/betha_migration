@@ -268,7 +268,7 @@ const AddOutsourced = () => {
                     </div>
 
                     {/* Linha 4 (Endereço, Cidade) */}
-                    <div className="col-span-3">
+                    {/* <div className="col-span-3">
                         <label htmlFor="endereco" className="block text-sm font-medium text-gray-700">
                             Endereço <span className="text-red-500">*</span>
                         </label>
@@ -311,7 +311,7 @@ const AddOutsourced = () => {
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
+                    </div> */}
 
                     {/* Linha 5 (Email, Telefone, UF) */}
                     {/* <div className="col-span-3">

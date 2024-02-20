@@ -34,10 +34,10 @@ export default async function handler(req, res) {
                 },                 
             });             
             
-            existingUser.ENDEREÇO = endereco;
+            /* existingUser.ENDEREÇO = endereco; */
            /*  existingUser.ST_EMAIL = email; */
-            existingUser.CIDADE = cidade;
-            existingUser.UF = uf;
+           /*  existingUser.CIDADE = cidade; */
+            /* existingUser.UF = uf; */
             /* existingUser.TELEFONE = telefone; */
             existingUser.CPF = cpf;
             existingUser.NM_USUARIO = usuario;
