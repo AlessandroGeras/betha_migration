@@ -207,7 +207,7 @@ const Users = () => {
   const columnWidths = {
     '': '69px',
     'STATUS': '200px',
-    'TIPO_DOCUMENTO': '',
+    'TIPO_DOCUMENTO': '2000px',
     'TERCEIRO': '350px',
     'COLABORADOR': '260px',
     'VENCIMENTO': '260px',
@@ -1006,9 +1006,9 @@ const Users = () => {
               </div>)}
             </div>
 
-            <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
+            <div className="flex flex-col h-[550px] w-[3140px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[1440px]">
+              <div className="flex text-gray-500 bg-white w-[3140px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -1038,7 +1038,7 @@ const Users = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[1440px]`}>
+                <div className={`flex text-gray-500 w-[3140px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
@@ -1064,7 +1064,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '2000px' }}>
                     <select
                       value={selectedFilterValue['TIPO_DOCUMENTO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TIPO_DOCUMENTO': e.target.value })}
@@ -1165,9 +1165,9 @@ const Users = () => {
               )}
 
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[1440px]' key={document.id || Math.random().toString()}>
+                <div className='w-[3140px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
@@ -1209,7 +1209,7 @@ const Users = () => {
           </div>
         )}
 
-        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
+        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[3140px]">
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
