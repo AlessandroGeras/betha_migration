@@ -190,7 +190,7 @@ const AddOutsourced = () => {
                         <div className="bg-blue-500 text-white p-2 text-left mb-36 w-full">
                             <span className="ml-2">Adicionar Documento Pendente</span>
                         </div>
-                        <div className="grid grid-cols-7 gap-4 w-[300px] mx-auto">
+                        <div className="grid grid-cols-7 gap-4 w-[1300px] mx-auto">
                             <div className="col-span-7">
                                 <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
                                     Tipo de Documento <span className="text-red-500">*</span>
