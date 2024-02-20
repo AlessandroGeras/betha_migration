@@ -7,7 +7,9 @@ dotenv.config();
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { formData: { id_documento, motivo }, id, token, role,analysis } = req.body;
+    const { formData: { id_documento, motivo, colaborador, nome_terceiro }, id, token, role,analysis } = req.body;
+
+    console.log(colaborador,nome_terceiro);
 
 
     if (!token) {
@@ -30,6 +32,8 @@ export default async function handler(req, res) {
 
       if (analysis == "Ativo") {
         existingDoc.STATUS = "Ativo";
+
+
       }
 
 

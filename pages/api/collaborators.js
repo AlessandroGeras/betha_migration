@@ -53,7 +53,7 @@ export default async function handler(req, res) {
         // Busca o usuário pelo ID
         const user = await outsourceds.findOne({
           where: { ID_USUARIO: id },
-        });
+        });        
 
         if (!user) {
           return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
