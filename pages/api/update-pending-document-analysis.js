@@ -41,6 +41,9 @@ export default async function handler(req, res) {
               COLABORADOR: colaborador,
               TERCEIRO: nome_terceiro,
               STATUS: ['Pendente', 'Reprovado', 'Em análise'],
+              IID_DOCUMENTO: {
+                $not: id_documento
+            }
             }
           });
           console.log(pendingDocs);
@@ -53,8 +56,8 @@ export default async function handler(req, res) {
               },
             });
             existingUser.STATUS = "Ativo";
+            console.log(existingUser);
           }
-          console.log(existingUser);
         }
 
         else {
