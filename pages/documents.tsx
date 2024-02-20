@@ -207,7 +207,7 @@ const Users = () => {
   const columnWidths = {
     '': '69px',
     'STATUS': '200px',
-    'TIPO_DOCUMENTO': '300px',
+    'TIPO_DOCUMENTO': '',
     'TERCEIRO': '350px',
     'COLABORADOR': '260px',
     'VENCIMENTO': '260px',
@@ -1117,8 +1117,8 @@ const Users = () => {
                       <option value="">Todos</option>
                       {handleFilterValue('COLABORADOR').map((value) => (
                         <option key={value} value={value}>
-                          {formatBrDate(value)}
-                        </option>
+                        {value}
+                      </option>
                       ))}
                     </select>
                     <button
