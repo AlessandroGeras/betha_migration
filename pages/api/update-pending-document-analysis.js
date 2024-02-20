@@ -41,7 +41,7 @@ export default async function handler(req, res) {
               COLABORADOR: colaborador,
               TERCEIRO: nome_terceiro,
               STATUS: ['Pendente', 'Reprovado', 'Em análise'],
-              IID_DOCUMENTO: {
+              ID_DOCUMENTO: {
                 $not: id_documento
             }
             }
