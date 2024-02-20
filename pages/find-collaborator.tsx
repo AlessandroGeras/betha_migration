@@ -210,7 +210,7 @@ const AccountUsers = () => {
                     status: data.user.STATUS,
                     nome_terceiro: data.user.NOME_TERCEIRO,
                     principal: data.user.FUNCAO,
-                    observacoes: data.user.OBS_STATUS,
+                    observacoes: data.user.OBSERVACOES?.toString() || '',
                 });
 
                 if (data) {
