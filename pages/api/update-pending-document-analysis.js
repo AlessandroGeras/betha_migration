@@ -10,6 +10,7 @@ export default async function handler(req, res) {
     const { formData: { id_documento, motivo, colaborador, nome_terceiro }, id, token, role,analysis } = req.body;
 
     console.log(colaborador,nome_terceiro);
+    return
 
 
     if (!token) {
