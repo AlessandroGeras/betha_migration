@@ -1006,7 +1006,7 @@ const Users = () => {
               </div>)}
             </div>
 
-            <div className="flex flex-col h-[550px] w-[3140px] overflow-x-scroll overflow-y-auto text-overflow: clip ellipsis">
+            <div className="flex flex-col h-[550px] w-[3140px] overflow-y-auto text-ellipsis">
               {/* Cabeçalho */}
               <div className="flex text-gray-500 bg-white w-[3140px]">
                 {Object.keys(columnWidths).map((column) => (
@@ -1167,7 +1167,7 @@ const Users = () => {
               {documents.docs.rows.map((document, index) => (
                 <div className='w-[3140px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] overflow-x-auto text-overflow: clip ellipsis  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
