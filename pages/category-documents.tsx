@@ -625,7 +625,7 @@ const CategoryOutsourced = () => {
                   </button>
                 </div>
 
-                <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto text-ellipsis">
+                <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto text-ellipsis overflow-hidden">
                   {/* Cabeçalho */}
                   <div className="flex text-gray-500 bg-white w-[2059px]">
                     {Object.keys(columnWidths).map((column) => (
@@ -691,7 +691,7 @@ const CategoryOutsourced = () => {
                   {documents.docs.rows.map((document: any, index) => (
                     <div className='w-[1440px]' key={document.id || index}>
                       <div
-                        className={`flex text-gray-700 whitespace-nowrap w-[2059px] text-ellipsis  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        className={`flex text-gray-700 whitespace-nowrap w-[2059px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       >
                         {Object.keys(columnWidths).map((column) => (
                           <div
