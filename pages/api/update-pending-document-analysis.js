@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import outsourceds from '../../models/outsourceds';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = require('date-fns');
@@ -7,10 +8,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { formData: { id_documento, motivo, colaborador, nome_terceiro }, id, token, role,analysis } = req.body;
-
-    console.log(colaborador,nome_terceiro);
-    return
+    const { formData: { id_documento, motivo, colaborador, nome_terceiro }, id, token, role, analysis } = req.body;
 
 
     if (!token) {
@@ -22,7 +20,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      jwt.verify(token, process.env.SECRET);     
+      jwt.verify(token, process.env.SECRET);
 
       const existingDoc = await documents.findOne({ where: { ID_DOCUMENTO: id_documento } });
 
@@ -31,10 +29,51 @@ export default async function handler(req, res) {
         existingDoc.STATUS = "Reprovado";
       }
 
+
+      
+
       if (analysis == "Ativo") {
         existingDoc.STATUS = "Ativo";
 
+        if (colaborador) {
+          const pendingDocs = await documents.findOne({
+            where: {
+              COLABORADOR: colaborador,
+              TERCEIRO: nome_terceiro,
+              STATUS: ['Pendente', 'Reprovado', 'Em análise'],
+            }
+          });
 
+          if (!pendingDocs) {
+            const existingUser = await outsourceds.findOne({
+              where: {
+                ID_USUARIO: colaborador,
+                COLABORADOR_TERCEIRO: 'S',
+              },
+            });
+            existingUser.STATUS = "Ativo";
+          }
+        }
+
+        else {
+          const pendingDocs = await documents.findOne({
+            where: {
+              TERCEIRO: nome_terceiro,
+              STATUS: ['Pendente', 'Reprovado', 'Em análise'],
+            }
+          });
+
+          
+          if (!pendingDocs) {
+            const existingUser = await outsourceds.findOne({
+              where: {
+                NOME_TERCEIRO:nome_terceiro,
+                COLABORADOR_TERCEIRO: 'N',
+              },
+            });
+            existingUser.STATUS = "Ativo";
+          }
+        }
       }
 
 
@@ -62,7 +101,7 @@ export default async function handler(req, res) {
         res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
       }
     } finally {
-      
+
     }
   } else {
     res.status(405).json({ success: false, message: 'Método não permitido.' });
