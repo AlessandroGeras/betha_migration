@@ -400,20 +400,7 @@ const AccountUsers = () => {
                             ))}
                         </select>
                     </div> */}
-
-                    {viewAll && (<div className="col-span-4 row-span-2">
-                        <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
-                            Obs. Status
-                        </label>
-                        <textarea
-                            name="observacoes"
-                            id="observacoes"
-                            value={formData.observacoes}
-                            onChange={handleInputChange}
-                            rows={4}
-                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
-                        />
-                    </div>)}
+                    
 
                     <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
@@ -437,6 +424,20 @@ const AccountUsers = () => {
                             ))}
                         </select>
                     </div>
+
+                    {viewAll && (<div className="col-span-4 row-span-2">
+                        <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
+                            Obs. Status
+                        </label>
+                        <textarea
+                            name="observacoes"
+                            id="observacoes"
+                            value={formData.observacoes}
+                            onChange={handleInputChange}
+                            rows={4}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
+                        />
+                    </div>)}
 
 
 
