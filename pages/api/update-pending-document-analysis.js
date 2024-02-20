@@ -46,7 +46,6 @@ export default async function handler(req, res) {
             }
             }
           });
-          console.log(pendingDocs);
 
           if (!pendingDocs) {
             const existingUser = await outsourceds.findOne({
@@ -57,7 +56,6 @@ export default async function handler(req, res) {
             });
             existingUser.STATUS = "Ativo";
             await existingUser.save();
-            console.log("existingUser");
           }
         }
 

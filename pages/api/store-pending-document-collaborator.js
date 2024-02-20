@@ -1,4 +1,5 @@
 import documents from '../../models/documents';
+import outsourceds from '../../models/outsourceds';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -51,7 +52,15 @@ export default async function handler(req, res) {
                         // Adicione outros campos conforme necessário
                     });
 
-                    // Adicione outras lógicas aqui conforme necessário para cada categoria
+                    const existingUser = await outsourceds.findOne({
+                        where: {
+                          ID_USUARIO: colaborador,
+                          COLABORADOR_TERCEIRO: 'S',
+                          NOME_TERCEIRO:nome_terceiro,
+                        },
+                      });
+                      existingUser.STATUS = "Pendente";
+                      await existingUser.save();
                 }
 
                 res.status(200).json({ success: true, message: 'Pendências de documento criadas.' });
