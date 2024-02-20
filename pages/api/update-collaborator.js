@@ -33,6 +33,8 @@ export default async function handler(req, res) {
                     COLABORADOR_TERCEIRO: 'S',
                 },                 
             });             
+
+            console.log(obs_status);
             
             /* existingUser.ENDEREÇO = endereco; */
            /*  existingUser.ST_EMAIL = email; */
