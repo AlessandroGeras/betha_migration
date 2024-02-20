@@ -39,6 +39,7 @@ export default async function handler(req, res) {
            /*  existingUser.CIDADE = cidade; */
             /* existingUser.UF = uf; */
             /* existingUser.TELEFONE = telefone; */
+            existingUser.OBS_STATUS = obs_status;
             existingUser.CPF = cpf;
             existingUser.NM_USUARIO = usuario;
             existingUser.FUNCAO = principal;
