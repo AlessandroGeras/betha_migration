@@ -56,7 +56,7 @@ export default async function handler(req, res) {
               },
             });
             existingUser.STATUS = "Ativo";
-            console.log(existingUser);
+            console.log("testeNatalia");
           }
         }
 
