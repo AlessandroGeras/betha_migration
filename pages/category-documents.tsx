@@ -625,7 +625,7 @@ const CategoryOutsourced = () => {
                   </button>
                 </div>
 
-                <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto text-ellipsis overflow-hidden">
+                <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto text-ellipsis overflow-hidden">
                   {/* Cabeçalho */}
                   <div className="flex text-gray-500 bg-white w-[2059px]">
                     {Object.keys(columnWidths).map((column) => (
