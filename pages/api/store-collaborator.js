@@ -59,7 +59,7 @@ export default async function handler(req, res) {
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_empresa,
                 CNPJ: "N/A",
-                FUNCAO: categorias.join('# '), // Use categorias em vez de principal
+                FUNCAO: categorias.join(', '), // Use categorias em vez de principal
                 COLABORADOR_TERCEIRO: "S",
                 ID_USUARIO_INTERNO: "N",
             });
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
                         },
                     });
                     if (category) {
-                        const tipoDocumentos = category.TIPO_DOCUMENTO.split('# ');
+                        const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
                         console.log(tipoDocumentos);
 
                         for (const tipoDocumento of tipoDocumentos) {

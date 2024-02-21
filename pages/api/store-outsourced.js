@@ -43,7 +43,7 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",
                 ID_USUARIO: id_usuario,
-                CATEGORIA_PRINCIPAL: categorias.join('# '), // Concatenando os valores da array
+                CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
@@ -56,7 +56,7 @@ export default async function handler(req, res) {
                     });
 
                     if (category) {
-                        const tipoDocumentos = category.TIPO_DOCUMENTO.split('# ');
+                        const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
 
                         for (const tipoDocumento of tipoDocumentos) {
                             const storeDocumentos = await documents.create({

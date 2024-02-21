@@ -21,7 +21,7 @@ export default async function handler(req, res) {
             });
 
             existingCategory.CATEGORIA = categoria_terceiro;
-            existingCategory.TIPO_DOCUMENTO = categorias.join('# '),
+            existingCategory.TIPO_DOCUMENTO = categorias.join(', '),
 
                 await existingCategory.save();
 
