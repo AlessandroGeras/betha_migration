@@ -18,7 +18,7 @@ export default async function handler(req, res) {
             const existingCategory = await categoria_terceiros.findOne({ where: { CATEGORIA: categoria_terceiro } });
 
             existingCategory.CATEGORIA = categoria_terceiro;
-            existingCategory.TIPO_DOCUMENTO = categorias.join(', '),
+            existingCategory.TIPO_DOCUMENTO = categorias.join('# '),
 
             await existingCategory.save();
 
