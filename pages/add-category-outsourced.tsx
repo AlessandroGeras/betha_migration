@@ -20,7 +20,7 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
-    const [removedDocuments, setRemovedDocuments] = useState<string[]>([]); // Declaração do estado removedDocuments
+    const [removedDocuments, setRemovedDocuments] = useState<string[]>([]);
     const { id } = router.query;
 
     const closeModal = () => {
@@ -60,6 +60,12 @@ const AddOutsourced = () => {
 
         // Adiciona o documento removido à lista de documentos removidos
         setRemovedDocuments([...removedDocuments, removedCategoria]);
+
+        // Adiciona o documento restaurado de volta à lista original
+        const restoredDocument = categoriaOptions.find(categoria => categoria.CATEGORIA === removedCategoria);
+        if (restoredDocument) {
+            setCategoriaOptions([...categoriaOptions, restoredDocument]);
+        }
     };
 
     const restoreCategoria = (restoredCategoria) => {
@@ -256,9 +262,26 @@ const AddOutsourced = () => {
                                 )}
                             </div>
 
-
-
-
+                            {/* Lista de documentos removidos */}
+                            {removedDocuments.length > 0 && (
+                                <div className="col-span-7">
+                                    <p className="text-sm font-medium text-gray-700">Documentos removidos:</p>
+                                    <ul className="list-disc pl-4">
+                                        {removedDocuments.map((removedCategoria) => (
+                                            <li key={removedCategoria} className="flex items-center justify-between">
+                                                {removedCategoria}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => restoreCategoria(removedCategoria)}
+                                                    className="text-blue-500"
+                                                >
+                                                    Restaurar
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
 
                             <div className="col-span-7 flex justify-center mt-4">
                                 <button
