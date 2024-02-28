@@ -54,8 +54,15 @@ const AddOutsourced = () => {
     };
 
     const removeCategoria = (removedCategoria) => {
+        // Remove o documento da lista de documentos selecionados
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
         setFormData({ ...formData, categorias: updatedCategorias });
+    
+        // Adiciona o documento removido de volta à lista original
+        const restoredCategoria = categoriaOptions.find(categoria => categoria.CATEGORIA === removedCategoria);
+        if (restoredCategoria) {
+            setCategoriaOptions([...categoriaOptions, restoredCategoria]);
+        }
     };
 
     const handleSubmitSuccess = async (e) => {
