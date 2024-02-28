@@ -20,6 +20,7 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [enterprises, setEnterprises] = useState([]);
+    const [removedDocuments, setRemovedDocuments] = useState<string[]>([]); // Declaração do estado removedDocuments
     const { id } = router.query;
 
     const closeModal = () => {
@@ -40,14 +41,13 @@ const AddOutsourced = () => {
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
-    
+
         if (formData.categorias.includes(selectedCategoria)) {
-            return; // Se o valor já estiver na lista de documentos selecionados, não faz nada
+            return;
         } else {
-            // Adiciona o valor selecionado à lista de documentos selecionados
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-    
-            // Remove o valor selecionado da lista de documentos originais
+
+            // Remove o valor selecionado da lista original
             const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
             setCategoriaOptions(updatedCategoriaOptions);
         }
@@ -57,11 +57,20 @@ const AddOutsourced = () => {
         // Remove o documento da lista de documentos selecionados
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
         setFormData({ ...formData, categorias: updatedCategorias });
-    
-        // Adiciona o documento removido de volta à lista original
-        const restoredCategoria = categoriaOptions.find(categoria => categoria.CATEGORIA === removedCategoria);
-        if (restoredCategoria) {
-            setCategoriaOptions([...categoriaOptions, restoredCategoria]);
+
+        // Adiciona o documento removido à lista de documentos removidos
+        setRemovedDocuments([...removedDocuments, removedCategoria]);
+    };
+
+    const restoreCategoria = (restoredCategoria) => {
+        // Remove o documento restaurado da lista de documentos removidos
+        const updatedRemovedDocuments = removedDocuments.filter((categoria) => categoria !== restoredCategoria);
+        setRemovedDocuments(updatedRemovedDocuments);
+
+        // Adiciona o documento restaurado de volta à lista original
+        const restoredDocument = categoriaOptions.find(categoria => categoria.CATEGORIA === restoredCategoria);
+        if (restoredDocument) {
+            setCategoriaOptions([...categoriaOptions, restoredDocument]);
         }
     };
 
