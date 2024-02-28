@@ -53,6 +53,15 @@ const AddOutsourced = () => {
         setFormData({ ...formData, categorias: updatedCategorias });
     };
 
+    const addDocumento = (selectedCategoria) => {
+        if (formData.categorias.includes(selectedCategoria)) {
+            return;
+        } else {
+            setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
+            setCategoriaOptions(categoriaOptions.filter((categoria) => categoria.CATEGORIA !== selectedCategoria));
+        }
+    };
+
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
@@ -218,8 +227,8 @@ const AddOutsourced = () => {
                                     <div className="mt-2">
                                         <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
                                         <ul className="list-disc pl-4">
-                                            {formData.categorias.map((selectedCategoria, index) => (
-                                                <li key={selectedCategoria} className={`flex items-center justify-between ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}>
+                                            {formData.categorias.map((selectedCategoria) => (
+                                                <li key={selectedCategoria} className="flex items-center justify-between">
                                                     {selectedCategoria}
                                                     <button
                                                         type="button"
@@ -235,9 +244,18 @@ const AddOutsourced = () => {
                                 )}
                             </div>
 
-
-
-
+                            <div className="col-span-7">
+                                <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
+                                    Lista de Documentos
+                                </label>
+                                <ul className="list-disc pl-4">
+                                    {categoriaOptions.map((categoria) => (
+                                        <li key={categoria.CATEGORIA} onClick={() => addDocumento(categoria.CATEGORIA)} className="flex items-center justify-between">
+                                            {categoria.CATEGORIA}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
                             <div className="col-span-7 flex justify-center mt-4">
                                 <button
