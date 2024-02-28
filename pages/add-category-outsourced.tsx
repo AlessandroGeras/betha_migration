@@ -40,26 +40,22 @@ const AddOutsourced = () => {
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
-
+    
         if (formData.categorias.includes(selectedCategoria)) {
-            return;
+            return; // Se o valor já estiver na lista de documentos selecionados, não faz nada
         } else {
+            // Adiciona o valor selecionado à lista de documentos selecionados
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
+    
+            // Remove o valor selecionado da lista de documentos originais
+            const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
+            setCategoriaOptions(updatedCategoriaOptions);
         }
     };
 
     const removeCategoria = (removedCategoria) => {
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
         setFormData({ ...formData, categorias: updatedCategorias });
-    };
-
-    const addDocumento = (selectedCategoria) => {
-        if (formData.categorias.includes(selectedCategoria)) {
-            return;
-        } else {
-            setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-            setCategoriaOptions(categoriaOptions.filter((categoria) => categoria.CATEGORIA !== selectedCategoria));
-        }
     };
 
     const handleSubmitSuccess = async (e) => {
@@ -244,18 +240,9 @@ const AddOutsourced = () => {
                                 )}
                             </div>
 
-                            <div className="col-span-7">
-                                <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">
-                                    Lista de Documentos
-                                </label>
-                                <ul className="list-disc pl-4">
-                                    {categoriaOptions.map((categoria) => (
-                                        <li key={categoria.CATEGORIA} onClick={() => addDocumento(categoria.CATEGORIA)} className="flex items-center justify-between">
-                                            {categoria.CATEGORIA}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+
+
+
 
                             <div className="col-span-7 flex justify-center mt-4">
                                 <button
