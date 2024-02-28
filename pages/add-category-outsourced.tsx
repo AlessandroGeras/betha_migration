@@ -28,26 +28,21 @@ const AddOutsourced = () => {
 
     const resetForm = () => {
         setFormData({
+            ...formData,
             categorias: [],
-            nomeTerceiro: '',
-            categoria: '',
-            categoria_terceiro: '',
         });
     };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-
         setFormData({ ...formData, [name]: value });
-
     };
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
 
         if (formData.categorias.includes(selectedCategoria)) {
-            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
-            setFormData({ ...formData, categorias: updatedCategorias });
+            return;
         } else {
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
         }
@@ -223,8 +218,8 @@ const AddOutsourced = () => {
                                     <div className="mt-2">
                                         <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
                                         <ul className="list-disc pl-4">
-                                            {formData.categorias.map((selectedCategoria, index) => (
-                                                <li key={selectedCategoria} className={`flex items-center justify-between ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}>
+                                            {formData.categorias.map((selectedCategoria) => (
+                                                <li key={selectedCategoria} className="flex items-center justify-between">
                                                     {selectedCategoria}
                                                     <button
                                                         type="button"
