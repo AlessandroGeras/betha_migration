@@ -11,11 +11,7 @@ export default async function handler(req, res) {
 
     if (!token) {
       return res.redirect(302, '/login');
-    }
-
-    if (campos_vencimento === null || campos_vencimento === undefined) {
-      campos_vencimento = 'Não';
-    }
+    }    
 
     try {
       jwt.verify(token, process.env.SECRET);
@@ -25,7 +21,7 @@ export default async function handler(req, res) {
         NUMERACAO: numeracao,
         FORMATO_VENCIMENTO: formato_vencimento,
         AUDITORIA: auditoria,
-        CAMPOS_VENCIMENTO: campos_vencimento,
+        CAMPOS_VENCIMENTO: campos_vencimento !== null && campos_vencimento !== undefined ? campos_vencimento : 'Não',
       }, {
         fields: ['CATEGORIA', 'NUMERACAO', 'FORMATO_VENCIMENTO', 'AUDITORIA', 'CAMPOS_VENCIMENTO'],
       });
