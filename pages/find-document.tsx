@@ -109,9 +109,19 @@ const FindDocument = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFile(value);
-        setFormData({ ...formData, [name]: value });
-        console.log("formData.vencimento2"+formData.vencimento);
+    
+        // Verifica se o campo alterado é o campo 'vencimento'
+        if (name === 'vencimento') {
+            // Atualiza explicitamente o valor de formData.vencimento
+            setFormData({ ...formData, [name]: value, vencimento: value });
+        } else {
+            // Atualiza outros campos normalmente
+            setFormData({ ...formData, [name]: value });
+        }
+    
+        console.log("formData.vencimento2" + formData.vencimento);
+        console.log("name" + name);
+        console.log("value" + value);
     };
 
     const handleDateChange = (e) => {
