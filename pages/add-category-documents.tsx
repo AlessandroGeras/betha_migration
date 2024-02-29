@@ -9,6 +9,7 @@ const AddOutsourced = () => {
         numeração: 'Sim',
         formato_vencimento: 'Fixo',
         auditoria: 'Não',
+        campos_vencimento: 'Não',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState([]);
@@ -29,6 +30,7 @@ const AddOutsourced = () => {
             numeração: 'Sim',
             formato_vencimento: 'Fixo',
             auditoria: 'Não',
+            campos_vencimento: 'Não',
         });
     }
 
@@ -194,6 +196,23 @@ const AddOutsourced = () => {
                             <option value="Sim">Sim</option>
                         </select>
                     </div>
+
+                    {formData.auditoria === "Não" && (<div className="col-span-7">
+                        <label htmlFor="campos_vencimento" className="block text-sm font-medium text-gray-700">
+                            Campos de Vencimento <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                            name="campos_vencimento"
+                            id="campos_vencimento"
+                            value={formData.campos_vencimento}
+                            onChange={handleInputChange}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            required
+                        >
+                            <option value="Não">Não</option>
+                            <option value="Sim">Sim</option>
+                        </select>
+                    </div>)}
 
 
 
