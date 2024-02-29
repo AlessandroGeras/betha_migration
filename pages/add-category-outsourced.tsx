@@ -56,11 +56,21 @@ const AddOutsourced = () => {
             setCategoriaOptions(updatedCategoriaOptions);
         }
     };
-    
+
     const removeCategoria = (removedCategoria) => {
-        const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-        setFormData({ ...formData, categorias: updatedCategorias });
-    };
+    // Adiciona o valor removido de volta à lista suspensa
+    const updatedCategoriaOptions = [
+        ...categoriaOptions,
+        { CATEGORIA: removedCategoria }
+    ];
+
+    // Atualiza a lista de documentos selecionados removendo o valor
+    const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
+
+    // Atualiza os estados
+    setCategoriaOptions(updatedCategoriaOptions);
+    setFormData({ ...formData, categorias: updatedCategorias });
+};
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
