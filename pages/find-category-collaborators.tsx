@@ -168,6 +168,11 @@ const AddOutsourced = () => {
                     });
 
                     setCategoriaDetails(updatedCategoriaDetails);
+
+                    // Filtra os valores da lista completa para remover os que já foram selecionados
+                    const filteredCategoriaOptions = data.success ? data.docs.rows.filter(categoria => !data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()).includes(categoria.CATEGORIA)) : [];
+                    setCategoriaOptions(filteredCategoriaOptions);
+
                     setFormData({
                         categorias: data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()),
                         nomeTerceiro: '',
@@ -175,7 +180,6 @@ const AddOutsourced = () => {
                         categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
                     });
                 }
-                setCategoriaOptions(data.success ? data.docs.rows : []);
                 setLoading(false);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
