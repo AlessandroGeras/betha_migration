@@ -243,7 +243,7 @@ const AddOutsourced = () => {
                                             <button
                                                 type="button"
                                                 onClick={() => removeCategoria(selectedCategoria)}
-                                                className="text-red-500"
+                                                className="text-red-500 hover:bg-blue-500"
                                             >
                                                 Remover
                                             </button>
