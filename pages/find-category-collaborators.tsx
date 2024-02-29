@@ -112,65 +112,65 @@ const AddOutsourced = () => {
     };
 
     useEffect(() => {
-    const fetchCategoriaOptions = async () => {
-        try {
-            setLoading(true);
+        const fetchCategoriaOptions = async () => {
+            try {
+                setLoading(true);
 
-            if (!id) {
-                return;
-            }
+                if (!id) {
+                    return;
+                }
 
-            const token = localStorage.getItem('Token');
+                const token = localStorage.getItem('Token');
 
-            if (!token) {
-                router.push('/login');
-                return;
-            }
+                if (!token) {
+                    router.push('/login');
+                    return;
+                }
 
-            const getAll = true;
+                const getAll = true;
 
-            const response = await fetch(`/api/find-category-collaborator`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ token, getAll, id }),
-            });
-
-            const data = await response.json();
-            if (response.status === 401) {
-                router.push('/login');
-            } else {
-                setTokenVerified(true);
-                setEnterprises(data.uniqueEnterprises);
-
-                const updatedCategoriaDetails = {};
-
-                data.docs.rows.forEach((categoria) => {
-                    updatedCategoriaDetails[categoria.CATEGORIA] = {
-                        campo1: categoria.NUMERACAO,
-                        campo2: categoria.FORMATO_VENCIMENTO,
-                        campo3: categoria.AUDITORIA,
-                    };
+                const response = await fetch(`/api/find-category-collaborator`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token, getAll, id }),
                 });
 
-                setCategoriaDetails(updatedCategoriaDetails);
-                setFormData({
-                    categorias: data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()),
-                    nomeTerceiro: '',
-                    categoria: '', // Definindo categoria como uma string vazia aqui
-                    categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
-                });
-            }
-            setCategoriaOptions(data.success ? data.docs.rows : []);
-            setLoading(false);
-        } catch (error) {
-            console.error('Erro ao obter opções de categoria:', error);
-        }
-    };
+                const data = await response.json();
+                if (response.status === 401) {
+                    router.push('/login');
+                } else {
+                    setTokenVerified(true);
+                    setEnterprises(data.uniqueEnterprises);
 
-    fetchCategoriaOptions();
-}, [id,router]);
+                    const updatedCategoriaDetails = {};
+
+                    data.docs.rows.forEach((categoria) => {
+                        updatedCategoriaDetails[categoria.CATEGORIA] = {
+                            campo1: categoria.NUMERACAO,
+                            campo2: categoria.FORMATO_VENCIMENTO,
+                            campo3: categoria.AUDITORIA,
+                        };
+                    });
+
+                    setCategoriaDetails(updatedCategoriaDetails);
+                    setFormData({
+                        categorias: data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()),
+                        nomeTerceiro: '',
+                        categoria: '', // Definindo categoria como uma string vazia aqui
+                        categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
+                    });
+                }
+                setCategoriaOptions(data.success ? data.docs.rows : []);
+                setLoading(false);
+            } catch (error) {
+                console.error('Erro ao obter opções de categoria:', error);
+            }
+        };
+
+        fetchCategoriaOptions();
+    }, [id, router]);
 
     return (
         <div className="flex h-screen">
@@ -238,12 +238,12 @@ const AddOutsourced = () => {
                                 <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
                                 <ul className="list-disc pl-4">
                                     {formData.categorias.map((selectedCategoria) => (
-                                        <li key={selectedCategoria} className="flex items-center justify-between hover:bg-blue-500">
-                                            {selectedCategoria}
+                                        <li key={selectedCategoria} className="flex items-center justify-between">
+                                            <span className="hover:bg-blue-500">{selectedCategoria}</span>
                                             <button
                                                 type="button"
                                                 onClick={() => removeCategoria(selectedCategoria)}
-                                                className="text-red-500 hover:bg-blue-500"
+                                                className="text-red-500"
                                             >
                                                 Remover
                                             </button>
