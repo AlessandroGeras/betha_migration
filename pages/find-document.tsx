@@ -49,7 +49,7 @@ const FindDocument = () => {
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
         colaborador: '',
-        campos_vencimento:'Não',
+        campos_vencimento: 'Não',
     });
 
     useEffect(() => {
@@ -208,8 +208,8 @@ const FindDocument = () => {
                     });
 
                     setFilename(data.docs.ANEXO);
-                    console.log("Auditoria"+formData.auditoria);
-                    console.log("Campos_Vencimento"+formData.campos_vencimento);
+                    console.log("Auditoria" + formData.auditoria);
+                    console.log("Campos_Vencimento" + formData.campos_vencimento);
                 }
 
 
@@ -354,7 +354,7 @@ const FindDocument = () => {
 
     const handleSubmitCancel = () => {
         router.back();
-    };    
+    };
 
     const handleSubmitReprove = () => {
         setPopupMessage('Explique o motivo da reprovação do documento que será enviado ao Terceiro.');
@@ -591,77 +591,62 @@ const FindDocument = () => {
                             </select>
                         </div>)}
 
-                        {formData.auditoria == "Sim" && (<div className="mt-6">
-                            <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
-                                Formato Vencimento<span className="text-red-500">*</span>
-                            </label>
-                            <select
-                                name="vencimento"
-                                id="vencimento"
-                                value={formData.vencimento}
-                                onChange={handleInputChange}
-                                required
-                                {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            >
-                                <option value="Fixo">Dia fixo</option>
-                                <option value="Periodo">Período</option>
-                            </select>
-                        </div>)}
-
-                        {formData.auditoria == "Sim" && (<div className='flex gap-10 mt-6'>
-                            <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
-                                <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
-                                    Dia fixo do mês<span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    min={1}
-                                    max={31}
-                                    name="dia"
-                                    id="dia"
-                                    onChange={handleInputChange}
-                                    value={formData.dia}
-                                    required
-                                    {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
-                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                />
-                            </div>
-                            {formData.vencimento === 'Periodo' && (
-                                <div className="">
-                                    <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
-                                        Data de Vencimento<span className="text-red-500">*</span>
+                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Fixo") && (
+                            <div className='flex gap-10 mt-6'>
+                                <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
+                                    <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
+                                        Dia fixo do mês<span className="text-red-500">*</span>
                                     </label>
                                     <input
-                                        type="date"
-                                        name="dataVencimento"
-                                        id="dataVencimento"
-                                        value={formData.dataVencimento}
-                                        onChange={handleDateChange}
-                                        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                        min={new Date().toISOString().split('T')[0]}
+                                        type="number"
+                                        min={1}
+                                        max={31}
+                                        name="dia"
+                                        id="dia"
+                                        onChange={handleInputChange}
+                                        value={formData.dia}
                                         required
                                         {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
-                                    />
-                                </div>
-                            )}
-                            {formData.vencimento === 'Periodo' && (
-                                <div className="">
-                                    <label htmlFor="diasAntecipacao" className="block text-sm font-medium text-gray-700">
-                                        Quant. dias
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="diasAntecipacao"
-                                        id="diasAntecipacao"
-                                        value={formData.diasAntecipacao}
-                                        readOnly
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                     />
                                 </div>
-                            )}
-                        </div>)}
-                        {formData.auditoria == "Sim" && (<div className="mt-6">
+                            </div>
+                        )}
+
+                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Período") && (
+                            <div className="">
+                                <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
+                                    Data de Vencimento<span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="date"
+                                    name="dataVencimento"
+                                    id="dataVencimento"
+                                    value={formData.dataVencimento}
+                                    onChange={handleDateChange}
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                    min={new Date().toISOString().split('T')[0]}
+                                    required
+                                    {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
+                                />
+                            </div>
+                        )}
+                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Período") && (
+                            <div className="">
+                                <label htmlFor="diasAntecipacao" className="block text-sm font-medium text-gray-700">
+                                    Quant. dias
+                                </label>
+                                <input
+                                    type="text"
+                                    name="diasAntecipacao"
+                                    id="diasAntecipacao"
+                                    value={formData.diasAntecipacao}
+                                    readOnly
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
+                            </div>)}
+
+                        {((formData.auditoria === "Não" && formData.campos_vencimento === "Sim") || formData.auditoria === "Não") && formData.campos_vencimento === "Sim" && (<div className="mt-6">
                             <label htmlFor="notificacao" className="block text-sm font-medium text-gray-700">
                                 Receber notificação antecipada do vencimento em dias<span className="text-red-500">*</span>
                             </label>
@@ -677,6 +662,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>)}
+                        
                         {(isAnalysis == "Pendente" || isAnalysis == "Reprovado" && !viewAll) && (<div className="mt-6">
                             <label htmlFor="arquivo" className="block text-sm font-medium text-gray-700">
                                 Enviar Arquivo<span className="text-red-500">*</span>
@@ -755,7 +741,7 @@ const FindDocument = () => {
                 </div>
 
 
-                <div className="col-span-7 flex justify-center mt-10 pb-4">                    
+                <div className="col-span-7 flex justify-center mt-10 pb-4">
                     <button
                         type="button"
                         onClick={handleSubmitCancel}
@@ -794,12 +780,13 @@ const FindDocument = () => {
                 </div>
             </div>
 
-            {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                        {/* Pseudo-elemento para a barra lateral */}
-                        <style>
-                            {`
+            {
+                showModal && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                            {/* Pseudo-elemento para a barra lateral */}
+                            <style>
+                                {`
                       .modal-content::before {
                         content: '';
                         background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
@@ -810,69 +797,70 @@ const FindDocument = () => {
                         left: 0;
                       }
                     `}
-                        </style>
+                            </style>
 
-                        <button
-                            className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
-                            onClick={closeModal}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
+                            <button
+                                className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                                onClick={closeModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
 
 
 
-                        <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
-                            <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+                            <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                                <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
 
-                            {reproveAnalysis && (<div className="mt-4">
-                                <label htmlFor="motivo" className="block text-sm font-medium">
-                                    Motivo<span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="motivo"
-                                    id="motivo"
-                                    value={formData.motivo}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                />
-                            </div>)}
+                                {reproveAnalysis && (<div className="mt-4">
+                                    <label htmlFor="motivo" className="block text-sm font-medium">
+                                        Motivo<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="motivo"
+                                        id="motivo"
+                                        value={formData.motivo}
+                                        onChange={handleInputChange}
+                                        required
+                                        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                    />
+                                </div>)}
 
-                            {reproveAnalysis && (
-                                <div className='flex'>
-                                    {showReproveButton == true && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                {reproveAnalysis && (
+                                    <div className='flex'>
+                                        {showReproveButton == true && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                            <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                                Reprovar o documento
+                                            </span>
+                                        </button>)}
+                                        <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                                            <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                                Cancelar e voltar
+                                            </span>
+                                        </button>
+                                    </div>
+                                )}
+
+                                {aproveAnalysis && (<div className='flex'>
+                                    <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Ativo")}>
                                         <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                            Reprovar o documento
+                                            Aprovar o documento
                                         </span>
-                                    </button>)}
+                                    </button>
                                     <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
                                         <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
                                             Cancelar e voltar
                                         </span>
                                     </button>
-                                </div>
-                            )}
-
-                            {aproveAnalysis && (<div className='flex'>
-                                <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Ativo")}>
-                                    <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                        Aprovar o documento
-                                    </span>
-                                </button>
-                                <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
-                                    <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                        Cancelar e voltar
-                                    </span>
-                                </button>
-                            </div>)}
+                                </div>)}
 
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )
+            }
         </div >
     );
 };
