@@ -619,7 +619,7 @@ const FindDocument = () => {
                             </div>
                         )}
 
-                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Período") && (
+                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Periodo") && (
                             <div className="">
                                 <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
                                     Data de Vencimento<span className="text-red-500">*</span>
@@ -637,7 +637,7 @@ const FindDocument = () => {
                                 />
                             </div>
                         )}
-                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Período") && (
+                        {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Periodo") && (
                             <div className="">
                                 <label htmlFor="diasAntecipacao" className="block text-sm font-medium text-gray-700">
                                     Quant. dias
