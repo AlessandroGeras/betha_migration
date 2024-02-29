@@ -620,7 +620,7 @@ const FindDocument = () => {
                         )}
 
                         {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Periodo") && (
-                            <div className="">
+                            <div className="mt-6">
                                 <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
                                     Data de Vencimento<span className="text-red-500">*</span>
                                 </label>
