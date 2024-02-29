@@ -568,7 +568,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
-                        {formData.auditoria == "Sim" && (<div className="mt-6">
+                     <div className="mt-6">
                             <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
                                 Formato Vencimento<span className="text-red-500">*</span>
                             </label>
@@ -584,8 +584,8 @@ const FindDocument = () => {
                                 <option value="Fixo">Dia fixo</option>
                                 <option value="Periodo">Período</option>
                             </select>
-                        </div>)}
-                        {formData.auditoria == "Sim" && (<div className='flex gap-10 mt-6'>
+                        </div>
+                       <div className='flex gap-10 mt-6'>
                             <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
                                 <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
                                     Dia fixo do mês<span className="text-red-500">*</span>
@@ -603,6 +603,7 @@ const FindDocument = () => {
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
                             </div>
+
                             {formData.vencimento === 'Periodo' && (
                                 <div className="">
                                     <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
@@ -636,8 +637,9 @@ const FindDocument = () => {
                                     />
                                 </div>
                             )}
-                        </div>)}
-                        {formData.auditoria == "Sim" && (<div className="mt-6">
+                        </div>
+
+                        <div className="mt-6">
                             <label htmlFor="notificacao" className="block text-sm font-medium text-gray-700">
                                 Receber notificação antecipada do vencimento em dias<span className="text-red-500">*</span>
                             </label>
@@ -652,7 +654,8 @@ const FindDocument = () => {
                                 min={minNotification}
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
-                        </div>)}
+                        </div>
+
                         {(isAnalysis == "Pendente" || isAnalysis == "Reprovado" && !viewAll) && (<div className="mt-6">
                             <label htmlFor="arquivo" className="block text-sm font-medium text-gray-700">
                                 Enviar Arquivo<span className="text-red-500">*</span>
@@ -665,6 +668,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>)}
+                        
                         {(isAnalysis != "Pendente" && isAnalysis != "Em análise" && isAnalysis != "Ativo") && (<div className="mt-6">
                             <label htmlFor="motivo" className="block text-sm font-medium">
                                 Motivo<span className="text-red-500">*</span>
