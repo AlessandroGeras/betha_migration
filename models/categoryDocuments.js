@@ -25,6 +25,10 @@ const categoria_documentos = connection.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
+    CAMPOS_VENCIMENTO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: 'CATEGORIA_DOCUMENTOS',

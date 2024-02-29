@@ -7,7 +7,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-      const { categoria, numeracao, formato_vencimento, auditoria, token } = req.body;
+      const { categoria, numeracao, formato_vencimento, auditoria,campos_vencimento, token } = req.body;
   
       if (!token) {
         return res.redirect(302, '/login');
@@ -21,6 +21,7 @@ export default async function handler(req, res) {
           NUMERACAO: numeracao,
           FORMATO_VENCIMENTO: formato_vencimento,
           AUDITORIA: auditoria,
+          CAMPOS_VENCIMENTO: campos_vencimento,
         }, {
           fields: ['CATEGORIA', 'NUMERACAO', 'FORMATO_VENCIMENTO', 'AUDITORIA'],
         });
