@@ -45,10 +45,6 @@ const AddOutsourced = () => {
             return;
         } else {
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-
-            // Remove o valor selecionado da lista original
-            const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
-            setCategoriaOptions(updatedCategoriaOptions);
         }
     };
 
@@ -163,8 +159,9 @@ const AddOutsourced = () => {
 
                     setCategoriaDetails(updatedCategoriaDetails);
 
+                    // Atualiza a lista de opções da categoria
+                    setCategoriaOptions(data.success ? data.docs.rows : []);
                 }
-                setCategoriaOptions(data.success ? data.docs.rows : []);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
             }
