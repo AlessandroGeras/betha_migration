@@ -52,10 +52,6 @@ const FindDocument = () => {
         campos_vencimento: 'Não',
     });
 
-    interface formData {
-        vencimento: 'Fixo' | 'Periodo'; // Defina os valores permitidos para vencimento
-    }
-
     useEffect(() => {
         const userPermission = localStorage.getItem('permission');
 
@@ -94,6 +90,12 @@ const FindDocument = () => {
             setShowReproveButton(false);
         }
     }, [formData.motivo]);
+
+    useEffect(() => {
+        console.log("vencimento"+formData.vencimento);
+        console.log("auditoria"+formData.auditoria);
+        console.log("campos_vencimento"+formData.campos_vencimento);
+    }, [formData.vencimento]);
 
 
     const closeModal = () => {
