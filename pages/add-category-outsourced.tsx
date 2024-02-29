@@ -28,36 +28,34 @@ const AddOutsourced = () => {
 
     const resetForm = () => {
         setFormData({
-            ...formData,
             categorias: [],
+            nomeTerceiro: '',
+            categoria: '',
+            categoria_terceiro: '',
         });
     };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+
         setFormData({ ...formData, [name]: value });
+
     };
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
 
         if (formData.categorias.includes(selectedCategoria)) {
-            return;
+            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
+            setFormData({ ...formData, categorias: updatedCategorias });
         } else {
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
         }
     };
 
     const removeCategoria = (removedCategoria) => {
-        // Remove o documento da lista de documentos selecionados
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
         setFormData({ ...formData, categorias: updatedCategorias });
-
-        // Adiciona o documento removido de volta à lista original
-        const restoredDocument = categoriaOptions.find(categoria => categoria.CATEGORIA === removedCategoria);
-        if (restoredDocument) {
-            setCategoriaOptions([...categoriaOptions, restoredDocument]);
-        }
     };
 
     const handleSubmitSuccess = async (e) => {
@@ -159,9 +157,8 @@ const AddOutsourced = () => {
 
                     setCategoriaDetails(updatedCategoriaDetails);
 
-                    // Atualiza a lista de opções da categoria
-                    setCategoriaOptions(data.success ? data.docs.rows : []);
                 }
+                setCategoriaOptions(data.success ? data.docs.rows : []);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
             }
@@ -226,8 +223,8 @@ const AddOutsourced = () => {
                                     <div className="mt-2">
                                         <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
                                         <ul className="list-disc pl-4">
-                                            {formData.categorias.map((selectedCategoria) => (
-                                                <li key={selectedCategoria} className="flex items-center justify-between">
+                                            {formData.categorias.map((selectedCategoria, index) => (
+                                                <li key={selectedCategoria} className={`flex items-center justify-between ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}>
                                                     {selectedCategoria}
                                                     <button
                                                         type="button"
@@ -242,6 +239,10 @@ const AddOutsourced = () => {
                                     </div>
                                 )}
                             </div>
+
+
+
+
 
                             <div className="col-span-7 flex justify-center mt-4">
                                 <button
