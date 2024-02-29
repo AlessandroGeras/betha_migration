@@ -44,15 +44,19 @@ const AddOutsourced = () => {
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
-
+    
         if (formData.categorias.includes(selectedCategoria)) {
-            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
-            setFormData({ ...formData, categorias: updatedCategorias });
+            return; // Se o valor já estiver na lista de documentos selecionados, não faz nada
         } else {
+            // Adiciona o valor selecionado à lista de documentos selecionados
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
+    
+            // Remove o valor selecionado da lista de documentos originais
+            const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
+            setCategoriaOptions(updatedCategoriaOptions);
         }
     };
-
+    
     const removeCategoria = (removedCategoria) => {
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
         setFormData({ ...formData, categorias: updatedCategorias });
