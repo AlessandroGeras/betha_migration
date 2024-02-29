@@ -12,6 +12,9 @@ export default async function handler(req, res) {
       if (!token) {
         return res.redirect(302, '/login');
       }
+
+      console.log(campos_vencimento);
+      return;
   
       try {
         jwt.verify(token, process.env.SECRET); 
