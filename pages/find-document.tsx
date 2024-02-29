@@ -93,8 +93,6 @@ const FindDocument = () => {
 
     useEffect(() => {
         console.log("vencimento"+formData.vencimento);
-        console.log("auditoria"+formData.auditoria);
-        console.log("campos_vencimento"+formData.campos_vencimento);
     }, [formData.vencimento]);
 
 
@@ -113,7 +111,7 @@ const FindDocument = () => {
         const { name, value } = e.target;
         setFile(value);
         setFormData({ ...formData, [name]: value });
-        console.log(name,value);
+        console.log("formData.vencimento"+formData.vencimento);
     };
 
     const handleDateChange = (e) => {
@@ -215,8 +213,6 @@ const FindDocument = () => {
                     });
 
                     setFilename(data.docs.ANEXO);
-                    console.log("Auditoria" + formData.auditoria);
-                    console.log("Campos_Vencimento" + formData.campos_vencimento);
                 }
 
 
