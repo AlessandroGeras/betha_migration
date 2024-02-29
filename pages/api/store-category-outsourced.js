@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
             const Store = await categoryOutsourced.create({
                 CATEGORIA: categoria_terceiro,
-                TIPO_DOCUMENTO: categorias.join(', '),
+                TIPO_DOCUMENTO: categorias.join('# '),
             }, {
                 fields: ['CATEGORIA','TIPO_DOCUMENTO'],
             });
