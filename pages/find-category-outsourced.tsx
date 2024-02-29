@@ -169,17 +169,17 @@ const AddOutsourced = () => {
 
                     setCategoriaDetails(updatedCategoriaDetails);
 
-                    // Configura o estado formData antes do estado categoriaOptions
+                    // Filtra os valores da lista completa para remover os que já foram selecionados
+                    const filteredCategoriaOptions = data.success ? data.docs.rows.filter(categoria => !data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()).includes(categoria.CATEGORIA)) : [];
+                    setCategoriaOptions(filteredCategoriaOptions);
+
+                    // Configura o estado formData
                     setFormData({
                         categorias: data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()),
                         nomeTerceiro: '',
                         categoria: '', // Definindo categoria como uma string vazia aqui
                         categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
                     });
-
-                    // Filtra os valores da lista completa para remover os que já foram selecionados
-                    const filteredCategoriaOptions = data.success ? data.docs.rows.filter(categoria => !formData.categorias.includes(categoria.CATEGORIA)) : [];
-                    setCategoriaOptions(filteredCategoriaOptions);
                 }
                 setLoading(false);
             } catch (error) {
