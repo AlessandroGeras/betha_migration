@@ -49,6 +49,7 @@ const FindDocument = () => {
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
         colaborador: '',
+        campos_vencimento:'Não',
     });
 
     useEffect(() => {
@@ -203,6 +204,7 @@ const FindDocument = () => {
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
                         arquivo: null, // or provide the appropriate value for arquivo here
                         colaborador: data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
+                        campos_vencimento: data.docs.COLABORADOR ? data.docs.COLABORADOR : 'Não',
                     });
 
                     setFilename(data.docs.ANEXO);
@@ -568,6 +570,25 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
+
+                        {formData.auditoria == "Não" && formData.campos_vencimento == "Sim" && (<div className="mt-6">
+                            <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
+                                Formato Vencimento<span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="vencimento"
+                                id="vencimento"
+                                value={formData.vencimento}
+                                onChange={handleInputChange}
+                                required
+                                {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
+                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            >
+                                <option value="Fixo">Dia fixo</option>
+                                <option value="Periodo">Período</option>
+                            </select>
+                        </div>)}
+
                         {formData.auditoria == "Sim" && (<div className="mt-6">
                             <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
                                 Formato Vencimento<span className="text-red-500">*</span>
@@ -585,6 +606,7 @@ const FindDocument = () => {
                                 <option value="Periodo">Período</option>
                             </select>
                         </div>)}
+
                         {formData.auditoria == "Sim" && (<div className='flex gap-10 mt-6'>
                             <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
                                 <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
