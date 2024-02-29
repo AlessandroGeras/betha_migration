@@ -208,6 +208,8 @@ const FindDocument = () => {
                     });
 
                     setFilename(data.docs.ANEXO);
+                    console.log("Auditoria"+formData.auditoria);
+                    console.log("Campos_Vencimento"+formData.campos_vencimento);
                 }
 
 
