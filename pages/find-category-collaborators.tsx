@@ -238,7 +238,7 @@ const AddOutsourced = () => {
                                 <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
                                 <ul className="list-disc pl-4">
                                     {formData.categorias.map((selectedCategoria) => (
-                                        <li key={selectedCategoria} className="flex items-center justify-between">
+                                        <li key={selectedCategoria} className="flex items-center justify-between hover:bg-blue-500">
                                             {selectedCategoria}
                                             <button
                                                 type="button"
