@@ -52,6 +52,10 @@ const FindDocument = () => {
         campos_vencimento: 'Não',
     });
 
+    interface formData {
+        vencimento: 'Fixo' | 'Periodo'; // Defina os valores permitidos para vencimento
+    }
+
     useEffect(() => {
         const userPermission = localStorage.getItem('permission');
 
@@ -593,7 +597,7 @@ const FindDocument = () => {
 
                         {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Fixo") && (
                             <div className='flex gap-10 mt-6'>
-                                <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
+                               <div className="" style={{ display: (formData.vencimento as string) === 'Periodo' ? 'none' : 'block' }}>
                                     <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
                                         Dia fixo do mês<span className="text-red-500">*</span>
                                     </label>
