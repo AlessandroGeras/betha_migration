@@ -113,6 +113,7 @@ const FindDocument = () => {
         const { name, value } = e.target;
         setFile(value);
         setFormData({ ...formData, [name]: value });
+        console.log(name,value);
     };
 
     const handleDateChange = (e) => {
@@ -638,7 +639,7 @@ const FindDocument = () => {
                             </div>
                         )}
                         {(formData.auditoria === "Não" && formData.campos_vencimento === "Sim" && formData.vencimento === "Periodo") && (
-                            <div className="">
+                            <div className="mt-6">
                                 <label htmlFor="diasAntecipacao" className="block text-sm font-medium text-gray-700">
                                     Quant. dias
                                 </label>
