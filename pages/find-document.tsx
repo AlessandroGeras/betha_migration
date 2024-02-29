@@ -32,7 +32,7 @@ const FindDocument = () => {
     const [formData, setFormData] = useState({
         documento: '',
         tipo_documento: [],
-        vencimento: 'Periodo',
+        vencimento: 'Fixo',
         dataVencimento: new Date().toISOString().split('T')[0],
         diasAntecipacao: '',
         notificacao: minNotification,
@@ -187,7 +187,7 @@ const FindDocument = () => {
                     setFormData({
                         documento: data.docs.TIPO_DOCUMENTO,
                         tipo_documento: [],
-                        vencimento: data.docs.FORMATO_VENCIMENTO ? data.docs.FORMATO_VENCIMENTO : "Periodo",
+                        vencimento: data.docs.FORMATO_VENCIMENTO ? data.docs.FORMATO_VENCIMENTO : "Fixo",
                         dataVencimento: data.docs.VENCIMENTO ? format(new Date(data.docs.VENCIMENTO), 'yyyy-MM-dd') : format(new Date(), 'yyyy-MM-dd'),
                         diasAntecipacao: '',
                         notificacao: notificacaoDias,
