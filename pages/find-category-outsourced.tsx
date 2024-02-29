@@ -44,13 +44,13 @@ const AddOutsourced = () => {
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
-    
+
         if (formData.categorias.includes(selectedCategoria)) {
             return; // Se o valor já estiver na lista de documentos selecionados, não faz nada
         } else {
             // Adiciona o valor selecionado à lista de documentos selecionados
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-    
+
             // Remove o valor selecionado da lista de documentos originais
             const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
             setCategoriaOptions(updatedCategoriaOptions);
@@ -60,13 +60,13 @@ const AddOutsourced = () => {
     const removeCategoria = (removedCategoria) => {
         // Atualiza a lista de documentos selecionados removendo o valor
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-    
+
         // Adiciona o valor removido de volta à lista suspensa
         const updatedCategoriaOptions = [
             ...categoriaOptions,
             { CATEGORIA: removedCategoria }
         ].sort((a, b) => a.CATEGORIA.localeCompare(b.CATEGORIA)); // Ordena em ordem alfabética
-    
+
         // Atualiza os estados
         setCategoriaOptions(updatedCategoriaOptions);
         setFormData({ ...formData, categorias: updatedCategorias });
@@ -168,14 +168,19 @@ const AddOutsourced = () => {
                     });
 
                     setCategoriaDetails(updatedCategoriaDetails);
+
+                    // Configura o estado formData antes do estado categoriaOptions
                     setFormData({
                         categorias: data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()),
                         nomeTerceiro: '',
                         categoria: '', // Definindo categoria como uma string vazia aqui
                         categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
                     });
+
+                    // Filtra os valores da lista completa para remover os que já foram selecionados
+                    const filteredCategoriaOptions = data.success ? data.docs.rows.filter(categoria => !formData.categorias.includes(categoria.CATEGORIA)) : [];
+                    setCategoriaOptions(filteredCategoriaOptions);
                 }
-                setCategoriaOptions(data.success ? data.docs.rows : []);
                 setLoading(false);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
