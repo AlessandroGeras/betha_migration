@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { useRef } from 'react';
 
 
-const FindDocument = () => {
+const FindDocument = () => {   
 
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -48,7 +48,6 @@ const FindDocument = () => {
         motivo: '',
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
-        colaborador: '',
     });
 
     useEffect(() => {
@@ -195,14 +194,13 @@ const FindDocument = () => {
                         status: data.docs.STATUS,
                         id_documento: data.docs.ID_DOCUMENTO,
                         nome_terceiro: data.docs.TERCEIRO,
-                        dia: data.docs.VENCIMENTO ? new Date(data.docs.VENCIMENTO).getDate() : 1,
+                        dia: data.docs.VENCIMENTO ? new Date(data.docs.VENCIMENTO).getDate() : 0,
                         usuario_inclusao: data.docs.USUARIO_INCLUSAO,
                         data_inclusao: format(new Date(data.docs.DATA_INCLUSAO), 'yyyy-MM-dd'),
                         motivo: data.docs.MOTIVO,
                         usuario_analise: data.docs.USUARIO_ANALISE,
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
-                        arquivo: null, // or provide the appropriate value for arquivo here
-                        colaborador: data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
+                        arquivo: null // or provide the appropriate value for arquivo here
                     });
 
                     setFilename(data.docs.ANEXO);
@@ -349,8 +347,8 @@ const FindDocument = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.back();
-    };    
+        router.push('/documents');
+    };
 
     const handleSubmitReprove = () => {
         setPopupMessage('Explique o motivo da reprovação do documento que será enviado ao Terceiro.');
@@ -431,14 +429,9 @@ const FindDocument = () => {
             <Sidebar />
 
             <div className="flex-1 items-center justify-center bg-gray-50">
-                <div className={`text-white p-2 text-left mb-[120px] w-full ${formData.colaborador == "" ? 'bg-blue-500' : 'bg-red-500'}`}>
-                    {formData.colaborador === "" ? (
-                        <span className="ml-2">Documento Empresa - {formData.documento}</span>
-                    ) : (
-                        <span className="ml-2">Documento Colaborador - {formData.documento}</span>
-                    )}
+                <div className="bg-blue-500 text-white p-2 text-left mb-[120px] w-full">
+                    <span className="ml-2">Documento - {formData.documento}</span>
                 </div>
-
 
                 {loading && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -457,7 +450,7 @@ const FindDocument = () => {
                     <div>
                         <div className="">
                             <label htmlFor="nome_terceiro" className="block text-sm font-medium text-gray-700">
-                                Terceiro
+                                Terceiro<span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -469,20 +462,6 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
-                        {formData.colaborador !== "" && (<div className="">
-                            <label htmlFor="colaborador" className="block text-sm font-medium text-gray-700">
-                                Colaborador
-                            </label>
-                            <input
-                                type="text"
-                                name="colaborador"
-                                id="colaborador"
-                                onChange={handleInputChange}
-                                value={formData.colaborador}
-                                disabled
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            />
-                        </div>)}
                         {isAnalysis != "Pendente" && (<div className="mt-6">
                             <div>
                                 <label htmlFor="usuario_inclusao" className="block text-sm font-medium text-gray-700">
@@ -554,7 +533,7 @@ const FindDocument = () => {
                         </div>
                         <div className="mt-6">
                             <label htmlFor="identificacao" className="block text-sm font-medium text-gray-700">
-                                Número/Identificação do Documento/Data de Emissão<span className="text-red-500">*</span>
+                                Número/Identificação do Documento<span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -568,7 +547,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
-                     <div className="mt-6">
+                        {formData.auditoria=="Sim" && (<div className="mt-6">
                             <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
                                 Formato Vencimento<span className="text-red-500">*</span>
                             </label>
@@ -584,8 +563,8 @@ const FindDocument = () => {
                                 <option value="Fixo">Dia fixo</option>
                                 <option value="Periodo">Período</option>
                             </select>
-                        </div>
-                       <div className='flex gap-10 mt-6'>
+                        </div>)}
+                        {formData.auditoria=="Sim" && (<div className='flex gap-10 mt-6'>
                             <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
                                 <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
                                     Dia fixo do mês<span className="text-red-500">*</span>
@@ -603,7 +582,6 @@ const FindDocument = () => {
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
                             </div>
-
                             {formData.vencimento === 'Periodo' && (
                                 <div className="">
                                     <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
@@ -637,9 +615,8 @@ const FindDocument = () => {
                                     />
                                 </div>
                             )}
-                        </div>
-
-                        <div className="mt-6">
+                        </div>)}
+                        {formData.auditoria=="Sim" && (<div className="mt-6">
                             <label htmlFor="notificacao" className="block text-sm font-medium text-gray-700">
                                 Receber notificação antecipada do vencimento em dias<span className="text-red-500">*</span>
                             </label>
@@ -654,8 +631,7 @@ const FindDocument = () => {
                                 min={minNotification}
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
-                        </div>
-
+                        </div>)}
                         {(isAnalysis == "Pendente" || isAnalysis == "Reprovado" && !viewAll) && (<div className="mt-6">
                             <label htmlFor="arquivo" className="block text-sm font-medium text-gray-700">
                                 Enviar Arquivo<span className="text-red-500">*</span>
@@ -668,7 +644,6 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>)}
-                        
                         {(isAnalysis != "Pendente" && isAnalysis != "Em análise" && isAnalysis != "Ativo") && (<div className="mt-6">
                             <label htmlFor="motivo" className="block text-sm font-medium">
                                 Motivo<span className="text-red-500">*</span>
@@ -735,7 +710,7 @@ const FindDocument = () => {
                 </div>
 
 
-                <div className="col-span-7 flex justify-center mt-10 pb-4">                    
+                <div className="col-span-7 flex justify-center mt-10 pb-4">
                     <button
                         type="button"
                         onClick={handleSubmitCancel}
