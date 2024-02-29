@@ -156,7 +156,7 @@ const AddOutsourced = () => {
 
                 setCategoriaDetails(updatedCategoriaDetails);
                 setFormData({
-                    categorias: data.category.TIPO_DOCUMENTO.split(', ').map((tipo) => tipo.trim()),
+                    categorias: data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()),
                     nomeTerceiro: '',
                     categoria: '', // Definindo categoria como uma string vazia aqui
                     categoria_terceiro: Array.isArray(id) ? id[0] : id, // Convert to string if id is an array
