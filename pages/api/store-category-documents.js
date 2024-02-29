@@ -23,7 +23,7 @@ export default async function handler(req, res) {
           AUDITORIA: auditoria,
           CAMPOS_VENCIMENTO: campos_vencimento,
         }, {
-          fields: ['CATEGORIA', 'NUMERACAO', 'FORMATO_VENCIMENTO', 'AUDITORIA'],
+          fields: ['CATEGORIA', 'NUMERACAO', 'FORMATO_VENCIMENTO', 'AUDITORIA', 'CAMPOS_VENCIMENTO'],
         });
   
         if (store) {
