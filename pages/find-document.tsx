@@ -187,7 +187,7 @@ const FindDocument = () => {
                     setFormData({
                         documento: data.docs.TIPO_DOCUMENTO,
                         tipo_documento: [],
-                        vencimento: data.docs.FORMATO_VENCIMENTO ? data.docs.FORMATO_VENCIMENTO : "Fixo",
+                        vencimento: data.docs.FORMATO_VENCIMENTO ? data.docs.FORMATO_VENCIMENTO : "Periodo",
                         dataVencimento: data.docs.VENCIMENTO ? format(new Date(data.docs.VENCIMENTO), 'yyyy-MM-dd') : format(new Date(), 'yyyy-MM-dd'),
                         diasAntecipacao: '',
                         notificacao: notificacaoDias,
