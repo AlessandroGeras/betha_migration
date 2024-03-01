@@ -43,7 +43,7 @@ export default async function handler(req, res) {
 
             const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
-                createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+                CREATED_AT: Sequelize.literal('CURRENT_TIMESTAMP'),
             });
 
             const auditoria_dia_fixo = await auditoria.create({
