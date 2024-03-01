@@ -645,7 +645,7 @@ const FindDocument = () => {
                             )}
                         </div>)}
 
-                        {(formData.auditoria == "Não" && formData.campos_vencimento == "Sim") || formData.auditoria == "Sim" && (<div className="mt-6">
+                        {((formData.auditoria == "Não" && formData.campos_vencimento == "Sim") || formData.auditoria == "Sim") && (<div className="mt-6">
                             <label htmlFor="notificacao" className="block text-sm font-medium text-gray-700">
                                 Receber notificação antecipada do vencimento em dias<span className="text-red-500">*</span>
                             </label>
@@ -661,7 +661,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>)}
-                        
+
                         {(isAnalysis == "Pendente" || isAnalysis == "Reprovado" && !viewAll) && (<div className="mt-6">
                             <label htmlFor="arquivo" className="block text-sm font-medium text-gray-700">
                                 Enviar Arquivo<span className="text-red-500">*</span>
