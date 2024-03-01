@@ -41,9 +41,11 @@ export default async function handler(req, res) {
 
             // Adicione verificação de permissões se necessário
 
+            const currentDate = new Date();
+
             const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
-                CREATED_AT: Sequelize.literal('CURRENT_TIMESTAMP'),
+                CREATED_AT: currentDate,
             });
 
             const auditoria_dia_fixo = await auditoria.create({

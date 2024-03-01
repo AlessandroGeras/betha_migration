@@ -10,7 +10,7 @@ const documento = connection.define(
       allowNull: false,
     },   
     CREATED_AT: {
-      type: DataTypes.TIMESTAMP,
+      type: Sequelize.DATE,
       allowNull: false,
     },
   },
