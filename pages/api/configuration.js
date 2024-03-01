@@ -7,16 +7,16 @@ import jwt from 'jsonwebtoken';
 dotenv.config();
 
 export default async function handler(req, res) {
-    if (req.method === 'GET') {   
+    if (req.method === 'GET') {
         try {
             const notificacao = await configuration.findOne({
                 attributes: ['NOTIFICACAO'],
-                order: [['NOTIFICACAO', 'DESC']], 
+                order: [['NOTIFICACAO', 'DESC']],
             });
 
             const auditoria_dia_fixo = await auditoria.findOne({
                 attributes: ['DIA_FIXO'],
-                order: [['DIA_FIXO', 'ASC']], 
+                order: [['DIA_FIXO', 'ASC']],
             });
 
             res.status(200).json({
@@ -42,10 +42,12 @@ export default async function handler(req, res) {
             // Adicione verificação de permissões se necessário
 
             const currentDate = new Date();
+            const formattedDateTime = currentDate.toLocaleString('pt-BR');
+            console.log(formattedDateTime);
 
             const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
-                CREATED_AT: currentDate,
+                CREATED_AT: formattedDateTime,
             });
 
             const auditoria_dia_fixo = await auditoria.create({
