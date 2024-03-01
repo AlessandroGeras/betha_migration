@@ -49,7 +49,7 @@ const FindDocument = () => {
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
         colaborador: '',
-        campos_vencimento:'Não',
+        campos_vencimento: 'Não',
     });
 
     useEffect(() => {
@@ -142,6 +142,8 @@ const FindDocument = () => {
     useEffect(() => {
         if (formData.vencimento === 'Periodo') {
             calculateDaysAntecipation();
+            console.log("Console4");
+            console.log(formData);
         }
     }, [formData.dataVencimento, formData.vencimento, calculateDaysAntecipation]);
 
@@ -358,7 +360,7 @@ const FindDocument = () => {
 
     const handleSubmitCancel = () => {
         router.back();
-    };    
+    };
 
     const handleSubmitReprove = () => {
         setPopupMessage('Explique o motivo da reprovação do documento que será enviado ao Terceiro.');
@@ -496,7 +498,7 @@ const FindDocument = () => {
                             <label htmlFor="Anuncio" className="block text-sm font-medium text-gray-700">
                                 {formData.vencimento}
                             </label>
-                            
+
                         </div>
 
                         {isAnalysis != "Pendente" && (<div className="mt-6">
@@ -767,7 +769,7 @@ const FindDocument = () => {
                 </div>
 
 
-                <div className="col-span-7 flex justify-center mt-10 pb-4">                    
+                <div className="col-span-7 flex justify-center mt-10 pb-4">
                     <button
                         type="button"
                         onClick={handleSubmitCancel}
