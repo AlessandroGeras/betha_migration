@@ -2,17 +2,22 @@ import Sequelize from 'sequelize-oracle';
 import connection from "../config/database.mjs";
 
 const documento = connection.define(
-  "AUDITORIA",
-  {
-    DIA_FIXO: {
-      type: Sequelize.INTEGER, // ou outro tipo apropriado para sua chave primária
-      allowNull: false, // Garanta que a coluna não aceite valores nulos
-    },   
-  },
-  {
-    tableName: "AUDITORIA",
-    timestamps: false,
-  }
+    "AUDITORIA",
+    {
+        ID: {
+            type: Sequelize.INTEGER,
+            primaryKey: true, // Definindo a coluna NOTIFICACAO como a chave primária
+            allowNull: false,
+        },
+        DIA_FIXO: {
+            type: Sequelize.INTEGER, // ou outro tipo apropriado para sua chave primária
+            allowNull: false, // Garanta que a coluna não aceite valores nulos
+        },
+    },
+    {
+        tableName: "AUDITORIA",
+        timestamps: false,
+    }
 );
 
 export default documento;

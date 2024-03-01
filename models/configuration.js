@@ -4,13 +4,13 @@ import connection from "../config/database.mjs";
 const documento = connection.define(
   "CONFIGURACAO",
   {
-    NOTIFICACAO: {
+    ID: {
       type: Sequelize.INTEGER,
       primaryKey: true, // Definindo a coluna NOTIFICACAO como a chave primária
       allowNull: false,
-    },   
-    CREATED_AT: {
-      type: Sequelize.DATE,
+    },
+    NOTIFICACAO: {
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
   },
