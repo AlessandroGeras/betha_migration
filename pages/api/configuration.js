@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         }
     }
     else if (req.method === 'POST') {
-        const { formData:{notificacao},token } = req.body;
+        const { formData:{notificacao, auditoria},token } = req.body;
 
         if (!token) {
             return res.redirect(302, '/login'); // Redireciona para a página de login
@@ -50,6 +50,12 @@ export default async function handler(req, res) {
                 NOTIFICACAO: notificacao,
             }, {
                 fields: ['NOTIFICACAO'], // Especifique os campos que deseja incluir
+            });
+
+            const auditoria_dia_fixo= await auditoria.create({
+                DIA_FIXO: auditoria,
+            }, {
+                fields: ['DIA_FIXO'], // Especifique os campos que deseja incluir
             });
 
             res.status(200).json({

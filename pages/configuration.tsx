@@ -52,7 +52,7 @@ const FindDocument = () => {
                 } else {
                     setFormData({
                         notificacao: data.notificacao.NOTIFICACAO,
-                        auditoria: data.notificacao.AUDITORIA,
+                        auditoria: data.auditoria_dia_fixo.DIA_FIXO,
                     });
                     setTokenVerified(true);
                     setLoading(false);
@@ -77,7 +77,7 @@ const FindDocument = () => {
     }
 
     if (formData.auditoria < 0 || formData.auditoria > 31) {
-        setPopupMessage('Não são aceitos valores negativos ou maiores que 31 na notificação');
+        setPopupMessage('Não são aceitos valores negativos ou maiores que 31 na auditoria');
         setShowModal(true);
         setModalColor('#e53e3e');
         setTextColor('#e53e3e');
