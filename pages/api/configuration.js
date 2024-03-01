@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         try {
             const notificacao = await configuration.findOne({
                 attributes: ['NOTIFICACAO', 'CREATED_AT'],
-                order: [[Sequelize.literal("STR_TO_DATE(CREATED_AT, '%d-%b-%y %h.%i.%s.%f000000 PM +00:00')"), 'DESC']],
+                order: [[sequelize.literal("TO_DATE(CREATED_AT, 'DD-MON-YY HH.MI.SS.FF AM')"), 'DESC']],
             });
 
             const auditoria_dia_fixo = await auditoria.findOne({
