@@ -65,7 +65,7 @@ export default async function handler(req, res) {
     const { formData: { id_documento, nome_terceiro, identificacao, vencimento, dia, dataVencimento, notificacao }, id, token, role, filename } = req.body;
     let proximoVencimento = null;
 
-    console.log("vencimento"+vencimento);
+    console.log("dia"+dia);
     return
 
 
