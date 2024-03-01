@@ -107,6 +107,8 @@ const FindDocument = () => {
         const { name, value } = e.target;
         setFile(value);
         setFormData({ ...formData, [name]: value });
+        console.log("Console1");
+        console.log(formData);
     };
 
     const handleDateChange = (e) => {
@@ -133,6 +135,8 @@ const FindDocument = () => {
         const diffInDays = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
 
         setFormData({ ...formData, diasAntecipacao: diffInDays.toString() });
+        console.log("Console2");
+        console.log(formData);
     };
 
     useEffect(() => {
@@ -239,6 +243,8 @@ const FindDocument = () => {
                 const configuration = await resposta.json();
 
                 console.log(configuration);
+                console.log("Console3");
+                console.log(formData);
 
                 if (resposta.status === 401) {
                     router.push('/login');
