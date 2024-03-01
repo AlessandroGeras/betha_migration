@@ -107,8 +107,6 @@ const FindDocument = () => {
         const { name, value } = e.target;
         setFile(value);
         setFormData({ ...formData, [name]: value });
-        console.log("Console1");
-        console.log(formData);
     };
 
     const handleDateChange = (e) => {
@@ -135,15 +133,11 @@ const FindDocument = () => {
         const diffInDays = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
 
         setFormData({ ...formData, diasAntecipacao: diffInDays.toString() });
-        console.log("Console2");
-        console.log(formData);
     };
 
     useEffect(() => {
         if (formData.vencimento === 'Periodo') {
             calculateDaysAntecipation();
-            console.log("Console4");
-            console.log(formData);
         }
     }, [formData.dataVencimento, formData.vencimento]);
 
@@ -245,8 +239,6 @@ const FindDocument = () => {
                 const configuration = await resposta.json();
 
                 console.log(configuration);
-                console.log("Console3");
-                console.log(formData);
 
                 if (resposta.status === 401) {
                     router.push('/login');
@@ -492,14 +484,7 @@ const FindDocument = () => {
                                 disabled
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
-                        </div>)}
-
-                        <div className="">
-                            <label htmlFor="Anuncio" className="block text-sm font-medium text-gray-700">
-                                {formData.vencimento}
-                            </label>
-
-                        </div>
+                        </div>)}                        
 
                         {isAnalysis != "Pendente" && (<div className="mt-6">
                             <div>
