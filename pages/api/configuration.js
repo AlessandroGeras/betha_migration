@@ -1,5 +1,5 @@
 import configuration from '../../models/configuration';
-import auditoria from '../../models/auditoria';
+import auditoria_model from '../../models/auditoria';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
                 order: [['ID', 'DESC']],
             });
 
-            const auditoria_dia_fixo = await auditoria.findOne({
+            const auditoria_dia_fixo = await auditoria_model.findOne({
                 attributes: ['DIA_FIXO','ID'],
                 order: [['ID', 'DESC']],
             });
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
                 NOTIFICACAO: notificacao,
             });
 
-            const auditoria_dia_fixo = await auditoria.create({
+            const auditoria_dia_fixo = await auditoria_model.create({
                 DIA_FIXO: auditoria,
             });
 
