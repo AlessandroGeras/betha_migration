@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize-oracle';
+import Sequelize, { DataTypes } from 'sequelize-oracle'; // Importe DataTypes junto com Sequelize
 import connection from "../config/database.mjs";
 
 const documento = connection.define(
