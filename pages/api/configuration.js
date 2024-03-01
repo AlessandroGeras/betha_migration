@@ -10,13 +10,13 @@ export default async function handler(req, res) {
     if (req.method === 'GET') {
         try {
             const notificacao = await configuration.findOne({
-                attributes: ['NOTIFICACAO','CREATED_AT'],
-                order: [['CREATED_AT', 'DESC']],
+                attributes: ['NOTIFICACAO', 'CREATED_AT'],
+                order: [[Sequelize.literal("STR_TO_DATE(CREATED_AT, '%d-%b-%y %h.%i.%s.%f000000 PM +00:00')"), 'DESC']],
             });
 
             const auditoria_dia_fixo = await auditoria.findOne({
                 attributes: ['DIA_FIXO','CREATED_AT'],
-                order: [['CREATED_AT', 'ASC']],
+                order: [[Sequelize.literal("STR_TO_DATE(CREATED_AT, '%d-%b-%y %h.%i.%s.%f000000 PM +00:00')"), 'DESC']],
             });
 
             res.status(200).json({
