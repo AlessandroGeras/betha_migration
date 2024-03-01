@@ -695,7 +695,7 @@ const FindDocument = () => {
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>)}
-                    
+
                     {(isAnalysis != "Pendente" && isAnalysis != "Em análise" && isAnalysis != "Ativo") && (<div className="mt-6">
                         <label htmlFor="motivo" className="block text-sm font-medium">
                             Motivo<span className="text-red-500">*</span>
@@ -770,45 +770,51 @@ const FindDocument = () => {
                 >
                     Fechar
                 </button>
-                {(isAnalysis == "Pendente" || (isAnalysis == "Reprovado" && !viewAll) || (isAnalysis == "Ativo" && canRenew && !viewAll)) && (<button
-                    type="button"
-                    onClick={handleSubmitSuccess}
-                    className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                >
-                    Salvar
-                </button>)}
-                {(isAnalysis == "Em análise" && viewAll && isAdmin != "read") && (<button
-                    type="button"
-                    onClick={handleSubmitReprove}
-                    className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                >
-                    Rejeitar
-                </button>)}
-                {(isAnalysis == "Em análise" && viewAll && isAdmin != "read") && (<button
-                    type="button"
-                    onClick={handleSubmitAprove}
-                    className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                >
-                    Aprovar
-                </button>)}
-                {(viewAll && (fileUrl.endsWith('.jpg') || fileUrl.endsWith('.jpeg') || fileUrl.endsWith('.png'))) && (<button
-                    type="button"
-                    onClick={handlePrint}
-                    className="bg-white mx-1 text-blue-500 border solid border-blue-500 p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                >
-                    Imprimir
-                </button>)}
+                {(isAnalysis === "Pendente" || (isAnalysis === "Reprovado" && !viewAll) || (isAnalysis === "Ativo" && canRenew && !viewAll)) && (
+                    <button
+                        type="button"
+                        onClick={handleSubmitSuccess}
+                        className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Salvar
+                    </button>
+                )}
+                {(isAnalysis === "Em análise" && viewAll && isAdmin !== "read") && (
+                    <button
+                        type="button"
+                        onClick={handleSubmitReprove}
+                        className="bg-red-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Rejeitar
+                    </button>
+                )}
+                {(isAnalysis === "Em análise" && viewAll && isAdmin !== "read") && (
+                    <button
+                        type="button"
+                        onClick={handleSubmitAprove}
+                        className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Aprovar
+                    </button>
+                )}
+                {(viewAll && (fileUrl.endsWith('.jpg') || fileUrl.endsWith('.jpeg') || fileUrl.endsWith('.png'))) && (
+                    <button
+                        type="button"
+                        onClick={handlePrint}
+                        className="bg-white mx-1 text-blue-500 border solid border-blue-500 p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Imprimir
+                    </button>
+                )}
             </div>
-        </div>
-
-            {
-        showModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                    {/* Pseudo-elemento para a barra lateral */}
-                    <style>
-                        {`
-                      .modal-content::before {
+            
+            {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+                        {/* Pseudo-elemento para a barra lateral */}
+                        <style>
+                            {`
+                    .modal-content::before {
                         content: '';
                         background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
                         width: 4px; /* Largura da barra lateral */
@@ -816,73 +822,70 @@ const FindDocument = () => {
                         position: absolute;
                         top: 0;
                         left: 0;
-                      }
-                    `}
-                    </style>
-
-                    <button
-                        className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
-                        onClick={closeModal}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-
-
-
-                    <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
-                        <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
-
-                        {reproveAnalysis && (<div className="mt-4">
-                            <label htmlFor="motivo" className="block text-sm font-medium">
-                                Motivo<span className="text-red-500">*</span>
-                            </label>
-                            <input
-                                type="text"
-                                name="motivo"
-                                id="motivo"
-                                value={formData.motivo}
-                                onChange={handleInputChange}
-                                required
-                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            />
-                        </div>)}
-
-                        {reproveAnalysis && (
-                            <div className='flex'>
-                                {showReproveButton == true && (<button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
-                                    <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                        Reprovar o documento
-                                    </span>
-                                </button>)}
-                                <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
-                                    <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                        Cancelar e voltar
-                                    </span>
-                                </button>
-                            </div>
-                        )}
-
-                        {aproveAnalysis && (<div className='flex'>
-                            <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Ativo")}>
-                                <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                    Aprovar o documento
-                                </span>
-                            </button>
-                            <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
-                                <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
-                                    Cancelar e voltar
-                                </span>
-                            </button>
-                        </div>)}
-
-
+                    }
+                `}
+                        </style>
+                        <button
+                            className={`absolute top-2 right-2 text-${textColor === '#3f5470' ? 'blue' : 'red'}-500`}
+                            onClick={closeModal}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <div className={`text-md text-center flex-grow`} style={{ color: textColor }}>
+                            <div dangerouslySetInnerHTML={{ __html: popupMessage }} />
+                            {reproveAnalysis && (
+                                <div className="mt-4">
+                                    <label htmlFor="motivo" className="block text-sm font-medium">
+                                        Motivo<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="motivo"
+                                        id="motivo"
+                                        value={formData.motivo}
+                                        onChange={handleInputChange}
+                                        required
+                                        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                    />
+                                </div>
+                            )}
+                            {reproveAnalysis && (
+                                <div className='flex'>
+                                    {showReproveButton && (
+                                        <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Reprovado")}>
+                                            <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                                Reprovar o documento
+                                            </span>
+                                        </button>
+                                    )}
+                                    <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                                        <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                            Cancelar e voltar
+                                        </span>
+                                    </button>
+                                </div>
+                            )}
+                            {aproveAnalysis && (
+                                <div className='flex'>
+                                    <button className="mx-auto mt-4 w-[300px]" onClick={() => handleSubmitSendAnalysis("Ativo")}>
+                                        <span className="bg-blue-950 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                            Aprovar o documento
+                                        </span>
+                                    </button>
+                                    <button className="mx-auto mt-4 w-[300px]" onClick={closeModal} id="Cobrança">
+                                        <span className="bg-red-700 text-white py-[9.5px] shadow-md w-[300px] p-2 rounded-md block text-center">
+                                            Cancelar e voltar
+                                        </span>
+                                    </button>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
-    }
-        </div >
+            )}
+        </div>
     );
 };
 
