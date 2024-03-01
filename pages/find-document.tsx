@@ -485,6 +485,14 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>)}
+
+                        <div className="">
+                            <label htmlFor="Anuncio" className="block text-sm font-medium text-gray-700">
+                                {formData.vencimento}
+                            </label>
+                            
+                        </div>
+
                         {isAnalysis != "Pendente" && (<div className="mt-6">
                             <div>
                                 <label htmlFor="usuario_inclusao" className="block text-sm font-medium text-gray-700">
