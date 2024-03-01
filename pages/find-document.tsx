@@ -204,7 +204,7 @@ const FindDocument = () => {
                         data_analise: data.docs.DATA_ANALISE ? new Date(data.docs.DATA_ANALISE).toISOString().split('T')[0] : '',
                         arquivo: null, // or provide the appropriate value for arquivo here
                         colaborador: data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
-                        campos_vencimento: data.docs.COLABORADOR ? data.docs.COLABORADOR : 'Não',
+                        campos_vencimento: data.categoria.CAMPOS_VENCIMENTO ? data.categoria.CAMPOS_VENCIMENTO : 'Não',
                     });
 
                     setFilename(data.docs.ANEXO);
