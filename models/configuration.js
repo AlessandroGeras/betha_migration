@@ -5,8 +5,9 @@ const documento = connection.define(
   "CONFIGURACAO",
   {
     NOTIFICACAO: {
-      type: Sequelize.INTEGER, // ou outro tipo apropriado para sua chave primária
-      allowNull: false, // Garanta que a coluna não aceite valores nulos
+      type: Sequelize.INTEGER,
+      primaryKey: true, // Definindo a coluna NOTIFICACAO como a chave primária
+      allowNull: false,
     },   
   },
   {
