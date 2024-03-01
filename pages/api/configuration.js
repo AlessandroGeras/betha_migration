@@ -1,5 +1,6 @@
 import configuration from '../../models/configuration';
 import auditoria from '../../models/auditoria';
+import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -42,6 +43,7 @@ export default async function handler(req, res) {
 
             const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
+                createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
             });
 
             const auditoria_dia_fixo = await auditoria.create({

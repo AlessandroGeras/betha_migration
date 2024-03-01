@@ -9,6 +9,10 @@ const documento = connection.define(
       primaryKey: true, // Definindo a coluna NOTIFICACAO como a chave primária
       allowNull: false,
     },   
+    createdAt: {
+      type: DataTypes.TIMESTAMP,
+      allowNull: false,
+    },
   },
   {
     tableName: "CONFIGURACAO",
