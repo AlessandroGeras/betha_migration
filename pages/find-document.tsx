@@ -28,6 +28,7 @@ const FindDocument = () => {
     const [showReproveButton, setShowReproveButton] = useState(false);
     const [filename, setFilename] = useState('');
     const [minNotification, setMinNotification] = useState(0);
+    const [auditoriaDiaFixo, SetauditoriaDiaFixo] = useState(0);
 
     const [formData, setFormData] = useState({
         documento: '',
@@ -49,7 +50,7 @@ const FindDocument = () => {
         usuario_analise: '',
         data_analise: new Date().toISOString().split('T')[0],
         colaborador: '',
-        campos_vencimento:'Não',
+        campos_vencimento: 'Não',
     });
 
     useEffect(() => {
@@ -244,6 +245,7 @@ const FindDocument = () => {
                     router.push('/login');
                 } else {
                     setMinNotification(configuration.notificacao.NOTIFICACAO);
+                    SetauditoriaDiaFixo(configuration.notificacao.AUDITORIA_DIA_FIXO);
                 }
 
                 setTokenVerified(true);
@@ -311,6 +313,7 @@ const FindDocument = () => {
                 id: id,
                 filename: sendfile,
                 role: role,
+                auditoriaDiaFixo,
             };
 
             const response = await fetch('/api/update-pending-document', {
@@ -352,7 +355,7 @@ const FindDocument = () => {
 
     const handleSubmitCancel = () => {
         router.back();
-    };    
+    };
 
     const handleSubmitReprove = () => {
         setPopupMessage('Explique o motivo da reprovação do documento que será enviado ao Terceiro.');
@@ -571,6 +574,24 @@ const FindDocument = () => {
                             />
                         </div>
 
+                        {formData.auditoria == "Sim" && (<div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
+                            <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
+                                Dia fixo do mês<span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="number"
+                                min={1}
+                                max={31}
+                                name="dia"
+                                id="dia"
+                                onChange={handleInputChange}
+                                value={auditoriaDiaFixo}
+                                required
+                                {...(isAnalysis === "Em análise" || (isAnalysis === "Reprovado" && viewAll) || (isAnalysis === "Ativo" && viewAll) || (isAnalysis === "Ativo" && !canRenew && !viewAll)) ? { disabled: true } : null}
+                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            />
+                        </div>)}
+
                         {formData.auditoria == "Não" && formData.campos_vencimento == "Sim" && (<div className="mt-6">
                             <label htmlFor="vencimento" className="block text-sm font-medium text-gray-700">
                                 Formato Vencimento<span className="text-red-500">*</span>
@@ -589,7 +610,7 @@ const FindDocument = () => {
                             </select>
                         </div>)}
 
-                        
+
 
                         {formData.auditoria == "Não" && formData.campos_vencimento == "Sim" && (<div className='flex gap-10 mt-6'>
                             <div className="" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
@@ -609,7 +630,7 @@ const FindDocument = () => {
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
                             </div>
-                            
+
                             {formData.vencimento === 'Periodo' && (
                                 <div className="">
                                     <label htmlFor="dataVencimento" className="block text-sm font-medium text-gray-700">
@@ -740,7 +761,7 @@ const FindDocument = () => {
                 </div>
 
 
-                <div className="col-span-7 flex justify-center mt-10 pb-4">                    
+                <div className="col-span-7 flex justify-center mt-10 pb-4">
                     <button
                         type="button"
                         onClick={handleSubmitCancel}
