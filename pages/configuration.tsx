@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 const FindDocument = () => {
     const [formData, setFormData] = useState({
         notificacao: 7,
+        auditoria: 25,
     });
 
     const [showModal, setShowModal] = useState(false);
@@ -51,6 +52,7 @@ const FindDocument = () => {
                 } else {
                     setFormData({
                         notificacao: data.notificacao.NOTIFICACAO,
+                        auditoria: data.notificacao.AUDITORIA,
                     });
                     setTokenVerified(true);
                     setLoading(false);
@@ -74,6 +76,14 @@ const FindDocument = () => {
         return;
     }
 
+    if (formData.auditoria < 0 || formData.auditoria > 31) {
+        setPopupMessage('Não são aceitos valores negativos ou maiores que 31 na notificação');
+        setShowModal(true);
+        setModalColor('#e53e3e');
+        setTextColor('#e53e3e');
+        return;
+    }
+
     try {
         const token = localStorage.getItem('Token');
 
@@ -85,9 +95,16 @@ const FindDocument = () => {
         const resposta = await fetch('/api/configuration', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json', // Define o tipo de conteúdo como JSON
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ formData: { ...formData, notificacao: String(formData.notificacao) }, token }), // Convertendo notificacao para string
+            body: JSON.stringify({ 
+                formData: { 
+                    ...formData, 
+                    notificacao: String(formData.notificacao),
+                    auditoria: formData.auditoria,
+                }, 
+                token 
+            }),
         });
 
         const data = await resposta.json();
@@ -135,6 +152,43 @@ const FindDocument = () => {
                         id="notificacao"
                         onChange={handleInputChange}
                         value={formData.notificacao}
+                        required
+                        min="0"
+                        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                    />
+                </div>
+
+
+                <div className="col-span-7 flex justify-center mt-10 pb-4">
+                    <button
+                        type="button"
+                        onClick={handleSubmitCancel}
+                        className="bg-white mx-1 text-red-500 border solid border-red-500 p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Cancelar
+                    </button>
+                    <button
+                        type="button"
+                        onClick={handleSubmitSuccess}
+                        className="bg-blue-500 mx-1 text-white p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                    >
+                        Salvar
+                    </button>
+                </div>
+
+
+
+
+                <div className="mt-6 mx-auto w-[400px]">
+                    <label htmlFor="auditoria" className="block text-sm font-medium text-gray-700">
+                        Dia fixo para documentos em auditoria<span className="text-red-500">*</span>
+                    </label>
+                    <input
+                        type="number"
+                        name="auditoria"
+                        id="auditoria"
+                        onChange={handleInputChange}
+                        value={formData.auditoria}
                         required
                         min="0"
                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"

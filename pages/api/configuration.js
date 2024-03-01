@@ -1,4 +1,5 @@
 import configuration from '../../models/configuration';
+import auditoria from '../../models/auditoria';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
@@ -13,10 +14,16 @@ export default async function handler(req, res) {
                 order: [['NOTIFICACAO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
             });
 
+            const auditoria_dia_fixo = await auditoria.findOne({
+                attributes: ['DIA_FIXO'],
+                order: [['DIA_FIXO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
+            });
+
             res.status(200).json({
                 success: true,
                 message: 'Todos as categorias encontradas',
                 notificacao,
+                auditoria_dia_fixo,
             });
 
         } catch (error) {
