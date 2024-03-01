@@ -65,9 +65,6 @@ export default async function handler(req, res) {
     const { formData: { id_documento, nome_terceiro, identificacao, vencimento, dia, dataVencimento, notificacao }, id, token, role, filename } = req.body;
     let proximoVencimento = null;
 
-    console.log("dia"+dia);
-    return
-
 
     if (!token) {
       return res.redirect(302, '/login');
@@ -86,6 +83,8 @@ export default async function handler(req, res) {
       if (vencimento == "Fixo") {
         proximoVencimento = calcularProximoVencimento(dia);
         proximoVencimento = format(parse(proximoVencimento, 'dd/MM/yyyy', new Date()), 'yyyy-MM-dd');
+        console.log(proximoVencimento);
+        return
       }
       else {
         proximoVencimento = dataVencimento;
