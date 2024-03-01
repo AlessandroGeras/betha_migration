@@ -7,69 +7,60 @@ dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'GET') {   
-
         try {
             const notificacao = await configuration.findOne({
                 attributes: ['NOTIFICACAO'],
-                order: [['NOTIFICACAO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
+                order: [['NOTIFICACAO', 'DESC']], 
             });
 
             const auditoria_dia_fixo = await auditoria.findOne({
                 attributes: ['DIA_FIXO'],
-                order: [['DIA_FIXO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
+                order: [['DIA_FIXO', 'DESC']], 
             });
 
             res.status(200).json({
                 success: true,
-                message: 'Todos as categorias encontradas',
+                message: 'Configurações encontradas com sucesso',
                 notificacao,
                 auditoria_dia_fixo,
             });
-
         } catch (error) {
-            if (error.name === 'TokenExpiredError') {
-                console.error('Token expirado:', error);
-                res.status(401).json({ success: false, message: 'Token expirado' });
-            } else {
-                console.error('Erro ao contatar o servidor:', error);
-                res.status(500).json({ success: false, message: 'Erro ao contatar o servidor' });
-            }
+            console.error('Erro ao buscar configurações:', error);
+            res.status(500).json({ success: false, message: 'Erro ao buscar configurações' });
         }
-    }
-    else if (req.method === 'POST') {
-        const { formData:{notificacao, auditoria},token } = req.body;
+    } else if (req.method === 'POST') {
+        const { formData: { notificacao, auditoria }, token } = req.body;
 
         if (!token) {
-            return res.redirect(302, '/login'); // Redireciona para a página de login
+            return res.status(401).json({ success: false, message: 'Token não fornecido' });
         }
 
         try {
-            jwt.verify(token, process.env.SECRET);            
+            const decodedToken = jwt.verify(token, process.env.SECRET);
 
-            const notification= await configuration.create({
+            // Adicione verificação de permissões se necessário
+
+            const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
-            }, {
-                fields: ['NOTIFICACAO'], // Especifique os campos que deseja incluir
             });
 
-            const auditoria_dia_fixo= await auditoria.create({
+            const auditoria_dia_fixo = await auditoria.create({
                 DIA_FIXO: auditoria,
-            }, {
-                fields: ['DIA_FIXO'], // Especifique os campos que deseja incluir
             });
 
             res.status(200).json({
                 success: true,
                 message: 'Configuração atualizada com sucesso',
             });
-
         } catch (error) {
-            console.error('Erro ao atualizar a configuração:', error);
-            res.status(500).json({ success: false, message: 'Erro ao atualizar a configuração' });
+            console.error('Erro ao atualizar configurações:', error);
+            if (error.name === 'JsonWebTokenError' || error.name === 'TokenExpiredError') {
+                res.status(401).json({ success: false, message: 'Token inválido ou expirado' });
+            } else {
+                res.status(500).json({ success: false, message: 'Erro ao atualizar configurações' });
+            }
         }
+    } else {
+        res.status(405).json({ message: 'Método não permitido' });
     }
-    else {
-        res.status(405).json({ message: 'Method Not Allowed' });
-    }
-};
-
+}
