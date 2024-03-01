@@ -145,7 +145,7 @@ const FindDocument = () => {
             console.log("Console4");
             console.log(formData);
         }
-    }, [formData.dataVencimento, formData.vencimento, calculateDaysAntecipation]);
+    }, [formData.dataVencimento, formData.vencimento]);
 
 
 
