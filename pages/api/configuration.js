@@ -41,12 +41,8 @@ export default async function handler(req, res) {
 
             // Adicione verificação de permissões se necessário
 
-            const currentDate = new Date();
-            const timestamp = currentDate.getTime();
-
             const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
-                CREATED_AT: timestamp,
             });
 
             const auditoria_dia_fixo = await auditoria.create({
