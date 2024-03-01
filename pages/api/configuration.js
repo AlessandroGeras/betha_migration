@@ -47,7 +47,6 @@ export default async function handler(req, res) {
 
             const auditoria_dia_fixo = await auditoria.create({
                 DIA_FIXO: auditoria,
-                CREATED_AT: timestamp,
             });
 
             res.status(200).json({
