@@ -471,7 +471,7 @@ const FindDocument = () => {
                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
-                        {formData.colaborador !== "" && (<div className="">
+                        {formData.colaborador !== "" && (<div className="mt-6">
                             <label htmlFor="colaborador" className="block text-sm font-medium text-gray-700">
                                 Colaborador
                             </label>
