@@ -10,13 +10,13 @@ export default async function handler(req, res) {
     if (req.method === 'GET') {
         try {
             const notificacao = await configuration.findOne({
-                attributes: ['NOTIFICACAO'],
-                order: [['NOTIFICACAO', 'DESC']],
+                attributes: ['NOTIFICACAO','CREATED_AT'],
+                order: [['CREATED_AT', 'DESC']],
             });
 
             const auditoria_dia_fixo = await auditoria.findOne({
-                attributes: ['DIA_FIXO'],
-                order: [['DIA_FIXO', 'ASC']],
+                attributes: ['DIA_FIXO','CREATED_AT'],
+                order: [['CREATED_AT', 'ASC']],
             });
 
             res.status(200).json({
@@ -51,6 +51,7 @@ export default async function handler(req, res) {
 
             const auditoria_dia_fixo = await auditoria.create({
                 DIA_FIXO: auditoria,
+                CREATED_AT: timestamp,
             });
 
             res.status(200).json({
