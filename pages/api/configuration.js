@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
             const auditoria_dia_fixo = await auditoria.findOne({
                 attributes: ['DIA_FIXO'],
-                order: [['DIA_FIXO', 'DESC']], 
+                order: [['DIA_FIXO', 'ASC']], 
             });
 
             res.status(200).json({
