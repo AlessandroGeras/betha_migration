@@ -83,8 +83,6 @@ export default async function handler(req, res) {
       if (vencimento == "Fixo") {
         proximoVencimento = calcularProximoVencimento(dia);
         proximoVencimento = format(parse(proximoVencimento, 'dd/MM/yyyy', new Date()), 'yyyy-MM-dd');
-        console.log(proximoVencimento);
-        return
       }
       else {
         proximoVencimento = dataVencimento;
@@ -98,7 +96,7 @@ export default async function handler(req, res) {
 
         const categoryDocuments = await categoria_documentos.findOne({ where: { CATEGORIA: existingDoc.TIPO_DOCUMENTO } });
 
-        if (categoryDocuments.AUDITORIA == "Sim") {
+        if (categoryDocuments.AUDITORIA == "Não" && categoryDocuments.CAMPOS_VENCIMENTO =="Sim") {
           existingDoc.FORMATO_VENCIMENTO = vencimento;
           existingDoc.VENCIMENTO = proximoVencimento;
           existingDoc.NOTIFICACAO = dataAntes;
