@@ -42,12 +42,11 @@ export default async function handler(req, res) {
             // Adicione verificação de permissões se necessário
 
             const currentDate = new Date();
-            const formattedDateTime = currentDate.toLocaleString('pt-BR');
-            console.log(formattedDateTime);
+            const timestamp = currentDate.getTime();
 
             const notification = await configuration.create({
                 NOTIFICACAO: notificacao,
-                CREATED_AT: formattedDateTime,
+                CREATED_AT: timestamp,
             });
 
             const auditoria_dia_fixo = await auditoria.create({
