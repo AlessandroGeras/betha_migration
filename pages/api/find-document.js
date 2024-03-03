@@ -38,7 +38,7 @@ export default async function handler(req, res) {
         return res.status(403).json({ error: 'Falha ao localizar o documento.' });
       }
 
-      res.status(200).json({ docs,notificacao,categoria,auditoria_dia_fixo });
+      res.status(200).json({ docs,notificacao,categoria });
     } catch (error) {
       if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);
