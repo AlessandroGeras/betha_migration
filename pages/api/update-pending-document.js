@@ -62,18 +62,18 @@ const calcularDataXDiasAtras = (diasAtras, proximoVencimento) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    let { formData: { id_documento, nome_terceiro, identificacao, vencimento, dia, dataVencimento, notificacao, auditoria }, id, token, role, filename,auditoriaDiaFixo } = req.body;
+    let { formData: { id_documento, nome_terceiro, identificacao, vencimento, dia, dataVencimento, notificacao, auditoria }, id, token, role, filename, auditoriaDiaFixo } = req.body;
     let proximoVencimento = null;
 
     if (!token) {
       return res.redirect(302, '/login');
     }
 
-    if(auditoria=="Sim"){
+    if (auditoria == "Sim") {
       dia = auditoriaDiaFixo;
     }
 
-    
+
 
     try {
       jwt.verify(token, process.env.SECRET);
@@ -101,7 +101,7 @@ export default async function handler(req, res) {
 
         const categoryDocuments = await categoria_documentos.findOne({ where: { CATEGORIA: existingDoc.TIPO_DOCUMENTO } });
 
-        if ((categoryDocuments.AUDITORIA == "Não" && categoryDocuments.CAMPOS_VENCIMENTO =="Sim") || categoryDocuments.AUDITORIA == "Sim") {
+        if ((categoryDocuments.AUDITORIA == "Não" && categoryDocuments.CAMPOS_VENCIMENTO == "Sim") || categoryDocuments.AUDITORIA == "Sim") {
           existingDoc.FORMATO_VENCIMENTO = vencimento;
           existingDoc.VENCIMENTO = proximoVencimento;
           existingDoc.NOTIFICACAO = dataAntes;
@@ -120,6 +120,21 @@ export default async function handler(req, res) {
         }
 
         await existingDoc.save();
+
+
+        //Send email for Admins
+        const pendingDoc = await documents.findOne(
+          {
+            STATUS: ['Pendente', 'Reprovado']
+          });
+
+          if(!pendingDoc){
+            console.log("Não encontrei nada");
+          }
+          else{
+            console.log(pendingDoc);
+          }
+
 
         res.status(200).json({ success: true, message: 'Documento atualizado.' });
       }
