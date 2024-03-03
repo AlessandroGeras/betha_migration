@@ -73,9 +73,7 @@ export default async function handler(req, res) {
       dia = auditoriaDiaFixo;
     }
 
-    console.log("auditoriaDiaFixo"+auditoriaDiaFixo);
-    console.log("dia"+dia);
-    return
+    
 
     try {
       jwt.verify(token, process.env.SECRET);
