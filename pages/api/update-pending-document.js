@@ -143,10 +143,11 @@ export default async function handler(req, res) {
             },
           });
 
-          emailBody += `O Terceiro ${nome_terceiro} acabou de enviar todos os documentos pendentes.` +       
-        `<p><a href="https://gestao-terceiros.estilofontana.com.br" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
-        `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
-        `<h4>Portal Gestão de Terceiro</h4>`;
+          let emailBody;
+          emailBody += `O Terceiro ${nome_terceiro} acabou de enviar todos os documentos pendentes.` +
+            `<p><a href="https://gestao-terceiros.estilofontana.com.br" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
+            `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
+            `<h4>Portal Gestão de Terceiro</h4>`;
 
           await transporter.sendMail({
             from: 'noreply@estilofontana.com.br',
