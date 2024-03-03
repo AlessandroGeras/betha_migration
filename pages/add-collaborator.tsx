@@ -349,7 +349,7 @@ const AddOutsourced = () => {
 
 
                     {/* Linha 6 (Botão Função) */}
-                    <div className="col-span-4">
+                    <div className="col-span-3">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
                             Função <span className="text-red-500">*</span>
                         </label>
