@@ -1,5 +1,6 @@
 import documents from '../../models/documents';
 import configuration from '../../models/configuration';
+import auditoria_model from '../../models/auditoria';
 import categoria_documentos from '../../models/categoryDocuments';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -30,15 +31,20 @@ export default async function handler(req, res) {
       });
 
       const notificacao = await configuration.findOne({
-        attributes: ['NOTIFICACAO'],
-        order: [['NOTIFICACAO', 'DESC']], // Ordenar em ordem decrescente pela coluna ULTIMA_COBRANÇA
+        attributes: ['NOTIFICACAO','ID'],
+        order: [['ID', 'DESC']], 
       });
+
+      const auditoria_dia_fixo = await auditoria_model.findOne({
+        attributes: ['DIA_FIXO','ID'],
+        order: [['ID', 'DESC']],
+    });
 
       if (!docs) {
         return res.status(403).json({ error: 'Falha ao localizar o documento.' });
       }
 
-      res.status(200).json({ docs,notificacao,categoria });
+      res.status(200).json({ docs,notificacao,categoria,auditoria_dia_fixo });
     } catch (error) {
       if (error.name === 'TokenExpiredError') {
         console.error('Token expirado:', error);

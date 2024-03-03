@@ -51,6 +51,7 @@ const FindDocument = () => {
         data_analise: new Date().toISOString().split('T')[0],
         colaborador: '',
         campos_vencimento: 'Não',
+        auditoria_dia_fixo: '25',
     });
 
     useEffect(() => {
@@ -206,6 +207,7 @@ const FindDocument = () => {
                         arquivo: null, // or provide the appropriate value for arquivo here
                         colaborador: data.docs.COLABORADOR ? data.docs.COLABORADOR : '',
                         campos_vencimento: data.categoria.CAMPOS_VENCIMENTO ? data.categoria.CAMPOS_VENCIMENTO : 'Não',
+                        auditoria_dia_fixo:data.auditoria_dia_fixo ? data.auditoria_dia_fixo : '25',
                     });
 
                     setFilename(data.docs.ANEXO);
