@@ -89,6 +89,9 @@ export default async function handler(req, res) {
                         const role = "external";
 
                         const funcao = usuarioexterno.FUNCAO;
+                        
+                        console.log(usuarioexterno);
+                        
 
                         const docs = await categoria_colaboradores.findOne({
                             where: {
