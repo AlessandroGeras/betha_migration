@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
-import { Fira_Code } from 'next/font/google';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
@@ -30,8 +29,6 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [viewAll, setViewAll] = useState(true);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
 
     useEffect(() => {
         const userRole = localStorage.getItem('role');
@@ -40,7 +37,7 @@ const AddOutsourced = () => {
         }
         else {
             setViewAll(false);
-        }
+        }        
     }, []);
 
 
@@ -78,36 +75,7 @@ const AddOutsourced = () => {
                 .replace(/\D/g, '') // Remove caracteres não numéricos
                 .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação para CPF
             setFormData({ ...formData, [name]: formattedCPF });
-        }
-
-        else if (name === 'usuario') {
-
-            const fullName = e.target.value.trim(); // Remove espaços extras no início e no fim
-            const names = fullName.split(' ');
-
-            if (names.length >= 2) {
-                // O primeiro nome é o primeiro elemento do array
-                setFirstName(names[0]);
-
-                // O segundo nome é o segundo elemento do array, concatenado com um ponto
-                setLastName(names[1]);
-            } else {
-                // Se houver apenas um nome ou nenhum, limpe o segundo nome
-                setLastName('');
-                // E use o nome completo como o primeiro nome
-                setFirstName(fullName);
-
-                let fullname = `${firstName}.${lastName}`;
-
-
-                setFormData({ ...formData, [name]: value });
-                setFormData({ ...formData, ["id_usuario"]: fullname });
-            }
-
-
-        }
-
-        else {
+        } else {
             setFormData({ ...formData, [name]: value });
         }
     };
@@ -285,7 +253,7 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                    <div className="col-span-4">
+                    {/* <div className="col-span-4">
                         <label htmlFor="id_usuario" className="block text-sm font-medium text-gray-700">
                             ID Usuário para identificação no sistema <span className="text-red-500">*</span>
                         </label>
@@ -297,7 +265,7 @@ const AddOutsourced = () => {
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>
+                    </div> */}
 
                     {/* Linha 4 (Endereço, Cidade) */}
                     {/* <div className="col-span-3">
@@ -381,7 +349,7 @@ const AddOutsourced = () => {
 
 
                     {/* Linha 6 (Botão Função) */}
-                    <div className="col-span-3">
+                    <div className="col-span-4">
                         <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
                             Função <span className="text-red-500">*</span>
                         </label>
@@ -404,7 +372,8 @@ const AddOutsourced = () => {
                         </select>
                     </div>
 
-                    {viewAll && (<div className="col-span-4">
+                    {viewAll && (<div><div className="col-span-2"></div>
+                    <div className="col-span-3">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
                             Nome Terceiro <span className="text-red-500">*</span>
                         </label>
@@ -425,6 +394,8 @@ const AddOutsourced = () => {
                                 </option>
                             ))}
                         </select>
+                    </div>
+                    <div className="col-span-2"></div>
                     </div>)}
 
                     <div className="col-span-2"></div>

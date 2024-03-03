@@ -45,6 +45,20 @@ export default async function handler(req, res) {
                 nome_empresa = nome_terceiro;
             }
 
+            const generateUserId = (name) => {
+                // Converter o nome para minúsculas e remover acentos
+                const normalized = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                // Dividir o nome em partes
+                const parts = normalized.split(" ");
+                // Pegar o primeiro nome e o segundo nome (se existir)
+                const firstName = parts[0];
+                const lastName = parts.length > 1 ? parts[1] : "";
+                // Concatenar o primeiro nome e o último nome com um ponto entre eles
+                return `${firstName}.${lastName}`;
+            };
+
+            const new_id_usuario = generateUserId(usuario);
+
             const Store = await outsourceds.create({
                 STATUS: status,
                 CPF: cpf,
@@ -55,7 +69,7 @@ export default async function handler(req, res) {
                 /* CIDADE: cidade, */
                 /* UF: uf, */
                 /* TELEFONE: telefone, */
-                ID_USUARIO: id_usuario,
+                ID_USUARIO: new_id_usuario,
                 CATEGORIA_PRINCIPAL: "N/A",
                 NOME_TERCEIRO: nome_empresa,
                 CNPJ: "N/A",
