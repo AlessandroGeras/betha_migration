@@ -22,7 +22,7 @@ export default async function handler(req, res) {
             const docs = await documents.findAll({
                 where: {
                     TERCEIRO: nome_terceiro,
-                    STATUS: "Pendente",
+                    //STATUS: "Pendente",
                     COLABORADOR: null,
                 },
             });

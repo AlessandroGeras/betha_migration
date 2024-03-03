@@ -45,7 +45,7 @@ export default async function handler(req, res) {
                 for (const categoria of categorias) {
                     // Remova a tentativa de definir ID_DOCUMENTO explicitamente
                     const Store = await documents.create({
-                        STATUS: "Pendente",
+                        //STATUS: "Pendente",
                         TIPO_DOCUMENTO: categoria,
                         TERCEIRO: nome_terceiro,
                         COLABORADOR: colaborador,
