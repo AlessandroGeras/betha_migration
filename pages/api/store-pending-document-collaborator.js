@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             const docs = await documents.findAll({
                 where: {
                     TERCEIRO: nome_terceiro,
-                    STATUS: "Pendente",
+                    //STATUS: "Pendente",
                     COLABORADOR: colaborador,
                 },
             });
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
                 for (const categoria of categorias) {
                     // Remova a tentativa de definir ID_DOCUMENTO explicitamente
                     const Store = await documents.create({
-                        //STATUS: "Pendente",
+                        STATUS: "Pendente",
                         TIPO_DOCUMENTO: categoria,
                         TERCEIRO: nome_terceiro,
                         COLABORADOR: colaborador,
