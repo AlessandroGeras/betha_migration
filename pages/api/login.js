@@ -61,7 +61,7 @@ export default async function handler(req, res) {
                 }
             } else {
                 const usuarioexterno = await outsourceds.findOne({
-                    attributes: ['DS_SENHA', 'STATUS'],
+                    attributes: ['DS_SENHA', 'STATUS','FUNCAO'],
                     where: {
                         ID_USUARIO: username,
                         ID_USUARIO_INTERNO: 'N',
@@ -91,7 +91,7 @@ export default async function handler(req, res) {
                         const funcao = usuarioexterno.FUNCAO;
                         
                         console.log(usuarioexterno);
-                        
+
 
                         const docs = await categoria_colaboradores.findOne({
                             where: {
