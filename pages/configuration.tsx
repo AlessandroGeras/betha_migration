@@ -65,55 +65,59 @@ const FindDocument = () => {
         fetchCategoriaOptions();
     }, [router]);
 
-   const handleSubmitSuccess = async (e) => {
-    e.preventDefault();
+    const handleSubmitSuccess = async (e) => {
+        e.preventDefault();
 
-    if (formData.notificacao < 0) {
-        setPopupMessage('Não são aceitos valores negativos na notificação');
-        setShowModal(true);
-        setModalColor('#e53e3e');
-        setTextColor('#e53e3e');
-        return;
-    }
-
-    if (formData.auditoria < 0 || formData.auditoria > 31) {
-        setPopupMessage('Não são aceitos valores negativos ou maiores que 31 na auditoria');
-        setShowModal(true);
-        setModalColor('#e53e3e');
-        setTextColor('#e53e3e');
-        return;
-    }
-
-    try {
-        const token = localStorage.getItem('Token');
-
-        if (!token) {
-            router.push('/login');
+        if (formData.notificacao < 0) {
+            setPopupMessage('Não são aceitos valores negativos na notificação');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
             return;
         }
 
-        const resposta = await fetch('/api/configuration', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ 
-                formData: { 
-                    ...formData, 
-                    notificacao: String(formData.notificacao),
-                    auditoria: formData.auditoria,
-                }, 
-                token 
-            }),
-        });
+        if (formData.auditoria < 0 || formData.auditoria > 31) {
+            setPopupMessage('Não são aceitos valores negativos ou maiores que 31 na auditoria');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
 
-        const data = await resposta.json();
+        try {
+            const token = localStorage.getItem('Token');
 
-        // Restante do seu código...
-    } catch (error) {
-        console.error('Erro ao contatar o servidor:', error);
-    }
-};
+            if (!token) {
+                router.push('/login');
+                return;
+            }
+
+            const resposta = await fetch('/api/configuration', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    formData: {
+                        ...formData,
+                        notificacao: String(formData.notificacao),
+                        auditoria: formData.auditoria,
+                    },
+                    token
+                }),
+            });
+
+            const data = await resposta.json();
+
+            setPopupMessage('Dados alterados com sucesso!');
+            setShowModal(true);
+            setModalColor('#3f5470');
+            setTextColor('#3f5470');
+
+        } catch (error) {
+            console.error('Erro ao contatar o servidor:', error);
+        }
+    };
 
     const handleSubmitCancel = () => {
         router.push('/dashboard');
