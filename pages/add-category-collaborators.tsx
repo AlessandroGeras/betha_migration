@@ -9,6 +9,7 @@ const AddOutsourced = () => {
         nomeTerceiro: '',
         categoria: '',
         categoria_terceiro: '',
+        permissao:'consulta',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -32,6 +33,7 @@ const AddOutsourced = () => {
             nomeTerceiro: '',
             categoria: '',
             categoria_terceiro: '',
+            permissao:'',
         });
     };
 
@@ -44,13 +46,13 @@ const AddOutsourced = () => {
 
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
-    
+
         if (formData.categorias.includes(selectedCategoria)) {
             return; // Se o valor já estiver na lista de documentos selecionados, não faz nada
         } else {
             // Adiciona o valor selecionado à lista de documentos selecionados
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-    
+
             // Remove o valor selecionado da lista de documentos originais
             const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
             setCategoriaOptions(updatedCategoriaOptions);
@@ -60,13 +62,13 @@ const AddOutsourced = () => {
     const removeCategoria = (removedCategoria) => {
         // Atualiza a lista de documentos selecionados removendo o valor
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-    
+
         // Adiciona o valor removido de volta à lista suspensa
         const updatedCategoriaOptions = [
             ...categoriaOptions,
             { CATEGORIA: removedCategoria }
         ].sort((a, b) => a.CATEGORIA.localeCompare(b.CATEGORIA)); // Ordena em ordem alfabética
-    
+
         // Atualiza os estados
         setCategoriaOptions(updatedCategoriaOptions);
         setFormData({ ...formData, categorias: updatedCategorias });
@@ -209,6 +211,22 @@ const AddOutsourced = () => {
                                     value={formData.categoria_terceiro}
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
+                            </div>
+
+                            <div className="col-span-7">
+                                <label htmlFor="permissao" className="block text-sm font-medium text-gray-700">
+                                    Permissão <span className="text-red-500">*</span>
+                                </label>
+                                <select
+                                    name="permissao"
+                                    id="permissao"
+                                    onChange={handleInputChange}
+                                    value={formData.permissao} // Deixe este valor vazio para definir o primeiro item como padrão
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                >
+                                    <option value="Consulta" selected>Consulta</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
                             </div>
 
 

@@ -10,6 +10,7 @@ export default async function handler(req, res) {
         const {
             categoria_terceiro,
             categorias = [],
+            permissao,
             token,
         } = req.body;
 
@@ -23,6 +24,7 @@ export default async function handler(req, res) {
             const Store = await categoryCollaborators.create({
                 CATEGORIA: categoria_terceiro,
                 TIPO_DOCUMENTO: categorias.join('# '),
+                PERMISSAO:permissao,
             }, {
                 fields: ['CATEGORIA','TIPO_DOCUMENTO'],
             });
