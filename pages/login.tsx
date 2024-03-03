@@ -32,6 +32,11 @@ const Login = () => {
         localStorage.setItem('FontanaUser', username);
         localStorage.setItem('Token', data.token);
         localStorage.setItem('permission', data.permission);
+
+        if(data.permission=="outsourcedRead"){
+          router.push('/collaborators');
+        }
+
         router.push('/dashboard');
 
       } else {
