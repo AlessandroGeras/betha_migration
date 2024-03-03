@@ -1,6 +1,5 @@
 import documents from '../../models/documents';
 import configuration from '../../models/configuration';
-import auditoria_model from '../../models/auditoria';
 import categoria_documentos from '../../models/categoryDocuments';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -34,11 +33,6 @@ export default async function handler(req, res) {
         attributes: ['NOTIFICACAO','ID'],
         order: [['ID', 'DESC']], 
       });
-
-      const auditoria_dia_fixo = await auditoria_model.findOne({
-        attributes: ['DIA_FIXO','ID'],
-        order: [['ID', 'DESC']],
-    });
 
       if (!docs) {
         return res.status(403).json({ error: 'Falha ao localizar o documento.' });
