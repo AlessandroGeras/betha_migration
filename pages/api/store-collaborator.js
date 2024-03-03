@@ -54,10 +54,40 @@ export default async function handler(req, res) {
                 const firstName = parts[0];
                 const lastName = parts.length > 1 ? parts[1] : "";
                 // Concatenar o primeiro nome e o último nome com um ponto entre eles
-                return `${firstName}.${lastName}`;
+                let newId = `${firstName}.${lastName}`;
+
+                return newId;
             };
 
-            const new_id_usuario = generateUserId(usuario);
+            const isUserIdExist = async (userId) => {
+                const user = await outsourceds.findOne({
+                    where: {
+                        ID_USUARIO: userId,
+                        COLABORADOR_TERCEIRO: 'S',
+                    },
+                });
+
+                return user !== null;
+            };
+
+            const generateUniqueUserId = async (name) => {
+                let userId = generateUserId(name);
+                if (!(await isUserIdExist(userId))) {
+                    // Se o ID do usuário não existir, retornar o ID sem alterações
+                    return userId;
+                }
+
+                // Se o ID do usuário já existir, adicionar caracteres aleatórios e verificar novamente
+                while (await isUserIdExist(userId)) {
+                    userId = addRandomCharacters(userId);
+                }
+                return userId;
+            };
+
+            
+            const new_id_usuario = await generateUniqueUserId(usuario);
+
+
 
             const Store = await outsourceds.create({
                 STATUS: status,
