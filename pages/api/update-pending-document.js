@@ -62,14 +62,14 @@ const calcularDataXDiasAtras = (diasAtras, proximoVencimento) => {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    let { formData: { id_documento, nome_terceiro, identificacao, vencimento, dia, dataVencimento, notificacao }, id, token, role, filename,auditoriaDiaFixo } = req.body;
+    let { formData: { id_documento, nome_terceiro, identificacao, vencimento, dia, dataVencimento, notificacao, auditoria }, id, token, role, filename,auditoriaDiaFixo } = req.body;
     let proximoVencimento = null;
 
     if (!token) {
       return res.redirect(302, '/login');
     }
 
-    if(auditoriaDiaFixo !=0){
+    if(auditoria=="Sim"){
       dia = auditoriaDiaFixo;
     }
 
