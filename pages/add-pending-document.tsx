@@ -42,29 +42,15 @@ const AddOutsourced = () => {
         const selectedCategoria = e.target.value;
 
         if (formData.categorias.includes(selectedCategoria)) {
-            return; // Se o valor já estiver na lista de documentos selecionados, não faz nada
+            const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
+            setFormData({ ...formData, categorias: updatedCategorias });
         } else {
-            // Adiciona o valor selecionado à lista de documentos selecionados
             setFormData({ ...formData, categorias: [...formData.categorias, selectedCategoria] });
-
-            // Remove o valor selecionado da lista de documentos originais
-            const updatedCategoriaOptions = categoriaOptions.filter(categoria => categoria.CATEGORIA !== selectedCategoria);
-            setCategoriaOptions(updatedCategoriaOptions);
         }
     };
 
     const removeCategoria = (removedCategoria) => {
-        // Atualiza a lista de documentos selecionados removendo o valor
         const updatedCategorias = formData.categorias.filter((categoria) => categoria !== removedCategoria);
-
-        // Adiciona o valor removido de volta à lista suspensa
-        const updatedCategoriaOptions = [
-            ...categoriaOptions,
-            { CATEGORIA: removedCategoria }
-        ].sort((a, b) => a.CATEGORIA.localeCompare(b.CATEGORIA)); // Ordena em ordem alfabética
-
-        // Atualiza os estados
-        setCategoriaOptions(updatedCategoriaOptions);
         setFormData({ ...formData, categorias: updatedCategorias });
     };
 
@@ -179,12 +165,9 @@ const AddOutsourced = () => {
                     });
 
                     setCategoriaDetails(updatedCategoriaDetails);
-
-                    // Filtra os valores da lista completa para remover os que já foram selecionados
-                    const filteredCategoriaOptions = data.success ? data.docs.rows.filter(categoria => !data.category.TIPO_DOCUMENTO.split('# ').map((tipo) => tipo.trim()).includes(categoria.CATEGORIA)) : [];
-                    setCategoriaOptions(filteredCategoriaOptions);
                 }
-                
+
+                setCategoriaOptions(data.success ? data.docs.rows : []);
             } catch (error) {
                 console.error('Erro ao obter opções de categoria:', error);
             }
@@ -231,7 +214,7 @@ const AddOutsourced = () => {
                                 </select>
                                 {formData.categorias.length > 0 && (
                                     <div className="mt-2">
-                                        <p className="text-sm font-medium text-gray-700">Documentos selecionados:</p>
+                                        <p className="text-sm font-medium text-gray-700">Categorias Selecionadas:</p>
                                         <ul className="list-disc pl-4">
                                             {formData.categorias.map((selectedCategoria, index) => (
                                                 <li key={selectedCategoria} className={`flex items-center justify-between ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'} hover:bg-blue-500`}>
@@ -336,8 +319,8 @@ const AddOutsourced = () => {
                         </div>
                     )}
                 </div>
-            </div >)}
-        </div >
+            </div>)}
+        </div>
     );
 };
 
