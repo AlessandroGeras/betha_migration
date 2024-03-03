@@ -9,7 +9,7 @@ const AddOutsourced = () => {
         nomeTerceiro: '',
         categoria: '',
         nome_terceiro: '',
-        colaborador:'',
+        colaborador: '',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -46,7 +46,7 @@ const AddOutsourced = () => {
             nomeTerceiro: '',
             categoria: '',
             nome_terceiro: '',
-            colaborador:'',
+            colaborador: '',
         });
     };
 
@@ -134,8 +134,8 @@ const AddOutsourced = () => {
         router.push('/documents');
     };
 
-    const filterCollaboratorsByEnterprise = (selectedEnterprise: string) => {
-        const filtered = collaborators.filter((collaborator: Collaborator) => collaborator.enterprise === selectedEnterprise);
+    const filterCollaboratorsByEnterprise = (selectedEnterprise: any) => {
+        const filtered = collaborators.filter((collaborator: any) => collaborator.NOME_TERCEIRO === selectedEnterprise);
         setFilteredCollaborators(filtered);
     };
 
@@ -235,8 +235,8 @@ const AddOutsourced = () => {
                                     <div className="mt-2">
                                         <p className="text-sm font-medium text-gray-700">Categorias Selecionadas:</p>
                                         <ul className="list-disc pl-4">
-                                            {formData.categorias.map((selectedCategoria) => (
-                                                <li key={selectedCategoria} className="flex items-center justify-between">
+                                            {formData.categorias.map((selectedCategoria, index) => (
+                                                <li key={selectedCategoria} className={`flex items-center justify-between ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'} hover:bg-blue-500`}>
                                                     {selectedCategoria}
                                                     <button
                                                         type="button"
