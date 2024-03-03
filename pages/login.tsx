@@ -35,6 +35,7 @@ const Login = () => {
 
         if(data.permission=="outsourcedRead"){
           router.push('/collaborators');
+          return
         }
 
         router.push('/dashboard');
