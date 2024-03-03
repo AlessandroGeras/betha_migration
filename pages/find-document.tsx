@@ -247,7 +247,7 @@ const FindDocument = () => {
                     router.push('/login');
                 } else {
                     setMinNotification(configuration.notificacao.NOTIFICACAO);
-                    SetauditoriaDiaFixo(configuration.notificacao.auditoria_dia_fixo.DIA_FIXO);
+                    SetauditoriaDiaFixo(configuration.auditoria_dia_fixo.DIA_FIXO);
                 }
 
                 setTokenVerified(true);
