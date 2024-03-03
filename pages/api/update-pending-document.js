@@ -129,9 +129,10 @@ export default async function handler(req, res) {
           });
 
           if(!pendingDoc){
-            console.log("Não encontrei nada");
+            console.log("Não encontrei nadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
           }
           else{
+            console.log("Acheiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             console.log(pendingDoc);
           }
 
