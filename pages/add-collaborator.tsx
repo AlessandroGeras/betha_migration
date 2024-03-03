@@ -372,8 +372,8 @@ const AddOutsourced = () => {
                         </select>
                     </div>
 
-                    {viewAll && (<div><div className="col-span-2"></div>
-                    <div className="col-span-3">
+                    {viewAll && (<div><div className="col-span-2 bg-red-500"></div>
+                    <div className="col-span-3 bg-blue-500">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
                             Nome Terceiro <span className="text-red-500">*</span>
                         </label>
@@ -395,7 +395,7 @@ const AddOutsourced = () => {
                             ))}
                         </select>
                     </div>
-                    <div className="col-span-2"></div>
+                    <div className="col-span-2 bg-yellow-500"></div>
                     </div>)}
 
                     <div className="col-span-2"></div>
