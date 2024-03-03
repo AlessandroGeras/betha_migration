@@ -35,6 +35,7 @@ const Sidebar = () => {
             setIsAdmin(false);
             setPermission("read");
         }
+        console.log(userPermission);
     }, []);
 
     const toggleSubMenuHome = () => {
