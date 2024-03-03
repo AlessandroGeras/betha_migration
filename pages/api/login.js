@@ -1,6 +1,7 @@
 import connection from "../../config/database.mjs";
 import users from '../../models/users';
 import outsourceds from '../../models/outsourceds';
+import categoria_colaboradores from '../../models/categoryCollaborators';
 import Sequelize from 'sequelize-oracle';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
@@ -60,7 +61,7 @@ export default async function handler(req, res) {
                 }
             } else {
                 const usuarioexterno = await outsourceds.findOne({
-                    attributes: ['DS_SENHA','STATUS'],
+                    attributes: ['DS_SENHA', 'STATUS'],
                     where: {
                         ID_USUARIO: username,
                         ID_USUARIO_INTERNO: 'N',
@@ -69,7 +70,7 @@ export default async function handler(req, res) {
 
                 if (usuarioexterno) {
                     console.log(usuarioexterno);
-                    if(usuarioexterno.STATUS=="Inativo"){
+                    if (usuarioexterno.STATUS == "Inativo") {
                         res.status(406).json({ error: 'Usuário desativado.' });
                     }
 
@@ -86,7 +87,24 @@ export default async function handler(req, res) {
 
                         const token = jwt.sign({ userId: usuarioexterno.id }, process.env.SECRET, { expiresIn: '5h' });
                         const role = "external";
-                        permission = "outsourced";
+
+                        const funcao = usuarioexterno.FUNCAO;
+
+                        const docs = await categoria_colaboradores.findOne({
+                            where: {
+                                CATEGORIA: funcao
+                            },
+                        });
+
+
+                        if(docs){
+                            permission = "outsourcedRead";
+                        }
+                        else{
+                            permission = "outsourced";
+                        }
+
+                        console.log(permission);
 
                         setCorsHeaders(res); // Define os cabeçalhos CORS
 
