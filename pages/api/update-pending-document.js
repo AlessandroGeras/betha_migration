@@ -4,6 +4,7 @@ import documents from '../../models/documents';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 const { parse, format, addMonths, endOfMonth, isAfter, isBefore, setDate } = require('date-fns');
+import nodemailer from 'nodemailer';
 
 dotenv.config();
 
@@ -126,15 +127,33 @@ export default async function handler(req, res) {
         const pendingDoc = await documents.findOne({
           where: {
             STATUS: ['Pendente', 'Reprovado'],
-            TERCEIRO:nome_terceiro,
+            TERCEIRO: nome_terceiro,
           }
         });
-        
+
         if (!pendingDoc) {
-          console.log("Não tem nadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        } else {
-          console.log("Acheiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-          console.log(pendingDoc);
+          // Configurar o serviço de e-mail (substitua as informações conforme necessário)
+          const transporter = nodemailer.createTransport({
+            host: 'mail.estilofontana.com.br',
+            port: 587,
+            secure: false, // true para SSL, false para outros
+            auth: {
+              user: 'noreply@estilofontana.com.br',
+              pass: 'eQNd6x2tTifPBIaX3ZcA',
+            },
+          });
+
+          emailBody += `O Terceiro ${nome_terceiro} acabou de enviar todos os documentos pendentes.` +       
+        `<p><a href="https://gestao-terceiros.estilofontana.com.br" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
+        `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
+        `<h4>Portal Gestão de Terceiro</h4>`;
+
+          await transporter.sendMail({
+            from: 'noreply@estilofontana.com.br',
+            to: "alessandro.geras@minertecnologia.com",
+            subject: 'Pendência de documentos finalizada',
+            html: emailBody,
+          });
         }
 
 
