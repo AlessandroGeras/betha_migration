@@ -92,7 +92,7 @@ const AddOutsourced = () => {
         const sobrenomeSemAcento = sobrenome.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
         // Cria o id_usuario combinando o primeiro caractere do primeiro nome com o sobrenome sem acento
-        const idUsuario = `${primeiroNome.charAt(0)}.${sobrenomeSemAcento}`;
+        const idUsuario = `${primeiroNome}.${sobrenomeSemAcento}`;
 
         // Atualiza o estado formData com o id_usuario calculado
         setFormData({
@@ -106,6 +106,7 @@ const AddOutsourced = () => {
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
+
         }
 
         try {
@@ -187,7 +188,6 @@ const AddOutsourced = () => {
 
         fetchCategoriaOptions();
     }, [router]);
-
 
     return (
         <div className="flex h-screen">
@@ -280,8 +280,90 @@ const AddOutsourced = () => {
                             value={formData.id_usuario}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                            readOnly // Impede que o campo seja editado manualmente
                         />
                     </div>
+
+                    {/* Linha 4 (Endereço, Cidade) */}
+                    {/* <div className="col-span-3">
+                        <label htmlFor="endereco" className="block text-sm font-medium text-gray-700">
+                            Endereço <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="endereco"
+                            id="endereco"
+                            value={formData.endereco}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>
+
+                    <div className="col-span-3">
+                        <label htmlFor="cidade" className="block text-sm font-medium text-gray-700">
+                            Cidade <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="cidade"
+                            id="cidade"
+                            value={formData.cidade}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>
+
+                    <div className="col-span-1">
+                        <label htmlFor="uf" className="block text-sm font-medium text-gray-700">
+                            UF <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="uf"
+                            id="uf"
+                            required
+                            value={formData.uf}
+                            onChange={handleInputChange}
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div> */}
+
+                    {/* Linha 5 (Email, Telefone, UF) */}
+                    {/* <div className="col-span-3">
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                            Email <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div>* /}
+
+                   {/* <div className="col-span-4">
+                        <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
+                            Telefone <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="telefone"
+                            id="telefone"
+                            value={formData.telefone}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                        />
+                    </div> /}
+
+
+
+
 
                     {/* Linha 6 (Botão Função) */}
                     <div className="col-span-3">
@@ -332,8 +414,13 @@ const AddOutsourced = () => {
 
                     <div className="col-span-2"></div>
 
+
+
+
                     {/* Linha 7 (Botão Cadastrar) */}
                     <div className="col-span-1"></div>
+
+
                     <div className="col-span-7 flex justify-center mt-4">
                         <button
                             type="submit"
@@ -350,6 +437,7 @@ const AddOutsourced = () => {
                             Salvar
                         </button>
                     </div>
+
                     <div className="col-span-1"></div>
                 </div>
             </div>
