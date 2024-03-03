@@ -409,7 +409,7 @@ const Outsourced = () => {
           if (value === null || value === undefined) {
             return false;
           }
-          return key !== '' && String(value).toLowerCase() === searchTerm.toLowerCase();
+          return key !== '' && String(value).toLowerCase().includes(searchTerm.toLowerCase());
         })
       );
 
