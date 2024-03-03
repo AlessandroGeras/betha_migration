@@ -151,7 +151,7 @@ export default async function handler(req, res) {
 
           await transporter.sendMail({
             from: 'noreply@estilofontana.com.br',
-            to: "alessandro.geras@minertecnologia.com",
+            to: "jarbas.nunes@estilofontana.com.br",
             subject: `Pendência de documentos finalizada - ${nome_terceiro}`,
             html: emailBody,
           });
