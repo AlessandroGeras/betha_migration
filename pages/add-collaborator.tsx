@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
+import { Fira_Code } from 'next/font/google';
 
 const AddOutsourced = () => {
     const [formData, setFormData] = useState({
@@ -29,6 +30,8 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [viewAll, setViewAll] = useState(true);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
     useEffect(() => {
         const userRole = localStorage.getItem('role');
@@ -37,8 +40,9 @@ const AddOutsourced = () => {
         }
         else {
             setViewAll(false);
-        }        
+        }
     }, []);
+
 
     const closeModal = () => {
         setShowModal(false);
@@ -74,31 +78,42 @@ const AddOutsourced = () => {
                 .replace(/\D/g, '') // Remove caracteres não numéricos
                 .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação para CPF
             setFormData({ ...formData, [name]: formattedCPF });
-        } else {
+        }
+
+        else if (name === 'usuario') {
+
+            const fullName = e.target.value.trim(); // Remove espaços extras no início e no fim
+            const names = fullName.split(' ');
+
+            if (names.length >= 2) {
+                // O primeiro nome é o primeiro elemento do array
+                setFirstName(names[0]);
+
+                // O segundo nome é o segundo elemento do array, concatenado com um ponto
+                setLastName(names[1]);
+            } else {
+                // Se houver apenas um nome ou nenhum, limpe o segundo nome
+                setLastName('');
+                // E use o nome completo como o primeiro nome
+                setFirstName(fullName);
+
+                let fullname = `${firstName}.${lastName}`;
+
+
+                setFormData({ ...formData, [name]: value });
+                setFormData({ ...formData, ["id_usuario"]: fullname });
+            }
+
+
+        }
+
+        else {
             setFormData({ ...formData, [name]: value });
         }
     };
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
-
-        // Extrair o primeiro nome e o sobrenome do campo "usuario"
-        const nomeCompleto = formData.usuario.trim(); // Remove espaços em branco extras
-        const partesNome = nomeCompleto.split(' '); // Divide o nome completo em partes
-        const primeiroNome = partesNome[0].toLowerCase(); // Converte o primeiro nome para minúsculas
-        const sobrenome = partesNome.slice(1).join(' '); // Obtém os sobrenomes restantes
-
-        // Remove acentos do sobrenome
-        const sobrenomeSemAcento = sobrenome.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-        // Cria o id_usuario combinando o primeiro caractere do primeiro nome com o sobrenome sem acento
-        const idUsuario = `${primeiroNome}.${sobrenomeSemAcento}`;
-
-        // Atualiza o estado formData com o id_usuario calculado
-        setFormData({
-            ...formData,
-            id_usuario: idUsuario,
-        });
 
         if (formData.principal.toString() === "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
@@ -188,6 +203,7 @@ const AddOutsourced = () => {
 
         fetchCategoriaOptions();
     }, [router]);
+
 
     return (
         <div className="flex h-screen">
@@ -280,7 +296,6 @@ const AddOutsourced = () => {
                             value={formData.id_usuario}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            readOnly // Impede que o campo seja editado manualmente
                         />
                     </div>
 
