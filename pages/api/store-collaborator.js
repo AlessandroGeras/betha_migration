@@ -93,7 +93,7 @@ export default async function handler(req, res) {
                 STATUS: status,
                 CPF: cpf,
                 /* ENDEREÇO: endereco, */
-                /* ST_EMAIL: email, */
+                ST_EMAIL: email,
                 OBS_STATUS: observacoes,
                 NM_USUARIO: usuario,
                 /* CIDADE: cidade, */
