@@ -314,9 +314,9 @@ const AddOutsourced = () => {
                     </div> */}
 
                     {/* Linha 5 (Email, Telefone, UF) */}
-                    {/* <div className="col-span-3">
+                   <div className="col-span-3">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                            Email <span className="text-red-500">*</span>
+                            Email (Opcional para login)
                         </label>
                         <input
                             type="email"
@@ -327,7 +327,7 @@ const AddOutsourced = () => {
                             required
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                         />
-                    </div>* /}
+                    </div>
 
                    {/* <div className="col-span-4">
                         <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
@@ -396,7 +396,6 @@ const AddOutsourced = () => {
                             ))}
                         </select>
                     </div>)}
-                    {viewAll && (<div className="col-span-2"></div>)}
 
 
 
