@@ -123,18 +123,19 @@ export default async function handler(req, res) {
 
 
         //Send email for Admins
-        const pendingDoc = await documents.findOne(
-          {
-            STATUS: ['Pendente', 'Reprovado']
-          });
-
-          if(!pendingDoc){
-            console.log("Não encontrei nadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        const pendingDoc = await documents.findOne({
+          where: {
+            STATUS: ['Pendente', 'Reprovado'],
+            TERCEIRO:nome_terceiro,
           }
-          else{
-            console.log("Acheiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-            console.log(pendingDoc);
-          }
+        });
+        
+        if (!pendingDoc) {
+          console.log("Não tem nadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        } else {
+          console.log("Acheiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+          console.log(pendingDoc);
+        }
 
 
         res.status(200).json({ success: true, message: 'Documento atualizado.' });
