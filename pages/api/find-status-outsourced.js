@@ -7,10 +7,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'GET') {
-        const {
-            id,
-            token
-        } = req.body;
+        
 
         try {
             jwt.verify(token, process.env.SECRET);
