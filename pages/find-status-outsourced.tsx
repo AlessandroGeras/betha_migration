@@ -45,7 +45,7 @@ const AddOutsourced = () => {
                 },
                 body: JSON.stringify({
                     token,
-                    selectedStatus: formData.status,
+                    formData,
                     id,
                 }),
             });
