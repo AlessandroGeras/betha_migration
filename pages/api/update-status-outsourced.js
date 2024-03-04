@@ -22,7 +22,9 @@ export default async function handler(req, res) {
             obs_status,
             nome_terceiro,
             token,
-        } = req.body;        
+        } = req.body;       
+        
+        console.log(req.body);
 
         try {
             jwt.verify(token, process.env.SECRET);  
@@ -33,9 +35,6 @@ export default async function handler(req, res) {
                   COLABORADOR_TERCEIRO: 'N',        
                 },
               }); 
-
-              console.log("testeeeeeeeeeeeeeeeee");
-              console.log(status);
 
             
             existingUser.STATUS = status;     
