@@ -37,7 +37,7 @@ const AddOutsourced = () => {
         }
         else {
             setViewAll(false);
-        }        
+        }
     }, []);
 
 
@@ -193,17 +193,17 @@ const AddOutsourced = () => {
                         <label htmlFor="status" className="block text-sm font-medium text-gray-700">
                             Status <span className="text-red-500">*</span>
                         </label>
-                        <select
-                            name="status"
+                        <input
+                            type="text"
                             id="status"
+                            name="status"
                             value={formData.status}
-                            onChange={handleInputChange}
+                            onChange={handleInputChange} // Se necessário, mantenha ou remova esta propriedade conforme necessário
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            required
-                        >
-                            <option value="Pendente">Pendente</option>
-                        </select>
+                            disabled // Mantenha ou remova esta propriedade conforme necessário
+                        />
                     </div>
+
 
                     {viewAll && (<div className="col-span-4 row-span-2">
                         <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
@@ -314,7 +314,7 @@ const AddOutsourced = () => {
                     </div> */}
 
                     {/* Linha 5 (Email, Telefone, UF) */}
-                   <div className="col-span-3">
+                    <div className="col-span-3">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                             Email (Opcional para login)
                         </label>
@@ -329,7 +329,7 @@ const AddOutsourced = () => {
                         />
                     </div>
 
-                   {/* <div className="col-span-4">
+                    {/* <div className="col-span-4">
                         <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
                             Telefone <span className="text-red-500">*</span>
                         </label>
@@ -373,7 +373,7 @@ const AddOutsourced = () => {
                     </div>
 
 
-                    
+
                     {viewAll && (<div className="col-span-4">
                         <label htmlFor="nomeTerceiro" className="block text-sm font-medium text-gray-700">
                             Nome Terceiro <span className="text-red-500">*</span>
