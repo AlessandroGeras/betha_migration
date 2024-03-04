@@ -698,7 +698,7 @@ const Collaborators = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[3101px]">
+              <div className="flex text-gray-500 bg-white w-[2661px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
