@@ -31,7 +31,7 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
 
-    const handleDateChange = (e) => {
+    const handleDateChange = (e, field) => {
         const selectedDate = new Date(e.target.value);
         const currentDate = new Date();
 
@@ -40,7 +40,7 @@ const AddOutsourced = () => {
             return;
         }
 
-        setFormData({ ...formData, periodo_inicial: e.target.value });
+        setFormData({ ...formData, [field]: e.target.value });
     };
 
     const handleSelectChange = (e) => {
@@ -121,7 +121,7 @@ const AddOutsourced = () => {
             return;
         }
 
-        
+
 
         try {
             const token = localStorage.getItem('Token');
@@ -238,7 +238,7 @@ const AddOutsourced = () => {
                                         name="periodo_inicial"
                                         id="periodo_inicial"
                                         value={formData.periodo_inicial}
-                                        onChange={handleDateChange}
+                                        onChange={(e) => handleDateChange(e, 'periodo_inicial')}
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                         min={new Date().toISOString().split('T')[0]}
                                     />
@@ -255,7 +255,7 @@ const AddOutsourced = () => {
                                         name="periodo_final"
                                         id="periodo_final"
                                         value={formData.periodo_final}
-                                        onChange={handleDateChange}
+                                        onChange={(e) => handleDateChange(e, 'periodo_final')}
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                         min={new Date().toISOString().split('T')[0]}
                                     />
