@@ -5,12 +5,15 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
 
-    // Criar um novo objeto de data
     const currentDate = new Date();
     // Adicionar um mês ao objeto de data
     currentDate.setMonth(currentDate.getMonth() + 1);
-    // Formatar a data para o formato YYYY-MM-DD (padrão do HTML5)
-    const formattedDate = currentDate.toISOString().split('T')[0];
+    // Obter dia, mês e ano
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1; // Lembrando que os meses são indexados de 0 a 11
+    const year = currentDate.getFullYear();
+    // Formatando para o padrão brasileiro (dd/mm/yyyy)
+    const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
 
 
     const [formData, setFormData] = useState({
@@ -121,7 +124,7 @@ const AddOutsourced = () => {
             return;
         }
 
-        
+
 
         try {
             const token = localStorage.getItem('Token');
