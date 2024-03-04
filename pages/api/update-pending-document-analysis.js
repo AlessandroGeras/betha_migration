@@ -48,17 +48,17 @@ export default async function handler(req, res) {
           });
 
           if (!pendingDocs) {
-            const existingUser = await outsourceds.findOne({
-              attributes: ['ID_USUARIO', 'COLABORADOR_TERCEIRO', 'NOME_TERCEIRO','STATUS'],
+            const user = await outsourceds.findOne({
               where: {
                 ID_USUARIO: colaborador,
                 COLABORADOR_TERCEIRO: 'S',
-                NOME_TERCEIRO: nome_terceiro,
+                TERCEIRO: nome_terceiro,
               },
             });
-            console.log(existingUser);
-            existingUser.STATUS = "Ativo";
-            await existingUser.save();
+            console.log("colaborador"+colaborador);
+            console.log("nome_terceiro"+nome_terceiro);
+            user.STATUS = "Ativo";
+            await user.save();
           }
         }
 
