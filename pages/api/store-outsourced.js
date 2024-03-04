@@ -33,10 +33,6 @@ export default async function handler(req, res) {
 
             const dataFormatadaInicio = format(new Date(periodo_inicial), 'dd/MM/yyyy');
             const dataFormatadaFim = format(new Date(periodo_final), 'dd/MM/yyyy');
-
-            console.log(dataFormatadaInicio);
-            console.log(dataFormatadaFim);
-            return
             
 
             // Criação da empresa
@@ -54,8 +50,8 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",
                 ID_USUARIO: id_usuario,
-                //PERIODO_INICIAL:
-                //PERIODO_FINAL:
+                PERIODO_INICIAL: dataFormatadaInicio,
+                PERIODO_FINAL:dataFormatadaFim,
                 CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
