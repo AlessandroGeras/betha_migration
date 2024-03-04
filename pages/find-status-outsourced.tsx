@@ -52,16 +52,16 @@ const AddOutsourced = () => {
             try {
                 const token = localStorage.getItem('Token');
                 const id_user = localStorage.getItem('FontanaUser');
-
+        
                 if (!id) {
                     return;
                 }
-
+        
                 if (!token) {
                     router.push('/login');
                     return;
                 }
-
+        
                 const getAll = true;
                 const response = await fetch(`/api/find-status-outsourced`, {
                     method: 'POST',
@@ -70,16 +70,16 @@ const AddOutsourced = () => {
                     },
                     body: JSON.stringify({ token, getAll, id_user, id }),
                 });
-
+        
                 const data = await response.json();
-
+        
                 if (response.status === 401) {
                     router.push('/login');
                 } else if (response.status === 403) {
                     router.push('/403');
                 } else {
                     setTokenVerified(true);
-                    setStatusOptions(data.user.STATUS);
+                    setStatusOptions([data.user.STATUS]); // Aqui definimos statusOptions como um array contendo os status
                 }
             } catch (error) {
                 console.error('Erro ao obter opções de status:', error);
