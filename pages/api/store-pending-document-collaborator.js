@@ -52,9 +52,11 @@ export default async function handler(req, res) {
                         // Adicione outros campos conforme necessário
                     });
 
+                    console.log(colaborador);
+
                     const existingUser = await outsourceds.findOne({
                         where: {
-                          ID_USUARIO: colaborador,
+                          NM_USUARIO: colaborador,
                           COLABORADOR_TERCEIRO: 'S',
                           NOME_TERCEIRO:nome_terceiro,
                         },
