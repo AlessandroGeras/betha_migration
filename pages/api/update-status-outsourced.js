@@ -28,10 +28,10 @@ export default async function handler(req, res) {
             jwt.verify(token, process.env.SECRET);  
 
             const existingUser = await outsourceds.findOne({
+                attributes: ['PERIODO_INICIAL', 'PERIODO_FINAL'],
                 where: {
                   NOME_TERCEIRO: id,
-                  COLABORADOR_TERCEIRO: 'N',
-        
+                  COLABORADOR_TERCEIRO: 'N',        
                 },
               }); 
 

@@ -19,7 +19,6 @@ export default async function handler(req, res) {
         where: {
           NOME_TERCEIRO: id,
           COLABORADOR_TERCEIRO: 'N',
-
         },
       });
             
