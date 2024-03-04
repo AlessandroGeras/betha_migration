@@ -45,26 +45,29 @@ const Collaborators = () => {
 
   interface User {
     ID_USUARIO: string;
+    NM_USUARIO: string;
+    ST_EMAIL: string | null;
+    CPF: string; // Adicionando o campo CPF
+    STATUS: string; // Adicionando o campo STATUS
+    // outros campos...
   }
 
   const PDFPage = () => {
-    // Criar um novo documento PDF
-    const doc = new jsPDF();
+     // Criar um novo documento PDF
+  const doc = new jsPDF();
 
-    // Definir a posição inicial para adicionar o conteúdo da tabela
-    let yPos = 10;
+  // Definir a posição inicial para adicionar o conteúdo da tabela
+  let yPos = 10;
 
-    console.log(docs.rows);
+  // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
+  docs.rows.forEach((document, index) => {
+    const rowData = `${document.NM_USUARIO} | ${document.CPF} | ${document.STATUS}`;
+    doc.text(rowData, 10, yPos);
+    yPos += 10; // Ajustar a posição Y para a próxima linha
+  });
 
-    // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
-    docs.rows.forEach((document, index) => {
-      const rowData = Object.keys(document).map((column) => document[column]).join(" | ");
-      doc.text(rowData, 10, yPos);
-      yPos += 10; // Ajustar a posição Y para a próxima linha
-    });
-
-    // Salvar o documento como um arquivo PDF
-    doc.save("lista_de_colaboradores.pdf");
+  // Salvar o documento como um arquivo PDF
+  doc.save("lista_de_colaboradores.pdf");
   };
 
 
