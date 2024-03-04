@@ -19,6 +19,8 @@ const AddOutsourced = () => {
         principal: '',
         id_usuario: '',
         categorias: [] as string[],
+        periodo_inicial: new Date().toISOString().split('T')[0],
+        periodo_final: new Date().toISOString().split('T')[0],
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -29,9 +31,21 @@ const AddOutsourced = () => {
     const router = useRouter();
     const [isTokenVerified, setTokenVerified] = useState(false);
 
+    const handleDateChange = (e) => {
+        const selectedDate = new Date(e.target.value);
+        const currentDate = new Date();
+
+        if (selectedDate < currentDate) {
+            alert('Por favor, selecione uma data atual ou futura.');
+            return;
+        }
+
+        setFormData({ ...formData, periodo_inicial: e.target.value });
+    };
+
     const handleSelectChange = (e) => {
         const selectedCategoria = e.target.value;
-    
+
         if (formData.categorias.includes(selectedCategoria)) {
             const updatedCategorias = formData.categorias.filter((categoria) => categoria !== selectedCategoria);
             setFormData({ ...formData, categorias: updatedCategorias });
@@ -65,6 +79,8 @@ const AddOutsourced = () => {
             principal: '',
             id_usuario: '',
             categorias: [],
+            periodo_inicial: new Date().toISOString().split('T')[0],
+            periodo_final: new Date().toISOString().split('T')[0],
         });
     }
 
@@ -83,19 +99,19 @@ const AddOutsourced = () => {
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
-        
+
 
         if (formData.uf == "" || formData.categorias.length === 0) {
-            console.log("uf",formData.uf);
-            console.log("principal",formData.principal);
-            console.log("lenght",formData.categorias.length);
+            console.log("uf", formData.uf);
+            console.log("principal", formData.principal);
+            console.log("lenght", formData.categorias.length);
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
         }
-        
+
         try {
             const token = localStorage.getItem('Token');
 
@@ -199,6 +215,54 @@ const AddOutsourced = () => {
                             <span className="ml-2">Adicionar Terceiro</span>
                         </div>
                         <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
+
+                            {/* Linha 0 */}
+                            {formData.status === 'Periodo' && (
+                                <div className="col-span-3">
+                                    <label htmlFor="periodo_inicial" className="block text-sm font-medium text-gray-700">
+                                        Data de Vencimento<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="date"
+                                        name="periodo_inicial"
+                                        id="periodo_inicial"
+                                        value={formData.periodo_inicial}
+                                        onChange={handleDateChange}
+                                        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                        min={new Date().toISOString().split('T')[0]}
+                                        required
+                                    />
+                                </div>
+                            )}
+
+                            {formData.status === 'Periodo' && (
+                                <div className="col-span-1">
+                                </div>
+                            )}
+
+                            {formData.status === 'Periodo' && (
+                                <div className="col-span-3">
+                                    <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
+                                        Data de Vencimento<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="date"
+                                        name="periodo_final"
+                                        id="periodo_final"
+                                        value={formData.periodo_final}
+                                        onChange={handleDateChange}
+                                        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                        min={new Date().toISOString().split('T')[0]}
+                                        required
+                                    />
+                                </div>
+                            )}
+
+
+
+
+
+
                             {/* Linha 1 */}
                             <div className="col-span-3">
                                 <label htmlFor="status" className="block text-sm font-medium text-gray-700">
@@ -214,6 +278,7 @@ const AddOutsourced = () => {
                                 >
                                     <option value="Ativo">Ativo</option>
                                     <option value="Inativo">Inativo</option>
+                                    <option value="Periodo">Período</option>
                                 </select>
                             </div>
 
