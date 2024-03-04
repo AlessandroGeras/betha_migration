@@ -938,7 +938,7 @@ const Outsourced = () => {
                             {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-outsourced', query: { id: document.ID_USUARIO } }}>
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
-                              <Link href={{ pathname: '/status-outsourced', query: { id: document.NOME_TERCEIRO } }}>
+                              <Link href={{ pathname: '/find-status-outsourced', query: { id: document.NOME_TERCEIRO } }}>
                                 <HiOutlineSwitchVertical className='text-xl mt-0.5 mx-0.5' />
                               </Link>
                               </div>
