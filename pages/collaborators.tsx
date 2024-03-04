@@ -506,7 +506,7 @@ const Collaborators = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ token, getAll,id,role }),
+          body: JSON.stringify({ token, getAll, id, role }),
         });
 
         const data = await response.json();
@@ -657,7 +657,7 @@ const Collaborators = () => {
               >
                 Limpar Pesquisa
               </button>
-              {isAdmin != "read" && isAdmin != "outsourcedRead" &&(<button
+              {isAdmin != "read" && isAdmin != "outsourcedRead" && (<button
                 className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                 onClick={adicionarColaboradorClick}
               >
@@ -912,12 +912,17 @@ const Collaborators = () => {
                         className={`column-cell border border-gray-300 py-2`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
-                        {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-collaborator', query: { id: document.ID_USUARIO } }}>
-                          <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
-                        </Link>
-                          {/* <button onClick={() => deleteAccountClick(document)}>
-                            <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
-                          </button> */}</div>
+                        {column === '' ? (
+                          <div className='flex justify-center'>
+                            {isAdmin != "outsourcedRead" && (
+                              <Link href={{ pathname: '/find-collaborator', query: { id: document.ID_USUARIO } }}>
+                                <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                              </Link>
+                            )}
+                            {/* <button onClick={() => deleteAccountClick(document)}>
+                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                            </button> */}
+                          </div>
                         ) : (
                           document[column]
                         )}
@@ -926,6 +931,7 @@ const Collaborators = () => {
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
         )}
