@@ -935,15 +935,26 @@ const Outsourced = () => {
                             className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-outsourced', query: { id: document.ID_USUARIO } }}>
-                              <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
-                            </Link>
-                              <Link href={{ pathname: '/find-status-outsourced', query: { id: document.NOME_TERCEIRO } }}>
-                                <HiOutlineSwitchVertical className='text-xl mt-0.5 mx-0.5' />
-                              </Link>
-                              </div>
+                            {column === 'STATUS' && document.STATUS === 'Período' ? (
+                              // Verifica se a data atual está entre document.PERIODO_INICIAL e document.PERIODO_FINAL
+                              new Date() >= new Date(document.PERIODO_INICIAL) && new Date() <= new Date(document.PERIODO_FINAL) ? (
+                                <span>Periodo - Ativo</span>
+                              ) : (
+                                <span>Periodo - Inativo</span>
+                              )
                             ) : (
-                              document[column]
+                              column === '' ? (
+                                <div className='flex justify-center'>
+                                  <Link href={{ pathname: '/find-outsourced', query: { id: document.ID_USUARIO } }}>
+                                    <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                                  </Link>
+                                  <Link href={{ pathname: '/find-status-outsourced', query: { id: document.NOME_TERCEIRO } }}>
+                                    <HiOutlineSwitchVertical className='text-xl mt-0.5 mx-0.5' />
+                                  </Link>
+                                </div>
+                              ) : (
+                                document[column]
+                              )
                             )}
                           </div>
                         ))}
