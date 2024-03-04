@@ -112,7 +112,7 @@ const AddOutsourced = () => {
             return;
         }
 
-
+        console.log(formData.status);
         if (formData.status === 'Periodo' && (!formData.periodo_inicial || !formData.periodo_final)) {
             setPopupMessage('Por favor, preencha os campos de período.');
             setShowModal(true);
