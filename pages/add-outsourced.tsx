@@ -4,15 +4,6 @@ import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 
 const AddOutsourced = () => {
-
-    // Criar um novo objeto de data
-    const currentDate = new Date();
-    // Adicionar um mês ao objeto de data
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    // Formatar a data para o formato YYYY-MM-DD (padrão do HTML5)
-    const formattedDate = currentDate.toISOString().split('T')[0];
-
-
     const [formData, setFormData] = useState({
         status: 'Ativo',
         observacoes: '',
@@ -28,8 +19,8 @@ const AddOutsourced = () => {
         principal: '',
         id_usuario: '',
         categorias: [] as string[],
-        periodo_inicial: new Date().toISOString().split('T')[0],
-        periodo_final: formattedDate,
+        periodo_inicial: '',
+        periodo_final: '',
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -88,8 +79,8 @@ const AddOutsourced = () => {
             principal: '',
             id_usuario: '',
             categorias: [],
-            periodo_inicial: new Date().toISOString().split('T')[0],
-            periodo_final: formattedDate,
+            periodo_inicial: '',
+            periodo_final: '',
         });
     }
 
@@ -115,6 +106,15 @@ const AddOutsourced = () => {
             console.log("principal", formData.principal);
             console.log("lenght", formData.categorias.length);
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
+
+        if (formData.status === 'Período' && (!formData.periodo_inicial || !formData.periodo_final)) {
+            setPopupMessage('Por favor, preencha os campos de período.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
@@ -241,7 +241,6 @@ const AddOutsourced = () => {
                                         onChange={handleDateChange}
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                         min={new Date().toISOString().split('T')[0]}
-                                        required
                                     />
                                 </div>
                             )}
@@ -259,7 +258,6 @@ const AddOutsourced = () => {
                                         onChange={handleDateChange}
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                         min={new Date().toISOString().split('T')[0]}
-                                        required
                                     />
                                 </div>
                             )}
