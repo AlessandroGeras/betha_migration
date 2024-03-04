@@ -686,7 +686,7 @@ const Collaborators = () => {
                 className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                 onClick={PDFPage}
               >
-                <IoMdPrint className='text-xl mt-0.5' /> Imprimir PDF
+                <IoMdPrint className='text-xl mt-0.5' /> <span className='ml-1'>Imprimir PDF</span>
               </button>
               {isAdmin !== "read" && isAdmin !== "outsourcedRead" && (
                 <button
