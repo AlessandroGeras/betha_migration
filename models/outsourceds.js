@@ -74,6 +74,14 @@ const web_terceiro = connection.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
+    PERIODO_INICIAL: {
+      type: Sequelize.DATE,
+      allowNull: true,
+    },
+    PERIODO_FINAL: {
+      type: Sequelize.DATE,
+      allowNull: true,
+    },
   },
   {
     tableName: "WEB_TERCEIRO",

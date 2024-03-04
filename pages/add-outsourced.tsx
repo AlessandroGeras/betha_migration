@@ -4,6 +4,15 @@ import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 
 const AddOutsourced = () => {
+
+    // Criar um novo objeto de data
+    const currentDate = new Date();
+    // Adicionar um mês ao objeto de data
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    // Formatar a data para o formato YYYY-MM-DD (padrão do HTML5)
+    const formattedDate = currentDate.toISOString().split('T')[0];
+
+
     const [formData, setFormData] = useState({
         status: 'Ativo',
         observacoes: '',
@@ -20,7 +29,7 @@ const AddOutsourced = () => {
         id_usuario: '',
         categorias: [] as string[],
         periodo_inicial: new Date().toISOString().split('T')[0],
-        periodo_final: new Date().toISOString().split('T')[0],
+        periodo_final: formattedDate,
     });
 
     const [categoriaOptions, setCategoriaOptions] = useState<{ CATEGORIA: string }[]>([]);
@@ -80,7 +89,7 @@ const AddOutsourced = () => {
             id_usuario: '',
             categorias: [],
             periodo_inicial: new Date().toISOString().split('T')[0],
-            periodo_final: new Date().toISOString().split('T')[0],
+            periodo_final: formattedDate,
         });
     }
 
@@ -110,6 +119,19 @@ const AddOutsourced = () => {
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
+        }
+
+        if (formData.status == "Periodo") {
+            if (formData.periodo_inicial) {
+                console.log("uf", formData.uf);
+                console.log("principal", formData.principal);
+                console.log("lenght", formData.categorias.length);
+                setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                return;
+            }
         }
 
         try {
@@ -238,7 +260,7 @@ const AddOutsourced = () => {
                             {formData.status === 'Periodo' && (
                                 <div className="col-span-4">
                                     <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
-                                    Fim da Vigência<span className="text-red-500">*</span>
+                                        Fim da Vigência<span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="date"

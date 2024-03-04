@@ -22,11 +22,17 @@ export default async function handler(req, res) {
             telefone,
             uf,
             categorias,
-            id_usuario
+            id_usuario,
+            periodo_inicial,
+            periodo_final,
         } = req.body;
 
         try {
             jwt.verify(token, process.env.SECRET);
+
+            console.log("Inicio"+periodo_inicial);
+            console.log("Fim"+periodo_final);
+            return
 
             // Criação da empresa
             const storeEmpresa = await outsourceds.create({
