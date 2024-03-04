@@ -35,7 +35,11 @@ const Sidebar = () => {
             setIsAdmin(false);
             setPermission("read");
         }
-        console.log(userPermission);
+
+        if (userPermission == 'outsourcedRead') {
+            setIsAdmin(false);
+            setPermission("outsourcedRead");
+        }
     }, []);
 
     const toggleSubMenuHome = () => {
@@ -175,7 +179,7 @@ const Sidebar = () => {
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuHome} onMouseLeave={toggleSubMenuHome}>
                         <FaHome className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenHome &&
+                        {isSubMenuOpenHome && permission!="outsourcedRead" &&
                             <div className="absolute top-0 left-[68px] bg-white w-[250px] text-center py-[10px] shadow-md hover:bg-blue-500 hover:text-white" onClick={dashboardClick}>
                                 <p>Página Inicial</p>
                             </div>}
