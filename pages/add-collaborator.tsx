@@ -191,7 +191,7 @@ const AddOutsourced = () => {
                     {/* Linha 1 */}
                     <div className="col-span-3">
                         <label htmlFor="status" className="block text-sm font-medium text-gray-700">
-                            Status <span className="text-red-500">*</span>
+                            Status
                         </label>
                         <input
                             type="text"
