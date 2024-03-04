@@ -1,7 +1,8 @@
-import React, { useEffect, useState,useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
 import { IoMdAdd, IoIosSearch } from 'react-icons/io';
 import { FaTrashAlt } from "react-icons/fa";
+import { HiOutlineSwitchVertical } from "react-icons/hi";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
@@ -34,13 +35,13 @@ const Outsourced = () => {
     ID_USUARIO: string;
   }
 
-  useEffect(() => {    
-    const userPermission = localStorage.getItem('permission');  
+  useEffect(() => {
+    const userPermission = localStorage.getItem('permission');
 
     if (userPermission == 'read') {
-        setIsAdmin('read');
+      setIsAdmin('read');
     }
-}, []);
+  }, []);
 
 
   const adicionarTerceiroClick = () => {
@@ -55,6 +56,7 @@ const Outsourced = () => {
     setTextColor('#3f5470');
     setUserID(document);
   };
+
 
   const closeModal = () => {
     setShowModal(false);
@@ -251,7 +253,7 @@ const Outsourced = () => {
       // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
-  
+
         // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
           // Verificar se filterValue é do tipo string
@@ -259,7 +261,7 @@ const Outsourced = () => {
             return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
           }
         }
-  
+
         return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
@@ -563,7 +565,7 @@ const Outsourced = () => {
     };
 
     fetchDataWithFilter();
-  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder,documents.docs.count,router]);
+  }, [getAll, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder, documents.docs.count, router]);
 
   const { success, docs } = documents;
 
@@ -920,7 +922,7 @@ const Outsourced = () => {
                     </div>
                   )}
 
-                  {documents.docs.rows.map((document:any, index) => (
+                  {documents.docs.rows.map((document: any, index) => (
                     /* Tamanho total tabela registros */
                     <div className='w-[1440px]' key={document.id || index}>
                       <div
@@ -936,9 +938,10 @@ const Outsourced = () => {
                             {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-outsourced', query: { id: document.ID_USUARIO } }}>
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
-                              <button onClick={() => deleteAccountClick(document)}>
-                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
-                              </button></div>
+                              <Link href={{ pathname: '/status-outsourced', query: { id: document.NOME_TERCEIRO } }}>
+                                <HiOutlineSwitchVertical className='text-xl mt-0.5 mx-0.5' />
+                              </Link>
+                              </div>
                             ) : (
                               document[column]
                             )}
