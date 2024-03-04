@@ -54,6 +54,8 @@ const Collaborators = () => {
     // Definir a posição inicial para adicionar o conteúdo da tabela
     let yPos = 10;
 
+    console.log(docs.rows);
+
     // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
     docs.rows.forEach((document, index) => {
       const rowData = Object.keys(document).map((column) => document[column]).join(" | ");
