@@ -4,7 +4,7 @@ import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 
 const AddOutsourced = () => {
-    const [statusOptions, setStatusOptions] = useState([]);
+    const [statusOptions, setStatusOptions] = useState<string[]>([]); // Definindo o tipo de statusOptions como array de strings
     const [selectedStatus, setSelectedStatus] = useState('Ativo');
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -18,11 +18,11 @@ const AddOutsourced = () => {
         setShowModal(false);
     };
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => { // Adicionando o tipo de evento para handleInputChange
         setSelectedStatus(e.target.value);
     };
 
-    const handleSubmitSuccess = async (e) => {
+    const handleSubmitSuccess = async (e: React.MouseEvent<HTMLButtonElement>) => { // Adicionando o tipo de evento para handleSubmitSuccess
         e.preventDefault();
         try {
             const token = localStorage.getItem('Token');
@@ -191,4 +191,3 @@ const AddOutsourced = () => {
 };
 
 export default AddOutsourced;
-
