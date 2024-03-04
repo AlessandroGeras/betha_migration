@@ -5,7 +5,11 @@ import Head from 'next/head';
 
 const AddOutsourced = () => {
     const [statusOptions] = useState(['Ativo', 'Inativo', 'Período']); // Definindo as opções de status fixas
-    const [selectedStatus, setSelectedStatus] = useState('Ativo'); // Definindo o status inicial como 'Ativo'
+    const [formData, setFormData] = useState({
+        status: 'Ativo', // Definindo o status inicial como 'Ativo'
+        periodo_inicial: '',
+        periodo_final: ''
+    });
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -19,13 +23,24 @@ const AddOutsourced = () => {
     };
 
     const handleInputChange = (e) => {
-        setSelectedStatus(e.target.value);
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleDateChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
     };
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
         
-
         try {
             const token = localStorage.getItem('Token');
 
@@ -40,7 +55,7 @@ const AddOutsourced = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    token,selectedStatus,id,
+                    token, ...formData, id,
                 }),
             });
 
@@ -99,7 +114,10 @@ const AddOutsourced = () => {
                     router.push('/403');
                 } else {
                     setTokenVerified(true);
-                    setSelectedStatus(data.user.STATUS); // Definindo o status inicial com o valor vindo da API
+                    setFormData({
+                        ...formData,
+                        status: data.user.STATUS // Definindo o status inicial com o valor vindo da API
+                    });
                 }
             } catch (error) {
                 console.error('Erro ao obter opções de status:', error);
@@ -131,7 +149,7 @@ const AddOutsourced = () => {
                                     <select
                                         name="status"
                                         id="status"
-                                        value={selectedStatus}
+                                        value={formData.status}
                                         onChange={(e) => handleInputChange(e)}
                                         required
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
@@ -143,6 +161,43 @@ const AddOutsourced = () => {
                                         ))}
                                     </select>
                                 </div>
+
+                                {formData.status === 'Período' && (
+                                    <div className="col-span-3">
+                                        <label htmlFor="periodo_inicial" className="block text-sm font-medium text-gray-700">
+                                            Início da Vigência<span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="date"
+                                            name="periodo_inicial"
+                                            id="periodo_inicial"
+                                            value={formData.periodo_inicial}
+                                            onChange={handleDateChange}
+                                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                            min={new Date().toISOString().split('T')[0]}
+                                            required
+                                        />
+                                    </div>
+                                )}
+
+                                {formData.status === 'Período' && (
+                                    <div className="col-span-4">
+                                        <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
+                                            Fim da Vigência<span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="date"
+                                            name="periodo_final"
+                                            id="periodo_final"
+                                            value={formData.periodo_final}
+                                            onChange={handleDateChange}
+                                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                            min={new Date().toISOString().split('T')[0]}
+                                            required
+                                        />
+                                    </div>
+                                )}
+
                                 <div className="col-span-7 flex justify-center mt-4">
                                     <button
                                         type="button"
