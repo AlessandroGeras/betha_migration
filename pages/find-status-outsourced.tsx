@@ -108,8 +108,8 @@ const AddOutsourced = () => {
                     setFormData((prevFormData) => ({
                         ...prevFormData,
                         status: data.user.STATUS,
-                        periodo_inicial: formatDate(data.user.PERIODO_INICIAL),
-                        periodo_final: formatDate(data.user.PERIODO_FINAL)
+                        periodo_inicial: data.user.PERIODO_INICIAL ? formatDate(data.user.PERIODO_INICIAL) : '',
+                        periodo_final: data.user.PERIODO_FINAL ? formatDate(data.user.PERIODO_FINAL) : ''
                     }));
                 }
             } catch (error) {
