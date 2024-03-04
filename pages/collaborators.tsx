@@ -36,6 +36,10 @@ const Collaborators = () => {
     if (userPermission == 'read') {
       setIsAdmin('read');
     }
+
+    if (userPermission == 'outsourcedRead') {
+      setIsAdmin('outsourcedRead');
+    }
   }, []);
 
   interface User {
@@ -653,7 +657,7 @@ const Collaborators = () => {
               >
                 Limpar Pesquisa
               </button>
-              {isAdmin != "read" && (<button
+              {isAdmin != "read" && isAdmin != "outsourcedRead" &&(<button
                 className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                 onClick={adicionarColaboradorClick}
               >
