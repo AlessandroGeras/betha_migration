@@ -168,7 +168,7 @@ const AddOutsourced = () => {
                                     </select>
                                 </div>
 
-                                {formData.status === 'Período' && (
+                                {formData.status === 'Periodo' && (
                                     <>
                                         <div className="col-span-3">
                                             <label htmlFor="periodo_inicial" className="block text-sm font-medium text-gray-700">
