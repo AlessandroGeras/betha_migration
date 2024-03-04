@@ -4,7 +4,7 @@ import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 
 const AddOutsourced = () => {
-    const [statusOptions] = useState(['Ativo', 'Inativo', 'Período']); // Definindo as opções de status fixas
+    const [statusOptions] = useState(['Ativo', 'Inativo', 'Periodo']); // Definindo as opções de status fixas
     const [formData, setFormData] = useState({
         status: 'Ativo',
         periodo_inicial: '',
