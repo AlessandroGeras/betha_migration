@@ -728,7 +728,7 @@ const Collaborators = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[3101px]`}>
+                <div className={`flex text-gray-500 w-[2661px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                     <div className="flex items-center">
                     </div>
