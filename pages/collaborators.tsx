@@ -658,7 +658,7 @@ const Collaborators = () => {
 
         {documents.success && (
           <div className=''>
-            <div className="flex items-center my-4 w-[930px]">
+            <div className="flex items-center my-4 w-[1440px]">
               <input
                 placeholder="Pesquisa rápida"
                 type="text"
@@ -836,7 +836,8 @@ const Collaborators = () => {
                     >
                       Aplicar
                     </button>
-                  </div>                  
+                  </div>
+                  
 
                  
 
@@ -892,7 +893,7 @@ const Collaborators = () => {
 
               {documents.docs.rows.map((document: any, index) => (
                 /* Tamanho total tabela registros */
-                <div className='w-[930px]' key={document.id || index}>
+                <div className='w-[1440px]' key={document.id || index}>
                   <div
                     className={`flex text-gray-700 whitespace-nowrap w-[3101px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
@@ -927,7 +928,7 @@ const Collaborators = () => {
           </div>
         )}
 
-        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[930px]">
+        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
