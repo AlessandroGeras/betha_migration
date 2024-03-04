@@ -24,17 +24,13 @@ export default async function handler(req, res) {
 
         },
       });
-      console.log(user.STATUS);
-
-      return
-
-      
+            
 
       if(!user){
-        return res.status(403).json({ error: 'Falha ao localizar o usuário.' });
+        return res.status(403).json({ error: 'Falha ao localizar o Terceiro.' });
       }
 
-      res.status(200).json({ user, docs });
+      res.status(200).json({ user });
     } catch (error) {
       console.error('Falha ao consultar o banco de dados:', error);
       res.status(500).json({ error: 'Erro ao consultar o banco de dados:' + error });
