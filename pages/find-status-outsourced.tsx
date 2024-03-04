@@ -24,17 +24,37 @@ const AddOutsourced = () => {
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
+        
+
         try {
             const token = localStorage.getItem('Token');
+
             if (!token) {
                 router.push('/login');
                 return;
             }
 
-            // Aqui você envia os dados para a API
-            // Suponho que você já tenha a lógica de enviar o estado selecionado para a API
+            const response = await fetch('/api/find-status-outsourced', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    token,selectedStatus,id,
+                }),
+            });
 
-            setPopupMessage('Categoria criada com sucesso!');
+            if (!response.ok) {
+                setPopupMessage('Não foi possível salvar o status. Verifique se os dados estão preenchidos.');
+                setShowModal(true);
+                setModalColor('#e53e3e');
+                setTextColor('#e53e3e');
+                throw new Error('Não foi possível salvar o status. Verifique se os dados estão preenchidos.');
+            }
+
+            const responseData = await response.json();
+
+            setPopupMessage('Status salvo com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
@@ -44,7 +64,7 @@ const AddOutsourced = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/category-outsourced');
+        router.push('/outsourced');
     };
 
     useEffect(() => {
@@ -64,7 +84,6 @@ const AddOutsourced = () => {
 
                 const getAll = true;
                 const response = await fetch(`/api/find-status-outsourced`, {
-                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
