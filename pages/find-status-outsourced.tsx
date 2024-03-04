@@ -6,10 +6,10 @@ import Head from 'next/head';
 const AddOutsourced = () => {
     const [statusOptions] = useState(['Ativo', 'Inativo', 'Período']); // Definindo as opções de status fixas
     const [formData, setFormData] = useState({
-        status: 'Ativo', // Definindo o status inicial como 'Ativo'
+        status: 'Ativo',
         periodo_inicial: '',
         periodo_final: ''
-    });
+    }); // Inicializando os dados do formulário
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -24,23 +24,12 @@ const AddOutsourced = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
-
-    const handleDateChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
-        
+
         try {
             const token = localStorage.getItem('Token');
 
@@ -55,7 +44,9 @@ const AddOutsourced = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    token, ...formData, id,
+                    token,
+                    selectedStatus: formData.status,
+                    id,
                 }),
             });
 
@@ -114,12 +105,12 @@ const AddOutsourced = () => {
                     router.push('/403');
                 } else {
                     setTokenVerified(true);
-                    setFormData({
-                        ...formData,
-                        status: data.user.STATUS, // Definindo o status inicial com o valor vindo da API
-                        periodo_inicial: data.user.PERIODO_INICIAL, // Definindo o período inicial com o valor vindo da API
-                        periodo_final: data.user.PERIODO_FINAL // Definindo o período final com o valor vindo da API
-                    });
+                    setFormData((prevFormData) => ({
+                        ...prevFormData,
+                        status: data.user.STATUS,
+                        periodo_inicial: formatDate(data.user.PERIODO_INICIAL),
+                        periodo_final: formatDate(data.user.PERIODO_FINAL)
+                    }));
                 }
             } catch (error) {
                 console.error('Erro ao obter opções de status:', error);
@@ -128,6 +119,11 @@ const AddOutsourced = () => {
 
         fetchStatusOptions();
     }, [router]);
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toISOString().split('T')[0];
+    };
 
     return (
         <div>
@@ -175,13 +171,12 @@ const AddOutsourced = () => {
                                                 name="periodo_inicial"
                                                 id="periodo_inicial"
                                                 value={formData.periodo_inicial}
-                                                onChange={handleDateChange}
+                                                onChange={(e) => handleInputChange(e)}
                                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                                 min={new Date().toISOString().split('T')[0]}
                                                 required
                                             />
                                         </div>
-
                                         <div className="col-span-4">
                                             <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
                                                 Fim da Vigência<span className="text-red-500">*</span>
@@ -191,7 +186,7 @@ const AddOutsourced = () => {
                                                 name="periodo_final"
                                                 id="periodo_final"
                                                 value={formData.periodo_final}
-                                                onChange={handleDateChange}
+                                                onChange={(e) => handleInputChange(e)}
                                                 className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                                 min={new Date().toISOString().split('T')[0]}
                                                 required
