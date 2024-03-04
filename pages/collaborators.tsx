@@ -47,6 +47,7 @@ const Collaborators = () => {
     ID_USUARIO: string;
     NM_USUARIO: string;
     ST_EMAIL: string | null;
+    FUNCAO: string;
     CPF: string; // Adicionando o campo CPF
     STATUS: string; // Adicionando o campo STATUS
     // outros campos...
@@ -58,10 +59,11 @@ const Collaborators = () => {
 
   // Definir a posição inicial para adicionar o conteúdo da tabela
   let yPos = 10;
+  doc.setFontSize(8);
 
   // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
   docs.rows.forEach((document, index) => {
-    const rowData = `${document.NM_USUARIO} - CPF: ${document.CPF} - Status: ${document.STATUS}`;
+    const rowData = `${document.NM_USUARIO} - CPF: ${document.CPF} - Status: ${document.STATUS} - Função: ${document.FUNCAO}`
     doc.text(rowData, 10, yPos);
     yPos += 10; // Ajustar a posição Y para a próxima linha
   });
