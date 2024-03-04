@@ -895,7 +895,7 @@ const Collaborators = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]' key={document.id || index}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[2791px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[2591px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
