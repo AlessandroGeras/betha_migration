@@ -6,25 +6,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const {
-            id,
-            id_user,
-            cnpj,
-            usuario,
-            sobrenome,
-            endereco,
-            cidade,
-            email,
-            telefone,
-            uf,
-            principal,
-            status,
-            obs_status,
-            nome_terceiro,
-            token,
-        } = req.body;       
-        
-        console.log(req.body);
+        const { token, formData, id } = req.body;
 
         try {
             jwt.verify(token, process.env.SECRET);  
@@ -37,7 +19,7 @@ export default async function handler(req, res) {
               }); 
 
             
-            existingUser.STATUS = status;     
+            existingUser.STATUS = formData.status;     
 
             await existingUser.save();
 
