@@ -48,8 +48,8 @@ export default async function handler(req, res) {
           });
 
           if (!pendingDocs) {
-            console.log("teste22");
             const existingUser = await outsourceds.findOne({
+              attributes: ['ID_USUARIO', 'COLABORADOR_TERCEIRO', 'NOME_TERCEIRO'],
               where: {
                 ID_USUARIO: colaborador,
                 COLABORADOR_TERCEIRO: 'S',
