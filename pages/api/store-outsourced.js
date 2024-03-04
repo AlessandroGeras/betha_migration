@@ -54,8 +54,8 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",
                 ID_USUARIO: id_usuario,
-                PERIODO_INICIAL:
-                PERIODO_FINAL:
+                //PERIODO_INICIAL:
+                //PERIODO_FINAL:
                 CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
