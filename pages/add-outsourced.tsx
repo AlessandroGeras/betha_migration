@@ -220,7 +220,7 @@ const AddOutsourced = () => {
                             {formData.status === 'Periodo' && (
                                 <div className="col-span-3">
                                     <label htmlFor="periodo_inicial" className="block text-sm font-medium text-gray-700">
-                                        Data de Vencimento<span className="text-red-500">*</span>
+                                        Início da Vigência<span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="date"
@@ -236,14 +236,9 @@ const AddOutsourced = () => {
                             )}
 
                             {formData.status === 'Periodo' && (
-                                <div className="col-span-1">
-                                </div>
-                            )}
-
-                            {formData.status === 'Periodo' && (
-                                <div className="col-span-3">
+                                <div className="col-span-4">
                                     <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
-                                        Data de Vencimento<span className="text-red-500">*</span>
+                                    Fim da Vigência<span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="date"
