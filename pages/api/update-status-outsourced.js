@@ -8,7 +8,6 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const {
             id,
-            selectedStatus,
             id_user,
             cnpj,
             usuario,
@@ -37,7 +36,7 @@ export default async function handler(req, res) {
               }); 
 
             
-            existingUser.STATUS = selectedStatus;     
+            existingUser.STATUS = status;     
 
             await existingUser.save();
 
