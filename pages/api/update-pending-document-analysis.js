@@ -49,13 +49,14 @@ export default async function handler(req, res) {
 
           if (!pendingDocs) {
             const existingUser = await outsourceds.findOne({
-              attributes: ['ID_USUARIO', 'COLABORADOR_TERCEIRO', 'NOME_TERCEIRO'],
+              attributes: ['ID_USUARIO', 'COLABORADOR_TERCEIRO', 'NOME_TERCEIRO','STATUS'],
               where: {
                 ID_USUARIO: colaborador,
                 COLABORADOR_TERCEIRO: 'S',
                 NOME_TERCEIRO: nome_terceiro,
               },
             });
+            console.log(existingUser);
             existingUser.STATUS = "Ativo";
             await existingUser.save();
           }
