@@ -65,6 +65,7 @@ const Collaborators = () => {
       // Salva o documento como um arquivo PDF
       doc.save("meu_pdf.pdf");
     }, []);
+  };
 
 
     const adicionarColaboradorClick = () => {
@@ -683,7 +684,7 @@ const Collaborators = () => {
                   onClick={PDFPage}
                 >
                   <IoMdPrint className='text-xl mt-0.5' /> Imprimir PDF
-                </button>)}
+                </button>
                 {isAdmin != "read" && isAdmin != "outsourcedRead" && (<button
                   className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
                   onClick={adicionarColaboradorClick}
