@@ -47,12 +47,13 @@ export default async function handler(req, res) {
             }
           });
 
-          if (!pendingDocs || pendingDocs === null || pendingDocs === undefined) {
-            console.log("Teste");
+          if (!pendingDocs) {
+            console.log("teste22");
             const existingUser = await outsourceds.findOne({
               where: {
                 ID_USUARIO: colaborador,
                 COLABORADOR_TERCEIRO: 'S',
+                NOME_TERCEIRO: nome_terceiro,
               },
             });
             existingUser.STATUS = "Ativo";
