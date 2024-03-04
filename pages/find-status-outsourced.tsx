@@ -116,10 +116,9 @@ const AddOutsourced = () => {
                     setTokenVerified(true);
                     setFormData({
                         ...formData,
-                        status: data.user.STATUS,
-                        periodo_inicial:data.user.PERIODO_INICIAL,
-                        periodo_final:data.user.PERIODO_FINAL,
-                         // Definindo o status inicial com o valor vindo da API
+                        status: data.user.STATUS, // Definindo o status inicial com o valor vindo da API
+                        periodo_inicial: data.user.PERIODO_INICIAL, // Definindo o período inicial com o valor vindo da API
+                        periodo_final: data.user.PERIODO_FINAL // Definindo o período final com o valor vindo da API
                     });
                 }
             } catch (error) {
@@ -166,39 +165,39 @@ const AddOutsourced = () => {
                                 </div>
 
                                 {formData.status === 'Período' && (
-                                    <div className="col-span-3">
-                                        <label htmlFor="periodo_inicial" className="block text-sm font-medium text-gray-700">
-                                            Início da Vigência<span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="date"
-                                            name="periodo_inicial"
-                                            id="periodo_inicial"
-                                            value={formData.periodo_inicial}
-                                            onChange={handleDateChange}
-                                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                            min={new Date().toISOString().split('T')[0]}
-                                            required
-                                        />
-                                    </div>
-                                )}
+                                    <>
+                                        <div className="col-span-3">
+                                            <label htmlFor="periodo_inicial" className="block text-sm font-medium text-gray-700">
+                                                Início da Vigência<span className="text-red-500">*</span>
+                                            </label>
+                                            <input
+                                                type="date"
+                                                name="periodo_inicial"
+                                                id="periodo_inicial"
+                                                value={formData.periodo_inicial}
+                                                onChange={handleDateChange}
+                                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                                min={new Date().toISOString().split('T')[0]}
+                                                required
+                                            />
+                                        </div>
 
-                                {formData.status === 'Período' && (
-                                    <div className="col-span-4">
-                                        <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
-                                            Fim da Vigência<span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="date"
-                                            name="periodo_final"
-                                            id="periodo_final"
-                                            value={formData.periodo_final}
-                                            onChange={handleDateChange}
-                                            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                            min={new Date().toISOString().split('T')[0]}
-                                            required
-                                        />
-                                    </div>
+                                        <div className="col-span-4">
+                                            <label htmlFor="periodo_final" className="block text-sm font-medium text-gray-700">
+                                                Fim da Vigência<span className="text-red-500">*</span>
+                                            </label>
+                                            <input
+                                                type="date"
+                                                name="periodo_final"
+                                                id="periodo_final"
+                                                value={formData.periodo_final}
+                                                onChange={handleDateChange}
+                                                className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                                min={new Date().toISOString().split('T')[0]}
+                                                required
+                                            />
+                                        </div>
+                                    </>
                                 )}
 
                                 <div className="col-span-7 flex justify-center mt-4">
