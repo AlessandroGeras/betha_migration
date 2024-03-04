@@ -79,7 +79,7 @@ const AddOutsourced = () => {
                     router.push('/403');
                 } else {
                     setTokenVerified(true);
-                    setStatusOptions(data.success ? data.statusOptions : []);
+                    setStatusOptions(data.user.STATUS);
                 }
             } catch (error) {
                 console.error('Erro ao obter opções de status:', error);
