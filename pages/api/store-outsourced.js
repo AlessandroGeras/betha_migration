@@ -36,6 +36,7 @@ export default async function handler(req, res) {
 
             console.log(dataFormatadaInicio);
             console.log(dataFormatadaFim);
+            return
             
 
             // Criação da empresa
