@@ -59,7 +59,7 @@ const Collaborators = () => {
 
   // Definir a posição inicial para adicionar o conteúdo da tabela
   let yPos = 10;
-  doc.setFontSize(14);
+  doc.setFontSize(12);
 
   // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
   docs.rows.forEach((document, index) => {
