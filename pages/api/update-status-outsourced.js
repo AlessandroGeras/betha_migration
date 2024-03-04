@@ -19,7 +19,13 @@ export default async function handler(req, res) {
               }); 
 
             
-            existingUser.STATUS = formData.status;     
+            existingUser.STATUS = formData.status;
+            
+            if(formData.status=="Periodo"){
+                existingUser.PERIODO_INICIAL = formData.periodo_inicial;
+                existingUser.PERIODO_FINAL = formData.periodo_final;
+            }
+            
 
             await existingUser.save();
 
