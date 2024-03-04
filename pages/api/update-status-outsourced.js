@@ -34,6 +34,9 @@ export default async function handler(req, res) {
                 },
               }); 
 
+              console.log("testeeeeeeeeeeeeeeeee");
+              console.log(status);
+
             
             existingUser.STATUS = status;     
 
