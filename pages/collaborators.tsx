@@ -63,7 +63,7 @@ const Collaborators = () => {
 
   // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
   docs.rows.forEach((document, index) => {
-    const rowData = `${document.NM_USUARIO} - CPF: ${document.CPF} - Status: ${document.STATUS} - Função: ${document.FUNCAO}`
+    const rowData = `${document.NM_USUARIO} - CPF: ${document.CPF} - Função: ${document.FUNCAO} - Status: ${document.STATUS}`
     doc.text(rowData, 10, yPos);
     yPos += 10; // Ajustar a posição Y para a próxima linha
   });
