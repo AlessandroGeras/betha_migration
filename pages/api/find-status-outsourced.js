@@ -15,13 +15,13 @@ export default async function handler(req, res) {
     try {
       jwt.verify(token, process.env.SECRET);      
 
+      console.log("Testeeeeeeeeeeee");
+
       const user = await outsourceds.findOne({
         where: {
           NOME_TERCEIRO: id
         },
       });
-
-      console.log("Testeeeeeeeeeeee");
       console.log(user);
 
       return
