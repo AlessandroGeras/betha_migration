@@ -47,12 +47,8 @@ export default async function handler(req, res) {
             }
           });
 
-          console.log(colaborador);
-          console.log(nome_terceiro);
-          console.log(id_documento);
-          console.log(pendingDocs);
-
           if (!pendingDocs || pendingDocs === null || pendingDocs === undefined) {
+            console.log("Teste");
             const existingUser = await outsourceds.findOne({
               where: {
                 ID_USUARIO: colaborador,
