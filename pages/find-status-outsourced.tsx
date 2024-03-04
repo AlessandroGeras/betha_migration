@@ -116,7 +116,10 @@ const AddOutsourced = () => {
                     setTokenVerified(true);
                     setFormData({
                         ...formData,
-                        status: data.user.STATUS // Definindo o status inicial com o valor vindo da API
+                        status: data.user.STATUS,
+                        periodo_inicial:data.user.PERIODO_INICIAL,
+                        periodo_final:data.user.PERIODO_FINAL,
+                         // Definindo o status inicial com o valor vindo da API
                     });
                 }
             } catch (error) {
