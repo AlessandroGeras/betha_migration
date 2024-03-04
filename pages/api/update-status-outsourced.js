@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
             await existingUser.save();
 
-            res.status(200).json({ user });
+            res.status(200).json({ success: true, message: 'Status salvo com sucesso.' });
 
         } catch (error) {
             console.error('Erro ao alterar os dados do Terceiro:', error);
