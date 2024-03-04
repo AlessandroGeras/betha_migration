@@ -152,9 +152,7 @@ const Collaborators = () => {
     'NM_USUARIO': '400px',
     'NOME_TERCEIRO': '500px',
     'CPF': '300px',
-    'ENDEREÇO': '500px',
-    'CIDADE': '310px',
-    'UF': '200px',
+    'ST_EMAIL': '500px',
     'FUNCAO': '350px',
     'ID_USUARIO': '350px',
   };
@@ -165,9 +163,7 @@ const Collaborators = () => {
     'NM_USUARIO': 'USUARIO',
     'NOME_TERCEIRO': 'NOME_TERCEIRO',
     'CPF': 'CPF',
-    'ENDEREÇO': 'ENDEREÇO',
-    'CIDADE': 'CIDADE',
-    'UF': 'UF',
+    'ST_EMAIL': 'E-MAIL',
     'FUNCAO': 'FUNCAO',
     'ID_USUARIO': 'ID_USUARIO',
 
@@ -662,7 +658,7 @@ const Collaborators = () => {
 
         {documents.success && (
           <div className=''>
-            <div className="flex items-center my-4 w-[1440px]">
+            <div className="flex items-center my-4 w-[930px]">
               <input
                 placeholder="Pesquisa rápida"
                 type="text"
@@ -700,7 +696,7 @@ const Collaborators = () => {
               )}
             </div>
 
-            <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
+            <div className="flex flex-col h-[550px] w-[930px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
               <div className="flex text-gray-500 bg-white w-[3101px]">
                 {Object.keys(columnWidths).map((column) => (
@@ -823,66 +819,26 @@ const Collaborators = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
                     <select
-                      value={selectedFilterValue['ENDEREÇO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ENDEREÇO': e.target.value })}
+                      value={selectedFilterValue['ST_EMAIL']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ST_EMAIL': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('ENDEREÇO').map((value) => (
+                      {handleFilterValue('ST_EMAIL').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
                       ))}
                     </select>
                     <button
-                      onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue['ENDEREÇO'])}
+                      onClick={() => handleSearchByFilter('ST_EMAIL', selectedFilterValue['ST_EMAIL'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
-                  </div>
+                  </div>                  
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '310px' }}>
-                    <select
-                      value={selectedFilterValue['CIDADE']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CIDADE': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('CIDADE').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue['CIDADE'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                    <select
-                      value={selectedFilterValue['UF']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'UF': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('UF').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('UF', selectedFilterValue['UF'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
+                 
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
                     <select
@@ -936,7 +892,7 @@ const Collaborators = () => {
 
               {documents.docs.rows.map((document: any, index) => (
                 /* Tamanho total tabela registros */
-                <div className='w-[1440px]' key={document.id || index}>
+                <div className='w-[930px]' key={document.id || index}>
                   <div
                     className={`flex text-gray-700 whitespace-nowrap w-[3101px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
@@ -971,7 +927,7 @@ const Collaborators = () => {
           </div>
         )}
 
-        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
+        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[930px]">
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
