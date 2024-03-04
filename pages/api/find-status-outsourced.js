@@ -15,13 +15,19 @@ export default async function handler(req, res) {
     try {
       jwt.verify(token, process.env.SECRET);  
 
-      const user = await outsourceds.findOne({        
-        attributes: ['PERIODO_INICIAL', 'PERIODO_FINAL'],
+      console.log("iddddddddddddddddddd");
+      console.log(id);
+
+      const user = await outsourceds.findOne({  
         where: {
           NOME_TERCEIRO: id,
           COLABORADOR_TERCEIRO: 'N',
         },
       });
+
+      console.log("userrrrrrrrrrrrr");
+      console.log(user);
+      
             
 
       if(!user){
