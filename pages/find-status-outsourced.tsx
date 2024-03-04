@@ -30,6 +30,14 @@ const AddOutsourced = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
+        if (formData.status === 'Periodo' && (!formData.periodo_inicial || !formData.periodo_final)) {
+            setPopupMessage('Por favor, preencha os campos de período.');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
         try {
             const token = localStorage.getItem('Token');
 
