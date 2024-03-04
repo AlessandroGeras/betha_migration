@@ -4,8 +4,8 @@ import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 
 const AddOutsourced = () => {
-    const [statusOptions, setStatusOptions] = useState<string[]>([]); // Definindo o tipo de statusOptions como array de strings
-    const [selectedStatus, setSelectedStatus] = useState('Ativo');
+    const [statusOptions] = useState(['Ativo', 'Inativo', 'Período']); // Definindo as opções de status fixas
+    const [selectedStatus, setSelectedStatus] = useState('Ativo'); // Definindo o status inicial como 'Ativo'
     const [isTokenVerified, setTokenVerified] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
@@ -18,11 +18,11 @@ const AddOutsourced = () => {
         setShowModal(false);
     };
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => { // Adicionando o tipo de evento para handleInputChange
+    const handleInputChange = (e) => {
         setSelectedStatus(e.target.value);
     };
 
-    const handleSubmitSuccess = async (e: React.MouseEvent<HTMLButtonElement>) => { // Adicionando o tipo de evento para handleSubmitSuccess
+    const handleSubmitSuccess = async (e) => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('Token');
@@ -52,16 +52,16 @@ const AddOutsourced = () => {
             try {
                 const token = localStorage.getItem('Token');
                 const id_user = localStorage.getItem('FontanaUser');
-        
+
                 if (!id) {
                     return;
                 }
-        
+
                 if (!token) {
                     router.push('/login');
                     return;
                 }
-        
+
                 const getAll = true;
                 const response = await fetch(`/api/find-status-outsourced`, {
                     method: 'POST',
@@ -70,16 +70,16 @@ const AddOutsourced = () => {
                     },
                     body: JSON.stringify({ token, getAll, id_user, id }),
                 });
-        
+
                 const data = await response.json();
-        
+
                 if (response.status === 401) {
                     router.push('/login');
                 } else if (response.status === 403) {
                     router.push('/403');
                 } else {
                     setTokenVerified(true);
-                    setStatusOptions([data.user.STATUS]); // Aqui definimos statusOptions como um array contendo os status
+                    setSelectedStatus(data.user.STATUS); // Definindo o status inicial com o valor vindo da API
                 }
             } catch (error) {
                 console.error('Erro ao obter opções de status:', error);
@@ -116,7 +116,6 @@ const AddOutsourced = () => {
                                         required
                                         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                     >
-                                        <option value="">Selecione um status</option>
                                         {statusOptions.map((status) => (
                                             <option key={status} value={status}>
                                                 {status}
