@@ -34,7 +34,7 @@ const AddOutsourced = () => {
                 return;
             }
 
-            const response = await fetch('/api/find-status-outsourced', {
+            const response = await fetch('/api/update-status-outsourced', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -84,6 +84,7 @@ const AddOutsourced = () => {
 
                 const getAll = true;
                 const response = await fetch(`/api/find-status-outsourced`, {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
