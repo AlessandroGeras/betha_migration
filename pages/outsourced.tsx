@@ -935,7 +935,7 @@ const Outsourced = () => {
                             className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === 'STATUS' && document.STATUS === 'Período' ? (
+                            {column === 'STATUS' && document.STATUS === 'Periodo' ? (
                               // Verifica se a data atual está entre document.PERIODO_INICIAL e document.PERIODO_FINAL
                               new Date() >= new Date(document.PERIODO_INICIAL) && new Date() <= new Date(document.PERIODO_FINAL) ? (
                                 <span>Periodo - Ativo</span>
