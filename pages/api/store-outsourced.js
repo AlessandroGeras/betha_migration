@@ -29,13 +29,7 @@ export default async function handler(req, res) {
         } = req.body;
 
         try {
-            jwt.verify(token, process.env.SECRET);
-
-            const dataFormatadaInicio = periodo_inicial ? format(new Date(periodo_inicial), 'dd/MM/yyyy') : null;
-            const dataFormatadaFim = periodo_final ? format(new Date(periodo_final), 'dd/MM/yyyy') : null;
-
-            console.log(dataFormatadaInicio);
-            console.log(dataFormatadaFim);
+            jwt.verify(token, process.env.SECRET);           
             
 
             // Criação da empresa
@@ -53,8 +47,8 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",
                 ID_USUARIO: id_usuario,
-                ...(dataFormatadaInicio && { PERIODO_INICIAL: dataFormatadaInicio }),
-                ...(dataFormatadaFim && { PERIODO_FINAL: dataFormatadaFim }),
+                ...(periodo_inicial && { PERIODO_INICIAL: periodo_inicial }),
+                ...(periodo_final && { PERIODO_FINAL: periodo_final }),
                 CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
