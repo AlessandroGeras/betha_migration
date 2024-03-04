@@ -28,13 +28,14 @@ export default async function handler(req, res) {
             periodo_final,
         } = req.body;
 
-        let dataFormatadaInicio,dataFormatadaFim;
-
         try {
             jwt.verify(token, process.env.SECRET);
 
             const dataFormatadaInicio = periodo_inicial ? format(new Date(periodo_inicial), 'dd/MM/yyyy') : null;
             const dataFormatadaFim = periodo_final ? format(new Date(periodo_final), 'dd/MM/yyyy') : null;
+
+            console.log(dataFormatadaInicio);
+            console.log(dataFormatadaFim);
             
 
             // Criação da empresa
