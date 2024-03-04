@@ -3,6 +3,7 @@ import categoria_terceiros from '../../models/categoryOutsourced';
 import documents from '../../models/documents';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
+import { format } from 'date-fns';
 
 dotenv.config();
 
@@ -30,9 +31,12 @@ export default async function handler(req, res) {
         try {
             jwt.verify(token, process.env.SECRET);
 
-            console.log("Inicio"+periodo_inicial);
-            console.log("Fim"+periodo_final);
-            return
+            const dataFormatadaInicio = format(new Date(periodo_inicial), 'dd/MM/yyyy');
+            const dataFormatadaFim = format(new Date(periodo_final), 'dd/MM/yyyy');
+
+            console.log(dataFormatadaInicio);
+            console.log(dataFormatadaFim);
+            
 
             // Criação da empresa
             const storeEmpresa = await outsourceds.create({
@@ -49,6 +53,8 @@ export default async function handler(req, res) {
                 ID_USUARIO_INTERNO: "N",
                 COLABORADOR_TERCEIRO: "N",
                 ID_USUARIO: id_usuario,
+                PERIODO_INICIAL:
+                PERIODO_FINAL:
                 CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
