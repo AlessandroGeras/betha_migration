@@ -19,7 +19,9 @@ export default async function handler(req, res) {
 
       const user = await outsourceds.findOne({
         where: {
-          NOME_TERCEIRO: id
+          NOME_TERCEIRO: id,
+          COLABORADOR_TERICEIRO: 'N',
+
         },
       });
       console.log(user);
