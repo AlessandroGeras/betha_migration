@@ -13,6 +13,10 @@ const categoria_colaboradores = connection.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
+    PERMISSAO: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: 'CATEGORIA_COLABORADORES',

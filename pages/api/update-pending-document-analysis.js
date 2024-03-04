@@ -36,6 +36,7 @@ export default async function handler(req, res) {
         existingDoc.STATUS = "Ativo";
 
         if (colaborador) {
+          console.log(colaborador);
           const pendingDocs = await documents.findOne({
             where: {
               COLABORADOR: colaborador,
@@ -46,6 +47,7 @@ export default async function handler(req, res) {
             }
             }
           });
+          console.log(pendingDocs);
 
           if (!pendingDocs) {
             const existingUser = await outsourceds.findOne({
