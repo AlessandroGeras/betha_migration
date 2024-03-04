@@ -52,7 +52,7 @@ export default async function handler(req, res) {
               where: {
                 NM_USUARIO: colaborador,
                 COLABORADOR_TERCEIRO: 'S',
-                TERCEIRO: nome_terceiro,
+                NOME_TERCEIRO: nome_terceiro,
               },
             });
             existingUser.STATUS = "Ativo";
