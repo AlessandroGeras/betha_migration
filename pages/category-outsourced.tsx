@@ -116,7 +116,7 @@ const CategoryOutsourced = () => {
 
 
 
-  
+
 
   const columnLabels = {
     '': '',
@@ -134,7 +134,7 @@ const CategoryOutsourced = () => {
 
   const handleSort = (columnName, event) => {
     const isFilterIconClicked = event.target.classList.contains('filter-icon');
-  
+
     if (!isFilterIconClicked) {
       if (columnName === sortColumn) {
         setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
@@ -142,9 +142,9 @@ const CategoryOutsourced = () => {
         setSortColumn(columnName);
         setSortOrder('asc');
       }
-  
+
       const sortedRows = sortRows(documents.docs.rows, columnName, sortOrder);
-  
+
       setDocuments({
         success: true,
         docs: {
@@ -631,46 +631,42 @@ const CategoryOutsourced = () => {
                   {/* Cabeçalho */}
                   <div className="flex text-gray-500 bg-white w-[2059px]">
                     {Object.keys(columnWidths).map((column) => (
-                      <div
+                      <Resizable
                         key={column}
-                        className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                        style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
-                        onClick={(event) => handleSort(column, event)}
+                        width={parseInt(columnWidths[column], 10)}
+                        height={0}
+                        onResize={(event, { size }) => {
+                          setColumnWidths((prevColumnWidths) => ({
+                            ...prevColumnWidths,
+                            [column]: `${size.width}px`,
+                          }));
+                        }}
                       >
-                        <Resizable
-                          width={parseInt(columnWidths[column])} // Defina a largura inicial da coluna
-                          height={0}
-                          onResize={(e, { size }) => {
-                            const newWidth = size.width;
-                            // Atualize a largura da coluna
-                            setColumnWidths((prevWidths) => ({
-                              ...prevWidths,
-                              [column]: `${newWidth}px`,
-                            }));
-                          }}
+                        <div
+                          className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
+                          style={{ width: columnWidths[column] }}
                         >
-                          <div>
-                            {columnLabels[column]}
-                            <div className='ml-auto flex'>
-                              {column !== '' && (
-                                <>
-                                  {sortColumn === column && (
-                                    sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
-                                  )}
-                                  <PiFunnelLight
-                                    className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      handleSort(column, e);
-                                    }}
-                                  />
-                                </>
-                              )}
-                            </div>
+                          {columnLabels[column]}
+                          <div className='ml-auto flex'>
+                            {column !== '' && (
+                              <>
+                                {sortColumn === column && (
+                                  sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                                )}
+                                <PiFunnelLight
+                                  className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleSort(column, e);
+                                  }}
+                                />
+                              </>
+                            )}
                           </div>
-                        </Resizable>
-                      </div>
+                        </div>
+                      </Resizable>
                     ))}
+
                   </div>
 
                   {filterOpen && (
