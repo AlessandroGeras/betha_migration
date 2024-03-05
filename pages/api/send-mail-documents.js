@@ -98,7 +98,21 @@ export default async function handler(req, res) {
 
       // Filtrar documentos ativos com data de notificação menor ou igual à data atual ou sem data de notificação definida
       const docsFiltrados = documentos.filter(doc => {
-        // Lógica de filtro de documentos
+        // Se o status do documento for 'Pendente' ou 'Reprovado', mantenha-o
+        if (doc.STATUS === 'Pendente' || doc.STATUS === 'Reprovado') {
+          return true;
+        }
+
+        // Se a data de notificação não estiver definida ou for menor ou igual à data atual, o documento é considerado válido
+        if (!doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate) {
+          // Se o documento estiver ativo e o vencimento não estiver definido, descarte-o
+          if (doc.STATUS === 'Ativo' && doc.VENCIMENTO === null) {
+            return false;
+          }
+          return true;
+        }
+
+        return false;
       });
 
       // Verificar se há documentos para enviar
