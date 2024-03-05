@@ -58,7 +58,7 @@ export default async function handler(req, res) {
       where: {
         NOME_TERCEIRO: terceiros,
         COLABORADOR_TERCEIRO: 'N',
-        [Sequelize.literal('(STATUS = "Ativo" OR (STATUS = "Periodo" AND PERIODO_INICIAL <= CURRENT_TIMESTAMP AND PERIODO_FINAL >= CURRENT_TIMESTAMP))')]: Sequelize.literal(''),
+        STATUS: Sequelize.literal('(STATUS = "Ativo" OR (STATUS = "Periodo" AND PERIODO_INICIAL <= CURRENT_TIMESTAMP AND PERIODO_FINAL >= CURRENT_TIMESTAMP))'),
       },
       attributes: ['NOME_TERCEIRO', 'STATUS', 'ID_USUARIO']
     });
