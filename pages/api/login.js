@@ -81,6 +81,25 @@ export default async function handler(req, res) {
                         console.log(periodoFinal);
                         console.log(dataAtual);
 
+                        if(dataAtual >= periodoInicial){
+                            console.log("Data atual é maior que data inicial ");
+                        }
+                        else{
+                            console.log("Data atual é menor que data inicial ");
+                        }
+
+
+                        if(dataAtual >= periodoFinal){
+                            console.log("Data atual é maior que data final");
+                        }
+                        else{
+                            console.log("Data atual é menor que data final ");
+                        }
+
+
+
+
+
                         if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
                             console.log("Usuário desativado");
                             res.status(406).json({ error: 'Usuário desativado.' });
