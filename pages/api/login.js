@@ -79,6 +79,7 @@ export default async function handler(req, res) {
                         var dataAtual = new Date();
 
                         if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
+                            console.log("Negado");
                             res.status(406).json({ error: 'Usuário desativado.' });
                         }
                     }
