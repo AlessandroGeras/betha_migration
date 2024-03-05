@@ -1,3 +1,6 @@
 .resizable{
     resize: both;
+    background-color: brown;
+    color:red;
+    font-size: 50px;
 }
