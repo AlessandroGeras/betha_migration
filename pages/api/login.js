@@ -77,6 +77,9 @@ export default async function handler(req, res) {
                         var periodoInicial = usuarioexterno.PERIODO_INICIAL;
                         var periodoFinal = usuarioexterno.PERIODO_FINAL;
                         var dataAtual = new Date();
+                        console.log(periodoInicial);
+                        console.log(periodoFinal);
+                        console.log(dataAtual);
 
                         if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
                             console.log("Usuário desativado");
