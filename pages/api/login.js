@@ -78,6 +78,9 @@ export default async function handler(req, res) {
                         var periodoInicial = new Date(usuarioexterno.PERIODO_INICIAL);
                         var periodoFinal = new Date(usuarioexterno.PERIODO_FINAL);
                         var dataAtual = new Date();
+                        console.log("Inicial"+periodoInicial);S
+                        console.log("Final"+periodoFinal);
+                        console.log("Atual"+dataAtual);
 
                         if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
                             console.log("Permitido");
