@@ -31,6 +31,8 @@ export default async function handler(req, res) {
       }
     });
 
+    console.log(docs);
+
     // Agrupar documentos por TERCEIRO
     const documentosAgrupados = docs.reduce((acc, doc) => {
       const terceiro = doc.TERCEIRO;
