@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import '../public/css/style.css';
 
 
 const Users = () => {
@@ -38,7 +37,6 @@ const Users = () => {
   const [viewAll, setViewAll] = useState(true);
   const [isAdmin, setIsAdmin] = useState(true);
   const [fileUrl, setFileUrl] = useState('');
-  const [columnWidth, setColumnWidths] = useState({});
 
 
   interface Document {
@@ -523,33 +521,6 @@ const Users = () => {
         console.error('Erro ao obter as categorias de terceiros:', error);
       }
     }
-  };
-
-  const resizeColumn = (event, column) => {
-    let isResizing = true;
-    let lastDownX = event.clientX;
-
-    const mouseMoveHandler = (event) => {
-      if (isResizing) {
-        const offset = lastDownX - event.clientX;
-        lastDownX = event.clientX;
-
-        // Atualize a largura da coluna
-        setColumnWidths(prevWidths => ({
-          ...prevWidths,
-          [column]: `${parseInt(prevWidths[column]) - offset}px`
-        }));
-      }
-    };
-
-    const mouseUpHandler = () => {
-      if (isResizing) {
-        isResizing = false;
-      }
-    };
-
-    document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('mouseup', mouseUpHandler);
   };
 
 
@@ -1146,8 +1117,8 @@ const Users = () => {
                       <option value="">Todos</option>
                       {handleFilterValue('COLABORADOR').map((value) => (
                         <option key={value} value={value}>
-                          {value}
-                        </option>
+                        {value}
+                      </option>
                       ))}
                     </select>
                     <button
@@ -1194,21 +1165,21 @@ const Users = () => {
               )}
 
               {documents.docs.rows.map((document, index) => (
-                <div className='resizable]' key={document.id || Math.random().toString()}>
+                <div className='w-[3140px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap text-ellipsis overflow-hidden  resizable ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
-                    {Object.keys(columnWidth).map((column) => (
+                    {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
-                        className={`column-cell border border-gray-300 py-2 resizable-column`}
-                        style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidth[column] }}
+                        className={`column-cell border border-gray-300 py-2`}
+                        style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
                         {column === 'VENCIMENTO' || column === 'NOTIFICACAO' ? (
                           document[column] !== null ? formatBrDate(document[column]) : ''
                         ) : (
                           column === '' ? (
-                            <div className='flex justify-center resizable-column'>
+                            <div className='flex justify-center'>
                               {((!viewAll && (document.STATUS == 'Pendente' || document.STATUS == 'Reprovado')) || (viewAll && document.STATUS != 'Pendente') || document.STATUS == 'Ativo') && (
                                 <Link href={{ pathname: '/find-document', query: { id: document.ID_DOCUMENTO } }}>
                                   <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
@@ -1224,8 +1195,6 @@ const Users = () => {
                                   <FaTrashAlt className='mt-0.5 w-[12px] text-red-500 mx-0.5' />
                                 </button>
                               )}
-                              {/* Adicione o manipulador de redimensionamento */}
-                              <div className="resizer" onMouseDown={(event) => { resizeColumn(event, column); }} />
                             </div>
                           ) : (
                             document[column]
@@ -1233,7 +1202,6 @@ const Users = () => {
                         )}
                       </div>
                     ))}
-
                   </div>
                 </div>
               ))}
