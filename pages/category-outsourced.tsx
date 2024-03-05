@@ -565,9 +565,9 @@ const CategoryOutsourced = () => {
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA': e.target.value })}
                           className="border border-gray-300 px-2 py-1 rounded"
                         >
-                          <option value="">Todos</option>
-                          {handleFilterValue('CATEGORIA').map((value) => (
-                            <option key={value} value={value}>
+                          <option key="todos" value="">Todos</option>
+                          {handleFilterValue('CATEGORIA').map((value: string | number, index: number) => (
+                            <option key={index} value={value}>
                               {value}
                             </option>
                           ))}
