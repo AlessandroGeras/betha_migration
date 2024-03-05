@@ -60,11 +60,8 @@ export default async function handler(req, res) {
         COLABORADOR_TERCEIRO: 'N',
         STATUS: Sequelize.literal('(STATUS = \'Ativo\' OR (STATUS = \'Periodo\' AND PERIODO_INICIAL <= CURRENT_TIMESTAMP AND PERIODO_FINAL >= CURRENT_TIMESTAMP))'),
       },
-      attributes: ['NOME_TERCEIRO', 'STATUS', 'ID_USUARIO']
+      attributes: ['NOME_TERCEIRO', 'STATUS', 'ID_USUARIO', 'ST_EMAIL'] // Adicione 'ST_EMAIL' para buscar o e-mail do terceiro
     });
-
-    console.log("testeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    console.log(terceirosData);
 
     // Mapear emails e IDs dos terceiros
     const mapaEmailsTerceiros = {};
@@ -91,31 +88,21 @@ export default async function handler(req, res) {
       const documentos = documentosAgrupados[terceiro];
       const idTerceiro = mapaIDTerceiros[terceiro];
 
+      // Verificar se há um endereço de e-mail válido para a empresa
+      if (!emailTerceiro) {
+        console.log(`Não há endereço de e-mail para ${terceiro}, pulando para o próximo.`);
+        continue;
+      }
+
       // Filtrar documentos ativos com data de notificação menor ou igual à data atual ou sem data de notificação definida
       const docsFiltrados = documentos.filter(doc => {
-        // Se o status do documento for 'Pendente' ou 'Reprovado', mantenha-o
-        if (doc.STATUS === 'Pendente' || doc.STATUS === 'Reprovado') {
-          return true;
-        }
-
-        // Se a data de notificação não estiver definida ou for menor ou igual à data atual, o documento é considerado válido
-        if (!doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate) {
-          // Se o documento estiver ativo e o vencimento não estiver definido, descarte-o
-          if (doc.STATUS === 'Ativo' && doc.VENCIMENTO === null) {
-            return false;
-          }
-          return true;
-        }
-
-        return false;
+        // Lógica de filtro de documentos
       });
 
-      console.log("Outro testeeeeeeeeeeeeeeeeeeeee");
-      console.log(docsFiltrados);
-
+      // Verificar se há documentos para enviar
       if (docsFiltrados.length === 0) {
-        res.status(200).json({ message: "Não há cobranças para serem enviadas" });
-        return
+        console.log(`Não há documentos para enviar para ${terceiro}, pulando para o próximo.`);
+        continue;
       }
 
       // Construir o corpo do e-mail para os documentos filtrados
@@ -149,7 +136,6 @@ export default async function handler(req, res) {
       console.log(`E-mail enviado com sucesso para ${terceiro} (${emailTerceiro}).`);
     }
 
-
     await cobrança.create({
       ULTIMA_COBRANCA: currentDate,
     }, {
@@ -164,6 +150,5 @@ export default async function handler(req, res) {
     res.status(500).json({ erro: 'Erro durante a conexão com o Oracle.' });
   } finally {
     // Certifique-se de fechar a conexão quando não for mais necessária
-
   }
 }
