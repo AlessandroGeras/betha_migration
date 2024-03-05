@@ -419,10 +419,8 @@ const CategoryOutsourced = () => {
     return ['TODOS', ...Array.from(allColumnValues)];
   };
 
-  useEffect(() => {
-    if (isTokenVerified) {
+  useEffect(() => {    
       fetchData();
-    }
   }, [currentPage, pageSize, sortColumn, sortOrder, appliedFilterValue, isTokenVerified]);
 
   return (
