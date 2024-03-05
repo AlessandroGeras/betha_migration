@@ -5,6 +5,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
+import { Resizable } from 'react-resizable';
 
 const CategoryOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -31,7 +32,6 @@ const CategoryOutsourced = () => {
   const [columnWidths, setColumnWidths] = useState({
     '': '59px',
     'CATEGORIA': '2000px',
-    // Adicione larguras para outras colunas, se necessário
   });
 
   const closeModal = () => {
@@ -116,7 +116,7 @@ const CategoryOutsourced = () => {
 
 
 
-
+  
 
   const columnLabels = {
     '': '',
@@ -134,36 +134,25 @@ const CategoryOutsourced = () => {
 
   const handleSort = (columnName, event) => {
     const isFilterIconClicked = event.target.classList.contains('filter-icon');
-
-    // Verifica se o cabeçalho da coluna foi clicado para ordenação ou redimensionamento
+  
     if (!isFilterIconClicked) {
-      const isResizeHandleClicked = event.target.classList.contains('resize-handle');
-      if (isResizeHandleClicked) {
-        // Atualiza a largura da coluna
-        const columnWidth = event.clientX - event.target.getBoundingClientRect().left;
-        setColumnWidths(prevColumnWidths => ({
-          ...prevColumnWidths,
-          [columnName]: `${columnWidth}px`,
-        }));
+      if (columnName === sortColumn) {
+        setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
       } else {
-        if (columnName === sortColumn) {
-          setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-        } else {
-          setSortColumn(columnName);
-          setSortOrder('asc');
-        }
-
-        const sortedRows = sortRows(documents.docs.rows, columnName, sortOrder);
-
-        setDocuments({
-          success: true,
-          docs: {
-            rows: sortedRows,
-            count: sortedRows.length,
-            outsourcedCount: documents.docs.outsourcedCount,
-          },
-        });
+        setSortColumn(columnName);
+        setSortOrder('asc');
       }
+  
+      const sortedRows = sortRows(documents.docs.rows, columnName, sortOrder);
+  
+      setDocuments({
+        success: true,
+        docs: {
+          rows: sortedRows,
+          count: sortedRows.length,
+          outsourcedCount: documents.docs.outsourcedCount,
+        },
+      });
     } else {
       setFilterOpen((prevFilterOpen) => !prevFilterOpen);
     }
@@ -645,33 +634,42 @@ const CategoryOutsourced = () => {
                       <div
                         key={column}
                         className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                        style={{ width: columnWidths[column] }}
+                        style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                         onClick={(event) => handleSort(column, event)}
                       >
-                        {columnLabels[column]}
-                        <div className='ml-auto flex'>
-                          {column !== '' && (
-                            <>
-                              {sortColumn === column && (
-                                sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                        <Resizable
+                          width={parseInt(columnWidths[column])} // Defina a largura inicial da coluna
+                          height={0}
+                          onResize={(e, { size }) => {
+                            const newWidth = size.width;
+                            // Atualize a largura da coluna
+                            setColumnWidths((prevWidths) => ({
+                              ...prevWidths,
+                              [column]: `${newWidth}px`,
+                            }));
+                          }}
+                        >
+                          <div>
+                            {columnLabels[column]}
+                            <div className='ml-auto flex'>
+                              {column !== '' && (
+                                <>
+                                  {sortColumn === column && (
+                                    sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                                  )}
+                                  <PiFunnelLight
+                                    className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleSort(column, e);
+                                    }}
+                                  />
+                                </>
                               )}
-                              <PiFunnelLight
-                                className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleSort(column, e);
-                                }}
-                              />
-                            </>
-                          )}
-                          {/* Manipulador de redimensionamento */}
-                          <div
-                            className="resize-handle"
-                            style={{ cursor: 'col-resize', width: '5px', height: '100%', position: 'absolute', right: '0', top: '0' }}
-                          ></div>
-                        </div>
+                            </div>
+                          </div>
+                        </Resizable>
                       </div>
-
                     ))}
                   </div>
 
