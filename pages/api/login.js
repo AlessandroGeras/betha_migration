@@ -61,7 +61,7 @@ export default async function handler(req, res) {
                 }
             } else {
                 const usuarioexterno = await outsourceds.findOne({
-                    attributes: ['DS_SENHA', 'STATUS', 'FUNCAO','PERIODO_INICIAL','PERIODO_FINAL'],
+                    attributes: ['DS_SENHA', 'STATUS', 'FUNCAO', 'PERIODO_INICIAL', 'PERIODO_FINAL'],
                     where: {
                         ID_USUARIO: username,
                         ID_USUARIO_INTERNO: 'N',
@@ -77,34 +77,9 @@ export default async function handler(req, res) {
                         var periodoInicial = usuarioexterno.PERIODO_INICIAL;
                         var periodoFinal = usuarioexterno.PERIODO_FINAL;
                         var dataAtual = new Date();
-                        console.log(periodoInicial);
-                        console.log(periodoFinal);
-                        console.log(dataAtual);
-
-                        if(dataAtual >= periodoInicial){
-                            console.log("Data atual é maior que data inicial ");
-                        }
-                        else{
-                            console.log("Data atual é menor que data inicial ");
-                        }
 
 
-                        if(dataAtual >= periodoFinal){
-                            console.log("Data atual é maior que data final");
-                        }
-                        else{
-                            console.log("Data atual é menor que data final ");
-                        }
-
-
-
-
-
-                        if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
-                            console.log("Usuário ativo");
-                        }
-                        else{
-                            console.log("Usuário inativo");                            
+                        if (dataAtual < periodoInicial || dataAtual > periodoFinal) {
                             res.status(406).json({ error: 'Usuário desativado.' });
                         }
                     }
