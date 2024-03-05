@@ -1166,21 +1166,21 @@ const Users = () => {
               )}
 
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[3140px]' key={document.id || Math.random().toString()}>
+                <div className='w-[3140px  resizable]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  resizable ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
-                        className={`column-cell border border-gray-300 py-2`}
+                        className={`column-cell border border-gray-300 py-2  resizable`}
                         style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                       >
                         {column === 'VENCIMENTO' || column === 'NOTIFICACAO' ? (
                           document[column] !== null ? formatBrDate(document[column]) : ''
                         ) : (
                           column === '' ? (
-                            <div className='flex justify-center  resizable'>
+                            <div className='flex justify-center resizable'>
                               {((!viewAll && (document.STATUS == 'Pendente' || document.STATUS == 'Reprovado')) || (viewAll && document.STATUS != 'Pendente') || document.STATUS == 'Ativo') && (
                                 <Link href={{ pathname: '/find-document', query: { id: document.ID_DOCUMENTO } }}>
                                   <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
