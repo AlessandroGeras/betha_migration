@@ -69,7 +69,6 @@ export default async function handler(req, res) {
                 });
 
                 if (usuarioexterno) {
-                    console.log(usuarioexterno);
                     if (usuarioexterno.STATUS == "Inativo") {
                         res.status(406).json({ error: 'Usuário desativado.' });
                     }
@@ -78,14 +77,9 @@ export default async function handler(req, res) {
                         var periodoInicial = usuarioexterno.PERIODO_INICIAL;
                         var periodoFinal = usuarioexterno.PERIODO_FINAL;
                         var dataAtual = new Date();
-                        console.log("Inicial"+periodoInicial);
-                        console.log("Final"+periodoFinal);
-                        console.log("Atual"+dataAtual);
 
                         if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
-                            console.log("Permitido");
-                        } else {
-                            console.log("Negado");
+                            res.status(406).json({ error: 'Usuário desativado.' });
                         }
                     }
 
