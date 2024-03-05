@@ -24,23 +24,6 @@ export default async function handler(req, res) {
     await connection.authenticate();
     console.log('Serviço de cobrança de email iniciado.');
 
-    // Consulta ao banco de dados para encontrar empresas fora da vigência do contrato
-    const enterprisesOutOfContract = await outsourceds.findAll({
-      where: {
-        STATUS: "Periodo",
-        PERIODO_INICIAL: {
-          $lte: currentDate,
-        },
-        PERIODO_FINAL: {
-          $gte: currentDate,
-        },
-      },
-      attributes: ['NOME_TERCEIRO'] // Atributos a serem selecionados
-    });
-
-    // Extrair os nomes das empresas fora da vigência do contrato em um conjunto para facilitar a verificação posterior
-    const enterprisesOutOfContractSet = new Set(enterprisesOutOfContract.map(enterprise => enterprise.NOME_TERCEIRO));
-
     // Consulta ao banco de dados para obter documentos
     const docs = await documents.findAll({
       where: {
@@ -75,8 +58,9 @@ export default async function handler(req, res) {
       where: {
         NOME_TERCEIRO: terceiros,
         COLABORADOR_TERCEIRO: 'N',
+        [Sequelize.literal('(STATUS = "Ativo" OR (STATUS = "Periodo" AND PERIODO_INICIAL <= CURRENT_TIMESTAMP AND PERIODO_FINAL >= CURRENT_TIMESTAMP))')]: Sequelize.literal(''),
       },
-      attributes: ['NOME_TERCEIRO', 'ST_EMAIL', 'ID_USUARIO']
+      attributes: ['NOME_TERCEIRO', 'STATUS', 'ID_USUARIO']
     });
 
     // Mapear emails e IDs dos terceiros
@@ -99,29 +83,66 @@ export default async function handler(req, res) {
     });
 
     // Enviar e-mail para cada TERCEIRO com os documentos
-    let anyValidThirdParty = false; // Variável para rastrear se pelo menos um terceiro válido foi encontrado
-
     for (const terceiro in documentosAgrupados) {
-      // Verifique se o terceiro está na lista de empresas fora da vigência do contrato
-      if (enterprisesOutOfContractSet.has(terceiro)) {
-        console.log(`Empresa ${terceiro} está fora da vigência do contrato. E-mails não serão enviados.`);
-        continue; // Pule para o próximo terceiro sem enviar o e-mail
-      }
-
-      anyValidThirdParty = true; // Defina a variável para true, pois encontramos pelo menos um terceiro válido
-
       const emailTerceiro = mapaEmailsTerceiros[terceiro];
       const documentos = documentosAgrupados[terceiro];
       const idTerceiro = mapaIDTerceiros[terceiro];
 
-      // Restante do código para enviar e-mails para terceiros que não estão fora da vigência do contrato
+      // Filtrar documentos ativos com data de notificação menor ou igual à data atual ou sem data de notificação definida
+      const docsFiltrados = documentos.filter(doc => {
+        // Se o status do documento for 'Pendente' ou 'Reprovado', mantenha-o
+        if (doc.STATUS === 'Pendente' || doc.STATUS === 'Reprovado') {
+          return true;
+        }
+
+        // Se a data de notificação não estiver definida ou for menor ou igual à data atual, o documento é considerado válido
+        if (!doc.NOTIFICACAO || new Date(doc.NOTIFICACAO) <= currentDate) {
+          // Se o documento estiver ativo e o vencimento não estiver definido, descarte-o
+          if (doc.STATUS === 'Ativo' && doc.VENCIMENTO === null) {
+            return false;
+          }
+          return true;
+        }
+
+        return false;
+      });
+
+      if (docsFiltrados.length === 0) {
+        res.status(200).json({ message: "Não há cobranças para serem enviadas" });
+        return
+      }
+
+      // Construir o corpo do e-mail para os documentos filtrados
+      let emailBody = `<p>Olá, para continuidade no contrato da empresa ${terceiro} com a construtora Fontana, os seguintes documentos precisam ser enviados para o nosso portal:</p>`;
+      emailBody += docsFiltrados.map(doc => {
+        let docInfo;
+        if (doc.STATUS === 'Reprovado') {
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: ${doc.STATUS} - ${doc.MOTIVO}</p>`;
+        } else if (doc.STATUS === 'Ativo') {
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: Documento a vencer - ${format(new Date(doc.VENCIMENTO), 'dd/MM/yy')}</p>`;
+        } else { // Pendente ou outros status
+          docInfo = `<p>${doc.TIPO_DOCUMENTO}${doc.COLABORADOR ? ` - ${doc.COLABORADOR}` : ''}: ${doc.STATUS}</p>`;
+        }
+        return docInfo;
+      }).join('');
+      emailBody += `<hr><p>Acesse o portal através do link abaixo com as suas credenciais.</p>` +
+        `<p>Seu ID: ${idTerceiro}</p>` +
+        `<p>Se for seu primeiro acesso, digite seu nome de usuário e clique em "Esqueceu a senha?" para redefinir a nova senha por e-mail.</p>` +
+        `<p><a href="https://gestao-terceiros.estilofontana.com.br" style="color: #3498db; text-decoration: none; font-weight: bold;">Acessar o Portal</a></p>` +
+        `<img src='https://estilofontana.com.br/img/logo-fontana.svg' style='width: 25%;' />` +
+        `<h4>Portal Gestão de Terceiro</h4>`;
+
+      // Enviar o e-mail
+      await transporter.sendMail({
+        from: 'noreply@estilofontana.com.br',
+        to: emailTerceiro,
+        subject: 'Pendência de Documentos - Portal Gestão de Terceiro',
+        html: emailBody,
+      });
+
+      console.log(`E-mail enviado com sucesso para ${terceiro} (${emailTerceiro}).`);
     }
 
-    // Verificar se pelo menos um terceiro válido foi encontrado antes de enviar a mensagem "Não há cobranças para serem enviadas"
-    if (!anyValidThirdParty) {
-      res.status(200).json({ message: "Não há cobranças para serem enviadas" });
-      return;
-    }
 
     await cobrança.create({
       ULTIMA_COBRANCA: currentDate,
