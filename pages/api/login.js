@@ -75,8 +75,8 @@ export default async function handler(req, res) {
                     }
 
                     if (usuarioexterno.STATUS == "Periodo") {
-                        var periodoInicial = new Date(usuarioexterno.PERIODO_INICIAL);
-                        var periodoFinal = new Date(usuarioexterno.PERIODO_FINAL);
+                        var periodoInicial = usuarioexterno.PERIODO_INICIAL;
+                        var periodoFinal = usuarioexterno.PERIODO_FINAL;
                         var dataAtual = new Date();
                         console.log("Inicial"+periodoInicial);S
                         console.log("Final"+periodoFinal);
