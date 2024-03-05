@@ -24,6 +24,23 @@ export default async function handler(req, res) {
     await connection.authenticate();
     console.log('Serviço de cobrança de email iniciado.');
 
+    // Consulta ao banco de dados para encontrar empresas fora da vigência do contrato
+    const enterprisesOutOfContract = await outsourceds.findAll({
+      where: {
+        STATUS: "Periodo",
+        PERIODO_INICIAL: {
+          $lte: currentDate,
+        },
+        PERIODO_FINAL: {
+          $gte: currentDate,
+        },
+      },
+      attributes: ['NOME_TERCEIRO'] // Atributos a serem selecionados
+    });
+
+    // Extrair os nomes das empresas fora da vigência do contrato em um conjunto para facilitar a verificação posterior
+    const enterprisesOutOfContractSet = new Set(enterprisesOutOfContract.map(enterprise => enterprise.NOME_TERCEIRO));
+
     // Consulta ao banco de dados para obter documentos
     const docs = await documents.findAll({
       where: {
@@ -83,6 +100,12 @@ export default async function handler(req, res) {
 
     // Enviar e-mail para cada TERCEIRO com os documentos
     for (const terceiro in documentosAgrupados) {
+      // Verifique se o terceiro está na lista de empresas fora da vigência do contrato
+      if (enterprisesOutOfContractSet.has(terceiro)) {
+        console.log(`Empresa ${terceiro} está fora da vigência do contrato. E-mails não serão enviados.`);
+        continue; // Pule para o próximo terceiro sem enviar o e-mail
+      }
+
       const emailTerceiro = mapaEmailsTerceiros[terceiro];
       const documentos = documentosAgrupados[terceiro];
       const idTerceiro = mapaIDTerceiros[terceiro];
