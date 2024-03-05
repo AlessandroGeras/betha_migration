@@ -75,18 +75,16 @@ export default async function handler(req, res) {
                     }
 
                     if (usuarioexterno.STATUS == "Periodo") {
-                        var periodoInicial = usuarioexterno.PERIODO_INICIAL;
+                       /*  var periodoInicial = usuarioexterno.PERIODO_INICIAL;
                         var periodoFinal = usuarioexterno.PERIODO_FINAL;
-                        var dataAtual = new Date();
-                        console.log("Inicial"+periodoInicial);S
-                        console.log("Final"+periodoFinal);
-                        console.log("Atual"+dataAtual);
-
-                        if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
+                        var dataAtual = new Date(); */
+                        console.log("Inicial"+usuarioexterno.PERIODO_INICIAL);
+                        console.log("Final"+usuarioexterno.PERIODO_FINAL);
+                        /* if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
                             console.log("Permitido");
                         } else {
                             console.log("Negado");
-                        }
+                        } */
                     }
 
 
