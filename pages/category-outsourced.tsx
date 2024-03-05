@@ -121,10 +121,11 @@ const CategoryOutsourced = () => {
     }));
   };
 
+
+
   const columnLabels = {
     '': '',
     'CATEGORIA': 'CATEGORIA',
-    // Adicione rótulos para outras colunas conforme necessário
   };
 
   const sortRows = (rows, column, order) => {
@@ -188,6 +189,9 @@ const CategoryOutsourced = () => {
         setTokenVerified(true);
       }
 
+
+
+      // Se houver um filtro aplicado, filtre os dados usando o filtro
       const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, column) => {
         const filterValue = appliedFilterValue[column];
         return filteredData.filter((document) =>
@@ -197,8 +201,10 @@ const CategoryOutsourced = () => {
 
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
 
+      // Atualize o estado filteredData
       setFilteredData(sortedRows);
 
+      // Atualize os documentos com os dados filtrados
       setDocuments({
         success: data.success,
         docs: {
@@ -214,21 +220,28 @@ const CategoryOutsourced = () => {
     }
   };
 
+
+
   const applyFilters = (data, filters) => {
     return data.filter((document) => {
+      // Verificar se todos os filtros são atendidos
       return Object.entries(filters).every(([column, filterValue]) => {
         const documentValue = document[column];
 
+        // Verificar se o valor da coluna não é nulo antes de chamar toString()
         if (documentValue !== null && documentValue !== undefined) {
+          // Verificar se filterValue é do tipo string
           if (typeof filterValue === 'string') {
             return documentValue.toString().toLowerCase().includes(filterValue.toLowerCase());
           }
         }
 
-        return false;
+        return false; // Se for nulo, indefinido ou não uma string, não incluir no resultado
       });
     });
   };
+
+
 
   const handleSearchByFilter = async (column, value) => {
     setFilterOpen(false);
@@ -255,10 +268,12 @@ const CategoryOutsourced = () => {
         return updatedSelectedFilters;
       });
 
+      // Atualize o estado filteredData com os dados filtrados
       const filteredRows = applyFilters(documents.docs.rows, appliedFilterValue);
       const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
       setFilteredData(sortedRows);
 
+      // Atualize os documentos com os dados filtrados
       setDocuments({
         success: true,
         docs: {
@@ -282,6 +297,7 @@ const CategoryOutsourced = () => {
         const token = localStorage.getItem('Token');
 
         if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
           router.push('/login');
           return;
         }
@@ -302,28 +318,33 @@ const CategoryOutsourced = () => {
           setTokenVerified(true);
         }
 
+        // Se houver um filtro aplicado, filtre os dados usando o filtro
         const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
           const filterColumnValue = appliedFilterValue[filterColumn];
 
+          // Verificar se o valor do filtro é 'TODOS'
           if (filterColumnValue === 'TODOS') {
-            return filteredData;
+            return filteredData; // Não aplicar filtro se for 'TODOS'
           }
 
           return filteredData.filter((document) => {
             const columnValue = document[filterColumn];
 
+            // Verificar se o valor da coluna não é nulo antes de chamar toString()
             if (columnValue !== null && columnValue !== undefined) {
               return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
             }
 
-            return false;
+            return false; // Se for nulo ou indefinido, não incluir no resultado
           });
         }, data.docs.rows);
 
         const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
 
+        // Atualize o estado filteredData com os dados filtrados
         setFilteredData(sortedRows);
 
+        // Atualize os documentos com os dados filtrados
         setDocuments({
           success: data.success,
           docs: {
@@ -337,6 +358,8 @@ const CategoryOutsourced = () => {
       }
     }
   };
+
+
 
   const handlePageSizeChange = (size) => {
     setPageSize(size);
@@ -375,6 +398,7 @@ const CategoryOutsourced = () => {
     }
   }, [searchTerm, documents, sortColumn, sortOrder, fetchData]);
 
+
   const handleClearSearch = () => {
     setSearchTerm('');
     setFilterOpen(false);
@@ -385,12 +409,13 @@ const CategoryOutsourced = () => {
     setDocuments({
       success: true,
       docs: {
-        rows: filteredData,
+        rows: filteredData, // Use filteredData em vez de originalData
         count: filteredData.length,
         outsourcedCount: documents.docs.outsourcedCount,
       },
     });
   };
+
 
   const totalPages = Math.ceil(documents.docs.outsourcedCount / pageSize) || 1;
 
@@ -420,10 +445,97 @@ const CategoryOutsourced = () => {
   };
 
   useEffect(() => {
-    if (isTokenVerified) {
-      fetchData();
-    }
-  }, [currentPage, pageSize, sortColumn, sortOrder, appliedFilterValue, isTokenVerified]);
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        handleSearch();
+      }
+    };
+
+    document.addEventListener('keypress', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keypress', handleKeyPress);
+    };
+  }, [handleSearch]);
+
+
+  useEffect(() => {
+    const fetchDataWithFilter = async () => {
+      try {
+        //setLoading(true);
+        const token = localStorage.getItem('Token');
+        const id = localStorage.getItem('FontanaUser');
+
+        if (!token) {
+          // Se o token não estiver presente, redirecione para a página de login
+          router.push('/login');
+          return;
+        }
+
+        const response = await fetch(`/api/category-outsourced?page=${currentPage}&pageSize=${pageSize}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token, id }),
+        });
+
+        const data = await response.json();
+        if (response.status === 401) {
+          router.push('/login');
+        }
+        else if (response.status === 403) {
+          router.push('/403');
+        }
+        else {
+          setTokenVerified(true);
+        }
+
+        // Se houver um filtro aplicado, filtre os dados usando o filtro
+        const filteredRows = Object.keys(appliedFilterValue).reduce((filteredData, filterColumn) => {
+          const filterColumnValue = appliedFilterValue[filterColumn];
+
+          // Verificar se o valor do filtro é 'TODOS'
+          if (filterColumnValue === 'TODOS') {
+            return filteredData; // Não aplicar filtro se for 'TODOS'
+          }
+
+          return filteredData.filter((document) => {
+            const columnValue = document[filterColumn];
+
+            // Verificar se o valor da coluna não é nulo antes de chamar toString()
+            if (columnValue !== null && columnValue !== undefined) {
+              return columnValue.toString().toLowerCase() === filterColumnValue.toLowerCase();
+            }
+
+            return false; // Se for nulo ou indefinido, não incluir no resultado
+          });
+        }, data.docs.rows);
+
+        const sortedRows = sortRows(filteredRows, sortColumn, sortOrder);
+
+        // Armazene os dados originais
+        setOriginalData(data.docs.rows);
+
+        setDocuments({
+          success: data.success,
+          docs: {
+            rows: sortedRows,
+            count: sortedRows.length,
+            outsourcedCount: data.docs.outsourcedCount,
+          },
+        });
+      } catch (error) {
+        console.error('Erro ao obter as categorias de terceiros:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDataWithFilter();
+  }, [router, appliedFilterValue, currentPage, pageSize, sortColumn, sortOrder]);
+
+  const { success, docs } = documents;
 
   return (
     <div>
@@ -576,52 +688,89 @@ const CategoryOutsourced = () => {
                           onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue['CATEGORIA'])}
                           className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                         >
-                          Filtrar
+                          Aplicar
                         </button>
                       </div>
+
+
+
                     </div>
                   )}
 
-                  {/* Conteúdo */}
-                  {documents.docs.rows.map((document) => (
-                    <div key={document.CATEGORIA} className="flex w-[2059px] border-b border-gray-300">
+                  {documents.docs.rows.map((document: any, index) => (
+                    <div className='w-[1440px]' key={document.id || index}>
                       <div
-                        className={`data-cell border-r border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                        style={{ width: '59px' }}
+                        className={`flex text-gray-700 whitespace-nowrap w-[2059px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       >
-                        <FaTrashAlt
-                          className="text-red-500 text-xl ml-auto"
-                          onClick={() => deleteCategoria(document.CATEGORIA)}
-                        />
-                      </div>
-                      <div
-                        className={`data-cell border-r border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                        style={{ width: '2000px' }}
-                      >
-                        {document.CATEGORIA}
+                        {Object.keys(columnWidths).map((column) => (
+                          <div
+                            key={column}
+                            className={`column-cell border border-gray-300 py-2`}
+                            style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                          >
+                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
+                              <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
+                            </Link>
+                              <button onClick={() => deleteCategoria(document.CATEGORIA)}>
+                                <FaTrashAlt className='text-xl mt-0.5 w-[12px] text-red-500 mx-0.5' />
+                              </button></div>
+                            ) : (
+                              document[column]
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   ))}
                 </div>
-
-                <div className="flex items-center justify-center mt-4">
-                  <button
-                    onClick={goToPreviousPage}
-                    className="border border-gray-300 px-2 py-1 rounded mr-2"
-                    disabled={currentPage === 1}
-                  >
-                    Anterior
-                  </button>
-                  <button
-                    onClick={goToNextPage}
-                    className="border border-gray-300 px-2 py-1 rounded ml-2"
-                    disabled={currentPage === totalPages}
-                  >
-                    Próximo
-                  </button>
-                </div>
               </div>
             )}
+
+            <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
+              <button
+                onClick={goToPreviousPage}
+                disabled={currentPage === 1}
+                className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage === 1 ? 'invisible' : ''}`}
+              >
+                Página Anterior
+              </button>
+              <div className="flex items-center">
+                <span className="mr-2">Registros por página:</span>
+                <button
+                  onClick={() => handlePageSizeChange(10)}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 10 ? 'bg-blue-700' : ''}`}
+                >
+                  10
+                </button>
+                <button
+                  onClick={() => handlePageSizeChange(25)}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 25 ? 'bg-blue-700' : ''}`}
+                >
+                  25
+                </button>
+                <button
+                  onClick={() => handlePageSizeChange(50)}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 50 ? 'bg-blue-700' : ''}`}
+                >
+                  50
+                </button>
+                <button
+                  onClick={() => handlePageSizeChange(100)}
+                  className={`border border-gray-200 px-2 py-1 rounded bg-blue-500 text-white mr-2 ${pageSize === 100 ? 'bg-blue-700' : ''}`}
+                >
+                  100
+                </button>
+              </div>
+              <span className="px-4 py-2  rounded text-gray-500">
+                Página {currentPage} de {totalPages}
+              </span>
+              <button
+                onClick={goToNextPage}
+                className={`border border-gray-200 px-4 py-2 rounded bg-blue-500 text-white ${currentPage * pageSize >= documents.docs.outsourcedCount ? 'invisible' : ''}`}
+              >
+                Próxima Página
+              </button>
+            </div>
           </div>
         </div>
       </div>)}
