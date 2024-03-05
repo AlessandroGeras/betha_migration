@@ -5,7 +5,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
-import { Resizable } from 'react-resizable';
+import '../public/css/style.css';
 
 const CategoryOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -29,10 +29,6 @@ const CategoryOutsourced = () => {
   const [popupMessage, setPopupMessage] = useState('');
   const [modalColor, setModalColor] = useState('#e53e3e');
   const [textColor, setTextColor] = useState('#e53e3e');
-  const [columnWidths, setColumnWidths] = useState({
-    '': '59px',
-    'CATEGORIA': '2000px',
-  });
 
   const closeModal = () => {
     setShowModal(false);
@@ -116,7 +112,10 @@ const CategoryOutsourced = () => {
 
 
 
-
+  const columnWidths = {
+    '': '59px',
+    'CATEGORIA': '2000px',
+  };
 
   const columnLabels = {
     '': '',
@@ -631,42 +630,31 @@ const CategoryOutsourced = () => {
                   {/* Cabeçalho */}
                   <div className="flex text-gray-500 bg-white w-[2059px]">
                     {Object.keys(columnWidths).map((column) => (
-                      <Resizable
+                      <div
                         key={column}
-                        width={parseInt(columnWidths[column], 10)}
-                        height={0}
-                        onResize={(event, { size }) => {
-                          setColumnWidths((prevColumnWidths) => ({
-                            ...prevColumnWidths,
-                            [column]: `${size.width}px`,
-                          }));
-                        }}
+                        className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
+                        style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
+                        onClick={(event) => handleSort(column, event)}
                       >
-                        <div
-                          className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`}
-                          style={{ width: columnWidths[column] }}
-                        >
-                          {columnLabels[column]}
-                          <div className='ml-auto flex'>
-                            {column !== '' && (
-                              <>
-                                {sortColumn === column && (
-                                  sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
-                                )}
-                                <PiFunnelLight
-                                  className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleSort(column, e);
-                                  }}
-                                />
-                              </>
-                            )}
-                          </div>
+                        {columnLabels[column]}
+                        <div className='ml-auto flex'>
+                          {column !== '' && (
+                            <>
+                              {sortColumn === column && (
+                                sortOrder === 'asc' ? <span className="text-xl mt-[-3px]">↑</span> : <span className="text-xl mt-[-3px]">↓</span>
+                              )}
+                              <PiFunnelLight
+                                className={`text-xl mt-0.5 filter-icon ${filterOpen ? 'text-blue-500' : ''}`}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleSort(column, e);
+                                }}
+                              />
+                            </>
+                          )}
                         </div>
-                      </Resizable>
+                      </div>
                     ))}
-
                   </div>
 
                   {filterOpen && (
@@ -708,8 +696,8 @@ const CategoryOutsourced = () => {
                       >
                         {Object.keys(columnWidths).map((column) => (
                           <div
-                            key={column}
-                            className={`column-cell border border-gray-300 py-2`}
+                            key={column}                            
+                            className={`column-cell border border-gray-300 py-2 resizable`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
                             {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
