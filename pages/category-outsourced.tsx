@@ -5,7 +5,6 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
-import '../public/css/style.css';
 
 const CategoryOutsourced = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -690,17 +689,17 @@ const CategoryOutsourced = () => {
                   )}
 
                   {documents.docs.rows.map((document: any, index) => (
-                    <div className='w-[1440px resizable]' key={document.id || index}>
+                    <div className='w-[1440px]' key={document.id || index}>
                       <div
-                        className={`flex text-gray-700 whitespace-nowrap w-[2059px] overflow-x-auto resizable  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        className={`flex text-gray-700 whitespace-nowrap w-[2059px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       >
                         {Object.keys(columnWidths).map((column) => (
                           <div
-                            key={column}                            
-                            className={`column-cell border border-gray-300 py-2 resizable`}
+                            key={column}
+                            className={`column-cell border border-gray-300 py-2`}
                             style={{ width: column === 'CIDADE' ? (pageSize === 10 ? '310px' : '290px') : columnWidths[column] }}
                           >
-                            {column === '' ? (<div className='flex justify-center resizable'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
+                            {column === '' ? (<div className='flex justify-center'><Link href={{ pathname: '/find-category-outsourced', query: { id: document.CATEGORIA } }}>
                               <IoIosSearch className='text-xl mt-0.5 mx-0.5' />
                             </Link>
                               <button onClick={() => deleteCategoria(document.CATEGORIA)}>
