@@ -1166,9 +1166,9 @@ const Users = () => {
               )}
 
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[3140px  resizable]' key={document.id || Math.random().toString()}>
+                <div className='resizable]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  resizable ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap text-ellipsis overflow-hidden  resizable ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
