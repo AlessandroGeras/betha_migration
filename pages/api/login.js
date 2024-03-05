@@ -61,7 +61,7 @@ export default async function handler(req, res) {
                 }
             } else {
                 const usuarioexterno = await outsourceds.findOne({
-                    attributes: ['DS_SENHA', 'STATUS','FUNCAO'],
+                    attributes: ['DS_SENHA', 'STATUS', 'FUNCAO'],
                     where: {
                         ID_USUARIO: username,
                         ID_USUARIO_INTERNO: 'N',
@@ -72,6 +72,18 @@ export default async function handler(req, res) {
                     console.log(usuarioexterno);
                     if (usuarioexterno.STATUS == "Inativo") {
                         res.status(406).json({ error: 'Usuário desativado.' });
+                    }
+
+                    if (usuarioexterno.STATUS == "Periodo") {
+                        var periodoInicial = new Date(usuarioexterno.PERIODO_INICIAL);
+                        var periodoFinal = new Date(usuarioexterno.PERIODO_FINAL);
+                        var dataAtual = new Date();
+
+                        if (dataAtual >= periodoInicial && dataAtual <= periodoFinal) {
+                            console.log("Permitido");
+                        } else {
+                            console.log("Negado");
+                        }
                     }
 
 
@@ -89,7 +101,7 @@ export default async function handler(req, res) {
                         const role = "external";
 
                         const funcao = usuarioexterno.FUNCAO;
-                        
+
                         console.log(usuarioexterno);
 
 
@@ -100,10 +112,10 @@ export default async function handler(req, res) {
                         });
 
 
-                        if(docs){
+                        if (docs) {
                             permission = "outsourcedRead";
                         }
-                        else{
+                        else {
                             permission = "outsourced";
                         }
 
