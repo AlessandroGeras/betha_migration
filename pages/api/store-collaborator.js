@@ -118,7 +118,7 @@ export default async function handler(req, res) {
                         },
                     });
                     if (category) {
-                        const tipoDocumentos = category.TIPO_DOCUMENTO.split(', ');
+                        const tipoDocumentos = category.TIPO_DOCUMENTO.split('# ');
                         console.log(tipoDocumentos);
 
                         for (const tipoDocumento of tipoDocumentos) {

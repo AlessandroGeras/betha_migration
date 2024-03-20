@@ -49,7 +49,7 @@ export default async function handler(req, res) {
                 ID_USUARIO: id_usuario,
                 ...(periodo_inicial && { PERIODO_INICIAL: periodo_inicial }),
                 ...(periodo_final && { PERIODO_FINAL: periodo_final }),
-                CATEGORIA_PRINCIPAL: categorias.join('# '), // Concatenando os valores da array
+                CATEGORIA_PRINCIPAL: categorias.join(', '), // Concatenando os valores da array
             });
 
             // Criação dos documentos apenas se a empresa for criada com sucesso
