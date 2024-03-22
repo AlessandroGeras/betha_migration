@@ -962,7 +962,7 @@ const Users = () => {
         )}
 
         {documents.success && (
-          <div className=''>
+          <div className='bg-red-500 w-[8440px]'>
             <div className="flex items-center my-4">
               <input
                 placeholder="Pesquisa rápida"
@@ -1039,7 +1039,7 @@ const Users = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[8140px] bg-red-500`}>
+                <div className={`flex text-gray-500 w-[3140px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
