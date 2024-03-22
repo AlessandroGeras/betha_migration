@@ -961,8 +961,9 @@ const Users = () => {
           </div>
         )}
 
+      {/* LARGURA DAS OPÇÕES DE CAIXA RÁPIDA E OUTROS MENUS */}
         {documents.success && (
-          <div className='bg-red-500 w-[1440px]'>
+          <div className='w-[1440px]'>
             <div className="flex items-center my-4">
               <input
                 placeholder="Pesquisa rápida"
