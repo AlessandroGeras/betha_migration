@@ -45,8 +45,8 @@ const AddOutsourced = () => {
         e.preventDefault();
 
 
-        if (formData.categoria.length > 350) {
-            setPopupMessage('Máximo 350 caracteres');
+        if (formData.categoria.length > 250) {
+            setPopupMessage('Máximo 250 caracteres');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
@@ -137,7 +137,7 @@ const AddOutsourced = () => {
                             value={formData.categoria}
                             onChange={handleInputChange}
                             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                            max={350}
+                            max={250}
                         />
                     </div>
 
