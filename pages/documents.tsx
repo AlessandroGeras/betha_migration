@@ -209,7 +209,7 @@ const Users = () => {
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '2000px',
     'TERCEIRO': '350px',
-    'COLABORADOR': '500x',
+    'COLABORADOR': '500px',
     'VENCIMENTO': '260px',
   };
 
