@@ -576,7 +576,7 @@ const FindDocument = () => {
 
                         {formData.auditoria == "Sim" && (<div className="mt-6" style={{ display: formData.vencimento === 'Periodo' ? 'none' : 'block' }}>
                             <label htmlFor="dia" className="block text-sm font-medium text-gray-700">
-                                Dia fixo do mês<span className="text-red-500">*</span>
+                                <div className='invisible'>Dia fixo do mês<span className="text-red-500">*</span></div>
                             </label>
                             <input
                                 type="number"
