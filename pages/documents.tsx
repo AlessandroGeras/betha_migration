@@ -1008,7 +1008,7 @@ const Users = () => {
             </div>
 
           {/* LARGURA DA LISTA PRINCIPAL */}
-            <div className="flex flex-col h-[550px] w-[3140px] overflow-y-auto text-ellipsis overflow-hidden">
+            <div className="flex flex-col h-[550px] w-[3140px] overflow-y-auto text-ellipsis overflow-hidden bg-green-500">
               {/* LARGURA DOS FILTROS DA LISTA - ACOMPANHA A LARGURA DA LISTA PRINCIPAL */}
               <div className="flex text-gray-500 bg-white w-[3140px]">
                 {Object.keys(columnWidths).map((column) => (
@@ -1168,9 +1168,9 @@ const Users = () => {
               )}
 
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[1440px] bg-red-500' key={document.id || Math.random().toString()}>
+                <div className='w-[3140px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-red-700 whitespace-nowrap w-[1440px] text-ellipsis overflow-hidden bg-red-500  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
