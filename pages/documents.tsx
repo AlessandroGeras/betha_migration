@@ -207,7 +207,7 @@ const Users = () => {
   const columnWidths = {
     '': '69px',
     'STATUS': '200px',
-    'TIPO_DOCUMENTO': '2200px',
+    'TIPO_DOCUMENTO': '2000px',
     'TERCEIRO': '350px',
     'COLABORADOR': '360px',
     'VENCIMENTO': '260px',
@@ -1067,7 +1067,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '2200px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '2000px' }}>
                     <select
                       value={selectedFilterValue['TIPO_DOCUMENTO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TIPO_DOCUMENTO': e.target.value })}
