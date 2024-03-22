@@ -1009,7 +1009,7 @@ const Users = () => {
           {/* LARGURA DA LISTA PRINCIPAL */}
             <div className="flex flex-col h-[550px] w-[3140px] overflow-y-auto text-ellipsis overflow-hidden">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[8140px] bg-red-500">
+              <div className="flex text-green-500 bg-red-500 w-[8140px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
