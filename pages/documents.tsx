@@ -1209,7 +1209,7 @@ const Users = () => {
           </div>
         )}
 
-        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1400px]">
+        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[8140px]">
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
