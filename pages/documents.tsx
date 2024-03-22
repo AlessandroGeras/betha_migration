@@ -1209,7 +1209,8 @@ const Users = () => {
           </div>
         )}
 
-        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[8140px] bg-red-500">
+        {/* RODAPÉ */}
+        <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px] bg-red-500">
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
