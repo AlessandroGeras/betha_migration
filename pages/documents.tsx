@@ -538,7 +538,7 @@ const Users = () => {
     setCurrentPage(1);
 
     if (searchTerm === '') {
-      fetchData();
+      handleClearSearch();
     } else {
       const filteredRows = documents.docs.rows.filter((document) =>
         Object.entries(document).some(([key, value]) => {
