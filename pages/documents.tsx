@@ -209,7 +209,7 @@ const Users = () => {
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '2000px',
     'TERCEIRO': '350px',
-    'COLABORADOR': '260px',
+    'COLABORADOR': '360px',
     'VENCIMENTO': '260px',
   };
 
@@ -1007,10 +1007,10 @@ const Users = () => {
               </div>)}
             </div>
 
-          {/* LARGURA DA LISTA PRINCIPAL */}
-            <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto overflow-x-auto text-ellipsis overflow-hidden bg-green-500">
-              {/* LARGURA DOS FILTROS DA LISTA - ACOMPANHA A LARGURA DA LISTA PRINCIPAL */}
-              <div className="flex text-gray-500 bg-white w-[3140px]">
+          {/* LARGURA DA LISTA PRINCIPAL Fixa 1440px*/}
+            <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto overflow-x-auto text-ellipsis overflow-hidden">
+              {/* LARGURA DOS FILTROS DA LISTA */}
+              <div className="flex text-gray-500 bg-white w-[3240px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -1041,7 +1041,7 @@ const Users = () => {
 
             {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[3140px]`}>
+                <div className={`flex text-gray-500 w-[3240px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
@@ -1167,10 +1167,11 @@ const Users = () => {
                 </div>
               )}
 
+            {/* LARGURA DO CONTEÚDO INTERNO DA LISTA PRINCIPAL */}
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[3140px]' key={document.id || Math.random().toString()}>
+                <div className='w-[3240px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3240px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
