@@ -962,7 +962,7 @@ const Users = () => {
         )}
 
         {documents.success && (
-          <div className='bg-red-500 w-[8440px]'>
+          <div className='bg-red-500 w-[1440px]'>
             <div className="flex items-center my-4">
               <input
                 placeholder="Pesquisa rápida"
