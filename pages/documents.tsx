@@ -1008,8 +1008,8 @@ const Users = () => {
 
           {/* LARGURA DA LISTA PRINCIPAL */}
             <div className="flex flex-col h-[550px] w-[3140px] overflow-y-auto text-ellipsis overflow-hidden">
-              {/* Cabeçalho */}
-              <div className="flex text-green-500 bg-red-500 w-[8140px]">
+              {/* LARGURA DOS FILTROS DA LISTA - ACOMPANHA A LARGURA DA LISTA PRINCIPAL */}
+              <div className="flex text-gray-500 bg-white w-[3140px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -1039,7 +1039,7 @@ const Users = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[3140px]`}>
+                <div className={`flex text-gray-500 w-[8140px] bg-red-500`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
