@@ -209,7 +209,7 @@ const Users = () => {
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '2000px',
     'TERCEIRO': '350px',
-    'COLABORADOR': '360px',
+    'COLABORADOR': '500x',
     'VENCIMENTO': '260px',
   };
 
@@ -1010,7 +1010,7 @@ const Users = () => {
           {/* LARGURA DA LISTA PRINCIPAL Fixa 1440px*/}
             <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto overflow-x-auto text-ellipsis overflow-hidden">
               {/* LARGURA DOS FILTROS DA LISTA */}
-              <div className="flex text-gray-500 bg-white w-[3240px]">
+              <div className="flex text-gray-500 bg-white w-[3480px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -1041,7 +1041,7 @@ const Users = () => {
 
             {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[3240px]`}>
+                <div className={`flex text-gray-500 w-[3480px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
@@ -1111,7 +1111,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
                     <select
                       value={selectedFilterValue['COLABORADOR']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
@@ -1169,9 +1169,9 @@ const Users = () => {
 
             {/* LARGURA DO CONTEÚDO INTERNO DA LISTA PRINCIPAL */}
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[3240px]' key={document.id || Math.random().toString()}>
+                <div className='w-[3480px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3240px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[3480px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
