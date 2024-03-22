@@ -240,7 +240,7 @@ const AddOutsourced = () => {
                     {/* Linha 3 */}
                     <div className="col-span-3">
                         <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
-                            Nome de Contato <span className="text-red-500">*</span>
+                            Nome do Colaborador <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
