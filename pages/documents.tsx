@@ -1006,9 +1006,10 @@ const Users = () => {
               </div>)}
             </div>
 
-            <div className="flex flex-col h-[550px] w-[8140px] overflow-y-auto text-ellipsis overflow-hidden bg-red-500">
+          {/* LARGURA DA LISTA PRINCIPAL */}
+            <div className="flex flex-col h-[550px] w-[3140px] overflow-y-auto text-ellipsis overflow-hidden">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[3140px]">
+              <div className="flex text-gray-500 bg-white w-[1440px] bg-red-500">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -1209,7 +1210,7 @@ const Users = () => {
           </div>
         )}
 
-        {/* RODAPÉ */}
+        {/* LARGURA DO RODAPÉ */}
         <div className="flex mt-4 justify-between border-t border-gray-300 items-center mt-4 w-[1440px]">
           <button
             onClick={goToPreviousPage}
