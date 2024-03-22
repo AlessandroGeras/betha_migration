@@ -1039,8 +1039,9 @@ const Users = () => {
                 ))}
               </div>
 
+            {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
               {filterOpen && (
-                <div className={`flex text-green-500 w-[8140px] bg-red-500`}>
+                <div className={`flex text-gray-500 w-[3140px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
@@ -1167,7 +1168,7 @@ const Users = () => {
               )}
 
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[3140px]' key={document.id || Math.random().toString()}>
+                <div className='w-[8140px] bg-red-500' key={document.id || Math.random().toString()}>
                   <div
                     className={`flex text-gray-700 whitespace-nowrap w-[3140px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
