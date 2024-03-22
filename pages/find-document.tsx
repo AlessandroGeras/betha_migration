@@ -559,7 +559,6 @@ const FindDocument = () => {
                         </div>
                         <div className="mt-6">
                             <label htmlFor="identificacao" className="block text-sm font-medium text-gray-700">
-                                <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
