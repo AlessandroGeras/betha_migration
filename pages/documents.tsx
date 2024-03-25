@@ -207,8 +207,8 @@ const Users = () => {
   const columnWidths = {
     '': '69px',
     'STATUS': '200px',
-    'TIPO_DOCUMENTO': '520px',
-    'TERCEIRO': '330px',
+    'TIPO_DOCUMENTO': '2000px',
+    'TERCEIRO': '500px',
     'COLABORADOR': '500px',
     'VENCIMENTO': '260px',
   };
@@ -1010,7 +1010,7 @@ const Users = () => {
           {/* LARGURA DA LISTA PRINCIPAL Fixa 1440px*/}
             <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto overflow-x-auto text-ellipsis overflow-hidden">
               {/* LARGURA DOS FILTROS DA LISTA */}
-              <div className="flex text-gray-500 bg-white w-[3480px]">
+              <div className="flex text-gray-500 bg-white w-[ 1830px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -1041,7 +1041,7 @@ const Users = () => {
 
             {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[3480px]`}>
+                <div className={`flex text-gray-500 w-[ 1830px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
@@ -1067,7 +1067,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '520px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '2000px' }}>
                     <select
                       value={selectedFilterValue['TIPO_DOCUMENTO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TIPO_DOCUMENTO': e.target.value })}
@@ -1090,7 +1090,7 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '330px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
                     <select
                       value={selectedFilterValue['TERCEIRO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TERCEIRO': e.target.value })}
@@ -1169,9 +1169,9 @@ const Users = () => {
 
             {/* LARGURA DO CONTEÚDO INTERNO DA LISTA PRINCIPAL */}
               {documents.docs.rows.map((document, index) => (
-                <div className='w-[3480px]' key={document.id || Math.random().toString()}>
+                <div className='w-[ 1830px]' key={document.id || Math.random().toString()}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[3480px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[ 1830px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                   >
                     {Object.keys(columnWidths).map((column) => (
                       <div
