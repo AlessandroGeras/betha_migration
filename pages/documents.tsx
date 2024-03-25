@@ -208,7 +208,7 @@ const Users = () => {
     '': '69px',
     'STATUS': '200px',
     'TIPO_DOCUMENTO': '520px',
-    'TERCEIRO': '500px',
+    'TERCEIRO': '350px',
     'COLABORADOR': '500px',
     'VENCIMENTO': '260px',
   };
@@ -1090,7 +1090,7 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
                     <select
                       value={selectedFilterValue['TERCEIRO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TERCEIRO': e.target.value })}
