@@ -45,8 +45,8 @@ const AddOutsourced = () => {
         e.preventDefault();
 
 
-        if (formData.categoria.length > 250) {
-            setPopupMessage('Máximo 250 caracteres');
+        if (formData.categoria.length > 40) {
+            setPopupMessage('Máximo 40 caracteres');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
