@@ -1157,7 +1157,7 @@ const Users = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 ml-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -1167,7 +1167,7 @@ const Users = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 ml-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -1179,7 +1179,7 @@ const Users = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 ml-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -1189,7 +1189,7 @@ const Users = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 ml-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -1200,7 +1200,7 @@ const Users = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 ml-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
