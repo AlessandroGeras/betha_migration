@@ -675,19 +675,50 @@ const CategoryOutsourced = () => {
                             </option>
                           ))}
                         </select>
-                        <div className="mt-2">
                         <button
                           onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue['CATEGORIA'])}
                           className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                         >
                           Aplicar
                         </button>
-                        </div>
                       </div>
 
 
 
                     </div>
+
+
+
+
+<div className={`flex text-gray-500 w-[2059px]`}>
+<div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
+  <div className="flex items-center">
+  </div>
+</div>
+<div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '2000px' }}>
+  <select
+    value={selectedFilterValue['CATEGORIA']}
+    onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA': e.target.value })}
+    className="border border-gray-300 px-2 py-1 rounded"
+  >
+    <option value="">Todos</option>
+    {handleFilterValue('CATEGORIA').map((value) => (
+      <option key={value} value={value}>
+        {value}
+      </option>
+    ))}
+  </select>
+  <button
+    onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue['CATEGORIA'])}
+    className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+  >
+    Aplicar
+  </button>
+</div>
+
+
+
+</div>
                   )}
 
                   {documents.docs.rows.map((document: any, index) => (
