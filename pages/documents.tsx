@@ -206,11 +206,11 @@ const Users = () => {
 
   const columnWidths = {
     '': '69px',
-    'STATUS': '150px',
-    'TIPO_DOCUMENTO': '470px',
-    'TERCEIRO': '280px',
-    'COLABORADOR': '300px',
-    'VENCIMENTO': '210px',
+    'STATUS': '200px',
+    'TIPO_DOCUMENTO': '520px',
+    'TERCEIRO': '330px',
+    'COLABORADOR': '350px',
+    'VENCIMENTO': '260px',
   };
 
   const columnLabels = {
