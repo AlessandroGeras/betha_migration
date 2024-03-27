@@ -675,12 +675,14 @@ const CategoryOutsourced = () => {
                             </option>
                           ))}
                         </select>
+                        <div className="mt-2">
                         <button
                           onClick={() => handleSearchByFilter('CATEGORIA', selectedFilterValue['CATEGORIA'])}
                           className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                         >
                           Aplicar
                         </button>
+                        </div>
                       </div>
 
 
