@@ -1167,6 +1167,83 @@ const Users = () => {
                 </div>
               )}
 
+
+
+
+
+               {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
+               {filterOpen && (
+                <div className={`flex text-gray-500 w-[1700px]`}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
+                    <div className="flex items-center">
+                    </div>
+                  </div>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                   
+                    <button
+                      onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '520px' }}>
+                   
+                    <button
+                      onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '330px' }}>
+                   
+                    <button
+                      onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                   
+                    <button
+                      onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '260px' }}>
+                   
+                    <button
+                      onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
+                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                    >
+                      Aplicar
+                    </button>
+                  </div>
+
+
+
+
+
+                </div>
+              )}
+
+
+
+
+
+
+
             {/* LARGURA DO CONTEÚDO INTERNO DA LISTA PRINCIPAL */}
               {documents.docs.rows.map((document, index) => (
                 <div className='w-[1700px]' key={document.id || Math.random().toString()}>
