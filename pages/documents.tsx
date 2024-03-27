@@ -1059,12 +1059,7 @@ const Users = () => {
                         </option>
                       ))}
                     </select>
-                    <button
-                      onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
+                    
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '520px' }}>
@@ -1080,12 +1075,7 @@ const Users = () => {
                         </option>
                       ))}
                     </select>
-                    <button
-                      onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
+                    
                   </div>
 
 
@@ -1103,12 +1093,7 @@ const Users = () => {
                         </option>
                       ))}
                     </select>
-                    <button
-                      onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
+                    
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
@@ -1124,12 +1109,7 @@ const Users = () => {
                       </option>
                       ))}
                     </select>
-                    <button
-                      onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
+                   
                   </div>
 
 
@@ -1152,12 +1132,7 @@ const Users = () => {
 
 
                     </select>
-                    <button
-                      onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
+                    
                   </div>
 
 
