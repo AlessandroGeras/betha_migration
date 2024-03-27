@@ -206,11 +206,11 @@ const Users = () => {
 
   const columnWidths = {
     '': '69px',
-    'STATUS': '150px',
-    'TIPO_DOCUMENTO': '470px',
-    'TERCEIRO': '280px',
-    'COLABORADOR': '300px',
-    'VENCIMENTO': '210px',
+    'STATUS': '125px',
+    'TIPO_DOCUMENTO': '445px',
+    'TERCEIRO': '255px',
+    'COLABORADOR': '275px',
+    'VENCIMENTO': '185px',
   };
 
   const columnLabels = {
@@ -1046,7 +1046,7 @@ const Users = () => {
                     <div className="flex items-center">
                     </div>
                   </div>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '150px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '125px' }}>
                     <select
                       value={selectedFilterValue['STATUS']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'STATUS': e.target.value })}
@@ -1062,7 +1062,7 @@ const Users = () => {
                     
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '470px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '445px' }}>
                     <select
                       value={selectedFilterValue['TIPO_DOCUMENTO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TIPO_DOCUMENTO': e.target.value })}
@@ -1080,7 +1080,7 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '280px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '255px' }}>
                     <select
                       value={selectedFilterValue['TERCEIRO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TERCEIRO': e.target.value })}
@@ -1096,7 +1096,7 @@ const Users = () => {
                     
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '275px' }}>
                     <select
                       value={selectedFilterValue['COLABORADOR']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
@@ -1113,7 +1113,7 @@ const Users = () => {
                   </div>
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '210px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '185px' }}>
                     <select
                       value={selectedFilterValue['VENCIMENTO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'VENCIMENTO': e.target.value })}
@@ -1153,7 +1153,7 @@ const Users = () => {
                     <div className="flex items-center">
                     </div>
                   </div>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '150px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '125px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
@@ -1163,7 +1163,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '470px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '445px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
@@ -1175,7 +1175,7 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '280px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '255px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
@@ -1185,7 +1185,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '275px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
@@ -1196,7 +1196,7 @@ const Users = () => {
                   </div>
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '210px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '185px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
