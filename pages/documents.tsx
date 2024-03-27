@@ -208,8 +208,8 @@ const Users = () => {
     '': '69px',
     'STATUS': '125px',
     'TIPO_DOCUMENTO': '445px',
-    'TERCEIRO': '305px',
-    'COLABORADOR': '305px',
+    'TERCEIRO': '308px',
+    'COLABORADOR': '308px',
     'VENCIMENTO': '185px',
   };
 
@@ -1080,7 +1080,7 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '305px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                     <select
                       value={selectedFilterValue['TERCEIRO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TERCEIRO': e.target.value })}
@@ -1096,7 +1096,7 @@ const Users = () => {
                     
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '305px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                     <select
                       value={selectedFilterValue['COLABORADOR']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'COLABORADOR': e.target.value })}
@@ -1175,7 +1175,7 @@ const Users = () => {
 
 
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '305px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
@@ -1185,7 +1185,7 @@ const Users = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '305px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                    
                     <button
                       onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
