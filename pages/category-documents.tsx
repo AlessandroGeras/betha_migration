@@ -113,7 +113,7 @@ const CategoryOutsourced = () => {
 
   const columnWidths = {
     '': '59px',
-    'CATEGORIA': '1381px',
+    'CATEGORIA': '1231px',
   };
 
   const columnLabels = {
@@ -662,7 +662,7 @@ const CategoryOutsourced = () => {
                         <div className="flex items-center">
                         </div>
                       </div>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '1381px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '1231px' }}>
                         <select
                           value={selectedFilterValue['CATEGORIA']}
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA': e.target.value })}
