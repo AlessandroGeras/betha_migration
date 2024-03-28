@@ -121,7 +121,7 @@ const AddOutsourced = () => {
         }
 
         if (formData.nomeTerceiro.length > 25) {
-            setPopupMessage('Máximo 25 caracteres');
+            setPopupMessage('Máximo 25 caracteres para o campo Nome Terceiro');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');

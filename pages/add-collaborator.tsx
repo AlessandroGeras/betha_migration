@@ -93,7 +93,7 @@ const AddOutsourced = () => {
         }
 
         if (formData.usuario.length > 25) {
-            setPopupMessage('Máximo 25 caracteres');
+            setPopupMessage('Máximo 25 caracteres para o campo Nome do Colaborador');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
