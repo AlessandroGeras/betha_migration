@@ -119,31 +119,19 @@ const Outsourced = () => {
   };
 
   const columnWidths = {
-    '': '59px',
+    '': '69px',
     'STATUS': '200px',
-    'NOME_TERCEIRO': '500px',
-    'CNPJ': '300px',
-    'ENDEREÇO': '500px',
-    'CIDADE': '310px',
-    'UF': '200px',
-    'TELEFONE': '299px',
-    'NM_USUARIO': '400px',
-    'CATEGORIA_PRINCIPAL': '350px',
-    'ID_USUARIO': '350px',
+    'NOME_TERCEIRO': '308px',
+    'NM_USUARIO': '308px',
+    'CATEGORIA_PRINCIPAL': '555px',
   };
 
   const columnLabels = {
     '': '',
     'STATUS': 'STATUS',
     'NOME_TERCEIRO': 'NOME_TERCEIRO',
-    'CNPJ': 'CNPJ',
-    'ENDEREÇO': 'ENDEREÇO',
-    'CIDADE': 'CIDADE',
-    'UF': 'UF',
-    'TELEFONE': 'TELEFONE',
     'NM_USUARIO': 'USUARIO',
     'CATEGORIA_PRINCIPAL': 'CATEGORIA_PRINCIPAL',
-    'ID_USUARIO': 'ID_USUARIO',
   };
 
   const sortRows = (rows, column, order) => {
@@ -675,7 +663,7 @@ const Outsourced = () => {
 
                 <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
                   {/* Cabeçalho */}
-                  <div className="flex text-gray-500 bg-white w-[3400px]">
+                  <div className="flex text-gray-500 bg-white w-[1440px]">
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
@@ -705,8 +693,8 @@ const Outsourced = () => {
                   </div>
 
                   {filterOpen && (
-                    <div className={`flex text-gray-500 w-[3400px]`}>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
+                    <div className={`flex text-gray-500 w-[1440px]`}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                         <div className="flex items-center">
                         </div>
                       </div>
@@ -723,15 +711,10 @@ const Outsourced = () => {
                             </option>
                           ))}
                         </select>
-                        <button
-                          onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
+                       
                       </div>
 
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                         <select
                           value={selectedFilterValue['NOME_TERCEIRO']}
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
@@ -744,119 +727,10 @@ const Outsourced = () => {
                             </option>
                           ))}
                         </select>
-                        <button
-                          onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
+                      
+                      </div> 
 
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
-                        <select
-                          value={selectedFilterValue['CNPJ']}
-                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CNPJ': e.target.value })}
-                          className="border border-gray-300 px-2 py-1 rounded"
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('CNPJ').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue['CNPJ'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
-
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
-                        <select
-                          value={selectedFilterValue['ENDEREÇO']}
-                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ENDEREÇO': e.target.value })}
-                          className="border border-gray-300 px-2 py-1 rounded"
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('ENDEREÇO').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('ENDEREÇO', selectedFilterValue['ENDEREÇO'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
-
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '310px' }}>
-                        <select
-                          value={selectedFilterValue['CIDADE']}
-                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CIDADE': e.target.value })}
-                          className="border border-gray-300 px-2 py-1 rounded"
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('CIDADE').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('CIDADE', selectedFilterValue['CIDADE'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
-
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
-                        <select
-                          value={selectedFilterValue['UF']}
-                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'UF': e.target.value })}
-                          className="border border-gray-300 px-2 py-1 rounded"
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('UF').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('UF', selectedFilterValue['UF'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
-
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '299px' }}>
-                        <select
-                          value={selectedFilterValue['TELEFONE']}
-                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'TELEFONE': e.target.value })}
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('TELEFONE').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('TELEFONE', selectedFilterValue['TELEFONE'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
-
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                         <select
                           value={selectedFilterValue['NM_USUARIO']}
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
@@ -869,15 +743,10 @@ const Outsourced = () => {
                             </option>
                           ))}
                         </select>
-                        <button
-                          onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
+                      
                       </div>
 
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '555px' }}>
                         <select
                           value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
@@ -890,6 +759,54 @@ const Outsourced = () => {
                             </option>
                           ))}
                         </select>
+                       
+                      </div>
+
+                     
+
+                    </div>
+                  )}
+
+
+
+{filterOpen && (
+                    <div className={`flex text-gray-500 w-[1440px]`}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
+                        <div className="flex items-center">
+                        </div>
+                      </div>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                      
+                        <button
+                          onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
+                      
+                        <button
+                          onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div> 
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
+                     
+                        <button
+                          onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
+                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
+
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '555px' }}>
+                      
                         <button
                           onClick={() => handleSearchByFilter('CATEGORIA_PRINCIPAL', selectedFilterValue['CATEGORIA_PRINCIPAL'])}
                           className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
@@ -898,35 +815,21 @@ const Outsourced = () => {
                         </button>
                       </div>
 
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
-                        <select
-                          value={selectedFilterValue['ID_USUARIO']}
-                          onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
-                          className="border border-gray-300 px-2 py-1 rounded"
-                        >
-                          <option value="">Todos</option>
-                          {handleFilterValue('ID_USUARIO').map((value) => (
-                            <option key={value} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
-                          className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                        >
-                          Aplicar
-                        </button>
-                      </div>
+                     
 
                     </div>
                   )}
+
+
+
+
+
 
                   {documents.docs.rows.map((document: any, index) => (
                     /* Tamanho total tabela registros */
                     <div className='w-[1440px]' key={document.id || index}>
                       <div
-                        className={`flex text-gray-700 whitespace-nowrap w-[3400px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                         key={document.id || Math.random().toString()}
                       >
                         {Object.keys(columnWidths).map((column) => (
