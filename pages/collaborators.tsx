@@ -778,12 +778,12 @@ const Collaborators = () => {
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '630px' }}>
                     <select
-                      value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
+                      value={selectedFilterValue['FUNCAO']}
+                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'FUNCAO': e.target.value })}
                       className="border border-gray-300 px-2 py-1 rounded"
                     >
                       <option value="">Todos</option>
-                      {handleFilterValue('CATEGORIA_PRINCIPAL').map((value) => (
+                      {handleFilterValue('FUNCAO').map((value) => (
                         <option key={value} value={value}>
                           {value}
                         </option>
@@ -840,7 +840,7 @@ const Collaborators = () => {
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '630px' }}>
                   
                     <button
-                      onClick={() => handleSearchByFilter('CATEGORIA_PRINCIPAL', selectedFilterValue['CATEGORIA_PRINCIPAL'])}
+                      onClick={() => handleSearchByFilter('FUNCAO', selectedFilterValue['FUNCAO'])}
                       className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
                     >
                       Aplicar
