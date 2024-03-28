@@ -113,7 +113,7 @@ const CategoryOutsourced = () => {
 
   const columnWidths = {
     '': '59px',
-    'CATEGORIA': '2000px',
+    'CATEGORIA': '1381px',
   };
 
   const columnLabels = {
@@ -627,7 +627,7 @@ const CategoryOutsourced = () => {
 
                 <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto text-ellipsis overflow-hidden">
                   {/* Cabeçalho */}
-                  <div className="flex text-gray-500 bg-white w-[2059]">
+                  <div className="flex text-gray-500 bg-white w-[1440px]">
                     {Object.keys(columnWidths).map((column) => (
                       <div
                         key={column}
@@ -657,12 +657,12 @@ const CategoryOutsourced = () => {
                   </div>
 
                   {filterOpen && (
-                    <div className={`flex text-gray-500 w-[2059]`}>
+                    <div className={`flex text-gray-500 w-[1440px]`}>
                       <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
                         <div className="flex items-center">
                         </div>
                       </div>
-                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '2000px' }}>
+                      <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '1381px' }}>
                         <select
                           value={selectedFilterValue['CATEGORIA']}
                           onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA': e.target.value })}
@@ -691,7 +691,7 @@ const CategoryOutsourced = () => {
                   {documents.docs.rows.map((document: any, index) => (
                     <div className='w-[1440px]' key={document.id || index}>
                       <div
-                        className={`flex text-gray-700 whitespace-nowrap w-[2059] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                        className={`flex text-gray-700 whitespace-nowrap w-[1440px] text-ellipsis overflow-hidden  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                       >
                         {Object.keys(columnWidths).map((column) => (
                           <div
