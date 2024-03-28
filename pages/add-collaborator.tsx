@@ -92,6 +92,15 @@ const AddOutsourced = () => {
 
         }
 
+        if (formData.usuario.length > 25) {
+            setPopupMessage('Máximo 25 caracteres');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
+
         try {
             const token = localStorage.getItem('Token');
             const id = localStorage.getItem('FontanaUser');

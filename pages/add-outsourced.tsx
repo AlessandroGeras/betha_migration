@@ -120,6 +120,14 @@ const AddOutsourced = () => {
             return;
         }
 
+        if (formData.nomeTerceiro.length > 25) {
+            setPopupMessage('Máximo 25 caracteres');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
 
 
         try {
