@@ -810,7 +810,7 @@ const Collaborators = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1  rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -820,7 +820,7 @@ const Collaborators = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('NM_USUARIO', selectedFilterValue['NM_USUARIO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1  rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -830,7 +830,7 @@ const Collaborators = () => {
                    
                     <button
                       onClick={() => handleSearchByFilter('NOME_TERCEIRO', selectedFilterValue['NOME_TERCEIRO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
@@ -841,7 +841,7 @@ const Collaborators = () => {
                   
                     <button
                       onClick={() => handleSearchByFilter('FUNCAO', selectedFilterValue['FUNCAO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
+                      className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
                     >
                       Aplicar
                     </button>
