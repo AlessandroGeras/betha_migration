@@ -147,14 +147,11 @@ const Collaborators = () => {
   };
 
   const columnWidths = {
-    '': '59px',
-    'STATUS': '200px',
-    'NM_USUARIO': '400px',
-    'NOME_TERCEIRO': '500px',
-    'CPF': '300px',
-    'ST_EMAIL': '500px',
-    'FUNCAO': '350px',
-    'ID_USUARIO': '350px',
+    '': '69px',
+    'STATUS': '125px',
+    'NM_USUARIO': '308px',
+    'NOME_TERCEIRO': '308px',
+    'FUNCAO': '630px',
   };
 
   const columnLabels = {
@@ -162,10 +159,7 @@ const Collaborators = () => {
     'STATUS': 'STATUS',
     'NM_USUARIO': 'USUARIO',
     'NOME_TERCEIRO': 'NOME_TERCEIRO',
-    'CPF': 'CPF',
-    'ST_EMAIL': 'E-MAIL',
     'FUNCAO': 'FUNCAO',
-    'ID_USUARIO': 'ID_USUARIO',
 
   };
 
@@ -698,7 +692,7 @@ const Collaborators = () => {
 
             <div className="flex flex-col h-[550px] w-[1440px] overflow-x-scroll overflow-y-auto">
               {/* Cabeçalho */}
-              <div className="flex text-gray-500 bg-white w-[2661px]">
+              <div className="flex text-gray-500 bg-white w-[1440px]">
                 {Object.keys(columnWidths).map((column) => (
                   <div
                     key={column}
@@ -728,12 +722,12 @@ const Collaborators = () => {
               </div>
 
               {filterOpen && (
-                <div className={`flex text-gray-500 w-[2661px]`}>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '59px' }}>
+                <div className={`flex text-gray-500 w-[1440px]`}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
                   </div>
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '200px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '125px' }}>
                     <select
                       value={selectedFilterValue['STATUS']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'STATUS': e.target.value })}
@@ -754,7 +748,7 @@ const Collaborators = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '400px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                     <select
                       value={selectedFilterValue['NM_USUARIO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NM_USUARIO': e.target.value })}
@@ -775,7 +769,7 @@ const Collaborators = () => {
                     </button>
                   </div>
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
                     <select
                       value={selectedFilterValue['NOME_TERCEIRO']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'NOME_TERCEIRO': e.target.value })}
@@ -795,53 +789,9 @@ const Collaborators = () => {
                       Aplicar
                     </button>
                   </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '300px' }}>
-                    <select
-                      value={selectedFilterValue['CNPJ']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CNPJ': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('CNPJ').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('CNPJ', selectedFilterValue['CNPJ'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '500px' }}>
-                    <select
-                      value={selectedFilterValue['ST_EMAIL']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ST_EMAIL': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ST_EMAIL').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ST_EMAIL', selectedFilterValue['ST_EMAIL'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-                  
-
                  
 
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
+                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '630px' }}>
                     <select
                       value={selectedFilterValue['CATEGORIA_PRINCIPAL']}
                       onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'CATEGORIA_PRINCIPAL': e.target.value })}
@@ -860,31 +810,7 @@ const Collaborators = () => {
                     >
                       Aplicar
                     </button>
-                  </div>
-
-                  <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '350px' }}>
-                    <select
-                      value={selectedFilterValue['ID_USUARIO']}
-                      onChange={(e) => setSelectedFilterValue({ ...selectedFilterValue, 'ID_USUARIO': e.target.value })}
-                      className="border border-gray-300 px-2 py-1 rounded"
-                    >
-                      <option value="">Todos</option>
-                      {handleFilterValue('ID_USUARIO').map((value) => (
-                        <option key={value} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleSearchByFilter('ID_USUARIO', selectedFilterValue['ID_USUARIO'])}
-                      className="border border-gray-300 px-2 py-1 ml-2 rounded bg-blue-500 text-white"
-                    >
-                      Aplicar
-                    </button>
-                  </div>
-
-
-
+                  </div>       
 
 
 
@@ -895,7 +821,7 @@ const Collaborators = () => {
                 /* Tamanho total tabela registros */
                 <div className='w-[1440px]' key={document.id || index}>
                   <div
-                    className={`flex text-gray-700 whitespace-nowrap w-[2661px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
+                    className={`flex text-gray-700 whitespace-nowrap w-[1440px] overflow-x-auto  ${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}`}
                     key={document.id || Math.random().toString()}
                   >
                     {Object.keys(columnWidths).map((column) => (
