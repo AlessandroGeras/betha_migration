@@ -58,29 +58,29 @@ const Users = () => {
   const PrintPDF = async () => {
     // Crie uma instância do PDFMerger
     const merger = new PDFMerger();
-
+  
     // Array para armazenar os URLs dos arquivos PDF
     const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
-
+  
     // Adicione cada PDF à instância do PDFMerger
     pdfUrls.forEach(async pdfUrl => {
-       const apiUrl = `/api/upload?filename=${pdfUrl}`;
-
-       const pegardoc = await fetch(apiUrl);
-
-
-        merger.add(pegardoc); // Adiciona o PDF ao merger
+      const apiUrl = `/api/upload?filename=${pdfUrl}`;
+  
+      const pegardoc = await fetch(apiUrl);
+      const pdfData = await pegardoc.arrayBuffer(); // Converte a resposta para ArrayBuffer
+  
+      merger.add(pdfData); // Adiciona o PDF convertido para ArrayBuffer ao merger
     });
-
+  
     try {
-        // Mescla os PDFs
-        await merger.save('merged.pdf');
-
-        console.log('PDFs mesclados com sucesso!');
+      // Mescla os PDFs
+      await merger.save('merged.pdf');
+  
+      console.log('PDFs mesclados com sucesso!');
     } catch (error) {
-        console.error('Erro ao mesclar PDFs:', error);
+      console.error('Erro ao mesclar PDFs:', error);
     }
-};
+  };
 
 
 
