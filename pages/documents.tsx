@@ -64,7 +64,7 @@ const Users = () => {
 
     // Adicione cada PDF à instância do PDFMerger
     pdfUrls.forEach(pdfUrl => {
-        merger.add(`/api/upload?filename=${pdfUrl}`); // Adiciona o PDF ao merger
+        merger.add(`https://gestao-terceiros.estilofontana.com.br/api/upload?filename=${pdfUrl}`); // Adiciona o PDF ao merger
     });
 
     try {
