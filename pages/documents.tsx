@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { print } from "unix-print";
+import PDFMerger from 'pdf-merger-js';
 
 
 const Users = () => {
@@ -53,15 +53,29 @@ const Users = () => {
     ID_DOCUMENTO: string;
   }
 
-  const PrintPDF = () => {
-    const anexos = documents.docs.rows.map(row => row.ANEXO);
   
-    // Imprimir cada arquivo PDF individualmente
-    anexos.forEach(pdfUrl => {
-      console.log(`/api/upload?filename=${anexos}`);
-      print(`/api/upload?filename=${anexos}`);
+
+  const PrintPDF = async () => {
+    // Crie uma instância do PDFMerger
+    const merger = new PDFMerger();
+
+    // Array para armazenar os URLs dos arquivos PDF
+    const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
+
+    // Adicione cada PDF à instância do PDFMerger
+    pdfUrls.forEach(pdfUrl => {
+        merger.add(`/api/upload?filename=${pdfUrl}`); // Adiciona o PDF ao merger
     });
-  };
+
+    try {
+        // Mescla os PDFs
+        await merger.save('merged.pdf');
+
+        console.log('PDFs mesclados com sucesso!');
+    } catch (error) {
+        console.error('Erro ao mesclar PDFs:', error);
+    }
+};
 
 
   const printClick = async (id) => {
