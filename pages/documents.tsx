@@ -53,7 +53,7 @@ const Users = () => {
   }
 
 
-  const PrintPDF = ({ documents }) => {
+  const PrintPDF = () => {
     const printPdf = async () => {
       const anexos = documents.docs.rows.map(row => row.ANEXO);
   
