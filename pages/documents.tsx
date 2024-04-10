@@ -52,12 +52,15 @@ const Users = () => {
     ID_DOCUMENTO: string;
   }
 
-
   const PrintPDF = () => {
-   const anexos = documents.docs.rows.map(row => row.ANEXO);
-   console.log(`/api/upload?filename=${anexos}`);
-   print(`/api/upload?filename=${anexos}`);
- };
+    const anexos = documents.docs.rows.map(row => row.ANEXO);
+  
+    // Imprimir cada arquivo PDF individualmente
+    anexos.forEach(pdfUrl => {
+      console.log(`/api/upload?filename=${anexos}`);
+      print(`/api/upload?filename=${anexos}`);
+    });
+  };
 
 
   const printClick = async (id) => {
