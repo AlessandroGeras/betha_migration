@@ -54,13 +54,7 @@ const Users = () => {
   }
 
   const PrintPDF = () => {
-    const anexos = documents.docs.rows.map(row => row.ANEXO);
-  
-    // Imprimir cada arquivo PDF individualmente
-    anexos.forEach(pdfUrl => {
-      console.log(`/api/upload?filename=${anexos}`);
-      print(`/api/upload?filename=${anexos}`);
-    });
+    
   };
 
 
