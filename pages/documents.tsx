@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import pdfjs from 'pdfjs-dist';
+import * as pdfjs from 'pdfjs-dist';
 
 
 const Users = () => {
@@ -54,61 +54,60 @@ const Users = () => {
 
 
   const PrintPDF = ({ documents }) => {
-    const anexos = documents.docs.rows.map(row => row.ANEXO);
-    
-    useEffect(() => {
-      const printPdf = async () => {
-        const pdfWindow = window.open('', '_blank');
-    
-        if (pdfWindow) { // Verifica se pdfWindow não é nulo
-          for (let pdfUrl of anexos) {
-            const loadingTask = pdfjs.getDocument(pdfUrl);
-            const pdfDocument = await loadingTask.promise;
-      
-            const numPages = pdfDocument.numPages;
-      
-            for (let pageNum = 1; pageNum <= numPages; pageNum++) {
-              pdfDocument.getPage(pageNum).then((page) => {
-                const canvas = document.createElement('canvas');
-                const viewport = page.getViewport({ scale: 1 });
-                const context = canvas.getContext('2d');
-      
-                if (context) { // Verifica se o contexto do canvas não é nulo
-                  canvas.height = viewport.height;
-                  canvas.width = viewport.width;
-                  const renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                  };
-      
-                  // Envolve a chamada de page.render() em uma nova promessa
-                  new Promise<void>((resolve, reject) => {
-                    const renderTask = page.render(renderContext);
-                    renderTask.promise.then(() => {
-                      resolve();
-                    }).catch((error) => {
-                      reject(error);
-                    });
-                  }).then(() => {
-                    if (pdfWindow) { // Verifica novamente se pdfWindow não é nulo
-                      pdfWindow.document.body.appendChild(canvas);
-                      if (pageNum === numPages && anexos.indexOf(pdfUrl) === anexos.length - 1) {
-                        pdfWindow.print();
-                      }
-                    }
+    const printPdf = async () => {
+      const anexos = documents.docs.rows.map(row => row.ANEXO);
+  
+      const pdfWindow = window.open('', '_blank');
+  
+      if (pdfWindow) {
+        for (let pdfUrl of anexos) {
+          const loadingTask = pdfjs.getDocument(pdfUrl);
+          const pdfDocument = await loadingTask.promise;
+  
+          const numPages = pdfDocument.numPages;
+  
+          for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            pdfDocument.getPage(pageNum).then((page) => {
+              const canvas = document.createElement('canvas');
+              const viewport = page.getViewport({ scale: 1 });
+              const context = canvas.getContext('2d');
+  
+              if (context) {
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                const renderContext = {
+                  canvasContext: context,
+                  viewport: viewport
+                };
+  
+                new Promise<void>((resolve, reject) => {
+                  const renderTask = page.render(renderContext);
+                  renderTask.promise.then(() => {
+                    resolve();
                   }).catch((error) => {
-                    console.error('Erro ao renderizar página:', error);
+                    reject(error);
                   });
-                }
-              });
-            }
+                }).then(() => {
+                  if (pdfWindow) {
+                    pdfWindow.document.body.appendChild(canvas);
+                    if (pageNum === numPages && anexos.indexOf(pdfUrl) === anexos.length - 1) {
+                      pdfWindow.print();
+                    }
+                  }
+                }).catch((error) => {
+                  console.error('Erro ao renderizar página:', error);
+                });
+              }
+            });
           }
         }
-      };
+      }
+    };
   
+    useEffect(() => {
       printPdf();
-    }, [anexos]);
-    
+    }, [documents]);
+  
     return null; // Não renderiza nada diretamente, pois a impressão ocorre no useEffect
   };
 
