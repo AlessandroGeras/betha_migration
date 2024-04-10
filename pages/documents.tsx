@@ -52,23 +52,8 @@ const Users = () => {
   }
 
 
-  const PDFPage = () => {
-    // Criar um novo documento PDF
- const doc = new jsPDF();
-
- // Definir a posição inicial para adicionar o conteúdo da tabela
- let yPos = 10;
- doc.setFontSize(12);
-
- // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
- docs.rows.forEach((document, index) => {
-   //const rowData = `${document.NM_USUARIO} - CPF: ${document.CPF} - Função: ${document.FUNCAO} - Status: ${document.STATUS}`
-   //doc.text(rowData, 10, yPos);
-   yPos += 10; // Ajustar a posição Y para a próxima linha
- });
-
- // Salvar o documento como um arquivo PDF
- doc.save("lista_de_colaboradores.pdf");
+  const PrintPDF = () => {
+   console.log(documents);
  };
 
 
@@ -1009,7 +994,7 @@ const Users = () => {
               {viewAll && isAdmin && (<div className='flex ml-auto'>
               <button
                 className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex mr-2"
-                onClick={PDFPage}
+                onClick={PrintPDF}
               >
                 <IoMdPrint className='text-xl mt-0.5' /> <span className='ml-1'>Imprimir PDF</span>
               </button>
