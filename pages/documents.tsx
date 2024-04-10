@@ -1008,7 +1008,7 @@ const Users = () => {
               </button>
               {viewAll && isAdmin && (<div className='flex ml-auto'>
               <button
-                className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex mr-2"
                 onClick={PDFPage}
               >
                 <IoMdPrint className='text-xl mt-0.5' /> <span className='ml-1'>Imprimir PDF</span>
