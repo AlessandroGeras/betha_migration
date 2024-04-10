@@ -45,6 +45,7 @@ const Users = () => {
     ID_USUARIO: string;
     id: string;
     STATUS: string;
+    ANEXO: string;
   }
 
   interface User {
@@ -53,7 +54,8 @@ const Users = () => {
 
 
   const PrintPDF = () => {
-   console.log(documents);
+   const anexos = documents.docs.rows.map(row => row.ANEXO);
+   console.log(anexos);
  };
 
 
