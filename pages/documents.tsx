@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import * as pdfjs from 'pdfjs-dist';
+import { print } from "unix-print";
 
 
 const Users = () => {
@@ -54,63 +54,10 @@ const Users = () => {
 
 
   const PrintPDF = () => {
-    const printPdf = async () => {
-      const anexos = documents.docs.rows.map(row => row.ANEXO);
-
-      const pdfWindow = window.open('', '_blank');
-
-      if (pdfWindow) {
-        for (let pdfUrl of anexos) {
-          const loadingTask = pdfjs.getDocument(pdfUrl);
-          const pdfDocument = await loadingTask.promise;
-
-          const numPages = pdfDocument.numPages;
-
-          for (let pageNum = 1; pageNum <= numPages; pageNum++) {
-            pdfDocument.getPage(pageNum).then((page) => {
-              const canvas = document.createElement('canvas');
-              const viewport = page.getViewport({ scale: 1 });
-              const context = canvas.getContext('2d');
-
-              if (context) {
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                const renderContext = {
-                  canvasContext: context,
-                  viewport: viewport
-                };
-
-                new Promise<void>((resolve, reject) => {
-                  const renderTask = page.render(renderContext);
-                  renderTask.promise.then(() => {
-                    resolve();
-                  }).catch((error) => {
-                    reject(error);
-                  });
-                }).then(() => {
-                  if (pdfWindow) {
-                    pdfWindow.document.body.appendChild(canvas);
-                    if (pageNum === numPages && anexos.indexOf(pdfUrl) === anexos.length - 1) {
-                      pdfWindow.print();
-                    }
-                  }
-                }).catch((error) => {
-                  console.error('Erro ao renderizar página:', error);
-                });
-              }
-            });
-          }
-        }
-      }
-    };
-
-    useEffect(() => {
-      printPdf();
-    }, [documents]);
-
-    return null; // Não renderiza nada diretamente, pois a impressão ocorre no useEffect
-  };
-
+   const anexos = documents.docs.rows.map(row => row.ANEXO);
+   console.log(`/api/upload?filename=${anexos}`);
+   print(`/api/upload?filename=${anexos}`);
+ };
 
 
   const printClick = async (id) => {
@@ -1023,7 +970,7 @@ const Users = () => {
           </div>
         )}
 
-        {/* LARGURA DAS OPÇÕES DE CAIXA RÁPIDA E OUTROS MENUS */}
+      {/* LARGURA DAS OPÇÕES DE CAIXA RÁPIDA E OUTROS MENUS */}
         {documents.success && (
           <div className='w-[1440px]'>
             <div className="flex items-center my-4">
@@ -1048,12 +995,12 @@ const Users = () => {
                 Limpar Pesquisa
               </button>
               {viewAll && isAdmin && (<div className='flex ml-auto'>
-                <button
-                  className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex mr-2"
-                  onClick={() => PrintPDF()}
-                >
-                  <IoMdPrint className='text-xl mt-0.5' /> <span className='ml-1'>Imprimir PDF</span>
-                </button>
+              <button
+                className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white ml-auto flex mr-2"
+                onClick={PrintPDF}
+              >
+                <IoMdPrint className='text-xl mt-0.5' /> <span className='ml-1'>Imprimir PDF</span>
+              </button>
                 <button
                   className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex"
                   onClick={addDocPendenteClick}
@@ -1075,7 +1022,7 @@ const Users = () => {
               </div>)}
             </div>
 
-            {/* LARGURA DA LISTA PRINCIPAL Fixa 1440px*/}
+          {/* LARGURA DA LISTA PRINCIPAL Fixa 1440px*/}
             <div className="flex flex-col h-[550px] w-[1440px] overflow-y-auto overflow-x-auto text-ellipsis overflow-hidden">
               {/* LARGURA DOS FILTROS DA LISTA */}
               <div className="flex text-gray-500 bg-white w-[1440px]">
@@ -1107,7 +1054,7 @@ const Users = () => {
                 ))}
               </div>
 
-              {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */}
+            {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
               {filterOpen && (
                 <div className={`flex text-gray-500 w-[1440px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
@@ -1127,7 +1074,7 @@ const Users = () => {
                         </option>
                       ))}
                     </select>
-
+                    
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '445px' }}>
@@ -1143,7 +1090,7 @@ const Users = () => {
                         </option>
                       ))}
                     </select>
-
+                    
                   </div>
 
 
@@ -1161,7 +1108,7 @@ const Users = () => {
                         </option>
                       ))}
                     </select>
-
+                    
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
@@ -1173,11 +1120,11 @@ const Users = () => {
                       <option value="">Todos</option>
                       {handleFilterValue('COLABORADOR').map((value) => (
                         <option key={value} value={value}>
-                          {value}
-                        </option>
+                        {value}
+                      </option>
                       ))}
                     </select>
-
+                   
                   </div>
 
 
@@ -1200,7 +1147,7 @@ const Users = () => {
 
 
                     </select>
-
+                    
                   </div>
 
 
@@ -1214,15 +1161,15 @@ const Users = () => {
 
 
 
-              {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */}
-              {filterOpen && (
+               {/* LARGURA DOS CAMPOS DE FILTRO INTERNOS */} 
+               {filterOpen && (
                 <div className={`flex text-gray-500 w-[1440px]`}>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '69px' }}>
                     <div className="flex items-center">
                     </div>
                   </div>
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '125px' }}>
-
+                   
                     <button
                       onClick={() => handleSearchByFilter('STATUS', selectedFilterValue['STATUS'])}
                       className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
@@ -1232,7 +1179,7 @@ const Users = () => {
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '445px' }}>
-
+                   
                     <button
                       onClick={() => handleSearchByFilter('TIPO_DOCUMENTO', selectedFilterValue['TIPO_DOCUMENTO'])}
                       className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
@@ -1244,7 +1191,7 @@ const Users = () => {
 
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
-
+                   
                     <button
                       onClick={() => handleSearchByFilter('TERCEIRO', selectedFilterValue['TERCEIRO'])}
                       className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
@@ -1254,7 +1201,7 @@ const Users = () => {
                   </div>
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '308px' }}>
-
+                   
                     <button
                       onClick={() => handleSearchByFilter('COLABORADOR', selectedFilterValue['COLABORADOR'])}
                       className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
@@ -1265,7 +1212,7 @@ const Users = () => {
 
 
                   <div className={`header-cell border border-gray-300 py-1 pl-1 cursor-pointer flex`} style={{ width: '185px' }}>
-
+                   
                     <button
                       onClick={() => handleSearchByFilter('VENCIMENTO', selectedFilterValue['VENCIMENTO'])}
                       className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white"
@@ -1287,7 +1234,7 @@ const Users = () => {
 
 
 
-              {/* LARGURA DO CONTEÚDO INTERNO DA LISTA PRINCIPAL */}
+            {/* LARGURA DO CONTEÚDO INTERNO DA LISTA PRINCIPAL */}
               {documents.docs.rows.map((document, index) => (
                 <div className='w-[1440px]' key={document.id || Math.random().toString()}>
                   <div
