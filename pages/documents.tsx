@@ -63,9 +63,13 @@ const Users = () => {
     const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
 
     // Adicione cada PDF à instância do PDFMerger
-    pdfUrls.forEach(pdfUrl => {
-        merger.add(`https://gestao-terceiros.estilofontana.com.br/api/upload?filename=${pdfUrl}`); // Adiciona o PDF ao merger
-        console.log(`https://gestao-terceiros.estilofontana.com.br/api/upload?filename=${pdfUrl}`);
+    pdfUrls.forEach(async pdfUrl => {
+       const apiUrl = `/api/upload?filename=${pdfUrl}`;
+
+       const pegardoc = await fetch(apiUrl);
+
+
+        merger.add(pegardoc); // Adiciona o PDF ao merger
     });
 
     try {
@@ -77,6 +81,9 @@ const Users = () => {
         console.error('Erro ao mesclar PDFs:', error);
     }
 };
+
+
+
 
 
   const printClick = async (id) => {
