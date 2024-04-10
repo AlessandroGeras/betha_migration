@@ -61,6 +61,7 @@ const Users = () => {
   
     // Array para armazenar os URLs dos arquivos PDF
     const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
+    console.log(pdfUrls);
   
     // Adicione cada PDF à instância do PDFMerger
     pdfUrls.forEach(async pdfUrl => {
