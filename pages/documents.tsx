@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { PiFunnelLight } from 'react-icons/pi';
-import { IoMdAdd, IoIosSearch } from 'react-icons/io';
+import { IoMdAdd, IoIosSearch, IoMdPrint } from 'react-icons/io';
 import { FaTrashAlt } from "react-icons/fa";
 import { HiPrinter } from "react-icons/hi2";
 import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import jsPDF from 'jspdf';
 
 
 const Users = () => {
@@ -49,6 +50,26 @@ const Users = () => {
   interface User {
     ID_DOCUMENTO: string;
   }
+
+
+  const PDFPage = () => {
+    // Criar um novo documento PDF
+ const doc = new jsPDF();
+
+ // Definir a posição inicial para adicionar o conteúdo da tabela
+ let yPos = 10;
+ doc.setFontSize(12);
+
+ // Iterar sobre os documentos e adicionar cada linha da tabela ao PDF
+ docs.rows.forEach((document, index) => {
+   //const rowData = `${document.NM_USUARIO} - CPF: ${document.CPF} - Função: ${document.FUNCAO} - Status: ${document.STATUS}`
+   //doc.text(rowData, 10, yPos);
+   yPos += 10; // Ajustar a posição Y para a próxima linha
+ });
+
+ // Salvar o documento como um arquivo PDF
+ doc.save("lista_de_colaboradores.pdf");
+ };
 
 
   const printClick = async (id) => {
@@ -986,6 +1007,12 @@ const Users = () => {
                 Limpar Pesquisa
               </button>
               {viewAll && isAdmin && (<div className='flex ml-auto'>
+              <button
+                className="border border-gray-300 pl-1 pr-2 py-1 rounded bg-blue-500 text-white ml-auto flex"
+                onClick={PDFPage}
+              >
+                <IoMdPrint className='text-xl mt-0.5' /> <span className='ml-1'>Imprimir PDF</span>
+              </button>
                 <button
                   className="border border-gray-300 px-2 py-1 rounded bg-blue-500 text-white flex"
                   onClick={addDocPendenteClick}
