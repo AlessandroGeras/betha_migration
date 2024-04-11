@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import PDFMerger from 'pdf-merger-js';
+const merge = require('easy-pdf-merge');
 
 
 const Users = () => {
@@ -56,44 +56,28 @@ const Users = () => {
   
 
   const PrintPDF = async () => {
-    // Crie uma instância do PDFMerger
-    const merger = new PDFMerger();
-  
-    console.log(documents);
-  
-    // Array para armazenar as promessas para buscar os PDFs
-    const fetchPromises = documents.docs.rows.map(async row => {
-      const pdfUrl = row.ANEXO;
-      console.log(pdfUrl);
-      const apiUrl = `/api/upload?filename=${pdfUrl}`;
-      console.log(apiUrl);
-      const response = await fetch(apiUrl);
-      console.log(response);
-      if (!response.ok) {
-        throw new Error(`Falha ao buscar PDF de ${pdfUrl}`);
-      }
-      const pdfData = await response.arrayBuffer(); // Converter a resposta para ArrayBuffer
-      console.log(pdfData);
-      return pdfData;
+
+    // Array para armazenar os nomes dos arquivos PDF a serem mesclados
+    const pdfFiles: string[] = [];
+
+    documents.docs.rows.forEach(row => {
+        const pdfUrl = row.ANEXO;
+        pdfFiles.push(pdfUrl);
     });
-  
+
     try {
-      // Aguarde todas as operações de busca serem concluídas
-      const pdfArrayBuffers = await Promise.all(fetchPromises);
-  
-      // Adicione cada ArrayBuffer de PDF à instância do PDFMerger
-      pdfArrayBuffers.forEach(pdfData => {
-        merger.add(pdfData); // Adiciona o ArrayBuffer PDF convertido ao merger
-      });
-  
-      // Mescla os PDFs
-      await merger.save('merged.pdf');
-  
-      console.log('PDFs mesclados com sucesso!');
+        // Verifica se há PDFs para mesclar
+        if (pdfFiles.length > 0) {
+            // Mescla os PDFs
+            await merge(pdfFiles, 'merged.pdf');
+            console.log('PDFs mesclados com sucesso!');
+        } else {
+            console.log('Nenhum PDF encontrado para mesclar.');
+        }
     } catch (error) {
-      console.error('Erro ao mesclar PDFs:', error);
+        console.error('Erro ao mesclar PDFs:', error);
     }
-  };
+};
   
 
 
