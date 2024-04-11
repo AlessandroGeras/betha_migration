@@ -7,7 +7,8 @@ import { useRouter } from 'next/router';
 import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { PDFDocument } from 'pdf-lib'
+import { PDFDocument } from 'pdf-lib';
+import { createServer } from 'http';
 
 
 const Users = () => {
@@ -58,10 +59,10 @@ const Users = () => {
   const PrintPDF = async () => {
     // Array para armazenar os URLs dos arquivos PDF
     const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
-  
+
     // Array para armazenar os buffers de PDF
     const pdfBuffers: ArrayBuffer[] = [];
-  
+
     // Função auxiliar para fazer o download dos PDFs e armazenar seus buffers
     const downloadPDF = async (pdfUrl: string) => {
         const apiUrl = `/api/upload?filename=${pdfUrl}`;
@@ -69,29 +70,34 @@ const Users = () => {
         const pdfData = await response.arrayBuffer();
         pdfBuffers.push(pdfData as ArrayBuffer);
     };
-  
+
     // Baixe cada PDF e armazene seus buffers
     await Promise.all(pdfUrls.map(downloadPDF));
-  
+
     // Crie um novo documento PDF
     const mergedPdf = await PDFDocument.create();
-  
+
     // Adicione cada PDF ao documento mesclado
     for (const pdfBuffer of pdfBuffers) {
         const pdfDoc = await PDFDocument.load(pdfBuffer);
         const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
         copiedPages.forEach(page => mergedPdf.addPage(page));
     }
-  
+
     // Salve o documento mesclado em um novo arquivo PDF
     const mergedPdfBytes = await mergedPdf.save();
-  
-    // Salvar ou enviar o arquivo para o usuário
-    // Aqui você pode salvar o arquivo localmente ou enviá-lo para o cliente via resposta HTTP
-  
-    console.log('PDFs mesclados com sucesso!');
-};
 
+    // Inicie o download do arquivo PDF no navegador
+    const server = createServer((req, res) => {
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename="arquivo_mesclado.pdf"');
+        res.end(Buffer.from(mergedPdfBytes));
+    });
+
+    server.listen(3000, () => {
+        console.log('Servidor iniciado. O arquivo PDF está disponível para download.');
+    });
+};
 
 
 
