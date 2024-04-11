@@ -71,7 +71,16 @@ const Users = () => {
     };
 
     // Baixe cada PDF e armazene seus buffers
-    await Promise.all(pdfUrls.map(downloadPDF));
+    await Promise.all(pdfUrls.map(async (pdfUrl) => {
+        if (!pdfUrl) return; // Pular se a URL estiver faltando
+        await downloadPDF(pdfUrl);
+    }));
+
+    // Verifique se há pelo menos um PDF para mesclar
+    if (pdfBuffers.length === 0) {
+        console.log('Nenhum PDF encontrado para mesclar.');
+        return;
+    }
 
     // Crie um novo documento PDF
     const mergedPdf = await PDFDocument.create();
