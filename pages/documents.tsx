@@ -58,27 +58,34 @@ const Users = () => {
   const PrintPDF = async () => {
     // Crie uma instância do PDFMerger
     const merger = new PDFMerger();
-
+  
     console.log(documents);
   
-    // Array para armazenar os URLs dos arquivos PDF
-    const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
-    console.log(pdfUrls);
-  
-    // Adicione cada PDF à instância do PDFMerger
-    pdfUrls.forEach(async pdfUrl => {
+    // Array para armazenar as promessas para buscar os PDFs
+    const fetchPromises = documents.docs.rows.map(async row => {
+      const pdfUrl = row.ANEXO;
       console.log(pdfUrl);
       const apiUrl = `/api/upload?filename=${pdfUrl}`;
-      console.log(apiUrl);  
-      const pegardoc = await fetch(apiUrl);
-      console.log(pegardoc);        
-      const pdfData = await pegardoc.arrayBuffer(); // Converte a resposta para ArrayBuffer
-      console.log(pdfData);        
-  
-      merger.add(pdfData); // Adiciona o PDF convertido para ArrayBuffer ao merger
+      console.log(apiUrl);
+      const response = await fetch(apiUrl);
+      console.log(response);
+      if (!response.ok) {
+        throw new Error(`Falha ao buscar PDF de ${pdfUrl}`);
+      }
+      const pdfData = await response.arrayBuffer(); // Converter a resposta para ArrayBuffer
+      console.log(pdfData);
+      return pdfData;
     });
   
     try {
+      // Aguarde todas as operações de busca serem concluídas
+      const pdfArrayBuffers = await Promise.all(fetchPromises);
+  
+      // Adicione cada ArrayBuffer de PDF à instância do PDFMerger
+      pdfArrayBuffers.forEach(pdfData => {
+        merger.add(pdfData); // Adiciona o ArrayBuffer PDF convertido ao merger
+      });
+  
       // Mescla os PDFs
       await merger.save('merged.pdf');
   
@@ -87,7 +94,7 @@ const Users = () => {
       console.error('Erro ao mesclar PDFs:', error);
     }
   };
-
+  
 
 
 
