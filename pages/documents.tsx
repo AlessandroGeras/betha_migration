@@ -69,9 +69,11 @@ const Users = () => {
     pdfUrls.forEach(async pdfUrl => {
       console.log(pdfUrl);
       const apiUrl = `/api/upload?filename=${pdfUrl}`;
-  
+      console.log(apiUrl);  
       const pegardoc = await fetch(apiUrl);
+      console.log(pegardoc);        
       const pdfData = await pegardoc.arrayBuffer(); // Converte a resposta para ArrayBuffer
+      console.log(pdfData);        
   
       merger.add(pdfData); // Adiciona o PDF convertido para ArrayBuffer ao merger
     });
