@@ -67,6 +67,7 @@ const Users = () => {
   
     // Adicione cada PDF à instância do PDFMerger
     pdfUrls.forEach(async pdfUrl => {
+      console.log(pdfUrl);
       const apiUrl = `/api/upload?filename=${pdfUrl}`;
   
       const pegardoc = await fetch(apiUrl);
