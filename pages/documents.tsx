@@ -8,7 +8,6 @@ import Sidebar from '@/components/sidebar';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { PDFDocument } from 'pdf-lib';
-import { createServer } from 'http';
 
 
 const Users = () => {
@@ -87,16 +86,19 @@ const Users = () => {
     // Salve o documento mesclado em um novo arquivo PDF
     const mergedPdfBytes = await mergedPdf.save();
 
-    // Inicie o download do arquivo PDF no navegador
-    const server = createServer((req, res) => {
-        res.setHeader('Content-Type', 'application/pdf');
-        res.setHeader('Content-Disposition', 'attachment; filename="arquivo_mesclado.pdf"');
-        res.end(Buffer.from(mergedPdfBytes));
-    });
+    // Converta os bytes do PDF mesclado em um Blob
+    const mergedPdfBlob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
 
-    server.listen(3000, () => {
-        console.log('Servidor iniciado. O arquivo PDF está disponível para download.');
-    });
+    // Crie um URL temporário para o Blob
+    const mergedPdfUrl = URL.createObjectURL(mergedPdfBlob);
+
+    // Redirecione automaticamente para o URL do Blob
+    window.location.href = mergedPdfUrl;
+
+    // Limpe o URL temporário
+    URL.revokeObjectURL(mergedPdfUrl);
+
+    console.log('PDFs mesclados com sucesso! O arquivo foi baixado.');
 };
 
 
