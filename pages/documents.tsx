@@ -58,6 +58,8 @@ const Users = () => {
   const PrintPDF = async () => {
     // Crie uma instância do PDFMerger
     const merger = new PDFMerger();
+
+    console.log(documents);
   
     // Array para armazenar os URLs dos arquivos PDF
     const pdfUrls = documents.docs.rows.map(row => row.ANEXO);
