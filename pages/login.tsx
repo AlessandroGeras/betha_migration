@@ -1,179 +1,148 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
-import fontana from '../public/img/fontana.png';
-import logo from '../public/img/logo.png';
 
+export default function Login() {
 
-const Login = () => {
-  const [username, setUsername] = useState('');
+  //const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const router = useRouter();
+
+  const [loginScreenVisible, setLoginScreenVisible] = useState(true);
+  const [loginScreenRecoverVisible, setLoginScreenRecoverVisible] = useState(false);
+
   const [showModal, setShowModal] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
-  const router = useRouter();
+
+  const handleForgotPassword = () => {
+    setLoginScreenVisible(false);
+    setLoginScreenRecoverVisible(true);
+  }
 
   const handleLogin = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://gestao-terceiros.estilofontana.com.br/api/login', {
+      const response = await fetch('http://localhost:3000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
-      if (response.ok) {        
-        const data = await response.json();
-        console.log(response);
-        console.log(data);
-        localStorage.setItem('role', data.role);
-        localStorage.setItem('FontanaUser', username);
-        localStorage.setItem('Token', data.token);
-        localStorage.setItem('permission', data.permission);
+      const data = await response.json();
 
-        if(data.permission=="outsourcedRead"){
-          router.push('/collaborators');
-          return
-        }
-
+      if (!response.ok) {
+        throw new Error(data.error);
+      }
+      else {
         router.push('/dashboard');
-
-      } else {
-
-        if (response.status === 401) {
-          // Primeiro acesso
-          setPopupMessage('Esse é seu primeiro acesso. Clique em "Esqueceu a senha?" para obter uma senha válida.');
-          setShowModal(true);
-        }  
-        else if (response.status === 403) {
-          // Primeiro acesso
-          setPopupMessage('Usuário ou senha inválido.');
-          setShowModal(true);
-        }  
-        else if (response.status === 404) {
-          // Primeiro acesso
-          setPopupMessage('Usuário sem permissão para acesso.');
-          setShowModal(true);
-        }  
-        else if (response.status === 406) {
-          // Primeiro acesso
-          setPopupMessage('Usuário desativado.');
-          setShowModal(true);
-        }  
-        else{ 
-        console.error('Falha na autenticação');
-        setPopupMessage('Usuário ou senha inválido');
-        setShowModal(true);
-        }
       }
-    } catch (error) {
-      console.error('Erro durante a solicitação:', error);
-    }
-  };
-
-  const handleForgotPassword = async () => {
-    if (username.trim() === '') {
-      setPopupMessage('Por favor, informe o nome de usuário antes de clicar em "Esqueceu a senha?".');
+    } catch (error: any) {
+      // Trate o erro, por exemplo, exiba uma mensagem de erro para o usuário
+      console.error('Erro ao fazer login:', error.message);
+      setPopupMessage(error.message);
       setShowModal(true);
-    } else {
-      try {
-        const response = await fetch('https://gestao-terceiros.estilofontana.com.br/api/forgot-password', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ username }),
-        });
-
-        if (response.ok) {
-          console.log('Solicitação de recuperação de senha enviada com sucesso.');
-          router.push(`/recover-password?username=${encodeURIComponent(username)}`);
-        }            
-        
-        else if (response.status === 403) {
-          // Usuário não autorizado para recuperar senha
-          setPopupMessage('Somente usuários autorizados ao portal gestão de terceiros podem recuperar senha.');
-          setShowModal(true);
-        }
-
-        else if (response.status === 404) {
-          // Usuário não autorizado para recuperar senha
-          setPopupMessage('Somente usuários autorizados ao portal gestão de terceiros podem recuperar senha.');
-          setShowModal(true);
-          console.log("Somente usuários autorizados ao portal gestão de terceiros podem recuperar senha.");
-        }
-        else if (response.status === 500) {
-          // Usuário não autorizado para recuperar senha
-          setPopupMessage('Erro ao consultar o banco de dados. Verifique sua conexão ou contate o administrador.');
-          setShowModal(true);
-        }
-        else {
-          console.error('Erro ao solicitar recuperação de senha:', response.statusText);
-          setPopupMessage('Somente usuários autorizados no portal gestão de terceiros podem recuperar senha.');
-          setShowModal(true);
-        }
-      } catch (error) {
-        console.error('Erro durante a solicitação de recuperação de senha:', error);
-      }
     }
-  };
+  }
+
+
+  const handleRecoverPassword = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:3000/api/send-mail-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error);
+      }
+      else {
+        console.log(data);
+      }
+    } catch (error: any) {
+      // Trate o erro, por exemplo, exiba uma mensagem de erro para o usuário
+      console.error('Erro ao enviar e-mail:', error.message);
+      setPopupMessage(error.message);
+      setShowModal(true);
+    }
+  }
 
   const closeModal = () => {
     setShowModal(false);
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
-      <div className="w-full md:w-7/12 h-full flex items-center justify-center">
-        <Image src={fontana} alt="ALT_TEXT" className="h-full w-full object-cover" />
-      </div>
+    <div className="flex flex-col justify-center items-center h-screen bg-white">
 
-      <div className="w-full md:w-5/12 p-4 md:p-8 min-h-screen">
-        <div className="flex flex-col items-center justify-center h-full">
-          <Image src={logo} alt="ALT_TEXT" className="w-[50%] md:w-[30%] mb-4" />
-          <span className="mb-4 text-xl md:text-2xl mb-8">Portal Gestão de Terceiro</span>
-
-          <form onSubmit={handleLogin} className="flex flex-col w-full md:w-2/3 lg:w-1/2">
-            <div className="mb-4">
-              <label htmlFor="username" className="block text-sm font-medium text-gray-600">
-                Usuário
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="mt-1 p-2 border rounded-xl w-full"
-                required
-              />
+      {loginScreenVisible && (
+        <div id='LoginScreen'>
+          <div>
+            <img src="\img\logo.png" alt="Descrição da imagem" className='w-[150px] mx-auto' />
+          </div>
+          <div className="flex flex-col justify-center items-center font-poppins">
+            <div className="w-80 bg-gray-300/[.06] rounded-3xl shadow-[0px_8px_8px_0px_rgba(0,0,0,0.25)] p-4">
+              <h1 className="text-sm font-bold mb-6 text-orange-600 text-center mt-2">Área do Cliente</h1>
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700"></label>
+                  <input type="text" id="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500" />
+                </div>
+                <div>
+                  <label htmlFor="password" className="block text-sm font-medium text-gray-700"></label>
+                  <input type="password" id="password" name="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none" />
+                </div>
+                <div className="flex flex-col">
+                  <button type="button" className="text-xs font-bold text-gray-800 hover:underline text-center" onClick={handleForgotPassword}>Esqueci a senha</button>
+                  <button type="submit" className="w-40 bg-orange-700 text-white px-4 py-2 rounded-md mt-2 hover:bg-orange-600 focus:outline-none mx-auto" onClick={handleLogin}>Entrar</button>
+                </div>
+              </form>
             </div>
-            <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-600">
-                Senha
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 p-2 border rounded-xl w-full"
-              />
+          </div>
+        </div>
+      )}
+
+      {loginScreenRecoverVisible && (
+        <div id='LoginScreenRecover'>
+          <div>
+            <img src="\img\logo.png" alt="Descrição da imagem" className='w-[150px] mx-auto' />
+          </div>
+          <div className="flex flex-col justify-center items-center font-poppins">
+            <div className="w-80 bg-gray-300/[.06] rounded-3xl shadow-[0px_8px_8px_0px_rgba(0,0,0,0.25)] p-4">
+              <h1 className="text-sm font-bold mb-6 text-orange-600 text-center mt-2">Área do Cliente</h1>
+              <form className="space-y-4">
+                <div className='text-center text-[14px] leading-none'>
+                  <span>Informe seu email e você receberá instruções para a recuperação da sua senha</span>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700"></label>
+                  <input type="text" id="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500" />
+                </div>
+                <div className="flex flex-col">
+                  <button type="button" className="text-xs font-bold text-gray-800 hover:underline text-center invisible">Esqueci a senha</button>
+                  <button type="submit" className="w-40 bg-orange-700 text-white px-4 py-2 rounded-md mt-2 hover:bg-orange-600 focus:outline-none focus:bg-blue-600 mx-auto" onClick={handleRecoverPassword}>Recuperar</button>
+                </div>
+              </form>
             </div>
-            <button type="submit" className="bg-blue-950 text-white p-2 rounded-md">
-              Entrar
-            </button>
+          </div>
+        </div>
+      )}
 
-            {showModal && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
 
-                  {/* Pseudo-elemento para a barra lateral */}
-                  <style>
-                    {`
+            {/* Pseudo-elemento para a barra lateral */}
+            <style>
+              {`
                   .modal-content::before {
                     content: '';
                     background-color: #e53e3e; /* Cor vermelha desejada */
@@ -184,37 +153,22 @@ const Login = () => {
                     left: 0;
                   }
                 `}
-                  </style>
+            </style>
 
-                  {/* Adicione o botão de fechamento estilo "X" */}
-                  <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700" onClick={closeModal}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </button>
+            {/* Adicione o botão de fechamento estilo "X" */}
+            <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700" onClick={closeModal}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
 
-                  <div className="text-red-500 text-md text-center flex-grow">
-                    {popupMessage}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Adicione o link "Esqueceu a senha?" */}
-            <div className="mt-4 text-right text-sm">
-              <button
-                type="button"
-                className="text-blue-500 hover:underline focus:outline-none"
-                onClick={handleForgotPassword}
-              >
-                Esqueceu a senha?
-              </button>
+            <div className="text-red-500 text-md text-center flex-grow">
+              {popupMessage}
             </div>
-          </form>
+          </div>
         </div>
-      </div>
+      )}
+
     </div>
   );
-};
-
-export default Login;
+}

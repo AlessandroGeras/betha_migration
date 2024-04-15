@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import logo from '../public/img/logo2.png';
 import { useRouter } from 'next/router';
 import { FaUserFriends, FaHome, FaHotel, FaUsers, FaUser, FaDoorOpen, FaFileAlt, FaChartLine, FaWrench } from "react-icons/fa";
 
@@ -175,7 +173,7 @@ const Sidebar = () => {
                 {/* Ícones na parte de cima */}
                 <div className="mb-8 w-full">
                     <div className="p-4 cursor-pointer">
-                        <Image src={logo} alt="ALT_TEXT" className="" />
+                    <img src="\img\logo_m.png" alt="Descrição da imagem" className="" />
                     </div>
                     {permission !== "outsourcedRead" && (
                         <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-blue-500 relative" onMouseEnter={toggleSubMenuHome} onMouseLeave={toggleSubMenuHome}>
