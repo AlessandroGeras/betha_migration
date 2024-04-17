@@ -39,7 +39,8 @@ function DemoPage() {
   }, []);
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto pt-10">
+      <div className="bg-white z-1 relative top-1 text-2xl text-gray-500 font-semibold p-6 ml-0 font-lato"><span className="p-6 ml-1.5">Status das remessas no período</span></div>
       <DataTable columns={columns} data={data} />
     </div>
   );
