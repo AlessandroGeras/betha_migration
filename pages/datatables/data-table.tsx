@@ -30,8 +30,8 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="rounded-md border h-[350px] bg-white"> {/* Definindo a altura da tabela aqui */}
-      <div className="rounded-md border w-[95%] h-[350px] overflow-auto bg-white mx-auto">
+    <div className="rounded-md border h-[300px] bg-white"> {/* Definindo a altura da tabela aqui */}
+      <div className="rounded-md border w-[95%] h-[300px] overflow-auto bg-white mx-auto">
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
