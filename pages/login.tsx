@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
+
 
 export default function Login() {
 
@@ -37,6 +39,7 @@ export default function Login() {
         throw new Error(data.error);
       }
       else {
+        //console.log(data.usuario.username);
         router.push('/dashboard');
       }
     } catch (error: any) {

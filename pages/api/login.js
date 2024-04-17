@@ -1,12 +1,17 @@
 import { testDatabaseConnection } from '../../config/database.mjs';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { cookies } from 'next/headers'
 
 dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { email, password } = req.body;
+
+        console.log(req);
+        
 
         const sql = `SELECT * FROM users WHERE email = ?`;
 
@@ -30,7 +35,11 @@ export default async function handler(req, res) {
 
             if (passwordMatch) {
                 // Senha correspondente, usuário autenticado com sucesso
-                return res.status(200).json({ success: "Usuário logado" });
+                const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '4h' });
+
+                res.setHeader('Set-Cookie', `jwt=${token}; HttpOnly; Max-Age=14400`);
+                //res.setHeader('jwt2', `jwt=${token}; Path=/; HttpOnly; Max-Age=14400; Secure`);
+                return res.status(200).json({ success: "Usuário logado", usuario: user});
             } else {
                 // Senha não corresponde
                 return res.status(401).json({ error: "Senha inválida" });
