@@ -1,6 +1,7 @@
 import {
   ColumnDef,
   flexRender,
+  getPaginationRowModel,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -19,6 +20,8 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
+import { Button } from "@/components/ui/button";
+
 export function DataTable<TData, TValue>({
   columns,
   data,
@@ -27,11 +30,18 @@ export function DataTable<TData, TValue>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    initialState: { //This line
+      pagination: {
+          pageSize: 10,
+      },
+    },
   });
 
   return (
-    <div className="rounded-md border h-[300px] bg-white"> {/* Definindo a altura da tabela aqui */}
-      <div className="rounded-md border w-[95%] h-[300px] overflow-auto bg-white mx-auto">
+    <div className="flex justify-center items-center">
+      <div className="rounded-md border h-[250px] bg-white w-[99%]"> {/* Definindo a altura da tabela aqui */}
+        <div className="rounded-md border w-[95%] h-[250px] overflow-auto bg-white mx-auto">
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -73,8 +83,28 @@ export function DataTable<TData, TValue>({
                 </TableRow>
               )}
             </TableBody>
-          </Table>
+          </Table>          
         </div>
+
+        <div className="flex items-center justify-center space-x-2 pt-2 bg-white border">
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              Previous
+            </Button>
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+            </Button>
+          </div>
       </div>
+    </div>
   );
 }

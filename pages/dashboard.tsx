@@ -81,7 +81,7 @@ const Dashboard = () => {
                 <title>Dashboard</title>
             </Head>
 
-            <div className="flex-1" id="Dashboard">
+            <div className="flex-1 bg-gray-100" id="Dashboard">
                 <div className="bg-orange-600 text-white p-2 text-left w-full">
                     <span className='ml-2'>Página Inicial</span>
                 </div>
