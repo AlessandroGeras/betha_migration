@@ -16,19 +16,20 @@ export type Payment = {
 export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "id",
-    header: "",
+    header: () => <div className="font-bold"></div>,
     cell: ({ row }) => {
       const id = parseFloat(row.getValue("id"))
-
-      return <div className="w-2 text-2xl text-blue-900 font-bold text-center"><IoIosSearch className="" /></div>
+      return <div className="text-2xl text-blue-900 font-bold"><IoIosSearch className="" /></div>
     },
+    size: 1,
   },
   {
     accessorKey: "status",
     header: () => <div className="font-bold">Status</div>,
     cell: ({ row }) => {
-      return <div className="">{(row.original as any).Status}</div>;
+      return <div className="text-blue-500 font-bold">{(row.original as any).Status}</div>;
     },
+    size: 70,
   },
   {
     accessorKey: "Modulo",
@@ -36,6 +37,7 @@ export const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => {
       return <div className="">{(row.original as any).Modulo}</div>;
     },
+    size: 70,
   },
   {
     accessorKey: "Arquivo",
@@ -43,10 +45,15 @@ export const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => {
       return <div className="">{(row.original as any).Arquivo}</div>;
     },
+    size: 150,
   },
   {
     accessorKey: "Nome",
     header: () => <div className="">Nome</div>,
+    cell: ({ row }) => {
+      return <div className="">{(row.original as any).Nome}</div>;
+    },
+    size: 70,
   },
   {
     accessorKey: "Remessa",
@@ -54,6 +61,7 @@ export const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => {
       return <div className="">{(row.original as any).Remessa}</div>;
     },
+    size: 70,
   },
   /*  {
      accessorKey: "amount",

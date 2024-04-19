@@ -39,7 +39,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-left items-center">
       <div className="rounded-md border h-[250px] bg-white w-[99%]"> {/* Definindo a altura da tabela aqui */}
         <div className="rounded-md border w-[95%] h-[250px] overflow-auto bg-white mx-auto">
           <Table>
@@ -48,7 +48,7 @@ export function DataTable<TData, TValue>({
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => {
                     return (
-                      <TableHead key={header.id}>
+                      <TableHead key={header.id} className="" style={{ width: header.column.getSize() }}>
                         {header.isPlaceholder
                           ? null
                           : flexRender(
@@ -69,7 +69,7 @@ export function DataTable<TData, TValue>({
                     data-state={row.getIsSelected() && "selected"}
                   >
                     {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
+                      <TableCell key={cell.id} className="">
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </TableCell>
                     ))}
