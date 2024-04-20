@@ -1,16 +1,15 @@
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "@tanstack/react-table";
+import { ArrowUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { IoIosSearch } from 'react-icons/io';
 
-import { IoMdAdd, IoIosSearch, IoMdPrint } from 'react-icons/io';
-
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
 export type Payment = {
   id: string
-  status: string
-  modulo: string
-  arquivo: string
-  nome: string
-  remessa: string
+  Status: string
+  Modulo: string
+  Arquivo: string
+  Nome: string
+  Remessa: string
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -18,62 +17,99 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: "id",
     header: () => <div className="font-bold"></div>,
     cell: ({ row }) => {
-      const id = parseFloat(row.getValue("id"))
-      return <div className="text-2xl text-blue-900 font-bold"><IoIosSearch className="" /></div>
+      const id = parseFloat(row.getValue("id"));
+      return <div className="text-2xl text-blue-900 font-bold"><IoIosSearch className="" /></div>;
     },
     size: 1,
   },
   {
-    accessorKey: "status",
-    header: () => <div className="font-bold">Status</div>,
-    cell: ({ row }) => {
-      return <div className="text-blue-500 font-bold">{(row.original as any).Status}</div>;
-    },
+    accessorKey: "Status",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        Status
+        <ArrowUpDown className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("Status")}</div>,
     size: 70,
   },
   {
     accessorKey: "Modulo",
-    header: () => <div className="font-bold">Módulo</div>,
-    cell: ({ row }) => {
-      return <div className="">{(row.original as any).Modulo}</div>;
-    },
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        Modulo
+        <ArrowUpDown className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("Modulo")}</div>,
     size: 70,
   },
   {
     accessorKey: "Arquivo",
-    header: () => <div className="font-bold">Arquivo</div>,
-    cell: ({ row }) => {
-      return <div className="">{(row.original as any).Arquivo}</div>;
-    },
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        Arquivo
+        <ArrowUpDown className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("Arquivo")}</div>,
     size: 150,
   },
   {
     accessorKey: "Nome",
-    header: () => <div className="">Nome</div>,
-    cell: ({ row }) => {
-      return <div className="">{(row.original as any).Nome}</div>;
-    },
-    size: 70,
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        Nome
+        <ArrowUpDown className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("Nome")}</div>,
+    size: 150,
   },
   {
     accessorKey: "Remessa",
-    header: () => <div className="font-bold">Remessa</div>,
-    cell: ({ row }) => {
-      return <div className="">{(row.original as any).Remessa}</div>;
-    },
-    size: 70,
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        Remessa
+        <ArrowUpDown className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("Remessa")}</div>,
+    size: 150,
   },
-  /*  {
-     accessorKey: "amount",
-     header: () => <div className="">Amount</div>,
-     cell: ({ row }) => {
-       const amount = parseFloat(row.getValue("amount"))
-       const formatted = new Intl.NumberFormat("en-US", {
-         style: "currency",
-         currency: "USD",
-       }).format(amount)
-  
-       return <div className="font-medium">{formatted}</div>
-     },
-   }, */
-]
+];
