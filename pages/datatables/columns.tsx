@@ -1,18 +1,14 @@
+import React from 'react';
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
+import { ArrowUp, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IoIosSearch } from 'react-icons/io';
 
-export type Payment = {
+export type User = {
   id: string
-  Status: string
-  Modulo: string
-  Arquivo: string
-  Nome: string
-  Remessa: string
 }
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "id",
     header: () => <div className="font-bold"></div>,
@@ -20,7 +16,7 @@ export const columns: ColumnDef<Payment>[] = [
       const id = parseFloat(row.getValue("id"));
       return <div className="text-2xl text-blue-900 font-bold"><IoIosSearch className="" /></div>;
     },
-    size: 1,
+    size: 35,
   },
   {
     accessorKey: "Status",
@@ -34,11 +30,11 @@ export const columns: ColumnDef<Payment>[] = [
         }}
       >
         Status
-        <ArrowUpDown className="ml-2 h-4 w-4" />
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
       </Button>
     ),
     cell: ({ row }) => <div className="">{row.getValue("Status")}</div>,
-    size: 70,
+    size: 200,
   },
   {
     accessorKey: "Modulo",
@@ -52,11 +48,11 @@ export const columns: ColumnDef<Payment>[] = [
         }}
       >
         Modulo
-        <ArrowUpDown className="ml-2 h-4 w-4" />
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
       </Button>
     ),
     cell: ({ row }) => <div className="">{row.getValue("Modulo")}</div>,
-    size: 70,
+    size: 200,
   },
   {
     accessorKey: "Arquivo",
@@ -70,11 +66,11 @@ export const columns: ColumnDef<Payment>[] = [
         }}
       >
         Arquivo
-        <ArrowUpDown className="ml-2 h-4 w-4" />
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
       </Button>
     ),
     cell: ({ row }) => <div className="">{row.getValue("Arquivo")}</div>,
-    size: 150,
+    size: 200,
   },
   {
     accessorKey: "Nome",
@@ -88,11 +84,11 @@ export const columns: ColumnDef<Payment>[] = [
         }}
       >
         Nome
-        <ArrowUpDown className="ml-2 h-4 w-4" />
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
       </Button>
     ),
     cell: ({ row }) => <div className="">{row.getValue("Nome")}</div>,
-    size: 150,
+    size: 200,
   },
   {
     accessorKey: "Remessa",
@@ -106,10 +102,10 @@ export const columns: ColumnDef<Payment>[] = [
         }}
       >
         Remessa
-        <ArrowUpDown className="ml-2 h-4 w-4" />
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
       </Button>
     ),
     cell: ({ row }) => <div className="">{row.getValue("Remessa")}</div>,
-    size: 150,
+    size: 200,
   },
 ];

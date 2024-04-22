@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  ColumnSizingState,
   SortingState,
   getSortedRowModel,
   ColumnDef,
@@ -16,27 +17,34 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { User } from "./columns";
+import { ColumnResizer } from "../../components/ui/column-resizer";
 import { Button } from "@/components/ui/button";
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
+interface DataTableProps<TData extends User, TValue> {
+  columns: ColumnDef<User, TValue>[];
   data: TData[];
 }
 
-export function DataTable<TData, TValue>({
+export function DataTable<TData extends User, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [colSizing, setColSizing] = React.useState<ColumnSizingState>({});
   const table = useReactTable({
     data,
     columns,
+    enableColumnResizing: true,
+    columnResizeMode: "onChange",
+    onColumnSizingChange: setColSizing,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     state: {
       sorting,
+      columnSizing: colSizing,
     },
     initialState: {
       pagination: {
@@ -54,16 +62,21 @@ export function DataTable<TData, TValue>({
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <TableHead
-                      key={header.id}
-                      className=""
-                      style={{ width: header.column.getSize() }}
-                    >
-                      {header.isPlaceholder ? null : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                    </TableHead>
+                     <TableHead
+                     key={header.id}
+                     className="relative"
+                     style={{
+                       width: header.getSize(),
+                     }}
+                   >
+                     {header.isPlaceholder
+                       ? null
+                       : flexRender(
+                           header.column.columnDef.header,
+                           header.getContext()
+                         )}
+                     <ColumnResizer header={header} />
+                   </TableHead>
                   ))}
                 </TableRow>
               ))}

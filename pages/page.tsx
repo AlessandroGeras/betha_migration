@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Payment, columns } from "./datatables/columns";
+import { User, columns } from "./datatables/columns";
 import { DataTable } from "./datatables/data-table";
 
-async function fetchData(): Promise<Payment[]> {
+async function fetchData(): Promise<User[]> {
   try {
     const response = await fetch(`/api/page`, {
       method: 'POST',
@@ -27,7 +27,7 @@ async function fetchData(): Promise<Payment[]> {
 }
 
 function DemoPage() {
-  const [data, setData] = useState<Payment[]>([]);
+  const [data, setData] = useState<User[]>([]);
 
   useEffect(() => {
     async function fetchDataAndSetData() {
