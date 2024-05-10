@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '@/components/sidebar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-import DemoPage from './page';
+import DemoPage from './dashboard-table/data';
 
 const Dashboard = () => {
 
@@ -45,7 +44,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/dashboard`, {
+                const response = await fetch(`/api/auth`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { FaUserFriends, FaHome, FaHotel, FaUsers, FaUser, FaDoorOpen, FaFileAlt, FaChartLine, FaWrench } from "react-icons/fa";
-
+import { FaUserFriends, FaHome, FaHotel, FaUsers, FaUser, FaDoorOpen, FaFileAlt, FaChartLine, FaWrench,FaSync  } from "react-icons/fa";
+import { FiLayout } from "react-icons/fi";
+import { BsPersonVcard } from "react-icons/bs";
 
 const Sidebar = () => {
 
     const router = useRouter();
-    const [isSubMenuOpenHome, setIsSubMenuOpenHome] = useState(false); //Botões
+    const [isSubMenuOpenHome, setIsSubMenuOpenHome] = useState(false)
+    const [isSubMenuOpenDocuments, setIsSubMenuOpenDocuments] = useState(false);
     const [isSubMenuOpenPrestadores, setIsSubMenuOpenPrestadores] = useState(false);
     const [isSubMenuOpenCadastros, setIsSubMenuOpenCadastros] = useState(false);
     const [isSubMenuOpenDocumentos, setIsSubMenuOpenDocumentos] = useState(false);
@@ -15,6 +17,7 @@ const Sidebar = () => {
     const [isSubMenuOpeColaboradores, setIsSubMenuOpenColaboradores] = useState(false);
     const [isSubMenuOpenConfiguração, setIsSubMenuOpenConfiguração] = useState(false);
     const [isSubMenuOpeNF, setIsSubMenuOpenNF] = useState(false);
+    const [isSubMenuOpeSync, setIsSubMenuOpenSync] = useState(false);
     const [viewAll, setViewAll] = useState(true);
     const [isAdmin, setIsAdmin] = useState(true);
     const [permission, setPermission] = useState('');
@@ -42,6 +45,10 @@ const Sidebar = () => {
 
     const toggleSubMenuHome = () => {
         setIsSubMenuOpenHome(!isSubMenuOpenHome);
+    };
+
+    const toggleSubMenuDocuments = () => {
+        setIsSubMenuOpenDocuments(!isSubMenuOpenDocuments);
     };
 
     const toggleSubMenuPrestadores = () => {
@@ -80,20 +87,24 @@ const Sidebar = () => {
         setIsSubMenuOpenNF(!isSubMenuOpeNF);
     };
 
+    const toggleSubMenuSync = () => {
+        setIsSubMenuOpenSync(!isSubMenuOpeSync);
+    };
+
     const dashboardClick = () => {
         router.push('/dashboard');
     };
 
-    const documentosClick = () => {
-        router.push('/documents');
+    const layoutsClick = () => {
+        router.push('/layouts');
     }
 
-    const terceirosClick = () => {
-        router.push('/outsourced');
+    const parceirosClick = () => {
+        router.push('/parceiros');
     }
 
-    const adicionarTerceirosClick = () => {
-        router.push('/add-outsourced');
+    const incluirParceiroClick = () => {
+        router.push('/incluir-parceiro');
     }
 
     const categoriasTerceirosClick = () => {
@@ -104,24 +115,28 @@ const Sidebar = () => {
         router.push('/add-category-outsourced');
     }
 
-    const addDocPendenteClick = () => {
-        router.push('/add-pending-document');
+    const incluirLayoutClick = () => {
+        router.push('/incluir-layout');
     };
 
     const addDocPendenteColaboradorClick = () => {
         router.push('/add-pending-document-collaborator');
     };
 
-    const colaboradoresClick = () => {
-        router.push('/collaborators');
+    const prefeiturasClick = () => {
+        router.push('/prefeituras');
     };
 
     const usuariosClick = () => {
-        router.push('/users');
+        router.push('/usuarios');
     };
 
-    const adicionarColaboradoresClick = () => {
-        router.push('/add-collaborator');
+    const adicionarUsuariosClick = () => {
+        router.push('/incluir-usuario');
+    };
+
+    const adicionarPrefeiturasClick = () => {
+        router.push('/incluir-prefeitura');
     };
 
     const categoriasColaboradoresClick = () => {
@@ -132,12 +147,8 @@ const Sidebar = () => {
         router.push('/add-category-collaborators');
     };
 
-    const adicionarUsuariosClick = () => {
-        router.push('/add-user');
-    };
-
     const myaccount = () => {
-        router.push('/myaccount');
+        router.push('/minha-conta');
     };
 
     const docCategoryClick = () => {
@@ -148,8 +159,28 @@ const Sidebar = () => {
         router.push('/add-category-documents');
     };
 
-    const nfClick = () => {
-        router.push('/nf');
+    const perfisClick = () => {
+        router.push('/perfis');
+    };
+
+    const adicionarPerfisClick = () => {
+        router.push('/incluir-perfil');
+    };
+
+    const incluirDocumentosClick = () => {
+        router.push('/incluir-documentos');
+    };
+
+    const visualizarDocumentosClick = () => {
+        router.push('/visualizar-documentos');
+    };
+
+    const documentosClick = () => {
+        router.push('/documentos');
+    };
+
+    const syncClick = () => {
+        router.push('/sincronizacao');
     };
 
     const configuração = () => {
@@ -175,47 +206,53 @@ const Sidebar = () => {
                     <div className="p-4 cursor-pointer">
                         <img src="\img\logo_m.png" alt="Descrição da imagem" className="w-[35px]" />
                     </div>
-                    
-                        <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuHome} onMouseLeave={toggleSubMenuHome}>
-                            <FaHome className="text-gray-500 text-xl group-hover:text-white" />
-                            {isSubMenuOpenHome && (
-                                <div className="absolute top-0 left-[68px] bg-white w-[250px] text-center py-[10px] shadow-md hover:bg-orange-600 hover:text-white" onClick={dashboardClick}>
-                                    <p>Página Inicial</p>
-                                </div>
-                            )}
-                        </div>
-              
-                   <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuDocumentos} onMouseLeave={toggleSubMenuDocumentos}>
-                        <FaFileAlt className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenDocumentos && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={documentosClick}>Listar Docs</button>
+
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuHome} onMouseLeave={toggleSubMenuHome}>
+                        <FaHome className="text-gray-500 text-xl group-hover:text-white" />
+                        {isSubMenuOpenHome && (
+                            <div className="absolute top-0 left-[68px] bg-white w-[250px] text-center py-[10px] shadow-md hover:bg-orange-600 hover:text-white" onClick={dashboardClick}>
+                                <p>Página Inicial</p>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuDocuments} onMouseLeave={toggleSubMenuDocuments}>
+                        <FaFileAlt className="text-gray-500 text-xl group-hover:text-white" />
+                        {isSubMenuOpenDocuments && <div className="absolute top-0 left-[68px] bg-white shadow-md">
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={documentosClick}>Listar Documentos</button>
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={incluirDocumentosClick}>Incluir Documentos</button>
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={visualizarDocumentosClick}>Visualizar Documentos</button>
                             <div>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={addDocPendenteClick}>Incluir Pendência Terceiro</button>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addDocPendenteColaboradorClick}>Incluir Pendência Colaborador</button>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={docCategoryClick}>Categoria de Docs</button>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={addDocCategoryClick}>Criar Categoria de Doc</button>
+
+                            </div>
+                        </div>}
+                    </div>
+
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuDocumentos} onMouseLeave={toggleSubMenuDocumentos}>
+                        <FiLayout className='text-gray-500 text-xl group-hover:text-white' />
+                        {isSubMenuOpenDocumentos && <div className="absolute top-0 left-[68px] bg-white shadow-md">
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={layoutsClick}>Listar Layouts</button>
+                            <div>
+                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={incluirLayoutClick}>Incluir Layout</button>
                             </div>
                         </div>}
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuColaboradores} onMouseLeave={toggleSubMenuColaboradores}>
                         <FaUsers className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpeColaboradores && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={colaboradoresClick}>Colaboradores de Terceiro</button>
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={adicionarColaboradoresClick}>Adicionar Colaborador</button>
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={parceirosClick}>Listar Parceiros</button>
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={incluirParceiroClick}>Incluir Parceiro</button>
                             <div>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={categoriasColaboradoresClick}>Categorias Colaborador</button>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={adicionarcategoriasColaboradoresClick}>Criar Categoria Colaborador</button>
+
                             </div>
                         </div>}
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuCadastros} onMouseLeave={toggleSubMenuCadastros}>
                         <FaHotel className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenCadastros && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={terceirosClick}>Listar Terceiros</button>
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={prefeiturasClick}>Listar Prefeituras</button>
                             <div>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300 ' onClick={adicionarTerceirosClick}>Incluir Terceiro</button>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={categoriasTerceirosClick}>Categorias Terceiro</button>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={addCategoriasTerceirosClick}>Criar Categoria Terceiro</button>
+                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300 ' onClick={adicionarPrefeiturasClick}>Incluir Prefeitura</button>
                             </div>
                         </div>}
                     </div>
@@ -223,24 +260,32 @@ const Sidebar = () => {
                         <FaUserFriends className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenPrestadores && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
                             <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={usuariosClick}><p>Usuários</p></button>
+                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={adicionarUsuariosClick}><p>Incluir Usuários</p></button>
                         </div>}
                     </div>
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuNF} onMouseLeave={toggleSubMenuNF}>
-                        <FaChartLine className='text-gray-500 text-xl group-hover:text-white' />
+                        <BsPersonVcard className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpeNF && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
-                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={nfClick}><p>Nota Fiscal - Medições</p></button>
+                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={perfisClick}><p>Perfis</p></button>
+                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={adicionarPerfisClick}><p>Incluir Perfil</p></button>
+                        </div>}
+                    </div>
+                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuSync} onMouseLeave={toggleSubMenuSync}>
+                        <FaSync className='text-gray-500 text-xl group-hover:text-white' />
+                        {isSubMenuOpeSync && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
+                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={syncClick}><p>Sincronização de Dados</p></button>
                         </div>}
                     </div>
                 </div>
 
                 {/* Ícones na parte de baixo */}
                 <div className='mt-auto w-full'>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
+                    {/*  <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
                         <FaWrench className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenConfiguração && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-orange-600 hover:text-white" onClick={configuração}>
                             <p>Configurações</p>
                         </button>}
-                    </div>
+                    </div> */}
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
                         <FaUser className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenConta && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-orange-600 hover:text-white" onClick={myaccount}>

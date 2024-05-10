@@ -1,51 +1,44 @@
-import { testDatabaseConnection } from '../../config/database.mjs';
-import dotenv from 'dotenv';
+import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { cookies } from 'next/headers'
 
-dotenv.config();
+// Inicializa o Prisma Client
+const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { email, password } = req.body;
 
-        console.log(req);
-        
-
-        const sql = `SELECT * FROM users WHERE email = ?`;
-
         try {
-            // Criar uma conexão com o banco de dados
-            const connection = await testDatabaseConnection();
-            
-            // Executar a consulta usando a conexão
-            const [userRows] = await connection.query(sql, email);
+            // Busca o usuário pelo email no banco de dados
+            const user = await prisma.usuarios.findUnique({
+                where: {
+                    email: email,
+                },
+            });
 
-            // Verificar se o usuário foi encontrado
-            if (userRows.length === 0) {
+            // Verifica se o usuário foi encontrado
+            if (!user) {
                 return res.status(401).json({ error: "E-mail inválido" });
             }
-            
-            // Obter a primeira linha do resultado (deve ser apenas um usuário)
-            const user = userRows[0];
 
-            // Verificar a correspondência da senha usando bcrypt
-            const passwordMatch = bcrypt.compareSync(password, user.password);
+            // Verifica a correspondência da senha usando bcrypt
+            const passwordMatch = await bcrypt.compare(password, user.password);
 
             if (passwordMatch) {
-                // Senha correspondente, usuário autenticado com sucesso
-                const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '4h' });
+                // Senha corresponde, usuário autenticado com sucesso
+                const token = jwt.sign({ userId: user.email }, process.env.JWT_SECRET, { expiresIn: '4h' });
 
+                // Define o token no cookie HTTPOnly
                 res.setHeader('Set-Cookie', `jwt=${token}; HttpOnly; Max-Age=14400`);
-                //res.setHeader('jwt2', `jwt=${token}; Path=/; HttpOnly; Max-Age=14400; Secure`);
-                return res.status(200).json({ success: "Usuário logado", usuario: user});
+
+                return res.status(200).json({ success: "Usuário logado", usuario: user });
             } else {
                 // Senha não corresponde
                 return res.status(401).json({ error: "Senha inválida" });
             }
         } catch (error) {
-            console.error('Erro ao executar consulta MySQL:', error);
+            console.error('Erro ao executar consulta Prisma:', error);
             return res.status(500).json({ error: "Erro interno do servidor" });
         }
     } else {

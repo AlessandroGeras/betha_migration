@@ -8,7 +8,7 @@ export function authMiddleware(handler) {
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
 
     if(decodedToken){
-        return await handler(req, res);
+        return await handler(req, res, decodedToken);
     }
     else{
         return res.status(401).json({ error: "Sessão expirada" });

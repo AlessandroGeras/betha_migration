@@ -1,29 +1,20 @@
-import { testDatabaseConnection } from '../../config/database.mjs';
-import dotenv from 'dotenv';
+import { PrismaClient } from '@prisma/client';
+import { authMiddleware } from '../middleware/auth';
 
-dotenv.config();
+const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
+export default authMiddleware(async (req, res) => {
     if (req.method === 'POST') {
-
-        const sql = `SELECT * FROM remessa`;
-
         try {
-            // Criar uma conexão com o banco de dados
-            const connection = await testDatabaseConnection();
-
-            // Executar a consulta usando a conexão
-            const [remessas] = await connection.query(sql);
-
-            // Fechar a conexão com o banco de dados
-            connection.end();
+            // Busca todas as remessas no banco de dados
+            const remessas = await prisma.remessas.findMany();
 
             return res.status(200).json({ success: remessas });
         } catch (error) {
-            console.error('Erro ao executar consulta MySQL:', error);
+            console.error('Erro ao executar consulta Prisma:', error);
             return res.status(500).json({ error: "Erro interno do servidor" });
         }
     } else {
         return res.status(405).json({ error: "Método não permitido" });
     }
-}
+});

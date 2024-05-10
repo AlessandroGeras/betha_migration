@@ -12,7 +12,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@faker-js/faker": "^8.4.1",
+    "@prisma/client": "^5.13.0",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-pdf/renderer": "^3.3.4",
@@ -24,6 +24,7 @@
     "crypto-js": "^4.2.0",
     "date-fns": "^3.0.6",
     "dotenv": "^16.3.1",
+    "faker": "^6.6.6",
     "formidable": "^3.5.1",
     "framer-motion": "10.16.1",
     "jsonwebtoken": "^9.0.2",
@@ -53,6 +54,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@types/bcrypt": "^5.0.2",
     "@types/crypto-js": "^4.2.1",
     "@types/js-cookie": "^3.0.6",

@@ -1,5 +1,5 @@
 import { Header } from "@tanstack/react-table";
-import { User } from "../../pages/datatables/columns";
+import { User } from "../../pages/dashboard-table/columns";
 
 export const ColumnResizer = ({
   header,

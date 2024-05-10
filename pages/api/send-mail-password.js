@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
   try {
     // Atualizar o token na tabela de usuários
-    const sql = `SELECT * FROM users WHERE email = ?`;
+    const sql = `SELECT * FROM usuarios WHERE email = ?`;
 
     const connection = await testDatabaseConnection();
 

@@ -1,0 +1,133 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model layouts {
+  id    Int     @id @default(autoincrement())
+  modulo String
+  nome  String
+  arquivo String
+  entrega String
+  status String
+}
+
+model parceiros {
+  id    Int     @id @default(autoincrement())
+  parceiro String
+  cnpj  String
+  endereco String
+  cidade String
+  uf String
+  telefone String
+  status  String
+  observacoes String
+  contato String
+  email String
+}
+
+model perfis {
+  id    Int     @id @default(autoincrement())
+  perfil String
+   // Permissões para Layouts
+  layoutsIncluir     Boolean
+  layoutsAlterar     Boolean
+  layoutsExcluir     Boolean
+  // Permissões para Parceiros
+  parceirosIncluir   Boolean
+  parceirosAlterar   Boolean
+  parceirosExcluir   Boolean
+  // Permissões para Perfis
+  perfisIncluir    Boolean
+  perfisAlterar    Boolean
+  perfisExcluir    Boolean
+  // Permissões para Prefeituras
+  prefeiturasIncluir Boolean
+  prefeiturasAlterar Boolean
+  prefeiturasExcluir Boolean
+  // Permissões para Remessas
+  remessasIncluir    Boolean
+  remessasAlterar    Boolean
+  remessasExcluir    Boolean
+  // Permissões para Usuários
+  usuariosIncluir    Boolean
+  usuariosAlterar    Boolean
+  usuariosExcluir    Boolean
+}
+
+model prefeituras {
+  id    Int     @id @default(autoincrement())
+  prefeitura String
+  revenda String
+  cnpj  String
+  endereco String
+  cidade String
+  uf String
+  telefone String
+  status  String
+  observacoes String
+  contato String
+  email String
+}
+
+model remessas {
+  id    Int     @id @default(autoincrement())
+  status String
+  modulo String
+  arquivo  String
+  nome String
+  remessa String
+}
+
+model usuarios {
+  id    Int     @id @default(autoincrement())
+  status String
+  perfil String
+  usuario  String
+  password String?
+  email_token String?
+  email String @unique
+  nome String
+}
+
+model documentos {
+  id    Int     @id @default(autoincrement())
+  status String
+  modulo String
+  arquivo  String
+  nome String
+  remessa String
+  periodo String
+  gerada  String
+  usuario String
+}
+
+model sincronizacao {
+  id    Int     @id @default(autoincrement())
+  status String
+  api String
+  url String
+  inicio  String
+  fim String
+}
+
+model visualizardocumentos {
+  id    Int     @id @default(autoincrement())
+  cnpj String
+  registro String
+  vigencia String
+  loa  String
+  aprovacao String
+}
+
+
