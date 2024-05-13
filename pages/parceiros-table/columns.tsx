@@ -145,6 +145,24 @@ export const columns: ColumnDef<User>[] = [
     size: 200,
   },
   {
+    accessorKey: "email",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        E-mail
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("email")}</div>,
+    size: 200,
+  },
+  {
     accessorKey: "telefone",
     header: ({ column }) => (
       <Button

@@ -15,11 +15,11 @@ datasource db {
 
 model layouts {
   id    Int     @id @default(autoincrement())
-  modulo String
-  nome  String
-  arquivo String
-  entrega String
-  status String
+  modulo String 
+  nome  String 
+  arquivo String 
+  entrega String 
+  status String 
 }
 
 model parceiros {
@@ -33,7 +33,7 @@ model parceiros {
   status  String
   observacoes String
   contato String
-  email String
+  email String @unique
 }
 
 model perfis {

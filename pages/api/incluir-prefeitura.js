@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 import { authMiddleware } from '../middleware/auth';
 
 const prisma = new PrismaClient();
@@ -6,34 +6,45 @@ const prisma = new PrismaClient();
 export default authMiddleware(async (req, res) => {
     if (req.method === 'POST') {
         const {
-            prefeitura,
             status,
-            observacoes,
-            cnpj,
+            prefeitura,
             revenda,
-            contato,
+            cnpj,
             endereco,
             cidade,
-            email,
-            telefone,
             uf,
+            telefone,
+            observacoes,
+            contato,
+            email,
         } = req.body;
-        
+
         try {
+            // Verificar se o email já existe
+            const existingPrefeitura = await prisma.prefeituras.findFirst({
+                where: {
+                    email: email,
+                },
+            });
+
+            if (existingPrefeitura) {
+                return res.status(400).json({ erro: "O email já está em uso." });
+            }
+
             // Inserir os dados usando Prisma
             await prisma.prefeituras.create({
                 data: {
-                    prefeitura,
                     status,
-                    observacoes,
-                    cnpj,
+                    prefeitura,
                     revenda,
-                    contato,
+                    cnpj,
                     endereco,
                     cidade,
-                    email,
-                    telefone,
                     uf,
+                    telefone,
+                    observacoes,
+                    contato,
+                    email,
                 },
             });
 

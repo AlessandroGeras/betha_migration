@@ -1,7 +1,9 @@
 import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
-import { testDatabaseConnection } from '../../config/database.mjs';
+import { PrismaClient } from '@prisma/client';
 require('dotenv').config();
+
+const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,27 +13,26 @@ export default async function handler(req, res) {
   const { email } = req.body;
 
   try {
-    // Atualizar o token na tabela de usuários
-    const sql = `SELECT * FROM usuarios WHERE email = ?`;
+    // Encontrar usuário pelo email
+    const user = await prisma.usuarios.findUnique({
+      where: {
+        email: email,
+      },
+    });
 
-    const connection = await testDatabaseConnection();
-
-    console.log(email);
-
-    const [user] = await connection.query(sql, [email]);
-
-    if (user.length > 0) {
+    if (user) {
+      // Gerar token de email
       const token = jwt.sign({ email }, process.env.SECRET_EMAIL, { expiresIn: '1h' });
       
-      const sql = `UPDATE users SET email_token = ? WHERE email = ?`;
-
-      connection.query(sql, [token, email], (error, results) => {
-        if (error) {
-            console.error('Erro ao gerar o token de email:', error);
-            return;
-        }
-        console.log('Token do email gerado com sucesso com sucesso.');
-    });
+      // Atualizar token de email do usuário no banco de dados
+      await prisma.usuarios.update({
+        where: {
+          email: email,
+        },
+        data: {
+          email_token: token,
+        },
+      });
 
       // Configurar o serviço de e-mail (substitua as informações conforme necessário)
       const transporter = nodemailer.createTransport({
@@ -68,5 +69,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('Erro ao processar a solicitação:', error);
     return res.status(500).json({ error: 'Erro interno do servidor' });
+  } finally {
+    await prisma.$disconnect();
   }
 }

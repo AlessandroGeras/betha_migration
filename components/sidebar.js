@@ -220,7 +220,6 @@ const Sidebar = () => {
                         <FaFileAlt className="text-gray-500 text-xl group-hover:text-white" />
                         {isSubMenuOpenDocuments && <div className="absolute top-0 left-[68px] bg-white shadow-md">
                             <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={documentosClick}>Listar Documentos</button>
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={incluirDocumentosClick}>Incluir Documentos</button>
                             <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={visualizarDocumentosClick}>Visualizar Documentos</button>
                             <div>
 

@@ -62,16 +62,15 @@ const Dashboard = () => {
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
-
-
-        if (formData.uf == "") {
+    
+        if (formData.cnpj == "" || formData.parceiro == "" || formData.contato == "" || formData.endereco == "" || formData.cidade == "" || formData.uf == "" || formData.telefone == "" || formData.email == "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
         }
-
+    
         try {
             const response = await fetch('/api/incluir-parceiro', {
                 method: 'POST',
@@ -82,17 +81,18 @@ const Dashboard = () => {
                     ...formData,
                 }),
             });
-
+    
             if (!response.ok) {
-                setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                const responseData = await response.json();
+                setPopupMessage(responseData.error || 'Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
                 setShowModal(true);
                 setModalColor('#e53e3e');
                 setTextColor('#e53e3e');
-                throw new Error('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                throw new Error(responseData.error || 'Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             }
-
+    
             const responseData = await response.json();
-
+    
             console.log('Usuário criado com sucesso!', responseData);
             setPopupMessage('Usuário criado com sucesso!');
             setShowModal(true);

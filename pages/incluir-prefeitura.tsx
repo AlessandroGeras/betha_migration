@@ -68,7 +68,7 @@ const Dashboard = () => {
         e.preventDefault();
 
 
-        if (formData.uf == "") {
+        if (formData.cnpj == "" || formData.prefeitura == "" || formData.contato == "" || formData.endereco == "" || formData.cidade == "" || formData.uf == "" || formData.telefone == "" || formData.email == ""  || formData.revenda == "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
@@ -88,10 +88,18 @@ const Dashboard = () => {
             });
 
             if (!response.ok) {
-                setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
-                setShowModal(true);
-                setModalColor('#e53e3e');
-                setTextColor('#e53e3e');
+                if (response.status === 400) {
+                    setPopupMessage('O email fornecido já está em uso.');
+                    setShowModal(true);
+                    setModalColor('#e53e3e');
+                    setTextColor('#e53e3e');
+                } else {
+                    // Para outros códigos de status de erro, exiba uma mensagem genérica de erro
+                    setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+                    setShowModal(true);
+                    setModalColor('#e53e3e');
+                    setTextColor('#e53e3e');
+                }
                 throw new Error('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             }
 

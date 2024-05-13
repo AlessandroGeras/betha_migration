@@ -53,7 +53,17 @@ const Dashboard = () => {
     };
 
     const handleSubmitSuccess = async (e) => {
-        e.preventDefault();        
+        e.preventDefault();      
+        
+        if (formData.modulo == "" || formData.nome == "" || formData.arquivo == "") {
+            setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
+
 
         try {
             const response = await fetch('/api/incluir-layout', {

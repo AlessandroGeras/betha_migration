@@ -53,6 +53,14 @@ const Dashboard = () => {
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
+        if (formData.usuario == "" || formData.nome == "" || formData.email == "" || formData.perfil == "") {
+            setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
+            setShowModal(true);
+            setModalColor('#e53e3e');
+            setTextColor('#e53e3e');
+            return;
+        }
+
        
 
         try {
