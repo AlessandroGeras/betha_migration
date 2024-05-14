@@ -4,7 +4,7 @@ import { DataTable } from "./data-table";
 
 async function fetchData(): Promise<User[]> {
   try {
-    const response = await fetch(`/api/page`, {
+    const response = await fetch(`/api/remessas`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

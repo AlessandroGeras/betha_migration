@@ -3,6 +3,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUp, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IoIosSearch } from 'react-icons/io';
+import Link from 'next/link';
 
 export type User = {
   id: string
@@ -14,9 +15,15 @@ export const columns: ColumnDef<User>[] = [
     header: () => <div className="font-bold"></div>,
     cell: ({ row }) => {
       const id = parseFloat(row.getValue("id"));
-      return <div className="text-2xl text-blue-900 font-bold"><IoIosSearch className="" /></div>;
+      return (
+        <div className="text-2xl text-blue-900 font-bold">
+          <Link href={`/alterar-remessa?id=${id}`}>
+              <IoIosSearch className="" />
+          </Link>
+        </div>
+      );
     },
-    size: 35,
+    size: 5,
   },
   {
     accessorKey: "status",

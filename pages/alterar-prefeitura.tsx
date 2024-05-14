@@ -4,83 +4,72 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const Dashboard = () => {
-
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [showAll, setShowAll] = useState(false);
     const router = useRouter();
+    const { id } = router.query;
 
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
 
-    const [categoriaOptions, setCategoriaOptions] = useState<{ perfil: string }[]>([]);
+    const [categoriaOptions, setCategoriaOptions] = useState<{ parceiro: string }[]>([]);
 
     const [formData, setFormData] = useState({
         status: 'Ativo',
-        usuario: '',
-        nome: '',
-        email:'',
-        perfil: '',
+        observacoes: '',
+        cnpj: '',
+        prefeitura: '',
+        contato: '',
+        sobrenome: '',
+        endereco: '',
+        cidade: '',
+        email: '',
+        telefone: '',
+        uf: '',
+        revenda:'',
     });
 
-    const resetForm = () => {
-        setFormData({
-            status: 'Ativo',
-            usuario: '',
-            nome: '',
-            email:'',
-            perfil: '',
-        });
-    }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-
-        if (name === 'cnpj') {
-            const formattedCNPJ = value
-                .replace(/\D/g, '')
-                .replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-            setFormData({ ...formData, [name]: formattedCNPJ });
-        } else {
-            setFormData({ ...formData, [name]: value });
-        }
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmitCancel = () => {
-        router.push('/usuarios');
+        router.push('/parceiros');
     };
 
     const handleSubmitSuccess = async (e) => {
         e.preventDefault();
 
-        if (formData.usuario == "" || formData.nome == "" || formData.email == "" || formData.perfil == "") {
+        if (formData.cnpj == "" || formData.prefeitura == "" || formData.contato == "" || formData.endereco == "" || formData.cidade == "" || formData.uf == "" || formData.telefone == "" || formData.email == ""  || formData.revenda == "") {
             setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
             setShowModal(true);
             setModalColor('#e53e3e');
             setTextColor('#e53e3e');
             return;
-        }       
+        }
 
         try {
-            const response = await fetch('/api/incluir-usuario', {
+            const response = await fetch('/api/alterar-prefeitura', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     ...formData,
+                    id,
                 }),
             });
 
             if (!response.ok) {
                 if (response.status === 400) {
-                    // Se o status for 409 (Conflito), significa que o email já está em uso
                     setPopupMessage('O email fornecido já está em uso.');
                     setShowModal(true);
                     setModalColor('#e53e3e');
                     setTextColor('#e53e3e');
                 } else {
-                    // Para outros códigos de status de erro, exiba uma mensagem genérica de erro
                     setPopupMessage('Não foi possível criar o usuário. Verifique se os dados estão preenchidos.');
                     setShowModal(true);
                     setModalColor('#e53e3e');
@@ -91,23 +80,19 @@ const Dashboard = () => {
 
             const responseData = await response.json();
 
-            console.log('Usuário criado com sucesso!', responseData);
-            setPopupMessage('Usuário criado com sucesso!');
+            console.log('Dados salvos com sucesso!', responseData);
+            setPopupMessage('Dados salvos com sucesso!');
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
     };
 
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Fetching data from /api/auth
                 const authResponse = await fetch(`/api/auth`, {
                     method: 'POST',
                     headers: {
@@ -123,8 +108,35 @@ const Dashboard = () => {
                     setShowAll(true);
                 }
 
-                // Fetching data from /api/parceiros
-                const parceirosResponse = await fetch(`/api/perfis`, {
+                const prefeituraResponse = await fetch(`/api/encontrar-prefeitura`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id,
+                    }),
+                });
+
+                const prefeiturasData = await prefeituraResponse.json();                
+
+                setFormData({
+                    status: prefeiturasData.success.perfil.status,
+                    observacoes: prefeiturasData.success.perfil.observacoes,
+                    cnpj: prefeiturasData.success.perfil.cnpj,
+                    prefeitura: prefeiturasData.success.perfil.prefeitura,
+                    contato: prefeiturasData.success.perfil.contato,
+                    sobrenome: prefeiturasData.success.perfil.sobrenome,
+                    endereco: prefeiturasData.success.perfil.endereco,
+                    cidade: prefeiturasData.success.perfil.cidade,
+                    email: prefeiturasData.success.perfil.email,
+                    telefone: prefeiturasData.success.perfil.telefone,
+                    uf: prefeiturasData.success.perfil.uf,
+                    revenda: prefeiturasData.success.perfil.revenda,
+                });
+
+
+                const parceirosResponse = await fetch(`/api/parceiros`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -158,25 +170,19 @@ const Dashboard = () => {
 
     return showAll && (
         <div>
-
             <div>
                 <div className="flex h-screen">
-                    {/* Barra lateral */}
                     <Sidebar />
                     <Head>
-                        <title>Incluir Usuário</title>
+                        <title>Incluir Prefeitura</title>
                     </Head>
 
-                    {/* Tabela principal */}
                     <div className="flex-1 items-center justify-center bg-gray-50">
                         <div className="bg-orange-600 text-white p-2 text-left mb-16 w-full">
-                            {/* Conteúdo da Barra Superior, se necessário */}
-                            <span className="ml-2">Adicionar Usuário</span>
+                            <span className="ml-2">Adicionar Prefeitura</span>
                         </div>
                         <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
-
-                            {/* Linha 1 */}
-                            <div className="col-span-4">
+                            <div className="col-span-3">
                                 <label htmlFor="status" className="block text-sm font-medium text-gray-700">
                                     Status <span className="text-red-500">*</span>
                                 </label>
@@ -193,88 +199,165 @@ const Dashboard = () => {
                                 </select>
                             </div>
 
+                            <div className="col-span-4 row-span-2">
+                                <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700">
+                                    Observações
+                                </label>
+                                <textarea
+                                    name="observacoes"
+                                    id="observacoes"
+                                    value={formData.observacoes}
+                                    onChange={handleInputChange}
+                                    rows={4}
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 pb-[20px]"
+                                />
+                            </div>
 
-
-
-                            {/* Linha 3 */}
-                            <div className="col-span-4">
-                                <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">
-                                    Usuário <span className="text-red-500">*</span>
+                            <div className="col-span-3">
+                                <label htmlFor="cnpj" className="block text-sm font-medium text-gray-700">
+                                    CNPJ <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    name="usuario"
-                                    id="usuario"
-                                    value={formData.usuario}
+                                    name="cnpj"
+                                    id="cnpj"
+                                    value={formData.cnpj}
+                                    onChange={handleInputChange}
+                                    placeholder="00.000.000/0000-00"
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                    maxLength={18}
+                                    required
+                                />
+                            </div>
+
+                            <div className="col-span-4">
+                                <label htmlFor="prefeitura" className="block text-sm font-medium text-gray-700">
+                                    Nome Prefeitura <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="prefeitura"
+                                    id="prefeitura"
+                                    value={formData.prefeitura}
                                     onChange={handleInputChange}
                                     required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
                             </div>
 
-                            <div className="col-span-4">
-                                <label htmlFor="nome" className="block text-sm font-medium text-gray-700">
-                                    Nome <span className="text-red-500">*</span>
+                            <div className="col-span-3">
+                                <label htmlFor="contato" className="block text-sm font-medium text-gray-700">
+                                    Nome do Contato <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    name="nome"
-                                    id="nome"
+                                    name="contato"
+                                    id="contato"
                                     required
-                                    value={formData.nome}
+                                    value={formData.contato}
                                     onChange={handleInputChange}
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
+                            </div>
+
+                            <div className="col-span-3">
+                                <label htmlFor="endereco" className="block text-sm font-medium text-gray-700">
+                                    Endereço <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="endereco"
+                                    id="endereco"
+                                    value={formData.endereco}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
+                            </div>
+
+                            <div className="col-span-3">
+                                <label htmlFor="cidade" className="block text-sm font-medium text-gray-700">
+                                    Cidade <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="cidade"
+                                    id="cidade"
+                                    value={formData.cidade}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
+                            </div>
+
+                            <div className="col-span-1">
+                                <label htmlFor="uf" className="block text-sm font-medium text-gray-700">
+                                    UF
+                                </label>
+                                <input
+                                    type="text"
+                                    name="uf"
+                                    id="uf"
+                                    required
+                                    value={formData.uf}
+                                    onChange={handleInputChange}
+                                    className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+                                />
+                            </div>
+
+                            <div className="col-span-3">
+                                <label htmlFor="telefone" className="block text-sm font-medium text-gray-700">
+                                    Telefone <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="telefone"
+                                    id="telefone"
+                                    value={formData.telefone}
+                                    onChange={handleInputChange}
+                                    required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
                             </div>
 
                             <div className="col-span-4">
                                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                    E-mail <span className="text-red-500">*</span>
+                                    Email <span className="text-red-500">*</span>
                                 </label>
                                 <input
-                                    type="text"
+                                    type="email"
                                     name="email"
                                     id="email"
-                                    required
                                     value={formData.email}
                                     onChange={handleInputChange}
+                                    required
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                 />
                             </div>
 
-
-
-                            <div className="col-span-4">
-                                <label htmlFor="perfil" className="block text-sm font-medium text-gray-700">
-                                    Perfil <span className="text-red-500">*</span>
+                            <div className="col-span-3">
+                                <label htmlFor="revenda" className="block text-sm font-medium text-gray-700">
+                                    Revenda
                                 </label>
                                 <select
-                                    name="perfil"
-                                    id="perfil"
-                                    value={formData.perfil}
+                                    name="revenda"
+                                    id="revenda"
+                                    value={formData.revenda}
                                     onChange={handleInputChange}
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                                    required
                                 >
                                     <option value="" disabled selected>
-                                        Selecione um perfil
+                                        Selecione uma revenda
                                     </option>
-                                    {categoriaOptions.map((perfil) => (
-                                        <option key={perfil.perfil} value={perfil.perfil}>
-                                            {perfil.perfil}
+                                    {categoriaOptions.map((parceiro) => (
+                                        <option key={parceiro.parceiro} value={parceiro.parceiro}>
+                                            {parceiro.parceiro}
                                         </option>
                                     ))}
                                 </select>
                             </div>
 
-
-                            <div className="col-span-2">
-
-                            </div>
-
-                            {/* Linha 6 (Botão Cadastrar) */}
-                            <div className="col-span-1"></div>
-
+                            <div className="col-span-2"></div>
 
                             <div className="col-span-7 flex justify-center mt-4">
                                 <button
@@ -300,14 +383,13 @@ const Dashboard = () => {
                     {showModal && (
                         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                             <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                                {/* Pseudo-elemento para a barra lateral */}
                                 <style>
                                     {`
                                         .modal-content::before {
                                         content: '';
-                                        background-color: ${modalColor}; /* Cor dinâmica baseada no estado */
-                                        width: 4px; /* Largura da barra lateral */
-                                        height: 100%; /* Altura da barra lateral */
+                                        background-color: ${modalColor};
+                                        width: 4px;
+                                        height: 100%;
                                         position: absolute;
                                         top: 0;
                                         left: 0;

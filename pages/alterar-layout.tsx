@@ -4,32 +4,25 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const Dashboard = () => {
-
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [showAll, setShowAll] = useState(false);
     const router = useRouter();
+    const { id } = router.query;
 
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
 
+    const [categoriaOptions, setCategoriaOptions] = useState<{}[]>([]);
+
     const [formData, setFormData] = useState({
-        status: 'Processando',
-        modulo: '',
-        nome: '',
-        arquivo: '',
-        remessa: 'Mensal',
+        status:'Ativo',
+        modulo:'',
+        nome:'',
+        arquivo:'',
+        entrega:'Mensal',
     });
 
-    const resetForm = () => {
-        setFormData({
-            status: 'Processando',
-            modulo: '',
-            nome: '',
-            arquivo: '',
-            remessa: 'Mensal',
-        });
-    }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -52,13 +45,14 @@ const Dashboard = () => {
         }
 
         try {
-            const response = await fetch('/api/incluir-remessa', {
+            const response = await fetch('/api/alterar-layout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     ...formData,
+                    id,
                 }),
             });
 
@@ -77,31 +71,53 @@ const Dashboard = () => {
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
     };
 
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/auth`, {
+                // Fetching data from /api/auth
+                const authResponse = await fetch(`/api/auth`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 });
 
-                const data = await response.json();
+                const authData = await authResponse.json();
 
-                if (!response.ok) {
-                    throw new Error(data.error);
+                if (!authResponse.ok) {
+                    throw new Error(authData.error);
                 } else {
                     setShowAll(true);
                 }
+
+                // Fetching data from /api/parceiros
+                const parceirosResponse = await fetch(`/api/encontrar-layout`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id,
+                    }),
+                });
+
+                const parceirosData = await parceirosResponse.json();
+                setCategoriaOptions(parceirosData.success);
+
+                setFormData({
+                    status:parceirosData.success.status,
+                    modulo:parceirosData.success.modulo,
+                    nome:parceirosData.success.nome,
+                    arquivo:parceirosData.success.arquivo,
+                    entrega:parceirosData.success.entrega,
+                });
+
+
             } catch (error) {
                 setPopupMessage(error.message);
                 setShowModal(true);
@@ -125,14 +141,14 @@ const Dashboard = () => {
                     {/* Barra lateral */}
                     <Sidebar />
                     <Head>
-                        <title>Incluir Remessa</title>
+                        <title>Alterar Layout</title>
                     </Head>
 
                     {/* Tabela principal */}
                     <div className="flex-1 items-center justify-center bg-gray-50">
                         <div className="bg-orange-600 text-white p-2 text-left mb-16 w-full">
                             {/* Conteúdo da Barra Superior, se necessário */}
-                            <span className="ml-2">Adicionar Remessa</span>
+                            <span className="ml-2">Alterar Layout</span>
                         </div>
                         <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
 
@@ -149,9 +165,8 @@ const Dashboard = () => {
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                     required
                                 >
-                                    <option value="Processando">Processando</option>
-                                    <option value="Concluido">Concluído</option>
-                                    <option value="Enviado">Enviado</option>
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
                                 </select>
                             </div>
 
@@ -207,13 +222,13 @@ const Dashboard = () => {
 
                             {/* Linha 4 (entrega, Cidade) */}
                             <div className="col-span-3">
-                                <label htmlFor="remessa" className="block text-sm font-medium text-gray-700">
-                                    Remessa <span className="text-red-500">*</span>
+                                <label htmlFor="entrega" className="block text-sm font-medium text-gray-700">
+                                    Entrega <span className="text-red-500">*</span>
                                 </label>
                                 <select
-                                    name="remessa"
-                                    id="remessa"
-                                    value={formData.remessa}
+                                    name="entrega"
+                                    id="entrega"
+                                    value={formData.entrega}
                                     onChange={handleInputChange}
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                     required

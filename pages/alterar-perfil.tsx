@@ -8,9 +8,12 @@ const Dashboard = () => {
     const [popupMessage, setPopupMessage] = useState('');
     const [showAll, setShowAll] = useState(false);
     const router = useRouter();
+    const { id } = router.query;
 
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
+
+    const [categoriaOptions, setCategoriaOptions] = useState<{ }[]>([]);
 
     const [formData, setFormData] = useState({
         perfil: '',
@@ -47,45 +50,7 @@ const Dashboard = () => {
             alterar: false,
             excluir: false
         }
-    });
-
-    const resetForm = () => {
-        setFormData({
-            perfil: '',
-        });
-        setCheckboxData({
-            layouts: {
-                incluir: false,
-                alterar: false,
-                excluir: false
-            },
-            parceiros: {
-                incluir: false,
-                alterar: false,
-                excluir: false
-            },
-            perfis: {
-                incluir: false,
-                alterar: false,
-                excluir: false
-            },
-            prefeituras: {
-                incluir: false,
-                alterar: false,
-                excluir: false
-            },
-            remessas: {
-                incluir: false,
-                alterar: false,
-                excluir: false
-            },
-            usuarios: {
-                incluir: false,
-                alterar: false,
-                excluir: false
-            }
-        });
-    };
+    });    
 
 
     const handleInputChange = (e) => {
@@ -119,7 +84,7 @@ const Dashboard = () => {
         }
 
         try {
-            const response = await fetch('/api/incluir-perfil', {
+            const response = await fetch('/api/alterar-perfil', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -127,6 +92,7 @@ const Dashboard = () => {
                 body: JSON.stringify({
                     ...formData,
                     checkboxesData: checkboxData,
+                    id,
                 }),
             });
 
@@ -145,7 +111,6 @@ const Dashboard = () => {
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
@@ -154,20 +119,74 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/auth`, {
+                // Fetching data from /api/auth
+                const authResponse = await fetch(`/api/auth`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 });
 
-                const data = await response.json();
+                const authData = await authResponse.json();
 
-                if (!response.ok) {
-                    throw new Error(data.error);
+                if (!authResponse.ok) {
+                    throw new Error(authData.error);
                 } else {
                     setShowAll(true);
                 }
+
+                // Fetching data from /api/parceiros
+                const parceirosResponse = await fetch(`/api/encontrar-perfil`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id,
+                    }),
+                });
+
+                const parceirosData = await parceirosResponse.json();
+                setCategoriaOptions(parceirosData.success);
+
+                setFormData({
+                    perfil:parceirosData.success.perfil,
+                });
+                setCheckboxData({
+                    layouts: {
+                        incluir: parceirosData.success.layoutsIncluir,
+                        alterar: parceirosData.success.layoutsAlterar,
+                        excluir: parceirosData.success.layoutsExcluir,
+                    },
+                    parceiros: {
+                        incluir: parceirosData.success.parceirosIncluir,
+                        alterar: parceirosData.success.parceirosAlterar,
+                        excluir: parceirosData.success.parceirosExcluir,
+                    },
+                    perfis: {
+                        incluir: parceirosData.success.perfisIncluir,
+                        alterar: parceirosData.success.perfisAlterar,
+                        excluir: parceirosData.success.perfisExcluir,
+                    },
+                    prefeituras: {
+                        incluir: parceirosData.success.prefeiturasIncluir,
+                        alterar: parceirosData.success.prefeiturasAlterar,
+                        excluir: parceirosData.success.prefeiturasExcluir,
+                    },
+                    remessas: {
+                        incluir: parceirosData.success.remessasIncluir,
+                        alterar: parceirosData.success.remessasAlterar,
+                        excluir: parceirosData.success.remessasExcluir,
+                    },
+                    usuarios: {
+                        incluir: parceirosData.success.usuariosIncluir,
+                        alterar: parceirosData.success.usuariosAlterar,
+                        excluir: parceirosData.success.usuariosExcluir,
+                    }
+                });
+
+
+
             } catch (error) {
                 setPopupMessage(error.message);
                 setShowModal(true);
@@ -177,6 +196,7 @@ const Dashboard = () => {
 
         fetchData();
     }, []);
+
 
     const closeModal = () => {
         setShowModal(false);
@@ -189,14 +209,14 @@ const Dashboard = () => {
                     {/* Barra lateral */}
                     <Sidebar />
                     <Head>
-                        <title>Incluir Perfil</title>
+                        <title>Alterar Perfil</title>
                     </Head>
 
                     {/* Tabela principal */}
                     <div className="flex-1 items-center justify-center bg-gray-50">
                         <div className="bg-orange-600 text-white p-2 text-left mb-16 w-full">
                             {/* Conteúdo da Barra Superior, se necessário */}
-                            <span className="ml-2">Adicionar Perfil</span>
+                            <span className="ml-2">Alterar Perfil</span>
                         </div>
                         <div className="grid grid-cols-7 gap-0 w-3/4 mx-auto">
                             {/* Linha 1 */}
@@ -213,6 +233,7 @@ const Dashboard = () => {
                                     className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
                                     maxLength={18}
                                     required
+                                    disabled
                                 />
                             </div>
                             <div className="col-span-5"></div>

@@ -15,31 +15,19 @@ const Dashboard = () => {
 
     const [formData, setFormData] = useState({
         status: 'Ativo',
-        observações: '',
         modulo: '',
         nome: '',
         arquivo: '',
-        sobreLayout: '',
         entrega: 'Mensal',
-        cidade: '',
-        email: '',
-        telefone: '',
-        uf: '',
     });
 
     const resetForm = () => {
         setFormData({
             status: 'Ativo',
-            observações: '',
             modulo: '',
             nome: '',
             arquivo: '',
-            sobreLayout: '',
             entrega: '',
-            cidade: '',
-            email: '',
-            telefone: '',
-            uf: '',
         });
     }
 

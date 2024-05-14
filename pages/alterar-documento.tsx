@@ -4,32 +4,28 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const Dashboard = () => {
-
     const [showModal, setShowModal] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [showAll, setShowAll] = useState(false);
     const router = useRouter();
+    const { id } = router.query;
 
     const [modalColor, setModalColor] = useState('#e53e3e');
     const [textColor, setTextColor] = useState('#e53e3e');
 
+    const [categoriaOptions, setCategoriaOptions] = useState<{}[]>([]);
+
     const [formData, setFormData] = useState({
-        status: 'Processando',
+        status: 'Pendente',
         modulo: '',
         nome: '',
         arquivo: '',
         remessa: 'Mensal',
+        periodo: '',
+        gerada: '',
+        usuario: '',
     });
 
-    const resetForm = () => {
-        setFormData({
-            status: 'Processando',
-            modulo: '',
-            nome: '',
-            arquivo: '',
-            remessa: 'Mensal',
-        });
-    }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -37,7 +33,7 @@ const Dashboard = () => {
     };
 
     const handleSubmitCancel = () => {
-        router.push('/layouts');
+        router.push('/dashboard');
     };
 
     const handleSubmitSuccess = async (e) => {
@@ -52,13 +48,14 @@ const Dashboard = () => {
         }
 
         try {
-            const response = await fetch('/api/incluir-remessa', {
+            const response = await fetch('/api/alterar-remessa', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     ...formData,
+                    id,
                 }),
             });
 
@@ -77,31 +74,56 @@ const Dashboard = () => {
             setShowModal(true);
             setModalColor('#3f5470');
             setTextColor('#3f5470');
-            resetForm();
         } catch (error) {
             console.error('Erro ao contatar o servidor:', error);
         }
     };
 
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/auth`, {
+                // Fetching data from /api/auth
+                const authResponse = await fetch(`/api/auth`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 });
 
-                const data = await response.json();
+                const authData = await authResponse.json();
 
-                if (!response.ok) {
-                    throw new Error(data.error);
+                if (!authResponse.ok) {
+                    throw new Error(authData.error);
                 } else {
                     setShowAll(true);
                 }
+
+                // Fetching data from /api/parceiros
+                const parceirosResponse = await fetch(`/api/encontrar-remessa`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id,
+                    }),
+                });
+
+                const parceirosData = await parceirosResponse.json();
+                setCategoriaOptions(parceirosData.success);
+
+                setFormData({
+                    periodo: parceirosData.success.periodo,
+                    gerada: parceirosData.success.gerada,
+                    usuario: parceirosData.success.usuario,
+                    status: parceirosData.success.status,
+                    modulo: parceirosData.success.modulo,
+                    nome: parceirosData.success.nome,
+                    arquivo: parceirosData.success.arquivo,
+                    remessa: parceirosData.success.remessa,
+                });
+
+
             } catch (error) {
                 setPopupMessage(error.message);
                 setShowModal(true);
@@ -125,14 +147,14 @@ const Dashboard = () => {
                     {/* Barra lateral */}
                     <Sidebar />
                     <Head>
-                        <title>Incluir Remessa</title>
+                        <title>Alterar Documento</title>
                     </Head>
 
                     {/* Tabela principal */}
                     <div className="flex-1 items-center justify-center bg-gray-50">
                         <div className="bg-orange-600 text-white p-2 text-left mb-16 w-full">
                             {/* Conteúdo da Barra Superior, se necessário */}
-                            <span className="ml-2">Adicionar Remessa</span>
+                            <span className="ml-2">Alterar Documento</span>
                         </div>
                         <div className="grid grid-cols-7 gap-4 w-3/4 mx-auto">
 
