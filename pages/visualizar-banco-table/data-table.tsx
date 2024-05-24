@@ -32,7 +32,6 @@ import { User } from "./columns";
 import { ColumnResizer } from "../../components/ui/column-resizer";
 import { Button } from "@/components/ui/button";
 
-
 interface DataTableProps<TData extends User, TValue> {
   columns: ColumnDef<User, TValue>[];
   data: TData[];
@@ -44,10 +43,10 @@ export function DataTable<TData extends User, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [colSizing, setColSizing] = React.useState<ColumnSizingState>({});
-  const [pageSize, setPageSize] = React.useState<number>(10);
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
+  const [pageSize, setPageSize] = React.useState<number>(10); // State for page size
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [filtering, setFiltering] = React.useState('');
-  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
   const router = useRouter();
 
   const table = useReactTable({
@@ -73,11 +72,12 @@ export function DataTable<TData extends User, TValue>({
     },
     initialState: {
       pagination: {
-        pageSize: pageSize,
+        pageSize: pageSize, // Use state for page size
       },
     },
   });
 
+  // Function to change page size
   const handlePageSizeChange = (size: number) => {
     setPageSize(size);
     table.setPagination((prevState) => ({
@@ -87,13 +87,13 @@ export function DataTable<TData extends User, TValue>({
   };
 
   const addDocPendenteCollaboratorClick = () => {
-    router.push('/dashboard?migracao=true');
+    router.push('/incluir-script');
   }
 
   return (
     <div className="flex justify-left items-center">
       <div className="h-full bg-white w-[99%]">
-        <div className="w-[99%] h-[500px] overflow-auto bg-white mx-auto">
+        <div className="w-[99%] h-[600px] overflow-auto bg-white mx-auto">
 
           <div className='flex justify-between py-0.5'>
             <div className='flex items-center'>
@@ -140,17 +140,27 @@ export function DataTable<TData extends User, TValue>({
             </div>
 
             <button
-              className="border border-gray-300 pr-1 py-1.5 px-1 rounded bg-orange-600 text-white flex"
+              className="border border-gray-300 pr-1 py-1.5 rounded bg-orange-600 text-white flex"
               onClick={addDocPendenteCollaboratorClick}
             >
-              Executar Migração
+              <IoMdAdd className='text-xl mt-[3px]' />Novo script
             </button>
           </div>
 
           <div className="flex items-center py-2">
-            {/* Aqui você pode adicionar o filtro de coluna, se necessário */}
-          </div>
 
+            {/* Filter de coluna */}
+            {/* <Input
+          placeholder="Filter Status..."
+          value={(table.getColumn("Arquivo")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("Arquivo")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        /> */}
+
+
+          </div>
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -166,9 +176,9 @@ export function DataTable<TData extends User, TValue>({
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                       <ColumnResizer header={header} />
                     </TableHead>
                   ))}
@@ -203,10 +213,11 @@ export function DataTable<TData extends User, TValue>({
                 </TableRow>
               )}
             </TableBody>
-          </Table>
 
+          </Table>
           <div className='w-full mt-4'>
             <div className="flex items-center justify-center space-x-1 pt-2">
+              {/* Buttons for page navigation */}
               <Button
                 variant="destructive"
                 size="sm"
@@ -223,20 +234,23 @@ export function DataTable<TData extends User, TValue>({
               >
                 Next
               </Button>
+              {/* Page size selector */}
               <div>
                 <select
                   className="p-1 border rounded bg-orange-600 ml-1 text-white"
                   value={pageSize}
                   onChange={(e) => handlePageSizeChange(Number(e.target.value))}
                 >
-                  <option value={10}>10</option>
-                  <option value={50}>50</option>
+                  <option value={10} >10</option>
+                  <option value={50} >50</option>
                   <option value={100}>100</option>
                 </select>
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   );

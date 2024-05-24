@@ -175,8 +175,8 @@ const Sidebar = () => {
         router.push('/visualizar-documentos');
     };
 
-    const documentosClick = () => {
-        router.push('/documentos');
+    const scriptClick = () => {
+        router.push('/incluir-script');
     };
 
     const syncClick = () => {
@@ -219,78 +219,24 @@ const Sidebar = () => {
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuDocuments} onMouseLeave={toggleSubMenuDocuments}>
                         <FaFileAlt className="text-gray-500 text-xl group-hover:text-white" />
                         {isSubMenuOpenDocuments && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={documentosClick}>Listar Documentos</button>
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={visualizarDocumentosClick}>Visualizar Documentos</button>
+                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={scriptClick}>Novo Script</button>
                             <div>
 
                             </div>
                         </div>}
-                    </div>
-
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuDocumentos} onMouseLeave={toggleSubMenuDocumentos}>
-                        <FiLayout className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenDocumentos && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={layoutsClick}>Listar Layouts</button>
-                            <div>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={incluirLayoutClick}>Incluir Layout</button>
-                            </div>
-                        </div>}
-                    </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuColaboradores} onMouseLeave={toggleSubMenuColaboradores}>
-                        <FaUsers className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpeColaboradores && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={parceirosClick}>Listar Parceiros</button>
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300' onClick={incluirParceiroClick}>Incluir Parceiro</button>
-                            <div>
-
-                            </div>
-                        </div>}
-                    </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuCadastros} onMouseLeave={toggleSubMenuCadastros}>
-                        <FaHotel className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenCadastros && <div className="absolute top-0 left-[68px] bg-white shadow-md">
-                            <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]' onClick={prefeiturasClick}>Listar Prefeituras</button>
-                            <div>
-                                <button className='hover:bg-orange-600 hover:text-white block w-[250px] py-[10px] border-b-2 border-gray-300 ' onClick={adicionarPrefeiturasClick}>Incluir Prefeitura</button>
-                            </div>
-                        </div>}
-                    </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuPrestadores} onMouseLeave={toggleSubMenuPrestadores}>
-                        <FaUserFriends className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenPrestadores && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
-                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={usuariosClick}><p>Usuários</p></button>
-                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={adicionarUsuariosClick}><p>Incluir Usuários</p></button>
-                        </div>}
-                    </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuNF} onMouseLeave={toggleSubMenuNF}>
-                        <BsPersonVcard className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpeNF && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
-                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={perfisClick}><p>Perfis</p></button>
-                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={adicionarPerfisClick}><p>Incluir Perfil</p></button>
-                        </div>}
-                    </div>
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuSync} onMouseLeave={toggleSubMenuSync}>
-                        <FaSync className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpeSync && <div className='absolute top-0 left-[68px] bg-white shadow-md text-center'>
-                            <button className="hover:bg-orange-600 hover:text-white block w-[250px] py-[10px]" onClick={syncClick}><p>Sincronização de Dados</p></button>
-                        </div>}
-                    </div>
+                    </div>                    
+                   
+                   
                 </div>
 
                 {/* Ícones na parte de baixo */}
-                <div className='mt-auto w-full'>
-                    {/*  <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuConfiguração} onMouseLeave={toggleSubMenuConfiguração}>
-                        <FaWrench className='text-gray-500 text-xl group-hover:text-white' />
-                        {isSubMenuOpenConfiguração && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-orange-600 hover:text-white" onClick={configuração}>
-                            <p>Configurações</p>
-                        </button>}
-                    </div> */}
-                    <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
+                <div className='mt-auto w-full'>                    
+                    {/* <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-orange-600 relative" onMouseEnter={toggleSubMenuConta} onMouseLeave={toggleSubMenuConta}>
                         <FaUser className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenConta && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-orange-600 hover:text-white" onClick={myaccount}>
                             <p>Minha Conta</p>
                         </button>}
-                    </div>
+                    </div> */}
                     <div className="px-6 py-3 py-2 cursor-pointer group hover:bg-red-500 relative" onMouseEnter={toggleSubMenuMenu} onMouseLeave={toggleSubMenuMenu}>
                         <FaDoorOpen className='text-gray-500 text-xl group-hover:text-white' />
                         {isSubMenuOpenMenu && <button className="absolute top-0 left-[68px] bg-white px-8 py-[10px] w-[250px] shadow-md hover:bg-red-500 hover:text-white" onClick={exitClick}>

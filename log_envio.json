@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "descricao": "CONCORRÊNCIA PUBLICA / COMPRAS/SERVIÇOS",
+    "sigla": "CP-C",
+    "valor": "Concorrencia"
+  },
+  {
+    "id": "2",
+    "descricao": "CONCORRÊNCIA PUBLICA / OBRAS",
+    "sigla": "CP-O",
+    "valor": "Concorrencia"
+  },
+  {
+    "id": "3",
+    "descricao": "CONCORRÊNCIA PÚBLICA ELETRÔNICA",
+    "sigla": "CP-E",
+    "valor": "Concorrencia"
+  },
+  {
+    "id": "4",
+    "descricao": "CONVITE / COMPRAS/SERVIÇOS",
+    "sigla": "CO-C",
+    "valor": "Convite"
+  },
+  {
+    "id": "5",
+    "descricao": "CONVITE / OBRAS",
+    "sigla": "CO-O",
+    "valor": "Convite"
+  },
+  {
+    "id": "6",
+    "descricao": "DISPENSA DE LICITAÇÃO",
+    "sigla": "DISP",
+    "valor": "Contratação Direta - Dispensa de Licitação"
+  },
+  {
+    "id": "7",
+    "descricao": "DISPENSA DE LICITAÇÃO / COMPRAS / SERVIÇOS ",
+    "sigla": "IS-C",
+    "valor": "Contratação Direta - Dispensa de Licitação"
+  },
+  {
+    "id": "8",
+    "descricao": "DISPENSA DE LICITAÇÃO / OBRAS ",
+    "sigla": "IS-O",
+    "valor": "Contratação Direta - Dispensa de Licitação"
+  },
+  {
+    "id": "9",
+    "descricao": "INEXIGIBILIDADE",
+    "sigla": "IN-G",
+    "valor": "Contratação Direta - Inexigibilidade de Licitação"
+  },
+  {
+    "id": "10",
+    "descricao": "PREGAO ELETRÔNICO",
+    "sigla": "PR-E",
+    "valor": "Pregão Eletrônico"
+  },
+  {
+    "id": "11",
+    "descricao": "PREGAO PRESENCIAL",
+    "sigla": "PR-G",
+    "valor": "Pregão Presencial"
+  },
+  {
+    "id": "12",
+    "descricao": "TOMADA DE PREÇOS / COMPRAS/SERVIÇOS",
+    "sigla": "TP-C",
+    "valor": "Tomada de Preços"
+  },
+  {
+    "id": "13",
+    "descricao": "TOMADA DE PREÇOS / OBRAS",
+    "sigla": "TP-O",
+    "valor": "Tomada de Preços"
+  }
+]

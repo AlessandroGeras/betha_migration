@@ -2,13 +2,20 @@ import React, { useState, useEffect } from "react";
 import { User, columns } from "./columns";
 import { DataTable } from "./data-table";
 
-async function fetchData(): Promise<User[]> {
+interface DemoPageProps {
+  id: string;
+}
+
+async function fetchData(id: string): Promise<User[]> {
   try {
-    const response = await fetch(`/api/bancos`, {
-      method: 'GET',
+    const response = await fetch(`/api/visualizar-script`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        id,
+    }),
     });
 
     const data = await response.json();
@@ -26,21 +33,23 @@ async function fetchData(): Promise<User[]> {
   }
 }
 
-function DemoPage() {
+const DemoPage: React.FC<DemoPageProps> = ({ id }) => {
   const [data, setData] = useState<User[]>([]);
 
   useEffect(() => {
     async function fetchDataAndSetData() {
-      const fetchedData = await fetchData();
+      const fetchedData = await fetchData(id);
       setData(fetchedData);
     }
 
     fetchDataAndSetData();
-  }, []);
+  }, [id]);
 
   return (
-    <div className="container mx-auto pt-0 ml-1.5">
-      <div className="bg-white z-1 relative top-1 text-2xl text-gray-500 font-semibold p-6  font-lato w-[99%] border solid 1px"><span className="p-6 ml-1.5">Histórico de Sincronismo - Banco de Dados</span></div>
+    <div className="container mx-auto pt-10 ml-1.5">
+      <div className="bg-white z-1 relative top-1 text-2xl text-gray-500 font-semibold p-6  font-lato w-[99%] border solid 1px">
+        <span className="p-6 ml-1.5">Histórico de Sincronismo - {id}</span>
+      </div>
       <DataTable columns={columns} data={data} />
     </div>
   );

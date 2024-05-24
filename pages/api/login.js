@@ -1,44 +1,52 @@
-import { PrismaClient } from '@prisma/client';
+import { testDatabaseConnection } from '../../config/database.mjs';
+const sql = require('mssql');
+import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-// Inicializa o Prisma Client
-const prisma = new PrismaClient();
+dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { email, password } = req.body;
 
         try {
-            // Busca o usuário pelo email no banco de dados
-            const user = await prisma.usuarios.findUnique({
-                where: {
-                    email: email,
-                },
-            });
+            // Criar uma conexão com o banco de dados
+            const masterConnection = await testDatabaseConnection();
+            
+            // Selecionar o banco de dados "usuarios"
+            const selectDatabaseQuery = 'USE usuarios';
+            await masterConnection.query(selectDatabaseQuery);
 
-            // Verifica se o usuário foi encontrado
-            if (!user) {
+            // Consultar a tabela "usuarios" para verificar o email
+            const userQuery = `SELECT * FROM usuarios WHERE email = @email`;
+            const request = new sql.Request(masterConnection);
+            request.input('email', sql.VarChar, email);
+            const result = await request.query(userQuery);
+
+            // Verificar se o usuário foi encontrado
+            if (result.recordset.length === 0) {
                 return res.status(401).json({ error: "E-mail inválido" });
             }
+            
+            // Obter o usuário encontrado
+            const user = result.recordset[0];
 
-            // Verifica a correspondência da senha usando bcrypt
-            const passwordMatch = await bcrypt.compare(password, user.password);
+            // Verificar a correspondência da senha usando bcrypt
+            const passwordMatch = bcrypt.compareSync(password, user.password);
 
             if (passwordMatch) {
-                // Senha corresponde, usuário autenticado com sucesso
-                const token = jwt.sign({ userId: user.email }, process.env.JWT_SECRET, { expiresIn: '4h' });
+                // Senha correspondente, usuário autenticado com sucesso
+                const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '4h' });
 
-                // Define o token no cookie HTTPOnly
                 res.setHeader('Set-Cookie', `jwt=${token}; HttpOnly; Max-Age=14400`);
-
                 return res.status(200).json({ success: "Usuário logado", usuario: user });
             } else {
                 // Senha não corresponde
                 return res.status(401).json({ error: "Senha inválida" });
             }
         } catch (error) {
-            console.error('Erro ao executar consulta Prisma:', error);
+            console.error('Erro ao executar consulta SQL:', error);
             return res.status(500).json({ error: "Erro interno do servidor" });
         }
     } else {

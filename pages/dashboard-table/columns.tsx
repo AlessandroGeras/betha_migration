@@ -14,16 +14,34 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: "id",
     header: () => <div className="font-bold"></div>,
     cell: ({ row }) => {
-      const id = parseFloat(row.getValue("id"));
+      const id = row.getValue("banco");
       return (
         <div className="text-2xl text-blue-900 font-bold">
-          <Link href={`/alterar-remessa?id=${id}`}>
+          <Link href={`/visualizar-banco?id=${id}`}>
               <IoIosSearch className="" />
           </Link>
         </div>
       );
     },
-    size: 5,
+    size: 1,
+  },
+  {
+    accessorKey: "banco",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => {
+          console.log("Sorting button clicked");
+          console.log("Is sorted:", column.getIsSorted());
+          column.toggleSorting(column.getIsSorted() === "asc");
+        }}
+      >
+        Banco
+        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
+      </Button>
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("banco")}</div>,
+    size: 800,
   },
   {
     accessorKey: "status",
@@ -41,78 +59,6 @@ export const columns: ColumnDef<User>[] = [
       </Button>
     ),
     cell: ({ row }) => <div className="">{row.getValue("status")}</div>,
-    size: 200,
-  },
-  {
-    accessorKey: "modulo",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => {
-          console.log("Sorting button clicked");
-          console.log("Is sorted:", column.getIsSorted());
-          column.toggleSorting(column.getIsSorted() === "asc");
-        }}
-      >
-        Modulo
-        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
-      </Button>
-    ),
-    cell: ({ row }) => <div className="">{row.getValue("modulo")}</div>,
-    size: 200,
-  },
-  {
-    accessorKey: "arquivo",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => {
-          console.log("Sorting button clicked");
-          console.log("Is sorted:", column.getIsSorted());
-          column.toggleSorting(column.getIsSorted() === "asc");
-        }}
-      >
-        Arquivo
-        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
-      </Button>
-    ),
-    cell: ({ row }) => <div className="">{row.getValue("arquivo")}</div>,
-    size: 200,
-  },
-  {
-    accessorKey: "nome",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => {
-          console.log("Sorting button clicked");
-          console.log("Is sorted:", column.getIsSorted());
-          column.toggleSorting(column.getIsSorted() === "asc");
-        }}
-      >
-        Nome
-        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
-      </Button>
-    ),
-    cell: ({ row }) => <div className="">{row.getValue("nome")}</div>,
-    size: 200,
-  },
-  {
-    accessorKey: "remessa",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => {
-          console.log("Sorting button clicked");
-          console.log("Is sorted:", column.getIsSorted());
-          column.toggleSorting(column.getIsSorted() === "asc");
-        }}
-      >
-        Remessa
-        {column.getIsSorted() === "asc" ? <ArrowUp className="ml-2 h-4 w-4" /> : <ArrowDown className="ml-2 h-4 w-4" />}
-      </Button>
-    ),
-    cell: ({ row }) => <div className="">{row.getValue("remessa")}</div>,
-    size: 200,
+    size: 800,
   },
 ];
