@@ -44,7 +44,7 @@ export function DataTable<TData extends User, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [colSizing, setColSizing] = React.useState<ColumnSizingState>({});
-  const [pageSize, setPageSize] = React.useState<number>(10);
+  const [pageSize, setPageSize] = React.useState<number>(50);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [filtering, setFiltering] = React.useState('');
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});

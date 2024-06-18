@@ -11,8 +11,8 @@ const Layouts = () => {
     const router = useRouter();
     const { migracao } = router.query;
 
-    const [tamanhoBase, setTamanhoBase] = useState(0); // Assume initial value is in GB
-    const [tamanhoMigracao, setTamanhoMigracao] = useState(0);
+    const [tamanhoBaseKb, setTamanhoBaseKb] = useState(0);
+    const [tamanhoMigracaoKb, setTamanhoMigracaoKb] = useState(0);
     const [percentual, setPercentual] = useState(0);
 
     const convertKbToGb = (kb) => {
@@ -26,7 +26,6 @@ const Layouts = () => {
                     setPopupMessage("Migração em andamento. Por favor aguarde.");
                     setShowModal(true);
 
-                    // Fetching data from /api/auth
                     const migracaoResponse = await fetch(`/api/migracao`, {
                         method: 'POST',
                         headers: {
@@ -38,17 +37,14 @@ const Layouts = () => {
 
                     if (!migracaoResponse.ok) {
                         throw new Error(migracaoData.error);
-                    } else {                        
+                    } else {
                         router.push('/dashboard');
                         setTimeout(() => {
                             router.reload();
-                        }, 1000); // 10 segundos de timeout
+                        }, 1000);
                     }
-                };
+                }
 
-
-
-                // Fetching data from /api/auth
                 const authResponse = await fetch(`/api/auth`, {
                     method: 'POST',
                     headers: {
@@ -64,7 +60,6 @@ const Layouts = () => {
                     setShowAll(true);
                 }
 
-                // Fetching data from /api/bancos
                 const bancosResponse = await fetch(`/api/bancos`, {
                     method: 'GET',
                     headers: {
@@ -77,12 +72,13 @@ const Layouts = () => {
                 if (!bancosResponse.ok) {
                     throw new Error(bancoData.error);
                 } else {
-                    const totalTamanho = bancoData.success.reduce((acc, item) => acc + item.tamanho, 0);
-                    const totalTamanhoGb = convertKbToGb(totalTamanho);
-                    setTamanhoBase(totalTamanhoGb);
+                    const totalTamanhoKb = bancoData.success.reduce((acc, item) => acc + item.tamanho, 0);
+                    setTamanhoBaseKb(totalTamanhoKb);
+
+                    // Log the total size of the bases in KB
+                    console.log("Total size of all bases (in KB):", totalTamanhoKb);
                 }
 
-                // Fetching data from /api/scripts
                 const scriptsResponse = await fetch(`/api/scripts`, {
                     method: 'GET',
                     headers: {
@@ -95,10 +91,15 @@ const Layouts = () => {
                 if (!scriptsResponse.ok) {
                     throw new Error(scriptData.error);
                 } else {
-                    const totalTamanho = scriptData.success.filter(item => item.status === "Concluído").reduce((acc, item) => acc + item.tamanho, 0);
-                    const totalTamanhoGb = convertKbToGb(totalTamanho);
-                    setTamanhoMigracao(totalTamanhoGb);
+                    const totalTamanhoKb = scriptData.success
+                        .filter(item => item.status === "Concluído" || item.status === "Validado")
+                        .reduce((acc, item) => acc + item.tamanho, 0);
+                    setTamanhoMigracaoKb(totalTamanhoKb);
+
+                    // Log the total size of what has been migrated in KB
+                    console.log("Total size of migrated data (in KB):", totalTamanhoKb);
                 }
+
             } catch (error) {
                 setPopupMessage(error.message);
                 setShowModal(true);
@@ -110,14 +111,18 @@ const Layouts = () => {
     }, [migracao]);
 
     useEffect(() => {
-        // Calcular percentual
-        if (tamanhoBase !== 0) {
-            const percentualCalculado = (tamanhoMigracao / tamanhoBase) * 100;
+        if (tamanhoBaseKb !== 0) {
+            const percentualCalculado = (tamanhoMigracaoKb / tamanhoBaseKb) * 100;
             setPercentual(percentualCalculado);
+
+            // Additional logs to debug percentual calculation
+            console.log("Tamanho Base (KB):", tamanhoBaseKb);
+            console.log("Tamanho Migracao (KB):", tamanhoMigracaoKb);
+            console.log("Percentual Calculado:", percentualCalculado);
         } else {
             setPercentual(0);
         }
-    }, [tamanhoBase, tamanhoMigracao]);
+    }, [tamanhoBaseKb, tamanhoMigracaoKb]);
 
     const closeModal = () => {
         setShowModal(false);
@@ -137,7 +142,7 @@ const Layouts = () => {
 
                 <div className="flex items-center justify-center pt-10 px-20 bg-gray-100">
                     <div className="container mx-auto">
-                        <div className='items-center '>
+                        <div className='items-center'>
                             <div className="flex justify-center mt-[-50px] mb-10 px-26">
                                 <div className="mx-2 my-2 flex-1 px-3 py-3 text-center text-[#747474] font-lato">
                                     <div className="text-2xl font-medium">Dados de origem - CECAM</div>
@@ -152,11 +157,11 @@ const Layouts = () => {
                             <div className="flex justify-center mt-[-60px] px-26">
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center text-[#747474] font-lato">
                                     <div className="mt-[-15px] text-left">Tamanho da base de dados</div>
-                                    <div className="mt-2 text-5xl font-medium">{tamanhoBase} GB</div>
+                                    <div className="mt-2 text-5xl font-medium">{convertKbToGb(tamanhoBaseKb)} GB</div>
                                 </div>
                                 <div className="mx-2 my-2 flex-1 bg-white px-3 py-3 rounded shadow text-center text-[#747474] font-lato">
                                     <div className="mt-[-15px] text-left">Porcentagem enviada - Tamanho da base de dados enviada</div>
-                                    <div className="mt-2 text-5xl font-medium">{percentual.toFixed(2)}% - {tamanhoMigracao} GB</div>
+                                    <div className="mt-2 text-5xl font-medium">{percentual.toFixed(2)}% - {convertKbToGb(tamanhoMigracaoKb)} GB</div>
                                 </div>
                             </div>
 
@@ -168,11 +173,6 @@ const Layouts = () => {
                 {showModal && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                         <div className="modal-content bg-white p-8 mx-auto my-4 rounded-lg w-1/2 relative flex flex-row relative">
-                            {/* <button className="absolute top-2 right-2 text-red-500 hover:text-gray-700" onClick={closeModal}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button> */}
                             <div className="text-red-500 text-md text-center flex-grow">
                                 {popupMessage}
                             </div>

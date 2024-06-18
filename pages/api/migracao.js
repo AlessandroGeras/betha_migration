@@ -26,7 +26,7 @@ export default async function handler(req, res) {
             const remessas = remessasResult.recordset;
 
             for (let remessa of remessas) {
-                if (remessa.status !== 'Concluído' && remessa.query && remessa.api) {
+                if (remessa.status !== 'Concluído' && remessa.status !== 'Validado' && remessa.query && remessa.api) {
                     console.log(`Executando script no banco: ${remessa.banco}`);
 
                     // Selecionar o banco especificado em remessa.banco
@@ -36,19 +36,29 @@ export default async function handler(req, res) {
                     // Executar a query especificada em remessa.query
                     const queryResult = await masterConnection.query(remessa.query);
 
+                    console.log("inicio_json");
+                    const teste = JSON.stringify(queryResult.recordset, null, 2); // Ajuste aqui para incluir os colchetes
+                    console.log(teste);
+                    console.log("fim_json");
+
                     try {
                         // Enviar as informações coletadas para a API especificada em remessa.api
                         const response = await fetch(remessa.api, {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
                             },
-                            body: JSON.stringify({ data: queryResult.recordset })
+                            body: JSON.stringify(queryResult.recordset) // Ajuste aqui para incluir os colchetes
                         });
 
                         if (response.ok) {
-                            // Atualizar o status para "Concluído" se o envio for bem-sucedido
-                            await updateScriptStatus(masterConnection, remessa.id, 'Concluído', null);
+                            // Atualizar o status para "Concluído" e incluir observacao se o envio for bem-sucedido
+                            await updateScriptStatus(masterConnection, remessa.id, 'Concluído', 'Envio bem-sucedido');
+                        } else if (response.status === 409) {
+                            // Atualizar o campo de observação com o erro em caso de conflito
+                            const errorText = await response.text();
+                            await updateScriptStatus(masterConnection, remessa.id, 'Concluído', errorText);
                         } else {
                             // Atualizar o status para "Falha ao enviar os dados" se o envio falhar
                             const errorText = await response.text();
