@@ -39,18 +39,18 @@ export default async function handler(req, res) {
 
         // Configurar o serviço de e-mail
         const transporter = nodemailer.createTransport({
-          host: 'mail.estilofontana.com.br',
+          host: 'smtp.skymail.net.br',
           port: 587,
           secure: false,
           auth: {
-            user: 'noreply@estilofontana.com.br',
-            pass: 'eQNd6x2tTifPBIaX3ZcA',
+            user: 'suporte@minertecnologia.com',
+            pass: 'mnr@sup0rt3',
           },
         });
 
         // Enviar e-mail
         await transporter.sendMail({
-          from: 'noreply@estilofontana.com.br',
+          from: 'suporte@minertecnologia.com',
           to: email,
           subject: 'Recuperação de Senha - Portal Prestação de Contas',
           html: `<p>Instruções para recuperação de senha do Portal Prestação de Contas:</p>

@@ -42,34 +42,54 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS id,
-                nm_DestinacaoRecurso AS descricao,
-                cd_DestinacaoRecurso AS numero
-            FROM COMPDestinacaoRecurso
+            select 
+cd_DestinacaoRecurso as idIntegracao,
+JSON_QUERY(
+    (SELECT
+JSON_QUERY(
+    (SELECT
+ 7978 as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS configuracaoRecurso,
+cd_DestinacaoRecurso as numero,
+nm_DestinacaoRecurso as descricao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS content
+from COMPDestinacaoRecurso
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
-        const transformedData = resultData.map(record => ({
-            idIntegracao: "1",
-            content: {
-                configuracaoRecurso: {
-                    id: 1
-                },
-                descricao: record.descricao,
-                numero: record.numero
-            }
-        }));
+        const transformedData = resultData.map(record => {
+            const content = JSON.parse(record.content);
+            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
+            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
+            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+            return {
+                idIntegracao: idIntegracao,
+                content: {
+                    configuracaoRecurso: {
+                        id: content.configuracaoRecurso.id
+                    },
+                    descricao: descricao,
+                    numero: numero
+                }
+            };
+        });
+
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
                 method: 'POST',
                 headers: {
@@ -84,7 +104,7 @@ async function main() {
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         // Lidar com erros de conexão ou consulta aqui

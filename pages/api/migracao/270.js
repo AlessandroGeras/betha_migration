@@ -43,10 +43,20 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
+        cd_ClassNivSal as idIntegracao,
 JSON_QUERY(
     (SELECT
-        cd_ClassNivSal as id,
-        ds_ClassNivSal as descricao
+           jSON_QUERY(
+    (SELECT
+     '4595' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS planoCargoSalario,
+        ds_ClassNivSal as descricao,
+                '0.0' as valor, '200' as cargaHoraria, 
+                'false' as coeficiente,
+                '2022-05-09 00:00:00' as inicioVigencia,
+                '1900-01-01 00:00:00' as dataHoraCriacao,
+                'ATIVO' AS situacao
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS conteudo
 from FOLHClassNivSal
@@ -60,18 +70,18 @@ from FOLHClassNivSal
             const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
             
             return {
-                idIntegracao: conteudo.id.toString(),
+                idIntegracao: record.idIntegracao,
                 conteudo: {
                     planoCargoSalario: {
-                        id: null
+                        id: conteudo.planoCargoSalario.id
                     },
                     descricao: conteudo.descricao,
-                    valor: null,
-                    cargaHoraria: null,
-                    coeficiente: null,
-                    inicioVigencia: null,
-                    dataHoraCriacao: null,                   
-                    situacao: null,
+                    valor: conteudo.valor,
+                    cargaHoraria: conteudo.cargaHoraria,
+                    coeficiente: conteudo.coeficiente,
+                    inicioVigencia: conteudo.inicioVigencia,
+                    dataHoraCriacao: conteudo.dataHoraCriacao,
+                    situacao: conteudo.situacao,
                 }
             };
         });

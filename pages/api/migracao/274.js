@@ -81,8 +81,7 @@ join FOLHEvento ev on ev.cd_Evento = em.cd_Evento
             const parcelas = JSON.parse(record.parcelas);
 
             return {
-                idIntegracao: matricula.id.toString(), // Assumindo que id é a ID de integração
-                idGerado: matricula.id.toString(), // Este campo não está presente no SQL, setado como null
+                idIntegracao: matricula.id.toString(),
                 conteudo: {
                     tipo: conteudo.tipo,
                     dataInicial: conteudo.dataInicial,

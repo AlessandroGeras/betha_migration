@@ -36,19 +36,26 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "TRIBUTOS2024"
+        // Selecionar o banco de dados "FOLHA_CAM"
         const selectDatabaseQuery = 'USE FOLHA_CAM';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
             select 
+cd_LotacaoTributariaTipo as ididIntegracao,
 JSON_QUERY(
     (SELECT
-        cd_LotacaoTributariaTipo as id,
         ds_LotacaoTributariaTipo as descricao,
-        null as grupoTrabalhador,
-        'true' as emUso
+                  'true' as emUso,
+        JSON_QUERY(
+    (SELECT
+           '1' as  nivel,    
+           ds_LotacaoTributariaTipoPreenchimento as descricao,
+                   '3' as quantidadeDigitos,
+                   'PONTO' as separador
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS niveis      
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS conteudo
 from FOLHESLotacaoTributariaTipo
@@ -60,12 +67,20 @@ from FOLHESLotacaoTributariaTipo
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
-            
+
             return {
+                idIntegracao: record.ididIntegracao,
                 conteudo: {
-                    descricao: conteudo.descricao,
-                    grupoTrabalhador:null,
-                    emUso:true
+                    descricao: conteudo.descricao.slice(0, 100), // Limitar o campo descricao a 100 caracteres
+                    emUso: conteudo.emUso,
+                    niveis: [
+                        {
+                            nivel: conteudo.niveis.nivel,
+                            descricao: conteudo.niveis.descricao.slice(0, 100), // Limitar o campo descricao a 100 caracteres
+                            quantidadeDigitos: conteudo.niveis.quantidadeDigitos,
+                            separador: conteudo.niveis.separador,
+                        }
+                    ]
                 }
             };
         });

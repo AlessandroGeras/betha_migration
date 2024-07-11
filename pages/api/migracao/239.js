@@ -43,29 +43,30 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-cd_tipoaditamento as id,
-ds_tipoaditamento as descricao,
-        JSON_QUERY(
-    (SELECT
-'OUTRAS_CLAUSULAS' as valor,
-'OUTROS' as descricao
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS classificacao    
-from COMPTiposAditamento
+                ds_tipoaditamento as descricao,
+                JSON_QUERY(
+                    (SELECT
+                        'OUTRAS_CLAUSULAS' as valor,
+                        'OUTROS' as descricao
+                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS classificacao    
+            from COMPTiposAditamento
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
-        const transformedData = resultData.map(record => ({
-            id: record.id,
-            descricao: record.descricao,
-            classificacao: {
-                valor: 'AMOSTRAS',
-                descricao: 'string'
-            }
-        }));
+        const transformedData = resultData.map(record => {
+            const classificacao = JSON.parse(record.classificacao);
+            return {
+                descricao: record.descricao,
+                classificacao: {
+                    valor: classificacao.valor,
+                    descricao: classificacao.descricao,
+                }
+            };
+        });
 
         // Salvar os resultados transformados em um arquivo JSON
         fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));

@@ -1,0 +1,134 @@
+const sql = require('mssql');
+const dotenv = require('dotenv');
+const fetch = require('node-fetch');
+const fs = require('fs');
+
+dotenv.config();
+
+async function connectToSqlServer() {
+    try {
+        const server = process.env.SERVER;
+        const database = process.env.DATABASE;
+        const username = process.env.USERNAME_SQLSERVER;
+        const password = process.env.PASSWORD;
+
+        const config = {
+            user: username,
+            password: password,
+            server: server,
+            database: database,
+            options: {
+                encrypt: false
+            }
+        };
+
+        const pool = await sql.connect(config);
+        console.log("Conectado ao SQL Server");
+        return pool;
+    } catch (error) {
+        console.error('Erro ao conectar ao SQL Server:', error);
+        throw error;
+    }
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+async function main() {
+    try {
+        // Conectar ao SQL Server
+        const masterConnection = await connectToSqlServer();
+
+        // Selecionar o banco de dados "CONTABIL2024"
+        const selectDatabaseQuery = 'USE CONTABIL2024';
+        await masterConnection.query(selectDatabaseQuery);
+
+        // Executar a consulta SQL
+        const userQuery = `
+            SELECT 
+                cd_ContaContabil as idIntegracao,
+                JSON_QUERY(
+                    (SELECT
+                        JSON_QUERY(
+                            (SELECT
+                                9868 as id
+                            FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS configuracao,
+                        case fl_AceitaMovimento
+                            when 'N' then 'SINTETICO'
+                            when 'S' then 'ANALITICO'
+                        end as tipo,
+                        cd_ContaContabil as mascara,
+                        ds_ContaContabil as descricao,
+                        ds_Funcao as funcao,
+                        dt_InicioVigencia as dataVigenciaInicial,
+                        dt_TerminoVigencia as dataVigenciaFinal
+                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS content
+            FROM CONTContaContabil
+        `;
+
+        const result = await masterConnection.query(userQuery);
+        const resultData = result.recordset;
+
+        // Transformar os resultados da consulta no formato desejado
+        const transformedData = resultData.map(record => {
+            const content = JSON.parse(record.content);
+            return {
+                idIntegracao: record.idIntegracao.toString(),
+                content: {
+                    configuracao: content.configuracao,
+                    mascara: content.mascara.toString(),
+                    descricao: content.descricao,
+                    tipo: content.tipo,
+                    funcao: content.funcao,
+                    dataVigenciaInicial: formatDate(content.dataVigenciaInicial),
+                    //dataVigenciaFinal: formatDate(content.dataVigenciaFinal)
+                }
+            };
+        });
+
+        const chunkSize = 50;
+        const chunks = [];
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            chunks.push(chunk);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
+
+        // Enviar cada chunk de registros de uma vez para a rota desejada
+        for (const chunk of chunks) {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/contas-contabeis', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+                },
+                body: JSON.stringify(chunk)
+            });
+
+            if (response.ok) {
+                console.log(`Dados do chunk enviados com sucesso para a rota.`);
+            } else {
+                console.error(`Erro ao enviar os dados do chunk para a rota:`, response.statusText);
+            }
+        }
+
+    } catch (error) {
+        // Lidar com erros de conexão ou consulta aqui
+        console.error('Erro durante a execução do programa:', error);
+    } finally {
+        // Fechar a conexão com o SQL Server
+        await sql.close();
+    }
+}
+
+// Chamar a função principal
+main();

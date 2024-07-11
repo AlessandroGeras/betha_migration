@@ -43,16 +43,16 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             SELECT
-                ROW_NUMBER() OVER (ORDER BY cd_Servico) AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        cd_Servico as iListasServicos,
-                        vl_Aliquota as aliquota,
-                        null as dtAdesao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS listasServicosEntidades
-            FROM ISSServicos
-            WHERE cd_Exercicio = 2024
+ROW_NUMBER() OVER (ORDER BY cd_Servico) AS idIntegracao,
+JSON_QUERY(
+   (SELECT
+cd_Servico as iListasServicos,
+vl_Aliquota as aliquota,
+null as dtAdesao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS listasServicosEntidades
+FROM ISSServicos
+where cd_Exercicio = 2024
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -67,6 +67,7 @@ async function main() {
                 listasservicos: {
                     codigo: conteudo.iListasServicos,
                     descricao: conteudo.aliquota,
+                    listaServicoLei:conteudo.listaServicoLei,
                 }
             };
         });

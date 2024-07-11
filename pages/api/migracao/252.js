@@ -36,19 +36,20 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
+        // Selecionar o banco de dados "TRIBUTOS2024"
         const selectDatabaseQuery = 'USE TRIBUTOS2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            select 
-sc.dt_fim as dtDesligamento,
-sc.dt_inicio as dtInclusao,
-sc.cd_Contribuinte as idPessoa,
-s.cd_Socio as idSocio
-from ISSSocios s
-left join ISSSocioContr sc on sc.cd_Socio = s.cd_Socio
+            SELECT 
+                s.cd_Socio AS idIntegracao,
+                FORMAT(sc.dt_fim, 'yyyy-MM-dd') AS dtDesligamento,
+                FORMAT(sc.dt_inicio, 'yyyy-MM-dd') AS dtInclusao,
+                sc.cd_Contribuinte AS idPessoa,
+                s.cd_Socio AS idSocio
+            FROM ISSSocios s
+            LEFT JOIN ISSSocioContr sc ON sc.cd_Socio = s.cd_Socio
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -61,13 +62,18 @@ left join ISSSocioContr sc on sc.cd_Socio = s.cd_Socio
                 dtDesligamento: record.dtDesligamento,
                 dtInclusao: record.dtInclusao,
                 idPessoa: record.idPessoa,
-                idSocio: record.idSocio,
+                idSocio: record.idSocio
             }
         }));
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        // Dividir os dados em chunks de 50 registros
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
         for (const record of transformedData) {

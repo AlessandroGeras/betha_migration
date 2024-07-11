@@ -40,78 +40,35 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "TRIBUTOS2024"
+        const selectDatabaseQuery = 'USE TRIBUTOS2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
             SELECT 
-                cd_fornecedor as id,
-                nm_fornecedor as nome,
-                nm_fantasia as nomeFantasia,
-                nr_cgc as cpfCnpj,
-                ds_inscricaoestadual as inscricaoEstadual,
-                ds_inscricaomunicipal AS inscricaoMunicipal,
-                dt_cadastro AS dataInclusao,
+                Cd_Codigo as idIntegracao,
                 JSON_QUERY(
-                    (SELECT CASE fl_juridica
-                        WHEN 1 THEN 'JURIDICA'
-                        ELSE 'FISICA'
-                    END AS valor
+                    (SELECT
+                        sg_Sistema as descricao
                     FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS tipo,
-                JSON_QUERY(
-                    (SELECT CASE fl_juridica
-                        WHEN 1 THEN 'A'
-                        ELSE 'I'
-                    END AS valor
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS situacao
-            FROM COMPFornecedores
-        `;
+                ) AS tiposDocumentos
+            FROM DVATDocumentos`;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
-        const transformedData = resultData.map(record => ({
-            nome: record.nome,
-            cpfCnpj: removeFormatting(record.cpfCnpj), // Remove formatting from cpfCnpj
-            tipo: {
-                valor: JSON.parse(record.tipo).valor === 'JURIDICA' ? 'JURIDICA' : 'FISICA',
-                descricao: JSON.parse(record.tipo).valor === 'JURIDICA' ? 'JURIDICA' : 'FISICA'
-            },
-            nomeFantasia: record.nomeFantasia,
-            inscricaoEstadual: record.inscricaoEstadual || null,
-            estadoInscricao: null,
-            inscricaoMunicipal: record.inscricaoMunicipal || null,
-            municipioInscricao: null,
-            situacao: {
-                valor: JSON.parse(record.situacao).valor === 'A' ? 'A' : 'I',
-                descricao: JSON.parse(record.situacao).valor === 'A' ? 'A' : 'I'
-            },
-            dataSituacao: null,
-            dataInclusao: record.dataInclusao,
-            responsavel: null,
-            orgaoRegistroEmpresa: null,
-            dataRegistro: null,
-            numeroRegistro: null,
-            porteEmpresa: {
-                valor: null,
-                descricao: null
-            },
-            optanteSimples: null,
-            naturezaJuridica: {
-                id: null
-            },
-            naturezaJuridicaQualificacao: null,
-            endereco: null,
-            telefone: null,
-            email: null,
-            identificadorDesktopTransparencia: null,
-            contasBancarias: []
-        }));
+        const transformedData = resultData.map(record => {
+            const tiposDocumentos = JSON.parse(record.tiposDocumentos);
+
+            return {
+                idIntegracao: record.idIntegracao, // ID de integração
+                tiposDocumentos: {
+                    descricao: tiposDocumentos.descricao,
+                }
+            };
+        });
 
         // Salvar os resultados transformados em um arquivo JSON
         fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
@@ -119,7 +76,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         for (const record of transformedData) {
-            const response = await fetch('https://patrimonio.betha.cloud/patrimonio-services/api/fornecedores', {
+            const response = await fetch('https://tributos.betha.cloud/service-layer-tributos/api/tiposDocumentos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

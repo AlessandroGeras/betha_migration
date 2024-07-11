@@ -43,27 +43,45 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-            JSON_QUERY(
-                (SELECT
-                    id_AtoLegal as id,
-                    nr_AtoLegal as numeroOficial,
-                    JSON_QUERY(
-                        (SELECT
-                            cd_AtoLegalTipo as id 
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                    ) AS tipo,
-                    ds_Ementa as ementa,
-                    JSON_QUERY(
-                        (SELECT
-                            '1' as id
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                    ) AS naturezaTextoJuridico,
-                    dt_Publicacao as dataCriacao,
-                    dt_Publicacao as dataVigorar,
-                    dt_Publicacao as dataPublicacao
-                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-            ) AS conteudo
-            from FOLHAtoLegal
+JSON_QUERY(
+    (SELECT
+        id_AtoLegal as id,
+        nr_AtoLegal as numeroOficial,
+        JSON_QUERY(
+    (SELECT
+        case cd_AtoLegalTipo
+                WHEN  1 THEN 50218
+    WHEN 2 THEN 50219
+    WHEN 3 THEN 50220
+    WHEN 4 THEN 50229
+    WHEN 5 THEN 50221
+    WHEN 6 THEN 50223
+    WHEN 7 THEN 50231
+    WHEN 8 THEN 50232
+    WHEN 9 THEN 50233
+    WHEN 10 THEN 50225
+    WHEN 11 THEN 50234
+    WHEN 12 THEN 50227
+    WHEN 13 THEN 50235
+    WHEN 14 THEN 50236
+    WHEN 99 THEN 50237
+                end as id 
+        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+        ) AS tipo,
+        ds_Ementa as ementa,
+        JSON_QUERY(
+    (SELECT
+        '16196' as id
+        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+        ) AS naturezaTextoJuridico,
+     dt_Publicacao as dataCriacao,
+        dt_Publicacao as dataVigorar,
+        dt_Publicacao as dataPublicacao
+        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+        ) AS conteudo
+from FOLHAtoLegal
+
+
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -75,7 +93,6 @@ async function main() {
 
             return {
                 idIntegracao: conteudo.id.toString(), // ID de integração
-                idGerado: conteudo.id.toString(),
                 conteudo: {
                     id: conteudo.id,
                     numeroOficial: conteudo.numeroOficial,

@@ -42,23 +42,23 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select
-JSON_QUERY(
-    (SELECT
-                 JSON_QUERY(
-    (SELECT
-           fo.cd_Funcionario as id
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS matricula,        
-fo.dh_Afastamento as inicioAfastamento,
-fo.dh_Retorno as fimAfastamento,
-fo.ds_Historico as motivo,
-fo.id_Ocorrencia as numeroProcesso,
-am.ds_AfastamentoMotivo as observacao
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS conteudo
-from FOLHFuncOcorrencia fo
-join FOLHESAfastamentoMotivo am on am.cd_AfastamentoMotivo = fo.cd_SitAfastamento
+            SELECT
+                JSON_QUERY(
+                    (SELECT
+                        JSON_QUERY(
+                            (SELECT
+                                fo.cd_Funcionario AS id
+                            FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS funcionario,
+                        fo.dh_Afastamento AS inicioAfastamento,
+                        fo.dh_Retorno AS fimAfastamento,
+                        fo.ds_Historico AS motivo,
+                        fo.id_Ocorrencia AS numeroProcesso,
+                        am.ds_AfastamentoMotivo AS observacao
+                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS conteudo
+            FROM FOLHFuncOcorrencia fo
+            JOIN FOLHESAfastamentoMotivo am ON am.cd_AfastamentoMotivo = fo.cd_SitAfastamento
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -72,15 +72,12 @@ join FOLHESAfastamentoMotivo am on am.cd_AfastamentoMotivo = fo.cd_SitAfastament
                 idIntegracao: conteudo.funcionario.id.toString(),
                 idGerado: conteudo.funcionario.id.toString(), // Assuming id is used as idGerado
                 conteudo: {
-                    id: conteudo.funcionario.id, // Default value
-                    funcionario: {
-                        id: conteudo.funcionario.id
-                    },
-                    configuracaoLicencaPremio: {
-                        id: conteudo.configuracaoLicencaPremio.id,
-                    },
-                    dataInicial: conteudo.dataInicial,
-                    dataFinal: conteudo.dataFinal,
+                    funcionario: conteudo.funcionario,
+                    inicioAfastamento: conteudo.inicioAfastamento,
+                    fimAfastamento: conteudo.fimAfastamento,
+                    motivo: conteudo.motivo,
+                    numeroProcesso: conteudo.numeroProcesso,
+                    observacao: conteudo.observacao
                 }
             };
         });

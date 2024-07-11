@@ -52,7 +52,6 @@ JSON_QUERY(
                 ds_inscricao_municipal as inscricaoMunicipal,
                 ds_razaosocial as nome,
                 ds_fantasia as nomeFantasia,
-                '' as site,
                 'ATIVO' AS situacao,
                 CASE fl_FisicaJuridica
                 WHEN 'J'  THEN 'JURIDICA'
@@ -66,32 +65,39 @@ FROM ISSContribuintes
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
+        let tempPessoas = 1400;
+
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const conteudo = JSON.parse(record.pessoas); // Parse the JSON string to an object
 
-            return {
+            const transformedRecord = {
                 idIntegracao: record.idIntegracao.toString(), // Convert idIntegracao to string
                 pessoas: {
                     cpfCnpj: conteudo.cpfCnpj,
-                    idPessoas: conteudo.idPessoas,
+                    idPessoas: tempPessoas,
                     idEnderecoPrincipal: conteudo.idEnderecoPrincipal,
                     inscricaoMunicipal:conteudo.inscricaoMunicipal,
                     nome:conteudo.nome,
                     nomeFantasia:conteudo.nomeFantasia,
-                    site:conteudo.site,
                     situacao:conteudo.situacao,
                     tipoPessoa:conteudo.tipoPessoa,
                 }
             };
+            tempPessoas++;
+            return transformedRecord;
         });
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://tributos.betha.cloud/service-layer-tributos/api/pessoas', {
                 method: 'POST',
                 headers: {
@@ -106,7 +112,7 @@ FROM ISSContribuintes
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         console.error('Erro durante a execução do programa:', error);

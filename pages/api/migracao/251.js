@@ -36,18 +36,24 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
+        // Selecionar o banco de dados "TRIBUTOS2024"
         const selectDatabaseQuery = 'USE TRIBUTOS2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            select 
-ROW_NUMBER() OVER (ORDER BY ds_Data) AS idIntegracao,
-dt_Data as dataFeriado,
-ds_Data as descricao
-from CECAMDiasNaoUteis
-where ds_Data <> 'SÁBADO' and ds_Data <> 'DOMINGO'
+            SELECT 
+                ROW_NUMBER() OVER (ORDER BY ds_Data) AS idIntegracao,
+                JSON_QUERY(
+                    (SELECT
+                        FORMAT(dt_Data, 'yyyy-MM-dd') AS dataFeriado,
+                        ds_Data AS descricao,
+                        'FIXO' AS tipoFeriado,
+                        RTRIM('NACIONAL ') AS abrangencia
+                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS feriados    
+            FROM CECAMDiasNaoUteis
+            WHERE ds_Data <> 'SÁBADO' AND ds_Data <> 'DOMINGO'
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -56,10 +62,7 @@ where ds_Data <> 'SÁBADO' and ds_Data <> 'DOMINGO'
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => ({
             idIntegracao: record.idIntegracao,
-            feriados: {
-                dataFeriado: record.dataFeriado,
-                descricao: record.descricao
-            }
+            feriados: JSON.parse(record.feriados)
         }));
 
         // Salvar os resultados transformados em um arquivo JSON

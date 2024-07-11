@@ -2,6 +2,7 @@ const sql = require('mssql');
 const dotenv = require('dotenv');
 const fetch = require('node-fetch');
 const fs = require('fs');
+const { format } = require('date-fns');
 
 dotenv.config();
 
@@ -31,6 +32,20 @@ async function connectToSqlServer() {
     }
 }
 
+function formatDateToString(date) {
+    if (!(date instanceof Date)) {
+        date = new Date(date); // Converte para Date se não for uma instância de Date
+    }
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
 async function main() {
     try {
         // Conectar ao SQL Server
@@ -42,173 +57,130 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select 
-f.cd_Funcionario as idIntegracao,
-        JSON_QUERY(
-    (SELECT
-dt_Admissao as inicioVigencia,
-f.nm_Funcionario as nome,
-'FISICA' as tipoPessoa,
-'[]' as emails,
-'[]' as historicos,
-dp.nr_CIC_CPF as cpf,
-f.dt_Nascimento as dataNascimento,
-CASE
-        WHEN cd_EstCivil = 1 THEN 'SOLTEIRO'
-        WHEN cd_EstCivil = 2 THEN 'CASADO'
-        WHEN cd_EstCivil = 3 THEN 'SEPARADO_JUDICIALMENTE'
-        WHEN cd_EstCivil = 4 THEN 'DIVORCIADO'
-        WHEN cd_EstCivil = 5 THEN 'DIVORCIADO'
-        WHEN cd_EstCivil = 6 THEN 'VIUVO'
-        WHEN cd_EstCivil = 7 THEN 'SOLTEIRO'
-        WHEN cd_EstCivil = 8 THEN 'UNIAO_ESTAVEL'
-        ELSE 'Desconhecido'
-    END as estadoCivil,
-CASE
-        WHEN fl_sexo = 'M' THEN 'MASCULINO'
-        WHEN fl_sexo = 'F' THEN 'FEMININO '
-                ELSE 'Desconhecido'
-                END as sexo,
-CASE
-        WHEN cd_RacaCor = 0 THEN 'INDIGENA'
-        WHEN cd_RacaCor = 2 THEN 'BRANCA'
-        WHEN cd_RacaCor = 4 THEN 'NEGRA'
-        WHEN cd_RacaCor = 6 THEN 'AMARELA'
-        WHEN cd_RacaCor = 8 THEN 'PARDA'
-        ELSE 'DESCONHECIDA'
-    END AS raca,
-        null as corOlhos,
-        null as estatura,
-        null as peso,
-        null as tipoSanguineo,
-        'false' as doador,
-        null as nacionalidade,
-        null as paisNascimento,
-        null as naturalidade,
-                null as dataChegada,
-        'false' as naturalizado,
-        'false' as casadoComBrasileiro,
-        'false' as temFilhosBrasileiros,
-        null as situacaoEstrangeiro,
-        null as tempoResidencia,
-        null as inscricaoMunicipal,
-        nr_RG as identidade,
-ds_ExpedRG as orgaoEmissorIdentidade,
-null as ufEmissaoIdentidade,
-dt_RG as dataEmissaoIdentidade,
-        null as dataValidadeIdentidade,
-nr_TitEleitoral as tituloEleitor,
-nr_ZonaTE as zonaEleitoral,
-nr_SecaoTE as secaoEleitoral,
-nr_CTPS as ctps,
-nr_SerieCTPS as serieCtps,
-dt_ctps as dataEmissaoCtps,
-sg_ctps_uf as ufEmissaoCtps,
-null as dataValidadeCtps,
-nr_PIS_PASEP as pis,
-null as dataEmissaoPis,
-CASE
-        WHEN cd_GrauInstruc = 1 THEN 'NAO_ALFABETIZADO'
-        WHEN cd_GrauInstruc = 2 THEN 'ENSINO_FUNDAMENTAL_ANOS_INICIAIS'
-        WHEN cd_GrauInstruc = 3 THEN 'ENSINO_FUNDAMENTAL_ANOS_INICIAIS'
-        WHEN cd_GrauInstruc = 4 THEN 'ENSINO_FUNDAMENTAL_ANOS_FINAIS'
-        WHEN cd_GrauInstruc = 5 THEN 'ENSINO_FUNDAMENTAL_ANOS_FINAIS'
-        WHEN cd_GrauInstruc = 6 THEN 'ENSINO_MEDIO'
-        WHEN cd_GrauInstruc = 7 THEN 'ENSINO_MEDIO'
-        WHEN cd_GrauInstruc = 8 THEN 'ENSINO_SUPERIOR_SEQUENCIAL'
-        WHEN cd_GrauInstruc = 9 THEN 'SGRADUACAO_BACHARELADO'
-        WHEN cd_GrauInstruc = 10 THEN 'ENSINO_PROFISSIONALIZANTE'
-        WHEN cd_GrauInstruc = 11 THEN 'POS_GRADUACAO_ESPECIALIZACAO'
-        WHEN cd_GrauInstruc = 12 THEN 'POS_GRADUACAO_MESTRADO'
-        WHEN cd_GrauInstruc = 13 THEN 'POS_GRADUACAO_DOUTORADO'
-        WHEN cd_GrauInstruc = 14 THEN 'OS_DOUTORADO_HABILITACAO'
-        ELSE 'Desconhecida'
-    END as grauInstrucao,
-        null as situacaoGrauInstrucao,
-nr_CertifReservista as certificadoReservista,
-null as ric,
-null as ufEmissaoRic,
-null as orgaoEmissorRic,
-null as dataEmissaoRic,
-null as cns,
-null as dataEmissaoCns,
-null as passaporte,
-null as dataEmissaoPassaporte,
-null as dataValidadePassaporte,
-null as orgaoEmissorPassaporte,
-nr_CNH as cnh,
-dp.cd_CNHCategoria as categoriaCnh,
-dp.dt_CNHvALIDADE AS dataValidadeCnh,
-dp.uf_cnh as ufEmissaoCnh,
-null as dataEmissaoCnh,
-null as dataPrimeiraCnh,
-null as observacoesCnh,
-'false' as primeiraCnh,
-null as registroNacionalEstrangeiro,
-null as dataChegadaEstrangeiro,
-null as preencheCotaDeficiente,
-null as informacoesDeficiencia,
-null as validadeRne,
-null as codigoJusticaEleitoral,
-null as nis,
-null as observacoes,
-f.nm_Funcionario as nomeSocial,
-null as nif,
-null as indicativoNif,
-'RETENCAO_IRRF_ALIQUOTA_DA_TABELA_PROGRESSIVA' as formaTributacao,
-null as paisFiscal,
-'[]' as molestiasGraves,
-'[]' as basesOutrasEmpresas,
-'[]' as deficiencias,
-'[]' as certidoes,
-'[]' as restricoes,
-'[]' as doencas,
-'[]' as vacinas,
-'[]' as processosJudiciais,
-'[]' as camposAdicionais,
-        JSON_QUERY(
-    (SELECT
-        dp.nm_pai as nomepai,
-        'PAI' AS tipoFiliacao,
-        'BIOLOGICA' AS naturezaFiliacao
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS filiacaoPai,
+            SELECT 
+                f.cd_Funcionario AS idIntegracao,
                 JSON_QUERY(
-    (SELECT
-        dp.nm_Mae as nomemae,
-        'MAE' AS tipoFiliacao,
-        'BIOLOGICA' AS naturezaFiliacao
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS filiacaoMae,
+                    (SELECT
+                        dt_Admissao AS inicioVigencia,
+                        'FISICA' AS tipoPessoa,
+                        '[]' AS emails,
                         JSON_QUERY(
-    (SELECT
-        'TELEFONE FIXO' AS descricao,
-    'FIXO' AS tipo,
-        CONCAT(nr_dddfone, nr_fone) as numero
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS telefoneFixo,
+                            (SELECT
+                                'TELEFONE FIXO' AS descricao,
+                                'FIXO' AS tipo,
+                                CONCAT(nr_dddfone, nr_fone) AS numero
+                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS telefoneFixo,
                         JSON_QUERY(
-    (SELECT
-        'TELEFONE CELULAR' AS descricao,
-    'CELULAR' AS tipo,
-        CONCAT(nr_DDDCelular, nr_Celular) as numero
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS telefoneCelular,
-        JSON_QUERY(
-    (SELECT
-        null as logradouro,
-        6571 as bairro,
-        dp.nr_cep as cep,
-        dp.ds_endereco as descricao,
-        'true' as principal
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS enderecos
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS conteudo
-from FOLHFuncionario f
-join FOLHFuncDadosPess dp on dp.cd_Funcionario = f.cd_Funcionario
-
-
+                            (SELECT
+                                'TELEFONE CELULAR' AS descricao,
+                                'CELULAR' AS tipo,
+                                CONCAT(nr_DDDCelular, nr_Celular) AS numero,
+                                'true' AS principal
+                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS telefoneCelular,
+                        '[]' AS historicos,
+                        f.nm_Funcionario AS nome,
+                        dp.nr_CIC_CPF AS cpf,
+                        f.dt_Nascimento AS dataNascimento,
+                        CASE
+                            WHEN cd_EstCivil = 1 THEN 'SOLTEIRO'
+                            WHEN cd_EstCivil = 2 THEN 'CASADO'
+                            WHEN cd_EstCivil = 3 THEN 'SEPARADO_JUDICIALMENTE'
+                            WHEN cd_EstCivil = 4 THEN 'DIVORCIADO'
+                            WHEN cd_EstCivil = 5 THEN 'DIVORCIADO'
+                            WHEN cd_EstCivil = 6 THEN 'VIUVO'
+                            WHEN cd_EstCivil = 7 THEN 'SOLTEIRO'
+                            WHEN cd_EstCivil = 8 THEN 'UNIAO_ESTAVEL'
+                            ELSE 'Desconhecido'
+                        END AS estadoCivil,
+                        CASE
+                            WHEN fl_sexo = 'M' THEN 'MASCULINO'
+                            WHEN fl_sexo = 'F' THEN 'FEMININO '
+                            ELSE 'Desconhecido'
+                        END AS sexo,
+                        CASE
+                            WHEN cd_RacaCor = 0 THEN 'INDIGENA'
+                            WHEN cd_RacaCor = 2 THEN 'BRANCA'
+                            WHEN cd_RacaCor = 4 THEN 'PRETA'
+                            WHEN cd_RacaCor = 6 THEN 'AMARELA'
+                            WHEN cd_RacaCor = 8 THEN 'PARDA'
+                            ELSE 'DESCONHECIDA'
+                        END AS raca,
+                        'false' AS doador,
+                        'false' AS naturalizado,
+                        'false' AS casadoComBrasileiro,
+                        'false' AS temFilhosBrasileiros,
+                        nr_RG AS identidade,
+                        ds_ExpedRG AS orgaoEmissorIdentidade,
+                        nr_TitEleitoral AS tituloEleitor,
+                        nr_ZonaTE AS zonaEleitoral,
+                        nr_SecaoTE AS secaoEleitoral,
+                        nr_CTPS AS ctps,
+                        nr_SerieCTPS AS serieCtps,
+                        sg_ctps_uf AS ufEmissaoCtps,
+                        nr_PIS_PASEP AS pis,
+                        CASE
+                            WHEN cd_GrauInstruc = 1 THEN 'NAO_ALFABETIZADO'
+                            WHEN cd_GrauInstruc = 2 THEN 'ENSINO_FUNDAMENTAL_ANOS_INICIAIS'
+                            WHEN cd_GrauInstruc = 3 THEN 'ENSINO_FUNDAMENTAL_ANOS_INICIAIS'
+                            WHEN cd_GrauInstruc = 4 THEN 'ENSINO_FUNDAMENTAL_ANOS_FINAIS'
+                            WHEN cd_GrauInstruc = 5 THEN 'ENSINO_FUNDAMENTAL_ANOS_FINAIS'
+                            WHEN cd_GrauInstruc = 6 THEN 'ENSINO_MEDIO'
+                            WHEN cd_GrauInstruc = 7 THEN 'ENSINO_MEDIO'
+                            WHEN cd_GrauInstruc = 8 THEN 'ENSINO_SUPERIOR_SEQUENCIAL'
+                            WHEN cd_GrauInstruc = 9 THEN 'GRADUACAO_BACHARELADO'
+                            WHEN cd_GrauInstruc = 10 THEN 'ENSINO_PROFISSIONALIZANTE'
+                            WHEN cd_GrauInstruc = 11 THEN 'POS_GRADUACAO_ESPECIALIZACAO'
+                            WHEN cd_GrauInstruc = 12 THEN 'POS_GRADUACAO_MESTRADO'
+                            WHEN cd_GrauInstruc = 13 THEN 'POS_GRADUACAO_DOUTORADO'
+                            WHEN cd_GrauInstruc = 14 THEN 'POS_DOUTORADO_HABILITACAO'
+                            ELSE 'Desconhecida'
+                        END AS grauInstrucao,
+                        dp.cd_CNHCategoria AS categoriaCnh,
+                        JSON_QUERY(
+                            (SELECT
+                                dp.nm_pai AS nome,
+                                'PAI' AS tipoFiliacao,
+                                'BIOLOGICA' AS naturezaFiliacao
+                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS filiacaoPai,
+                        JSON_QUERY(
+                            (SELECT
+                                dp.nm_Mae AS nome,
+                                'MAE' AS tipoFiliacao,
+                                'BIOLOGICA' AS naturezaFiliacao
+                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS filiacaoMae,
+                        JSON_QUERY(
+                            (SELECT
+                                JSON_QUERY(
+                                    (SELECT
+                                        '3413750' AS id
+                                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                                ) AS logradouro,
+                                JSON_QUERY(
+                                    (SELECT
+                                        '6571' AS id
+                                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                                ) AS bairro,
+                                dp.nr_cep AS cep,
+                                 '0' as numero,
+                                left (dp.ds_endereco,20) as descricao,
+                                'true' AS principal
+                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS enderecos,
+                        nr_CNH AS cnh,
+                        dp.dt_CNHvALIDADE AS dataValidadeCnh,
+                        dp.uf_cnh AS ufEmissaoCnh,
+                        dt_RG AS dataEmissaoIdentidade,
+                        dt_ctps AS dataEmissaoCtps,
+                        nr_CertifReservista AS certificadoReservista,
+                        'RETENCAO_IRRF_ALIQUOTA_DA_TABELA_PROGRESSIVA' AS formaTributacao       
+                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS conteudo
+            FROM FOLHFuncionario f
+            JOIN FOLHFuncDadosPess dp ON dp.cd_Funcionario = f.cd_Funcionario
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -218,85 +190,109 @@ join FOLHFuncDadosPess dp on dp.cd_Funcionario = f.cd_Funcionario
         const transformedData = resultData.map(record => {
             const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
 
+            function formatCPF(cpf) {
+                const cpfString = String(cpf);
+                const cpfPadded = cpfString.padStart(11, '0'); // Preenche com zeros à esquerda até completar 11 caracteres
+                return cpfPadded;
+            }
+
+            const ufEmissaoCnh = conteudo.ufEmissaoCnh !== undefined && conteudo.ufEmissaoCnh !== "" ? conteudo.ufEmissaoCnh : null;
+
+            let filiacaoPai = null;
+            if (conteudo.filiacaoPai && conteudo.filiacaoPai.nome.trim() !== '') {
+                filiacaoPai = {
+                    nome: conteudo.filiacaoPai.nome,
+                    tipoFiliacao: conteudo.filiacaoPai.tipoFiliacao,
+                    naturezaFiliacao: conteudo.filiacaoPai.naturezaFiliacao
+                };
+            }
+
+            // Verifica e formata a filiação da mãe
+            let filiacaoMae = null;
+            if (conteudo.filiacaoMae && conteudo.filiacaoMae.nome.trim() !== '') {
+                filiacaoMae = {
+                    nome: conteudo.filiacaoMae.nome,
+                    tipoFiliacao: conteudo.filiacaoMae.tipoFiliacao,
+                    naturezaFiliacao: conteudo.filiacaoMae.naturezaFiliacao
+                };
+            }
+
             return {
                 idIntegracao: record.idIntegracao,
                 conteudo: {
-                    inicioVigencia: new Date(conteudo.inicioVigencia).toISOString(),
-                    tipoPessoa: conteudo.tipoPessoa,
+                    inicioVigencia: conteudo.inicioVigencia === "" ? null : formatDateToString(conteudo.inicioVigencia),
+                    tipoPessoa: conteudo.tipoPessoa === "" ? null : conteudo.tipoPessoa,
                     emails: [],
-                    telefones: [],
-                    enderecos: [],
+                    telefones: conteudo.telefones,
                     historicos: [],
-                    nome: conteudo.nome,
-                    cpf: conteudo.cpf,
-                    dataNascimento: new Date(conteudo.dataNascimento).toISOString(),
-                    estadoCivil: conteudo.estadoCivil,
-                    sexo: conteudo.sexo,
-                    raca: conteudo.raca,
-                    corOlhos: conteudo.corOlhos,
-                    estatura: conteudo.estatura,
-                    peso: conteudo.peso,
-                    tipoSanguineo: conteudo.tipoSanguineo,
-                    doador: conteudo.doador,
-                    nacionalidade: conteudo.nacionalidade,
-                    paisNascimento: conteudo.paisNascimento,
-                    naturalidade: conteudo.naturalidade,
-                    naturalizado: conteudo.naturalizado,
-                    dataChegada: conteudo.dataChegada,
-                    casadoComBrasileiro: conteudo.casadoComBrasileiro,
-                    temFilhosBrasileiros: conteudo.temFilhosBrasileiros,
-                    situacaoEstrangeiro: conteudo.situacaoEstrangeiro,
-                    tempoResidencia: conteudo.tempoResidencia,
-                    inscricaoMunicipal: conteudo.inscricaoMunicipal,
-                    identidade: conteudo.identidade,
-                    orgaoEmissorIdentidade: conteudo.orgaoEmissorIdentidade,
-                    ufEmissaoIdentidade: conteudo.ufEmissaoIdentidade,
-                    dataEmissaoIdentidade: conteudo.dataEmissaoIdentidade,
-                    dataValidadeIdentidade: conteudo.dataValidadeIdentidade,
-                    tituloEleitor: conteudo.tituloEleitor,
-                    zonaEleitoral: conteudo.zonaEleitoral,
-                    secaoEleitoral: conteudo.secaoEleitoral,
-                    ctps: conteudo.ctps,
-                    serieCtps: conteudo.serieCtps,
-                    ufEmissaoCtps: conteudo.ufEmissaoCtps,
-                    dataEmissaoCtps: conteudo.dataEmissaoCtps,
-                    dataValidadeCtps: conteudo.dataValidadeCtps,
-                    pis: conteudo.pis,
-                    dataEmissaoPis: conteudo.dataEmissaoPis,
-                    grauInstrucao: conteudo.grauInstrucao,
-                    situacaoGrauInstrucao: conteudo.situacaoGrauInstrucao,
-                    certificadoReservista: conteudo.certificadoReservista,
-                    ric: conteudo.ric,
-                    ufEmissaoRic: conteudo.ufEmissaoRic,
-                    orgaoEmissorRic: conteudo.orgaoEmissorRic,
-                    dataEmissaoRic: conteudo.dataEmissaoRic,
-                    cns: conteudo.cns,
-                    dataEmissaoCns: conteudo.dataEmissaoCns,
-                    passaporte: conteudo.passaporte,
-                    dataEmissaoPassaporte: conteudo.dataEmissaoPassaporte,
-                    dataValidadePassaporte: conteudo.dataValidadePassaporte,
-                    orgaoEmissorPassaporte: conteudo.orgaoEmissorPassaporte,
-                    cnh: conteudo.cnh,
-                    dataValidadeCnh: conteudo.dataValidadeCnh,
-                    categoriaCnh: conteudo.categoriaCnh,
-                    dataVencimentoCnh: conteudo.dataVencimentoCnh,
-                    primeiraCnh: conteudo.primeiraCnh,
-                    registroNacionalEstrangeiro: conteudo.registroNacionalEstrangeiro,
-                    dataChegadaEstrangeiro: conteudo.dataChegadaEstrangeiro,
-                    validadeRne: conteudo.validadeRne,
-                    codigoJusticaEleitoral: conteudo.codigoJusticaEleitoral,
-                    nis: conteudo.nis,
-                    observacoes: conteudo.observacoes,
-                    filiacoes: [conteudo.filiacaoPai, conteudo.filiacaoMae],
-                    telefones: [conteudo.telefoneFixo, conteudo.telefoneCelular],
-                    dependentes: [],
-                    parceiros: [],
-                    contratos: []
+                    nome: conteudo.nome === "" ? null : conteudo.nome,
+                    cpf: conteudo.cpf === "" ? null : formatCPF(conteudo.cpf),
+                    dataNascimento: conteudo.dataNascimento === "" ? null : new Date(conteudo.dataNascimento).toISOString(),
+                    estadoCivil: conteudo.estadoCivil === "" ? null : conteudo.estadoCivil,
+                    sexo: conteudo.sexo === "" ? null : conteudo.sexo,
+                    raca: conteudo.raca === "" ? null : conteudo.raca,
+                    corOlhos: conteudo.corOlhos === "" ? null : conteudo.corOlhos,
+                    estatura: conteudo.estatura === "" ? null : conteudo.estatura,
+                    peso: conteudo.peso === "" ? null : conteudo.peso,
+                    tipoSanguineo: conteudo.tipoSanguineo === "" ? null : conteudo.tipoSanguineo,
+                    doador: conteudo.doador === "" ? null : conteudo.doador,
+                    nacionalidade: conteudo.nacionalidade === "" ? null : conteudo.nacionalidade,
+                    paisNascimento: conteudo.paisNascimento === "" ? null : conteudo.paisNascimento,
+                    naturalidade: conteudo.naturalidade === "" ? null : conteudo.naturalidade,
+                    naturalizado: conteudo.naturalizado === "" ? null : conteudo.naturalizado,
+                    dataChegada: conteudo.dataChegada === "" ? null : conteudo.dataChegada,
+                    casadoComBrasileiro: conteudo.casadoComBrasileiro === "" ? null : conteudo.casadoComBrasileiro,
+                    temFilhosBrasileiros: conteudo.temFilhosBrasileiros === "" ? null : conteudo.temFilhosBrasileiros,
+                    situacaoEstrangeiro: conteudo.situacaoEstrangeiro === "" ? null : conteudo.situacaoEstrangeiro,
+                    tempoResidencia: conteudo.tempoResidencia === "" ? null : conteudo.tempoResidencia,
+                    inscricaoMunicipal: conteudo.inscricaoMunicipal === "" ? null : conteudo.inscricaoMunicipal,
+                    identidade: conteudo.identidade === "" ? null : conteudo.identidade,
+                    orgaoEmissorIdentidade: conteudo.orgaoEmissorIdentidade === "" ? null : conteudo.orgaoEmissorIdentidade,
+                    ufEmissaoIdentidade: conteudo.ufEmissaoIdentidade === "" ? null : conteudo.ufEmissaoIdentidade,
+                    dataEmissaoIdentidade: conteudo.dataEmissaoIdentidade === "" ? null : conteudo.dataEmissaoIdentidade,
+                    dataValidadeIdentidade: conteudo.dataValidadeIdentidade === "" ? null : conteudo.dataValidadeIdentidade,
+                    tituloEleitor: conteudo.tituloEleitor === "" ? null : conteudo.tituloEleitor,
+                    zonaEleitoral: conteudo.zonaEleitoral === "" ? null : conteudo.zonaEleitoral,
+                    secaoEleitoral: conteudo.secaoEleitoral === "" ? null : conteudo.secaoEleitoral,
+                    ctps: conteudo.ctps === "" ? null : conteudo.ctps,
+                    serieCtps: conteudo.serieCtps === "" ? null : conteudo.serieCtps,
+                    ufEmissaoCtps: conteudo.ufEmissaoCtps === "" ? null : conteudo.ufEmissaoCtps,
+                    dataValidadeCtps: conteudo.dataValidadeCtps === "" ? null : conteudo.dataValidadeCtps,
+                    pis: conteudo.pis === "" ? null : conteudo.pis,
+                    dataEmissaoPis: conteudo.dataEmissaoPis === "" ? null : conteudo.dataEmissaoPis,
+                    grauInstrucao: conteudo.grauInstrucao === "" ? null : conteudo.grauInstrucao,
+                    situacaoGrauInstrucao: conteudo.situacaoGrauInstrucao === "" ? null : conteudo.situacaoGrauInstrucao,
+                    certificadoReservista: conteudo.certificadoReservista === "" ? null : conteudo.certificadoReservista,
+                    ric: conteudo.ric === "" ? null : conteudo.ric,
+                    ufEmissaoRic: conteudo.ufEmissaoRic === "" ? null : conteudo.ufEmissaoRic,
+                    orgaoEmissorRic: conteudo.orgaoEmissorRic === "" ? null : conteudo.orgaoEmissorRic,
+                    dataEmissaoRic: conteudo.dataEmissaoRic === "" ? null : conteudo.dataEmissaoRic,
+                    cns: conteudo.cns === "" ? null : conteudo.cns,
+                    dataEmissaoCns: conteudo.dataEmissaoCns === "" ? null : conteudo.dataEmissaoCns,
+                    passaporte: conteudo.passaporte === "" ? null : conteudo.passaporte,
+                    dataEmissaoPassaporte: conteudo.dataEmissaoPassaporte === "" ? null : conteudo.dataEmissaoPassaporte,
+                    dataValidadePassaporte: conteudo.dataValidadePassaporte === "" ? null : conteudo.dataValidadePassaporte,
+                    orgaoEmissorPassaporte: conteudo.orgaoEmissorPassaporte === "" ? null : conteudo.orgaoEmissorPassaporte,
+                    categoriaCnh: conteudo.categoriaCnh === "" ? null : conteudo.categoriaCnh,
+                    dataVencimentoCnh: conteudo.dataVencimentoCnh === "" ? null : conteudo.dataVencimentoCnh,
+                    primeiraCnh: conteudo.primeiraCnh === "" ? null : conteudo.primeiraCnh,
+                    registroNacionalEstrangeiro: conteudo.registroNacionalEstrangeiro === "" ? null : conteudo.registroNacionalEstrangeiro,
+                    dataChegadaEstrangeiro: conteudo.dataChegadaEstrangeiro === "" ? null : conteudo.dataChegadaEstrangeiro,
+                    validadeRne: conteudo.validadeRne === "" ? null : conteudo.validadeRne,
+                    codigoJusticaEleitoral: conteudo.codigoJusticaEleitoral === "" ? null : conteudo.codigoJusticaEleitoral,
+                    nis: conteudo.nis === "" ? null : conteudo.nis,
+                    observacoes: conteudo.observacoes === "" ? null : conteudo.observacoes,
+                    filiacoes: [filiacaoPai, filiacaoMae].filter(filiacao => filiacao !== null),
+                    cnh: conteudo.cnh === "" ? null : conteudo.cnh,
+                    ufEmissaoCnh: conteudo.ufEmissaoCnh === "" ? null : conteudo.ufEmissaoCnh,
+                    dataEmissaoIdentidade: conteudo.dataEmissaoIdentidade === "" ? null : conteudo.dataEmissaoIdentidade,
+                    dataEmissaoCtps: conteudo.dataEmissaoCtps === "" ? null : conteudo.dataEmissaoCtps,
+                    certificadoReservista: conteudo.certificadoReservista === "" ? null : conteudo.certificadoReservista,
+                    formaTributacao: conteudo.formaTributacao === "" ? null : conteudo.formaTributacao,
+
                 }
             };
-        });
-
-        // Salvar os resultados transformados em um arquivo JSON
+        });// Salvar os resultados transformados em um arquivo JSON
         fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
         console.log('Dados salvos em log_envio.json');
 

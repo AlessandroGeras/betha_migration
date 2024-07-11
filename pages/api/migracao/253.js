@@ -43,25 +43,25 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-                cd_Contribuinte as idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        nr_CGCCPF as cpfCnpj,
-                        nr_InscricaoMunicipal as inscricaoMunicipal,
-                        '1' AS idPessoas,
-                        '1' AS idEnderecoPrincipal,
-                        nm_Contribuinte as nome,
-                        nm_Contribuinte as nomeFantasia,
-                        'www.betha.com.br' as site,
-                        'ATIVO' as situacao,
-                        CASE fl_FisicaJuridica
-                            WHEN 'F' THEN 'FISICA'
-                            WHEN 'J' THEN 'JURIDICA'
-                            ELSE 'FISICA'
-                        END AS descricao_tipo_pessoa
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS pessoas
-            from CECAMContribuintes
+cd_Contribuinte as idIntegracao,
+JSON_QUERY(
+    (SELECT
+nr_CGCCPF as cpfCnpj,
+nr_InscricaoMunicipal as inscricaoMunicipal,
+cd_Contribuinte AS idPessoas,
+'1' AS idEnderecoPrincipal,
+nm_Contribuinte as nome,
+nm_Contribuinte as nomeFantasia,
+'' as site,
+'ATIVO' as situacao,
+CASE fl_FisicaJuridica
+        WHEN 'F' THEN 'FISICA'
+        WHEN 'J' THEN 'JURIDICA'
+        ELSE 'FISICA'
+    END AS tipoPessoa
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS pessoas
+from CECAMContribuintes
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -70,26 +70,30 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const pessoas = JSON.parse(record.pessoas); // Parse the JSON string to an object
-            
+
             return {
                 idIntegracao: record.idIntegracao,
                 pessoas: {
                     cpfCnpj: pessoas.cpfCnpj,
+                    idPessoas: pessoas.idPessoas,
+                    idEnderecoPrincipal: pessoas.idEnderecoPrincipal,
                     inscricaoMunicipal: pessoas.inscricaoMunicipal,
-                    idPessoas: pessoas.idPessoas || '1',  // Constant value
-                    idEnderecoPrincipal: pessoas.idEnderecoPrincipal || '1',  // Constant value
                     nome: pessoas.nome,
                     nomeFantasia: pessoas.nomeFantasia,
-                    site: pessoas.site || 'www.betha.com.br',  // Constant value
-                    situacao: pessoas.situacao || 'ATIVO',  // Constant value
-                    descricao_tipo_pessoa: pessoas.descricao_tipo_pessoa
+                    site: null,
+                    situacao: pessoas.situacao,
+                    tipoPessoa: pessoas.tipoPessoa,
                 }
             };
         });
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
         for (const record of transformedData) {
