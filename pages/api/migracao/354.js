@@ -36,50 +36,55 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "TRIBUTOS2024"
+        const selectDatabaseQuery = 'USE TRIBUTOS2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+            select 
+ ROW_NUMBER() OVER (ORDER BY fl_TipoPessoa) AS idIntegracao,
+ JSON_QUERY(
+                (SELECT
+                nr_CGCCPF as inscricao, -- desconsiderar um zero a esquerda para cnpj,
+                '' as codigo, -- iniciar o numero a aprtir de 340,
+                ds_inscricao_municipal as inscricaoMunicipal,
+                ds_razaosocial as nome,
+ds_razaosocial as nomeSocialFantasia,
+                'EM_ATIVIDADE' AS situacaoEconomico,
+                CASE fl_TipoPessoa
+                WHEN '0'  THEN 'JURIDICA'
+                WHEN '1' THEN 'FISICA'
+                END AS tipoPessoa
+                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS pessoas
+  from  ISSTomador
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
+        let codigo = 340;
         const transformedData = resultData.map(record => {
-            const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
+            const pessoas = JSON.parse(record.pessoas);
 
-            return {
-                idIntegracao: idIntegracao,
-                content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
-                    },
-                    descricao: descricao,
-                    numero: numero
+            const transformedRecord = {
+                idIntegracao: record.idIntegracao,
+                pessoas: {
+                    codigo: codigo++,  // Incrementar o valor de codigo
+                    tipoPessoa: pessoas.tipoPessoa,
+                    inscricao: pessoas.inscricao,
+                    inscricaoMunicipal: pessoas.inscricaoMunicipal || "0000000000000",
+                    nome: pessoas.nome,
+                    nomeSocialFantasia: pessoas.nomeSocialFantasia,  // Valor estático conforme estrutura desejada
                 }
             };
+
+            return transformedRecord;
         });
 
+        // Salvar os resultados transformados em um arquivo JSON
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
@@ -90,7 +95,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://nota-eletronica.betha.cloud/service-layer/api/pessoas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,13 +112,11 @@ async function main() {
         } */
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        await sql.close();
+        sql.close();
     }
 }
 
-// Chamar a função principal
 main();

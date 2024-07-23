@@ -36,26 +36,46 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "CONTABIL2024"
+        const selectDatabaseQuery = 'USE CONTABIL2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
+            select 
+                ROW_NUMBER() OVER (ORDER BY cd_CategoriaEconomicaDespesa) AS idIntegracao,
                 JSON_QUERY(
                     (SELECT
+                        'false' as validaSaldo,
+                        cd_exercicio as exercicio,
+                        dt_emissao as data,
+                        'PRINCIPAL' as tipoAmortizacao,
+                        CONCAT(cd_empenho, cd_empenhob) as numeroCadastro,
+                        'GLOBAL' as tipo,
+                        'Empenho de Divida' AS especificacao,
+                        vl_empenho AS valor,
                         JSON_QUERY(
                             (SELECT
-                                7978 AS id
+                                vl_empenho AS valor,
+                                dt_vencimento AS data
                                 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
+                        ) AS vencimentos,
+                        'false' as despesaLancada,
+                        JSON_QUERY(
+                            (SELECT
+                                JSON_QUERY(
+                                    (SELECT
+                                        '1143390' as id
+                                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                                ) AS credor,
+                                vl_empenho as valor1,
+                                '100' as valor
+                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS entesConsorciados
                         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
                 ) AS content
-            FROM COMPDestinacaoRecurso
+            from CONTEMPENHOS 
+            WHERE cd_CategoriaEconomicaDespesa LIKE '%4690%'
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -64,22 +84,25 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
-
             return {
-                idIntegracao: idIntegracao,
+                idIntegracao: record.idIntegracao.toString(),
                 content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
-                    },
-                    descricao: descricao,
-                    numero: numero
+                    validaSaldo: content.validaSaldo,
+                    exercicio: content.exercicio,
+                    numeroCadastro: content.numeroCadastro,
+                    data: content.data,
+                    tipoAmortizacao: content.tipoAmortizacao,
+                    tipo: content.tipo,
+                    especificacao: content.especificacao,
+                    valor: content.valor,
+                    vencimentos: content.vencimentos,
+                    despesaLancada: content.despesaLancada,
+                    entesConsorciados: content.entesConsorciados
                 }
             };
         });
 
+        // Salvar os resultados transformados em um arquivo JSON
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
@@ -90,7 +113,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/empenhos/dividas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,13 +130,11 @@ async function main() {
         } */
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        await sql.close();
+        sql.close();
     }
 }
 
-// Chamar a função principal
 main();

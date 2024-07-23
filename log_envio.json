@@ -1,258 +1,187 @@
 [
   {
     "conteudo": {
-      "numero": 2,
-      "dataCotacao": "2023-01-30T00:00:00.000Z",
-      "dataValidade": "2023-01-30T00:00:00.000Z",
-      "objeto": "DESPESA EXTIMATIVA COM A FORNECEDORA DE ENERGIA",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 6
     }
   },
   {
     "conteudo": {
-      "numero": 3,
-      "dataCotacao": "2023-01-30T00:00:00.000Z",
-      "dataValidade": "2023-01-30T00:00:00.000Z",
-      "objeto": "DESPESA ESTIMATIVA COM A OPERADORA DE TELECOMUNICAÇÕES.",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 7
     }
   },
   {
     "conteudo": {
-      "numero": 4,
-      "dataCotacao": "2023-02-10T00:00:00.000Z",
-      "dataValidade": "2023-02-13T00:00:00.000Z",
-      "objeto": "Processo Administrativo objetivando aquisição de equipamentos permanente do tipo: sendo 01 (uma) geladeira e 01(um) bebedouro. Para atender as necessidades deste legislativo. Aquisição de equipamentos permanente do tipo: sendo 01 (uma) geladeira e 01(um) bebedouro. Para atender as necessidades deste legislativo. ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 8
     }
   },
   {
     "conteudo": {
-      "numero": 6,
-      "dataCotacao": "2023-03-24T00:00:00.000Z",
-      "dataValidade": "2023-03-24T00:00:00.000Z",
-      "objeto": "CONTRATAÇÃO DE SERVIÇOS DE TELECOMUNICAÇÕES PARA A IMPLEMENTAÇÃO, OPERAÇÃO E MANUTENÇÃO DE UM LINK DE ACESSO, SÍNCRONO, DEDICADO À INTERNET, NA VELOCIDADE DE 100MBPS. 1 - LINK DE INTERNET DEDICADO DE 100MB (MBPS - MEGA BITS POR SEGUNDO), COM DISPONIBILIDADE 24 (VINTE E QUATRO) HORAS POR DIA, DURANTE 07 (SETE) DIAS DA SEMANA, A PARTIR DE SUA ATIVAÇÃO ATÉ O TÉRMINO DO CONTRATO, MEDIANTE IMPLANTAÇÃO DE LINK DE COMUNICAÇÃO DE DADOS A SER INSTALADO NO DATA CENTER DA CÂMARA MUNICIPAL USANDO INFRA-ESTRUTURAR DE FIBRA ÓPTICA, COM FORNECIMENTO DOS EQUIPAMENTOS NECESSÁRIOS À EXECUÇÃO DO SERVIÇO E SUPORTE TÉCNICO, PELO PRAZO DE 06 (SEIS) MESES, PODENDO SER PRORROGADO POR IGUAIS E SUCESSIVOS PERÍODOS ATÉ O LIMITE DE 60 MESES.  ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 11
     }
   },
   {
     "conteudo": {
-      "numero": 7,
-      "dataCotacao": "2023-03-24T00:00:00.000Z",
-      "dataValidade": "2023-03-24T00:00:00.000Z",
-      "objeto": "PROCESSO ADMINISTRATIVO DE INEXIBILIDADE DE LICITAÇÃO COM BASE NO CAPUT 25, DA LEI Nº 8.666/93, CONTRATAÇÃO DE SERVIÇOS TÉCNICO PROFISSIONAL ESPECIALIZADO EM TECNOLOGIA DA INFORMAÇÃO DE SOFTWARE.",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 12
     }
   },
   {
     "conteudo": {
-      "numero": 8,
-      "dataCotacao": "2023-03-24T00:00:00.000Z",
-      "dataValidade": "2023-05-26T00:00:00.000Z",
-      "objeto": "Processo administrativo com despesas do tipo: material de consumo para impressoras e serviço de manutenção para impressoras. Contratação de Serviços de Terceiro Pessoa Jurídica de empresa  ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 13
     }
   },
   {
     "conteudo": {
-      "numero": 9,
-      "dataCotacao": "2023-07-12T00:00:00.000Z",
-      "dataValidade": "2023-08-04T00:00:00.000Z",
-      "objeto": "Processo administrativo de consumo, do tipo: higiene e produtos de limpeza, mantimentos e copa e cozinha. Para atender asdemandas da Câmara Municipal de Parecis. ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 14
     }
   },
   {
     "conteudo": {
-      "numero": 10,
-      "dataCotacao": "2023-08-21T00:00:00.000Z",
-      "dataValidade": "2023-09-29T00:00:00.000Z",
-      "objeto": "PROCESSO ADMINISTRATIVO DE MATERIAIS DE EXPEDIENTE DO TIPO: CONSUMO E SERVIÇOS.  ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 15
     }
   },
   {
     "conteudo": {
-      "numero": 11,
-      "dataCotacao": "2023-10-09T00:00:00.000Z",
-      "dataValidade": "2023-10-31T00:00:00.000Z",
-      "objeto": "Aquisição de material permanente e material de consumo do tipo: CELULAR, IMPRESSORA COLORIDA, TELEVISÃO E SUPORTE PARA TELEVISÃO. Recursos destinados a atenderem as necessidades da Câmara Municipal.    ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 16
     }
   },
   {
     "conteudo": {
-      "numero": 12,
-      "dataCotacao": "2023-10-18T00:00:00.000Z",
-      "dataValidade": "2023-10-30T00:00:00.000Z",
-      "objeto": "A aquisição de material permanente e consumo, para suprir às necessidades da Câmara Municipal, bem como para dar atendimento, de forma satisfatória, às constantes demandas das mesmas para o desenvolvimento das atividades Legislativa / administrativas.",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 17
     }
   },
   {
     "conteudo": {
-      "numero": 13,
-      "dataCotacao": "2023-10-20T00:00:00.000Z",
-      "dataValidade": "2023-11-10T00:00:00.000Z",
-      "objeto": "Processo administrativo de contratação de empresa especializada para serviços de manutenção preventiva e corretiva de aparelhos de ar condicionados.",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 18
     }
   },
   {
     "conteudo": {
-      "numero": 14,
-      "dataCotacao": "2023-12-12T00:00:00.000Z",
-      "dataValidade": "2023-12-15T00:00:00.000Z",
-      "objeto": "CERTIFICADOS DIGITAIS PARA PESSOA JURÍDICA DO TIPO: A1 (e-CNPJ A1) MODALIDADE A1 EM ARQUIVO (DOWNLOAD) COM VALIDADE DE 01 (UM) ANO E CERTIFICADO DIGITAL PARA PESSOA FISICA DO TIPO: A1 (e-CPF A1) MODALIDADE A1 EM ARQUIVO (DOWNLOAD) COM VALIDADE DE 01 (UM) ANO.",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 6
     }
   },
   {
     "conteudo": {
-      "numero": 1,
-      "dataCotacao": "2024-01-29T00:00:00.000Z",
-      "dataValidade": "2024-02-15T00:00:00.000Z",
-      "objeto": "CERTIFICADO DIGITAL PARA PESSOA FISICA DO TIPO:  A3 (e-CPF A3) TOKEN - VALIDADE PARA 03 (TRÊS) ANOS.  ",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 7
     }
   },
   {
     "conteudo": {
-      "numero": 10,
-      "dataCotacao": "2024-01-29T00:00:00.000Z",
-      "dataValidade": "2024-03-08T00:00:00.000Z",
-      "objeto": "CERTIFICADO DIGITAL PARA PESSOA FISICA DO TIPO:A3 (e-CPF A3) TOKEN - VALIDADE PARA 03 (TRÊS) ANOS.",
-      "formaClassificacao": {
-        "valor": "1",
-        "descricao": "MENOR_PRECO_GLOBAL"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 19
     }
   },
   {
     "conteudo": {
-      "numero": 1,
-      "dataCotacao": "2023-01-23T00:00:00.000Z",
-      "dataValidade": "2023-01-27T00:00:00.000Z",
-      "objeto": "PROCESSO ESTIMATIVA DA OPERADORA DE ABASTECIEMENTO DE ÁGUA TRATADA.",
-      "formaClassificacao": {
-        "valor": "2",
-        "descricao": "MENOR_PRECO_POR_ITEM"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 20
     }
   },
   {
     "conteudo": {
-      "numero": 5,
-      "dataCotacao": "2023-03-24T00:00:00.000Z",
-      "dataValidade": "2023-03-24T00:00:00.000Z",
-      "objeto": "Contratação de serviços de telecomunicações para a implementação, operação e manutenção de um link de acesso, síncrono, dedicado à internet, na velocidade de 100Mbps. 1 - Link de internet Dedicado de 100Mb (Mbps - Mega bits por segundo), com disponibilidade 24 (vinte e quatro) horas por dia, durante 07 (sete) dias da semana, a partir de sua ativação até o término do contrato, mediante implantação de link de comunicação de dados a ser instalado no Data Center da Câmara Municipal usando infra-estruturar de fibra óptica, com fornecimento dos equipamentos necessários à execução do serviço e suporte técnico, pelo prazo de 06 (seis) meses, podendo ser prorrogado por iguais e sucessivos períodos até o limite de 60   meses.",
-      "formaClassificacao": {
-        "valor": "2",
-        "descricao": "MENOR_PRECO_POR_ITEM"
-      },
-      "tipoPreco": {
-        "valor": "VALOR_MEDIO",
-        "descricao": "VALOR_MEDIO"
-      }
+      "fornecedor": 21
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 22
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 23
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 24
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 25
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 26
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 27
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 28
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 29
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 30
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 31
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 4
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 29
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 30
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 31
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 2
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 3
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 4
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 9
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 10
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 3
+    }
+  },
+  {
+    "conteudo": {
+      "fornecedor": 2
     }
   }
 ]

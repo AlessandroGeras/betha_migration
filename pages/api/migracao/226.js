@@ -37,25 +37,26 @@ async function main() {
         const masterConnection = await connectToSqlServer();
 
         // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        const selectDatabaseQuery = 'USE COMP_ALMO_CAM';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
             SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+                JSON_QUERY((SELECT cd_cecam AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS entidadeGestora,
+                JSON_QUERY((SELECT cd_unidorca AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS localEntrega,
+                nr_requisicao as codigo,
+                dt_requisicao as data,
+                cd_usuario as nomeSolicitante,
+                ds_aplicacao as assunto,
+                JSON_QUERY((SELECT CASE WHEN ds_aplicacao LIKE 'CONTRATAÇÃO%' OR ds_aplicacao LIKE 'ATENDER%' THEN 'SERVIÇO'
+                                        ELSE 'MATERIAL'
+                                   END AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS tipoNecessidade,
+                ds_justificativa as objeto,
+                ds_justificativa as justificativa,
+                JSON_QUERY((SELECT 'EM_COTACAO' AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS status,
+                JSON_QUERY((SELECT 'OK' AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS situacaoCadastral
+            FROM COMPRequisicao
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -63,19 +64,42 @@ async function main() {
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
+            const entidadeGestora = JSON.parse(record.entidadeGestora);
+            const localEntrega = JSON.parse(record.localEntrega);
+            const tipoNecessidade = JSON.parse(record.tipoNecessidade);
+            const status = JSON.parse(record.status);
+            const situacaoCadastral = JSON.parse(record.situacaoCadastral);
+
+            // Formatar data no formato desejado "1899-12-30"
+            const formattedDate = record.data ? new Date(record.data).toISOString().split('T')[0] : "1899-12-30";
+
+            // Truncar o campo assunto para garantir que tenha no máximo 100 caracteres
+            let assunto = record.assunto;
+            if (assunto.length > 100) {
+                assunto = assunto.substring(0, 100);
+            }
 
             return {
-                idIntegracao: idIntegracao,
-                content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
-                    },
-                    descricao: descricao,
-                    numero: numero
+                entidadeGestora: {
+                    id: entidadeGestora.id
+                },
+                localEntrega: {
+                    id: localEntrega.id
+                },
+                codigo: record.codigo,
+                data: formattedDate,
+                nomeSolicitante: record.nomeSolicitante,
+                assunto: assunto,
+                tipoNecessidade: {
+                    valor: tipoNecessidade.valor
+                },
+                objeto: record.objeto,
+                justificativa: record.justificativa,
+                status: {
+                    valor: status.valor
+                },
+                situacaoCadastral: {
+                    valor: situacaoCadastral.valor
                 }
             };
         });
@@ -90,7 +114,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/solicitacoes', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -36,26 +36,36 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "CONTABIL2024"
+        const selectDatabaseQuery = 'USE CONTABIL2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+            select 
+1 as idIntegracao,
+JSON_QUERY(
+    (SELECT
+ cd_Exercicio as exercicio,
+ JSON_QUERY(
+    (SELECT
+        '' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS retencao,
+        'LIQUIDACAO' as estagioEfetivacao,
+        JSON_QUERY(
+    (SELECT
+        '' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS receita,
+        JSON_QUERY(
+    (SELECT
+        '' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS recurso
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS content 
+from CONTRetencaoExercicioAnterior
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -63,19 +73,23 @@ async function main() {
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
+            // Parse the JSON content
             const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
 
             return {
-                idIntegracao: idIntegracao,
+                idIntegracao: record.idIntegracao.toString(), // Convert idIntegracao to string
                 content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
+                    exercicio: content.exercicio,
+                    retencao: {
+                        id: content.retencao.id || null,
                     },
-                    descricao: descricao,
-                    numero: numero
+                    estagioEfetivacao: content.estagioEfetivacao,
+                    receita: {
+                        id: content.receita.id || null,
+                    },
+                    recurso: {
+                        id: content.recurso.id || null,
+                    }
                 }
             };
         });
@@ -90,7 +104,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/retencoes-exercicios', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,13 +121,11 @@ async function main() {
         } */
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        await sql.close();
+        sql.close();
     }
 }
 
-// Chamar a função principal
 main();

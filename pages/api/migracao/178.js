@@ -36,26 +36,27 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "CONTABIL2024"
+        const selectDatabaseQuery = 'USE CONTABIL2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
+            select 
+                ROW_NUMBER() OVER (ORDER BY cd_programa) AS idIntegracao,
                 JSON_QUERY(
                     (SELECT
                         JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                            (SELECT '9569' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                        ) AS ppa,
+                        cd_programa as numero,
+                        ds_programa as descricao,
+                        ds_Justificativa as justificativa,
+                        ds_Objetivo as objetivos,
+                        'CONTINUO' as horizonteTemporal
+                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
                 ) AS content
-            FROM COMPDestinacaoRecurso
+            from CONT_PROGRAMAS
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -64,45 +65,46 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
-
             return {
-                idIntegracao: idIntegracao,
+                idIntegracao: record.idIntegracao.toString().replace(/\D/g, ''), // Remove any non-alphanumeric characters
                 content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
+                    ppa: {
+                        id: parseInt(content.ppa.id, 10) // Convertendo para inteiro
                     },
-                    descricao: descricao,
-                    numero: numero
+                    numero: parseInt(content.numero, 10), // Convertendo para inteiro
+                    descricao: content.descricao,
+                    justificativa: content.justificativa,
+                    objetivos: content.objetivos,
+                    horizonteTemporal: content.horizonteTemporal
                 }
             };
         });
 
         const chunkSize = 50;
+        const chunks = [];
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
+            chunks.push(chunk);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
             fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+        // Enviar cada chunk de registros de uma vez para a rota desejada
+        /* for (const chunk of chunks) {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/programas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
                 },
-                body: JSON.stringify(record)
+                body: JSON.stringify(chunk)
             });
 
             if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
+                console.log(`Dados do chunk enviados com sucesso para a rota.`);
             } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+                console.error(`Erro ao enviar os dados do chunk para a rota:`, response.statusText);
             }
         } */
 

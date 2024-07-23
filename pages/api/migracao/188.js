@@ -1,6 +1,5 @@
 const sql = require('mssql');
 const dotenv = require('dotenv');
-const fetch = require('node-fetch');
 const fs = require('fs');
 
 dotenv.config();
@@ -36,26 +35,30 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "CONTABIL2024"
+        const selectDatabaseQuery = 'USE CONTABIL2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+            select 
+ ROW_NUMBER() OVER (ORDER BY c.cd_CategoriaEconomicaDespesa) AS ididIntegracao,
+JSON_QUERY(
+    (SELECT
+        JSON_QUERY(
+    (SELECT
+  '11779' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS configuracao,
+ c.cd_CategoriaEconomicaDespesa as numero,
+c.nm_CategoriaEconomicaDespesa as descricao,
+case fl_aceitalancamento
+when 'N' then 'SINTETICO'
+ELSE 'ANALITICO'
+END AS tipo
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS content
+from CONTCategoriaEconomicaDespesa c
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -64,18 +67,15 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
-
             return {
-                idIntegracao: idIntegracao,
+                idIntegracao: record.ididIntegracao.toString(),
                 content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
+                    configuracao: {
+                        id: parseInt(content.configuracao.id) // Convertendo para inteiro
                     },
-                    descricao: descricao,
-                    numero: numero
+                    numero: content.numero.toString(), // Convertendo para string
+                    descricao: content.descricao.substring(0, 150),
+                    tipo: content.tipo
                 }
             };
         });
@@ -90,7 +90,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-despesas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

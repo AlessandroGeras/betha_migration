@@ -36,26 +36,26 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "CONTABIL2024"
+        const selectDatabaseQuery = 'USE CONTABIL2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+            select 
+ROW_NUMBER() OVER (ORDER BY cd_DestinacaoRecurso) as idIntegracao,
+JSON_QUERY(
+    (SELECT
+JSON_QUERY(
+    (SELECT
+ 7978 as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS configuracaoRecurso,
+cd_DestinacaoRecurso as numero,
+nm_DestinacaoRecurso as descricao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS content
+from CONTDestinacaoRecurso
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -64,22 +64,20 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
-
+            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao;
             return {
-                idIntegracao: idIntegracao,
+                idIntegracao: record.idIntegracao.toString(),
                 content: {
                     configuracaoRecurso: {
                         id: content.configuracaoRecurso.id
                     },
                     descricao: descricao,
-                    numero: numero
+                    numero: content.numero
                 }
             };
         });
 
+        // Salvar os resultados transformados em um arquivo JSON
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);

@@ -36,26 +36,59 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        // Selecionar o banco de dados "PATRIMONIO"
+        const selectDatabaseQuery = 'USE PATRIMONIO';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
+            SELECT
                 JSON_QUERY(
                     (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
+                        CASE B.cd_tipobem
+                            WHEN 104 THEN 46492
+                            WHEN 106 THEN 46493
+                            WHEN 108 THEN 46494
+                            WHEN 110 THEN 46495
+                            WHEN 112 THEN 46496
+                            WHEN 118 THEN 46497
+                            WHEN 122 THEN 46498
+                            WHEN 124 THEN 46499
+                            WHEN 126 THEN 46500
+                            WHEN 128 THEN 46501
+                            WHEN 130 THEN 46502
+                            WHEN 132 THEN 46503
+                            WHEN 133 THEN 46504
+                            WHEN 134 THEN 46505
+                            WHEN 135 THEN 46506
+                            WHEN 136 THEN 46507
+                            WHEN 138 THEN 46508
+                            WHEN 139 THEN 46509
+                            WHEN 140 THEN 46510
+                            WHEN 142 THEN 46511
+                            WHEN 148 THEN 46512
+                            WHEN 152 THEN 46513
+                            WHEN 199 THEN 46516
+                            WHEN 201 THEN 46517
+                            WHEN 202 THEN 46518
+                            WHEN 203 THEN 46519
+                            WHEN 206 THEN 46522
+                            WHEN 208 THEN 46524
+                            WHEN 211 THEN 46527
+                            WHEN 212 THEN 46528
+                            WHEN 213 THEN 46529
+                            WHEN 216 THEN 46529
+                            WHEN 217 THEN 46515
+                            WHEN 2003 THEN 46533
+                        END AS id
                         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+                ) AS grupoBem,
+                C.ds_categoria AS descricao
+            FROM PATRCategorias C
+            JOIN PATRBensPatrimoniais B ON B.cd_categoria = C.cd_categoria
+            JOIN PATRTiposBens T ON T.cd_tipobem = B.cd_tipobem
+            GROUP BY B.cd_tipobem, C.ds_categoria
+            ORDER BY B.cd_tipobem
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -63,23 +96,19 @@ async function main() {
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
+            const grupoBem = JSON.parse(record.grupoBem);
 
             return {
-                idIntegracao: idIntegracao,
                 content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
+                    grupoBem: {
+                        id: grupoBem.id
                     },
-                    descricao: descricao,
-                    numero: numero
+                    descricao: record.descricao
                 }
             };
         });
 
+        // Salvar os resultados transformados em um arquivo JSON
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
@@ -90,7 +119,7 @@ async function main() {
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://patrimonio.betha.cloud/patrimonio-services/api/conversoes/lotes/especies-bem', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,13 +136,11 @@ async function main() {
         } */
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        await sql.close();
+        sql.close();
     }
 }
 
-// Chamar a função principal
 main();

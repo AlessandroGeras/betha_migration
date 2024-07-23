@@ -42,20 +42,11 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_DestinacaoRecurso AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        JSON_QUERY(
-                            (SELECT
-                                7978 AS id
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS configuracaoRecurso,
-                        cd_DestinacaoRecurso AS numero,
-                        nm_DestinacaoRecurso AS descricao
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            FROM COMPDestinacaoRecurso
+            select 
+cd_categecon as numero,
+ds_categecon as descricao
+from CONTCategoriaEconomica
+where cd_exercicio = 2024
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -64,8 +55,8 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à direita
+            const idIntegracao = record.idIntegracao.toString().padSEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
+            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
             const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
 
             return {

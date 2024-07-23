@@ -37,34 +37,23 @@ async function main() {
         const masterConnection = await connectToSqlServer();
 
         // Selecionar o banco de dados "COMP_ALMO"
-        const selectDatabaseQuery = 'USE COMP_ALMO_CAM';
+        const selectDatabaseQuery = 'USE COMP_ALMO';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
             select
-                36067993 as responsavel, 
-                nr_cotacao as numero,
-                FORMAT(dt_abertura, 'yyyy-MM-dd') as dataCotacao,
-                FORMAT(dt_limite, 'yyyy-MM-dd') as dataValidade,
-                ds_objeto as objeto,
-                JSON_QUERY(
-                    (SELECT
-                        fj.cd_formajulgamento as valor,
-                        case fj.cd_formajulgamento 
-                            when 1 then 'MENOR_PRECO_GLOBAL'
-                            else 'MENOR_PRECO_POR_ITEM'
-                        end as descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS formaClassificacao,
-                JSON_QUERY(
-                    (SELECT
-                        'VALOR_MEDIO' as valor,
-                        'VALOR_MEDIO' as descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS tipoPreco
-            from COMPCotacao c
-            join COMPLicitacaoFormaJulgamento fj on fj.cd_formajulgamento = c.cd_formajulgamento
+JSON_QUERY(
+        (SELECT
+            cd_usuario AS id
+         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+    ) AS responsavel,
+aa_cotacao as dataCotacao,
+nr_cotacao as numero,
+null as dataValidade,
+null as objeto,
+null as observacao
+from COMPCotacaoRequisicoes;
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -72,12 +61,6 @@ async function main() {
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const formaClassificacao = JSON.parse(record.formaClassificacao);
-            const tipoPreco = JSON.parse(record.tipoPreco);
-
-            // Determinar o ID do parametroExerc com base no ano da cotação
-            const dataCotacaoYear = new Date(record.dataCotacao).getFullYear();
-            const parametroExercId = dataCotacaoYear === 2024 ? 17573 : (dataCotacaoYear === 2023 ? 18922 : null);
 
             return {
                 conteudo: {
@@ -111,7 +94,7 @@ async function main() {
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
             try {
-                const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/cotacoes', {
+                const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/requisicoes', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
