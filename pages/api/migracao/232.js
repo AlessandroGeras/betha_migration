@@ -42,11 +42,18 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select 
-cd_categecon as numero,
-ds_categecon as descricao
-from CONTCategoriaEconomica
-where cd_exercicio = 2024
+            SELECT 
+CAST(lp.nm_funcionario AS varchar(max)) AS nome,
+lp.ds_qualificacao AS complementofuncao,
+CAST(1 AS BIT) AS ativo,
+CASE 
+    WHEN CAST(lp.nm_funcionario AS varchar(max)) = 'LUTERO ROSA PARAISO' THEN '698.686.462-00'
+    WHEN CAST(lp.nm_funcionario AS varchar(max)) = 'JOSE AUREO TECHIO' THEN '319.101.673-20'
+    WHEN CAST(lp.nm_funcionario AS varchar(max)) = 'FRANCIELE SIMINHUK' THEN '009.196.192-07'
+        WHEN CAST(lp.nm_funcionario AS varchar(max)) = 'JULISNEI RODRIGUES LAURO' THEN '025.045.092-51'
+    ELSE CAST(lp.nm_funcionario AS varchar(max))
+END AS cpf
+FROM COMPLicitacaoPregaoEquipe lp;
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -54,21 +61,16 @@ where cd_exercicio = 2024
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padSEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
+            // Remover pontos e hifens do CPF
+            const cleanedCpf = record.cpf.replace(/[.\-]/g, '');
 
             return {
-                idIntegracao: idIntegracao,
-                content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
-                    },
-                    descricao: descricao,
-                    numero: numero
-                }
-            };
+                conteudo:{
+                    nome: record.nome,
+                    cpf: cleanedCpf,
+                    ativo: record.ativo,
+                    complementofuncao: record.complementofuncao
+            }};
         });
 
         const chunkSize = 50;
@@ -81,7 +83,7 @@ where cd_exercicio = 2024
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://services.almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/responsaveis', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

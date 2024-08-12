@@ -1,187 +1,805 @@
 [
   {
     "conteudo": {
-      "fornecedor": 6
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 28,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Estimativo para pagamento de custos de boletos/guias de emissão dos registros e autenticidades das ARTs (Anotação de Responsabilidade Técnica).\r",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Jstificamos a necessidade da contratação da prestação para pagamento de custos de boletos, uma vez que o CREA/RO é responsável pela emissão dos registros e autenticidades das ARTs (Anotação de ResponsabilidadeTécnica),atendendo as necessidades da Secretaria Municipal de Administração e Fazenda.",
+      "dataProcesso": "2024-01-15",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-15 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 1,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-01-15 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-01-15 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 7
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 20,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Taxas e Tarifas Bancárias, debitadas\r\npor transações bancarias, efetuadas,\r\ndas contas existentes junto ao BANCO\r\nDO BRASIL S/A.",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Taxas e Tarifas Bancárias, debitadas\r\npor transações bancarias, efetuadas,\r\ndas contas existentes junto ao BANCO\r\nDO BRASIL S/A.",
+      "dataProcesso": "2024-01-19",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-19 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 2,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-01-19 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-01-19 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 8
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16819
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 18,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Revisão de Caminhão Caçamba IVECO, Placa: RSX9G17, ANO: 2022, COR: BRANCO, pertencente a Secretaria de Agricultura e Meio Ambiente - SEMAGRI.",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Revisão de Caminhão Caçamba IVECO, Placa: RSX9G17, ANO: 2022, COR: BRANCO, pertencente a Secretaria de Agricultura e Meio Ambiente - SEMAGRI.",
+      "dataProcesso": "2024-01-17",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-17 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 3,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2023-01-15 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2023-01-15 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 11
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 31,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Estimativo para pagamento de faturas com linha telefônica.",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Estimativo para pagamento de faturas com linha telefônica.",
+      "dataProcesso": "2024-01-24",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-24 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 4,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-01-20 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-01-24 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 12
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 30,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Estimado para pagamento de despesas com faturas de água potável, fornecido por órgão competente (CAERD).",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Estimado para pagamento de despesas com faturas de água potável, fornecido por órgão competente (CAERD).",
+      "dataProcesso": "2024-01-24",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-24 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 5,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-01-24 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-01-24 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 13
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 33,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Estimativo de pagamento de faturas de energia elétrica, fornecido por órgão\r\ncompetente ENERGISA RONDÔNIA DISTRIBUIDORA DE ENERGIA S. A",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Estimativo de pagamento de faturas de energia elétrica, fornecido por órgão competente ENERGISA RONDÔNIA DISTRIBUIDORA DE ENERGIA S. A",
+      "dataProcesso": "2024-01-24",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-24 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 6,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-01-24 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-01-24 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 14
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 29,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Estimativo para pagamentos das taxas de\r\nlicenciamento de veículos junto ao\r\nDepartamento Estadual de Trânsito de\r\nRondônia-DETRAN.",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Estimativo para pagamentos das taxas de\r\nlicenciamento de veículos junto ao\r\nDepartamento Estadual de Trânsito de\r\nRondônia-DETRAN.",
+      "dataProcesso": "2024-01-25",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-01-25 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 7,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-01-25 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-01-25 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 15
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 216,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "Revisão de CAMINHONETE L200 TRITON SPORT GLS 2.4 D 4X4 AT, Placa: RSX0J20, ANO: 2021/2022, COR: BRANCO FUJI, pertencente ao Gabinete do Prefeito.",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Revisão de CAMINHONETE L200 TRITON SPORT GLS 2.4 D 4X4 AT, Placa: RSX0J20, ANO: 2021/2022, COR: BRANCO FUJI, pertencente ao Gabinete do Prefeito.",
+      "dataProcesso": "2024-02-29",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-02-29 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 8,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-02-29 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-12-30 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 16
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 333,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "\r\nEstimativo para pagamento de custos de boletos/guias juntos aos órgãos competentes: CBMRO - Corpo de Bombeiros Militar do Estado de Rondônia, em atendimento a Secretaria Municipal de Administração e Fazenda - SEMAF, com previsão de consumo para o período de janeiro de dezembro a 2024.\r\n",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "Descrevemos a necessidade da contratação direta, com a empresa: CBMRO - Corpo de Bombeiros Militar do Estado de Rondônia, visando empenho estimado para pagamento de custos de boletos/guias, para os eventos temporários realizados em áreas públicas, em edificações permanentes ou construções provisórias, em ambiente fechados, cobertos, abertos ou ar livre precisam de licenciamento junto ao Corpo de Bombeiros Militar do Estado de Rondônia (CBMRO) para serem realizados, por um período estimado de 12 (doze) meses, visando atender as necessidades da Secretaria Municipal de Administração e Fazenda - SEMAF, visando atender as necessidade da secretaria requisitante.",
+      "dataProcesso": "2024-03-01",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-03-01 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 9,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-02-29 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-02-29 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 17
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 334,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "9° Revisão de CAMINHONETE L200 TRITON SPORT GLS 2.4 D 4X4 AT, Placa: OHW1I21, ANO: 2021/2022, COR: BRANCO FUJI, pertencente Secretaria Municipal de Educação  SEMED",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "9° Revisão de CAMINHONETE L200 TRITON SPORT GLS 2.4 D 4X4 AT, Placa: OHW1I21, ANO: 2021/2022, COR: BRANCO FUJI, pertencente Secretaria Municipal de Educação  SEMED",
+      "dataProcesso": "2024-03-14",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-03-14 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 10,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-03-14 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-03-14 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   },
   {
     "conteudo": {
-      "fornecedor": 18
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 6
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 7
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 19
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 20
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 21
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 22
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 23
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 24
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 25
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 26
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 27
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 28
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 29
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 30
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 31
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 4
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 29
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 30
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 31
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 2
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 3
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 4
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 9
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 10
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 3
-    }
-  },
-  {
-    "conteudo": {
-      "fornecedor": 2
+      "formaPagamento": {
+        "id": 10778
+      },
+      "formaJulgamento": {
+        "id": 16820
+      },
+      "previsaoSubcontratacao": false,
+      "numeroProcesso": 335,
+      "orcamentoSigiloso": false,
+      "localEntrega": {
+        "id": 69142
+      },
+      "tipoObjeto": {
+        "id": 10
+      },
+      "objeto": "4° Revisão de garantia do veículo caminhonete L200 Triton Outdoor GLS 2.4 D 4X4 AT,  Placa: SLJ6I00, ANO: 2022/2023 Cor: Branco Fuji",
+      "controleSaldo": {
+        "valor": "QUANTIDADE"
+      },
+      "justificativa": "4° Revisão de garantia do veículo caminhonete L200 Triton Outdoor GLS 2.4 D 4X4 AT, Placa: SLJ6I00, ANO: 2022/2023 Cor: Branco Fuji",
+      "dataProcesso": "2024-03-14",
+      "formaContratacao": {
+        "dataInicioRecebimentoEnvelope": "2024-03-14 00:00:00",
+        "beneficiaMPELocais": false,
+        "fundamentacaoLegal": {
+          "id": 169
+        },
+        "situacaoLances": {
+          "valor": "PROPOSTA_FINAL_CONFIRMADA"
+        },
+        "numeroSequencial": 11,
+        "comissao": {
+          "id": 51989
+        },
+        "anoSequencial": 2024,
+        "itemExclusivoMPE": false,
+        "formaContratacao": {
+          "valor": "CONTRATACAO_DIRETA"
+        },
+        "registroPreco": false,
+        "dataAberturaEnvelope": "2024-03-14 00:00:00",
+        "dataFinalRecebimentoEnvelope": "2024-03-14 00:00:00",
+        "desclassificaPropostaInvalida": {
+          "valor": "CLASSIFICA"
+        },
+        "responsavel": {
+          "id": 36067993
+        },
+        "desclassificaPropostaInvalidaLote": {
+          "valor": "NAO_APLICA"
+        },
+        "exigeSubcontratacao": false,
+        "modalidade": {
+          "id": 14
+        }
+      },
+      "parametroExerc": {
+        "id": 17573
+      },
+      "prazoEntrega": {
+        "id": 164027
+      },
+      "controleSaldoOrganograma": true,
+      "regimeExecucao": {
+        "id": 5974
+      }
+    },
+    "context": {
+      "exercicio": "2024"
     }
   }
 ]

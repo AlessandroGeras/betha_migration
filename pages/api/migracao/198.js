@@ -42,27 +42,27 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT
-                ds_ContratoEncerramentoTipo AS descricao,
-                JSON_QUERY(
-                    (SELECT
-                        CASE cd_ContratoEncerramentoTipo
-                            WHEN 1 THEN 'OUTROS'
-                            WHEN 2 THEN 'OUTROS'
-                            WHEN 3 THEN 'AMIGAVEL'
-                            WHEN 4 THEN 'JUDICIAL'
-                            WHEN 5 THEN 'OUTROS'
-                        END AS valor,
-                        CASE cd_ContratoEncerramentoTipo
-                            WHEN 1 THEN 'OUTROS'
-                            WHEN 2 THEN 'OUTROS'
-                            WHEN 3 THEN 'AMIGAVEL'
-                            WHEN 4 THEN 'JUDICIAL'
-                            WHEN 5 THEN 'OUTROS'
-                        END AS descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS classificacao
-            FROM CONTContratoEncerramentoTipo
+            select
+ds_ContratoEncerramentoTipo as descricao,
+ JSON_QUERY(
+    (SELECT
+        case cd_ContratoEncerramentoTipo
+        when 1 then 'OUTROS'
+        when 2 then 'OUTROS'
+        when 3 then 'AMIGAVEL'
+        when 4 then 'JUDICIAL'
+        when 5 then 'OUTROS'
+        end as valor,
+        case cd_ContratoEncerramentoTipo
+        when 1 then 'OUTROS'
+        when 2 then 'OUTROS'
+        when 3 then 'AMIGAVEL'
+        when 4 then 'JUDICIAL'
+        when 5 then 'OUTROS'
+        end as descricao
+FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS classificacao
+FROM CONTContratoEncerramentoTipo
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -73,12 +73,13 @@ async function main() {
             const classificacao = JSON.parse(record.classificacao); // Parse the JSON string to an object
 
             return {
+                conteudo:{
                 descricao: record.descricao,
                 classificacao: {
                     valor: classificacao.valor,
                     descricao: classificacao.descricao,
                 }
-            };
+            }};
         });
 
         // Salvar os resultados transformados em um arquivo JSON
@@ -86,8 +87,8 @@ async function main() {
         console.log('Dados salvos em log_envio.json');
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
-            const response = await fetch('https://pessoal.betha.cloud/service-layer/api/tipos-rescisao', {
+        /* for (const record of transformedData) {
+            const response = await fetch('https://contratos.betha.cloud/contratacao-services/api/conversoes/lotes/motivos-rescisao', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -101,7 +102,7 @@ async function main() {
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         // Lidar com erros de conexão ou consulta aqui

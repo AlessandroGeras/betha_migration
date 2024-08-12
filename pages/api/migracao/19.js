@@ -42,29 +42,18 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select
-                36067993 as responsavel, 
-                nr_cotacao as numero,
-                FORMAT(dt_abertura, 'yyyy-MM-dd') as dataCotacao,
-                FORMAT(dt_limite, 'yyyy-MM-dd') as dataValidade,
-                ds_objeto as objeto,
-                JSON_QUERY(
-                    (SELECT
-                        fj.cd_formajulgamento as valor,
-                        case fj.cd_formajulgamento 
-                            when 1 then 'MENOR_PRECO_GLOBAL'
-                            else 'MENOR_PRECO_POR_ITEM'
-                        end as descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS formaClassificacao,
-                JSON_QUERY(
-                    (SELECT
-                        'VALOR_MEDIO' as valor,
-                        'VALOR_MEDIO' as descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS tipoPreco
-            from COMPCotacao c
-            join COMPLicitacaoFormaJulgamento fj on fj.cd_formajulgamento = c.cd_formajulgamento
+            SELECT 
+    ROW_NUMBER() OVER (ORDER BY nr_cotacao) AS id,
+    JSON_QUERY(
+        (SELECT cd_usuario as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+    ) AS responsavel,
+    nr_cotacao as numero,
+    aa_cotacao as dataCotacao,
+    ds_validade as dataValidade,
+    '' as objeto,
+    '' as observacao
+FROM 
+    COMPCotacaoFornecedores;
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -72,20 +61,16 @@ async function main() {
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const formaClassificacao = JSON.parse(record.formaClassificacao);
-            const tipoPreco = JSON.parse(record.tipoPreco);
-
             // Determinar o ID do parametroExerc com base no ano da cotação
-            const dataCotacaoYear = new Date(record.dataCotacao).getFullYear();
-            const parametroExercId = dataCotacaoYear === 2024 ? 17573 : (dataCotacaoYear === 2023 ? 18922 : null);
-
-            // Verificar se a data de cotação é igual à data de validade
-            let dataValidade = new Date(record.dataValidade);
-            if (record.dataCotacao === record.dataValidade) {
-                dataValidade.setDate(dataValidade.getDate() + 1);
-                // Formatar a nova dataValidade para o formato 'yyyy-MM-dd'
-                record.dataValidade = dataValidade.toISOString().split('T')[0];
-            }
+            const dataCotacaoYear = record.dataCotacao; // Considerando que dataCotacao já é um número
+            const parametroExercId = 
+                dataCotacaoYear === 2024 ? 17573 :
+                dataCotacaoYear === 2023 ? 18922 :
+                dataCotacaoYear === 2013 ? 19066 :
+                dataCotacaoYear === 2014 ? 19067 :
+                dataCotacaoYear === 2017 ? 19068 :
+                null;
+            
 
             return {
                 conteudo: {
@@ -93,21 +78,11 @@ async function main() {
                     dataCotacao: record.dataCotacao,
                     dataValidade: record.dataValidade,
                     objeto: record.objeto,
-                    formaClassificacao: {
-                        valor: formaClassificacao.descricao,
-                        descricao: formaClassificacao.descricao
-                    },
-                    tipoPreco: {
-                        valor: tipoPreco.descricao,
-                        descricao: tipoPreco.descricao
-                    },
+                    observacao: record.observacao,
                     parametroExerc: {
                         id: parametroExercId
                     },
-                    responsavel: {
-                        id: record.responsavel,
-                    },
-
+                    responsavel: JSON.parse(record.responsavel)
                 },
                 context: {
                     exercicio: dataCotacaoYear.toString() // Use o ano da dataCotacao

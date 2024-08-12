@@ -31,25 +31,50 @@ async function connectToSqlServer() {
     }
 }
 
+function formatarNumero(numero, nivel) {
+    let numeroFormatado = '';
+    const partes = [0, 0, 0, 0];
+
+    partes[nivel - 1] = numero;
+
+    partes[0] = partes[0].toString().padStart(3, '0');
+    partes[1] = partes[1].toString().padStart(3, '0');
+    partes[2] = partes[2].toString().padStart(4, '0');
+    partes[3] = partes[3].toString().padStart(2, '0');
+
+    numeroFormatado = partes.join('.');
+
+    return numeroFormatado.replace(/\./g, '');
+}
+
 async function main() {
     try {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "FOLHA_CAM"
-        const selectDatabaseQuery = 'USE FOLHA_CAM';
+        // Selecionar o banco de dados "FOLHADB"
+        const selectDatabaseQuery = 'USE FOLHADB';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            select
-ROW_NUMBER() OVER (ORDER BY cd_Funcionario) as idIntegracao,
-JSON_QUERY((SELECT 
-        JSON_QUERY((SELECT cd_Funcionario as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS funcionario,
-    JSON_QUERY((SELECT cd_prog as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS configuracaoLicencaPremio,
-        dt_iniciogozo as dataInicial,
-        dt_terminogozo as dataFinal FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS conteudo
-from FOLHFuncProgLicPremio
+           select  ROW_NUMBER() OVER (ORDER BY cd_cecam) AS idIntegracao,
+JSON_QUERY(
+    (SELECT
+    JSON_QUERY(
+    (SELECT
+   '4950' as id,
+   'ORGANOGRAMA PARECIS 2024' as descricao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS configuracao,
+ cd_DivAdm as numero,
+ cd_NivelEstrut as nivel,
+ nm_DivAdm as descricao,
+ nm_abrevdivadm as sigla
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS conteudo
+from folhdivadm
+where aa_exercicio = 2024
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -57,30 +82,35 @@ from FOLHFuncProgLicPremio
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
+            const conteudo = JSON.parse(record.conteudo);
 
             return {
-                idIntegracao: conteudo.funcionario.id.toString(),
+                idIntegracao: record.idIntegracao.toString(),
                 conteudo: {
-                    funcionario: {
-                        id: conteudo.funcionario.id
+                    configuracao: {
+                        id: parseInt(conteudo.configuracao.id),
+                        descricao: conteudo.configuracao.descricao
                     },
-                    configuracaoLicencaPremio: {
-                        id: conteudo.configuracaoLicencaPremio.id,
-                    },
-                    dataInicial: conteudo.dataInicial,
-                    dataFinal: conteudo.dataFinal,
+                    numero: formatarNumero(conteudo.numero, conteudo.nivel),
+                    nivel: parseInt(conteudo.nivel),
+                    descricao: conteudo.descricao,
+                    sigla: conteudo.sigla
                 }
             };
         });
 
         // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/matricula-licenca-premio', {
+            const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/organograma', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -97,13 +127,11 @@ from FOLHFuncProgLicPremio
         } */
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        await sql.close();
+        sql.close();
     }
 }
 
-// Chamar a função principal
 main();

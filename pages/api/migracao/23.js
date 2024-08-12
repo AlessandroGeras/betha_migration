@@ -60,14 +60,14 @@ async function main() {
         const masterConnection = await connectToSqlServer();
 
         // Selecionar o banco de dados "COMP_ALMO"
-        const selectDatabaseQuery = 'USE COMP_ALMO';
+        const selectDatabaseQuery = 'USE COMP_ALMO_CAM';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
             select
 JSON_QUERY((SELECT 36134397 AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS responsavel,
-JSON_QUERY((SELECT '2076732' AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
+JSON_QUERY((SELECT '2087643' AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
 JSON_QUERY((SELECT CASE 
                                             WHEN c.cd_unidorca = 20300 THEN 4878
                                                 WHEN c.cd_unidorca = 20200 THEN 4877

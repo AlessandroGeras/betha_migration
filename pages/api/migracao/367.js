@@ -42,53 +42,52 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT
-                JSON_QUERY(
-                    (SELECT
-                        CASE B.cd_tipobem
-                            WHEN 104 THEN 46492
-                            WHEN 106 THEN 46493
-                            WHEN 108 THEN 46494
-                            WHEN 110 THEN 46495
-                            WHEN 112 THEN 46496
-                            WHEN 118 THEN 46497
-                            WHEN 122 THEN 46498
-                            WHEN 124 THEN 46499
-                            WHEN 126 THEN 46500
-                            WHEN 128 THEN 46501
-                            WHEN 130 THEN 46502
-                            WHEN 132 THEN 46503
-                            WHEN 133 THEN 46504
-                            WHEN 134 THEN 46505
-                            WHEN 135 THEN 46506
-                            WHEN 136 THEN 46507
-                            WHEN 138 THEN 46508
-                            WHEN 139 THEN 46509
-                            WHEN 140 THEN 46510
-                            WHEN 142 THEN 46511
-                            WHEN 148 THEN 46512
-                            WHEN 152 THEN 46513
-                            WHEN 199 THEN 46516
-                            WHEN 201 THEN 46517
-                            WHEN 202 THEN 46518
-                            WHEN 203 THEN 46519
-                            WHEN 206 THEN 46522
-                            WHEN 208 THEN 46524
-                            WHEN 211 THEN 46527
-                            WHEN 212 THEN 46528
-                            WHEN 213 THEN 46529
-                            WHEN 216 THEN 46529
-                            WHEN 217 THEN 46515
-                            WHEN 2003 THEN 46533
-                        END AS id
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS grupoBem,
-                C.ds_categoria AS descricao
-            FROM PATRCategorias C
-            JOIN PATRBensPatrimoniais B ON B.cd_categoria = C.cd_categoria
-            JOIN PATRTiposBens T ON T.cd_tipobem = B.cd_tipobem
-            GROUP BY B.cd_tipobem, C.ds_categoria
-            ORDER BY B.cd_tipobem
+              select
+  JSON_QUERY( (SELECT
+ case B.cd_tipobem
+ when        104        then        46492
+when        106        then        46493
+when        108        then        46494
+when        110        then        46495
+when        112        then        46496
+when        118        then        46497
+when        122        then        46498
+when        124        then        46499
+when        126        then        46500
+when        128        then        46501
+when        130        then        46502
+when        132        then        46503
+when        133        then        46504
+when        134        then        46505
+when        135        then        46506
+when        136        then        46507
+when        138        then        46508
+when        139        then        46509
+when        140        then        46510
+when        142        then        46511
+when        148        then        46512
+when        152        then        46513
+when        199        then        46516
+when        201        then        46517
+when        202        then        46518
+when        203        then        46519
+when        206        then        46522
+when        208        then        46524
+when        211        then        46527
+when        212        then        46528
+when        213        then        46529
+when        216        then        46529
+when        217        then        46515
+when        2003        then        46533
+end as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS grupoBem,
+   C.ds_categoria as descricao
+   from PATRCategorias C 
+  JOIN PATRBensPatrimoniais B ON B.cd_categoria = C.cd_categoria
+ JOIN  PATRTiposBens T ON T.cd_tipobem = B.cd_tipobem
+ GROUP BY B.cd_tipobem, C.ds_categoria
+ order by B.cd_tipobem
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -99,7 +98,7 @@ async function main() {
             const grupoBem = JSON.parse(record.grupoBem);
 
             return {
-                content: {
+                conteudo: {
                     grupoBem: {
                         id: grupoBem.id
                     },

@@ -37,7 +37,7 @@ async function main() {
         const masterConnection = await connectToSqlServer();
 
         // Selecionar o banco de dados "COMP_ALMO_CAM"
-        const selectDatabaseQuery = 'USE COMP_ALMO_CAM';
+        const selectDatabaseQuery = 'USE COMP_ALMO';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
@@ -139,12 +139,13 @@ const transformedData = resultData.map(record => {
     }
 
     return {
-        id: record.id,
+        conteudo:{
+        //id: record.id,
         descricao: record.descricao,
         nome: record.nome,
         codigoEspecificacao: record.codigoEspecificacao,
         unidadeMedida: unidadeMedida
-    };
+    }};
 });
 
         // Salvar os resultados transformados em um arquivo JSON
@@ -154,7 +155,7 @@ const transformedData = resultData.map(record => {
         // Enviar cada registro individualmente para a rota desejada
         /*
         for (const record of transformedData) {
-            const response = await fetch('https://almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/materialespecificacao', {
+            const response = await fetch('https://services.almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/materialespecificacao', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -36,39 +36,40 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "TRIBUTOS2024"
+        // Selecionar o banco de dados "FOLHA_CAM"
         const selectDatabaseQuery = 'USE FOLHA_CAM';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            select 
-JSON_QUERY(
-    (SELECT
-        ev.ds_Evento as tipo,
-        em.dt_Emprestimo as dataInicial
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS conteudo,
-JSON_QUERY(
-    (SELECT
-     em.cd_Funcionario as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS matricula,
-em.dt_PrimeiraParcela as dataInicioDescont,
-qt_Parcelas as numeroParcelas,
-qt_Parcelas * vl_Parcelas as valorTotal,
-JSON_QUERY(
-    (SELECT
-     vl_Parcelas as valorParcela
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS parcelas,
-CASE 
-        WHEN fl_quitacao = 'S' THEN 'QUITADO'
-        WHEN fl_quitacao = 'N' THEN 'EM_ANDAMENTO'
-        ELSE 'Status Desconhecido'
-    END AS situacao
-from FOLHEmprestimos em
-join FOLHEvento ev on ev.cd_Evento = em.cd_Evento
+            SELECT 
+                ROW_NUMBER() OVER (ORDER BY em.cd_Funcionario) AS idIntegracao,
+                JSON_QUERY((SELECT 
+                    ev.ds_Evento AS tipo,
+                    em.dt_Emprestimo AS dataInicial,
+                    CASE 
+                        WHEN em.dt_Quitacao IS NOT NULL THEN FORMAT(em.dt_Quitacao, 'yyyy-MM-ddTHH:mm:ss')
+                        ELSE FORMAT(CONVERT(DATETIME, '2023-12-31T00:00:00', 126), 'yyyy-MM-ddTHH:mm:ss')
+                    END AS dataFinal,
+                    em.dt_PrimeiraParcela AS dataInicioDesconto,
+                    em.qt_Parcelas AS numeroParcelas,
+                    em.qt_Parcelas * em.vl_Parcelas AS valorTotal,
+                    CASE
+                        WHEN em.fl_quitacao = 'S' THEN 'ULTIMA_PARCELA'
+                        ELSE 'PRIMEIRA_PARCELA'
+                    END AS residuo,
+                    CASE
+                        WHEN em.fl_quitacao = 'S' THEN 'QUITADO'
+                        WHEN em.fl_quitacao = 'N' THEN 'EM_ANDAMENTO'
+                        ELSE 'Status Desconhecido'
+                    END AS situacao,
+                    JSON_QUERY((SELECT vl_Parcelas AS valorParcela FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS parcelas
+                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS conteudo,
+                JSON_QUERY((SELECT CAST(em.cd_Funcionario AS INT) AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS matricula,
+                JSON_QUERY((SELECT func.nm_Funcionario AS razaoSocial FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS pessoaJuridica
+            FROM FOLHEmprestimos em
+            JOIN FOLHEvento ev ON ev.cd_Evento = em.cd_Evento
+            JOIN AUD_FOLHFuncionario func ON em.cd_Funcionario = func.cd_Funcionario
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -76,37 +77,51 @@ join FOLHEvento ev on ev.cd_Evento = em.cd_Evento
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
-            const matricula = JSON.parse(record.matricula);
-            const parcelas = JSON.parse(record.parcelas);
+            try {
+                // Log para verificar dados
+                const conteudo = record.conteudo ? JSON.parse(record.conteudo) : {};
+                const matricula = record.matricula ? JSON.parse(record.matricula) : {};
+                const pessoaJuridica = record.pessoaJuridica ? JSON.parse(record.pessoaJuridica) : {};
+                const parcelas = conteudo.parcelas ? [conteudo.parcelas] : [];
 
-            return {
-                idIntegracao: matricula.id.toString(),
-                conteudo: {
-                    tipo: conteudo.tipo,
-                    dataInicial: conteudo.dataInicial,
-                    matricula: {
-                        id: matricula.id
-                    },
-                    dataInicioDesconto: record.dataInicioDescont,
-                    valorTotal: record.valorTotal,
-                    numeroParcelas: record.numeroParcelas,
-                    situacao: record.situacao,
-                    parcelas: [
-                        {
-                            valorParcela: parcelas.valorParcela,                            
-                        }
-                    ]
-                }
-            };
-        });
+                return {
+                    idIntegracao: record.idIntegracao.toString(),
+                    conteudo: {
+                        tipo: conteudo.tipo || '',
+                        dataInicial: conteudo.dataInicial || '',
+                        dataFinal: conteudo.dataFinal || '',
+                        matricula: {
+                            id: matricula.id || null
+                        },
+                        pessoaJuridica: {
+                            razaoSocial: pessoaJuridica.razaoSocial || ''
+                        },
+                        dataInicioDesconto: conteudo.dataInicioDesconto || '',
+                        valorTotal: conteudo.valorTotal || 0,
+                        numeroParcelas: conteudo.numeroParcelas || 0,
+                        residuo: conteudo.residuo || '',
+                        situacao: conteudo.situacao || '',
+                        parcelas: parcelas.map(parcela => ({
+                            valorParcela: parcela.valorParcela || 0
+                        }))
+                    }
+                };
+            } catch (error) {
+                console.error('Erro ao transformar o registro:', record, error);
+                return null; // Ignora registros problemáticos
+            }
+        }).filter(record => record !== null);
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/emprestimo', {
                 method: 'POST',
                 headers: {
@@ -122,7 +137,7 @@ join FOLHEvento ev on ev.cd_Evento = em.cd_Evento
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
         }
-
+        */
     } catch (error) {
         // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);

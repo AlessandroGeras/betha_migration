@@ -43,20 +43,21 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             SELECT 
-                JSON_QUERY((SELECT cd_cecam AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS entidadeGestora,
-                JSON_QUERY((SELECT cd_unidorca AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS localEntrega,
-                nr_requisicao as codigo,
-                dt_requisicao as data,
-                cd_usuario as nomeSolicitante,
-                ds_aplicacao as assunto,
-                JSON_QUERY((SELECT CASE WHEN ds_aplicacao LIKE 'CONTRATAÇÃO%' OR ds_aplicacao LIKE 'ATENDER%' THEN 'SERVIÇO'
-                                        ELSE 'MATERIAL'
-                                   END AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS tipoNecessidade,
-                ds_justificativa as objeto,
-                ds_justificativa as justificativa,
-                JSON_QUERY((SELECT 'EM_COTACAO' AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS status,
-                JSON_QUERY((SELECT 'OK' AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS situacaoCadastral
-            FROM COMPRequisicao
+JSON_QUERY((SELECT cd_cecam AS  id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS entidadeGestora,
+JSON_QUERY((SELECT '2076732' AS  id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
+JSON_QUERY((SELECT cd_unidorca AS  id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS localEntrega,
+nr_requisicao as codigo,
+dt_requisicao as data,
+cd_usuario as nomeSolicitante,
+ds_aplicacao as assunto,
+JSON_QUERY((SELECT CASE WHEN ds_aplicacao LIKE 'CONTRATAÇÃO%' OR ds_aplicacao LIKE 'ATENDER%' THEN 'SERVIÇO'
+                        ELSE 'MATERIAL'
+                   END AS valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS tipoNecessidade,
+ds_justificativa as objeto,
+ds_justificativa as justificativa,
+JSON_QUERY((SELECT 'EM_COTACAO' AS  valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS status,
+JSON_QUERY((SELECT 'OK' AS  valor FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS situacaoCadastral
+FROM COMPRequisicao        
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -65,6 +66,7 @@ async function main() {
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const entidadeGestora = JSON.parse(record.entidadeGestora);
+            const organograma = JSON.parse(record.organograma);
             const localEntrega = JSON.parse(record.localEntrega);
             const tipoNecessidade = JSON.parse(record.tipoNecessidade);
             const status = JSON.parse(record.status);
@@ -80,8 +82,12 @@ async function main() {
             }
 
             return {
+                conteudo:{
                 entidadeGestora: {
                     id: entidadeGestora.id
+                },
+                organograma: {
+                    id: organograma.id
                 },
                 localEntrega: {
                     id: localEntrega.id
@@ -101,7 +107,7 @@ async function main() {
                 situacaoCadastral: {
                     valor: situacaoCadastral.valor
                 }
-            };
+            }};
         });
 
         const chunkSize = 50;

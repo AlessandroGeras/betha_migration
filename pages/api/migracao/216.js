@@ -42,20 +42,13 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select 
-cd_DestinacaoRecurso as idIntegracao,
-JSON_QUERY(
-    (SELECT
-JSON_QUERY(
-    (SELECT
- 7978 as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS configuracaoRecurso,
-cd_DestinacaoRecurso as numero,
-nm_DestinacaoRecurso as descricao
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS content
-from COMPDestinacaoRecurso
+            select
+             ROW_NUMBER() OVER (ORDER BY cd_categecon) AS idIntegracao,
+cd_categecon as numero,
+ds_categecon as descricao,
+'ANALITICO' as tipo
+from CONTCategoriaEconomica
+where cd_exercicio = 2024
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -63,20 +56,17 @@ from COMPDestinacaoRecurso
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const content = JSON.parse(record.content);
-            const idIntegracao = record.idIntegracao.toString().padSEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
-            const numero = content.numero.toString().padEnd(12, '0'); // Garantir 12 dígitos com zeros à esquerda
-            const descricao = content.descricao.length > 150 ? content.descricao.substring(0, 150) : content.descricao; // Garantir no máximo 150 caracteres
 
             return {
-                idIntegracao: idIntegracao,
+                idIntegracao: record.idIntegracao,
                 content: {
-                    configuracaoRecurso: {
-                        id: content.configuracaoRecurso.id
+                    configuracao: {
+                        id: parseInt(record.idIntegracao),
                     },
-                    descricao: descricao,
-                    numero: numero
-                }
+                    numero: record.numero,
+                    descricao: record.descricao,
+                    tipo: record.tipo,
+                },
             };
         });
 
@@ -90,7 +80,7 @@ from COMPDestinacaoRecurso
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/recursos', {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-despesas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

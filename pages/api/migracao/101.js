@@ -198,7 +198,7 @@ from FOLHTipoRescisao
         console.log('Dados salvos em log_envio.json');
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/motivo-rescisao', {
                 method: 'POST',
                 headers: {
@@ -213,7 +213,7 @@ from FOLHTipoRescisao
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         // Lidar com erros de conexão ou consulta aqui

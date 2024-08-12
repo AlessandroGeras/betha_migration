@@ -43,24 +43,30 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             SELECT
-cd_Comissao as id,
 'Comissão responsável pelo julgamento dos processos licitatórios.' as finalidade,
 JSON_QUERY((SELECT act.ds_ComissaoTipo  AS valor, 
                                      act.ds_ComissaoTipo as descricao FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as tipoComissao,
 dt_Exoneracao as dataExpiracao,
 JSON_QUERY((SELECT 9743  AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as tipoAto,
 JSON_QUERY((SELECT 525801  AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as ato,
-JSON_QUERY((SELECT i.cd_Integrante AS id, 
-                                JSON_QUERY((SELECT cd_Integrante  AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as responsavel,
+JSON_QUERY((SELECT -- i.cd_Integrante AS id, 
+                                JSON_QUERY((SELECT case cd_Integrante
+                                                                when 1 then 36840844
+                                                                when 3 then 36134318
+                                                                when 4 then 36841014
+                                                                when 5 then 36840849
+                                                                when 6 then 36840850
+                                                                when 7 then 36311234
+                                                                end AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as responsavel,
                                    JSON_QUERY((SELECT CASE WHEN i.ds_Cargo = 'PRESIDENTE DA CPL' 
                                                                                   THEN 'PRESIDENTE' 
-                                                                                  WHEN i.ds_Cargo = 'EQUIPE DE APOIO' THEN 'MEMBRO' 
-                                                                                  WHEN i.ds_Cargo = 'EQUPE DE APOIO' THEN 'MEMBRO' 
+                                                                                  WHEN i.ds_Cargo = 'EQUIPE DE APOIO' THEN 'AGENTE_CONTRATACAO' 
+                                                                                  WHEN i.ds_Cargo = 'EQUPE DE APOIO' THEN 'AGENTE_CONTRATACAO' 
                                                                                   ELSE 'PREGOEIRO' END AS valor, 
                                                                                   CASE WHEN i.ds_Cargo = 'PRESIDENTE DA CPL' 
                                                                                   THEN 'PRESIDENTE' 
-                                                                                  WHEN i.ds_Cargo = 'EQUIPE DE APOIO' THEN 'MEMBRO' 
-                                                                                  WHEN i.ds_Cargo = 'EQUPE DE APOIO' THEN 'MEMBRO' 
+                                                                                  WHEN i.ds_Cargo = 'EQUIPE DE APOIO' THEN 'AGENTE_CONTRATACAO' 
+                                                                                  WHEN i.ds_Cargo = 'EQUPE DE APOIO' THEN 'AGENTE_CONTRATACAO' 
                                                                                   ELSE 'PREGOEIRO' END as descricao FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as atribuicao FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) as membros
 
 FROM COMPComissao c
@@ -69,9 +75,7 @@ left join COMPComissaoIntegrante ci on ci.id_Comissao = c.id_Comissao
 left join COMPIntegrantes i on i.id_Integrante = ci.id_Integrante
 left join COMPAudespComissaoNaturezaCargo cnc on cnc.cd_NaturezaCargo = i.cd_NaturezaCargo
         `;
-
-        const result = await masterConnection.query(userQuery);
-        const resultData = result.recordset;
+        
 
         // Função para formatar a data no padrão yyyy-mm-dd
         function formatDate(date) {
@@ -81,6 +85,9 @@ left join COMPAudespComissaoNaturezaCargo cnc on cnc.cd_NaturezaCargo = i.cd_Nat
             const day = (`0${d.getDate()}`).slice(-2);
             return `${year}-${month}-${day}`;
         }
+
+        const result = await masterConnection.query(userQuery);
+        const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
@@ -95,16 +102,14 @@ left join COMPAudespComissaoNaturezaCargo cnc on cnc.cd_NaturezaCargo = i.cd_Nat
                 throw error;
             }
 
-            // Formatar dataExpiracao
-            const formattedDate = formatDate(record.dataExpiracao);
-
             const transformedRecord = {
+                conteudo:{
                 finalidade: record.finalidade,
                 tipoComissao: {
                     valor: tipoComissao.valor.toUpperCase(),
-                    descricao: tipoComissao.descricao.toUpperCase()
+                    descricao: tipoComissao.descricao.toUpperCase(),     
                 },
-                dataExpiracao: formattedDate,
+                dataExpiracao: record.dataExpiracao ? formatDate(record.dataExpiracao) : null,
                 tipoAto: {
                     id: tipoAto.id
                 },
@@ -116,11 +121,11 @@ left join COMPAudespComissaoNaturezaCargo cnc on cnc.cd_NaturezaCargo = i.cd_Nat
                         id: membros.responsavel.id
                     },
                     atribuicao: {
-                        valor: membros.atribuicao.valor.toUpperCase(),
-                        descricao: membros.atribuicao.descricao.toUpperCase()
+                        valor: membros.atribuicao.valor,
+                        descricao: membros.atribuicao.descricao
                     }
                 }] : []
-            };
+            }};
 
             return transformedRecord;
         });
@@ -137,7 +142,7 @@ left join COMPAudespComissaoNaturezaCargo cnc on cnc.cd_NaturezaCargo = i.cd_Nat
         /* const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
-            const response = await fetch('https://compras.betha.cloud/compras-services/api/comissoes-licitacao', {
+            const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/comissoes-licitacao', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

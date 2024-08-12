@@ -1,6 +1,5 @@
 const sql = require('mssql');
 const dotenv = require('dotenv');
-const fetch = require('node-fetch');
 const fs = require('fs');
 
 dotenv.config();
@@ -36,43 +35,62 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "FOLHA_CAM"
-        const selectDatabaseQuery = 'USE FOLHA_CAM';
+        // Selecionar o banco de dados "TRIBUTOS2024"
+        const selectDatabaseQuery = 'USE COMP_ALMO_CAM';
         await masterConnection.query(selectDatabaseQuery);
+
+        function formatDate(date) {
+            const d = new Date(date);
+            const year = d.getFullYear();
+            const month = (`0${d.getMonth() + 1}`).slice(-2);
+            const day = (`0${d.getDate()}`).slice(-2);
+            const hours = (`0${d.getHours()}`).slice(-2);
+            const minutes = (`0${d.getMinutes()}`).slice(-2);
+            const seconds = (`0${d.getSeconds()}`).slice(-2);
+            return `${year}-${month}-${day}`;
+        }
 
         // Executar a consulta SQL
         const userQuery = `
-            select
-ROW_NUMBER() OVER (ORDER BY cd_Funcionario) as idIntegracao,
-JSON_QUERY((SELECT 
-        JSON_QUERY((SELECT cd_Funcionario as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS funcionario,
-    JSON_QUERY((SELECT cd_prog as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS configuracaoLicencaPremio,
-        dt_iniciogozo as dataInicial,
-        dt_terminogozo as dataFinal FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS conteudo
-from FOLHFuncProgLicPremio
+            SELECT
+                JSON_QUERY(
+                    (SELECT '17573' AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS parametroExerc,
+                dt_abertura AS dataProcesso,
+                nr_processo AS numeroProcesso,
+                aa_processo AS anoProtocolo,
+                'false' AS previsaoSubcontratacao,
+                JSON_QUERY(
+                    (SELECT 'QUANTIDADE' AS valor, 'QUANTIDADE' AS descricao FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS controleSaldo,
+                'false' AS orcamentoSigiloso,
+                ds_justificativa AS justificativa,
+                ds_objeto AS objeto
+            FROM COMPLicitacao
+            WHERE aa_processo = 2024
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
-        const transformedData = resultData.map(record => {
-            const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
-
-            return {
-                idIntegracao: conteudo.funcionario.id.toString(),
-                conteudo: {
-                    funcionario: {
-                        id: conteudo.funcionario.id
-                    },
-                    configuracaoLicencaPremio: {
-                        id: conteudo.configuracaoLicencaPremio.id,
-                    },
-                    dataInicial: conteudo.dataInicial,
-                    dataFinal: conteudo.dataFinal,
-                }
-            };
-        });
+        const transformedData = resultData.map(record => ({
+            conteudo:{
+            parametroExerc: {
+                id: parseInt(JSON.parse(record.parametroExerc).id)
+            },
+            dataProcesso: formatDate(record.dataProcesso),
+            numeroProcesso: record.numeroProcesso,
+            anoProtocolo: record.anoProtocolo,
+            controleSaldo: {
+                valor: JSON.parse(record.controleSaldo).valor,
+                descricao: JSON.parse(record.controleSaldo).descricao
+            },
+            previsaoSubcontratacao: record.previsaoSubcontratacao === 'false' ? false : true,
+            orcamentoSigiloso: record.orcamentoSigiloso === 'false' ? false : true,
+            justificativa: record.justificativa,
+            objeto: record.objeto
+    }}));
 
         // Salvar os resultados transformados em um arquivo JSON
         fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
@@ -80,7 +98,7 @@ from FOLHFuncProgLicPremio
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/matricula-licenca-premio', {
+            const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/processos-administrativo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -97,13 +115,11 @@ from FOLHFuncProgLicPremio
         } */
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        await sql.close();
+        sql.close();
     }
 }
 
-// Chamar a função principal
 main();

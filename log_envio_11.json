@@ -1,0 +1,1152 @@
+[
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487046
+      },
+      "materialEspecificacao": {
+        "id": 25435687
+      },
+      "entrada": {
+        "id": 10347689
+      },
+      "valorTotal": 4.74,
+      "quantidadeItem": 6,
+      "valorUnitario": 0.79,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487046
+      },
+      "materialEspecificacao": {
+        "id": 25435687
+      },
+      "entrada": {
+        "id": 10347689
+      },
+      "valorTotal": 19.75,
+      "quantidadeItem": 25,
+      "valorUnitario": 0.79,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487046
+      },
+      "materialEspecificacao": {
+        "id": 25435687
+      },
+      "entrada": {
+        "id": 10347689
+      },
+      "valorTotal": 19.75,
+      "quantidadeItem": 25,
+      "valorUnitario": 0.79,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505417
+      },
+      "materialEspecificacao": {
+        "id": 25441115
+      },
+      "entrada": {
+        "id": 10347690
+      },
+      "valorTotal": 143,
+      "quantidadeItem": 1,
+      "valorUnitario": 143,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505418
+      },
+      "materialEspecificacao": {
+        "id": 25441116
+      },
+      "entrada": {
+        "id": 10347691
+      },
+      "valorTotal": 330,
+      "quantidadeItem": 1,
+      "valorUnitario": 330,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487050
+      },
+      "materialEspecificacao": {
+        "id": 25435690
+      },
+      "entrada": {
+        "id": 10347692
+      },
+      "valorTotal": 119,
+      "quantidadeItem": 35,
+      "valorUnitario": 3.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487050
+      },
+      "materialEspecificacao": {
+        "id": 25435690
+      },
+      "entrada": {
+        "id": 10347692
+      },
+      "valorTotal": 85,
+      "quantidadeItem": 25,
+      "valorUnitario": 3.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487050
+      },
+      "materialEspecificacao": {
+        "id": 25435690
+      },
+      "entrada": {
+        "id": 10347692
+      },
+      "valorTotal": 136,
+      "quantidadeItem": 40,
+      "valorUnitario": 3.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4880",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487050
+      },
+      "materialEspecificacao": {
+        "id": 25435690
+      },
+      "entrada": {
+        "id": 10347692
+      },
+      "valorTotal": 170,
+      "quantidadeItem": 50,
+      "valorUnitario": 3.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487050
+      },
+      "materialEspecificacao": {
+        "id": 25435690
+      },
+      "entrada": {
+        "id": 10347692
+      },
+      "valorTotal": 170,
+      "quantidadeItem": 50,
+      "valorUnitario": 3.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487006
+      },
+      "materialEspecificacao": {
+        "id": 25435661
+      },
+      "entrada": {
+        "id": 10347693
+      },
+      "valorTotal": 276,
+      "quantidadeItem": 120,
+      "valorUnitario": 2.3,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487006
+      },
+      "materialEspecificacao": {
+        "id": 25435661
+      },
+      "entrada": {
+        "id": 10347693
+      },
+      "valorTotal": 69,
+      "quantidadeItem": 30,
+      "valorUnitario": 2.3,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4880",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487006
+      },
+      "materialEspecificacao": {
+        "id": 25435661
+      },
+      "entrada": {
+        "id": 10347693
+      },
+      "valorTotal": 37.35,
+      "quantidadeItem": 15,
+      "valorUnitario": 2.49,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505420
+      },
+      "materialEspecificacao": {
+        "id": 25441118
+      },
+      "entrada": {
+        "id": 10347694
+      },
+      "valorTotal": 95,
+      "quantidadeItem": 1,
+      "valorUnitario": 95,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505421
+      },
+      "materialEspecificacao": {
+        "id": 25441119
+      },
+      "entrada": {
+        "id": 10347695
+      },
+      "valorTotal": 584,
+      "quantidadeItem": 1,
+      "valorUnitario": 584,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505422
+      },
+      "materialEspecificacao": {
+        "id": 25441120
+      },
+      "entrada": {
+        "id": 10347696
+      },
+      "valorTotal": 584,
+      "quantidadeItem": 1,
+      "valorUnitario": 584,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505423
+      },
+      "materialEspecificacao": {
+        "id": 25441121
+      },
+      "entrada": {
+        "id": 10347697
+      },
+      "valorTotal": 300,
+      "quantidadeItem": 2,
+      "valorUnitario": 150,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505467
+      },
+      "materialEspecificacao": {
+        "id": 25441165
+      },
+      "entrada": {
+        "id": 10347698
+      },
+      "valorTotal": 174,
+      "quantidadeItem": 6,
+      "valorUnitario": 29,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505506
+      },
+      "materialEspecificacao": {
+        "id": 25441204
+      },
+      "entrada": {
+        "id": 10347699
+      },
+      "valorTotal": 120,
+      "quantidadeItem": 3,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505507
+      },
+      "materialEspecificacao": {
+        "id": 25441205
+      },
+      "entrada": {
+        "id": 10347700
+      },
+      "valorTotal": 40,
+      "quantidadeItem": 1,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505507
+      },
+      "materialEspecificacao": {
+        "id": 25441205
+      },
+      "entrada": {
+        "id": 10347700
+      },
+      "valorTotal": 80,
+      "quantidadeItem": 2,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505508
+      },
+      "materialEspecificacao": {
+        "id": 25441206
+      },
+      "entrada": {
+        "id": 10347701
+      },
+      "valorTotal": 40,
+      "quantidadeItem": 1,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505508
+      },
+      "materialEspecificacao": {
+        "id": 25441206
+      },
+      "entrada": {
+        "id": 10347701
+      },
+      "valorTotal": 80,
+      "quantidadeItem": 2,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505509
+      },
+      "materialEspecificacao": {
+        "id": 25441207
+      },
+      "entrada": {
+        "id": 10347702
+      },
+      "valorTotal": 40,
+      "quantidadeItem": 1,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505509
+      },
+      "materialEspecificacao": {
+        "id": 25441207
+      },
+      "entrada": {
+        "id": 10347702
+      },
+      "valorTotal": 40,
+      "quantidadeItem": 1,
+      "valorUnitario": 40,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505517
+      },
+      "materialEspecificacao": {
+        "id": 25441216
+      },
+      "entrada": {
+        "id": 10347703
+      },
+      "valorTotal": 17,
+      "quantidadeItem": 1,
+      "valorUnitario": 17,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505517
+      },
+      "materialEspecificacao": {
+        "id": 25441216
+      },
+      "entrada": {
+        "id": 10347703
+      },
+      "valorTotal": 17,
+      "quantidadeItem": 1,
+      "valorUnitario": 17,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505650
+      },
+      "materialEspecificacao": {
+        "id": 25441351
+      },
+      "entrada": {
+        "id": 10347704
+      },
+      "valorTotal": 265,
+      "quantidadeItem": 1,
+      "valorUnitario": 265,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505396
+      },
+      "materialEspecificacao": {
+        "id": 25441094
+      },
+      "entrada": {
+        "id": 10347706
+      },
+      "valorTotal": 534,
+      "quantidadeItem": 2,
+      "valorUnitario": 267,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505396
+      },
+      "materialEspecificacao": {
+        "id": 25441094
+      },
+      "entrada": {
+        "id": 10347706
+      },
+      "valorTotal": 270,
+      "quantidadeItem": 1,
+      "valorUnitario": 270,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505654
+      },
+      "materialEspecificacao": {
+        "id": 25441355
+      },
+      "entrada": {
+        "id": 10347707
+      },
+      "valorTotal": 245,
+      "quantidadeItem": 1,
+      "valorUnitario": 245,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505397
+      },
+      "materialEspecificacao": {
+        "id": 25441095
+      },
+      "entrada": {
+        "id": 10347707
+      },
+      "valorTotal": 245,
+      "quantidadeItem": 1,
+      "valorUnitario": 245,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52486994
+      },
+      "materialEspecificacao": {
+        "id": 25435653
+      },
+      "entrada": {
+        "id": 10347709
+      },
+      "valorTotal": 1340,
+      "quantidadeItem": 100,
+      "valorUnitario": 13.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52486994
+      },
+      "materialEspecificacao": {
+        "id": 25435653
+      },
+      "entrada": {
+        "id": 10347709
+      },
+      "valorTotal": 670,
+      "quantidadeItem": 50,
+      "valorUnitario": 13.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4880",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52506292
+      },
+      "materialEspecificacao": {
+        "id": 25441994
+      },
+      "entrada": {
+        "id": 10347712
+      },
+      "valorTotal": 7385,
+      "quantidadeItem": 7,
+      "valorUnitario": 1055,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52506293
+      },
+      "materialEspecificacao": {
+        "id": 25441995
+      },
+      "entrada": {
+        "id": 10347713
+      },
+      "valorTotal": 11916,
+      "quantidadeItem": 12,
+      "valorUnitario": 993,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487018
+      },
+      "materialEspecificacao": {
+        "id": 25435670
+      },
+      "entrada": {
+        "id": 10347715
+      },
+      "valorTotal": 500,
+      "quantidadeItem": 500,
+      "valorUnitario": 1,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52487039
+      },
+      "materialEspecificacao": {
+        "id": 25435683
+      },
+      "entrada": {
+        "id": 10347716
+      },
+      "valorTotal": 2490,
+      "quantidadeItem": 500,
+      "valorUnitario": 4.98,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4878",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52516690
+      },
+      "materialEspecificacao": {
+        "id": 25452435
+      },
+      "entrada": {
+        "id": 10347721
+      },
+      "valorTotal": 27,
+      "quantidadeItem": 5,
+      "valorUnitario": 5.4,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52516691
+      },
+      "materialEspecificacao": {
+        "id": 25452436
+      },
+      "entrada": {
+        "id": 10347726
+      },
+      "valorTotal": 8.5,
+      "quantidadeItem": 5,
+      "valorUnitario": 1.7,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52514102
+      },
+      "materialEspecificacao": {
+        "id": 25449826
+      },
+      "entrada": {
+        "id": 10347727
+      },
+      "valorTotal": 22,
+      "quantidadeItem": 1,
+      "valorUnitario": 22,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52516586
+      },
+      "materialEspecificacao": {
+        "id": 25452331
+      },
+      "entrada": {
+        "id": 10347729
+      },
+      "valorTotal": 51,
+      "quantidadeItem": 5,
+      "valorUnitario": 10.2,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52516586
+      },
+      "materialEspecificacao": {
+        "id": 25452331
+      },
+      "entrada": {
+        "id": 10347729
+      },
+      "valorTotal": 178.56,
+      "quantidadeItem": 12,
+      "valorUnitario": 14.88,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52514103
+      },
+      "materialEspecificacao": {
+        "id": 25449827
+      },
+      "entrada": {
+        "id": 10347730
+      },
+      "valorTotal": 12,
+      "quantidadeItem": 2,
+      "valorUnitario": 6,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52516587
+      },
+      "materialEspecificacao": {
+        "id": 25452332
+      },
+      "entrada": {
+        "id": 10347733
+      },
+      "valorTotal": 81.6,
+      "quantidadeItem": 20,
+      "valorUnitario": 4.08,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52514104
+      },
+      "materialEspecificacao": {
+        "id": 25449828
+      },
+      "entrada": {
+        "id": 10347735
+      },
+      "valorTotal": 16,
+      "quantidadeItem": 2,
+      "valorUnitario": 8,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505165
+      },
+      "materialEspecificacao": {
+        "id": 25440850
+      },
+      "entrada": {
+        "id": 10347736
+      },
+      "valorTotal": 1304.55,
+      "quantidadeItem": 381.447,
+      "valorUnitario": 3.42,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52505165
+      },
+      "materialEspecificacao": {
+        "id": 25440850
+      },
+      "entrada": {
+        "id": 10347736
+      },
+      "valorTotal": 73.38,
+      "quantidadeItem": 21.456,
+      "valorUnitario": 3.42,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4880",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52506407
+      },
+      "materialEspecificacao": {
+        "id": 25442109
+      },
+      "entrada": {
+        "id": 10347737
+      },
+      "valorTotal": 212,
+      "quantidadeItem": 2,
+      "valorUnitario": 106,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4879",
+      "exercicio": "2014"
+    }
+  },
+  {
+    "conteudo": {
+      "material": {
+        "id": 52506407
+      },
+      "materialEspecificacao": {
+        "id": 25442109
+      },
+      "entrada": {
+        "id": 10347737
+      },
+      "valorTotal": 956,
+      "quantidadeItem": 2,
+      "valorUnitario": 478,
+      "precoMedio": 0,
+      "saldoFinanceiro": 0,
+      "saldoFisico": 0
+    },
+    "context": {
+      "almoxarifado": "4882",
+      "exercicio": "2014"
+    }
+  }
+]

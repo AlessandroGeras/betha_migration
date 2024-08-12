@@ -42,37 +42,42 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select
-JSON_QUERY(
-    (SELECT JSON_QUERY( 
-    (SELECT fo.cd_Funcionario as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS matricula,
-fo.cd_Funcionario as codigo,
-fo.dh_Afastamento as inicioAfastamento,
-fo.dh_Retorno as fimAfastamento,
-fo.ds_Historico as motivo,
-fo.id_Ocorrencia as numeroProcesso,
-am.ds_AfastamentoMotivo as observacao FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS conteudo
-from FOLHFuncOcorrencia fo
-join FOLHESAfastamentoMotivo am on am.cd_AfastamentoMotivo = fo.cd_SitAfastamento
+            SELECT
+                ROW_NUMBER() OVER (ORDER BY cd_Funcionario) as idIntegracao,
+                JSON_QUERY((SELECT 
+                    fo.cd_Funcionario as codigo,
+                    fo.dh_Afastamento as inicioVigencia,
+                    CASE 
+                        WHEN fo.ds_historico = 'Licença Premio' THEN 'OUTROS'
+                        WHEN fo.ds_historico = 'Férias' THEN 'FOLGA'
+                        WHEN fo.ds_historico = 'pedido de afastamento sem remuneração' THEN 'AFASTADO'
+                        ELSE 'OUTROS'
+                    END AS classificacao, 
+                    JSON_QUERY((SELECT cd_AfastamentoMotivo as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS tipoFalta
+                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS conteudo
+            FROM FOLHFuncOcorrencia fo
+            JOIN FOLHESAfastamentoMotivo am ON am.cd_AfastamentoMotivo = fo.cd_SitAfastamento
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
+
+        // Função para formatar a data removendo o 'T'
+        function formatDateString(dateString) {
+            return dateString.replace('T', ' ');
+        }
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const conteudo = JSON.parse(record.conteudo); // Parse the JSON string to an object
 
             return {
-                idIntegracao: conteudo.funcionario.id.toString(),
-                idGerado: conteudo.funcionario.id.toString(), // Assuming id is used as idGerado
+                idIntegracao: record.idIntegracao.toString(),
                 conteudo: {
-                    funcionario: conteudo.funcionario,
-                    inicioAfastamento: conteudo.inicioAfastamento,
-                    fimAfastamento: conteudo.fimAfastamento,
-                    motivo: conteudo.motivo,
-                    numeroProcesso: conteudo.numeroProcesso,
-                    observacao: conteudo.observacao
+                    codigo: conteudo.codigo,
+                    classificacao: conteudo.classificacao,
+                    inicioVigencia: formatDateString(conteudo.inicioVigencia), // Formatar a data
+                    tipoFalta: conteudo.tipoFalta
                 }
             };
         });
@@ -82,7 +87,7 @@ join FOLHESAfastamentoMotivo am on am.cd_AfastamentoMotivo = fo.cd_SitAfastament
         console.log('Dados salvos em log_envio.json');
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/ocorrencias', {
                 method: 'POST',
                 headers: {
@@ -97,7 +102,7 @@ join FOLHESAfastamentoMotivo am on am.cd_AfastamentoMotivo = fo.cd_SitAfastament
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         // Lidar com erros de conexão ou consulta aqui

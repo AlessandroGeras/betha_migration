@@ -37,7 +37,7 @@ async function main() {
         const masterConnection = await connectToSqlServer();
 
         // Selecionar o banco de dados "COMP_ALMO"
-        const selectDatabaseQuery = 'USE COMP_ALMO_CAM';
+        const selectDatabaseQuery = 'USE COMP_ALMO';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
@@ -77,7 +77,13 @@ async function main() {
 
             // Determinar o ID do parametroExerc com base no ano da cotação
             const dataCotacaoYear = new Date(record.dataCotacao).getFullYear();
-            const parametroExercId = dataCotacaoYear === 2024 ? 17573 : (dataCotacaoYear === 2023 ? 18922 : null);
+            const parametroExercId = 
+                dataCotacaoYear === 2024 ? 17573 :
+                dataCotacaoYear === 2023 ? 18922 :
+                dataCotacaoYear === 2013 ? 19066 :
+                dataCotacaoYear === 2014 ? 19067 :
+                dataCotacaoYear === 2017 ? 19068 :
+                null;
 
             // Verificar se a data de cotação é igual à data de validade
             let dataValidade = new Date(record.dataValidade);
