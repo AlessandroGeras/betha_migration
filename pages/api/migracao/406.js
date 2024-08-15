@@ -1,6 +1,5 @@
 const sql = require('mssql');
 const dotenv = require('dotenv');
-const fetch = require('node-fetch');
 const fs = require('fs');
 
 dotenv.config();
@@ -36,69 +35,46 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "CONTABIL2024"
+        // Selecionar o banco de dados "COMP_ALMO_CAM"
         const selectDatabaseQuery = 'USE CONTABIL2024';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
             select 
-1 AS idIntegracao,
-JSON_QUERY(
-    (SELECT
-JSON_QUERY(
-    (SELECT
-        '' as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS despesaLdo,
-    vl_Despesa as projecaoFinanceiraAno1
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS content
-from CONTMetaFiscal
-where aa_MetaFiscal = 2022
-union all
-select 
-2 AS idIntegracao,
-JSON_QUERY(
-    (SELECT
-JSON_QUERY(
-    (SELECT
-        '' as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS despesaLdo,
-    vl_Despesa as projecaoFinanceiraAno2
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS content
-from CONTMetaFiscal
-where aa_MetaFiscal = 2024
+                ROW_NUMBER() OVER (ORDER BY ds_projativ) AS idIntegracao,
+                JSON_QUERY((SELECT '9569' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS ppa,
+                ds_projativ as descricao
+            from CONTPROJETOATIVIDADE
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
         // Transformar os resultados da consulta no formato desejado
-        const transformedData = resultData.map(record => {
-            // Parse the JSON content
-            const content = JSON.parse(record.content);
+        const transformedData = resultData.map(record => ({
+            idIntegracao: record.idIntegracao,
+            content: {
+                ppa: {
+                    id: parseInt(JSON.parse(record.ppa).id) // Extrai o valor de id dentro do JSON
+                },
+                descricao: record.descricao
+            }
+        }));
 
-            return {
-                idIntegracao: record.idIntegracao.toString(), // Convert idIntegracao to string
-                content: {
-                    despesaLdo: {
-                        id: JSON.parse(record.id)
-                    },
-                    projecaoFinanceiraAno1: content.projecaoFinanceiraAno1 || content.projecaoFinanceiraAno2,
-                    projecaoFinanceiraAno2: content.projecaoFinanceiraAno2 || content.projecaoFinanceiraAno1,
-                }
-            };
-        });
+        // Dividir os dados em chunks e salvar em arquivos JSON
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
-
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://pla-sl-rest.betha.cloud/planejamento/service-layer/v2/api/metas-fiscais-despesas', {
+        // Enviar cada registro individualmente para a rota desejada (comentar a seguir caso não precise)
+        /*
+        for (const record of transformedData) {
+            const response = await fetch('https://pla-sl-rest.betha.cloud/planejamento/service-layer/v2/api/produtos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -112,14 +88,17 @@ where aa_MetaFiscal = 2024
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        } */
+        }
+        */
 
     } catch (error) {
+        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
         // Fechar a conexão com o SQL Server
-        sql.close();
+        await sql.close();
     }
 }
 
+// Chamar a função principal
 main();

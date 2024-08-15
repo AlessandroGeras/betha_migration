@@ -58,7 +58,7 @@ ROW_NUMBER() OVER (ORDER BY AOI.cd_Cecam) as idIntegracao,
          FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     ) AS content
 FROM CONTALTERACAOORCAMENTARIA  AO
-LEFT JOIN CONTALTERACAOORCAMENTARIAITEM AOI ON AOI.cd_AlteracaoOrcamentaria = AO.cd_AlteracaoOrcamentaria 
+LEFT JOIN CONTALTERACAOORCAMENTARIAITEM AOI ON AOI.cd_AlteracaoOrcamentaria = AO.cd_AlteracaoOrcamentaria  
         `;
 
         const result = await masterConnection.query(userQuery);

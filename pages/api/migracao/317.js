@@ -138,7 +138,11 @@ JSON_QUERY(
     (SELECT
 JSON_QUERY(
     (SELECT
-  169 as id
+ case cd_modalidade
+when 'IN-G' then 202 
+when 'DISP' THEN 170
+when 'PR-E' THEN 273
+end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS fundamentacaoLegal,
 JSON_QUERY(
@@ -146,7 +150,7 @@ JSON_QUERY(
   36067993 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS responsavel,
-JSON_QUERY(
+ JSON_QUERY(
     (SELECT
   69142 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
@@ -166,7 +170,11 @@ end as valor
 ) AS formaContratacao,
 JSON_QUERY(
     (SELECT
-  14 as id
+        case cd_modalidade
+when 'IN-G' then 15 
+when 'DISP' THEN 14
+when 'PR-E' THEN 13
+end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS modalidade
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
@@ -180,6 +188,7 @@ JSON_QUERY(
 ) AS context
 from COMPLicitacao
 where aa_processo = 2024
+
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -194,25 +203,25 @@ where aa_processo = 2024
             return {
                 conteudo: {
                     formaPagamento: {
-                        id: conteudo.formaPagamento.id
+                        id: conteudo?.formaPagamento.id
                     },
                     formaJulgamento: {
-                        id: conteudo.formaJulgamento.id
+                        id: conteudo?.formaJulgamento.id
                     },
                     previsaoSubcontratacao: conteudo?.previsaoSubcontratacao === 'true',
                     numeroProcesso: conteudo?.numeroProcesso,
                     orcamentoSigiloso: conteudo?.orcamentoSigiloso === 'true',
                     localEntrega: {
-                        id: conteudo.formaContratacao.Localentrega.id
+                        id: conteudo?.formaContratacao?.Localentrega?.id
                     },
                     tipoObjeto: {
-                        id:conteudo.tipoObjeto.id
+                        id:conteudo?.tipoObjeto.id
                     },
-                    objeto: conteudo.objeto,
+                    objeto: conteudo?.objeto,
                     controleSaldo:{
                         valor:"QUANTIDADE"
                     },
-                    justificativa: conteudo.justificativa,
+                    justificativa: conteudo?.justificativa,
                     dataProcesso: formatDate(conteudo.dataProcesso),
                     formaContratacao: {
                         /* modoDisputa: {
@@ -245,18 +254,18 @@ where aa_processo = 2024
                         modalidade: conteudo?.formaContratacao?.modalidade || null
                     },
                     parametroExerc:{
-                        id:parseInt(conteudo.parametroExerc.id)
+                        id:parseInt(conteudo?.parametroExerc.id)
                     },
                     prazoEntrega:{
-                        id:conteudo.prazoEntrega.id
+                        id:conteudo?.prazoEntrega.id
                     },
                     controleSaldoOrganograma: conteudo?.controleSaldoOrganograma === 'false',
                     regimeExecucao:{
-                        id:conteudo.regimeExecucao.id
+                        id:conteudo?.regimeExecucao.id
                     },
                 },
                 context: {
-                    exercicio: COMPLicitacao.exercicio.toString()
+                    exercicio: COMPLicitacao?.exercicio.toString()
                 }
             };
         });

@@ -62,49 +62,55 @@ async function main() {
 
         const userQuery = `
             select 
-            JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 4832
-                                    WHEN cd_almoxa = 20200 THEN 4877
-                                    WHEN cd_almoxa = 20300 THEN 4878
-                                    WHEN cd_almoxa = 20400 THEN 4879
-                                    WHEN cd_almoxa = 20500 THEN 4880
-                                    WHEN cd_almoxa = 20600 THEN 4881
-                                    WHEN cd_almoxa = 20700 THEN 4882
-                                    WHEN cd_almoxa = 20900 THEN 4884
-                                    WHEN cd_almoxa = 21000 THEN 4885
-                            END AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
-            JSON_QUERY((SELECT '2076732' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
-            JSON_QUERY((SELECT case when cd_tipomovimento = 'CO' then 11099
-                                    when cd_tipomovimento = 'CD' then 11097
-                                    when cd_tipomovimento = 'AJS' then 11093
-                                    when cd_tipomovimento = 'DS' then 11108
-                                    when cd_tipomovimento = 'CDI' then 11106
-                                    when cd_tipomovimento = 'BP' then 11096
-                            end as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS naturezaMovimentacao,
-            dt_movimento as dataSaida,
-            ROW_NUMBER() OVER(ORDER BY cd_almoxa, aa_movimento, nr_sequencia asc) as id
-            from ALMOMovimentacao
-            where sg_direcao = 'S'
+ROW_NUMBER() OVER (ORDER BY cd_almoxa) AS id,
+JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 4832
+                        WHEN cd_almoxa = 20200 THEN 4877
+                        WHEN cd_almoxa = 20300 THEN 4878
+                        WHEN cd_almoxa = 20400 THEN 4879
+                        WHEN cd_almoxa = 20500 THEN 4880
+                        WHEN cd_almoxa = 20600 THEN 4881
+                        WHEN cd_almoxa = 20700 THEN 4882
+                        WHEN cd_almoxa = 20900 THEN 4884
+                        WHEN cd_almoxa = 21000 THEN 4885
+                   END AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
+JSON_QUERY((SELECT '2087643' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
+JSON_QUERY((SELECT case when cd_tipomovimento = 'CO' then 11099
+                                                when cd_tipomovimento = 'CD' then 11097
+                                                when cd_tipomovimento = 'AJS' then 11093
+                                                when cd_tipomovimento = 'DS' then 11108
+                                                when cd_tipomovimento = 'CDI' then 11106
+                                                when cd_tipomovimento = 'BP' then 11096
+                                   end as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS naturezaMovimentacao,
+aa_movimento as dataSaida
+from ALMOMovimentacao
+where sg_direcao = 'S'
+GROUP BY  cd_almoxa, cd_tipomovimento, aa_movimento
+order by cd_almoxa asc
         `;
 
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
+        
 
-        const transformedData = resultData.map(record => ({
-            context: {
-                almoxarifado: JSON.parse(record.almoxarifado).id.toString(),
-                exercicio: formatDate2(record.dataSaida)
-            },
-            conteudo: {                
-                almoxarifado: JSON.parse(record.almoxarifado),
-                organograma: {
-                    id: parseInt(JSON.parse(record.organograma).id)
+        const transformedData = resultData.map(record => {
+        
+            return {
+                context: {
+                    almoxarifado: JSON.parse(record.almoxarifado).id.toString(),
+                    exercicio: record.dataSaida.toString(),
                 },
-                naturezaMovimentacao: {
-                    id: parseInt(JSON.parse(record.naturezaMovimentacao).id, 10)
-                },
-                dataSaida: formatDate(record.dataSaida)
-            }
-        }));
+                conteudo: {                
+                    almoxarifado: JSON.parse(record.almoxarifado),
+                    organograma: {
+                        id: parseInt(JSON.parse(record.organograma).id)
+                    },
+                    naturezaMovimentacao: {
+                        id: parseInt(JSON.parse(record.naturezaMovimentacao).id, 10)
+                    },
+                    dataSaida: record.dataSaida+"-12-31 00:00:00"
+                }
+            };
+        });
 
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {

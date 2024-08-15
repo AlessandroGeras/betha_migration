@@ -43,34 +43,21 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-1 AS idIntegracao,
+cd_ModalidadeDespesa as idIntegracao,
 JSON_QUERY(
     (SELECT
-JSON_QUERY(
+        JSON_QUERY(
     (SELECT
-        '' as id
+        11779 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS despesaLdo,
-    vl_Despesa as projecaoFinanceiraAno1
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS content
-from CONTMetaFiscal
-where aa_MetaFiscal = 2022
-union all
-select 
-2 AS idIntegracao,
-JSON_QUERY(
-    (SELECT
-JSON_QUERY(
-    (SELECT
-        '' as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS despesaLdo,
-    vl_Despesa as projecaoFinanceiraAno2
+) AS configuracao,
+cd_ModalidadeDespesa as numero,
+nm_ModalidadeDespesa as descricao,
+'ANALITICO' as tipo,
+'67457' as marcadores
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS content
-from CONTMetaFiscal
-where aa_MetaFiscal = 2024
+from CONTModalidadeDespesa
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -84,11 +71,13 @@ where aa_MetaFiscal = 2024
             return {
                 idIntegracao: record.idIntegracao.toString(), // Convert idIntegracao to string
                 content: {
-                    despesaLdo: {
-                        id: JSON.parse(record.id)
-                    },
-                    projecaoFinanceiraAno1: content.projecaoFinanceiraAno1 || content.projecaoFinanceiraAno2,
-                    projecaoFinanceiraAno2: content.projecaoFinanceiraAno2 || content.projecaoFinanceiraAno1,
+                    configuracao: content.configuracao,
+                    numero: content.numero.toString(),
+                    descricao: content.descricao,
+                    tipo: content.tipo,
+                    marcadores: Array.isArray(content.marcadores) 
+                        ? content.marcadores.map(marcador => ({ value: marcador })) // Wrap each marcador in an object
+                        : [{ id: parseInt(content.marcadores) }] // If not an array, wrap the single marcador value
                 }
             };
         });
@@ -98,7 +87,7 @@ where aa_MetaFiscal = 2024
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
-            const response = await fetch('https://pla-sl-rest.betha.cloud/planejamento/service-layer/v2/api/metas-fiscais-despesas', {
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-despesas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,1152 +1,452 @@
 [
   {
-    "conteudo": {
-      "material": {
-        "id": 52506450
+    "idIntegracao": "1",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25442152
-      },
-      "entrada": {
-        "id": 10321260
-      },
-      "valorTotal": 67.2,
-      "quantidadeItem": 2,
-      "valorUnitario": 33.6,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4832",
-      "exercicio": "2014"
+      "descricao": "2º RODEIO DE PARECIS CVE273/SEJUCEL/PGE/2023"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52506452
+    "idIntegracao": "2",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25442153
-      },
-      "entrada": {
-        "id": 10321261
-      },
-      "valorTotal": 10,
-      "quantidadeItem": 10,
-      "valorUnitario": 1,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4832",
-      "exercicio": "2014"
+      "descricao": "ABS - Corona Vírus (COVID-19) - PORT. 894/731- MS"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52506453
+    "idIntegracao": "3",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25442155
-      },
-      "entrada": {
-        "id": 10321262
-      },
-      "valorTotal": 150,
-      "quantidadeItem": 1,
-      "valorUnitario": 150,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4832",
-      "exercicio": "2014"
+      "descricao": "Ampliação e Reforma do CRAS"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52506454
+    "idIntegracao": "4",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25442156
-      },
-      "entrada": {
-        "id": 10321263
-      },
-      "valorTotal": 72.47,
-      "quantidadeItem": 1,
-      "valorUnitario": 72.47,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4832",
-      "exercicio": "2014"
+      "descricao": "Ampliação UBS - Requalifica CV FEDERAL N.847453630002/13-01"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52506455
+    "idIntegracao": "5",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25442157
-      },
-      "entrada": {
-        "id": 10321264
-      },
-      "valorTotal": 32.31,
-      "quantidadeItem": 1,
-      "valorUnitario": 32.31,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4832",
-      "exercicio": "2014"
+      "descricao": "Apoio Adm. Consorcio - Cincero"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52505164
+    "idIntegracao": "6",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25440849
-      },
-      "entrada": {
-        "id": 10321265
-      },
-      "valorTotal": 198,
-      "quantidadeItem": 6,
-      "valorUnitario": 33,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4832",
-      "exercicio": "2014"
+      "descricao": "Apoio Adm. Consorcio - CindeRondônia"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516606
+    "idIntegracao": "7",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452351
-      },
-      "entrada": {
-        "id": 10321266
-      },
-      "valorTotal": 55,
-      "quantidadeItem": 20,
-      "valorUnitario": 2.75,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Apoio Administrativo  - FMS 15%"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516606
+    "idIntegracao": "8",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452351
-      },
-      "entrada": {
-        "id": 10321266
-      },
-      "valorTotal": 9.8,
-      "quantidadeItem": 4,
-      "valorUnitario": 2.45,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4879",
-      "exercicio": "2014"
+      "descricao": "Apoio aos Cursos Profissionalizantes"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516606
+    "idIntegracao": "9",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452351
-      },
-      "entrada": {
-        "id": 10321266
-      },
-      "valorTotal": 13.75,
-      "quantidadeItem": 5,
-      "valorUnitario": 2.75,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "APS. INC. TEMPORARIO. CUSTEIO - PORT. 843"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516617
+    "idIntegracao": "10",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452362
-      },
-      "entrada": {
-        "id": 10321267
-      },
-      "valorTotal": 75,
-      "quantidadeItem": 300,
-      "valorUnitario": 0.25,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQ. Und. Móvel de Saúde  EP-26330015"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516617
+    "idIntegracao": "11",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452362
-      },
-      "entrada": {
-        "id": 10321267
-      },
-      "valorTotal": 45,
-      "quantidadeItem": 100,
-      "valorUnitario": 0.45,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUIS. DE AMBULÂNCIA BL ESTRUTURAÇÃO"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516617
+    "idIntegracao": "12",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452362
-      },
-      "entrada": {
-        "id": 10321267
-      },
-      "valorTotal": 25,
-      "quantidadeItem": 100,
-      "valorUnitario": 0.25,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4879",
-      "exercicio": "2014"
+      "descricao": "Aquisição Bens Moveis Proposta Federal 23045893000/1200-01"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516617
+    "idIntegracao": "13",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452362
-      },
-      "entrada": {
-        "id": 10321267
-      },
-      "valorTotal": 45,
-      "quantidadeItem": 100,
-      "valorUnitario": 0.45,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE AMBULÂNCIA SEMI UTI"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516590
+    "idIntegracao": "14",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452335
-      },
-      "entrada": {
-        "id": 10321268
-      },
-      "valorTotal": 196,
-      "quantidadeItem": 5,
-      "valorUnitario": 39.2,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS IMOVEIS - SEMOSP"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516590
+    "idIntegracao": "15",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452335
-      },
-      "entrada": {
-        "id": 10321268
-      },
-      "valorTotal": 535.5,
-      "quantidadeItem": 15,
-      "valorUnitario": 35.7,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Moveis - Casa do Idoso"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516590
+    "idIntegracao": "16",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452335
-      },
-      "entrada": {
-        "id": 10321268
-      },
-      "valorTotal": 178.5,
-      "quantidadeItem": 5,
-      "valorUnitario": 35.7,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4879",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Moveis - CMDCA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516590
+    "idIntegracao": "17",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452335
-      },
-      "entrada": {
-        "id": 10321268
-      },
-      "valorTotal": 78.4,
-      "quantidadeItem": 2,
-      "valorUnitario": 39.2,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Móveis - Educação 25%"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516700
+    "idIntegracao": "18",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452445
-      },
-      "entrada": {
-        "id": 10321270
-      },
-      "valorTotal": 62,
-      "quantidadeItem": 20,
-      "valorUnitario": 3.1,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Moveis - Esporte"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516619
+    "idIntegracao": "19",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452364
-      },
-      "entrada": {
-        "id": 10321271
-      },
-      "valorTotal": 60,
-      "quantidadeItem": 300,
-      "valorUnitario": 0.2,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS MOVEIS - FEC"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516619
+    "idIntegracao": "20",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452364
-      },
-      "entrada": {
-        "id": 10321271
-      },
-      "valorTotal": 30,
-      "quantidadeItem": 50,
-      "valorUnitario": 0.6,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Moveis - FMAS"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516619
+    "idIntegracao": "21",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452364
-      },
-      "entrada": {
-        "id": 10321271
-      },
-      "valorTotal": 10,
-      "quantidadeItem": 50,
-      "valorUnitario": 0.2,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4879",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Moveis - Gabinete"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52517238
+    "idIntegracao": "22",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452382
-      },
-      "entrada": {
-        "id": 10321272
-      },
-      "valorTotal": 61.45,
-      "quantidadeItem": 5,
-      "valorUnitario": 12.29,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS MÓVEIS - LEGISLATIVO"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52517238
+    "idIntegracao": "23",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452382
-      },
-      "entrada": {
-        "id": 10321272
-      },
-      "valorTotal": 368.7,
-      "quantidadeItem": 30,
-      "valorUnitario": 12.29,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS MOVEIS - SEMAF"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516598
+    "idIntegracao": "24",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452343
-      },
-      "entrada": {
-        "id": 10321273
-      },
-      "valorTotal": 55,
-      "quantidadeItem": 10,
-      "valorUnitario": 5.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS MOVEIS - SEMAGRI"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516598
+    "idIntegracao": "25",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452343
-      },
-      "entrada": {
-        "id": 10321273
-      },
-      "valorTotal": 112.5,
-      "quantidadeItem": 15,
-      "valorUnitario": 7.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Bens Moveis - SEMOSP"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516570
+    "idIntegracao": "26",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452315
-      },
-      "entrada": {
-        "id": 10321274
-      },
-      "valorTotal": 816,
-      "quantidadeItem": 200,
-      "valorUnitario": 4.08,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS MOVEIS CV 328/PGE/2021"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516570
+    "idIntegracao": "27",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452315
-      },
-      "entrada": {
-        "id": 10321274
-      },
-      "valorTotal": 90,
-      "quantidadeItem": 20,
-      "valorUnitario": 4.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE BENS MOVEIS CV 431/PGE/2021"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516639
+    "idIntegracao": "28",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452384
-      },
-      "entrada": {
-        "id": 10321275
-      },
-      "valorTotal": 103,
-      "quantidadeItem": 10,
-      "valorUnitario": 10.3,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE CICLOMOTORES"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516651
+    "idIntegracao": "29",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452396
-      },
-      "entrada": {
-        "id": 10321276
-      },
-      "valorTotal": 2950,
-      "quantidadeItem": 20,
-      "valorUnitario": 147.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Equip. e Mat. Permanente CV FED 2140-01)"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516651
+    "idIntegracao": "30",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452396
-      },
-      "entrada": {
-        "id": 10321276
-      },
-      "valorTotal": 1716.8,
-      "quantidadeItem": 10,
-      "valorUnitario": 171.68,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO DE MAQUINAS E EQUIP CV 907063/2020/MAPA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516651
+    "idIntegracao": "31",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452396
-      },
-      "entrada": {
-        "id": 10321276
-      },
-      "valorTotal": 295,
-      "quantidadeItem": 2,
-      "valorUnitario": 147.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4879",
-      "exercicio": "2014"
+      "descricao": "Aquisição de Unikit Escolar"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516651
+    "idIntegracao": "32",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452396
-      },
-      "entrada": {
-        "id": 10321276
-      },
-      "valorTotal": 1716.8,
-      "quantidadeItem": 10,
-      "valorUnitario": 171.68,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "Aquisição Equip. Fisioterápico EP-202226330016"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516601
+    "idIntegracao": "33",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452346
-      },
-      "entrada": {
-        "id": 10321277
-      },
-      "valorTotal": 138,
-      "quantidadeItem": 10,
-      "valorUnitario": 13.8,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO EQUIP. HOSPITLARES - HPP"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516636
+    "idIntegracao": "34",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452381
-      },
-      "entrada": {
-        "id": 10321278
-      },
-      "valorTotal": 385,
-      "quantidadeItem": 11,
-      "valorUnitario": 35,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "AQUISIÇÃO EQUIPAMENTOS ODONTOLOGICOS 737503"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516659
+    "idIntegracao": "35",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452404
-      },
-      "entrada": {
-        "id": 10321280
-      },
-      "valorTotal": 483.3,
-      "quantidadeItem": 9,
-      "valorUnitario": 53.7,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "ASSIST. FARMACEUTICA (COVID-19) - Port. 3617"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516659
+    "idIntegracao": "36",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452404
-      },
-      "entrada": {
-        "id": 10321280
-      },
-      "valorTotal": 245,
-      "quantidadeItem": 5,
-      "valorUnitario": 49,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "BAP - BONUS ASSINATURA PETROLEO"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516659
+    "idIntegracao": "37",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452404
-      },
-      "entrada": {
-        "id": 10321280
-      },
-      "valorTotal": 214.8,
-      "quantidadeItem": 4,
-      "valorUnitario": 53.7,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4879",
-      "exercicio": "2014"
+      "descricao": "Beneficios Eventuais - Estadual"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516659
+    "idIntegracao": "38",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452404
-      },
-      "entrada": {
-        "id": 10321280
-      },
-      "valorTotal": 294,
-      "quantidadeItem": 6,
-      "valorUnitario": 49,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "Beneficios Eventuais - Recurso Proprio"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516600
+    "idIntegracao": "39",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452345
-      },
-      "entrada": {
-        "id": 10321281
-      },
-      "valorTotal": 210,
-      "quantidadeItem": 20,
-      "valorUnitario": 10.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "BLOCO CUSTEIO- REND APLICAÇÃO"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516600
+    "idIntegracao": "40",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452345
-      },
-      "entrada": {
-        "id": 10321281
-      },
-      "valorTotal": 52.5,
-      "quantidadeItem": 5,
-      "valorUnitario": 10.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "Bloco da Protenção Social Basica - PBFI- SCFV"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516701
+    "idIntegracao": "41",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452446
-      },
-      "entrada": {
-        "id": 10321282
-      },
-      "valorTotal": 170,
-      "quantidadeItem": 20,
-      "valorUnitario": 8.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "BLOCO INVESTIMENTO- REND APLICAÇÃO"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516638
+    "idIntegracao": "42",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452383
-      },
-      "entrada": {
-        "id": 10321284
-      },
-      "valorTotal": 64.5,
-      "quantidadeItem": 5,
-      "valorUnitario": 12.9,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Bloquete Sextavado CR915014/2021/MDR/CAIXA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516638
+    "idIntegracao": "43",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452383
-      },
-      "entrada": {
-        "id": 10321284
-      },
-      "valorTotal": 43.5,
-      "quantidadeItem": 5,
-      "valorUnitario": 8.7,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Calçadas e Canteiros - CR916628/21/MDR/CAIXA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516638
+    "idIntegracao": "44",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452383
-      },
-      "entrada": {
-        "id": 10321284
-      },
-      "valorTotal": 174,
-      "quantidadeItem": 20,
-      "valorUnitario": 8.7,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "Calçadas e Canteiros - CR923266/21/MDR/CAIXA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516611
+    "idIntegracao": "45",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452356
-      },
-      "entrada": {
-        "id": 10321285
-      },
-      "valorTotal": 67.5,
-      "quantidadeItem": 15,
-      "valorUnitario": 4.5,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "CO-FINANCIAMENTO - ESTADUAL"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516660
+    "idIntegracao": "46",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452405
-      },
-      "entrada": {
-        "id": 10321286
-      },
-      "valorTotal": 137.6,
-      "quantidadeItem": 2,
-      "valorUnitario": 68.8,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Complementação FUNDEB 2010 a 2018"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516597
+    "idIntegracao": "47",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452342
-      },
-      "entrada": {
-        "id": 10321287
-      },
-      "valorTotal": 164,
-      "quantidadeItem": 80,
-      "valorUnitario": 2.05,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "CONST. CENTRO DE CONV DO IDOSO 2º ETAPA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516597
+    "idIntegracao": "48",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452342
-      },
-      "entrada": {
-        "id": 10321287
-      },
-      "valorTotal": 85.75,
-      "quantidadeItem": 25,
-      "valorUnitario": 3.43,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Const. De Galpões - CR922356/21/MDR/CAIXA"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516597
+    "idIntegracao": "49",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452342
-      },
-      "entrada": {
-        "id": 10321287
-      },
-      "valorTotal": 137.2,
-      "quantidadeItem": 40,
-      "valorUnitario": 3.43,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4882",
-      "exercicio": "2014"
+      "descricao": "CONST. FEIRA MUNICIPAL - CV 897587/2020"
     }
   },
   {
-    "conteudo": {
-      "material": {
-        "id": 52516687
+    "idIntegracao": "50",
+    "content": {
+      "ppa": {
+        "id": 9569
       },
-      "materialEspecificacao": {
-        "id": 25452432
-      },
-      "entrada": {
-        "id": 10321290
-      },
-      "valorTotal": 90.25,
-      "quantidadeItem": 5,
-      "valorUnitario": 18.05,
-      "precoMedio": 0,
-      "saldoFinanceiro": 0,
-      "saldoFisico": 0
-    },
-    "context": {
-      "almoxarifado": "4877",
-      "exercicio": "2014"
+      "descricao": "Const. Ponte Concreto Metálica Lh Kapa 8 - MDR"
     }
   }
 ]

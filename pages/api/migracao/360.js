@@ -565,12 +565,12 @@ WHERE fl_adiantamento = 'S'
                     data: formatDate(content.data),
                     tipo: content.tipo,
                     especificacao: content.especificacao,
-                    valor: parseFloat(content.valor),
+                    valor: -Math.abs(parseFloat(content.valor)),
                     vencimentos: Array.isArray(content.vencimentos) ? content.vencimentos.map(v => ({
                         valor: parseFloat(v.valor),
                         data: formatDate(v.data),
                     })) : [{
-                        valor: parseFloat(content.vencimentos.valor),
+                        valor: -Math.abs(parseFloat(content.vencimentos.valor)),
                         data: formatDate(content.vencimentos.data),
                     }],
                     despesaLancada: content.despesaLancada === 'true',

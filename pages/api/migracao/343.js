@@ -79,16 +79,16 @@ from CONTRetencaoExercicioAnterior
             return {
                 idIntegracao: record.idIntegracao.toString(), // Convert idIntegracao to string
                 content: {
-                    exercicio: content.exercicio,
+                    exercicio: content.exercicio, // Use the exercicio value directly from content
                     retencao: {
-                        id: content.retencao.id || null,
+                        id: parseInt(content.retencao.id) || 1, // Use 1 as a default if content.retencao.id is empty
                     },
-                    estagioEfetivacao: content.estagioEfetivacao,
+                    estagioEfetivacao: content.estagioEfetivacao, // Use the estagioEfetivacao value directly from content
                     receita: {
-                        id: content.receita.id || null,
+                        id: parseInt(content.receita.id) || 1, // Use 1 as a default if content.receita.id is empty
                     },
                     recurso: {
-                        id: content.recurso.id || null,
+                        id: parseInt(content.recurso.id) || 2249217, // Use 2249217 as a default if content.recurso.id is empty
                     }
                 }
             };

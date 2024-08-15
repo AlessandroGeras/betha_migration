@@ -43,39 +43,43 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-                ROW_NUMBER() OVER (ORDER BY cd_CategoriaEconomicaDespesa) AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
+ ROW_NUMBER() OVER (ORDER BY cd_CategoriaEconomicaDespesa) AS idIntegracao,
+JSON_QUERY(
+    (SELECT
                         'false' as validaSaldo,
                         cd_exercicio as exercicio,
                         dt_emissao as data,
-                        'PRINCIPAL' as tipoAmortizacao,
-                        CONCAT(cd_empenho, cd_empenhob) as numeroCadastro,
-                        'GLOBAL' as tipo,
-                        'Empenho de Divida' AS especificacao,
-                        vl_empenho AS valor,
-                        JSON_QUERY(
-                            (SELECT
-                                vl_empenho AS valor,
-                                dt_vencimento AS data
-                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS vencimentos,
-                        'false' as despesaLancada,
-                        JSON_QUERY(
-                            (SELECT
+                        CONCAT(cd_empenho, cd_empenhob)  as numeroCadastro,
+                         'GLOBAL'as tipo,
+                         'Empenho de Divida' AS especificacao,
+                         vl_empenho AS valor,
                                 JSON_QUERY(
-                                    (SELECT
-                                        '1143390' as id
-                                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                                ) AS credor,
-                                vl_empenho as valor1,
-                                '100' as valor
+                                         (SELECT
+                                         vl_empenho AS valor,
+                                         dt_vencimento AS data
+                                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                                        ) AS vencimentos,
+                                        'false' as despesaLancada,
+                                        JSON_QUERY(
+                                (SELECT
+                                 JSON_QUERY(
+    (SELECT
+   '1143390' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS credor,
+JSON_QUERY(
+                                         (SELECT
+                      67457 as id
+                                                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                                        ) AS marcadores,
+vl_empenho as valor1,
+'100' as valor
                                 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                        ) AS entesConsorciados
-                        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS content
-            from CONTEMPENHOS 
-            WHERE cd_CategoriaEconomicaDespesa LIKE '%4690%'
+                                ) AS entesConsorciados
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS content
+from CONTEMPENHOS 
+WHERE cd_CategoriaEconomicaDespesa LIKE '%4690%'
         `;
 
         const result = await masterConnection.query(userQuery);
