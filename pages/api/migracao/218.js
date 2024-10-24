@@ -3872,7 +3872,9 @@ JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 4832
 				   aa_movimento AS dataSaida,
 				   vl_Unitario AS valorUnitario,
 				   vl_movimento AS valorTotal,
-				   0 AS precoMedio
+				   0 AS precoMedio,
+				   qt_movimento AS saldoFinanceiro,
+				   m.qt_estoque AS saldoFisico
 from ALMOMovimentacao m
 join ALMOProdutos pr on pr.cd_produto = m.cd_produto
 where sg_direcao = 'S'
@@ -3895,7 +3897,8 @@ where sg_direcao = 'S'
 					valorUnitario: record.valorUnitario,
 					valorTotal: Math.abs(record.valorTotal),
 					precoMedio:record.precoMedio,
-					saldoFisico:Math.abs(record.ALMOMovimentacao),
+					saldoFisico:Math.abs(record.saldoFisico),
+					saldoFinanceiro:Math.abs(record.saldoFinanceiro),
 					saida: JSON.parse(record.saida),
 					material: JSON.parse(record.material),
 					//materialEspecificacao: JSON.parse(record.materialEspecificacao),

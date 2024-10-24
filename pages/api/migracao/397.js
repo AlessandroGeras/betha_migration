@@ -60,7 +60,8 @@ when        11        then 1240891
   end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS processoAdministrativo,
-nr_licitacao as numero,
+ ROW_NUMBER() OVER (ORDER BY nr_sequencia)  as numero,
+ qt_disponivel as quantidade,
 vl_precounitario as valorUnitario,
 vl_total as valorTotal,
 pc_desconto as percentual,
@@ -143,7 +144,6 @@ JSON_QUERY(
 ) AS tipoParticipacao
 from COMPLicitacaoFornecedoresItens 
 where aa_licitacao = 2024
-
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -155,7 +155,7 @@ where aa_licitacao = 2024
                 conteudo:{
                 processoAdministrativo: JSON.parse(record.processoAdministrativo),
                 numero: record.numero,
-                quantidade: 0,
+                quantidade: record.quantidade,
                 valorUnitario: record.valorUnitario,
                 valorTotal: record.valorTotal, 
                 percentual: record.percentual,
@@ -180,7 +180,7 @@ where aa_licitacao = 2024
 
          // Enviar cada registro individualmente para a rota desejada
          /* for (const record of transformedData) {
-             const url = `https://services.compras.betha.cloud/compras-services/conversoes/lotes/processos-administrativo-itens`;
+             const url = `https://compras.betha.cloud/compras-services/api/conversoes/lotes/processos-administrativo-itens`;
              const response = await fetch(url, {
                  method: 'POST',
                  headers: {

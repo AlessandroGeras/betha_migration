@@ -96,7 +96,7 @@ group by ds_tipoLogradouroEnt, ds_logradouroent
         }
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://tributos.betha.cloud/service-layer-tributos/api/logradouros', {
                 method: 'POST',
                 headers: {
@@ -111,7 +111,7 @@ group by ds_tipoLogradouroEnt, ds_logradouroent
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         console.error('Erro durante a execução do programa:', error);

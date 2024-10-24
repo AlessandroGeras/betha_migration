@@ -297,7 +297,7 @@ async function main() {
         console.log('Dados salvos em log_envio.json');
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/pessoa', {
                 method: 'POST',
                 headers: {
@@ -312,7 +312,7 @@ async function main() {
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         console.error('Erro durante a execução do programa:', error);

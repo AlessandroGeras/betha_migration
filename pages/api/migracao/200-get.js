@@ -6,35 +6,37 @@ dotenv.config();
 
 async function fetchResourceIDs() {
     try {
-        // Definir a URL da API e o cabeçalho da requisição
+        // Define the API URL and the request headers
         const apiUrl = 'https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/organogramas';
         const headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+            'Authorization': `Bearer 1d12dec7-0720-4b34-a2e5-649610d10806`
         };
 
-        // Fazer a requisição para a API
+        // Make the API request
         const response = await fetch(apiUrl, { headers });
 
-        // Verificar se a resposta está OK
+        // Check if the response is OK
         if (!response.ok) {
-            throw new Error(`Erro ao acessar a API: ${response.statusText}`);
+            throw new Error(`Error accessing the API: ${response.statusText}`);
         }
 
-        // Analisar a resposta como JSON
+        // Parse the response as JSON
         const data = await response.json();
 
-        // Extrair os IDs gerados dos recursos
-        const resourceIDs = data.content.map(resource => resource.idGerado.id);
+        // Extract the IDs from the resources, accounting for nested structures
+        const resourceIDs = data.content.map(resource => {
+            return resource.idGerado?.id || resource.content?.id || null;
+        }).filter(id => id !== null);
 
-        // Salvar os IDs em um arquivo JSON
-        fs.writeFileSync('orgaanograma.json', JSON.stringify(resourceIDs, null, 2));
-        console.log('IDs dos recursos salvos em recursos.json');
+        // Save the IDs to a JSON file
+        fs.writeFileSync('get.json', JSON.stringify(resourceIDs, null, 2));
+        console.log('Resource IDs saved in get.json');
 
     } catch (error) {
-        console.error('Erro ao buscar os IDs dos recursos:', error);
+        console.error('Error fetching resource IDs:', error);
     }
 }
 
-// Chamar a função principal
+// Call the main function
 fetchResourceIDs();

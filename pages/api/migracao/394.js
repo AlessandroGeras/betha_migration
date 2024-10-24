@@ -43,7 +43,7 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
- ROW_NUMBER() OVER (ORDER BY cd_projativ) AS idIntegracao,
+ ROW_NUMBER() OVER (ORDER BY ae.cd_projativ) AS idIntegracao,
 JSON_QUERY(
     (SELECT
    JSON_QUERY(
@@ -51,40 +51,49 @@ JSON_QUERY(
    '13369' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS ldo,
-cd_exercicio as exercicio,
-JSON_QUERY(
-    (SELECT
-    case cd_cecam
-                                                 when 1995 then 10768
-                                                 when 2783 then 10770
-                                                 when 3052 then 10771
-                                                 when 3068 then 10769
-                                                 end as id
+'2024' as exercicio,
+JSON_QUERY(       (SELECT
+   case ae.cd_unidorca
+when        '01.00.00'        then        10769
+when        '01.01.00'        then        10769
+when        '01.02.00'        then        10769
+when        '02.00.00'        then        10768
+when        '02.01.00'        then        10768
+when        '02.02.00'        then        10768
+when        '02.03.00'        then        10768
+when        '02.04.00'        then        10768
+when        '02.05.00'        then        10768
+when        '02.06.00'        then        10770
+when        '02.07.00'        then        10768
+when        '02.08.00'        then        10768
+when        '02.09.00'        then        10771
+when        '02.10.00'        then        10771
+end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS entidade,
    JSON_QUERY(
     (SELECT
-   case cd_unidorca
-when        '01.00.00'        then        156832
-when        '01.01.00'        then        157058
-when        '01.02.00'        then        157059
-when        '02.00.00'        then        156835
-when        '02.01.00'        then        157060
-when        '02.02.00'        then        157061
-when        '02.03.00'        then        157062
-when        '02.04.00'        then        157063
-when        '02.05.00'        then        157064
-when        '02.06.00'        then        157065
-when        '02.07.00'        then        157066
-when        '02.08.00'        then        157067
-when        '02.09.00'        then        157068
-when        '02.10.00'        then        157069
+   case ae.cd_unidorca
+when        '01.00.00'        then        163356
+when        '01.01.00'        then        163357
+when        '01.02.00'        then        163358
+when        '02.00.00'        then        163359
+when        '02.01.00'        then        163360
+when        '02.02.00'        then        163361
+when        '02.03.00'        then        163362
+when        '02.04.00'        then        163363
+when        '02.05.00'        then        163364
+when        '02.06.00'        then        164075
+when        '02.07.00'        then        164078
+when        '02.08.00'        then        164079
+when        '02.09.00'        then        164077
+when        '02.10.00'        then        164080
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS organograma,
 JSON_QUERY(
     (SELECT
-   case cd_programa
+   case ae.cd_programa
    when        0        then        105413
 when        2        then        105414
 when        1        then        105415
@@ -116,163 +125,163 @@ when        9999        then        105437
 JSON_QUERY(
     (SELECT
         case
-when        cd_funcao like        '%1.%'        then        35764
-when        cd_funcao like        '%2.%'        then        35765
-when        cd_funcao like        '%3.%'        then        35766
-when        cd_funcao like        '%4.%'        then        35767
-when        cd_funcao like        '%5.%'        then        35768
-when        cd_funcao like        '%6.%'        then        35769
-when        cd_funcao like        '%7.%'        then        35770
-when        cd_funcao like        '%8.%'        then        35771
-when        cd_funcao like        '%9.%'        then        35772
-when        cd_funcao like        '%10.%'        then        35773
-when        cd_funcao like        '%11.%'        then        35774
-when        cd_funcao like        '%12.%'        then        35775
-when        cd_funcao like        '%13.%'        then        35776
-when        cd_funcao like        '%14.%'        then        35777
-when        cd_funcao like        '%15.%'        then        35778
-when        cd_funcao like        '%16.%'        then        35779
-when        cd_funcao like        '%17.%'        then        35780
-when        cd_funcao like        '%18.%'        then        35781
-when        cd_funcao like        '%19.%'        then        35782
-when        cd_funcao like        '%20.%'        then        35783
-when        cd_funcao like        '%21.%'        then        35784
-when        cd_funcao like        '%22.%'        then        35785
-when        cd_funcao like        '%23.%'        then        35786
-when        cd_funcao like        '%24.%'        then        35787
-when        cd_funcao like        '%25.%'        then        35788
-when        cd_funcao like        '%26.%'        then        35789
-when        cd_funcao like        '%27.%'        then        35790
-when        cd_funcao like        '%28.%'        then        35791
-when        cd_funcao like        '%99.%'        then        35792
+when        ae.cd_funcao like        '%01.%'        then        35764
+when        ae.cd_funcao like        '%02.%'        then        35765
+when        ae.cd_funcao like        '%03.%'        then        35766
+when        ae.cd_funcao like        '%04.%'        then        35767
+when        ae.cd_funcao like        '%05.%'        then        35768
+when        ae.cd_funcao like        '%06.%'        then        35769
+when        ae.cd_funcao like        '%07.%'        then        35770
+when        ae.cd_funcao like        '%08.%'        then        35771
+when        ae.cd_funcao like        '%09.%'        then        35772
+when        ae.cd_funcao like        '%10.%'        then        35773
+when        ae.cd_funcao like        '%11.%'        then        35774
+when        ae.cd_funcao like        '%12.%'        then        35775
+when        ae.cd_funcao like        '%13.%'        then        35776
+when        ae.cd_funcao like        '%14.%'        then        35777
+when        ae.cd_funcao like        '%15.%'        then        35778
+when        ae.cd_funcao like        '%16.%'        then        35779
+when        ae.cd_funcao like        '%17.%'        then        35780
+when        ae.cd_funcao like        '%18.%'        then        35781
+when        ae.cd_funcao like        '%19.%'        then        35782
+when        ae.cd_funcao like        '%20.%'        then        35783
+when        ae.cd_funcao like        '%21.%'        then        35784
+when        ae.cd_funcao like        '%22.%'        then        35785
+when        ae.cd_funcao like        '%23.%'        then        35786
+when        ae.cd_funcao like        '%24.%'        then        35787
+when        ae.cd_funcao like        '%25.%'        then        35788
+when        ae.cd_funcao like        '%26.%'        then        35789
+when        ae.cd_funcao like        '%27.%'        then        35790
+when        ae.cd_funcao like        '%28.%'        then        35791
+when        ae.cd_funcao like        '%99.%'        then        35792
    end  as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS funcao,
 JSON_QUERY(
     (SELECT
         case
-when        cd_funcao like        '%.31%'        then        156809
-when        cd_funcao like        '%.32%'        then        156810
-when        cd_funcao like        '%.61%'        then        156811
-when        cd_funcao like        '%.62%'        then        156812
-when        cd_funcao like        '%.91%'        then        156813
-when        cd_funcao like        '%.92%'        then        156814
-when        cd_funcao like        '%.121%'        then        156815
-when        cd_funcao like        '%.122%'        then        156816
-when        cd_funcao like        '%.123%'        then        156817
-when        cd_funcao like        '%.124%'        then        156818
-when        cd_funcao like        '%.125%'        then        156819
-when        cd_funcao like        '%.126%'        then        156820
-when        cd_funcao like        '%.127%'        then        156821
-when        cd_funcao like        '%.128%'        then        156822
-when        cd_funcao like        '%.129%'        then        156823
-when        cd_funcao like        '%.130%'        then        156824
-when        cd_funcao like        '%.131%'        then        156825
-when        cd_funcao like        '%.151%'        then        156826
-when        cd_funcao like        '%.152%'        then        156827
-when        cd_funcao like        '%.153%'        then        156828
-when        cd_funcao like        '%.181%'        then        156829
-when        cd_funcao like        '%.182%'        then        156830
-when        cd_funcao like        '%.183%'        then        156831
-when        cd_funcao like        '%.211%'        then        156832
-when        cd_funcao like        '%.212%'        then        156833
-when        cd_funcao like        '%.241%'        then        156834
-when        cd_funcao like        '%.242%'        then        156835
-when        cd_funcao like        '%.243%'        then        156836
-when        cd_funcao like        '%.244%'        then        156837
-when        cd_funcao like        '%.271%'        then        156838
-when        cd_funcao like        '%.272%'        then        156839
-when        cd_funcao like        '%.273%'        then        156840
-when        cd_funcao like        '%.274%'        then        156841
-when        cd_funcao like        '%.301%'        then        156842
-when        cd_funcao like        '%.302%'        then        156843
-when        cd_funcao like        '%.303%'        then        156844
-when        cd_funcao like        '%.304%'        then        156845
-when        cd_funcao like        '%.305%'        then        156846
-when        cd_funcao like        '%.306%'        then        156847
-when        cd_funcao like        '%.331%'        then        156848
-when        cd_funcao like        '%.332%'        then        156849
-when        cd_funcao like        '%.333%'        then        156850
-when        cd_funcao like        '%.334%'        then        156851
-when        cd_funcao like        '%.361%'        then        156852
-when        cd_funcao like        '%.362%'        then        156853
-when        cd_funcao like        '%.363%'        then        156854
-when        cd_funcao like        '%.364%'        then        156855
-when        cd_funcao like        '%.365%'        then        156856
-when        cd_funcao like        '%.366%'        then        156857
-when        cd_funcao like        '%.367%'        then        156858
-when        cd_funcao like        '%.368%'        then        156859
-when        cd_funcao like        '%.391%'        then        156860
-when        cd_funcao like        '%.392%'        then        156861
-when        cd_funcao like        '%.421%'        then        156862
-when        cd_funcao like        '%.422%'        then        156863
-when        cd_funcao like        '%.423%'        then        156864
-when        cd_funcao like        '%.451%'        then        156865
-when        cd_funcao like        '%.452%'        then        156866
-when        cd_funcao like        '%.453%'        then        156867
-when        cd_funcao like        '%.481%'        then        156868
-when        cd_funcao like        '%.482%'        then        156869
-when        cd_funcao like        '%.511%'        then        156870
-when        cd_funcao like        '%.512%'        then        156871
-when        cd_funcao like        '%.541%'        then        156872
-when        cd_funcao like        '%.542%'        then        156873
-when        cd_funcao like        '%.543%'        then        156874
-when        cd_funcao like        '%.544%'        then        156875
-when        cd_funcao like        '%.545%'        then        156876
-when        cd_funcao like        '%.571%'        then        156877
-when        cd_funcao like        '%.572%'        then        156878
-when        cd_funcao like        '%.573%'        then        156879
-when        cd_funcao like        '%.601%'        then        156880
-when        cd_funcao like        '%.602%'        then        156881
-when        cd_funcao like        '%.603%'        then        156882
-when        cd_funcao like        '%.604%'        then        156883
-when        cd_funcao like        '%.605%'        then        156884
-when        cd_funcao like        '%.606%'        then        156885
-when        cd_funcao like        '%.607%'        then        156886
-when        cd_funcao like        '%.608%'        then        156887
-when        cd_funcao like        '%.609%'        then        156888
-when        cd_funcao like        '%.631%'        then        156889
-when        cd_funcao like        '%.632%'        then        156890
-when        cd_funcao like        '%.661%'        then        156891
-when        cd_funcao like        '%.662%'        then        156892
-when        cd_funcao like        '%.663%'        then        156893
-when        cd_funcao like        '%.664%'        then        156894
-when        cd_funcao like        '%.665%'        then        156895
-when        cd_funcao like        '%.691%'        then        156896
-when        cd_funcao like        '%.692%'        then        156897
-when        cd_funcao like        '%.693%'        then        156898
-when        cd_funcao like        '%.694%'        then        156899
-when        cd_funcao like        '%.695%'        then        156900
-when        cd_funcao like        '%.721%'        then        156901
-when        cd_funcao like        '%.722%'        then        156902
-when        cd_funcao like        '%.751%'        then        156903
-when        cd_funcao like        '%.752%'        then        156904
-when        cd_funcao like        '%.753%'        then        156905
-when        cd_funcao like        '%.754%'        then        156906
-when        cd_funcao like        '%.781%'        then        156907
-when        cd_funcao like        '%.782%'        then        156908
-when        cd_funcao like        '%.783%'        then        156909
-when        cd_funcao like        '%.784%'        then        156910
-when        cd_funcao like        '%.785%'        then        156911
-when        cd_funcao like        '%.811%'        then        156912
-when        cd_funcao like        '%.812%'        then        156913
-when        cd_funcao like        '%.813%'        then        156914
-when        cd_funcao like        '%.841%'        then        156915
-when        cd_funcao like        '%.842%'        then        156916
-when        cd_funcao like        '%.843%'        then        156917
-when        cd_funcao like        '%.844%'        then        156918
-when        cd_funcao like        '%.845%'        then        156919
-when        cd_funcao like        '%.846%'        then        156920
-when        cd_funcao like        '%.847%'        then        156921
-when        cd_funcao like        '%.997%'        then        156922
-when        cd_funcao like        '%.999%'        then        156923
+when        ae.cd_funcao like        '%.031%'        then        156809
+when        ae.cd_funcao like        '%.032%'        then        156810
+when        ae.cd_funcao like        '%.061%'        then        156811
+when        ae.cd_funcao like        '%.062%'        then        156812
+when        ae.cd_funcao like        '%.091%'        then        156813
+when        ae.cd_funcao like        '%.092%'        then        156814
+when        ae.cd_funcao like        '%.121%'        then        156815
+when        ae.cd_funcao like        '%.122%'        then        156816
+when        ae.cd_funcao like        '%.123%'        then        156817
+when        ae.cd_funcao like        '%.124%'        then        156818
+when        ae.cd_funcao like        '%.125%'        then        156819
+when        ae.cd_funcao like        '%.126%'        then        156820
+when        ae.cd_funcao like        '%.127%'        then        156821
+when        ae.cd_funcao like        '%.128%'        then        156822
+when        ae.cd_funcao like        '%.129%'        then        156823
+when        ae.cd_funcao like        '%.130%'        then        156824
+when        ae.cd_funcao like        '%.131%'        then        156825
+when        ae.cd_funcao like        '%.151%'        then        156826
+when        ae.cd_funcao like        '%.152%'        then        156827
+when        ae.cd_funcao like        '%.153%'        then        156828
+when        ae.cd_funcao like        '%.181%'        then        156829
+when        ae.cd_funcao like        '%.182%'        then        156830
+when        ae.cd_funcao like        '%.183%'        then        156831
+when        ae.cd_funcao like        '%.211%'        then        156832
+when        ae.cd_funcao like        '%.212%'        then        156833
+when        ae.cd_funcao like        '%.241%'        then        156834
+when        ae.cd_funcao like        '%.242%'        then        156835
+when        ae.cd_funcao like        '%.243%'        then        156836
+when        ae.cd_funcao like        '%.244%'        then        156837
+when        ae.cd_funcao like        '%.271%'        then        156838
+when        ae.cd_funcao like        '%.272%'        then        156839
+when        ae.cd_funcao like        '%.273%'        then        156840
+when        ae.cd_funcao like        '%.274%'        then        156841
+when        ae.cd_funcao like        '%.301%'        then        156842
+when        ae.cd_funcao like        '%.302%'        then        156843
+when        ae.cd_funcao like        '%.303%'        then        156844
+when        ae.cd_funcao like        '%.304%'        then        156845
+when        ae.cd_funcao like        '%.305%'        then        156846
+when        ae.cd_funcao like        '%.306%'        then        156847
+when        ae.cd_funcao like        '%.331%'        then        156848
+when        ae.cd_funcao like        '%.332%'        then        156849
+when        ae.cd_funcao like        '%.333%'        then        156850
+when        ae.cd_funcao like        '%.334%'        then        156851
+when        ae.cd_funcao like        '%.361%'        then        156852
+when        ae.cd_funcao like        '%.362%'        then        156853
+when        ae.cd_funcao like        '%.363%'        then        156854
+when        ae.cd_funcao like        '%.364%'        then        156855
+when        ae.cd_funcao like        '%.365%'        then        156856
+when        ae.cd_funcao like        '%.366%'        then        156857
+when        ae.cd_funcao like        '%.367%'        then        156858
+when        ae.cd_funcao like        '%.368%'        then        156859
+when        ae.cd_funcao like        '%.391%'        then        156860
+when        ae.cd_funcao like        '%.392%'        then        156861
+when        ae.cd_funcao like        '%.421%'        then        156862
+when        ae.cd_funcao like        '%.422%'        then        156863
+when        ae.cd_funcao like        '%.423%'        then        156864
+when        ae.cd_funcao like        '%.451%'        then        156865
+when        ae.cd_funcao like        '%.452%'        then        156866
+when        ae.cd_funcao like        '%.453%'        then        156867
+when        ae.cd_funcao like        '%.481%'        then        156868
+when        ae.cd_funcao like        '%.482%'        then        156869
+when        ae.cd_funcao like        '%.511%'        then        156870
+when        ae.cd_funcao like        '%.512%'        then        156871
+when        ae.cd_funcao like        '%.541%'        then        156872
+when        ae.cd_funcao like        '%.542%'        then        156873
+when        ae.cd_funcao like        '%.543%'        then        156874
+when        ae.cd_funcao like        '%.544%'        then        156875
+when        ae.cd_funcao like        '%.545%'        then        156876
+when        ae.cd_funcao like        '%.571%'        then        156877
+when        ae.cd_funcao like        '%.572%'        then        156878
+when        ae.cd_funcao like        '%.573%'        then        156879
+when        ae.cd_funcao like        '%.601%'        then        156880
+when        ae.cd_funcao like        '%.602%'        then        156881
+when        ae.cd_funcao like        '%.603%'        then        156882
+when        ae.cd_funcao like        '%.604%'        then        156883
+when        ae.cd_funcao like        '%.605%'        then        156884
+when        ae.cd_funcao like        '%.606%'        then        156885
+when        ae.cd_funcao like        '%.607%'        then        156886
+when        ae.cd_funcao like        '%.608%'        then        156887
+when        ae.cd_funcao like        '%.609%'        then        156888
+when       ae.cd_funcao like        '%.631%'        then        156889
+when        ae.cd_funcao like        '%.632%'        then        156890
+when        ae.cd_funcao like        '%.661%'        then        156891
+when        ae.cd_funcao like        '%.662%'        then        156892
+when        ae.cd_funcao like        '%.663%'        then        156893
+when        ae.cd_funcao like        '%.664%'        then        156894
+when        ae.cd_funcao like        '%.665%'        then        156895
+when        ae.cd_funcao like        '%.691%'        then        156896
+when        ae.cd_funcao like        '%.692%'        then        156897
+when        ae.cd_funcao like        '%.693%'        then        156898
+when        ae.cd_funcao like        '%.694%'        then        156899
+when        ae.cd_funcao like        '%.695%'        then        156900
+when        ae.cd_funcao like        '%.721%'        then        156901
+when        ae.cd_funcao like        '%.722%'        then        156902
+when        ae.cd_funcao like        '%.751%'        then        156903
+when        ae.cd_funcao like        '%.752%'        then        156904
+when        ae.cd_funcao like        '%.753%'        then        156905
+when        ae.cd_funcao like        '%.754%'        then        156906
+when        ae.cd_funcao like        '%.781%'        then        156907
+when        ae.cd_funcao like        '%.782%'        then        156908
+when        ae.cd_funcao like        '%.783%'        then        156909
+when        ae.cd_funcao like        '%.784%'        then        156910
+when        ae.cd_funcao like        '%.785%'        then        156911
+when        ae.cd_funcao like        '%.811%'        then        156912
+when        ae.cd_funcao like        '%.812%'        then        156913
+when        ae.cd_funcao like        '%.813%'        then        156914
+when        ae.cd_funcao like        '%.841%'        then        156915
+when        ae.cd_funcao like        '%.842%'        then        156916
+when        ae.cd_funcao like        '%.843%'        then        156917
+when        ae.cd_funcao like        '%.844%'        then        156918
+when        ae.cd_funcao like        '%.845%'        then        156919
+when        ae.cd_funcao like        '%.846%'        then        156920
+when        ae.cd_funcao like        '%.847%'        then        156921
+when        ae.cd_funcao like        '%.997%'        then        156922
+when        ae.cd_funcao like        '%.999%'        then        156923
 else 156920
    end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS subfuncao,
 JSON_QUERY(
     (SELECT
-   case cd_projativ
+   case ae.cd_projativ
 when        1002        then        454456
 when        1001        then        454457
 when        1005        then        454458
@@ -466,13 +475,104 @@ when        2090        then        454645
 when        2093        then        454646
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS acao
+) AS acao,
+JSON_QUERY(
+    (SELECT
+        vl_Meta3LDO as metaFisica,
+JSON_QUERY(
+    (SELECT
+        case i.ds_Indicador
+        when        'AÇOES PREVENTIVAS E EDUCATIVAS'        then        151402
+when        'ADULTOS ATENDIDOS DE 18 A 59 ANOS'        then        151405
+when        'ATENDIMENTO DAS EQUIPES ESF'        then        151408
+when        'BENEFICIOS CONCEDIDOS'        then        151411
+when        'CAMPANHA DE VACINAÇAO'        then        151414
+when        'COLETA E DESTINAÇÃO DO LIXO - CIDADE'        then        151417
+when        'CRIANÇAS ATENDIDAS 04 A 06 ANOS'        then        151420
+when        'CURSOS OFERTADOS'        then        151423
+when        'DISTRIBUIÇAO DE SEMEN BOVINO'        then        151426
+when        'EXAMES LABORATORIAIS E ESPECIALIZADOS'        then        151429
+when        'FESTA E COMEMORAÇÕES'        then        151432
+when        'GESTÃO DA FOLHA - LEGISLATIVO'        then        151435
+when        'INTERNAÇÃO E OBSERVAÇÃO'        then        151438
+when        'MUDAS ESSENCIAS FLORESTAIS'        then        151441
+when        'NOTIFICAÇAO COMPULSORIA'        then        151444
+when        'PAGAMENTO DE OBRIGAÇÃO TRIBUTARIA'        then        151447
+when        'PROCEDIMENTOS REALIZADOS'        then        151450
+when        'PROJETOS EXECUTADOS FMDCA'        then        151453
+when        'ACOLHIDOS ATENDIDOS'        then        151403
+when        'ALUNOS ATENDIDOS'        then        151406
+when        'ATENDIMENTO PRIORITARIO SAUDE BUCAL'        then        151409
+when        'BENS IMOVEIS'        then        151412
+when        'CAMPEONATOS ESPORTIVOS'        then        151415
+when        'CONCIENTIZAÇÃO COLETA SELETIVA'        then        151418
+when        'CRIANÇAS ATENDIDAS DE 0 A 3 ANOS'        then        151421
+when        'DEMINUIR O INDICE DE CRIMINALIDADES'        then        151424
+when        'ENVENTOS DE INTERAÇÃO'        then        151427
+when        'FAMILIAS ATENDIDAS'        then        151430
+when        'FISCALIZAÇAO AOS ESTABELECIMENTOS'        then        151433
+when        'GESTÃO DA FOLHA EXECUTIVO'        then        151436
+when        'LICENÇA AMBIENTAL DE BAIXO IMPACTO'        then        151439
+when        'NÃO SE APLICA'        then        151442
+when        'Obras e Instalações'        then        151445
+when        'PAGAMENTO DE SENTEÇAS E/OU PARCELAMENTOS'        then        151448
+when        'PRODUTORES ATENDIDOS'        then        151451
+when        'REALIZAR/PARTICIPAR DE EVENTOS ESPORTIVOS'        then        151454
+when        'SATISFAÇÃO DOS MUNICÍPIS QUANTO A SEGURANÇA'        then        151457
+when        'SATISFAÇÃO DOS USUARIOS DO TRANSPORTE ESCOLAR'        then        151460
+when        'UNIDADES ADMINISTRATIVAS MANTIDAS'        then        151463
+when        'VISITA DOMICILIAR ACS'        then        151466
+when        'ADOLESCENTES ATENDIDOS DE 15 A 17 ANOS'        then        151404
+when        'ALUNOS DA FANFARRA'        then        151407
+when        'ATLETAS DE RENDIMENTO'        then        151410
+when        'BENS MOVEIS'        then        151413
+when        'CAPACITAÇÕES'        then        151416
+when        'CONSULTAS REALIZADAS'        then        151419
+when        'CRIANÇAS ATENDIDAS DE 07 A 14 ANOS'        then        151422
+when        'DISTRIBUIÇÃO DE MUDAS'        then        151425
+when        'EVENTOS CULTURAIS'        then        151428
+when        'FAMILIAS CADASTRADAS'        then        151431
+when        'GESTANTES ATENDIDAS'        then        151434
+when        'IDOSOS ATENDIDOS'        then        151437
+when        'MANUTENÇÃO DAS UNIDADES ADMINISTRATIVAS'        then        151440
+when        'NASCENTES REVITALIZADAS'        then        151443
+when        'PACIENTES ATENDIDOS'        then        151446
+when        'PONTOS DE ILUMINAÇAO PUBLICA'        then        151449
+when        'PROJETOS APROVADOS FMDCA'        then        151452
+when        'REFORMAS/AMPLIAÇÃO'        then        151455
+when        'SATISFAÇÃO DOS PRODUTORES ATENDIDOS'        then        151458
+when        'SESSOES LEGISLATIVAS EXTRAORDINARIAS'        then        151461
+when        'UNIDADES AMPLIADAS/ REFORMADAS'        then        151464
+when        'VISITA TECNICA NASCENTES DE RIOS'        then        151467
+when        'SATISFAÇÃO DA PRESTAÇÃO DE LIMPEZA PÚBLICA'        then        151456
+when        'SATISFAÇÃO DOS USUARIOS DA MERENDA ESCOLAR'        then        151459
+when        'SESSOES LEGISLATIVAS ORDINARIAS'        then        151462
+when        'VIAS VICINAIS MANTIDAS'        then        151465
+        end as id
+        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS produto,
+                             JSON_QUERY(
+                (SELECT
+                case i.cd_UnidadeDeMedida
+                when        1        then        41879
+when        2        then        41876
+when        3        then        41877
+when        4        then        42627
+when        5        then        41878
+when        6        then        41881
+when        7        then        41880
+when        8        then        42626
+when        9        then        41882
+                end as id
+                FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+                ) AS unidadeMedida
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS metasFisicas
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS content
-from CONTFICHADESPESA
-where cd_fichadesp < 5000 
-group by cd_projativ, cd_exercicio, cd_unidorca,cd_programa, cd_funcao, cd_cecam
-
+from CONTAcaoExecucao  ae
+join  CONTPROJETOATIVIDADE pa on pa.cd_projativ = ae.cd_ProjAtiv
+JOIN contindicador I ON  i.cd_Indicador = pa.cd_Indicador
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -480,33 +580,48 @@ group by cd_projativ, cd_exercicio, cd_unidorca,cd_programa, cd_funcao, cd_cecam
         const resultData = result.recordset;
 
         const transformedData = resultData.map(record => {
+            const parsedContent = JSON.parse(record.content); // Converte o conteúdo JSON armazenado na string
+        
             return {
                 idIntegracao: record.idIntegracao,
                 content: {
                     ldo: {
-                        id: parseInt(JSON.parse(record.content).ldo.id, 10) // Converte o valor para inteiro
+                        id: parseInt(parsedContent.ldo.id, 10) // Converte o valor para inteiro
                     },
-                    exercicio: JSON.parse(record.content).exercicio,
+                    exercicio: parseInt(parsedContent.exercicio, 10), // Converte o valor para inteiro
                     entidade: {
-                        id: JSON.parse(record.content).entidade.id
+                        id: parseInt(parsedContent.entidade.id, 10) // Converte o valor para inteiro
                     },
                     organograma: {
-                        id: JSON.parse(record.content).organograma.id
+                        id: parseInt(parsedContent.organograma.id, 10) // Converte o valor para inteiro
                     },
                     programa: {
-                        id: JSON.parse(record.content).programa.id
+                        id: parseInt(parsedContent.programa.id, 10) // Converte o valor para inteiro
                     },
                     acao: {
-                        id: JSON.parse(record.content).acao.id
+                        id: parseInt(parsedContent.acao.id, 10) // Converte o valor para inteiro
                     },
                     funcao: {
-                        id: JSON.parse(record.content).funcao.id
+                        id: parseInt(parsedContent.funcao.id, 10) // Converte o valor para inteiro
                     },
                     subfuncao: {
-                        id: JSON.parse(record.content).subfuncao.id
-                    }
-                    }};
+                        id: parseInt(parsedContent.subfuncao.id, 10) // Converte o valor para inteiro
+                    },
+                    metasFisicas: [
+                        {
+                            produto: {
+                                id: parseInt(parsedContent.metasFisicas.produto.id, 10) // Converte o valor para inteiro
+                            },
+                            unidadeMedida: {
+                                id: parseInt(parsedContent.metasFisicas.unidadeMedida.id, 10) // Converte o valor para inteiro
+                            },
+                            metaFisica: parseFloat(parsedContent.metasFisicas.metaFisica) === 0 ? 0.001 : parseFloat(parsedContent.metasFisicas.metaFisica)
+                        }
+                    ]
+                }
+            };
         });
+        
 
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {

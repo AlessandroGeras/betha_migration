@@ -42,22 +42,20 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-           select ROW_NUMBER() OVER (ORDER BY cd_cecam) AS idIntegracao,
-JSON_QUERY(
-    (SELECT
-        cd_DivAdm as numero,
-        nm_DivAdm as descricao,
-        '2024-06-01 00:00:00' as inicioVigencia,
-        JSON_QUERY(
-            (SELECT
+           SELECT DISTINCT 
+                nm_DivAdm,
+                cd_DivAdm,
+                '2024-01-01 00:00:00' as inicioVigencia,
                 '1708' as id
-            FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-        ) AS configuracao
-    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS conteudo
-from folhdivadm
-where aa_exercicio = 2024
-and cd_NivelEstrut = 4
+            FROM 
+                FOLHDivAdm 
+            WHERE 
+                cd_CECAM = 1995
+                AND aa_exercicio = 2024
+                AND COALESCE(fl_Status, 'A') = 'A'
+                AND cd_NivelEstrut = 4 
+            ORDER BY 
+                cd_DivAdm;
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -65,16 +63,21 @@ and cd_NivelEstrut = 4
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            const conteudo = JSON.parse(record.conteudo);
+            let cdDivAdm = record.cd_DivAdm.toString();
+
+            // Verificar se cd_DivAdm é um número de um dígito e adicionar um zero na frente
+            if (cdDivAdm.length === 1) {
+                cdDivAdm = '0' + cdDivAdm;
+            }
 
             return {
-                idIntegracao: record.idIntegracao.toString(),
+                idIntegracao: cdDivAdm,
                 conteudo: {
-                    numero: conteudo.numero,
-                    descricao: conteudo.descricao,
-                    inicioVigencia: conteudo.inicioVigencia,
+                    numero: cdDivAdm,
+                    descricao: record.nm_DivAdm,
+                    inicioVigencia: record.inicioVigencia,
                     configuracao: {
-                        id: parseInt(conteudo.configuracao.id)
+                        id: parseInt(record.id)
                     }
                 }
             };

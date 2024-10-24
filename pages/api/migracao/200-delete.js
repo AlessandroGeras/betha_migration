@@ -1,5 +1,6 @@
 const sql = require('mssql');
 const dotenv = require('dotenv');
+const fetch = require('node-fetch');
 const fs = require('fs');
 
 dotenv.config();
@@ -30,64 +31,63 @@ async function connectToSqlServer() {
     }
 }
 
+async function logResponse(id, responseText) {
+    const logMessage = `ID: ${id}\nResposta: ${responseText}\n\n`;
+    fs.appendFileSync('delete_log.txt', logMessage, (err) => {
+        if (err) {
+            console.error('Erro ao gravar no log:', err);
+        }
+    });
+}
+
 async function main() {
-    // Lista de IDs para exclusão
     const idsParaExcluir = [
-        156832,
-        156845,
-        156834,
-        156835,
-        156837,
-        156840,
-        156842,
-        156844,
-        156838,
-        156833,
-        156836,
-        156839,
-        156841,
-        156843
+        162410,
+  162420,
+  162424
     ];
 
-    // Lista para armazenar os registros a serem excluídos
-    const registrosParaExcluir = [];
-
     try {
-        // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
+        await masterConnection.query('USE CONTABIL2024');
 
-        // Selecionar o banco de dados "TRIBUTOS2024"
-        const selectDatabaseQuery = 'USE CONTABIL2024';
-        await masterConnection.query(selectDatabaseQuery);
-
-        // Iterar sobre a lista de IDs e criar a payload para cada um
         for (const id of idsParaExcluir) {
-            const deletePayload = {
-                idIntegracao: id.toString(),
-                idGerado: {
-                    id: id
-                },
-                content: {
-                    exercicio: 2024
+            const deletePayload = [
+                {
+                    idIntegracao: id.toString(),
+                    idGerado: { id: id },
+                    content: { exercicio: 2024 }
                 }
-            };
+            ];
 
-            // Adicionar o registro à lista
-            registrosParaExcluir.push(deletePayload);
+            console.log(JSON.stringify(deletePayload));
+
+            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/organogramas', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+                },
+                body: JSON.stringify(deletePayload)
+            });
+
+            const responseText = await response.text();
+
+            if (response.ok) {
+                console.log(`Registro com ID ${id} excluído com sucesso.`);
+            } else {
+                console.error(`Erro ao excluir o registro com ID ${id}:`, response.statusText, responseText);
+            }
+
+            // Registrar a resposta no log
+            await logResponse(id, responseText);
         }
 
-        // Escrever os registros a serem excluídos no arquivo delete.json
-        fs.writeFileSync('delete.json', JSON.stringify(registrosParaExcluir, null, 2), 'utf-8');
-        console.log('Registros para exclusão foram salvos em delete.json');
-
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
         console.error('Erro durante a execução do programa:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
         await sql.close();
     }
 }
 
-// Chamar a função principal
 main();

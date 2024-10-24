@@ -134,7 +134,7 @@ where LEN(ds_cgc) < 17
         }
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
+        /* for (const record of transformedData) {
             const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/credores', {
                 method: 'POST',
                 headers: {
@@ -149,7 +149,7 @@ where LEN(ds_cgc) < 17
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         console.error('Erro durante a execução do programa:', error);

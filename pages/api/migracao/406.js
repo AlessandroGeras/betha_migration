@@ -42,10 +42,14 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-                ROW_NUMBER() OVER (ORDER BY ds_projativ) AS idIntegracao,
-                JSON_QUERY((SELECT '9569' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS ppa,
-                ds_projativ as descricao
-            from CONTPROJETOATIVIDADE
+ROW_NUMBER() OVER (ORDER BY ds_Indicador) AS idIntegracao,
+   JSON_QUERY(
+    (SELECT
+   '9569' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS ppa,
+ds_Indicador as descricao
+from contindicador
         `;
 
         const result = await masterConnection.query(userQuery);

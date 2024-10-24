@@ -230,20 +230,20 @@ cd_ficharec as numero,
                                 JSON_QUERY(
     (SELECT
    case cd_unidorca
-when        '01.00.00'        then        156832
-when        '01.01.00'        then        157058
-when        '01.02.00'        then        157059
-when        '02.00.00'        then        156835
-when        '02.01.00'        then        157060
-when        '02.02.00'        then        157061
-when        '02.03.00'        then        157062
-when        '02.04.00'        then        157063
-when        '02.05.00'        then        157064
-when        '02.06.00'        then        157065
-when        '02.07.00'        then        157066
-when        '02.08.00'        then        157067
-when        '02.09.00'        then        157068
-when        '02.10.00'        then        157069
+when        '01.00.00'        then        163356
+when        '01.01.00'        then        163357
+when        '01.02.00'        then        163358
+when        '02.00.00'        then        163359
+when        '02.01.00'        then        163360
+when        '02.02.00'        then        163361
+when        '02.03.00'        then        163362
+when        '02.04.00'        then        163363
+when        '02.05.00'        then        163364
+when        '02.06.00'        then        163365
+when        '02.07.00'        then        163366
+when        '02.08.00'        then        163367
+when        '02.09.00'        then        163368
+when        '02.10.00'        then        163369
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS organograma,
@@ -275,7 +275,7 @@ when 170000000000 then   744243
 when 170100000000 then   744245
 when 170500000000 then   744251
 when 170600003110  then  744255
-when 170800000000 then        744261        
+when 170800000000 then   744261        
 when 171000003210 then   744267
 when 171000003220 then   744269
 when 175000000000 then   744297
@@ -292,7 +292,10 @@ when 175900000000 then   744315
         vl_orcado as valor,
            JSON_QUERY(
     (SELECT
-   '12252' as id
+        case  cd_ReceitaPrevisaoTipo
+        when 95 then 12414
+        when 99 then 12415
+    end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS deducao,
    JSON_QUERY(
@@ -342,7 +345,7 @@ vl_orcado as metaFinanceira
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS content
 from CONTFICHARECEITA
-where cd_ReceitaPrevisaoTipo = 95
+where  cd_ReceitaPrevisaoTipo IN (95, 99)
         `;
 
         const result = await masterConnection.query(userQuery);

@@ -31,6 +31,18 @@ async function connectToSqlServer() {
     }
 }
 
+function formatDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = (`0${d.getMonth() + 1}`).slice(-2);
+    const day = (`0${d.getDate()}`).slice(-2);
+    const hours = (`0${d.getHours()}`).slice(-2);
+    const minutes = (`0${d.getMinutes()}`).slice(-2);
+    const seconds = (`0${d.getSeconds()}`).slice(-2);
+    return `${year}-${month}-${day}`;
+    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
 async function main() {
     try {
         // Conectar ao SQL Server
@@ -42,21 +54,21 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                ROW_NUMBER() OVER (ORDER BY Nr_Parcela) AS idIntegracao,
-                JSON_QUERY(
-                    (SELECT
-                        '181504' AS idCalculosTributarios,
-                        Dt_Vencimento AS dataVcto,
-                        Nr_Parcela AS parcela,
-                        Pct_Desconto AS percDesconto,
-                        CASE Nr_Parcela
-                            WHEN 0 THEN 'SIM'
-                            ELSE 'NAO'
-                        END AS unica
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS parcelasCalculo
-            FROM IPTUVenctosInscricoes
+            select 
+ROW_NUMBER() OVER (ORDER BY Nr_Parcela) AS idIntegracao,
+JSON_QUERY(
+    (SELECT
+'181504' as idCalculosTributarios,
+Dt_Vencimento as dataVcto,
+Nr_Parcela as parcela,
+Pct_Desconto as percDesconto,
+case Nr_Parcela
+when 0 then 'SIM'
+ELSE 'NAO'
+END AS unica
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS parcelasCalculo
+from IPTUVenctosInscricoes
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -70,8 +82,8 @@ async function main() {
             return {
                 idIntegracao: record.idIntegracao.toString(), // Prefixing idIntegracao with "INTEGRACAO"
                 parcelasCalculo: {
-                    idCalculosTributarios: content.idCalculosTributarios,
-                    dataVcto: content.dataVcto,
+                    idCalculosTributarios: parseInt(content.idCalculosTributarios),
+                    dataVcto: formatDate(content.dataVcto),
                     parcela: content.parcela,
                     percDesconto: content.percDesconto,
                     unica: content.unica

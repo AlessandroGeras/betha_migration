@@ -230,30 +230,78 @@ cd_ficharec as numero,
                                 JSON_QUERY(
     (SELECT
    case cd_unidorca
-when        '01.00.00'        then        156832
-when        '01.01.00'        then        157058
-when        '01.02.00'        then        157059
-when        '02.00.00'        then        156835
-when        '02.01.00'        then        157060
-when        '02.02.00'        then        157061
-when        '02.03.00'        then        157062
-when        '02.04.00'        then        157063
-when        '02.05.00'        then        157064
-when        '02.06.00'        then        157065
-when        '02.07.00'        then        157066
-when        '02.08.00'        then        157067
-when        '02.09.00'        then        157068
-when        '02.10.00'        then        157069
+when        '01.00.00'        then        163356
+when        '01.01.00'        then        163357
+when        '01.02.00'        then        163358
+when        '02.00.00'        then        163359
+when        '02.01.00'        then        163360
+when        '02.02.00'        then        163361
+when        '02.03.00'        then        163362
+when        '02.04.00'        then        163363
+when        '02.05.00'        then        163364
+when        '02.06.00'        then        164075
+when        '02.07.00'        then        164078
+when        '02.08.00'        then        164079
+when        '02.09.00'        then        164077
+when        '02.10.00'        then        164080
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS organograma,
 JSON_QUERY(
                                         (SELECT
-'100' as percentual,
-        vl_orcado as valor,
         JSON_QUERY(
                                         (SELECT
         case cd_destinacaorecurso
+when 150000000000 then 744141
+when 150000150000 then 744143  
+when 150000250000 then 744145
+when 154000700000 then 744159
+when 155000000000 then 744177
+when 155200000000 then 744181
+when 155300000000 then 744183
+when 156900000000 then 744185
+when 157100000000 then 744189
+when 159900000000 then 744193
+when 160000000000 then 744203
+when 160100000000 then 744205
+when 160500000000 then 744213
+when 162100000000 then 744215
+when 163100000000 then   744219
+when 163200000000 then   744221
+when 165900000000 then   744231
+when 166000000000 then   744233
+when 166100000000 then   744235
+when 170000000000 then   744243
+when 170100000000 then   744245
+when 170500000000 then   744251
+when 170600003110  then  744255
+when 170800000000 then   744261        
+when 171000003210 then   744267
+when 171000003220 then   744269
+when 175000000000 then   744297
+when 175100000000 then   744299
+when 175900000000 then   744315                                                
+   end as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS recurso
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS recursos,
+   JSON_QUERY(
+    (SELECT
+        '20' as percentual,
+        vl_orcado as valor,
+           JSON_QUERY(
+    (SELECT
+   '12252' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS deducao,
+   JSON_QUERY(
+    (SELECT
+  '20' as percentual,
+        vl_orcado as valor,
+           JSON_QUERY(
+    (SELECT
+   case cd_destinacaorecurso
 when 150000000000 then 744141
 when 150000150000 then 744143  
 when 150000250000 then 744145
@@ -287,12 +335,18 @@ when 175900000000 then   744315
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS recurso
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS recursos,
+) AS recursos
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS deducoes,
 vl_orcado as metaFinanceira
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS content
 from CONTFICHARECEITA
 where cd_ReceitaPrevisaoTipo = 1
+and vl_orcado > 0
+
+
+
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -302,6 +356,8 @@ where cd_ReceitaPrevisaoTipo = 1
 
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
+
+            console.log(content);
         
             return {
                 idIntegracao: record.idIntegracao.toString(),
@@ -322,8 +378,8 @@ where cd_ReceitaPrevisaoTipo = 1
                     },
                     recursos: [
                         {
-                            percentual: parseInt(content.recursos.percentual),
-                            valor: content.recursos.valor,
+                            percentual: parseInt(content.deducoes.percentual),
+                            valor: content.deducoes.valor,
                             recurso: {
                                 id: content.recursos.recurso.id
                             }

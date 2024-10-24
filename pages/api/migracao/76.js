@@ -46,168 +46,141 @@ async function main() {
             select
 JSON_QUERY(
 (SELECT
-   case TB.ds_tipobem
-when        'APARELHOS DE MEDIÇÃO E ORIENTAÇÃO'        then        5243
-when        'APARELHOS E EQUIPAMENTO DE COMUNICAÇÃO'        then        5244
-when        'APARELHOS EQUI. E UTEN. MED. ODON. LOBO. E HOSP.'        then        5245
-when        'EQUIPAMENTO DE PROTEÇÃO'        then        5246
-when        'APARELHOS E EQUIPAMENTOS PARA ESPORTES E DIVERSOS'        then        5247
-when        'APARELHOS E UTENSILIOS DOMESTICOS'        then        5248
-when        'COLEÇÃO E MATERIAIS BIBLIOGRAFICOS'        then        5249
-when        'MAQUINAS E EQUIPAMENTOS ENERGETICOS'        then        5250
-when        'MAQUINAS E EQUIPAMENTOS GRAFICOS'        then        5251
-when        'EQUIPAMENTO PARA AUDIO'        then        5252
-when        'MAQUINAS UTENSILIOS E EQUIPAMENTOS DIVERSOS'        then        5253
-when        'EQUIPAMENTO DE PROCESSAMENTO DE DADOS '        then        5254
-when        'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO'        then        5255
-when        'MAQUINAS FERRAMENTAS E UTENSILIOS DE OFICINA'        then        5256
-when        'EQUIPAMENTO E UTENSILIO HIDRAULICO E ELETRICO'        then        5257
-when        'MAQUINAS E EQUIPAMENTO AGRICOLAS E RODOVIARIOS  '        then        5258
-when        'MOBILIARIA EM GERAL'        then        5259
-when        'VEICULO DE TRAÇÃO MECANICA'        then        5260
-when        'BANDEIRAS'        then        5261
-when        'EDIFICIOS'        then        5262
-when        'TERRENOS/GLEBAS'        then        5263
-when        'OBRAS EM ANDAMENTO'        then        5264
-when        'APAR. DE MEDICAO E ORIENTAÇÃO'        then        5265
-when        'APAR. E EQUIP. DE COMUNICAÇÃO'        then        5266
-when        'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR'        then        5267
-when        'APAR. E EQUIP. P/ ESPORTES E DIVERSOES'        then        5268
-when        'APAR. E UTENS. DOMESTICOS'        then        5269
-when        'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS'        then        5270
-when        'EQUIP. DE MANOBRA E PATRULHAMENTO'        then        5271
-when        'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO'        then        5272
-when        'INSTRUMENTOS MUSICAIS E ARTISTICOS'        then        5273
-when        'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL'        then        5274
-when        'MAQ. E EQUIP. ENERGETICOS'        then        5275
-when        'MAQ. E EQUIP. GRAFICOS'        then        5276
-when        'EQUIP. P/ AUDIO VIDEO E FOTO'        then        5277
-when        'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS'        then        5278
-when        'EQUIP. DE PROCESSAMENTO DE DADOS'        then        5279
-when        'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO'        then        5280
-when        'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA'        then        5281
-when        'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS'        then        5282
-when        'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS'        then        5283
-when        'MOBILIARIO EM GERAL'        then        5284
-when        'VEICULOS DIVERSOS'        then        5285
-when        'VEICULOS DE TRAÇÃO MECANICA'        then        5286
-when        'ACESSORIOS PARA AUTOMOVEIS'        then        5287
-when        'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO'        then        5288
-when        'OUTROS MATERIAIS PERMANENTES'        then        5289
-when        'EDIFICIOS - REALIZAÇÃO DE OBRAS'        then        5290
-when        'TERRENOS'        then        5291
-when        'INSTALAÇÕES'        then        5292
-when        'CASAS E APARTAMENTOS'        then        5293
-when        'RUAS'        then        5294
-when        'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN'        then        5295
-when        'ESTUDOS E PROJETOS'        then        5296
-when        'PREÇAS'        then        5297
-when        'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS'        then        5298
-when        'ESTRADAS'        then        5299
-when        'OUTRAS OBRAS E INSTALAÇÕES'        then        5300
-when        'PONTES'        then        5301
-when        'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA'        then        5302
-when        'SISTEMA DE ABASECIMENTO DE ENERGIA'        then        5303
-when        'OUTROS BENS DE USO COMUM DO POVO'        then        5304
-when        'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO'        then        5305
-when        'TERRENOS PUBLICOS'        then        5306
- end as id
+        CASE TB.ds_tipobem
+      WHEN 'ACESSORIOS PARA AUTOMOVEIS' THEN '5491'
+      WHEN 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' THEN '5492'
+      WHEN 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' THEN '5492'
+      WHEN 'APAR. DE MEDICAO E ORIENTAÇÃO' THEN '5491'
+      WHEN 'APAR. E EQUIP. DE COMUNICAÇÃO' THEN '5491'
+      WHEN 'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR' THEN '5491'
+      WHEN 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' THEN '5491'
+      WHEN 'APAR. E UTENS. DOMESTICOS' THEN '5491'
+      WHEN 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' THEN '5492'
+      WHEN 'CASAS E APARTAMENTOS' THEN '5492'
+      WHEN 'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS' THEN '5491'
+      WHEN 'EDIFICIOS - REALIZAÇÃO DE OBRAS' THEN '5492'
+      WHEN 'EQUIP. DE MANOBRA E PATRULHAMENTO' THEN '5491'
+      WHEN 'EQUIP. DE PROCESSAMENTO DE DADOS' THEN '5491'
+      WHEN 'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO' THEN '5491'
+      WHEN 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' THEN '5491'
+      WHEN 'EQUIP. P/ AUDIO VIDEO E FOTO' THEN '5491'
+      WHEN 'ESTRADAS' THEN '5492'
+      WHEN 'ESTUDOS E PROJETOS' THEN '5492'
+      WHEN 'INSTALAÇÕES' THEN '5492'
+      WHEN 'INSTRUMENTOS MUSICAIS E ARTISTICOS' THEN '5491'
+      WHEN 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' THEN '5491'
+      WHEN 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' THEN '5491'
+      WHEN 'MAQ. E EQUIP. ENERGETICOS' THEN '5491'
+      WHEN 'MAQ. E EQUIP. GRAFICOS' THEN '5491'
+      WHEN 'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA' THEN '5491'
+      WHEN 'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' THEN '5491'
+      WHEN 'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS' THEN '5491'
+      WHEN 'MOBILIARIO EM GERAL' THEN '5491'
+      WHEN 'OBRAS EM ANDAMENTO' THEN '5492'
+      WHEN 'OUTRAS OBRAS E INSTALAÇÕES' THEN '5492'
+      WHEN 'OUTROS BENS DE USO COMUM DO POVO' THEN '5492'
+      WHEN 'OUTROS MATERIAIS PERMANENTES' THEN '5491'
+      WHEN 'PONTES' THEN '5492'
+      WHEN 'PRAÇAS' THEN '5492'
+      WHEN 'RUAS' THEN '5492'
+      WHEN 'SISTEMA DE ABASECIMENTO DE ENERGIA' THEN '5492'
+      WHEN 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' THEN '5492'
+      WHEN 'TERRENOS' THEN '5492'
+      WHEN 'TERRENOS PUBLICOS' THEN '5492'
+      WHEN 'VEICULOS DE TRAÇÃO MECANICA' THEN '5491'
+      WHEN 'VEICULOS DIVERSOS' THEN '5491'
+    END AS id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS tipoBem,
 JSON_QUERY( 
-(SELECT
- case TB.ds_tipobem
- when        'APAR. DE MEDICAO E ORIENTAÇÃO'        then        46492
-when        'APAR. E EQUIP. DE COMUNICAÇÃO'        then        46493
-when        'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR'        then        46494
-when        'APAR. E EQUIP. P/ ESPORTES E DIVERSOES'        then        46495
-when        'APAR. E UTENS. DOMESTICOS'        then        46496
-when        'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS'        then        46497
-when        'EQUIP. DE MANOBRA E PATRULHAMENTO'        then        46498
-when        'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO'        then        46499
-when        'INSTRUMENTOS MUSICAIS E ARTISTICOS'        then        46500
-when        'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL'        then        46501
-when        'MAQ. E EQUIP. ENERGETICOS'        then        46502
-when        'MAQ. E EQUIP. GRAFICOS'        then        46503
-when        'EQUIP. P/ AUDIO VIDEO E FOTO'        then        46504
-when        'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS'        then        46505
-when        'EQUIP. DE PROCESSAMENTO DE DADOS'        then        46506
-when        'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO'        then        46507
-when        'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA'        then        46508
-when        'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS'        then        46509
-when        'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS'        then        46510
-when        'MOBILIARIO EM GERAL'        then        46511
-when        'VEICULOS DIVERSOS'        then        46512
-when        'VEICULOS DE TRAÇÃO MECANICA'        then        46513
-when        'ACESSORIOS PARA AUTOMOVEIS'        then        46514
-when        'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO'        then        46515
-when        'OUTROS MATERIAIS PERMANENTES'        then        46516
-when        'EDIFICIOS - REALIZAÇÃO DE OBRAS'        then        46517
-when        'TERRENOS'        then        46518
-when        'INSTALAÇÕES'        then        46519
-when        'CASAS E APARTAMENTOS'        then        46520
-when        'RUAS'        then        46521
-when        'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN'        then        46522
-when        'ESTUDOS E PROJETOS'        then        46523
-when        'OBRAS EM ANDAMENTO'        then        46524
-when        'PREÇAS'        then        46525
-when        'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS'        then        46526
-when        'ESTRADAS'        then        46527
-when        'OUTRAS OBRAS E INSTALAÇÕES'        then        46528
-when        'PONTES'        then        46529
-when        'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA'        then        46530
-when        'SISTEMA DE ABASECIMENTO DE ENERGIA'        then        46531
-when        'OUTROS BENS DE USO COMUM DO POVO'        then        46532
-when        'TERRENOS PUBLICOS'        then        46533
- end as id   -- criar um geral
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS grupoBem, 
+  (SELECT
+    CASE TB.ds_tipobem
+      WHEN 'ACESSORIOS PARA AUTOMOVEIS' THEN 48213
+      WHEN 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' THEN 48220
+      WHEN 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' THEN 48231
+      WHEN 'APAR. DE MEDICAO E ORIENTAÇÃO' THEN 48131
+      WHEN 'APAR. E EQUIP. DE COMUNICAÇÃO' THEN 48132
+      WHEN 'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR' THEN 48169
+      WHEN 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' THEN 48194
+      WHEN 'APAR. E UTENS. DOMESTICOS' THEN 48195
+      WHEN 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' THEN 48224
+      WHEN 'CASAS E APARTAMENTOS' THEN 48218
+      WHEN 'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS' THEN 48196
+      WHEN 'EDIFICIOS - REALIZAÇÃO DE OBRAS' THEN 48215
+      WHEN 'EQUIP. DE MANOBRA E PATRULHAMENTO' THEN 48197
+      WHEN 'EQUIP. DE PROCESSAMENTO DE DADOS' THEN 48205
+      WHEN 'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO' THEN 48198
+      WHEN 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' THEN 48208
+      WHEN 'EQUIP. P/ AUDIO VIDEO E FOTO' THEN 48203
+      WHEN 'ESTRADAS' THEN 48225
+      WHEN 'ESTUDOS E PROJETOS' THEN 48221
+      WHEN 'INSTALAÇÕES' THEN 48217
+      WHEN 'INSTRUMENTOS MUSICAIS E ARTISTICOS' THEN 48199
+      WHEN 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' THEN 48209
+      WHEN 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' THEN 48200
+      WHEN 'MAQ. E EQUIP. ENERGETICOS' THEN 48201
+      WHEN 'MAQ. E EQUIP. GRAFICOS' THEN 48202
+      WHEN 'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA' THEN 48207
+      WHEN 'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' THEN 48206
+      WHEN 'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS' THEN 48204
+      WHEN 'MOBILIARIO EM GERAL' THEN 48210
+      WHEN 'OBRAS EM ANDAMENTO' THEN 48222
+      WHEN 'OUTRAS OBRAS E INSTALAÇÕES' THEN 48226
+      WHEN 'OUTROS BENS DE USO COMUM DO POVO' THEN 48230
+      WHEN 'OUTROS MATERIAIS PERMANENTES' THEN 48214
+      WHEN 'PONTES' THEN 48227
+      WHEN 'PRAÇAS' THEN 48223
+      WHEN 'RUAS' THEN 48219
+      WHEN 'SISTEMA DE ABASECIMENTO DE ENERGIA' THEN 48229
+      WHEN 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' THEN 48228
+      WHEN 'TERRENOS' THEN 48216
+      WHEN 'TERRENOS PUBLICOS' THEN 48232
+      WHEN 'VEICULOS DE TRAÇÃO MECANICA' THEN 48212
+      WHEN 'VEICULOS DIVERSOS' THEN 48211
+    END AS id
+  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS grupoBem,
 JSON_QUERY((SELECT
  case bp.cd_tipobem
-  when        104        then                505162
-when        106        then                505163
-when        108        then                505164
-when        110        then                505165
-when        112        then                505166
-when        118        then                505167
-when        122        then                505168
-when        124        then                505169
-when        126        then                505170
-when        128        then                505171
-when        130        then                505172
-when        132        then                505173
-when        133        then                505174
-when        134        then                505175
-when        135        then                505176
-when        136        then                505177
-when        138        then                505178
-when        139        then                505179
-when        140        then                505180
-when        142        then                505181
-when        148        then                505182
-when        152        then                505183
-when        199        then                505184
-when        201        then                505185
-when        202        then                505186
-when        203        then                505187
-when        206        then                505188
-when        208        then                505189
-when        211        then                505190
-when        212        then                505191
-when        213        then                505192
-when        216        then                505193
-when        217        then                505193
-when        2003        then        505194
+when        104        then                519140
+when        106        then                519141
+when        108        then                519143
+when        110        then                519142
+when        112        then                519144
+when        118        then                519147
+when        122        then                519149
+when        124        then                519150
+when        126        then                519157
+when        128        then                519159
+when        130        then                519160
+when        132        then                519161
+when        133        then                519153
+when        134        then                519164
+when        135        then                519150
+when        136        then                519178
+when        138        then                519162
+when        139        then                519152
+when        140        then                519158
+when        142        then                519165
+when        148        then                519177
+when        152        then                519176
+when        157        then                519137
+when        199        then                519168
+when        201        then                519148
+when        202        then                519175
+when        203        then                519156
+when        206        then                519138
+when        208        then                519269
+when        211        then                519155
+when        212        then                519166
+when        213        then                519169
+when        216        then                519167
+when        217        then                519139
+when        2003        then        519175
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS especieBem, 
-JSON_QUERY( (SELECT
-case 
-when bp.cd_tipobem in (201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,2003) then 4082 
-  else null
-  end as id    --cadastrado
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS tipoUtilizacaoBem,
+) AS especieBem,
+null AS tipoUtilizacaoBem,
 JSON_QUERY( (SELECT
 case bp.cd_tipoaquisicao
 when 2 then 8072
@@ -397,10 +370,10 @@ JSON_QUERY( (SELECT
 ) AS tipoComprovante,
 JSON_QUERY( (SELECT
 case cd_EntidadeContabil
-when 1 then 2076732
-when 2 then 2076743
-when 3 then 2076746
-when 4 then 2087643
+when 1 then 2134007
+when 2 then 2144353
+when 3 then 2144356
+when 4 then 2134004
 end  as id  -- cd_entidade contabil
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS organograma,
@@ -451,12 +424,12 @@ JSON_QUERY(
     (SELECT
 JSON_QUERY(
     (SELECT
-	'1983' as id
+        '1983' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS metodoDepreciacao,
 JSON_QUERY(
     (SELECT
-	'8' as id
+        '8' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS moeda,
 bp.vl_aquisicao as vlAquisicao,
@@ -465,17 +438,20 @@ vl_depreciar as  vlDepreciavel,
 '0' as vlDepreciado, --  select * from PAtrmovimentacao  cd_tipomovimento = 12
 vl_saldodepreciar as saldoDepreciar,
 bp.vl_atual as vlLiquidoContabil,
-tb.pc_residual as taxaDepreciacaoAnual,
+CASE 
+    WHEN COALESCE(tb.pc_residual, 0) = 0 THEN 1 
+    ELSE tb.pc_residual 
+END AS taxaDepreciacaoAnual,
 BP.dt_aquisicao as dtInicioDepreciacao,
 bp.vl_residual as vlResidual
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS bemValor
 from PATRBensPatrimoniais BP
 left  join PATRVeiculo V ON V.nr_Chapa = BP.nr_chapa
-join PATRTiposBens TB ON TB.cd_tipobem = bp.cd_tipobem
+left join PATRTiposBens TB ON TB.cd_tipobem = bp.cd_tipobem
 left JOIN COMPFornecedores F ON F.cd_fornecedor = BP.cd_fornecedor
 --join PAtrmovimentacao m on m.nr_chapa = BP.nr_chapa
-where BP.cd_situacao = 1 and bp.dt_aquisicao >= ('2024-01-01 00:00:00') and tb.pc_residual is not null
+where BP.cd_situacao = 1 and bp.dt_aquisicao >= ('2024-01-01 00:00:00') and cd_EntidadeContabil = 1
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -494,7 +470,7 @@ where BP.cd_situacao = 1 and bp.dt_aquisicao >= ('2024-01-01 00:00:00') and tb.p
             return {
                 conteudo: {
                     tipoBem: {
-                        id: record.tipoBem ? JSON.parse(record.tipoBem).id : 0
+                        id: record.tipoBem ? parseInt(JSON.parse(record.tipoBem).id, 10) : 0
                     },
                     grupoBem: {
                         id: record.grupoBem ? JSON.parse(record.grupoBem).id : 0
@@ -502,9 +478,9 @@ where BP.cd_situacao = 1 and bp.dt_aquisicao >= ('2024-01-01 00:00:00') and tb.p
                     especieBem: {
                         id: record.especieBem ? JSON.parse(record.especieBem).id : 0
                     },
-                    tipoUtilizacaoBem: 
-                        record.tipoUtilizacaoBem ? parseInt(JSON.parse(record.tipoUtilizacaoBem).id, 10) : isNonNullChain
-                    ,
+                    tipoUtilizacaoBem: {
+                        id:record.tipoUtilizacaoBem ? parseInt(JSON.parse(record.tipoUtilizacaoBem).id, 10) : isNonNullChain
+                    },
                     tipoAquisicao: {
                         id: record.tipoAquisicao ? JSON.parse(record.tipoAquisicao).id : 0
                     },
@@ -560,9 +536,14 @@ where BP.cd_situacao = 1 and bp.dt_aquisicao >= ('2024-01-01 00:00:00') and tb.p
         });
 
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
+
 
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {

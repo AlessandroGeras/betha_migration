@@ -57,7 +57,99 @@ async function main() {
 cd_Evento as idIntegracao,
 JSON_QUERY(
 (SELECT
-cd_evento as codigo,
+ case cd_evento 
+when	8	then	314
+when	9	then	315
+when	14	then	316
+when	15	then	317
+when	16	then	318
+when	17	then	319
+when	18	then	320
+when	19	then	321
+when	20	then	322
+when	22	then	323
+when	23	then	324
+when	24	then	325
+when	25	then	326
+when	29	then	327
+when	34	then	328
+when	35	then	329
+when	38	then	330
+when	40	then	331
+when	41	then	332
+when	43	then	333
+when	44	then	334
+when	45	then	335
+when	46	then	336
+when	47	then	337
+when	48	then	338
+when	49	then	339
+when	50	then	340
+when	52	then	341
+when	54	then	342
+when	55	then	343
+when	56	then	344
+when	57	then	345
+when	60	then	346
+when	61	then	347
+when	63	then	348
+when	64	then	349
+when	65	then	350
+when	66	then	351
+when	68	then	352
+when	70	then	353
+when	71	then	354
+when	72	then	355
+when	76	then	356
+when	77	then	357
+when	78	then	358
+when	79	then	359
+when	80	then	360
+when	81	then	361
+when	82	then	362
+when	83	then	363
+when	84	then	364
+when	85	then	365
+when	86	then	366
+when	87	then	367
+when	88	then	368
+when	89	then	369
+when	92	then	370
+when	94	then	371
+when	96	then	372
+when	97	then	373
+when	99	then	374
+when	107	then	375
+when	108	then	376
+when	109	then	377
+when	113	then	378
+when	114	then	379
+when	351	then	380
+when	360	then	381
+when	466	then	382
+when	481	then	383
+when	482	then	384
+when	483	then	385
+when	484	then	386
+when	500	then	387
+when	509	then	388
+when	523	then	389
+when	526	then	391
+when	527	then	392
+when	531	then	394
+when	532	then	395
+when	533	then	396
+when	534	then	397
+when	535	then	398
+when	540	then	402
+when	541	then	403
+when	543	then	405
+when	554	then	407
+when	599	then	408
+when	902	then	410
+when	903	then	411
+when	953	then	412
+ end as codigo,
 ds_Evento as descricao,
 dt_ESValidadeInicio as inicioVigencia,
 CASE fl_tpevento
@@ -145,9 +237,7 @@ CASE fl_TpCalculo
 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS conteudo
 from FOLHEvento
-WHERE cd_Evento IN (
-1, 5, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 102, 103, 104, 106, 107, 110, 112, 113, 114, 115, 250, 300, 310, 315, 351, 360, 399, 400, 401, 402, 453, 454, 455, 456, 457, 461, 462, 466, 467, 481, 482, 483, 484, 499, 500, 501, 502, 504, 506, 507, 509, 510, 511, 512, 513, 514, 517, 518, 521, 522, 523, 524, 526, 527, 529, 530, 531, 532, 533, 534, 535, 536, 537, 539, 540, 541, 542, 543, 544, 554, 599, 601, 602, 603, 605, 672, 703, 900, 901, 902, 903, 951, 952, 953
-, 954
+WHERE cd_Evento IN (8,9,14,15,16,17,18,19,20,22,23,24,25,29,34,35,38,40,41,43,44,45,46,47,48,49,50,52,54,55,56,57,60,61,63,64,65,66,68,70,71,72,76,77,78,79,80,81,82,83,84,85,86,87,88,89,92,94,96,97,99,107,108,109,113,114,351,360,466,481,482,483,484,500,509,523,524,526,527,529,531,532,533,534,535,536,537,539,540,541,542,543,544,554,599,605,902,903,953,954
 )
         `;
 
@@ -222,6 +312,7 @@ WHERE cd_Evento IN (
         console.log('Dados salvos em log_envio.json');
 
         // Enviar cada registro individualmente para a rota desejada
+        /*
         for (const record of transformedData) {
             const response = await fetch('https://pessoal.betha.cloud/service-layer/v1/api/configuracao-evento', {
                 method: 'POST',
@@ -238,6 +329,7 @@ WHERE cd_Evento IN (
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
         }
+            */
 
     } catch (error) {
         console.error('Erro durante a execução do programa:', error);

@@ -65,7 +65,7 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-ROW_NUMBER() OVER (ORDER BY nr_sequencia) AS id,
+ nr_docto AS id,
 JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 4832
                         WHEN cd_almoxa = 20200 THEN 4877
                         WHEN cd_almoxa = 20300 THEN 4878
@@ -78,7 +78,10 @@ JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 4832
                         WHEN cd_almoxa = 21000 THEN 4885
                         WHEN cd_almoxa = 1 THEN 4830
                    END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
-JSON_QUERY((SELECT '2076732' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
+JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20700  THEN 2076743
+                        WHEN cd_almoxa = 20400  THEN 2076746
+                                                else 2076732
+                                                 END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
 JSON_QUERY((SELECT '11094' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER )) AS naturezaMovimentacao,
 JSON_QUERY((SELECT case when fr.nm_fornecedor = 'CARTORIO BRETAS' then 36006604
 when fr.nm_fornecedor = 'RONDONIA OXIGENIO LTDA' then 36067959
@@ -901,15 +904,13 @@ when fr.nm_fornecedor = 'LANG CONSTRUTORA LTDA'        then        36566367
 end as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS fornecedor,
 dt_movimento as dataCadastro,
 nr_docto as numeroComprovante,
-vl_movimento as valorEntrada,
-pr.ds_produto as objeto,
-pr.ds_reduzida as observacao,
+sum (vl_movimento) as valorEntrada,
 JSON_QUERY((SELECT 36134397 as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS responsavel
 FROM ALMOMovimentacao al
 JOIN COMPFornecedores fr ON al.cd_fornecedor = fr.cd_fornecedor
 join ALMOProdutos pr on al.cd_produto = pr.cd_produto
-WHERE al.sg_direcao = 'CD' and al.aa_movimento = '2024' and qt_movimento > 0
-ORDER BY al.cd_almoxa, al.aa_movimento, al.nr_sequencia ASC
+WHERE al.sg_direcao = 'CD' and al.aa_movimento = '2024' and qt_movimento > 0 and al.fl_devolucao is null
+group by nr_docto,fr.nm_fornecedor, dt_movimento,cd_almoxa
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -932,8 +933,8 @@ ORDER BY al.cd_almoxa, al.aa_movimento, al.nr_sequencia ASC
                     dataCadastro: formatDate(record.dataCadastro),
                     numeroComprovante: record.numeroComprovante ? record.numeroComprovante.toString() : null,
                     valorEntrada: record.valorEntrada ? record.valorEntrada : null,
-                    observacao: record.observacao ? record.observacao : null,
-                    objeto: record.objeto ? record.objeto : null,
+                    //observacao: record.observacao ? record.observacao : null,
+                    //objeto: record.objeto ? record.objeto : null,
                     almoxarifado: {
                         id:almoxarifadoId
                     },

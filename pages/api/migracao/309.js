@@ -48,6 +48,8 @@ JSON_QUERY(
    (SELECT
 cd_Servico as iListasServicos,
 vl_Aliquota as aliquota,
+ds_Servico as descricao,
+cd_Servico as itemLista,
 null as dtAdesao
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS listasServicosEntidades
@@ -65,20 +67,24 @@ where cd_Exercicio = 2024
             return {
                 idIntegracao: record.idIntegracao,
                 listasservicos: {
-                    codigo: conteudo.iListasServicos,
-                    descricao: conteudo.aliquota,
-                    listaServicoLei:conteudo.listaServicoLei,
+                    //codigo: conteudo.iListasServicos,
+                    descricao: conteudo.descricao,
+                    itemLista:conteudo.itemLista,
                 }
             };
         });
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
         // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
-            const response = await fetch('https://iss.betha.cloud/service-layer-arrecadacao/api/listasservicos', {
+        /* for (const record of transformedData) {
+            const response = await fetch('https://tributos.betha.cloud/service-layer-tributos/api/listasservicos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +98,7 @@ where cd_Exercicio = 2024
             } else {
                 console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
             }
-        }
+        } */
 
     } catch (error) {
         // Lidar com erros de conexão ou consulta aqui

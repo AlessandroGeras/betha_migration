@@ -880,7 +880,7 @@ where o.cd_Observ = 1 or o.cd_Observ is null
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
             const response = await fetch('https://tributos.betha.cloud/service-layer-tributos/api/imoveis', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
