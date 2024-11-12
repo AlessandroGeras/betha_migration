@@ -2289,12 +2289,13 @@ al.vl_total as valorTotal,
 al.qt_disponivel as quantidade,
 'false' as amostra,
 'false' as manufaturado,
-ROW_NUMBER() OVER (PARTITION BY lici.nr_licitacao ORDER BY al.nr_sequencia) AS numero
+ROW_NUMBER() OVER (PARTITION BY lici.nr_processo ORDER BY al.nr_sequencia) AS numero
 FROM COMPLicitacaoFornecedoresItens al
 JOIN ALMOProdutos pr ON AL.cd_produto = pr.cd_produto
 JOIN COMPLicitacao lici ON lici.nr_licitacao = al.nr_licitacao
-WHERE al.aa_licitacao = 2024 and lici.nr_processo in (1240, 1566, 399, 475, 1194, 1123, 629)
+WHERE al.aa_licitacao = 2024 and lici.nr_processo in 1566
 order by material;
+
 
 
 

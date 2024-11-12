@@ -1,324 +1,1752 @@
 [
   {
-    "idIntegracao": 1043,
-    "conteudo": {
-      "data": "2023-10-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33489976
+    "idIntegracao": "4557",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-05",
+      "numeroDocumento": "4557",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 11905,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11905,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 11905
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 1051,
-    "conteudo": {
-      "data": "2024-02-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33489978
+    "idIntegracao": "4579",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-07",
+      "numeroDocumento": "4579",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42708
+      "valor": 7503.94,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7503.94,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7503.94
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 1052,
-    "conteudo": {
-      "data": "2024-01-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33489979
+    "idIntegracao": "3630",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3630",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42708
+      "valor": 2157.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2157.54,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 2157.54
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 1053,
-    "conteudo": {
-      "data": "2023-09-12T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653243
+    "idIntegracao": "3676",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-02",
+      "numeroDocumento": "3676",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42708
+      "valor": 12378.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12378.05,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12378.05
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 1056,
-    "conteudo": {
-      "data": "2023-04-30T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33482988
+    "idIntegracao": "3677",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-02",
+      "numeroDocumento": "3677",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 7014.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7014.7,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7014.7
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 1067,
-    "conteudo": {
-      "data": "2023-09-08T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33489983
+    "idIntegracao": "2019",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2019",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42708
+      "valor": 7048.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7048.19,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7048.19
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 1071,
-    "conteudo": {
-      "data": "2024-03-15T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33489985
+    "idIntegracao": "1986",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-29",
+      "numeroDocumento": "1986",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42708
+      "valor": 11946.45,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11946.45,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 11946.45
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2134",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2134",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2165.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2165.27,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 2165.27
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2897",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2897",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2155.06,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2155.06,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 2155.06
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2729",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-28",
+      "numeroDocumento": "2729",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 12117.53,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12117.53,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12117.53
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2800",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-29",
+      "numeroDocumento": "2800",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 7296.49,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7296.49,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7296.49
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "253",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "253",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1995.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1995.77,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 1995.77
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "177",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "177",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 12856.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12856.26,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12856.26
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "178",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "178",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 7140.36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7140.36,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7140.36
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "843",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "843",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1742.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1742.77,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 1742.77
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "731",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-27",
+      "numeroDocumento": "731",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 12041.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12041.21,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12041.21
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1436",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-28",
+      "numeroDocumento": "1436",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 7224.8,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7224.8,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7224.8
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1347",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1347",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 12002.66,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12002.66,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12002.66
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1459",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1459",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1019.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1019.09,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 1019.09
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1460",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1460",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 900,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESPÓSITO BANCÁRIO DA FEP",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 900,
+          "lancada": false,
+          "receita": {
+            "id": 710353
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774286
+              },
+              "valor": 900
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "748",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "748",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 6881.47,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FUNDO ESPECIAL DO PETRÓLEO - FEP - P",
+      "contaBancaria": {
+        "id": 187636
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6881.47,
+          "lancada": false,
+          "receita": {
+            "id": 707072
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 6881.47
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2898",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2898",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 9.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9.75,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 9.75
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2258",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-06",
+      "numeroDocumento": "2258",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1567.11,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RESTITUIÇÃO  DE DEVOLUÇÃO DE SALDO CONVÊNIO  PAGO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1567.11,
+          "lancada": false,
+          "receita": {
+            "id": 710387
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1567.11
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2259",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-06",
+      "numeroDocumento": "2259",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 4.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.32,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 4.32
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2260",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-06",
+      "numeroDocumento": "2260",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 10.38,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10.38,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 10.38
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3631",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3631",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 9.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9.29,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 9.29
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4402",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4402",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 10.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10.71,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 10.71
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "5410",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5410",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 10.35,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10.35,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 10.35
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "6050",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6050",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 9.98,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187883
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9.98,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 9.98
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "6051",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6051",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23.76,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23.76,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 23.76
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "5411",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5411",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 24.62,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24.62,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 24.62
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4403",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4403",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 25.48,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 25.48,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 25.48
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3632",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3632",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 22.11,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 22.11,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 22.11
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2135",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2135",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 24.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24.71,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 24.71
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2899",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2899",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23.2,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 23.2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1461",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1461",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23.25,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 23.25
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "844",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "844",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 22.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 22.43,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 22.43
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "254",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "254",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 27.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187646
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 27.09,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 27.09
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "373",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "373",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 669.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT ADIR IGNÁCIO LIMA  INSC. CERT. DEC. TCE-RO P",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 669.26,
+          "lancada": false,
+          "receita": {
+            "id": 710363
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 669.26
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "374",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "374",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1958.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE LICENCA P/ FUNCIONAMENTO DE ESTABELECIMENT",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1958.64,
+          "lancada": false,
+          "receita": {
+            "id": 707124
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1958.64
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "375",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "375",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 318.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT- ADIR IGNÁCIO LIMA - MULTA -  INSC. CERT. DE",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 318.58,
+          "lancada": false,
+          "receita": {
+            "id": 710379
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 318.58
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "376",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "376",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1125,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1125,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1125
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "377",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "377",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 261.3,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE LICENCA P/ FUNCIONAMENTO DE ESTABELECIMENT",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 261.3,
+          "lancada": false,
+          "receita": {
+            "id": 707124
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 261.3
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "378",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "378",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 468.55,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE FISCALIZAÇÃO DE VIGILÂNCIA SANITÁRIA - PRI",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 468.55,
+          "lancada": false,
+          "receita": {
+            "id": 707044
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 468.55
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "379",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "379",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 67.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 67.5,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 67.5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "380",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "380",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 12.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12.29,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12.29
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "381",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "381",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 216.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 216.29,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 216.29
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "382",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "382",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 117.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 117.39,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 117.39
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "383",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "383",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 516.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 516.64,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 516.64
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "329",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "329",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 7.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7.05,
+          "lancada": false,
+          "receita": {
+            "id": 707028
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7.05
+            }
+          ]
+        }
+      ]
     }
   }
 ]

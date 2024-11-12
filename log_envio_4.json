@@ -1,3152 +1,1752 @@
 [
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1772",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1772",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 360.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 227,
-      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
-      "dataInclusao": "2014-05-06",
-      "dataAquisicao": "2014-05-06",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2014-05-06",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "227",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 765,
-        "vlAquisicaoConvertido": 765,
-        "vlDepreciavel": 688.5,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 688.5,
-        "vlLiquidoContabil": 765,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2014-05-06",
-        "vlResidual": 76.5,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 360.89,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 360.89
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1773",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1773",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 1462.38,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 228,
-      "descricao": "ROTEADOR PARA REDE INTERNA DE MICROCOMPUTADORES",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "228",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 509,
-        "vlAquisicaoConvertido": 509,
-        "vlDepreciavel": 427.56,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 427.56,
-        "vlLiquidoContabil": 509,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 81.44,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1462.38,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1462.38
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1774",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1774",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 1652.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 229,
-      "descricao": "NOBREAK PDV G II 2200VA + MOD, 2 BATERIA EXT. 45 AH-NHS",
-      "dataInclusao": "2014-12-01",
-      "dataAquisicao": "2014-12-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2014-12-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "229",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 2799,
-        "vlAquisicaoConvertido": 2799,
-        "vlDepreciavel": 2239.2,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2239.2,
-        "vlLiquidoContabil": 2799,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2014-12-01",
-        "vlResidual": 559.8,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1652.57,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1652.57
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1775",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1775",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 56.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 230,
-      "descricao": "Aquisição de 02(Dois) microcomputadores, tendo processador CORE 15 GHZ, Placa Mãe",
-      "dataInclusao": "2015-10-21",
-      "dataAquisicao": "2015-10-21",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2015-10-21",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "230",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 2776,
-        "vlAquisicaoConvertido": 2776,
-        "vlDepreciavel": 2331.84,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2331.84,
-        "vlLiquidoContabil": 2776,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2015-10-21",
-        "vlResidual": 444.16,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 56.27,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 56.27
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1776",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1776",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 559.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 231,
-      "descricao": "Aquisição de 02(Dois) microcomputadores, tendo processador CORE 15 GHZ, Placa Mãe",
-      "dataInclusao": "2015-10-21",
-      "dataAquisicao": "2015-10-21",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2015-10-21",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "231",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 2776,
-        "vlAquisicaoConvertido": 2776,
-        "vlDepreciavel": 2331.84,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2331.84,
-        "vlLiquidoContabil": 2776,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2015-10-21",
-        "vlResidual": 444.16,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 559.19,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 559.19
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1777",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1777",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51970
+      "valor": 10527.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541246
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 232,
-      "descricao": "BEBEDOURO DE COLUNA ESMALTEC BR ECG35B BRANCO 110V",
-      "dataInclusao": "2016-05-11",
-      "dataAquisicao": "2016-05-11",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2016-05-11",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "232",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 570,
-        "vlAquisicaoConvertido": 570,
-        "vlDepreciavel": 513,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 513,
-        "vlLiquidoContabil": 570,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2016-05-11",
-        "vlResidual": 57,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10527.03,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 10527.03
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1778",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1778",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 329.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT - INSC. DE CERT. DE DEC. TCE-RO Nº 0866/19,",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 233,
-      "descricao": "FECHADURA P/PORTA DE BLINDEX",
-      "dataInclusao": "2016-08-10",
-      "dataAquisicao": "2016-08-10",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2016-08-10",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "233",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 480,
-        "vlAquisicaoConvertido": 480,
-        "vlDepreciavel": 432,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 432,
-        "vlLiquidoContabil": 480,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2016-08-10",
-        "vlResidual": 48,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 329.54,
+          "lancada": false,
+          "receita": {
+            "id": 710369
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 329.54
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1779",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1779",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 670.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 234,
-      "descricao": "BATERIA EXTERNA ESTACIONARIA 12V 50AH COM AUTONOMIA MINIMA DE 03 A 04",
-      "dataInclusao": "2017-08-15",
-      "dataAquisicao": "2017-08-15",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2017-08-15",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "234",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 520,
-        "vlAquisicaoConvertido": 520,
-        "vlDepreciavel": 416,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 416,
-        "vlLiquidoContabil": 520,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2017-08-15",
-        "vlResidual": 104,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 670.88,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 670.88
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1780",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1780",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 283.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 235,
-      "descricao": "BATERIA EXTERNA ESTACIONARIA 12V 50AH COM AUTONOMIA MINIMA DE 03 A 04",
-      "dataInclusao": "2017-08-15",
-      "dataAquisicao": "2017-08-15",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2017-08-15",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "235",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 520,
-        "vlAquisicaoConvertido": 520,
-        "vlDepreciavel": 416,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 416,
-        "vlLiquidoContabil": 520,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2017-08-15",
-        "vlResidual": 104,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 283.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 283.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1782",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1782",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51953
+      "valor": 1008,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541257
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 236,
-      "descricao": "IMPRESSORA LASER MULTIFUNCIONAL BROTHER DCP L5652 DN COM GARANTIA DE",
-      "dataInclusao": "2017-12-19",
-      "dataAquisicao": "2017-12-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2017-12-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "236",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3500,
-        "vlAquisicaoConvertido": 3500,
-        "vlDepreciavel": 2800,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2800,
-        "vlLiquidoContabil": 3500,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2017-12-19",
-        "vlResidual": 700,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1008,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1008
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1784",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1784",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 475.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 237,
-      "descricao": "MESA MEDINDO 02 MTS X 50 CM X 76 CM DE ALTURA, FECHADA E NAS LATERAIS COM",
-      "dataInclusao": "2017-12-26",
-      "dataAquisicao": "2017-12-26",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2017-12-26",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "237",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 990,
-        "vlAquisicaoConvertido": 990,
-        "vlDepreciavel": 891,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 891,
-        "vlLiquidoContabil": 990,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2017-12-26",
-        "vlResidual": 99,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 475.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 475.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1786",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1786",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 20459.87,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 238,
-      "descricao": "MESA REDONDA COM TAMO DE MDF E CIRCUNFERENCIA DE 120 CM COM O PE DE 80",
-      "dataInclusao": "2017-12-26",
-      "dataAquisicao": "2017-12-26",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2017-12-26",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "238",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 490,
-        "vlAquisicaoConvertido": 490,
-        "vlDepreciavel": 441,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 441,
-        "vlLiquidoContabil": 490,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2017-12-26",
-        "vlResidual": 49,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 20459.87,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 20459.87
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1787",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1787",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 509.28,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 239,
-      "descricao": "ESCRIVANINHA DE CANTO MEDINDO 130 CM X 50 CM DE PROFUNDIDADE ALTURA 76",
-      "dataInclusao": "2017-12-26",
-      "dataAquisicao": "2017-12-26",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2017-12-26",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "239",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 980,
-        "vlAquisicaoConvertido": 980,
-        "vlDepreciavel": 882,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 882,
-        "vlLiquidoContabil": 980,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2017-12-26",
-        "vlResidual": 98,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 509.28,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 509.28
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1788",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1788",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 1739.99,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 240,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "240",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1739.99,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1739.99
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1789",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1789",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 259.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 241,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "241",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 259.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 259.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1790",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1790",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 2457.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 242,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "242",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2457.19,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2457.19
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1791",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1791",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 59.65,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 243,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "243",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 59.65,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 59.65
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1792",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1792",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 150.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR - RETIDO NA FONTE - OUTROS REND.- PESSOA FÍSICA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 244,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "244",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 150.4,
+          "lancada": false,
+          "receita": {
+            "id": 710356
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 150.4
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1793",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1793",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 259.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 245,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "245",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 259.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 259.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1794",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1794",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 2385.62,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 246,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "246",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2385.62,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2385.62
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1795",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1795",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 342,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 247,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "247",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 342,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 342
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1796",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1796",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 140.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 248,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "248",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 140.84,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 140.84
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1452",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1452",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 443.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 249,
-      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "249",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 200,
-        "vlAquisicaoConvertido": 200,
-        "vlDepreciavel": 180,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 180,
-        "vlLiquidoContabil": 200,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 20,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 443.31,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 443.31
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1507",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1507",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 1275.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 250,
-      "descricao": "HD 1TB SATA 3.5",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "250",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 349,
-        "vlAquisicaoConvertido": 349,
-        "vlDepreciavel": 293.16,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 293.16,
-        "vlLiquidoContabil": 349,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 55.84,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1275.2,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1275.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1508",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1508",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 1383.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 251,
-      "descricao": "DVR MHBX 1016 MULT HD 5 EM 1 DE 16 CANAIS",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "251",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 1000,
-        "vlAquisicaoConvertido": 1000,
-        "vlDepreciavel": 840,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 840,
-        "vlLiquidoContabil": 1000,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 160,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1383.41,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1383.41
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1509",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1509",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1920.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RESTITUIÇÕES DE VALORES.JUDICIAL Nº 00001367-90.20",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 252,
-      "descricao": "TENDA SOMBREAMENTO MEDINDO 11,45X5,00 METROS",
-      "dataInclusao": "2018-12-03",
-      "dataAquisicao": "2018-12-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "252",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 6250,
-        "vlAquisicaoConvertido": 6250,
-        "vlDepreciavel": 5625,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 5625,
-        "vlLiquidoContabil": 6250,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-03",
-        "vlResidual": 625,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1920.9,
+          "lancada": false,
+          "receita": {
+            "id": 710361
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1920.9
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1510",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1510",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 517.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 253,
-      "descricao": "APARELHO DE CELULAR.SMARTPHONE, TELA DE 5.6, 32GB, CÂMERA FOTOGRAFICA E",
-      "dataInclusao": "2018-12-24",
-      "dataAquisicao": "2018-12-24",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-24",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "253",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 999,
-        "vlAquisicaoConvertido": 999,
-        "vlDepreciavel": 879.12,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 879.12,
-        "vlLiquidoContabil": 999,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-24",
-        "vlResidual": 119.88,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 517.82,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 517.82
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1511",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1511",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 713.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 254,
-      "descricao": "MIXER LINE 16 CANAIS/USB/EFEITO DIG/PHANTOM POWER",
-      "dataInclusao": "2018-12-24",
-      "dataAquisicao": "2018-12-24",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-24",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "254",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 2000,
-        "vlAquisicaoConvertido": 2000,
-        "vlDepreciavel": 1680,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 1680,
-        "vlLiquidoContabil": 2000,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-24",
-        "vlResidual": 320,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 713.46,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 713.46
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1512",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1512",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51968
+      "valor": 67.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541243
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 255,
-      "descricao": "VEICULO MARCA FIAT MODELO UNO MILLE WAY ECON, ANO E MODELO 2013/2013",
-      "dataInclusao": "2018-12-28",
-      "dataAquisicao": "2018-12-28",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2018-12-28",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "255",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 24715.88,
-        "vlAquisicaoConvertido": 24715.88,
-        "vlDepreciavel": 22221.44,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 22221.44,
-        "vlLiquidoContabil": 24715.88,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2018-12-28",
-        "vlResidual": 2494.44,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 67.6,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 67.6
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1257",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1257",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 5896.33,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 256,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "256",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5896.33,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5896.33
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1258",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1258",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 1670.74,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 257,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "257",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1670.74,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1670.74
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1259",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1259",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 7152.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 258,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "258",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7152.59,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7152.59
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1260",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1260",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 759.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 259,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "259",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 759.5,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 759.5
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1261",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1261",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 360.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 260,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "260",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 360.89,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 360.89
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1262",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1262",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 360.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 261,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "261",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 360.89,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 360.89
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1263",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1263",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 510.02,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 262,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "262",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 510.02,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 510.02
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1264",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1264",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 263,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "263",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 36,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 36
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1265",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1265",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 18.94,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 264,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "264",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 18.94,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 18.94
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1266",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1266",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 1598.99,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 265,
-      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
-      "dataInclusao": "2019-03-14",
-      "dataAquisicao": "2019-03-14",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-03-14",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "265",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 460,
-        "vlAquisicaoConvertido": 460,
-        "vlDepreciavel": 404.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 404.8,
-        "vlLiquidoContabil": 460,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-03-14",
-        "vlResidual": 55.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1598.99,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1598.99
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1267",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1267",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1684.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 266,
-      "descricao": "MESA PROJETORA EM L 100% EM MATERIAL MDF NA COR BRANCO, A MESA POSSUI",
-      "dataInclusao": "2019-12-23",
-      "dataAquisicao": "2019-12-23",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-12-23",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "266",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 910,
-        "vlAquisicaoConvertido": 910,
-        "vlDepreciavel": 819,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 819,
-        "vlLiquidoContabil": 910,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-12-23",
-        "vlResidual": 91,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1684.2,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1684.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1268",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1268",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 600,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 267,
-      "descricao": "CADEIRA MODELO PRESIDENTE EM CORANO, COM ENCOSTO ALTO, COM PÉS",
-      "dataInclusao": "2019-12-23",
-      "dataAquisicao": "2019-12-23",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2019-12-23",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "267",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 860,
-        "vlAquisicaoConvertido": 860,
-        "vlDepreciavel": 774,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 774,
-        "vlLiquidoContabil": 860,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2019-12-23",
-        "vlResidual": 86,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 600,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 600
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1269",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1269",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 559.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 268,
-      "descricao": "RACK DE PISO 24U X 970 MM PADRÃO 19 COM PORTA DE ACRÍLICO ESTRUTURA",
-      "dataInclusao": "2020-08-24",
-      "dataAquisicao": "2020-08-24",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-08-24",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "268",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 2625,
-        "vlAquisicaoConvertido": 2625,
-        "vlDepreciavel": 2205,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2205,
-        "vlLiquidoContabil": 2625,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-08-24",
-        "vlResidual": 420,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 559.19,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 559.19
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1270",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1270",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51970
+      "valor": 9616.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541246
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 269,
-      "descricao": "LAVADORA DE ALTA PRESSÃO: TENSÃO 127/220V. POTÊNCIA: 1200W PRESSÃO (PIS).",
-      "dataInclusao": "2020-11-03",
-      "dataAquisicao": "2020-11-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-11-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "269",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 499,
-        "vlAquisicaoConvertido": 499,
-        "vlDepreciavel": 449.1,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 449.1,
-        "vlLiquidoContabil": 499,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-11-03",
-        "vlResidual": 49.9,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9616.31,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 9616.31
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1271",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1271",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 329.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT - INSC. DE CERT. DE DEC. TCE-RO Nº 0866/19,",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 270,
-      "descricao": "ESCADA. EM ALUMÍNIO, DOBRÁVEIS, ESTRUTURA EM TUBOS E CHAPAS DE ALUMÍNIO,",
-      "dataInclusao": "2020-11-03",
-      "dataAquisicao": "2020-11-03",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-11-03",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "270",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 229,
-        "vlAquisicaoConvertido": 229,
-        "vlDepreciavel": 206.1,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 206.1,
-        "vlLiquidoContabil": 229,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-11-03",
-        "vlResidual": 22.9,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 329.54,
+          "lancada": false,
+          "receita": {
+            "id": 710369
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 329.54
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1272",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1272",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 474.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 271,
-      "descricao": "AR 12 BTU. GÁS ECOLÓGICO R410A GÁS QUE NÃO AGRIDE A CAMADA DE OZÔNIO.",
-      "dataInclusao": "2020-11-18",
-      "dataAquisicao": "2020-11-18",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-11-18",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "271",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 1710,
-        "vlAquisicaoConvertido": 1710,
-        "vlDepreciavel": 1368,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 1368,
-        "vlLiquidoContabil": 1710,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-11-18",
-        "vlResidual": 342,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 474.88,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 474.88
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1273",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1273",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 1008,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 272,
-      "descricao": "SERVIDOR DE ALTA PERFORMACE; TRUSTEC PLATFORM MODULE (TPM): SEM",
-      "dataInclusao": "2020-10-13",
-      "dataAquisicao": "2020-10-13",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-10-13",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "272",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 13800,
-        "vlAquisicaoConvertido": 13800,
-        "vlDepreciavel": 11592,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 11592,
-        "vlLiquidoContabil": 13800,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-10-13",
-        "vlResidual": 2208,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1008,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1008
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1274",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1274",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 475.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 273,
-      "descricao": "MICROCOMPUTADOR CONTENDO: 1.1 PROCESSADOR: Nº DE NUCLEIOS: 4, Nº DE",
-      "dataInclusao": "2020-10-13",
-      "dataAquisicao": "2020-10-13",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-10-13",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "273",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3000,
-        "vlAquisicaoConvertido": 3000,
-        "vlDepreciavel": 2520,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2520,
-        "vlLiquidoContabil": 3000,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-10-13",
-        "vlResidual": 480,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 475.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 475.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1275",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1275",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 13378.86,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 274,
-      "descricao": "SERVIDOR DE ALTA PERFORMACE; TRUSTEC PLATFORM MODULE (TPM): SEM",
-      "dataInclusao": "2020-12-31",
-      "dataAquisicao": "2020-12-31",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-12-31",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "274",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 9000,
-        "vlAquisicaoConvertido": 9000,
-        "vlDepreciavel": 7560,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 7560,
-        "vlLiquidoContabil": 9000,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-12-31",
-        "vlResidual": 1440,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 13378.86,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 13378.86
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1276",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1276",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 3169.16,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 275,
-      "descricao": "AR 24 BTU. GÁS ECOLÓGICO R410A GÁS QUE NÃO AGRIDE A CAMADA DE OZÔNIO.",
-      "dataInclusao": "2020-12-31",
-      "dataAquisicao": "2020-12-31",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2020-12-31",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "275",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3299,
-        "vlAquisicaoConvertido": 3299,
-        "vlDepreciavel": 2639.2,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2639.2,
-        "vlLiquidoContabil": 3299,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2020-12-31",
-        "vlResidual": 659.8,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3169.16,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3169.16
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "1277",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1277",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 447.08,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 276,
-      "descricao": "AR CONDICIONADOS 36000BTUS. AR CONDICIONADO SPLIT. PISO TETO ECO 36000BTUS FRIO 220V MONOFASICO. CAPACIDADE (BTU/H): 36.000CICLO: FRIO. SISTEMA: CONVENCIONAL VOLTAGEM (V): 220VCLASSIFICAÇÃO ENERGÉTICA: SELO PROCEL A. GARANTIA CONCEDIDAPELO FABRICANTE",
-      "dataInclusao": "2022-12-31",
-      "dataAquisicao": "2022-12-31",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-12-31",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "276",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 7199,
-        "vlAquisicaoConvertido": 7199,
-        "vlDepreciavel": 6479.1,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 6479.1,
-        "vlLiquidoContabil": 7199,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-12-31",
-        "vlResidual": 719.9,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 447.08,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 447.08
+            }
+          ]
         }
-      }
+      ]
     }
   }
 ]

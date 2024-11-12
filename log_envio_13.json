@@ -1,2302 +1,1752 @@
 [
   {
-    "idIntegracao": 724,
-    "conteudo": {
-      "data": "2017-12-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477197
+    "idIntegracao": "6176",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-10",
+      "numeroDocumento": "6176",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 377086.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 377086.31,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 377086.31
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 725,
-    "conteudo": {
-      "data": "2015-07-08T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477200
+    "idIntegracao": "6178",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-10",
+      "numeroDocumento": "6178",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 15711.92,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15711.92,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15711.92
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 726,
-    "conteudo": {
-      "data": "2015-04-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "6035",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6035",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 4368.06,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4368.06,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4368.06
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 728,
-    "conteudo": {
-      "data": "2016-03-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477208
+    "idIntegracao": "5980",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "5980",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 354485.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 354485.46,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 354485.46
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 729,
-    "conteudo": {
-      "data": "2017-04-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477212
+    "idIntegracao": "5982",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "5982",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 14770.23,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 14770.23,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 14770.23
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 730,
-    "conteudo": {
-      "data": "2017-04-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477217
+    "idIntegracao": "6084",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6084",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 4000,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4000,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4000
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 731,
-    "conteudo": {
-      "data": "2017-01-04T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477220
+    "idIntegracao": "5806",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-20",
+      "numeroDocumento": "5806",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 102715.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 102715.71,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 102715.71
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 773,
-    "conteudo": {
-      "data": "2016-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653211
+    "idIntegracao": "5808",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-20",
+      "numeroDocumento": "5808",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 4446.48,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4446.48,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4446.48
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 774,
-    "conteudo": {
-      "data": "2016-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653217
+    "idIntegracao": "5605",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-10",
+      "numeroDocumento": "5605",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 216847.04,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM- 1% COTA ENTREGUE NO MÊS DE SETE",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 216847.04,
+          "lancada": false,
+          "receita": {
+            "id": 710392
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 216847.04
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 776,
-    "conteudo": {
-      "data": "2015-08-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477233
+    "idIntegracao": "5606",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-10",
+      "numeroDocumento": "5606",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 9035.28,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9035.28,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 9035.28
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 779,
-    "conteudo": {
-      "data": "2016-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477241
+    "idIntegracao": "5607",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-10",
+      "numeroDocumento": "5607",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 328963.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 328963.43,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 328963.43
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 780,
-    "conteudo": {
-      "data": "2017-01-04T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477244
+    "idIntegracao": "5609",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-10",
+      "numeroDocumento": "5609",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 137706.8,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 137706.8,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 137706.8
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 781,
-    "conteudo": {
-      "data": "2017-01-04T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477249
+    "idIntegracao": "5357",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-30",
+      "numeroDocumento": "5357",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 302801.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 302801.26,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 302801.26
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 782,
-    "conteudo": {
-      "data": "2015-09-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477254
+    "idIntegracao": "5359",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-30",
+      "numeroDocumento": "5359",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 12616.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12616.7,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12616.7
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 783,
-    "conteudo": {
-      "data": "2016-10-11T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477258
+    "idIntegracao": "5393",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5393",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 3066.66,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3066.66,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3066.66
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 784,
-    "conteudo": {
-      "data": "2017-01-04T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477262
+    "idIntegracao": "4446",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4446",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 71746.72,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 71746.72,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 71746.72
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 786,
-    "conteudo": {
-      "data": "2021-03-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477272
+    "idIntegracao": "4387",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4387",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 50699
+      "valor": 2707.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2707.84,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2707.84
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 790,
-    "conteudo": {
-      "data": "2016-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477284
+    "idIntegracao": "4593",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-09",
+      "numeroDocumento": "4593",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 550244.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 550244.27,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 550244.27
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 791,
-    "conteudo": {
-      "data": "2016-10-25T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477288
+    "idIntegracao": "4595",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-09",
+      "numeroDocumento": "4595",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 22926.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 22926.84,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 22926.84
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 792,
-    "conteudo": {
-      "data": "2017-01-04T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477293
+    "idIntegracao": "4995",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-20",
+      "numeroDocumento": "4995",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 113970.28,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 113970.28,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 113970.28
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 793,
-    "conteudo": {
-      "data": "2016-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477298
+    "idIntegracao": "4997",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-20",
+      "numeroDocumento": "4997",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 4748.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4748.75,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4748.75
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 795,
-    "conteudo": {
-      "data": "2017-01-04T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477306
+    "idIntegracao": "3350",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-24",
+      "numeroDocumento": "3350",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 260683.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 260683.25,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 260683.25
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 796,
-    "conteudo": {
-      "data": "2016-08-15T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "3352",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-24",
+      "numeroDocumento": "3352",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 10861.79,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10861.79,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 10861.79
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 797,
-    "conteudo": {
-      "data": "2018-08-26T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "3614",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3614",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 1258.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1258.5,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1258.5
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 798,
-    "conteudo": {
-      "data": "2016-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477313
+    "idIntegracao": "3543",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-28",
+      "numeroDocumento": "3543",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 368335.68,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 368335.68,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 368335.68
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 799,
-    "conteudo": {
-      "data": "2016-10-11T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "3545",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-28",
+      "numeroDocumento": "3545",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 15347.3,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15347.3,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15347.3
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 800,
-    "conteudo": {
-      "data": "2016-10-11T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477318
+    "idIntegracao": "3970",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-10",
+      "numeroDocumento": "3970",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 267410.91,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - 1% COTA ENTREGUE NO MÊS DE JUL",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 267410.91,
+          "lancada": false,
+          "receita": {
+            "id": 707069
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 267410.91
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 801,
-    "conteudo": {
-      "data": "2018-08-26T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477322
+    "idIntegracao": "3972",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-10",
+      "numeroDocumento": "3972",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 11142.1,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11142.1,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 11142.1
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 802,
-    "conteudo": {
-      "data": "2021-01-20T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "3940",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-09",
+      "numeroDocumento": "3940",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 496837.35,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - 1% COTA ENTREGUE NO MÊS DE JUL",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 496837.35,
+          "lancada": false,
+          "receita": {
+            "id": 707069
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 496837.35
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 803,
-    "conteudo": {
-      "data": "2020-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477326
+    "idIntegracao": "3941",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-09",
+      "numeroDocumento": "3941",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 20701.55,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 20701.55,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 20701.55
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 804,
-    "conteudo": {
-      "data": "2018-01-19T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477330
+    "idIntegracao": "4118",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-19",
+      "numeroDocumento": "4118",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 144178.49,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - 1% COTA ENTREGUE NO MÊS DE JUL",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 144178.49,
+          "lancada": false,
+          "receita": {
+            "id": 707069
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 144178.49
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 805,
-    "conteudo": {
-      "data": "2018-06-13T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477148
+    "idIntegracao": "4120",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-19",
+      "numeroDocumento": "4120",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 144178.49,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 144178.49,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 144178.49
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 806,
-    "conteudo": {
-      "data": "2017-09-10T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477152
+    "idIntegracao": "4122",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-19",
+      "numeroDocumento": "4122",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 267410.91,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 267410.91,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 267410.91
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 807,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477156
+    "idIntegracao": "4124",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-19",
+      "numeroDocumento": "4124",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 6007.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6007.43,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 6007.43
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 808,
-    "conteudo": {
-      "data": "2019-02-28T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477159
+    "idIntegracao": "4282",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4282",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 95386.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 95386.39,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 95386.39
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 809,
-    "conteudo": {
-      "data": "2020-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477164
+    "idIntegracao": "4275",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4275",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 327735.04,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 327735.04,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 327735.04
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 810,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477168
+    "idIntegracao": "4277",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4277",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 13655.61,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 13655.61,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 13655.61
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 811,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477172
+    "idIntegracao": "244",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "244",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 4163.81,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4163.81,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4163.81
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 812,
-    "conteudo": {
-      "data": "2018-03-14T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477177
+    "idIntegracao": "144",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "144",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 18863.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 18863.09,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 18863.09
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 813,
-    "conteudo": {
-      "data": "2017-04-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477182
+    "idIntegracao": "145",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "145",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 150948.66,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 150948.66,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 150948.66
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 814,
-    "conteudo": {
-      "data": "2018-01-08T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477186
+    "idIntegracao": "147",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "147",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 6289.52,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6289.52,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 6289.52
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 815,
-    "conteudo": {
-      "data": "2018-03-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477190
+    "idIntegracao": "140",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "140",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 452714.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 452714.39,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 452714.39
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 816,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477195
+    "idIntegracao": "150",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "150",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 423369.14,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 423369.14,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 423369.14
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 817,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "152",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "152",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 17640.36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 17640.36,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 17640.36
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 819,
-    "conteudo": {
-      "data": "2020-04-30T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477206
+    "idIntegracao": "240",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "240",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 68121.15,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 68121.15,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 68121.15
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 820,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477210
+    "idIntegracao": "737",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "737",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 296675.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 296675.6,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 296675.6
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 821,
-    "conteudo": {
-      "data": "2020-04-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477215
+    "idIntegracao": "739",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "739",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 12361.48,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12361.48,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 12361.48
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 822,
-    "conteudo": {
-      "data": "2018-01-03T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "508",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "508",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 137527.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 137527.89,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 137527.89
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 823,
-    "conteudo": {
-      "data": "2017-08-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653221
+    "idIntegracao": "510",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "510",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 5730.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - COTA LC/198/2023",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5730.32,
+          "lancada": false,
+          "receita": {
+            "id": 710381
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5730.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 824,
-    "conteudo": {
-      "data": "2018-04-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477227
+    "idIntegracao": "413",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-09",
+      "numeroDocumento": "413",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 962304.52,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO FPM - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187620
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 962304.52,
+          "lancada": false,
+          "receita": {
+            "id": 707067
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 962304.52
+            }
+          ]
+        }
+      ]
     }
   }
 ]

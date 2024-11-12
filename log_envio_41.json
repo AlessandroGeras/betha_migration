@@ -1,2152 +1,1752 @@
 [
   {
-    "idIntegracao": "2001",
-    "conteudo": {
-      "matricula": {
-        "id": 33476929
+    "idIntegracao": "873",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "873",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-07-01",
-      "fimAfastamento": "2010-07-30",
-      "retornoTrabalho": "2010-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 979.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 979.09,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 979.09
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2002",
-    "conteudo": {
-      "matricula": {
-        "id": 33476929
+    "idIntegracao": "269",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "269",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-07-01",
-      "fimAfastamento": "2011-07-30",
-      "retornoTrabalho": "2011-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 689.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 689.19,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 689.19
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2003",
-    "conteudo": {
-      "matricula": {
-        "id": 33476929
+    "idIntegracao": "1475",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1475",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-12-31",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+      "valor": 1014.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SEPARAÇÃO DE BANCO DE DADOS.",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1014.7,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1014.7
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2004",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "2152",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2152",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-03-03",
-      "fimAfastamento": "2021-04-01",
-      "retornoTrabalho": "2021-04-02",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 1078.51,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Prêmio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1078.51,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1078.51
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2005",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "2912",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2912",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-04-01",
-      "fimAfastamento": "2007-04-30",
-      "retornoTrabalho": "2007-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1012.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1012.82,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1012.82
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2006",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "3644",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3644",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-02-01",
-      "fimAfastamento": "2008-03-01",
-      "retornoTrabalho": "2008-03-02",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 965.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 965.27,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 965.27
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2007",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "4419",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4419",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-02-01",
-      "fimAfastamento": "2009-03-02",
-      "retornoTrabalho": "2009-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1112.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1112.29,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1112.29
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2008",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "6062",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6062",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-01-01",
-      "fimAfastamento": "2010-01-30",
-      "retornoTrabalho": "2010-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1037.14,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1037.14,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1037.14
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2009",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "5422",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5422",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-03-31",
-      "fimAfastamento": "2011-06-30",
-      "retornoTrabalho": "2011-07-01",
-      "quantidade": 456,
-      "unidade": "DIAS",
-      "quantidadeDias": 456,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+      "valor": 1074.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187701
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "MEDIANTE REQUERIMENTO TENDO EM VISTA QUE A SERVIDORA PASSOU EM TESTE SELETIVO DA EDUCAÇÃO E PASSARA A OCUPAR O CARGO DE PROFESSORA.",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1074.58,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1074.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2010",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "1934",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-23",
+      "numeroDocumento": "1934",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-03-01",
-      "fimAfastamento": "2012-03-30",
-      "retornoTrabalho": "2012-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 19.23,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENDIMENTOS DE CONVÊNIOS FEDERAIS",
+      "contaBancaria": {
+        "id": 187702
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 19.23,
+          "lancada": false,
+          "receita": {
+            "id": 707064
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774282
+              },
+              "valor": 19.23
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2011",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "1476",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1476",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-01-01",
-      "fimAfastamento": "2013-01-30",
-      "retornoTrabalho": "2013-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 746.18,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENDIMENTOS DE CONVÊNIOS FEDERAIS",
+      "contaBancaria": {
+        "id": 187702
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 746.18,
+          "lancada": false,
+          "receita": {
+            "id": 707064
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774282
+              },
+              "valor": 746.18
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2012",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "270",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "270",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-01-01",
-      "fimAfastamento": "2014-01-30",
-      "retornoTrabalho": "2014-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1258.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENDIMENTOS DE CONVÊNIOS FEDERAIS",
+      "contaBancaria": {
+        "id": 187702
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1258.59,
+          "lancada": false,
+          "receita": {
+            "id": 707064
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774282
+              },
+              "valor": 1258.59
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2013",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "874",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "874",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-01-01",
-      "fimAfastamento": "2015-01-30",
-      "retornoTrabalho": "2015-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1042.24,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENDIMENTOS DE CONVÊNIOS FEDERAIS",
+      "contaBancaria": {
+        "id": 187702
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1042.24,
+          "lancada": false,
+          "receita": {
+            "id": 707064
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774282
+              },
+              "valor": 1042.24
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2014",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "875",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "875",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2016-01-01",
-      "fimAfastamento": "2016-01-30",
-      "retornoTrabalho": "2016-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3671.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇAO DE DEPOSITO - FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3671.46,
+          "lancada": false,
+          "receita": {
+            "id": 707054
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 3671.46
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2015",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "839",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "839",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-01-01",
-      "fimAfastamento": "2017-01-30",
-      "retornoTrabalho": "2017-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 8173.24,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 8173.24,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 8173.24
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2016",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "840",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "840",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2018-01-01",
-      "fimAfastamento": "2018-01-30",
-      "retornoTrabalho": "2018-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 13737.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIAS DE RECURSOS DO FUNDEB - GANHO",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 13737.77,
+          "lancada": false,
+          "receita": {
+            "id": 707083
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 13737.77
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2017",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "841",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "841",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2019-01-01",
-      "fimAfastamento": "2019-01-30",
-      "retornoTrabalho": "2019-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 633.99,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 633.99,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 633.99
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2018",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "842",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "842",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-01-01",
-      "fimAfastamento": "2020-01-30",
-      "retornoTrabalho": "2020-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 753.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 753.13,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 753.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2019",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "746",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "746",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-05-01",
-      "fimAfastamento": "2020-05-30",
-      "retornoTrabalho": "2020-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 38.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 38.82,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 38.82
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2020",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "740",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "740",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-06-01",
-      "fimAfastamento": "2020-06-30",
-      "retornoTrabalho": "2020-07-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 61807.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 61807.4,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 61807.4
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2021",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "742",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "742",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-07-01",
-      "fimAfastamento": "2020-07-30",
-      "retornoTrabalho": "2020-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 143465.85,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 143465.85,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 143465.85
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2022",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "700",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-23",
+      "numeroDocumento": "700",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-02-01",
-      "fimAfastamento": "2021-03-02",
-      "retornoTrabalho": "2021-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 44960,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 44960,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 44960
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2023",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "519",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "519",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2022-01-01",
-      "fimAfastamento": "2022-01-30",
-      "retornoTrabalho": "2022-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 2043.68,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2043.68,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 2043.68
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2024",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "511",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "511",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2023-01-01",
-      "fimAfastamento": "2023-01-30",
-      "retornoTrabalho": "2023-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 28651.63,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 28651.63,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 28651.63
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2025",
-    "conteudo": {
-      "matricula": {
-        "id": 33476933
+    "idIntegracao": "515",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "515",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2024-01-01",
-      "fimAfastamento": "2024-01-30",
-      "retornoTrabalho": "2024-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3406.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3406.19,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 3406.19
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2026",
-    "conteudo": {
-      "matricula": {
-        "id": 33653137
+    "idIntegracao": "416",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-09",
+      "numeroDocumento": "416",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-07-01",
-      "fimAfastamento": "2007-07-30",
-      "retornoTrabalho": "2007-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 200480.1,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 200480.1,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 200480.1
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2027",
-    "conteudo": {
-      "matricula": {
-        "id": 33653137
+    "idIntegracao": "437",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-16",
+      "numeroDocumento": "437",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-08-01",
-      "fimAfastamento": "2008-08-30",
-      "retornoTrabalho": "2008-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 29211.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 29211.9,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 29211.9
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2028",
-    "conteudo": {
-      "matricula": {
-        "id": 33653137
+    "idIntegracao": "438",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-16",
+      "numeroDocumento": "438",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-07-01",
-      "fimAfastamento": "2009-07-30",
-      "retornoTrabalho": "2009-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1832.74,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIAS DE RECURSOS DO FUNDEB - GANHO",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1832.74,
+          "lancada": false,
+          "receita": {
+            "id": 707083
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 1832.74
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2029",
-    "conteudo": {
-      "matricula": {
-        "id": 33653137
+    "idIntegracao": "271",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "271",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-08-01",
-      "fimAfastamento": "2010-08-30",
-      "retornoTrabalho": "2010-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 2811.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇAO DE DEPOSITO - FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2811.21,
+          "lancada": false,
+          "receita": {
+            "id": 707054
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 2811.21
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2030",
-    "conteudo": {
-      "matricula": {
-        "id": 33653137
+    "idIntegracao": "272",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "272",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-07-01",
-      "fimAfastamento": "2011-07-30",
-      "retornoTrabalho": "2011-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 10390.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10390.32,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 10390.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2031",
-    "conteudo": {
-      "matricula": {
-        "id": 33653137
+    "idIntegracao": "273",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "273",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-12-31",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+      "valor": 3058.86,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIAS DE RECURSOS DO FUNDEB - GANHO",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SEPARAÇÃO DE BANCO DE DADOS.",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3058.86,
+          "lancada": false,
+          "receita": {
+            "id": 707083
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 3058.86
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2032",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "274",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "274",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-05-01",
-      "fimAfastamento": "2007-05-30",
-      "retornoTrabalho": "2007-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3117.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3117.41,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 3117.41
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2033",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "275",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "275",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-05-01",
-      "fimAfastamento": "2008-05-30",
-      "retornoTrabalho": "2008-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 724.12,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 724.12,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 724.12
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2034",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "276",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "276",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-11-03",
-      "fimAfastamento": "2008-12-02",
-      "retornoTrabalho": "2008-12-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 62121.15,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 62121.15,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 62121.15
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2035",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "165",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "165",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-01-01",
-      "fimAfastamento": "2010-01-30",
-      "retornoTrabalho": "2010-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 92148.53,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 92148.53,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 92148.53
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2036",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "161",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "161",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-06-01",
-      "fimAfastamento": "2011-06-30",
-      "retornoTrabalho": "2011-07-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 2936.01,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2936.01,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 2936.01
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2037",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "162",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "162",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-01-01",
-      "fimAfastamento": "2012-01-30",
-      "retornoTrabalho": "2012-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 45221.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIAS DE RECURSOS DO FUNDEB - GANHO",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 45221.43,
+          "lancada": false,
+          "receita": {
+            "id": 707083
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 45221.43
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2038",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "157",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "157",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-03-01",
-      "fimAfastamento": "2013-03-30",
-      "retornoTrabalho": "2013-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 21931.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 21931.59,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 21931.59
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2039",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "153",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "153",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-09-01",
-      "fimAfastamento": "2014-09-30",
-      "retornoTrabalho": "2014-10-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 88201.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 88201.89,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 88201.89
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2040",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "142",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "142",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-09-15",
-      "fimAfastamento": "2015-10-14",
-      "retornoTrabalho": "2015-10-15",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 94315.48,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 94315.48,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 94315.48
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2041",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "148",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "148",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-08-01",
-      "fimAfastamento": "2017-08-30",
-      "retornoTrabalho": "2017-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 31447.63,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 31447.63,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 31447.63
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2042",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "174",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "174",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2018-07-01",
-      "fimAfastamento": "2018-07-30",
-      "retornoTrabalho": "2018-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 167.42,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 167.42,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 167.42
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2043",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "170",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "170",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2019-12-01",
-      "fimAfastamento": "2019-12-30",
-      "retornoTrabalho": "2019-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 8616.22,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 8616.22,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 8616.22
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2044",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "410",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-09",
+      "numeroDocumento": "410",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-04-01",
-      "fimAfastamento": "2020-04-30",
-      "retornoTrabalho": "2020-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 196.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 196.2,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 196.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2045",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "412",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-09",
+      "numeroDocumento": "412",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-12-01",
-      "fimAfastamento": "2020-12-30",
-      "retornoTrabalho": "2020-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 22209.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIAS DE RECURSOS DO FUNDEB - GANHO",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 22209.32,
+          "lancada": false,
+          "receita": {
+            "id": 707083
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 22209.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2046",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "203",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "203",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-12-01",
-      "fimAfastamento": "2021-12-30",
-      "retornoTrabalho": "2021-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 36.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIAS DE RECURSOS DO FUNDEB - GANHO",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 36.46,
+          "lancada": false,
+          "receita": {
+            "id": 707083
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 36.46
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2047",
-    "conteudo": {
-      "matricula": {
-        "id": 33476939
+    "idIntegracao": "397",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-07",
+      "numeroDocumento": "397",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2023-03-11",
-      "fimAfastamento": "2023-03-30",
-      "retornoTrabalho": "2023-03-31",
-      "quantidade": 19,
-      "unidade": "DIAS",
-      "quantidadeDias": 19,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 7296.92,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7296.92,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 7296.92
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2048",
-    "conteudo": {
-      "matricula": {
-        "id": 33476940
+    "idIntegracao": "211",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "211",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-06-01",
-      "fimAfastamento": "2010-09-30",
-      "retornoTrabalho": "2010-10-01",
-      "quantidade": 486,
-      "unidade": "DIAS",
-      "quantidadeDias": 486,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+      "valor": 91073.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Mediante Requerimento protocolado mediante processo adminsitratvi e parecer juridico favorável.",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 91073.9,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 91073.9
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2049",
-    "conteudo": {
-      "matricula": {
-        "id": 33476940
+    "idIntegracao": "1477",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1477",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-04-01",
-      "fimAfastamento": "2008-04-30",
-      "retornoTrabalho": "2008-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 4620.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇAO DE DEPOSITO - FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4620.31,
+          "lancada": false,
+          "receita": {
+            "id": 707054
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 4620.31
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2050",
-    "conteudo": {
-      "matricula": {
-        "id": 33476940
+    "idIntegracao": "1434",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-28",
+      "numeroDocumento": "1434",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-08-01",
-      "fimAfastamento": "2011-08-30",
-      "retornoTrabalho": "2011-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 54.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187703
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 54.39,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 54.39
+            }
+          ]
+        }
+      ]
     }
   }
 ]

@@ -1,1152 +1,1752 @@
 [
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "1360",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1360",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206816
+      "valor": 312.86,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 86.4,
-      "valorTotal": 86.4,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222292
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 312.86,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 312.86
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "1361",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1361",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206816
+      "valor": 122.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 86.4,
-      "valorTotal": 86.4,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222292
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 122.31,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 122.31
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "1362",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1362",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206818
+      "valor": 33.78,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 169.2,
-      "valorTotal": 169.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222293
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 33.78,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 33.78
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "1363",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1363",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206818
+      "valor": 4.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 169.2,
-      "valorTotal": 169.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222293
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.13,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312268
+    "idIntegracao": "1364",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1364",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206817
+      "valor": 140.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 60000,
-      "valorTotal": 60000,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222294
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 140.75,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 140.75
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312245
+    "idIntegracao": "1365",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1365",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206819
+      "valor": 135.98,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 310900,
-      "valorTotal": 310900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222295
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 135.98,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 135.98
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312266
+    "idIntegracao": "1366",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1366",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206819
+      "valor": 307.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 310900,
-      "valorTotal": 310900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222295
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 307.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 307.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "1367",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1367",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206819
+      "valor": 677,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 310900,
-      "valorTotal": 310900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222295
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 677,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 677
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "1368",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1368",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206821
+      "valor": 226,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 61.2,
-      "valorTotal": 61.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222296
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 226,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 226
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "1369",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1369",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206821
+      "valor": 256.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 61.2,
-      "valorTotal": 61.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222296
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 256.03,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 256.03
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "1370",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1370",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206822
+      "valor": 24.96,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 122.4,
-      "valorTotal": 122.4,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222297
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24.96,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 24.96
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "1371",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1371",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206822
+      "valor": 242.47,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 122.4,
-      "valorTotal": 122.4,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222297
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 242.47,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 242.47
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "1372",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1372",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206823
+      "valor": 91.34,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 115.2,
-      "valorTotal": 115.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222298
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 91.34,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 91.34
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "1373",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1373",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206823
+      "valor": 500,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIÇÃO DE TÍTULO ONEROSO URBANO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 115.2,
-      "valorTotal": 115.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222298
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 500,
+          "lancada": false,
+          "receita": {
+            "id": 707052
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 500
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "1374",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1374",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206827
+      "valor": 220,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 12,
-      "valorUnitario": 2800,
-      "valorTotal": 33600,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222299
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 220,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 220
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "1375",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1375",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206827
+      "valor": 216.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 12,
-      "valorUnitario": 2800,
-      "valorTotal": 33600,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222299
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 216.03,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 216.03
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312239
+    "idIntegracao": "1376",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1376",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206824
+      "valor": 16.52,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 780,
-      "valorTotal": 780,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222300
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 16.52,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 16.52
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312261
+    "idIntegracao": "1377",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1377",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206824
+      "valor": 117.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 780,
-      "valorTotal": 780,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222300
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 117.32,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 117.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "1378",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1378",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206825
+      "valor": 52.02,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 1136,
-      "valorTotal": 1136,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222301
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 52.02,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 52.02
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "1379",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1379",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206825
+      "valor": 250,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIÇÃO DE TÍTULO ONEROSO URBANO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 1136,
-      "valorTotal": 1136,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222301
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 250,
+          "lancada": false,
+          "receita": {
+            "id": 707052
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 250
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "1380",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-27",
+      "numeroDocumento": "1380",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206825
+      "valor": 1866.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5,
-      "valorUnitario": 360,
-      "valorTotal": 1800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222301
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1866.43,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1866.43
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312254
+    "idIntegracao": "1298",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1298",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206825
+      "valor": 37.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5,
-      "valorUnitario": 360,
-      "valorTotal": 1800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222301
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 37.2,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 37.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "1299",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1299",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206825
+      "valor": 4.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 2.5,
-      "valorUnitario": 360,
-      "valorTotal": 900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222301
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.13,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "1300",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1300",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206825
+      "valor": 344.15,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 2.5,
-      "valorUnitario": 360,
-      "valorTotal": 900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222301
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 344.15,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 344.15
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312262
+    "idIntegracao": "1301",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1301",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206826
+      "valor": 127.18,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 16000,
-      "valorTotal": 16000,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222302
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 127.18,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 127.18
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "1302",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-21",
+      "numeroDocumento": "1302",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206831
+      "valor": 250,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIÇÃO DE TÍTULO ONEROSO URBANO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 7,
-      "valorUnitario": 5310,
-      "valorTotal": 37170,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222304
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 250,
+          "lancada": false,
+          "receita": {
+            "id": 707052
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 250
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "2945",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2945",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206831
+      "valor": 256,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - HORAS MÁQUINA  SEMAGRI",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 7,
-      "valorUnitario": 5310,
-      "valorTotal": 37170,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222304
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 256,
+          "lancada": false,
+          "receita": {
+            "id": 707066
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 256
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "2946",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2946",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206833
+      "valor": 56.8,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 4,
-      "valorUnitario": 3200,
-      "valorTotal": 12800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222305
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 56.8,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 56.8
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "2947",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2947",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206833
+      "valor": 3283.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 4,
-      "valorUnitario": 3200,
-      "valorTotal": 12800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222305
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3283.46,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3283.46
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "2948",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2948",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206832
+      "valor": 25.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 360,
-      "valorTotal": 360,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222307
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 25.82,
+          "lancada": false,
+          "receita": {
+            "id": 707028
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 25.82
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312254
+    "idIntegracao": "2949",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2949",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206832
+      "valor": 234.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 360,
-      "valorTotal": 360,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222307
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 234.64,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 234.64
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "2950",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2950",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206832
+      "valor": 26.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 64.8,
-      "valorTotal": 64.8,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222307
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 26.88,
+          "lancada": false,
+          "receita": {
+            "id": 707030
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 26.88
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "2951",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2951",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206832
+      "valor": 669.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT ADIR IGNÁCIO LIMA  INSC. CERT. DEC. TCE-RO P",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 64.8,
-      "valorTotal": 64.8,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222307
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 669.26,
+          "lancada": false,
+          "receita": {
+            "id": 710363
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 669.26
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312241
+    "idIntegracao": "2952",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2952",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206830
+      "valor": 6060.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE LICENCA P/ FUNCIONAMENTO DE ESTABELECIMENT",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 27,
-      "valorUnitario": 1400,
-      "valorTotal": 37800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222308
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6060.64,
+          "lancada": false,
+          "receita": {
+            "id": 707124
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 6060.64
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312253
+    "idIntegracao": "2953",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2953",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206830
+      "valor": 318.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT- ADIR IGNÁCIO LIMA - MULTA -  INSC. CERT. DE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 27,
-      "valorUnitario": 1400,
-      "valorTotal": 37800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222308
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 318.58,
+          "lancada": false,
+          "receita": {
+            "id": 710379
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 318.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312246
+    "idIntegracao": "2954",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2954",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206830
+      "valor": 125.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 27,
-      "valorUnitario": 1400,
-      "valorTotal": 37800,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222308
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 125.13,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 125.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312250
+    "idIntegracao": "2955",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2955",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206834
+      "valor": 4.83,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 133.2,
-      "valorTotal": 133.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222309
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.83,
+          "lancada": false,
+          "receita": {
+            "id": 707028
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.83
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312258
+    "idIntegracao": "2956",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2956",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206834
+      "valor": 14.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 133.2,
-      "valorTotal": 133.2,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222309
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 14.21,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 14.21
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312241
+    "idIntegracao": "2957",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2957",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206835
+      "valor": 195.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5410,
-      "valorUnitario": 3.1,
-      "valorTotal": 16771,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222310
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 195.54,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 195.54
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312253
+    "idIntegracao": "2958",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2958",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206835
+      "valor": 1070,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5410,
-      "valorUnitario": 3.1,
-      "valorTotal": 16771,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222310
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1070,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1070
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312246
+    "idIntegracao": "2959",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2959",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206835
+      "valor": 270,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - HORAS MÁQUINA  SEMAGRI",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5410,
-      "valorUnitario": 3.1,
-      "valorTotal": 16771,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222310
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 270,
+          "lancada": false,
+          "receita": {
+            "id": 707066
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 270
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312255
+    "idIntegracao": "2960",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2960",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206836
+      "valor": 500,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTOS SOBRE TRANSMISSÃO INTER VIVOS DE BENS IMÓ",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 2000,
-      "valorTotal": 2000,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222311
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 500,
+          "lancada": false,
+          "receita": {
+            "id": 707122
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 500
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "2961",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2961",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206838
+      "valor": 141.69,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5,
-      "valorUnitario": 4450,
-      "valorTotal": 22250,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222313
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 141.69,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 141.69
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "2962",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2962",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206838
+      "valor": 17.69,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 5,
-      "valorUnitario": 4450,
-      "valorTotal": 22250,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222313
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 17.69,
+          "lancada": false,
+          "receita": {
+            "id": 707028
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 17.69
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "2963",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2963",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206839
+      "valor": 11.3,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 4,
-      "valorUnitario": 1600,
-      "valorTotal": 6400,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222314
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11.3,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 11.3
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "2964",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2964",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206839
+      "valor": 195.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 4,
-      "valorUnitario": 1600,
-      "valorTotal": 6400,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222314
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 195.54,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 195.54
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312247
+    "idIntegracao": "2965",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2965",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206844
+      "valor": 43.65,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 220,
-      "valorTotal": 220,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222319
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 43.65,
+          "lancada": false,
+          "receita": {
+            "id": 707121
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 43.65
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312271
+    "idIntegracao": "2966",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2966",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206844
+      "valor": 27.36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 220,
-      "valorTotal": 220,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222319
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 27.36,
+          "lancada": false,
+          "receita": {
+            "id": 707030
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 27.36
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "2967",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2967",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206844
+      "valor": 639.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 220,
-      "valorTotal": 220,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222319
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 639.88,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 639.88
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312254
+    "idIntegracao": "2968",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2968",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27206844
+      "valor": 40.12,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 220,
-      "valorTotal": 220,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56222319
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 40.12,
+          "lancada": false,
+          "receita": {
+            "id": 707028
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 40.12
+            }
+          ]
+        }
+      ]
     }
   }
 ]

@@ -1,3152 +1,1752 @@
 [
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2880",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2880",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 31190.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187618
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 105,
-      "descricao": "CADEIRA DIRETOR, C/ ESPUMA INJETADA GIRATORIA",
-      "dataInclusao": "2007-01-23",
-      "dataAquisicao": "2007-01-23",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2007-01-23",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "105",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 262.83,
-        "vlAquisicaoConvertido": 262.83,
-        "vlDepreciavel": 226.83,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 226.83,
-        "vlLiquidoContabil": 262.83,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2007-01-23",
-        "vlResidual": 36,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 31190.21,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 31190.21
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2999",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-05",
+      "numeroDocumento": "2999",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 404195.18,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO ICMS - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187618
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 106,
-      "descricao": "CADEIRA DIRETOR, C/ ESPUMA INJETADA GIRATORIA",
-      "dataInclusao": "2007-01-23",
-      "dataAquisicao": "2007-01-23",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2007-01-23",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "106",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 262.83,
-        "vlAquisicaoConvertido": 262.83,
-        "vlDepreciavel": 226.83,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 226.83,
-        "vlLiquidoContabil": 262.83,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2007-01-23",
-        "vlResidual": 36,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 404195.18,
+          "lancada": false,
+          "receita": {
+            "id": 707126
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 404195.18
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3456",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3456",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 213586.51,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: COTA-PARTE DO ICMS - PRÓPRIO",
+      "contaBancaria": {
+        "id": 187618
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 108,
-      "descricao": "NOTEBOOK MARCA ACER MODELO ASPIRE 4710-2013 COM 1 GB DE MEMORIA, HD DE",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "108",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3900,
-        "vlAquisicaoConvertido": 3900,
-        "vlDepreciavel": 3276,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 3276,
-        "vlLiquidoContabil": 3900,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 624,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 213586.51,
+          "lancada": false,
+          "receita": {
+            "id": 707126
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 213586.51
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3458",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3458",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 220.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 110,
-      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "110",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 867.35,
-        "vlAquisicaoConvertido": 867.35,
-        "vlDepreciavel": 794.6,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 794.6,
-        "vlLiquidoContabil": 867.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 72.75,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 220.64,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 220.64
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3459",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3459",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 735.45,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 111,
-      "descricao": "CADEIRA COM ALMOFADA RODAS/GIRATORIAS",
-      "dataInclusao": "2009-01-15",
-      "dataAquisicao": "2009-01-15",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-01-15",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "111",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 136.27,
-        "vlAquisicaoConvertido": 136.27,
-        "vlDepreciavel": 122.64,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 122.64,
-        "vlLiquidoContabil": 136.27,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-01-15",
-        "vlResidual": 13.63,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 735.45,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 735.45
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3460",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3460",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 283.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 113,
-      "descricao": "MICRO COMPUTADOR ROCKET PC INTEL DC E 2180 2.8 GHZ",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "113",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 950.08,
-        "vlAquisicaoConvertido": 950.08,
-        "vlDepreciavel": 798.07,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 798.07,
-        "vlLiquidoContabil": 950.08,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 152.01,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 283.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 283.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3461",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3461",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 245.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 114,
-      "descricao": "MONITOR LCD 15   519 SW WIT AOC",
-      "dataInclusao": "2009-01-15",
-      "dataAquisicao": "2009-01-15",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-01-15",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "114",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 332.19,
-        "vlAquisicaoConvertido": 332.19,
-        "vlDepreciavel": 298.97,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 298.97,
-        "vlLiquidoContabil": 332.19,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-01-15",
-        "vlResidual": 33.22,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 245.41,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 245.41
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3462",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3462",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 818.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 115,
-      "descricao": "MONITOR LCD 15   519 SW WIT AOC",
-      "dataInclusao": "2009-01-15",
-      "dataAquisicao": "2009-01-15",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-01-15",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "115",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 332.19,
-        "vlAquisicaoConvertido": 332.19,
-        "vlDepreciavel": 298.97,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 298.97,
-        "vlLiquidoContabil": 332.19,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-01-15",
-        "vlResidual": 33.22,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 818.03,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 818.03
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3463",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3463",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 131.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 116,
-      "descricao": "MICRO COMPUTADOR ROCKET PC INTEL DC E 2180 2.8 GHZ",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "116",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 950.08,
-        "vlAquisicaoConvertido": 950.08,
-        "vlDepreciavel": 798.07,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 798.07,
-        "vlLiquidoContabil": 950.08,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 152.01,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 131.39,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 131.39
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3464",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3464",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51970
+      "valor": 234.06,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541246
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 117,
-      "descricao": "REFRIGERADOR 240 L 1P CLASSE A BRANCO",
-      "dataInclusao": "2009-03-30",
-      "dataAquisicao": "2009-03-30",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-03-30",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "117",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 903.15,
-        "vlAquisicaoConvertido": 903.15,
-        "vlDepreciavel": 823.25,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 823.25,
-        "vlLiquidoContabil": 903.15,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-03-30",
-        "vlResidual": 79.9,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 234.06,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 234.06
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3465",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3465",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51970
+      "valor": 780.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541246
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 118,
-      "descricao": "FOGAO 4B DAKO DELTA C/VALVULA/BRANCO",
-      "dataInclusao": "2009-03-30",
-      "dataAquisicao": "2009-03-30",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-03-30",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "118",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 372.51,
-        "vlAquisicaoConvertido": 372.51,
-        "vlDepreciavel": 335.26,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 335.26,
-        "vlLiquidoContabil": 372.51,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-03-30",
-        "vlResidual": 37.25,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 780.21,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 780.21
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3466",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-25",
+      "numeroDocumento": "3466",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51970
+      "valor": 1310.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541246
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 119,
-      "descricao": "PIA INOX GHEL-PLUS 1,20 CUBA OVAL CROMADA",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "119",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 129,
-        "vlAquisicaoConvertido": 129,
-        "vlDepreciavel": 116.1,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 116.1,
-        "vlLiquidoContabil": 129,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 12.9,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1310.4,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1310.4
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3181",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3181",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1147.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 120,
-      "descricao": "BALCAO TELASUL P/PIA 3 PTS GV BRANCO",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "120",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 369,
-        "vlAquisicaoConvertido": 369,
-        "vlDepreciavel": 332.1,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 332.1,
-        "vlLiquidoContabil": 369,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 36.9,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1147.57,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1147.57
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3182",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3182",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 2149.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 122,
-      "descricao": "NOBREAK 600 VA SMS",
-      "dataInclusao": "2009-03-30",
-      "dataAquisicao": "2009-03-30",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-03-30",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "122",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 230.3,
-        "vlAquisicaoConvertido": 230.3,
-        "vlDepreciavel": 193.45,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 193.45,
-        "vlLiquidoContabil": 230.3,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-03-30",
-        "vlResidual": 36.85,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2149.03,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2149.03
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3183",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3183",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 249.86,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 129,
-      "descricao": "MESA EM MADEIRA COM 02 GAVETAS 1,10 X 0,60 CM.",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "129",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 867.35,
-        "vlAquisicaoConvertido": 867.35,
-        "vlDepreciavel": 795.21,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 795.21,
-        "vlLiquidoContabil": 867.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 72.14,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 249.86,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 249.86
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3184",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3184",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 130,
-      "descricao": "KIT DUAS GAVETAS",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "130",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 155.83,
-        "vlAquisicaoConvertido": 155.83,
-        "vlDepreciavel": 140.25,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 140.25,
-        "vlLiquidoContabil": 155.83,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 15.58,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 36,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 36
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3185",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3185",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 512.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 133,
-      "descricao": "MICRO COMPUTADOR SEMPRON 2.0 GB",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "133",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 760,
-        "vlAquisicaoConvertido": 760,
-        "vlDepreciavel": 744.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 744.8,
-        "vlLiquidoContabil": 760,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 15.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 512.84,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 512.84
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3186",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3186",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51962
+      "valor": 360.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541258
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 134,
-      "descricao": "MONITOR DE LCD 15 POLEGADAS",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "134",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 332.19,
-        "vlAquisicaoConvertido": 332.19,
-        "vlDepreciavel": 279.58,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 279.58,
-        "vlLiquidoContabil": 332.19,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 52.61,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 360.89,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 360.89
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3187",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3187",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 8344.85,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 135,
-      "descricao": "NOBREACK 500VA APC",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "135",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 371.03,
-        "vlAquisicaoConvertido": 371.03,
-        "vlDepreciavel": 296.82,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 296.82,
-        "vlLiquidoContabil": 371.03,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 74.21,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 8344.85,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 8344.85
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3188",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3188",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 153.85,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 137,
-      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "137",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 159.35,
-        "vlAquisicaoConvertido": 159.35,
-        "vlDepreciavel": 143.41,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 143.41,
-        "vlLiquidoContabil": 159.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 15.94,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 153.85,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 153.85
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3189",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3189",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 2683.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 138,
-      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "138",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 159.35,
-        "vlAquisicaoConvertido": 159.35,
-        "vlDepreciavel": 143.41,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 143.41,
-        "vlLiquidoContabil": 159.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 15.94,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2683.89,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2683.89
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3190",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3190",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 717.65,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 139,
-      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "139",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 159.35,
-        "vlAquisicaoConvertido": 159.35,
-        "vlDepreciavel": 143.41,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 143.41,
-        "vlLiquidoContabil": 159.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 15.94,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 717.65,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 717.65
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3191",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3191",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 15248.81,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 141,
-      "descricao": "MESA TABACO ACETINADO 1,36",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "141",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 423.99,
-        "vlAquisicaoConvertido": 423.99,
-        "vlDepreciavel": 381.59,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 381.59,
-        "vlLiquidoContabil": 423.99,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 42.4,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15248.81,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15248.81
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3192",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3192",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1284.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 142,
-      "descricao": "MESA TABACO ACETINATO 1,10",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "142",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 500.5,
-        "vlAquisicaoConvertido": 500.5,
-        "vlDepreciavel": 450.45,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 450.45,
-        "vlLiquidoContabil": 500.5,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 50.05,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1284.09,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1284.09
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3193",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3193",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51952
+      "valor": 21121.68,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541255
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 143,
-      "descricao": "MICROFONE PHILIPIS",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "143",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 104.8,
-        "vlAquisicaoConvertido": 104.8,
-        "vlDepreciavel": 92.22,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 92.22,
-        "vlLiquidoContabil": 104.8,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 12.58,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 21121.68,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 21121.68
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3194",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3194",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 2064.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 144,
-      "descricao": "GOTA ESQUERDA TABACO",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "144",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 242.04,
-        "vlAquisicaoConvertido": 242.04,
-        "vlDepreciavel": 217.84,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 217.84,
-        "vlLiquidoContabil": 242.04,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 24.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2064.26,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2064.26
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3195",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3195",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 150.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR - RETIDO NA FONTE - OUTROS REND.- PESSOA FÍSICA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 145,
-      "descricao": "BALCAO DIRETOR TABACO",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "145",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 560.06,
-        "vlAquisicaoConvertido": 560.06,
-        "vlDepreciavel": 504.05,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 504.05,
-        "vlLiquidoContabil": 560.06,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 56.01,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 150.4,
+          "lancada": false,
+          "receita": {
+            "id": 710356
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 150.4
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3196",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3196",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 475.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 146,
-      "descricao": "ESTACAO DE TRABALHO MAPLE",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "146",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 429.74,
-        "vlAquisicaoConvertido": 429.74,
-        "vlDepreciavel": 386.77,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 386.77,
-        "vlLiquidoContabil": 429.74,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 42.97,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 475.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 475.2
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3197",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-10",
+      "numeroDocumento": "3197",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1008,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 147,
-      "descricao": "ESTACAO DE TRABALHO MAPLE",
-      "dataInclusao": "2009-08-19",
-      "dataAquisicao": "2009-08-19",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-08-19",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "147",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 429.74,
-        "vlAquisicaoConvertido": 429.74,
-        "vlDepreciavel": 386.77,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 386.77,
-        "vlLiquidoContabil": 429.74,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-08-19",
-        "vlResidual": 42.97,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1008,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1008
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3213",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-12",
+      "numeroDocumento": "3213",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 759.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 150,
-      "descricao": "MICRO COMPUTADOR ROCKET PC INTEL DC E 2180 2.8 GHZ",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "150",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 1977.6,
-        "vlAquisicaoConvertido": 1977.6,
-        "vlDepreciavel": 1661.18,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 1661.18,
-        "vlLiquidoContabil": 1977.6,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 316.42,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 759.5,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 759.5
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3214",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-12",
+      "numeroDocumento": "3214",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 337.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 151,
-      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "151",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 867.35,
-        "vlAquisicaoConvertido": 867.35,
-        "vlDepreciavel": 794.84,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 794.84,
-        "vlLiquidoContabil": 867.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 72.51,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 337.5,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 337.5
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "3223",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-12",
+      "numeroDocumento": "3223",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 7307.07,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 152,
-      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "152",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 867.35,
-        "vlAquisicaoConvertido": 867.35,
-        "vlDepreciavel": 794.84,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 794.84,
-        "vlLiquidoContabil": 867.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 72.51,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7307.07,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7307.07
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2980",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2980",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 241.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 153,
-      "descricao": "PORTA DE VIDRO TEMPERADO FUMÊ 10 m.m. 1.60 x 2.10 mts",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "153",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 1215,
-        "vlAquisicaoConvertido": 1215,
-        "vlDepreciavel": 1093.5,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 1093.5,
-        "vlLiquidoContabil": 1215,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 121.5,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 241.29,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 241.29
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2981",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2981",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 804.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 154,
-      "descricao": "PORTA DE VIDRO TEMPERADO FUMÊ 10 mm 0,90 x 2,10 mts",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "154",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 526,
-        "vlAquisicaoConvertido": 526,
-        "vlDepreciavel": 473.4,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 473.4,
-        "vlLiquidoContabil": 526,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 52.6,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 804.29,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 804.29
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2982",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2982",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 264.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 155,
-      "descricao": "PERSIANAS HORIZONTAL 2.20 X 1,50",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "155",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 236.17,
-        "vlAquisicaoConvertido": 236.17,
-        "vlDepreciavel": 212.55,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 212.55,
-        "vlLiquidoContabil": 236.17,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 23.62,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 264.21,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 264.21
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2983",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2983",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 880.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 156,
-      "descricao": "PERSIANAS HORIZONTAL 2.20 X 1,50",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "156",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 236.17,
-        "vlAquisicaoConvertido": 236.17,
-        "vlDepreciavel": 212.55,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 212.55,
-        "vlLiquidoContabil": 236.17,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 23.62,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 880.7,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 880.7
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2984",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2984",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 298.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 157,
-      "descricao": "PERSIANAS HORIZONTAL 2.20 X 1,50",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "157",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 236.17,
-        "vlAquisicaoConvertido": 236.17,
-        "vlDepreciavel": 212.55,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 212.55,
-        "vlLiquidoContabil": 236.17,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 23.62,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 298.5,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 298.5
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2985",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2985",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 9766.42,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RESTITUIÇÃO DE CONVÊNIOS",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 158,
-      "descricao": "CADEIRA COM ALMOFADA RODAS/GIRATORIAS",
-      "dataInclusao": "2009-01-15",
-      "dataAquisicao": "2009-01-15",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-01-15",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "158",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 136.27,
-        "vlAquisicaoConvertido": 136.27,
-        "vlDepreciavel": 122.64,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 122.64,
-        "vlLiquidoContabil": 136.27,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-01-15",
-        "vlResidual": 13.63,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9766.42,
+          "lancada": false,
+          "receita": {
+            "id": 710358
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 9766.42
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2986",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2986",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 517.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 160,
-      "descricao": "armario de madeira 2 portas 9 portas",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "160",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3306.95,
-        "vlAquisicaoConvertido": 3306.95,
-        "vlDepreciavel": 3200.78,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 3200.78,
-        "vlLiquidoContabil": 3306.95,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 106.17,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 517.82,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 517.82
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2987",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2987",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 2572.91,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 161,
-      "descricao": "BALÇÃO DE DUAS PORTAS 1/80 CM",
-      "dataInclusao": "2009-09-16",
-      "dataAquisicao": "2009-09-16",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-09-16",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "161",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 357.5,
-        "vlAquisicaoConvertido": 357.5,
-        "vlDepreciavel": 321.75,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 321.75,
-        "vlLiquidoContabil": 357.5,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-09-16",
-        "vlResidual": 35.75,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2572.91,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2572.91
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2988",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2988",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 572.79,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 162,
-      "descricao": "PRATELEIRA 3 METROS DE ALTURA POR 4 DE LARGURA",
-      "dataInclusao": "2009-09-16",
-      "dataAquisicao": "2009-09-16",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-09-16",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "162",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3217.5,
-        "vlAquisicaoConvertido": 3217.5,
-        "vlDepreciavel": 2895.75,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 2895.75,
-        "vlLiquidoContabil": 3217.5,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-09-16",
-        "vlResidual": 321.75,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 572.79,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 572.79
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2989",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2989",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1854.67,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 163,
-      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "163",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 867.35,
-        "vlAquisicaoConvertido": 867.35,
-        "vlDepreciavel": 794.78,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 794.78,
-        "vlLiquidoContabil": 867.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 72.57,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1854.67,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1854.67
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2990",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2990",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 1920.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RESTITUIÇÕES DE VALORES.JUDICIAL Nº 00001367-90.20",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 164,
-      "descricao": "PLACA DE VIDEO WIRELESS",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "164",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 220,
-        "vlAquisicaoConvertido": 220,
-        "vlDepreciavel": 184.8,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 184.8,
-        "vlLiquidoContabil": 220,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 35.2,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1920.9,
+          "lancada": false,
+          "receita": {
+            "id": 710361
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1920.9
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2991",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2991",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51956
+      "valor": 67.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541249
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 168,
-      "descricao": "KIT COMPLETO DE REDE SEM FIO",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "168",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 700,
-        "vlAquisicaoConvertido": 700,
-        "vlDepreciavel": 588,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 588,
-        "vlLiquidoContabil": 700,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 112,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 67.6,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 67.6
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2881",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2881",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 183.61,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 170,
-      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
-      "dataInclusao": "2009-12-30",
-      "dataAquisicao": "2009-12-30",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-12-30",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "170",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 159.35,
-        "vlAquisicaoConvertido": 159.35,
-        "vlDepreciavel": 143.41,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 143.41,
-        "vlLiquidoContabil": 159.35,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-12-30",
-        "vlResidual": 15.94,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 183.61,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 183.61
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2592",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2592",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1425.87,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 171,
-      "descricao": "JOGO DE PERSIANAS",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "171",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 818,
-        "vlAquisicaoConvertido": 818,
-        "vlDepreciavel": 736.2,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 736.2,
-        "vlLiquidoContabil": 818,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 81.8,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1425.87,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1425.87
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2594",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2594",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51958
+      "valor": 1147.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541262
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 172,
-      "descricao": "PAINEL COM FOTOS EM MOLDURA DE ALUMINIO COM VIDRO MEDINDO 0,60X0,90 CM",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "172",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 895,
-        "vlAquisicaoConvertido": 895,
-        "vlDepreciavel": 805.5,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 805.5,
-        "vlLiquidoContabil": 895,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 89.5,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1147.57,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1147.57
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2595",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2595",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51967
+      "valor": 329.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT - INSC. DE CERT. DE DEC. TCE-RO Nº 0866/19,",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541263
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 173,
-      "descricao": "AR CONDICIONADO ELECTROLUX SPLIT 12.000 BTUS",
-      "dataInclusao": "2009-12-30",
-      "dataAquisicao": "2009-12-30",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-12-30",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "173",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 1565.58,
-        "vlAquisicaoConvertido": 1565.58,
-        "vlDepreciavel": 1471.65,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 1471.65,
-        "vlLiquidoContabil": 1565.58,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-12-30",
-        "vlResidual": 93.93,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 329.54,
+          "lancada": false,
+          "receita": {
+            "id": 710369
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 329.54
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2596",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2596",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51961
+      "valor": 4158.79,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541256
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 174,
-      "descricao": "AR CONDICIONADO ELECTROLUX SPLIT 18.000 BTUS",
-      "dataInclusao": "2009-12-30",
-      "dataAquisicao": "2009-12-30",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2009-12-30",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "174",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 1911.52,
-        "vlAquisicaoConvertido": 1911.52,
-        "vlDepreciavel": 1873.29,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 1873.29,
-        "vlLiquidoContabil": 1911.52,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2009-12-30",
-        "vlResidual": 38.23,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4158.79,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4158.79
+            }
+          ]
         }
-      }
+      ]
     }
   },
   {
-    "conteudo": {
-      "tipoBem": {
-        "id": 5709
+    "idIntegracao": "2597",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2597",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "grupoBem": {
-        "id": 51954
+      "valor": 150.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR - RETIDO NA FONTE - OUTROS REND.- PESSOA FÍSICA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "especieBem": {
-        "id": 541247
-      },
-      "tipoUtilizacaoBem": null,
-      "tipoAquisicao": {
-        "id": 8911
-      },
-      "fornecedor": {
-        "id": 38536157
-      },
-      "responsavel": {
-        "id": 38429988
-      },
-      "estadoConservacao": {
-        "id": 4965
-      },
-      "tipoComprovante": {
-        "id": 3417
-      },
-      "organograma": {
-        "id": 2137532
-      },
-      "localizacaoFisica": {
-        "id": 125503
-      },
-      "numeroRegistro": 176,
-      "descricao": "EQUIPAMENTO PARA INSTALACAO DE SISTEMA WIRELESS E SERVIDOR DE INTERNET",
-      "dataInclusao": "2022-01-01",
-      "dataAquisicao": "2022-01-01",
-      "consomeCombustivel": false,
-      "dataInicioGarantia": "2022-01-01",
-      "situacaoBem": {
-        "valor": "EM_USO",
-        "descricao": "EM_USO"
-      },
-      "numeroPlaca": "176",
-      "bemValor": {
-        "metodoDepreciacao": {
-          "id": 2088
-        },
-        "vlAquisicao": 3581.68,
-        "vlAquisicaoConvertido": 3581.68,
-        "vlDepreciavel": 3008.61,
-        "vlDepreciado": 0,
-        "saldoDepreciar": 3008.61,
-        "vlLiquidoContabil": 3581.68,
-        "taxaDepreciacaoAnual": 0.1,
-        "dtInicioDepreciacao": "2022-01-01",
-        "vlResidual": 573.07,
-        "moeda": {
-          "id": 8
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 150.4,
+          "lancada": false,
+          "receita": {
+            "id": 710356
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 150.4
+            }
+          ]
         }
-      }
+      ]
     }
   }
 ]

@@ -1,406 +1,1752 @@
 [
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6837",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6837",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210362
+      "valor": 21.24,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 317.15,
-      "valorTotal": 317.15,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225835
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 21.24,
+          "lancada": false,
+          "receita": {
+            "id": 707030
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 21.24
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "6838",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6838",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210361
+      "valor": 297.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 555,
-      "valorTotal": 555,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225837
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 297.75,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 297.75
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6839",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6839",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210361
+      "valor": 1495.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 555,
-      "valorTotal": 555,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225837
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1495.39,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1495.39
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "6840",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6840",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210366
+      "valor": 1747.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 300,
-      "valorTotal": 300,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225841
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1747.09,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1747.09
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6841",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6841",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210366
+      "valor": 1200,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTOS SOBRE TRANSMISSÃO INTER VIVOS DE BENS IMÓ",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 300,
-      "valorTotal": 300,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225841
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1200,
+          "lancada": false,
+          "receita": {
+            "id": 707122
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1200
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "6842",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6842",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210369
+      "valor": 293.24,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 698,
-      "valorTotal": 698,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225844
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 293.24,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 293.24
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6843",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6843",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210369
+      "valor": 669.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT ADIR IGNÁCIO LIMA  INSC. CERT. DEC. TCE-RO P",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 698,
-      "valorTotal": 698,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225844
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 669.26,
+          "lancada": false,
+          "receita": {
+            "id": 710363
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 669.26
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "6844",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6844",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210371
+      "valor": 110,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 33,
-      "valorTotal": 33,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225846
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 110,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 110
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6845",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6845",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210371
+      "valor": 110,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: SERVICO DE MAQUINAS - SEMOSP",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 33,
-      "valorTotal": 33,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225846
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 110,
+          "lancada": false,
+          "receita": {
+            "id": 707065
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 110
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "6846",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6846",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210373
+      "valor": 68.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 619,
-      "valorTotal": 619,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225847
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 68.6,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 68.6
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6847",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6847",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210373
+      "valor": 18.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 619,
-      "valorTotal": 619,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225847
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 18.57,
+          "lancada": false,
+          "receita": {
+            "id": 707120
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 18.57
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312249
+    "idIntegracao": "6848",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6848",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210376
+      "valor": 9.78,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A PROPRIEDADE PREDIAL E TERRITORIAL",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 46,
-      "valorTotal": 46,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225851
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9.78,
+          "lancada": false,
+          "receita": {
+            "id": 707028
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 9.78
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312267
+    "idIntegracao": "6849",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6849",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {
-        "id": 27210376
+      "valor": 4.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE EXPEDIENTE",
+      "contaBancaria": {
+        "id": 187651
       },
-      "quantidade": 1,
-      "valorUnitario": 46,
-      "valorTotal": 46,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
-      },
-      "material": {
-        "id": 56225851
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.13,
+          "lancada": false,
+          "receita": {
+            "id": 707048
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312260
+    "idIntegracao": "6850",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6850",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "quantidade": 1,
-      "valorUnitario": 368700,
-      "valorTotal": 368700,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 39.11,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA - COLETA DO LIXO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "material": {
-        "id": 0
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 39.11,
+          "lancada": false,
+          "receita": {
+            "id": 707051
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 39.11
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312244
+    "idIntegracao": "6851",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6851",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "quantidade": 1,
-      "valorUnitario": 368700,
-      "valorTotal": 368700,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 30,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "material": {
-        "id": 0
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 30,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 30
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312248
+    "idIntegracao": "6855",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-31",
+      "numeroDocumento": "6855",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "quantidade": 15,
-      "valorUnitario": 2260,
-      "valorTotal": 33900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 58.73,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187651
       },
-      "material": {
-        "id": 0
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 58.73,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 58.73
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312273
+    "idIntegracao": "4808",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-16",
+      "numeroDocumento": "4808",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "quantidade": 15,
-      "valorUnitario": 2260,
-      "valorTotal": 33900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 132.68,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
       },
-      "material": {
-        "id": 0
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 132.68,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 132.68
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312256
+    "idIntegracao": "4404",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4404",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "quantidade": 15,
-      "valorUnitario": 2260,
-      "valorTotal": 33900,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 1482.11,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
       },
-      "material": {
-        "id": 0
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1482.11,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1482.11
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3633",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3633",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "amostra": false,
-      "manufaturado": false
+      "valor": 1283.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1283.46,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1283.46
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2136",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2136",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1427.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1427.29,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1427.29
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2900",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2900",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1346.93,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1346.93,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1346.93
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1462",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1462",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1341.34,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1341.34,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1341.34
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "858",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "858",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1288.02,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1288.02,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1288.02
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "255",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "255",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1543.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - CONVENIO ESTADO",
+      "contaBancaria": {
+        "id": 187653
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1543.6,
+          "lancada": false,
+          "receita": {
+            "id": 707063
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774283
+              },
+              "valor": 1543.6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "256",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "256",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 176.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 176.46,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 176.46
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "139",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-30",
+      "numeroDocumento": "139",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 12384.92,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 12384.92,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 12384.92
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "859",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "859",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 252.87,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 252.87,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 252.87
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "612",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-21",
+      "numeroDocumento": "612",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 24446.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24446.71,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 24446.71
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1463",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1463",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 374.04,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 374.04,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 374.04
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1200",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-20",
+      "numeroDocumento": "1200",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23209.18,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23209.18,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 23209.18
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2901",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2901",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 553.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 553.05,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 553.05
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2518",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2518",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23980.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23980.21,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 23980.21
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2137",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2137",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 517.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 517.13,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 517.13
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1761",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1761",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23266.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23266.75,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 23266.75
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3634",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3634",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 557.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 557.41,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 557.41
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3362",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-24",
+      "numeroDocumento": "3362",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 22678.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 22678.27,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 22678.27
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4114",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-18",
+      "numeroDocumento": "4114",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 24291.38,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24291.38,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 24291.38
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4406",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4406",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 788.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 788.58,
+          "lancada": false,
+          "receita": {
+            "id": 707075
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 788.58
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4408",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4408",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 788.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 788.58,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 788.58
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4814",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-16",
+      "numeroDocumento": "4814",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 24491.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24491.09,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 24491.09
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "6404",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-17",
+      "numeroDocumento": "6404",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 23404.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 23404.7,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 23404.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "6052",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6052",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 998.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 998.19,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 998.19
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "5739",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-18",
+      "numeroDocumento": "5739",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 26710.24,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS DO SALÁRIO-EDUCAÇÃO - PRINCIPAL",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 26710.24,
+          "lancada": false,
+          "receita": {
+            "id": 707073
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 26710.24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "5412",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5412",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 895.81,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEP - SALARIO EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187665
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 895.81,
+          "lancada": false,
+          "receita": {
+            "id": 707058
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774249
+              },
+              "valor": 895.81
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "5413",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5413",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 320.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNATE",
+      "contaBancaria": {
+        "id": 187666
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 320.31,
+          "lancada": false,
+          "receita": {
+            "id": 707057
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 320.31
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "6053",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6053",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 293.01,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNATE",
+      "contaBancaria": {
+        "id": 187666
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 293.01,
+          "lancada": false,
+          "receita": {
+            "id": 707057
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 293.01
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4800",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-15",
+      "numeroDocumento": "4800",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 5618.73,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187666
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5618.73,
+          "lancada": false,
+          "receita": {
+            "id": 707075
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 5618.73
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4801",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-15",
+      "numeroDocumento": "4801",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 27541.01,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187666
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 27541.01,
+          "lancada": false,
+          "receita": {
+            "id": 707075
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 27541.01
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4410",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4410",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 350.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNATE",
+      "contaBancaria": {
+        "id": 187666
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 350.6,
+          "lancada": false,
+          "receita": {
+            "id": 707057
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 350.6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3635",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3635",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 304.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNATE",
+      "contaBancaria": {
+        "id": 187666
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 304.25,
+          "lancada": false,
+          "receita": {
+            "id": 707057
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774252
+              },
+              "valor": 304.25
+            }
+          ]
+        }
+      ]
     }
   }
 ]

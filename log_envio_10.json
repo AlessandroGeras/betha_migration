@@ -1,2302 +1,1752 @@
 [
   {
-    "idIntegracao": 559,
-    "conteudo": {
-      "data": "2012-02-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477121
+    "idIntegracao": "5341",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-29",
+      "numeroDocumento": "5341",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 52.61,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 52.61,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 52.61
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 560,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477125
+    "idIntegracao": "5695",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5695",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 3707.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR - RETIDO NA FONTE - OUTROS REND.- PESSOA FÍSICA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3707.25,
+          "lancada": false,
+          "receita": {
+            "id": 710356
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3707.25
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 561,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477128
+    "idIntegracao": "5658",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5658",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 7163.85,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7163.85,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7163.85
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 562,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477132
+    "idIntegracao": "5659",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5659",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 2000.11,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2000.11,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2000.11
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 563,
-    "conteudo": {
-      "data": "2011-09-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653196
+    "idIntegracao": "5660",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5660",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 8793.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 8793.88,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 8793.88
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 564,
-    "conteudo": {
-      "data": "2012-08-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477139
+    "idIntegracao": "5661",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5661",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 759.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 759.5,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 759.5
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 565,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477146
+    "idIntegracao": "5662",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5662",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 318.23,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 318.23,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 318.23
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 566,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5663",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5663",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 512.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 512.84,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 512.84
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 567,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477150
+    "idIntegracao": "5664",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5664",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 36,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 36
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 568,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477153
+    "idIntegracao": "5665",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5665",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 360.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 360.89,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 360.89
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 569,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477155
+    "idIntegracao": "5666",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5666",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 219.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 219.46,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 219.46
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 570,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653239
+    "idIntegracao": "5667",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5667",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 1493.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1493.41,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1493.41
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 571,
-    "conteudo": {
-      "data": "2012-08-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5668",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5668",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 847.08,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 847.08,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 847.08
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 572,
-    "conteudo": {
-      "data": "2013-07-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477162
+    "idIntegracao": "5669",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5669",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 1074.78,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1074.78,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1074.78
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 573,
-    "conteudo": {
-      "data": "2013-08-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477166
+    "idIntegracao": "5670",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5670",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 15917.92,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15917.92,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15917.92
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 574,
-    "conteudo": {
-      "data": "2013-05-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477170
+    "idIntegracao": "5671",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5671",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 1132.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1132.39,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1132.39
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 575,
-    "conteudo": {
-      "data": "2013-08-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477175
+    "idIntegracao": "5672",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5672",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 549.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 549.46,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 549.46
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 576,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477178
+    "idIntegracao": "5673",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5673",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 26099.91,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 26099.91,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 26099.91
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 577,
-    "conteudo": {
-      "data": "2013-05-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477183
+    "idIntegracao": "5674",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5674",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 4686.76,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4686.76,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4686.76
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 578,
-    "conteudo": {
-      "data": "2012-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477188
+    "idIntegracao": "5675",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5675",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 2354.97,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IMPOSTO SOBRE A RENDA - RETIDO NA FONTE - TRABALHO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2354.97,
+          "lancada": false,
+          "receita": {
+            "id": 707032
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2354.97
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 579,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653242
+    "idIntegracao": "5676",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5676",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 203.62,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 203.62,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 203.62
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 580,
-    "conteudo": {
-      "data": "2011-09-19T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477194
+    "idIntegracao": "5677",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5677",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 115.76,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 115.76,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 115.76
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 581,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477199
+    "idIntegracao": "5678",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5678",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 385.86,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 385.86,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 385.86
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 582,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653244
+    "idIntegracao": "5679",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5679",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 1008,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1008,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1008
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 583,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653245
+    "idIntegracao": "5680",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5680",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 475.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 475.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 475.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 584,
-    "conteudo": {
-      "data": "2011-10-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477204
+    "idIntegracao": "5681",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5681",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 283.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 283.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 283.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 585,
-    "conteudo": {
-      "data": "2012-05-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5682",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5682",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 1263.11,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1263.11,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1263.11
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 586,
-    "conteudo": {
-      "data": "2013-08-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5683",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5683",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 378.93,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 378.93,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 378.93
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 587,
-    "conteudo": {
-      "data": "2012-10-09T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477214
+    "idIntegracao": "5684",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5684",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 2.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2.58,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 588,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477218
+    "idIntegracao": "5685",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5685",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 259.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 259.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 259.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 589,
-    "conteudo": {
-      "data": "2014-01-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653248
+    "idIntegracao": "5686",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5686",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42701
+      "valor": 6.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6.58,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 6.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 590,
-    "conteudo": {
-      "data": "2012-11-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653249
+    "idIntegracao": "5687",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5687",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 259.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 259.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 259.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 591,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477225
+    "idIntegracao": "5688",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5688",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 133.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR - RETIDO NA FONTE - OUTROS REND.- PESSOA FÍSICA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 133.84,
+          "lancada": false,
+          "receita": {
+            "id": 710356
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 133.84
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 592,
-    "conteudo": {
-      "data": "2012-11-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477229
+    "idIntegracao": "5689",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5689",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 191.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 191.89,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 191.89
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 593,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477232
+    "idIntegracao": "5690",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5690",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 639.61,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 639.61,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 639.61
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 594,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5691",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5691",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 261.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 261.71,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 261.71
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 595,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653251
+    "idIntegracao": "5692",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-16",
+      "numeroDocumento": "5692",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 96.72,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 96.72,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 96.72
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 596,
-    "conteudo": {
-      "data": "2012-12-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477240
+    "idIntegracao": "5848",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5848",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 40.72,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 40.72,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 40.72
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 597,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477245
+    "idIntegracao": "5849",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5849",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 58.37,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR - RETIDO NA FONTE - OUTROS REND.- PESSOA FÍSICA",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 58.37,
+          "lancada": false,
+          "receita": {
+            "id": 710356
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 58.37
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 598,
-    "conteudo": {
-      "data": "2012-08-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5850",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5850",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 68.76,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 68.76,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 68.76
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 599,
-    "conteudo": {
-      "data": "2012-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477250
+    "idIntegracao": "5851",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5851",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 423.79,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 423.79,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 423.79
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 600,
-    "conteudo": {
-      "data": "2012-02-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5852",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5852",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 205.74,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 205.74,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 205.74
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 601,
-    "conteudo": {
-      "data": "2012-04-02T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477257
+    "idIntegracao": "5853",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5853",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 685.79,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 685.79,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 685.79
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 602,
-    "conteudo": {
-      "data": "2011-12-31T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": null
+    "idIntegracao": "5854",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5854",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 2875.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2875.41,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2875.41
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 603,
-    "conteudo": {
-      "data": "2012-10-10T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477263
+    "idIntegracao": "5855",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5855",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 8386.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 8386.59,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 8386.59
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 604,
-    "conteudo": {
-      "data": "2012-04-05T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477267
+    "idIntegracao": "5856",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-24",
+      "numeroDocumento": "5856",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 24093.63,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RESTITUIÇÃO DE CONVÊNIOS",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 24093.63,
+          "lancada": false,
+          "receita": {
+            "id": 710358
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 24093.63
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 605,
-    "conteudo": {
-      "data": "2012-12-12T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477270
+    "idIntegracao": "5778",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-19",
+      "numeroDocumento": "5778",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 2435.83,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2435.83,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2435.83
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 606,
-    "conteudo": {
-      "data": "2012-10-09T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477275
+    "idIntegracao": "5779",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-19",
+      "numeroDocumento": "5779",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 479.99,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 479.99,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 479.99
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 607,
-    "conteudo": {
-      "data": "2012-03-01T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33653254
+    "idIntegracao": "5780",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-19",
+      "numeroDocumento": "5780",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42704
+      "valor": 117.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 117.7,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 117.7
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": 608,
-    "conteudo": {
-      "data": "2012-08-17T00:00:00",
-      "saldoFgts": null,
-      "fgtsMesAnterior": false,
-      "reporVaga": true,
-      "ato": null,
-      "matricula": {
-        "id": 33477282
+    "idIntegracao": "5781",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-19",
+      "numeroDocumento": "5781",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "avisoPrevio": null,
-      "motivoRescisao": {
-        "id": 42702
+      "valor": 5289.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
       },
-      "trabalhouDiaRescisao": false,
-      "recalcularMensal": false,
-      "conversao": false,
-      "dataEfeitoFinanceiro": null,
-      "dataCancelamento": null,
-      "tipoCancelamento": null,
-      "numeroProcessoCancelamento": null,
-      "tipoAfastamentoAteEfeitoFinanceiro": null,
-      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
-      "atoCancelamento": null,
-      "afastamentos": [],
-      "reintegracaoExcedeVagaCargo": false,
-      "usuarioReintegracao": null,
-      "dataHoraReintegracao": null,
-      "aposentadoRevertido": null,
-      "empresaSucessora": null,
-      "dataFinalQuarentena": null,
-      "indicativoRemuneracao": null,
-      "pdv": false,
-      "processoTrabalhista": null,
-      "dataRescisaoRetificadaProcTrab": null,
-      "motivoRescisaoRetificadaProcTrab": null,
-      "consideraAvosPerdidosDecimoTerceiro": true,
-      "descontarFaltasFerias": true,
-      "observacao": null,
-      "avisoPrevioDescontado": false,
-      "avisoPrevioIndenizado": false,
-      "quantidadeDiasAvisoPrevio": null,
-      "numeroProcessoTrabalhista": null
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5289.82,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5289.82
+            }
+          ]
+        }
+      ]
     }
   }
 ]

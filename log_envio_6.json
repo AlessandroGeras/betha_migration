@@ -1,46 +1,1752 @@
 [
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312436
+    "idIntegracao": "809",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "809",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "numero": "53",
-      "quantidade": 25,
-      "valorUnitario": 0,
-      "valorTotal": 0,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 283.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
       },
-      "material": {
-        "id": 56208715
-      },
-      "amostra": false,
-      "manufaturado": false
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 283.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 283.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "conteudo": {
-      "processoAdministrativo": {
-        "id": 1312432
+    "idIntegracao": "699",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-22",
+      "numeroDocumento": "699",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "materialEspecificacao": {},
-      "numero": "54",
-      "quantidade": 25,
-      "valorUnitario": 0,
-      "valorTotal": 0,
-      "percentual": 0,
-      "tipoParticipacao": {
-        "valor": "LIVRE",
-        "descricao": "LIVRE"
+      "valor": 329.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: DVANT - INSC. DE CERT. DE DEC. TCE-RO Nº 0866/19,",
+      "contaBancaria": {
+        "id": 187619
       },
-      "material": {
-        "id": 56208715
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 329.54,
+          "lancada": false,
+          "receita": {
+            "id": 710369
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 329.54
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "491",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "491",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "amostra": false,
-      "manufaturado": false
+      "valor": 517.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 517.82,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 517.82
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "492",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "492",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 67.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 67.6,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 67.6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "493",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "493",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1147.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1147.57,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1147.57
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "494",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "494",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 30.48,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 30.48,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 30.48
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "495",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "495",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 59.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 59.29,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 59.29
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "496",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "496",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 11.23,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11.23,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 11.23
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "497",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "497",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 330.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 330.32,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 330.32
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "498",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "498",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 963.44,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 963.44,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 963.44
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "499",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "499",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 522.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 522.75,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 522.75
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "500",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "500",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2178.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2178.13,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2178.13
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "501",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "501",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1008,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1008,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1008
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "502",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "502",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 475.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 475.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 475.2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "503",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "503",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 259.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 259.2,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 259.2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "504",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "504",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 515.98,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 515.98,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 515.98
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "505",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-20",
+      "numeroDocumento": "505",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 300,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 300,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 300
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "384",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "384",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 227.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 227.7,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 227.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "371",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "371",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 332.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 332.4,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 332.4
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "372",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "372",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 29.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 29.7,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 29.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "316",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "316",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 64.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 64.26,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 64.26
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "317",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "317",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 30,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 30,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 30
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "318",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "318",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 35,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 35,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 35
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "320",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "320",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 6215.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6215.77,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 6215.77
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "321",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "321",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2264.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2264.7,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2264.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "322",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "322",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 112.34,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 112.34,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 112.34
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "323",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "323",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 250.72,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE LICENCA P/ FUNCIONAMENTO DE ESTABELECIMENT",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 250.72,
+          "lancada": false,
+          "receita": {
+            "id": 707124
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 250.72
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "324",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "324",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 160.26,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TAXA DE LICENCA P/ FUNCIONAMENTO DE ESTABELECIMENT",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 160.26,
+          "lancada": false,
+          "receita": {
+            "id": 707124
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 160.26
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "325",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "325",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2387.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2387.09,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2387.09
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "326",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "326",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2091.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2091.7,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2091.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "327",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "327",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1920.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RESTITUIÇÕES DE VALORES.JUDICIAL Nº 00001367-90.20",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1920.9,
+          "lancada": false,
+          "receita": {
+            "id": 710361
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1920.9
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "328",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "328",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 85.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 85.54,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 85.54
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "243",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "243",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 312.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 312.2,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 312.2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4188",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4188",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2463.83,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2463.83,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2463.83
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4189",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4189",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 35.04,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 35.04,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 35.04
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4190",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4190",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 75.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 75.43,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 75.43
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4191",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4191",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 2189.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2189.59,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2189.59
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4192",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4192",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1081.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1081.6,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1081.6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4018",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-15",
+      "numeroDocumento": "4018",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 261.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 261.71,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 261.71
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4019",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-15",
+      "numeroDocumento": "4019",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 261.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 261.71,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 261.71
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4020",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-15",
+      "numeroDocumento": "4020",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1920.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS RECEITAS",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1920.9,
+          "lancada": false,
+          "receita": {
+            "id": 707086
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1920.9
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4155",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4155",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 258.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 258.29,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 258.29
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4156",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4156",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 860.97,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 860.97,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 860.97
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4157",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4157",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 63.73,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 63.73,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 63.73
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4158",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4158",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 212.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 212.43,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 212.43
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4159",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4159",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 341.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 341.84,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 341.84
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4160",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4160",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1139.46,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1139.46,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1139.46
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4161",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4161",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 337.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - PROPRIO",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 337.5,
+          "lancada": false,
+          "receita": {
+            "id": 707123
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 337.5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4162",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4162",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 57.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 57.77,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 57.77
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4163",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4163",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 163.95,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: IR- RETIDO NA FONTE - OUTROS REND.- PESSOA JURIDIC",
+      "contaBancaria": {
+        "id": 187619
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 163.95,
+          "lancada": false,
+          "receita": {
+            "id": 710357
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 163.95
+            }
+          ]
+        }
+      ]
     }
   }
 ]

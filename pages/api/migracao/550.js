@@ -63,111 +63,111 @@ JSON_QUERY(
                                  JSON_QUERY(
     (SELECT
    case cd_categoriaeconomicareceita
-  when        1113034102        then                33500517
-when        1113034101        then                33500541
-when        1121040102        then                33500717
-when        1121040104        then                33500718
-when        1121040403        then                33500724
-when        1121040101        then                33500741
-when        1321010117        then                33502104
-when        1321010119        then                33502105
-when        1321010121        then                33502106
-when        1321010123        then                33502107
-when        1321010125        then                33502108
-when        1321010127        then                33502109
-when        1321010129        then                33502110
-when        1321010131        then                33502111
-when        1321010133        then                33502112
-when        1321010135        then                33502113
-when        1321010116        then                33502128
-when        1321010118        then                33502129
-when        1321010120        then                33502130
-when        1321010122        then                33502131
-when        1321010124        then                33502132
-when        1321010126        then                33502133
-when        1321010128        then                33502134
-when        1321010130        then                33502135
-when        1321010132        then                33502136
-when        1321010134        then                33502137
-when        1321010136        then                33502138
-when        1711511104        then                33503334
-when        1711512103        then                33503340
-when        1713501106        then                33503464
-when        1713501110        then                33503466
-when        1713501112        then                33503467
-when        1713502102        then                33503473
-when        1713501105        then                33503488
-when        1713501107        then                33503489
-when        1713501109        then                33503490
-when        1713501111        then                33503491
-when        1713501113        then                33503492
-when        1713505103        then                33503516
-when        1713503104        then                33503529
-when        1713504102        then                33503535
-when        1714990101        then                33503708
-when        1714990102        then                33503733
-when        1719570101        then                33503866
-when        1729990101        then                33504122
-when        1729990103        then                33504123
-when        1729990102        then                33504147
-when        1922011101        then                33504571
-when        1921030101        then                33504580
-when        1921030201        then                33504581
-when        1922063101        then                33504678
-when        1922500101        then                33504759
-when        1922510101        then                33504764
-when        1922990103        then                33504770
-when        1922990105        then                33504771
-when        1922990107        then                33504772
-when        1922990109        then                33504773
-when        1922990102        then                33504794
-when        1922990104        then                33504795
-when        1922990106        then                33504796
-when        1922990108        then                33504797
-when        1922990110        then                33504798
-when        1923990102        then                33504827
-when        1923990101        then                33504851
-when        1923990103        then                33504852
-when        1923990104        then                33504853
-when        1923990302        then                33504860
-when        1923990304        then                33504861
-when        1923990306        then                33504862
-when        1923990308        then                33504863
-when        1923990310        then                33504864
-when        1923990312        then                33504865
-when        1923990314        then                33504866
-when        1923990402        then                33504868
-when        1923990404        then                33504869
-when        1923990406        then                33504870
-when        1923990408        then                33504871
-when        1923990410        then                33504872
-when        1923990412        then                33504873
-when        1923990414        then                33504874
-when        1923990416        then                33504875
-when        1923990418        then                33504876
-when        1923990301        then                33504884
-when        1923990303        then                33504885
-when        1923990305        then                33504886
-when        1923990307        then                33504887
-when        1923990309        then                33504888
-when        1923990311        then                33504889
-when        1923990313        then                33504890
-when        1923990315        then                33504891
-when        1923990401        then                33504892
-when        1923990403        then                33504893
-when        1923990407        then                33504895
-when        1923990409        then                33504896
-when        1923990411        then                33504897
-when        1923990413        then                33504898
-when        1923990415        then                33504899
-when        1923990417        then                33504900
-when        1999122101        then                33505267
-when        1999992102        then                33505389
-when        2411513101        then                33505590
-when        2412509101        then                33505602
-when        2414990108        then                33505643
-when        2419510101        then                33505647
-when        2429990101        then                33505702
+  when	1113034102	then		33500517
+when	1113034101	then		33500541
+when	1121040102	then		33500717
+when	1121040104	then		33500718
+when	1121040403	then		33500724
+when	1121040101	then		33500741
+when	1321010117	then		33502104
+when	1321010119	then		33502105
+when	1321010121	then		33502106
+when	1321010123	then		33502107
+when	1321010125	then		33502108
+when	1321010127	then		33502109
+when	1321010129	then		33502110
+when	1321010131	then		33502111
+when	1321010133	then		33502112
+when	1321010135	then		33502113
+when	1321010116	then		33502128
+when	1321010118	then		33502129
+when	1321010120	then		33502130
+when	1321010122	then		33502131
+when	1321010124	then		33502132
+when	1321010126	then		33502133
+when	1321010128	then		33502134
+when	1321010130	then		33502135
+when	1321010132	then		33502136
+when	1321010134	then		33502137
+when	1321010136	then		33502138
+when	1711511104	then		33503334
+when	1711512103	then		33503340
+when	1713501106	then		33503464
+when	1713501110	then		33503466
+when	1713501112	then		33503467
+when	1713502102	then		33503473
+when	1713501105	then		33503488
+when	1713501107	then		33503489
+when	1713501109	then		33503490
+when	1713501111	then		33503491
+when	1713501113	then		33503492
+when	1713505103	then		33503516
+when	1713503104	then		33503529
+when	1713504102	then		33503535
+when	1714990101	then		33503708
+when	1714990102	then		33503733
+when	1719570101	then		33503866
+when	1729990101	then		33504122
+when	1729990103	then		33504123
+when	1729990102	then		33504147
+when	1922011101	then		33504571
+when	1921030101	then		33504580
+when	1921030201	then		33504581
+when	1922063101	then		33504678
+when	1922500101	then		33504759
+when	1922510101	then		33504764
+when	1922990103	then		33504770
+when	1922990105	then		33504771
+when	1922990107	then		33504772
+when	1922990109	then		33504773
+when	1922990102	then		33504794
+when	1922990104	then		33504795
+when	1922990106	then		33504796
+when	1922990108	then		33504797
+when	1922990110	then		33504798
+when	1923990102	then		33504827
+when	1923990101	then		33504851
+when	1923990103	then		33504852
+when	1923990104	then		33504853
+when	1923990302	then		33504860
+when	1923990304	then		33504861
+when	1923990306	then		33504862
+when	1923990308	then		33504863
+when	1923990310	then		33504864
+when	1923990312	then		33504865
+when	1923990314	then		33504866
+when	1923990402	then		33504868
+when	1923990404	then		33504869
+when	1923990406	then		33504870
+when	1923990408	then		33504871
+when	1923990410	then		33504872
+when	1923990412	then		33504873
+when	1923990414	then		33504874
+when	1923990416	then		33504875
+when	1923990418	then		33504876
+when	1923990301	then		33504884
+when	1923990303	then		33504885
+when	1923990305	then		33504886
+when	1923990307	then		33504887
+when	1923990309	then		33504888
+when	1923990311	then		33504889
+when	1923990313	then		33504890
+when	1923990315	then		33504891
+when	1923990401	then		33504892
+when	1923990403	then		33504893
+when	1923990407	then		33504895
+when	1923990409	then		33504896
+when	1923990411	then		33504897
+when	1923990413	then		33504898
+when	1923990415	then		33504899
+when	1923990417	then		33504900
+when	1999122101	then		33505267
+when	1999992102	then		33505389
+when	2411513101	then		33505590
+when	2412509101	then		33505602
+when	2414990108	then		33505643
+when	2419510101	then		33505647
+when	2429990101	then		33505702
    end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS natureza,
@@ -196,7 +196,7 @@ end as id
 from CONTFICHARECEITA
 where cd_ReceitaPrevisaoTipo = 1
 and vl_orcado = 0
-and cd_cecam = 1995
+and cd_cecam = 2783
 
 
         `;
@@ -226,8 +226,8 @@ and cd_cecam = 1995
                 }
             };
         });
-/* 
-          const chunkSize = 50;
+
+        /*   const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
@@ -235,7 +235,7 @@ and cd_cecam = 1995
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        return */
+        return  */
 
         const chunkArray = (array, size) => {
             const chunked = [];
@@ -257,7 +257,7 @@ and cd_cecam = 1995
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                        'Authorization': 'Bearer 4dfb70a8-62e5-4ec2-9028-622e50d1f4d1'
                     },
                     body: JSON.stringify(batch)
                 });

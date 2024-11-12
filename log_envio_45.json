@@ -1,2100 +1,1752 @@
 [
   {
-    "idIntegracao": "2201",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2009-01-01",
-      "fimAfastamento": "2009-01-30",
-      "retornoTrabalho": "2009-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "2158",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2158",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 494.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - MDE 25%",
+      "contaBancaria": {
+        "id": 187704
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 494.25,
+          "lancada": false,
+          "receita": {
+            "id": 707055
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774233
+              },
+              "valor": 494.25
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2202",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2009-03-03",
-      "fimAfastamento": "2010-11-05",
-      "retornoTrabalho": "2010-11-06",
-      "quantidade": 612,
-      "unidade": "DIAS",
-      "quantidadeDias": 612,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+    "idIntegracao": "1184",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-20",
+      "numeroDocumento": "1184",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "A pedido do Servidor mediante lei municipal 206/207 (o servidor esta retornando ao trabalho no dia 05/11/2010)",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 14090.53,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERENCIA DE RECURSOS DO FUNDEB",
+      "contaBancaria": {
+        "id": 187704
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 14090.53,
+          "lancada": false,
+          "receita": {
+            "id": 707082
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774240
+              },
+              "valor": 14090.53
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2203",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2012-01-11",
-      "fimAfastamento": "2012-01-30",
-      "retornoTrabalho": "2012-01-31",
-      "quantidade": 19,
-      "unidade": "DIAS",
-      "quantidadeDias": 19,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "1478",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1478",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 598.07,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - MDE 25%",
+      "contaBancaria": {
+        "id": 187704
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 598.07,
+          "lancada": false,
+          "receita": {
+            "id": 707055
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774233
+              },
+              "valor": 598.07
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2204",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2013-01-01",
-      "fimAfastamento": "2013-01-30",
-      "retornoTrabalho": "2013-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "277",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "277",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 991.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - MDE 25%",
+      "contaBancaria": {
+        "id": 187704
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 991.32,
+          "lancada": false,
+          "receita": {
+            "id": 707055
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774233
+              },
+              "valor": 991.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2205",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2014-03-01",
-      "fimAfastamento": "2014-06-30",
-      "retornoTrabalho": "2014-07-01",
-      "quantidade": 121,
-      "unidade": "DIAS",
-      "quantidadeDias": 121,
-      "jornadaDiaria": null,
-      "decorrente": "ACIDENTE_DOENCA",
-      "tipoAfastamento": {
-        "id": 55874
+    "idIntegracao": "876",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "876",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Acidente/doença não relacionada ao trabalho",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "MEDIANTE REQUERIMENTO DE AUXILIO DOENÇA",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 519.07,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - MDE 25%",
+      "contaBancaria": {
+        "id": 187704
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 519.07,
+          "lancada": false,
+          "receita": {
+            "id": 707055
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774233
+              },
+              "valor": 519.07
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2206",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2015-01-01",
-      "fimAfastamento": "2015-01-30",
-      "retornoTrabalho": "2015-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "2979",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2979",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 0.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - MDE 25%",
+      "contaBancaria": {
+        "id": 187705
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.4,
+          "lancada": false,
+          "receita": {
+            "id": 707055
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774233
+              },
+              "valor": 0.4
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2207",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2016-01-01",
-      "fimAfastamento": "2016-01-30",
-      "retornoTrabalho": "2016-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "2915",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2915",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2122.38,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2122.38,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2122.38
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2208",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2017-02-28",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+    "idIntegracao": "2160",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2160",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "I - TRANSFERIR - o senhor ARCILIO JOSE FRANCISCO, portador do CPF N.º 304.010.892- ocupante do Cargo de Motorista de Ônibus, da Secretaria Municipal de Educação para a Secretaria Municipal de SAÚDE.    DA PORTARIA 061",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2260.02,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2260.02,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2260.02
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2209",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2007-05-01",
-      "fimAfastamento": "2007-05-30",
-      "retornoTrabalho": "2007-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "878",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "878",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2051.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2051.71,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2051.71
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2210",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2008-02-01",
-      "fimAfastamento": "2008-03-01",
-      "retornoTrabalho": "2008-03-02",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "278",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "278",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2477.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2477.58,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2477.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2211",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2008-09-15",
-      "fimAfastamento": "2008-10-14",
-      "retornoTrabalho": "2008-10-15",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "1479",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1479",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2126.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2126.32,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2126.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2212",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2010-02-01",
-      "fimAfastamento": "2010-03-02",
-      "retornoTrabalho": "2010-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "5429",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5429",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 1558.47,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1558.47,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 1558.47
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2213",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2012-03-01",
-      "fimAfastamento": "2012-03-30",
-      "retornoTrabalho": "2012-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "6065",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6065",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 1153.14,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1153.14,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 1153.14
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2214",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2013-02-01",
-      "fimAfastamento": "2013-03-02",
-      "retornoTrabalho": "2013-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "4425",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4425",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2330.82,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2330.82,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2330.82
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2215",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2014-05-01",
-      "fimAfastamento": "2014-05-30",
-      "retornoTrabalho": "2014-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "3651",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3651",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 2022.74,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187706
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2022.74,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 2022.74
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2216",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2015-12-01",
-      "fimAfastamento": "2015-12-30",
-      "retornoTrabalho": "2015-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "3652",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3652",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 78.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 78.57,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 78.57
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2217",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2016-10-01",
-      "fimAfastamento": "2016-10-30",
-      "retornoTrabalho": "2016-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "4426",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4426",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 90.53,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 90.53,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 90.53
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2218",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2017-05-01",
-      "fimAfastamento": "2017-05-30",
-      "retornoTrabalho": "2017-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+    "idIntegracao": "6066",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6066",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 53.76,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 53.76,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 53.76
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2219",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2017-12-01",
-      "fimAfastamento": "2017-12-30",
-      "retornoTrabalho": "2017-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "5430",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5430",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 84.62,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 84.62,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 84.62
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2220",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2019-03-01",
-      "fimAfastamento": "2019-03-30",
-      "retornoTrabalho": "2019-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "1480",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1480",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 82.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 82.59,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 82.59
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2221",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2020-02-01",
-      "fimAfastamento": "2020-03-01",
-      "retornoTrabalho": "2020-03-02",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "279",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "279",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 163.17,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 163.17,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 163.17
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2222",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2020-12-01",
-      "fimAfastamento": "2020-12-30",
-      "retornoTrabalho": "2020-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "879",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "879",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 114.73,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 114.73,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 114.73
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2223",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2022-12-25",
-      "fimAfastamento": "2023-01-13",
-      "retornoTrabalho": "2023-01-14",
-      "quantidade": 19,
-      "unidade": "DIAS",
-      "quantidadeDias": 19,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "2161",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2161",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 87.78,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 87.78,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 87.78
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2224",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2024-02-17",
-      "fimAfastamento": "2024-03-17",
-      "retornoTrabalho": "2024-03-18",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "2916",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2916",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 82.43,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187707
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 82.43,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 82.43
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2225",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "2917",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2917",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-07-07",
-      "fimAfastamento": "2012-10-07",
-      "retornoTrabalho": "2012-10-08",
-      "quantidade": 92,
-      "unidade": "DIAS",
-      "quantidadeDias": 92,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55901
+      "valor": 10282.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Licença maternidade - 120 dias e suas prorrogações/antecipações, inclusive para o cônjuge sobreviven",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": true,
-      "observacao": "AFASTAMENTO PARA PLEITO ELEITORAL",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10282.27,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 10282.27
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2226",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "2182",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2182",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2006-11-01",
-      "fimAfastamento": "2006-11-30",
-      "retornoTrabalho": "2006-12-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 10914.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10914.5,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 10914.5
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2227",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "369",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "369",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-04-01",
-      "fimAfastamento": "2008-04-30",
-      "retornoTrabalho": "2008-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 11736.42,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11736.42,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 11736.42
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2228",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "1506",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1506",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-11-03",
-      "fimAfastamento": "2008-12-02",
-      "retornoTrabalho": "2008-12-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 10074.99,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10074.99,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 10074.99
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2229",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "907",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "907",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-08-01",
-      "fimAfastamento": "2010-11-30",
-      "retornoTrabalho": "2010-12-01",
-      "quantidade": 486,
-      "unidade": "DIAS",
-      "quantidadeDias": 486,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+      "valor": 9698.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "A pedido do servidor mediante requerimento em processo 627/2009 e deferido pelo prefeito municipal, em 29/07/2009.",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9698.05,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 9698.05
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2230",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "5452",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5452",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-01-01",
-      "fimAfastamento": "2013-01-30",
-      "retornoTrabalho": "2013-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 11063.36,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11063.36,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 11063.36
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2231",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "6087",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6087",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-04-01",
-      "fimAfastamento": "2013-04-30",
-      "retornoTrabalho": "2013-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 10502.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10502.57,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 10502.57
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2232",
-    "conteudo": {
-      "matricula": {
-        "id": 33476991
+    "idIntegracao": "4545",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4545",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-05-14",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+      "valor": 11371.48,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "mediante pedido do servidor atraves do pedido requerido em processo n 638",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 11371.48,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 11371.48
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2233",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2006-10-04",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+    "idIntegracao": "3669",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3669",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 9794.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 187708
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 9794.89,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 9794.89
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2234",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2005-10-04",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+    "idIntegracao": "3653",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3653",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 211.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 211.21,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 211.21
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2235",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "4427",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4427",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-02-01",
-      "fimAfastamento": "2007-03-02",
-      "retornoTrabalho": "2007-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 243.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 243.4,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 243.4
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2236",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "6067",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6067",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-05-01",
-      "fimAfastamento": "2008-05-30",
-      "retornoTrabalho": "2008-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 226.95,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 226.95,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 226.95
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2237",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "5431",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5431",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-02-01",
-      "fimAfastamento": "2009-03-02",
-      "retornoTrabalho": "2009-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 235.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 235.13,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 235.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2238",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "1481",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1481",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-01-01",
-      "fimAfastamento": "2010-01-30",
-      "retornoTrabalho": "2010-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 222.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 222.03,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 222.03
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2239",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "280",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "280",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-12-01",
-      "fimAfastamento": "2010-12-30",
-      "retornoTrabalho": "2010-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 258.71,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 258.71,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 258.71
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2240",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "880",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "880",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-10-04",
-      "fimAfastamento": "2011-11-02",
-      "retornoTrabalho": "2011-11-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 214.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 214.25,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 214.25
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2241",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "2162",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2162",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-03-01",
-      "fimAfastamento": "2013-03-30",
-      "retornoTrabalho": "2013-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 236,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 236,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 236
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2242",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "2918",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2918",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-01-01",
-      "fimAfastamento": "2014-01-30",
-      "retornoTrabalho": "2014-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 221.63,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DE DESP. BANCÁRIO CVE EDUCAÇÃO",
+      "contaBancaria": {
+        "id": 187709
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 221.63,
+          "lancada": false,
+          "receita": {
+            "id": 710382
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 221.63
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2243",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "2919",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2919",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-11-01",
-      "fimAfastamento": "2014-11-30",
-      "retornoTrabalho": "2014-12-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 215.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNAE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 215.64,
+          "lancada": false,
+          "receita": {
+            "id": 707056
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 215.64
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2244",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "3001",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-05",
+      "numeroDocumento": "3001",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-10-01",
-      "fimAfastamento": "2015-10-30",
-      "retornoTrabalho": "2015-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1670.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1670.4,
+          "lancada": false,
+          "receita": {
+            "id": 707074
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 1670.4
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2245",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "3002",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-05",
+      "numeroDocumento": "3002",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-05-01",
-      "fimAfastamento": "2017-05-30",
-      "retornoTrabalho": "2017-05-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 4690,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4690,
+          "lancada": false,
+          "receita": {
+            "id": 707074
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 4690
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2246",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "2163",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2163",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-11-01",
-      "fimAfastamento": "2017-11-30",
-      "retornoTrabalho": "2017-12-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 190.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNAE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 190.39,
+          "lancada": false,
+          "receita": {
+            "id": 707056
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 190.39
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2247",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "2315",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-07",
+      "numeroDocumento": "2315",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2022-01-01",
-      "fimAfastamento": "2022-01-30",
-      "retornoTrabalho": "2022-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1670.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1670.4,
+          "lancada": false,
+          "receita": {
+            "id": 707074
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 1670.4
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2248",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "2318",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-07",
+      "numeroDocumento": "2318",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2022-12-25",
-      "fimAfastamento": "2023-01-13",
-      "retornoTrabalho": "2023-01-14",
-      "quantidade": 19,
-      "unidade": "DIAS",
-      "quantidadeDias": 19,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 4690,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4690,
+          "lancada": false,
+          "receita": {
+            "id": 707074
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 4690
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2249",
-    "conteudo": {
-      "matricula": {
-        "id": 33476999
+    "idIntegracao": "881",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "881",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2024-01-01",
-      "fimAfastamento": "2024-01-30",
-      "retornoTrabalho": "2024-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 113.33,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITOS - PNAE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 113.33,
+          "lancada": false,
+          "receita": {
+            "id": 707056
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 113.33
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2250",
-    "conteudo": {
-      "matricula": {
-        "id": 33477001
+    "idIntegracao": "440",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-16",
+      "numeroDocumento": "440",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-07-01",
-      "fimAfastamento": "2007-07-30",
-      "retornoTrabalho": "2007-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1670.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: TRANSFERÊNCIAS REFERENTES AO PROGRAMA NACIONAL DE",
+      "contaBancaria": {
+        "id": 187711
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1670.4,
+          "lancada": false,
+          "receita": {
+            "id": 707074
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774251
+              },
+              "valor": 1670.4
+            }
+          ]
+        }
+      ]
     }
   }
 ]

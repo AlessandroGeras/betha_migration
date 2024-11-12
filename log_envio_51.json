@@ -1,2138 +1,1744 @@
 [
   {
-    "idIntegracao": "2501",
-    "conteudo": {
-      "matricula": {
-        "id": 33476958
+    "idIntegracao": "6291",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-10-11",
+      "numeroDocumento": "6291",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-04-01",
-      "fimAfastamento": "2015-04-30",
-      "retornoTrabalho": "2015-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 204124.75,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 204124.75,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 204124.75
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2502",
-    "conteudo": {
-      "matricula": {
-        "id": 33476958
+    "idIntegracao": "3660",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3660",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-07-01",
-      "fimAfastamento": "2015-07-30",
-      "retornoTrabalho": "2015-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 692.66,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RECEITAS DE RENDIMENTOS CV TRANSP ESCOLAR IR E VIR",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 692.66,
+          "lancada": false,
+          "receita": {
+            "id": 707062
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 692.66
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2503",
-    "conteudo": {
-      "matricula": {
-        "id": 33476958
+    "idIntegracao": "4434",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4434",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-09-01",
-      "fimAfastamento": "2017-09-30",
-      "retornoTrabalho": "2017-10-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 173.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RECEITAS DE RENDIMENTOS CV TRANSP ESCOLAR IR E VIR",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 173.27,
+          "lancada": false,
+          "receita": {
+            "id": 707062
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 173.27
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2504",
-    "conteudo": {
-      "matricula": {
-        "id": 33476958
+    "idIntegracao": "4691",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-09",
+      "numeroDocumento": "4691",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-12-01",
-      "fimAfastamento": "2017-12-30",
-      "retornoTrabalho": "2017-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 43925.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 43925.58,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 43925.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2505",
-    "conteudo": {
-      "matricula": {
-        "id": 33476958
+    "idIntegracao": "4695",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-09",
+      "numeroDocumento": "4695",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2019-01-01",
-      "fimAfastamento": "2019-01-30",
-      "retornoTrabalho": "2019-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 204124.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 204124.77,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 204124.77
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2506",
-    "conteudo": {
-      "matricula": {
-        "id": 33476958
+    "idIntegracao": "2926",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2926",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-11-22",
-      "fimAfastamento": "2025-12-30",
-      "retornoTrabalho": "2025-12-31",
-      "quantidade": 1499,
-      "unidade": "DIAS",
-      "quantidadeDias": 1499,
-      "jornadaDiaria": null,
-      "decorrente": "CEDENCIA",
-      "tipoAfastamento": {
-        "id": 55896
+      "valor": 1358.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RECEITAS DE RENDIMENTOS CV TRANSP ESCOLAR IR E VIR",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Exercício em outro órgão de servidor ou empregado público cedido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SERVIDOR CEDIDO AO FUNDO MUNICIPAL DE SAUDE",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1358.27,
+          "lancada": false,
+          "receita": {
+            "id": 707062
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 1358.27
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2507",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "2682",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-27",
+      "numeroDocumento": "2682",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-04-01",
-      "fimAfastamento": "2021-11-21",
-      "retornoTrabalho": "2021-11-22",
-      "quantidade": 234,
-      "unidade": "DIAS",
-      "quantidadeDias": 234,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 43925.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": true,
-      "observacao": null,
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 43925.58,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 43925.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2508",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "2683",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-27",
+      "numeroDocumento": "2683",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-04-01",
-      "fimAfastamento": "2008-04-30",
-      "retornoTrabalho": "2008-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 204124.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 204124.77,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 204124.77
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2509",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "2170",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2170",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-02-01",
-      "fimAfastamento": "2009-03-02",
-      "retornoTrabalho": "2009-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 1639.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RECEITAS DE RENDIMENTOS CV TRANSP ESCOLAR IR E VIR",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1639.88,
+          "lancada": false,
+          "receita": {
+            "id": 707062
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 1639.88
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2510",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1491",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1491",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-01-01",
-      "fimAfastamento": "2010-01-30",
-      "retornoTrabalho": "2010-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 148.59,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RECEITAS DE RENDIMENTOS CV TRANSP ESCOLAR IR E VIR",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 148.59,
+          "lancada": false,
+          "receita": {
+            "id": 707062
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 148.59
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2511",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1492",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1492",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-06-01",
-      "fimAfastamento": "2011-06-20",
-      "retornoTrabalho": "2011-06-21",
-      "quantidade": 19,
-      "unidade": "DIAS",
-      "quantidadeDias": 19,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 204124.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 204124.77,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 204124.77
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2512",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1493",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1493",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-02-01",
-      "fimAfastamento": "2012-03-01",
-      "retornoTrabalho": "2012-03-02",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 43925.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: OUTRAS TRANSF DE CONV ESTADOS DEST PROG DE EDUCAÇÃ",
+      "contaBancaria": {
+        "id": 188008
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 43925.58,
+          "lancada": false,
+          "receita": {
+            "id": 707081
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774255
+              },
+              "valor": 43925.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2513",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1843",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-18",
+      "numeroDocumento": "1843",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-04-01",
-      "fimAfastamento": "2014-04-30",
-      "retornoTrabalho": "2014-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 100000,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: MANUTENÇÃOATIVIDADES CULTURAIS - E P I F 202341490",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 100000,
+          "lancada": false,
+          "receita": {
+            "id": 710130
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 100000
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2514",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1844",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-18",
+      "numeroDocumento": "1844",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-10-01",
-      "fimAfastamento": "2014-10-30",
-      "retornoTrabalho": "2014-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 273.65,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 273.65,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 273.65
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2515",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1845",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-18",
+      "numeroDocumento": "1845",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-01-01",
-      "fimAfastamento": "2015-01-30",
-      "retornoTrabalho": "2015-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 680.87,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 680.87,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 680.87
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2516",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1846",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-18",
+      "numeroDocumento": "1846",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-02-09",
-      "fimAfastamento": "2015-02-09",
-      "retornoTrabalho": "2015-02-10",
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+      "valor": 564.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "mediante requerimento do servidor autorizado pelo executivo municipal",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 564.41,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 564.41
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2517",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "1847",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-18",
+      "numeroDocumento": "1847",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-06-01",
-      "fimAfastamento": "2020-06-01",
-      "retornoTrabalho": "2020-06-02",
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 588.51,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 588.51,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 588.51
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2518",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "2184",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2184",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-08-01",
-      "fimAfastamento": "2020-08-30",
-      "retornoTrabalho": "2020-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 622.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 622.54,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 622.54
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2519",
-    "conteudo": {
-      "matricula": {
-        "id": 33476964
+    "idIntegracao": "2927",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2927",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-11-22",
-      "fimAfastamento": "2025-12-30",
-      "retornoTrabalho": "2025-12-31",
-      "quantidade": 1499,
-      "unidade": "DIAS",
-      "quantidadeDias": 1499,
-      "jornadaDiaria": null,
-      "decorrente": "CEDENCIA",
-      "tipoAfastamento": {
-        "id": 55896
+      "valor": 588.79,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Exercício em outro órgão de servidor ou empregado público cedido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SERVIDOR CEDIDO AO FUNDO MUNICIPAL DE SAUDE",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 588.79,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 588.79
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2520",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "4546",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4546",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-01-01",
-      "fimAfastamento": "2008-01-30",
-      "retornoTrabalho": "2008-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 81.03,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 81.03,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 81.03
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2521",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "3671",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3671",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-12-01",
-      "fimAfastamento": "2008-12-30",
-      "retornoTrabalho": "2008-12-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 515.67,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 515.67,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 515.67
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2522",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "6088",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6088",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-04-01",
-      "fimAfastamento": "2010-04-30",
-      "retornoTrabalho": "2010-05-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 75.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 75.2,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 75.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2523",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "5440",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5440",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-07-01",
-      "fimAfastamento": "2011-07-30",
-      "retornoTrabalho": "2011-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 77.85,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {
+        "id": 188009
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 77.85,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 77.85
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2524",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "5441",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5441",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-07-01",
-      "fimAfastamento": "2012-07-30",
-      "retornoTrabalho": "2012-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 6454.53,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {},
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6454.53,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 6454.53
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2525",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "6075",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6075",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-10-01",
-      "fimAfastamento": "2013-10-30",
-      "retornoTrabalho": "2013-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 6229.7,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {},
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 6229.7,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 6229.7
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2526",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "3815",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-05",
+      "numeroDocumento": "3815",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-03-01",
-      "fimAfastamento": "2017-03-30",
-      "retornoTrabalho": "2017-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 1000000,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: EMENDA PARLAMENTAR IND. Nº 202441730003 - CONST. C",
+      "contaBancaria": {},
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1000000,
+          "lancada": false,
+          "receita": {
+            "id": 710131
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 1000000
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2527",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "4435",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4435",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2018-03-01",
-      "fimAfastamento": "2018-03-30",
-      "retornoTrabalho": "2018-03-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 5522.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: RENUMERAÇÃO DEP. B. EMENDA P.IND.- FED. PREF",
+      "contaBancaria": {},
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5522.39,
+          "lancada": false,
+          "receita": {
+            "id": 710127
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774288
+              },
+              "valor": 5522.39
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2528",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "4436",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4436",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-01-01",
-      "fimAfastamento": "2020-01-30",
-      "retornoTrabalho": "2020-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 821.27,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 821.27,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 821.27
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2529",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "3661",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3661",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-09-20",
-      "fimAfastamento": "2021-10-19",
-      "retornoTrabalho": "2021-10-20",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 714.81,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 714.81,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 714.81
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2530",
-    "conteudo": {
-      "matricula": {
-        "id": 33476968
+    "idIntegracao": "6076",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6076",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2023-08-12",
-      "fimAfastamento": "2023-09-10",
-      "retornoTrabalho": "2023-09-11",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 765.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 765.05,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 765.05
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2531",
-    "conteudo": {
-      "matricula": {
-        "id": 33653201
+    "idIntegracao": "5442",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5442",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-08-01",
-      "fimAfastamento": "2007-08-30",
-      "retornoTrabalho": "2007-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 792.66,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 792.66,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 792.66
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2532",
-    "conteudo": {
-      "matricula": {
-        "id": 33653201
+    "idIntegracao": "2928",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2928",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-08-01",
-      "fimAfastamento": "2008-08-30",
-      "retornoTrabalho": "2008-08-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 758.25,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 758.25,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 758.25
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2533",
-    "conteudo": {
-      "matricula": {
-        "id": 33653201
+    "idIntegracao": "2171",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2171",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-07-01",
-      "fimAfastamento": "2009-07-30",
-      "retornoTrabalho": "2009-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 840.56,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 840.56,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 840.56
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2534",
-    "conteudo": {
-      "matricula": {
-        "id": 33653201
+    "idIntegracao": "1494",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1494",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-10-01",
-      "fimAfastamento": "2010-10-30",
-      "retornoTrabalho": "2010-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 792.18,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 792.18,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 792.18
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2535",
-    "conteudo": {
-      "matricula": {
-        "id": 33653201
+    "idIntegracao": "890",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "890",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-07-01",
-      "fimAfastamento": "2011-07-30",
-      "retornoTrabalho": "2011-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 764.37,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 764.37,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 764.37
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2536",
-    "conteudo": {
-      "matricula": {
-        "id": 33653201
+    "idIntegracao": "288",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "288",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-12-31",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+      "valor": 923.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187779
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SEPARAÇÃO DE BANCO DE DADOS.",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 923.05,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 923.05
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2537",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2008-10-01",
-      "fimAfastamento": "2009-01-29",
-      "retornoTrabalho": "2009-01-30",
-      "quantidade": 120,
-      "unidade": "DIAS",
-      "quantidadeDias": 120,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55902
+    "idIntegracao": "289",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-01-31",
+      "numeroDocumento": "289",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Licença maternidade - Prorrogação por 60 dias, Lei 11.770/2008 (Empresa Cidadã), inclusive para o cô",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SALARIO  MATERNIDADE",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.88,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.88,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.88
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2538",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2008-09-01",
-      "fimAfastamento": "2008-09-30",
-      "retornoTrabalho": "2008-10-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "891",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-02-29",
+      "numeroDocumento": "891",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.04,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.04,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.04
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2539",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2009-02-01",
-      "fimAfastamento": "2009-03-02",
-      "retornoTrabalho": "2009-03-03",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "1495",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-03-31",
+      "numeroDocumento": "1495",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.2,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.2,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.2
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2540",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2009-10-01",
-      "fimAfastamento": "2009-10-30",
-      "retornoTrabalho": "2009-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "2173",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2173",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.45,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.45,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.45
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2541",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2009-11-01",
-      "fimAfastamento": "2010-04-07",
-      "retornoTrabalho": "2010-04-08",
-      "quantidade": 157,
-      "unidade": "DIAS",
-      "quantidadeDias": 157,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+    "idIntegracao": "2929",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2929",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "mediante requerimento do servidor",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.19,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.19,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.19
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2542",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2011-01-01",
-      "fimAfastamento": "2011-01-30",
-      "retornoTrabalho": "2011-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+    "idIntegracao": "5443",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5443",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.44,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.44,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.44
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2543",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2011-12-31",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+    "idIntegracao": "6077",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6077",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SEPARAÇÃO DE BANCO DE DADOS.",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "valor": 4.28,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.28,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.28
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2544",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "3662",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3662",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2007-06-04",
-      "fimAfastamento": "2007-07-03",
-      "retornoTrabalho": "2007-07-04",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3.98,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3.98,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3.98
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2545",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "4438",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4438",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-06-01",
-      "fimAfastamento": "2008-06-30",
-      "retornoTrabalho": "2008-07-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 4.6,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187780
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 4.6,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 4.6
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2546",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "4439",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-31",
+      "numeroDocumento": "4439",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-07-01",
-      "fimAfastamento": "2009-07-30",
-      "retornoTrabalho": "2009-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 0.33,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187781
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.33,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.33
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2547",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "3663",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-30",
+      "numeroDocumento": "3663",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-10-01",
-      "fimAfastamento": "2010-04-15",
-      "retornoTrabalho": "2010-04-16",
-      "quantidade": 196,
-      "unidade": "DIAS",
-      "quantidadeDias": 196,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+      "valor": 0.29,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187781
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "mediante processo administrativo",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.29,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.29
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2548",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "6078",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-09-30",
+      "numeroDocumento": "6078",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2009-09-29",
-      "fimAfastamento": "2009-09-29",
-      "retornoTrabalho": "2009-09-30",
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55875
+      "valor": 0.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187781
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, sem remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "    ",
-      "competenciaDesconto": null,
-      "abonar": true,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.32,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2549",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "5444",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-08-31",
+      "numeroDocumento": "5444",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-06-01",
-      "fimAfastamento": "2011-06-30",
-      "retornoTrabalho": "2011-07-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 0.32,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187781
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.32,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.32
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2550",
-    "conteudo": {
-      "matricula": {
-        "id": 33476974
+    "idIntegracao": "2930",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2930",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-12-31",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
+      "valor": 0.31,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187781
       },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "SEPARAÇÃO DE BANCO DE DADOS.",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.31,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.31
+            }
+          ]
+        }
+      ]
     }
   }
 ]

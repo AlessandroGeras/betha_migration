@@ -1,2148 +1,1752 @@
 [
   {
-    "idIntegracao": "2351",
-    "conteudo": {
-      "matricula": {
-        "id": 33476852
+    "idIntegracao": "4004",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-15",
+      "numeroDocumento": "4004",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-06-01",
-      "fimAfastamento": "2021-06-30",
-      "retornoTrabalho": "2021-07-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 176.04,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 176.04,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 176.04
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2352",
-    "conteudo": {
-      "matricula": {
-        "id": 33476852
+    "idIntegracao": "4005",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-15",
+      "numeroDocumento": "4005",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-09-01",
-      "fimAfastamento": "2021-09-30",
-      "retornoTrabalho": "2021-10-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
+      "valor": 5.9,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5.9,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5.9
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2353",
-    "conteudo": {
-      "matricula": {
-        "id": 33476852
+    "idIntegracao": "3980",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-10",
+      "numeroDocumento": "3980",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2022-01-01",
-      "fimAfastamento": "2022-01-30",
-      "retornoTrabalho": "2022-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 30.07,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 30.07,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 30.07
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2354",
-    "conteudo": {
-      "matricula": {
-        "id": 33476852
+    "idIntegracao": "3931",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-08",
+      "numeroDocumento": "3931",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2023-01-01",
-      "fimAfastamento": "2023-01-30",
-      "retornoTrabalho": "2023-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 5.28,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5.28,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5.28
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2355",
-    "conteudo": {
-      "matricula": {
-        "id": 33476852
+    "idIntegracao": "3939",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-09",
+      "numeroDocumento": "3939",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2024-01-01",
-      "fimAfastamento": "2024-01-30",
-      "retornoTrabalho": "2024-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3.77,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3.77
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2356",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4225",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-29",
+      "numeroDocumento": "4225",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2008-01-01",
-      "fimAfastamento": "2008-01-30",
-      "retornoTrabalho": "2008-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3.54,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3.54
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2357",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4273",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-29",
+      "numeroDocumento": "4273",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2010-01-01",
-      "fimAfastamento": "2010-01-30",
-      "retornoTrabalho": "2010-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 22.47,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 22.47,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 22.47
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2358",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4210",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-25",
+      "numeroDocumento": "4210",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2011-01-01",
-      "fimAfastamento": "2011-01-30",
-      "retornoTrabalho": "2011-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3771.45,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3771.45,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3771.45
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2359",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4211",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-25",
+      "numeroDocumento": "4211",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-01-01",
-      "fimAfastamento": "2012-01-30",
-      "retornoTrabalho": "2012-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 307.81,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 307.81,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 307.81
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2360",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4193",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-23",
+      "numeroDocumento": "4193",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2012-11-11",
-      "fimAfastamento": "2012-11-30",
-      "retornoTrabalho": "2012-12-01",
-      "quantidade": 19,
-      "unidade": "DIAS",
-      "quantidadeDias": 19,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 621.13,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 621.13,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 621.13
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2361",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4109",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-18",
+      "numeroDocumento": "4109",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2013-01-06",
-      "fimAfastamento": "2013-02-04",
-      "retornoTrabalho": "2013-02-05",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2362",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4081",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-16",
+      "numeroDocumento": "4081",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2014-01-01",
-      "fimAfastamento": "2014-01-30",
-      "retornoTrabalho": "2014-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2363",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4082",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-16",
+      "numeroDocumento": "4082",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2015-01-01",
-      "fimAfastamento": "2015-01-30",
-      "retornoTrabalho": "2015-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2364",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "4148",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-22",
+      "numeroDocumento": "4148",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2016-01-01",
-      "fimAfastamento": "2016-01-30",
-      "retornoTrabalho": "2016-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 7.89,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 7.89,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 7.89
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "4115",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-07-19",
+      "numeroDocumento": "4115",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 1051.09,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 1051.09,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 1051.09
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2921",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2921",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 466.94,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 466.94,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 466.94
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2630",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-23",
+      "numeroDocumento": "2630",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 15.51,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15.51,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15.51
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2631",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-23",
+      "numeroDocumento": "2631",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 3615.92,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3615.92,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3615.92
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2632",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-23",
+      "numeroDocumento": "2632",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 87.61,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 87.61,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 87.61
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2678",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-27",
+      "numeroDocumento": "2678",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 20.64,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 20.64,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 20.64
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2679",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-27",
+      "numeroDocumento": "2679",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 10.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10.05,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 10.05
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3075",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-06",
+      "numeroDocumento": "3075",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 109.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 109.05,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 109.05
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3100",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-07",
+      "numeroDocumento": "3100",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 119.08,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 119.08,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 119.08
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2996",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-05",
+      "numeroDocumento": "2996",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 0.86,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.86,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.86
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2997",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-05",
+      "numeroDocumento": "2997",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 147.08,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 147.08,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 147.08
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2998",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-05",
+      "numeroDocumento": "2998",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 0.17,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.17,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.17
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2821",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-31",
+      "numeroDocumento": "2821",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 238.98,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 238.98,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 238.98
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2801",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-29",
+      "numeroDocumento": "2801",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 16.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 16.84,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 16.84
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "3200",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-06-11",
+      "numeroDocumento": "3200",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 108.4,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 108.4,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 108.4
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2165",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2165",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 451,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 451,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 451
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "2166",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-30",
+      "numeroDocumento": "2166",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 0.02,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: REMUNERAÇÃO DE DEPOSITO PREFEITURA",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 0.02,
+          "lancada": false,
+          "receita": {
+            "id": 707059
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 0.02
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1850",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-18",
+      "numeroDocumento": "1850",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 230.65,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 230.65,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 230.65
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1758",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-17",
+      "numeroDocumento": "1758",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 36.68,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 36.68,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 36.68
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1731",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-11",
+      "numeroDocumento": "1731",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 10.38,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10.38,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 10.38
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1964",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-26",
+      "numeroDocumento": "1964",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 15.69,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15.69,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15.69
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1985",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-29",
+      "numeroDocumento": "1985",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 5.05,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5.05,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5.05
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1894",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-19",
+      "numeroDocumento": "1894",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 25.06,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 25.06,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 25.06
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1902",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-22",
+      "numeroDocumento": "1902",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 797.39,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 797.39,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 797.39
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1945",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-23",
+      "numeroDocumento": "1945",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 769.96,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 769.96,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 769.96
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1954",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-25",
+      "numeroDocumento": "1954",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 748.54,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 748.54,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 748.54
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idIntegracao": "1955",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-04-25",
+      "numeroDocumento": "1955",
+      "transacaoFinanceira": {
+        "id": 25596
+      },
+      "valor": 15.78,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
+      },
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 15.78,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 15.78
+            }
+          ]
+        }
+      ]
     }
   },
   {
     "idIntegracao": "2365",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-10",
+      "numeroDocumento": "2365",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2017-12-20",
-      "fimAfastamento": "2018-01-18",
-      "retornoTrabalho": "2018-01-19",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 135.44,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 135.44,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 135.44
+            }
+          ]
+        }
+      ]
     }
   },
   {
     "idIntegracao": "2366",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-10",
+      "numeroDocumento": "2366",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2019-01-01",
-      "fimAfastamento": "2019-01-30",
-      "retornoTrabalho": "2019-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 660.57,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 660.57,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 660.57
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2367",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "2264",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-06",
+      "numeroDocumento": "2264",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-01-01",
-      "fimAfastamento": "2020-01-30",
-      "retornoTrabalho": "2020-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 35.21,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 35.21,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 35.21
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2368",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "2312",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-07",
+      "numeroDocumento": "2312",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2020-10-01",
-      "fimAfastamento": "2020-10-30",
-      "retornoTrabalho": "2020-10-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 2900.77,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 2900.77,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 2900.77
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2369",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "2513",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2513",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2021-12-20",
-      "fimAfastamento": "2022-01-18",
-      "retornoTrabalho": "2022-01-19",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 5.41,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 5.41,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 5.41
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2370",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "2514",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2514",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2022-03-16",
-      "fimAfastamento": "2022-04-14",
-      "retornoTrabalho": "2022-04-15",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 17.58,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 17.58,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 17.58
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2371",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
+    "idIntegracao": "2515",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-20",
+      "numeroDocumento": "2515",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2023-01-15",
-      "fimAfastamento": "2023-02-13",
-      "retornoTrabalho": "2023-02-14",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 750.53,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2372",
-    "conteudo": {
-      "matricula": {
-        "id": 33476856
-      },
-      "inicioAfastamento": "2024-01-11",
-      "fimAfastamento": "2024-02-09",
-      "retornoTrabalho": "2024-02-10",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2373",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2006-11-07",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
-      },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2374",
-    "conteudo": {
-      "matricula": {
-        "id": 33476863
-      },
-      "inicioAfastamento": "2006-11-07",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
-      },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2375",
-    "conteudo": {
-      "matricula": {
-        "id": 33653160
-      },
-      "inicioAfastamento": "2006-11-07",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
-      },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2376",
-    "conteudo": {
-      "matricula": {
-        "id": 33476873
-      },
-      "inicioAfastamento": "2006-05-02",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
-      },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2377",
-    "conteudo": {
-      "matricula": {
-        "id": 33476879
-      },
-      "inicioAfastamento": "2006-05-02",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
-      },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2378",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2008-01-01",
-      "fimAfastamento": "2008-01-30",
-      "retornoTrabalho": "2008-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2379",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2009-01-01",
-      "fimAfastamento": "2009-01-30",
-      "retornoTrabalho": "2009-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2380",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2010-01-01",
-      "fimAfastamento": "2010-01-30",
-      "retornoTrabalho": "2010-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2381",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2011-01-01",
-      "fimAfastamento": "2011-01-30",
-      "retornoTrabalho": "2011-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2382",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2012-01-01",
-      "fimAfastamento": "2012-01-30",
-      "retornoTrabalho": "2012-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2383",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2013-01-01",
-      "fimAfastamento": "2013-01-30",
-      "retornoTrabalho": "2013-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2384",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2014-01-01",
-      "fimAfastamento": "2014-01-30",
-      "retornoTrabalho": "2014-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2385",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2015-01-01",
-      "fimAfastamento": "2015-01-30",
-      "retornoTrabalho": "2015-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2386",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2016-01-01",
-      "fimAfastamento": "2016-01-30",
-      "retornoTrabalho": "2016-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2387",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2017-01-01",
-      "fimAfastamento": "2017-01-30",
-      "retornoTrabalho": "2017-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2388",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2018-01-01",
-      "fimAfastamento": "2018-01-30",
-      "retornoTrabalho": "2018-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2389",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2019-01-01",
-      "fimAfastamento": "2019-01-30",
-      "retornoTrabalho": "2019-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2390",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2020-01-01",
-      "fimAfastamento": "2020-01-30",
-      "retornoTrabalho": "2020-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2391",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2020-06-01",
-      "fimAfastamento": "2020-06-30",
-      "retornoTrabalho": "2020-07-01",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
-      },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2392",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2020-07-01",
-      "fimAfastamento": "2020-07-30",
-      "retornoTrabalho": "2020-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "LICENCA",
-      "tipoAfastamento": {
-        "id": 55878
-      },
-      "ato": null,
-      "motivo": "Afastamento/licença de servidor público prevista em estatuto, com remuneração",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Licença Premio",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 750.53,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 750.53
+            }
+          ]
+        }
+      ]
     }
   },
   {
     "idIntegracao": "2393",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-15",
+      "numeroDocumento": "2393",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2022-01-01",
-      "fimAfastamento": "2022-01-30",
-      "retornoTrabalho": "2022-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 10.84,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 10.84,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 10.84
+            }
+          ]
+        }
+      ]
     }
   },
   {
-    "idIntegracao": "2394",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
+    "idIntegracao": "2382",
+    "content": {
+      "exercicio": 2024,
+      "validaSaldo": false,
+      "data": "2024-05-14",
+      "numeroDocumento": "2382",
+      "transacaoFinanceira": {
+        "id": 25596
       },
-      "inicioAfastamento": "2023-01-01",
-      "fimAfastamento": "2023-01-30",
-      "retornoTrabalho": "2023-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
+      "valor": 3.5,
+      "especificacao": "ARRECADAÇÃO MIGRACAO DA RECEITA: ISSQN - SISMPLES NACIONAL",
+      "contaBancaria": {
+        "id": 187715
       },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2395",
-    "conteudo": {
-      "matricula": {
-        "id": 33476885
-      },
-      "inicioAfastamento": "2024-01-01",
-      "fimAfastamento": "2024-01-30",
-      "retornoTrabalho": "2024-01-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2396",
-    "conteudo": {
-      "matricula": {},
-      "inicioAfastamento": "2006-01-09",
-      "fimAfastamento": null,
-      "retornoTrabalho": null,
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "RESCISAO",
-      "tipoAfastamento": {
-        "id": 66086
-      },
-      "ato": null,
-      "motivo": "Demitido",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2397",
-    "conteudo": {
-      "matricula": {
-        "id": 33653166
-      },
-      "inicioAfastamento": "2008-02-01",
-      "fimAfastamento": "2008-03-01",
-      "retornoTrabalho": "2008-03-02",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2398",
-    "conteudo": {
-      "matricula": {
-        "id": 33653166
-      },
-      "inicioAfastamento": "2009-04-01",
-      "fimAfastamento": "2009-04-01",
-      "retornoTrabalho": "2009-04-02",
-      "quantidade": null,
-      "unidade": "DIAS",
-      "quantidadeDias": null,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": ".",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2399",
-    "conteudo": {
-      "matricula": {
-        "id": 33653166
-      },
-      "inicioAfastamento": "2010-07-01",
-      "fimAfastamento": "2010-07-30",
-      "retornoTrabalho": "2010-07-31",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
-    }
-  },
-  {
-    "idIntegracao": "2400",
-    "conteudo": {
-      "matricula": {
-        "id": 33653166
-      },
-      "inicioAfastamento": "2012-01-16",
-      "fimAfastamento": "2012-02-14",
-      "retornoTrabalho": "2012-02-15",
-      "quantidade": 29,
-      "unidade": "DIAS",
-      "quantidadeDias": 29,
-      "jornadaDiaria": null,
-      "decorrente": "FERIAS",
-      "tipoAfastamento": {
-        "id": 55658
-      },
-      "ato": null,
-      "motivo": "Férias",
-      "acidenteTransito": null,
-      "retificacao": false,
-      "dataRetificacao": null,
-      "origemRetificacao": null,
-      "tipoProcessoRetificacao": null,
-      "numeroProcesso": null,
-      "remuneracaoCargoEfetivo": false,
-      "descontar": false,
-      "observacao": "Férias",
-      "competenciaDesconto": null,
-      "abonar": false,
-      "quantidadeAbono": null,
-      "movimentoPeriodoAquisitivoLicencaPremio": null,
-      "competenciaAbono": null,
-      "afastamentoOrigem": null,
-      "pessoaJuridica": null,
-      "tipoOnus": null,
-      "atestados": [],
-      "cedencia": null,
-      "chaveMigracao": null,
-      "versaoMigracao": null,
-      "camposAdicionais": []
+      "tipoConta": "CORRENTE",
+      "receitas": [
+        {
+          "valor": 3.5,
+          "lancada": false,
+          "receita": {
+            "id": 707034
+          },
+          "recursos": [
+            {
+              "recurso": {
+                "id": 774231
+              },
+              "valor": 3.5
+            }
+          ]
+        }
+      ]
     }
   }
 ]
