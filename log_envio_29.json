@@ -1,352 +1,1152 @@
 [
   {
-    "idIntegracao": "17993",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972678
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207708
+      },
+      "quantidade": 35,
+      "valorUnitario": 3.24,
+      "valorTotal": 113.4,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223183
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "17994",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972695
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207708
+      },
+      "quantidade": 35,
+      "valorUnitario": 3.24,
+      "valorTotal": 113.4,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223183
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "17995",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972662
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207711
+      },
+      "quantidade": 78,
+      "valorUnitario": 10,
+      "valorTotal": 780,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223184
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "17996",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972679
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207711
+      },
+      "quantidade": 78,
+      "valorUnitario": 10,
+      "valorTotal": 780,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223184
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "17997",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972776
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207711
+      },
+      "quantidade": 10,
+      "valorUnitario": 9.8,
+      "valorTotal": 98,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223184
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "17998",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972643
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207711
+      },
+      "quantidade": 10,
+      "valorUnitario": 9.8,
+      "valorTotal": 98,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223184
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "17999",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972795
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207709
+      },
+      "quantidade": 40,
+      "valorUnitario": 2,
+      "valorTotal": 80,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223185
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18000",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972644
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207709
+      },
+      "quantidade": 40,
+      "valorUnitario": 2,
+      "valorTotal": 80,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223185
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18001",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972796
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207713
+      },
+      "quantidade": 68,
+      "valorUnitario": 3,
+      "valorTotal": 204,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223187
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18002",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972735
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207713
+      },
+      "quantidade": 68,
+      "valorUnitario": 3,
+      "valorTotal": 204,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223187
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18003",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972578
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207712
+      },
+      "quantidade": 295,
+      "valorUnitario": 4.77,
+      "valorTotal": 1407.15,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223188
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18004",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972696
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207712
+      },
+      "quantidade": 295,
+      "valorUnitario": 4.77,
+      "valorTotal": 1407.15,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223188
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18005",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261630,
-      "idImoveisInfComplem": 3146972716
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207714
+      },
+      "quantidade": 39,
+      "valorUnitario": 15,
+      "valorTotal": 585,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223189
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18006",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972797
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207714
+      },
+      "quantidade": 39,
+      "valorUnitario": 15,
+      "valorTotal": 585,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223189
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18007",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261672,
-      "idImoveisInfComplem": 3146972717
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207715
+      },
+      "quantidade": 50,
+      "valorUnitario": 4.99,
+      "valorTotal": 249.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223190
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18008",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972579
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207715
+      },
+      "quantidade": 50,
+      "valorUnitario": 4.99,
+      "valorTotal": 249.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223190
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18009",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261690,
-      "idImoveisInfComplem": 3146972718
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207716
+      },
+      "quantidade": 32,
+      "valorUnitario": 54,
+      "valorTotal": 1728,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223191
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18010",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146972759
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207716
+      },
+      "quantidade": 32,
+      "valorUnitario": 54,
+      "valorTotal": 1728,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223191
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18011",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972621
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207717
+      },
+      "quantidade": 45,
+      "valorUnitario": 5.26,
+      "valorTotal": 236.7,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223192
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18012",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972663
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207717
+      },
+      "quantidade": 45,
+      "valorUnitario": 5.26,
+      "valorTotal": 236.7,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223192
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18013",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261771,
-      "idImoveisInfComplem": 3146972736
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207718
+      },
+      "quantidade": 85,
+      "valorUnitario": 10,
+      "valorTotal": 850,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223193
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18014",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972622
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207718
+      },
+      "quantidade": 85,
+      "valorUnitario": 10,
+      "valorTotal": 850,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223193
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18015",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972697
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207719
+      },
+      "quantidade": 40,
+      "valorUnitario": 2.4,
+      "valorTotal": 96,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223194
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18016",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972680
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207719
+      },
+      "quantidade": 40,
+      "valorUnitario": 2.4,
+      "valorTotal": 96,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223194
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18017",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972544
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207721
+      },
+      "quantidade": 130,
+      "valorUnitario": 17.9,
+      "valorTotal": 2327,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223196
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18018",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972580
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207721
+      },
+      "quantidade": 130,
+      "valorUnitario": 17.9,
+      "valorTotal": 2327,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223196
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18019",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972760
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207726
+      },
+      "quantidade": 190,
+      "valorUnitario": 1.49,
+      "valorTotal": 283.1,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223198
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18020",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972698
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207726
+      },
+      "quantidade": 190,
+      "valorUnitario": 1.49,
+      "valorTotal": 283.1,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223198
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18021",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972664
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207723
+      },
+      "quantidade": 17,
+      "valorUnitario": 68,
+      "valorTotal": 1156,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223199
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18022",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972645
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207723
+      },
+      "quantidade": 17,
+      "valorUnitario": 68,
+      "valorTotal": 1156,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223199
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18023",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972681
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207724
+      },
+      "quantidade": 455,
+      "valorUnitario": 287.9,
+      "valorTotal": 130994.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223200
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18024",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972545
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207724
+      },
+      "quantidade": 455,
+      "valorUnitario": 287.9,
+      "valorTotal": 130994.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223200
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18025",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972737
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207724
+      },
+      "quantidade": 40,
+      "valorUnitario": 240,
+      "valorTotal": 9600,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223200
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18026",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972682
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207724
+      },
+      "quantidade": 40,
+      "valorUnitario": 240,
+      "valorTotal": 9600,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223200
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18027",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972738
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207725
+      },
+      "quantidade": 48,
+      "valorUnitario": 42,
+      "valorTotal": 2016,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223201
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18028",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146972623
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207725
+      },
+      "quantidade": 48,
+      "valorUnitario": 42,
+      "valorTotal": 2016,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223201
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18029",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972739
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207732
+      },
+      "quantidade": 157,
+      "valorUnitario": 4.5,
+      "valorTotal": 706.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223202
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18030",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146972699
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207732
+      },
+      "quantidade": 157,
+      "valorUnitario": 4.5,
+      "valorTotal": 706.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223202
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18031",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972665
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207727
+      },
+      "quantidade": 170,
+      "valorUnitario": 1.45,
+      "valorTotal": 246.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223203
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18032",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146972761
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207727
+      },
+      "quantidade": 170,
+      "valorUnitario": 1.45,
+      "valorTotal": 246.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223203
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18033",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261711,
-      "idImoveisInfComplem": 3146972700
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207730
+      },
+      "quantidade": 100,
+      "valorUnitario": 2,
+      "valorTotal": 200,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223204
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18034",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972646
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207730
+      },
+      "quantidade": 100,
+      "valorUnitario": 2,
+      "valorTotal": 200,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223204
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18035",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972624
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207728
+      },
+      "quantidade": 85,
+      "valorUnitario": 1.5,
+      "valorTotal": 127.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223205
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18036",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972666
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207728
+      },
+      "quantidade": 85,
+      "valorUnitario": 1.5,
+      "valorTotal": 127.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223205
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18037",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972546
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207728
+      },
+      "quantidade": 10,
+      "valorUnitario": 1.8,
+      "valorTotal": 18,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223205
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18038",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972762
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207728
+      },
+      "quantidade": 10,
+      "valorUnitario": 1.8,
+      "valorTotal": 18,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223205
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18039",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972581
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207731
+      },
+      "quantidade": 127,
+      "valorUnitario": 6.19,
+      "valorTotal": 786.13,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223206
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18040",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972740
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207731
+      },
+      "quantidade": 127,
+      "valorUnitario": 6.19,
+      "valorTotal": 786.13,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223206
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18041",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972719
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207729
+      },
+      "quantidade": 50,
+      "valorUnitario": 15,
+      "valorTotal": 750,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223207
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "18042",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972683
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207729
+      },
+      "quantidade": 50,
+      "valorUnitario": 15,
+      "valorTotal": 750,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223207
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   }
 ]

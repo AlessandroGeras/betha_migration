@@ -64,58 +64,58 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select 
-                cd_fornecedor as id,
-                nm_fornecedor as nome,
-                nm_fantasia as nomeFantasia,
-                nr_cgc as cpfCnpj,
-                JSON_QUERY(
-                    (SELECT
-                        case fl_juridica
-                        when 0 then 'FISICA'
-                        when 1 then 'JURIDICA'
-                        ELSE 'OUTRO'
-                    END AS valor,
-                    case fl_juridica
-                        when 0 then 'FISICA'
-                        when 1 then 'JURIDICA'
-                        ELSE 'OUTRO'
-                    END AS descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS tipo,
-                ds_inscricaoestadual as inscricaoEstadual,
-                ds_inscricaomunicipal as inscricaoMunicipal,
-                JSON_QUERY(
-                    (SELECT
-                        CASE ds_estado
-                        WHEN 'AC' THEN 1
-                        WHEN 'DF' THEN 7
-                        WHEN 'ES' THEN 8
-                        WHEN 'GO' THEN 9
-                        WHEN 'MG' THEN 13
-                        WHEN 'MS' THEN 12
-                        WHEN 'MT' THEN 11
-                        WHEN 'PR' THEN 14
-                        WHEN 'RJ' THEN 21
-                        WHEN 'RN' THEN 19
-                        WHEN 'RO' THEN 22
-                        WHEN 'RP' THEN 22
-                        WHEN 'RS' THEN 20
-                        WHEN 'SC' THEN 24
-                        WHEN 'SP' THEN 26
-                        WHEN 'TO' THEN 27
-                        ELSE 22
-                    END AS id
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS estadoInscricao,
-                JSON_QUERY(
-                    (SELECT
-                        'A' as valor,
-                        'ATIVO' as descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS situacao,
-                'false' as optanteSimples,
-                dt_cadastro as dataInclusao
-            from COMPFornecedores
+cd_fornecedor as id,
+nm_fornecedor as nome ,
+nm_fantasia as nomeFantasia,
+nr_cgc as cpfCnpj,
+JSON_QUERY(
+    (SELECT
+        case fl_juridica
+        when 0 then 'FISICA'
+        when 1 then 'JURIDICA'
+        ELSE 'OUTRO'
+        END AS valor,
+        case fl_juridica
+        when 0 then 'FISICA'
+        when 1 then 'JURIDICA'
+        ELSE 'OUTRO'
+        END AS descricao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS tipo,
+ds_inscricaoestadual as inscricaoEstadual ,
+ds_inscricaomunicipal as inscricaoMunicipal ,
+JSON_QUERY(
+    (SELECT
+CASE ds_estado
+                WHEN 'AC' THEN 1
+        WHEN 'DF' THEN 7
+        WHEN 'ES' THEN 8
+        WHEN 'GO' THEN 9
+        WHEN 'MG' THEN 13
+        WHEN 'MS' THEN 12
+        WHEN 'MT' THEN 11
+        WHEN 'PR' THEN 14
+        WHEN 'RJ' THEN 21
+        WHEN 'RN' THEN 19
+        WHEN 'RO' THEN 22
+        WHEN 'RP' THEN 22
+        WHEN 'RS' THEN 20
+        WHEN 'SC' THEN 24
+        WHEN 'SP' THEN 26
+        WHEN 'TO' THEN 27
+                ELSE 22
+                END AS id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS estadoInscricao,
+JSON_QUERY(
+    (SELECT
+        'A' as valor,
+        'ATIVO' as descricao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS situacao,
+'false' as optanteSimples,
+dt_cadastro as dataInclusao
+from COMPFornecedores
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -174,35 +174,81 @@ async function main() {
             return null; // Retornar null para registros inválidos
         }).filter(record => record !== null); // Filtrar registros nulos
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        /* const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://patrimonio.betha.cloud/patrimonio-services/api/fornecedores', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+        return */
+        
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://patrimonio.betha.cloud/patrimonio-services/api/conversoes/lotes/fornecedores`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

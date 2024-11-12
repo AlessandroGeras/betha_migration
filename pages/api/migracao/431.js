@@ -6,1277 +6,2266 @@ const fs = require('fs');
 dotenv.config();
 
 async function connectToSqlServer() {
-    try {
-        const server = process.env.SERVER;
-        const database = process.env.DATABASE;
-        const username = process.env.USERNAME_SQLSERVER;
-        const password = process.env.PASSWORD;
+	try {
+		const server = process.env.SERVER;
+		const database = process.env.DATABASE;
+		const username = process.env.USERNAME_SQLSERVER;
+		const password = process.env.PASSWORD;
 
-        const config = {
-            user: username,
-            password: password,
-            server: server,
-            database: database,
-            options: {
-                encrypt: false
-            }
-        };
+		const config = {
+			user: username,
+			password: password,
+			server: server,
+			database: database,
+			options: {
+				encrypt: false
+			}
+		};
 
-        const pool = await sql.connect(config);
-        console.log("Conectado ao SQL Server");
-        return pool;
-    } catch (error) {
-        console.error('Erro ao conectar ao SQL Server:', error);
-        throw error;
-    }
+		const pool = await sql.connect(config);
+		console.log("Conectado ao SQL Server");
+		return pool;
+	} catch (error) {
+		console.error('Erro ao conectar ao SQL Server:', error);
+		throw error;
+	}
 }
 
 function formatDate(date) {
-    const d = new Date(date);
-    const year = d.getUTCFullYear();
-    const month = (`0${d.getUTCMonth() + 1}`).slice(-2);
-    const day = (`0${d.getUTCDate()}`).slice(-2);
-    const hours = (`0${d.getUTCHours()}`).slice(-2);
-    const minutes = (`0${d.getUTCMinutes()}`).slice(-2);
-    const seconds = (`0${d.getUTCSeconds()}`).slice(-2);
-    return `${year}-${month}-${day}`;
-    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+	const d = new Date(date);
+	const year = d.getUTCFullYear();
+	const month = (`0${d.getUTCMonth() + 1}`).slice(-2);
+	const day = (`0${d.getUTCDate()}`).slice(-2);
+	const hours = (`0${d.getUTCHours()}`).slice(-2);
+	const minutes = (`0${d.getUTCMinutes()}`).slice(-2);
+	const seconds = (`0${d.getUTCSeconds()}`).slice(-2);
+	return `${year}-${month}-${day}`;
+	//return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
 
 function formatDate2(date) {
-    const d = new Date(date);
-    const year = d.getUTCFullYear();
-    const month = (`0${d.getUTCMonth() + 1}`).slice(-2);
-    const day = (`0${d.getUTCDate()}`).slice(-2);
-    const hours = (`0${d.getUTCHours()}`).slice(-2);
-    const minutes = (`0${d.getUTCMinutes()}`).slice(-2);
-    const seconds = (`0${d.getUTCSeconds()}`).slice(-2);
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+	const d = new Date(date);
+	const year = d.getUTCFullYear();
+	const month = (`0${d.getUTCMonth() + 1}`).slice(-2);
+	const day = (`0${d.getUTCDate()}`).slice(-2);
+	const hours = (`0${d.getUTCHours()}`).slice(-2);
+	const minutes = (`0${d.getUTCMinutes()}`).slice(-2);
+	const seconds = (`0${d.getUTCSeconds()}`).slice(-2);
+	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+	//return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
 
 async function main() {
-    try {
-        // Conectar ao SQL Server
-        const masterConnection = await connectToSqlServer();
+	try {
+		// Conectar ao SQL Server
+		const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO"
-        const selectDatabaseQuery = 'USE FOLHADB';
-        await masterConnection.query(selectDatabaseQuery);
+		// Selecionar o banco de dados "COMP_ALMO"
+		const selectDatabaseQuery = 'USE FOLHADB';
+		await masterConnection.query(selectDatabaseQuery);
 
-        // Executar a consulta SQL
-        const userQuery = `
-            	SELECT 
-    cd_Funcionario AS idIntegracao,
-    dt_Admissao AS dataInicioContrato,
-    'false' AS geraRegistroPreliminar,
-    CASE 
-        WHEN cd_Situacao = 1 THEN 'TRABALHANDO'
-        WHEN cd_Situacao = 2 THEN 'TRABALHANDO'
-        WHEN cd_Situacao = 3 THEN 'PENSIONISTA'
-        WHEN cd_Situacao = 8 THEN 'APOSENTADO'
-        WHEN cd_Situacao = 9 THEN 'PENSIONISTA'
-        WHEN cd_Situacao = 11 THEN 'AFASTADO'
-        WHEN cd_Situacao = 12 THEN 'AFASTADO'
-        WHEN cd_Situacao = 13 THEN 'AFASTADO'
-        WHEN cd_Situacao = 14 THEN 'AFASTADO'
-        WHEN cd_Situacao = 15 THEN 'AFASTADO'
-        WHEN cd_Situacao = 16 THEN 'FERIAS'
-        WHEN cd_Situacao = 17 THEN 'TRABALHANDO'
-        WHEN cd_Situacao = 18 THEN 'AFASTADO'
-        WHEN cd_Situacao = 19 THEN 'CESSADO'
-        WHEN cd_Situacao = 85 THEN 'FALTA'
-        WHEN cd_Situacao = 99 THEN 'DEMITIDO'
-        ELSE 'SITUAÇÃO DESCONHECIDA' -- caso tenha outros códigos não mapeados
-    END AS situacao,
-    CASE 
-        WHEN cd_VincEmpr = 10 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 11 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 12 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 13 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 14 THEN 'ESTAGIARIO'
-        WHEN cd_VincEmpr = 21 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 22 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 23 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 25 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 26 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 27 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 28 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 29 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 30 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 31 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 32 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 41 THEN 'AUTONOMO'
-        WHEN cd_VincEmpr = 50 THEN 'FUNCIONARIO'
-        WHEN cd_VincEmpr = 81 THEN 'APOSENTADO'
-        WHEN cd_VincEmpr = 91 THEN 'PENSIONISTA'
-        WHEN cd_VincEmpr = 92 THEN 'PENSIONISTA'
-        WHEN cd_VincEmpr = 95 THEN 'FUNCIONARIO'
-        ELSE 'VINCULO DESCONHECIDO'
-    END AS tipo,
-    nm_Funcionario AS nome,
-    CASE
-        WHEN nm_Funcionario = 'ABEL INACIO DE LIMA'	THEN 15187120
-        when nm_Funcionario = 'ABEL INACIO DE LIMA'	then	15187120
-        when nm_Funcionario = 'ADALBERTO AMARAL DE BRITO'	then	15165457
-        when nm_Funcionario = 'ADELCIO AMARAL DE BRITO'	then	15187150
-        when nm_Funcionario = 'ADELINA AOIAGUI DA SILVA'	then	15187435
-        when nm_Funcionario = 'ADEMAL GONCALVES ULHIOA'	then	15187151
-        when nm_Funcionario = 'ADEMAR DA CONCEICAO'	then	15187578
-        when nm_Funcionario = 'ADENILSON GOMES DA SILVA'	then	15165454
-        when nm_Funcionario = 'ADENIR GOUVEIA DO PRADO VIEIRA'	then	15187152
-        when nm_Funcionario = 'ADEVANIR BARBOZA DA SILVA'	then	15187423
-        when nm_Funcionario = 'ADILSON HOULANDER'	then	15187729
-        when nm_Funcionario = 'ADIR IGNACIO DE LIMA'	then	15165466
-        when nm_Funcionario = 'ADRIANA AIOAGUI DA SILVA'	then	15187600
-        when nm_Funcionario = 'ADRIANA CRISTINA DOS SANTOS FERREIRA'	then	15187572
-        when nm_Funcionario = 'ADRIANA MOREIRA CORSINI'	then	15187483
-        when nm_Funcionario = 'ADRIANA THIANE BARBOSA DA SILVA'	then	15187597
-        when nm_Funcionario = 'ADRIANA TOMAZ'	then	15187777
-        when nm_Funcionario = 'ADRIANO IOLI'	then	15187861
-        when nm_Funcionario = 'ADRIANO SIQUEIRA NOGUEIRA'	then	15187500
-        when nm_Funcionario = 'ADRIELE PAZARRO CHAGAS DA COSTA'	then	15187875
-        when nm_Funcionario = 'ADRIEL SILVARES DE OLIVEIRA'	then	15187574
-        when nm_Funcionario = 'AGENOR DOS SANTOS BROILO'	then	15187292
-        when nm_Funcionario = 'AGNALDO FELISBERTO BATISTA'	then	15187153
-        when nm_Funcionario = 'AGNALDO RIBEIRO DE OLIVEIRA'	then	15187727
-        when nm_Funcionario = 'AGUIMAR BEIJO FERREIRA'	then	15187154
-        when nm_Funcionario = 'AIANA CAROLINE SETTE DUPINHAKE'	then	15187583
-        when nm_Funcionario = 'ALAN MATOS PEREIRA BASTOS'	then	15187732
-        when nm_Funcionario = 'ALBERTO BARTOLOMEU'	then	15187372
-        when nm_Funcionario = 'ALBERTO MARCELO CUSTODIO FACHINI'	then	15187369
-        when nm_Funcionario = 'ALCIONI FRANCISCO RODRIGUES'	then	15187568
-        when nm_Funcionario = 'ALDAIR RAFAEL DA PAZ'	then	15165692
-        when nm_Funcionario = 'ALESSANDRA FARIA VIANA'	then	15187518
-        when nm_Funcionario = 'ALESSANDRA FERREIRA DE SOUZA'	then	15187885
-        when nm_Funcionario = 'ALESSANDRO AGUIAR DA SILVA'	then	15187690
-        when nm_Funcionario = 'ALESSON SOUZA BRITO'	then	15187836
-        when nm_Funcionario = 'ALEXANDRE DE MORAIS GUIMARAES'	then	15187410
-        when nm_Funcionario = 'ALEXANDRE RIBEIRO RODRIGUES'	then	15187436
-        when nm_Funcionario = 'ALINE DA SILVA SETTE'	then	15187922
-        when nm_Funcionario = 'ALMIR FERREIRA DA CRUZ'	then	15187155
-        when nm_Funcionario = 'ALVARA SOBRINHO DE JESUS FRANKOVIAK'	then	15187773
-        when nm_Funcionario = 'ALVIT DA ROSA'	then	15187156
-        when nm_Funcionario = 'AMALIA BENEDITA ALVES MARTINS'	then	15187157
-        when nm_Funcionario = 'AMAREY ALVES DOS SANTOS'	then	15187295
-        when nm_Funcionario = 'AMARILDO CARDOSO RIBEIRO'	then	15187361
-        when nm_Funcionario = 'AMELIA BORGERT SCHLICKMANN'	then	15187158
-        when nm_Funcionario = 'ANA BRAULINA PINHO'	then	15187301
-        when nm_Funcionario = 'ANA CLAUDIA FREITAS DE MELO'	then	15165684
-        when nm_Funcionario = 'ANA DA SILVA'	then	15187393
-        when nm_Funcionario = 'ANA GOMES DE OLIVEIRA'	then	15187556
-        when nm_Funcionario = 'ANA LUCIA FRANCISCO DE AMORIM SOUZA'	then	15187159
-        when nm_Funcionario = 'ANA MARIA JOSE DE LIMA BICHI'	then	15187160
-        when nm_Funcionario = 'ANA PAULA DE OLIVEIRA DA SILVA'	then	15187925
-        when nm_Funcionario = 'ANA PAULA FAVETTA'	then	15187476
-        when nm_Funcionario = 'ANA PAULA MONTIBELLER'	then	15187445
-        when nm_Funcionario = 'ANA PAULA WALKER'	then	15187424
-        when nm_Funcionario = 'ANDERSON GALDINO DA SILVA'	then	15187287
-        when nm_Funcionario = 'ANDERSON  LOBIANCO'	then	15187475
-        when nm_Funcionario = 'ANDERSON LUCAS FAJARDO'	then	15187359
-        when nm_Funcionario = 'ANDREIA CAZAGRANDE'	then	15165464
-        when nm_Funcionario = 'ANDREIA RIBEIRO RODRIGUES'	then	15187757
-        when nm_Funcionario = 'ANDRE ROGERIO SATO DE FREITAS'	then	15187462
-        when nm_Funcionario = 'ANDRIELI PEREIRA DA SILVA'	then	15187863
-        when nm_Funcionario = 'ANGELICA TONINI DA SILVA'	then	15187820
-        when nm_Funcionario = 'ANGELITA INACIO LIMA'	then	15187390
-        when nm_Funcionario = 'ANNY KELLY VINHAL CASAGRANDE'	then	15187472
-        when nm_Funcionario = 'ANTENOR DA COSTA BRANDAO'	then	15187294
-        when nm_Funcionario = 'ANTONIO BATISTA DA SILVA'	then	15187336
-        when nm_Funcionario = 'ANTONIO CARLOS ARGIONA OLIVEIRA'	then	15165476
-        when nm_Funcionario = 'ANTONIO CARLOS GUIMARÃES'	then	15187440
-        when nm_Funcionario = 'ANTONIO DE OLIVEIRA'	then	15187161
-        when nm_Funcionario = 'ANTONIO DOS SANTOS SILVA'	then	15187162
-        when nm_Funcionario = 'ANTONIO FERREIRA SOARES'	then	15187562
-        when nm_Funcionario = 'ANTONIO FRANCISCO DA CRUZ'	then	15187771
-        when nm_Funcionario = 'ANTONIO JOSE DE ANDRADE'	then	15187767
-        when nm_Funcionario = 'ANTONIO MARCOS MOREIRA'	then	15187454
-        when nm_Funcionario = 'ANY CAROLINE SANTANA SALA'	then	15187864
-        when nm_Funcionario = 'APARECIDA GIL DA SILVA'	then	15187776
-        when nm_Funcionario = 'APARECIDA MARQUES ALVES KAISERKAMP'	then	15187163
-        when nm_Funcionario = 'APARECIDA RODRIGUES COTRIN'	then	15187164
-        when nm_Funcionario = 'APARECIDO MARTINS CARVALHO'	then	15165483
-        when nm_Funcionario = 'ARCILIO JOSE FRANCISCO'	then	15187316
-        when nm_Funcionario = 'ARIANE LEMES DA SILVA'	then	15187737
-        when nm_Funcionario = 'ARISTOTELES FELIX GARCEZ FILHO'	then	15187321
-        when nm_Funcionario = 'ARLI BORBA DE ALMEIDA'	then	15187447
-        when nm_Funcionario = 'ARLINDO FERREIRA GOMES'	then	15187165
-        when nm_Funcionario = 'ARTHUR PAULO DE LIMA'	then	15187341
-        when nm_Funcionario = 'ARVELINO GOMES DA SILVA'	then	15187595
-        when nm_Funcionario = 'AURINEIA PEREIRA LANDIS'	then	15187419
-        when nm_Funcionario = 'BENAIA FERREIRA GOMES ROMANHA'	then	15187366
-        when nm_Funcionario = 'BENEDITO SOARES'	then	15187166
-        when nm_Funcionario = 'BENIGNA HEIZEN DE LIMA'	then	15187296
-        when nm_Funcionario = 'BERNARDO SCHMIDT TEXEIRA PENNA'	then	15165672
-        when nm_Funcionario = 'BRUNO ELER MELOCRA'	then	15187843
-        when nm_Funcionario = 'BRUNO PÉTER AMORIM DE SOUZA'	then	15187790
-        when nm_Funcionario = 'BRUNO PRUDENTE RIBEIRO DE OLIVEIRA'	then	15165501
-        when nm_Funcionario = 'CAMILA DE SOUZA ULHOA'	then	15187853
-        when nm_Funcionario = 'CAMILA FRANCA'	then	15187567
-        when nm_Funcionario = 'CAMILA MICHELE DE MOURA FELIPE'	then	15187485
-        when nm_Funcionario = 'CARINA SILVA CANDIDO'	then	15187878
-        when nm_Funcionario = 'CARLA ALESSANDRA DA SILVA'	then	15165477
-        when nm_Funcionario = 'CARLOS EDUARDO BARRETO ACCIOLY'	then	15187325
-        when nm_Funcionario = 'CARLOS PACHECO DOS SANTOS JUNIOR'	then	15187930
-        when nm_Funcionario = 'CARLOS ROBERTO SERAFIM SOUZA'	then	15187451
-        when nm_Funcionario = 'CECILIA SANTANA VENTURIM NUNES'	then	15187167
-        when nm_Funcionario = 'CELINA MARIA DA SILVA'	then	15187538
-        when nm_Funcionario = 'CELINA XAVIER DO NASCIMENTO SILVA'	then	15187921
-        when nm_Funcionario = 'CELINO JOSE DE ANDRADE'	then	15165458
-        when nm_Funcionario = 'CELIO PEDRO BEZERRA'	then	15165490
-        when nm_Funcionario = 'CELIO SIMINHUK'	then	15165498
-        when nm_Funcionario = 'CELSON CANDIDO DA ROCHA'	then	15165493
-        when nm_Funcionario = 'CLAUDIA ANTONIA CARDOSO SILVA SANTOS'	then	15187557
-        when nm_Funcionario = 'CLAUDIA BARCELOS LIMA'	then	15187432
-        when nm_Funcionario = 'CLAUDIANA MACHADO DA SILVA'	then	15187506
-        when nm_Funcionario = 'CLAUDILAINE PAULA DA SILVA FAUSTINO'	then	15187696
-        when nm_Funcionario = 'CLAUDINO BISPO SANTOS'	then	15187334
-        when nm_Funcionario = 'CLAUDIO APARECIDO TOMAZ'	then	15187558
-        when nm_Funcionario = 'CLEIDIANE MACHADO CAMPOS'	then	15187720
-        when nm_Funcionario = 'CLEIDIR DE FATIMA RAGNEL'	then	15187584
-        when nm_Funcionario = 'CLEILA GOCALVES DE ANDRADE BORGES'	then	15187168
-        when nm_Funcionario = 'CLEINE GONÇALVES DE ANDRADE'	then	15187403
-        when nm_Funcionario = 'CLEOSDETE GONCALVES DE ANDRADE'	then	15165423
-        when nm_Funcionario = 'CLETO APOLINARIO DA CRUZ'	then	15165463
-        when nm_Funcionario = 'CLEUNI INACIO OLIVEIRA'	then	15187169
-        when nm_Funcionario = 'CLEUS EDELSON GONCALVES DE ANDRADE'	then	15187170
-        when nm_Funcionario = 'CLEUS HUMBERTO GONCALVES DE ANDRADE'	then	15187172
-        when nm_Funcionario = 'CLEUSMAR GONCALVES ANDRADE'	then	15187171
-        when nm_Funcionario = 'CLEUSOMAR DE LIMA'	then	15187173
-        when nm_Funcionario = 'CLEUS OMILTON GONÇALVES DE ANDRADE'	then	15187456
-        when nm_Funcionario = 'CLOVIS SANTO BORELLA FILHO'	then	15187684
-        when nm_Funcionario = 'CONCEIÇAO DE JESUS REIS'	then	15187924
-        when nm_Funcionario = 'CREUZA MENDES DE SOUZA'	then	15187363
-        when nm_Funcionario = 'CRISTIANE DOS SANTOS LEMOS'	then	15187385
-        when nm_Funcionario = 'CRISTIANE GONÇALVES DELMONDES'	then	15187509
-        when nm_Funcionario = 'CRISTIANE ROMANHO PESSOA'	then	15187404
-        when nm_Funcionario = 'CRISTIANO APARECIDO TOMAZ'	then	15187847
-        when nm_Funcionario = 'CRISTIANO DA SILVA'	then	15187380
-        when nm_Funcionario = 'CRISTINA ALVES PEREIRA'	then	15187580
-        when nm_Funcionario = 'CRISTINO LEMES DOS SANTOS BRITO'	then	15187533
-        when nm_Funcionario = 'DAIANE PEREIRA BASTOS'	then	15187799
-        when nm_Funcionario = 'DAIANY DE OLIVEIRA BESCOROVAINE'	then	15187865
-        when nm_Funcionario = 'DAMIANA RAIMUNDA DO NASCIMENTO'	then	15187174
-        when nm_Funcionario = 'DAMIÃO GONÇALVES TORRES SOBRINHO'	then	15187601
-        when nm_Funcionario = 'DANIELEN DE OLIVEIRA'	then	15187349
-        when nm_Funcionario = 'DANIEL PAULO FOGAÇA HRYNIEWICZ'	then	15187693
-        when nm_Funcionario = 'DANIEL REDIVO'	then	15187452
-        when nm_Funcionario = 'DANIEL ROSA DA SILVA'	then	15187175
-        when nm_Funcionario = 'DANIEL ROXINSKE DE LA TORRE'	then	15187176
-        when nm_Funcionario = 'DARLEY GONÇALVES ULHIÕA'	then	15187524
-        when nm_Funcionario = 'DEIDIANE DA SILVA SANTOS'	then	15187700
-        when nm_Funcionario = 'DEISE APARECIDA BERNADELI'	then	15187721
-        when nm_Funcionario = 'DEISE KELY DA SILVA OLIVEIRA'	then	15187824
-        when nm_Funcionario = 'DEISE KELY SILVA OLIVEIRA'	then	15187849
-        when nm_Funcionario = 'DEIVISON OLIVEIRA GOMES'	then	15187839
-        when nm_Funcionario = 'DENILSO DOS SANTOS CHAVEIRO'	then	15187417
-        when nm_Funcionario = 'DENILSON MIRANDA BARBOZA'	then	15187535
-        when nm_Funcionario = 'DENILTON LISBOA MATOS'	then	15187879
-        when nm_Funcionario = 'DENIVAL FORTUNATO DOS SANTOS'	then	15187519
-        when nm_Funcionario = 'DENY SIQUEIRA DE SOUZA'	then	15187177
-        when nm_Funcionario = 'DERNI MONTEIRO DE SOUZA'	then	15187178
-        when nm_Funcionario = 'DESIVALDO FURTUNATO DOS SANTOS'	then	15187383
-        when nm_Funcionario = 'DEVANI LOPES DE SOUZA'	then	15187179
-        when nm_Funcionario = 'DEVANIR ANTONIO DA SILVA'	then	15187463
-        when nm_Funcionario = 'DEZAIAS DE SOUZA'	then	15165492
-        when nm_Funcionario = 'DIAIR GONCALVES ALVES'	then	15187180
-        when nm_Funcionario = 'DIONE BARROS DA SILVA'	then	15187814
-        when nm_Funcionario = 'DIONEIA DE OLIVEIRA RODRIGUES TEIXEIRA'	then	15187594
-        when nm_Funcionario = 'DIONIZIO DA ROSS CORSINI'	then	15165668
-        when nm_Funcionario = 'DIVANI PEREIRA DOS SANTOS LOUBACK'	then	15187350
-        when nm_Funcionario = 'DIVA RODRIGUES PEREIRA FERREIRA'	then	15187182
-        when nm_Funcionario = 'DOMINGOS DOS SANTOS'	then	15187183
-        when nm_Funcionario = 'DONIZETE VITOR ALVES'	then	15165502
-        when nm_Funcionario = 'DONIZETH FERREIRA DE OLIVEIRA'	then	15187368
-        when nm_Funcionario = 'DULCELEI DE LIMA ANDRADE'	then	15187395
-        when nm_Funcionario = 'EDELSON APARECIDO SETTE'	then	15187293
-        when nm_Funcionario = 'EDELSON DE CAMPOS'	then	15187469
-        when nm_Funcionario = 'EDEMILSON GOMES DA SILVA'	then	15187381
-        when nm_Funcionario = 'EDENILSON MARTINS BIANQUE'	then	15185931
-        when nm_Funcionario = 'EDER PEREIRA DE LIMA'	then	15187695
-        when nm_Funcionario = 'EDIANE RODRIGUES DA SILVA CANDIDO'	then	15187592
-        when nm_Funcionario = 'EDIGIO BLASI'	then	15187322
-        when nm_Funcionario = 'EDINALVA BISPO NUNES BARRETO'	then	15187184
-        when nm_Funcionario = 'EDIVALDO DA SILVA CORREA'	then	15165683
-        when nm_Funcionario = 'EDIVALTO FRANCISCO DE AMORIM'	then	15187185
-        when nm_Funcionario = 'EDIVANE COSTA DIAS'	then	15165495
-        when nm_Funcionario = 'EDLAINE MIGUEL DE OLIVEIRA'	then	15187866
-        when nm_Funcionario = 'EDMILSON LUGON ALVES LOPES'	then	15187529
-        when nm_Funcionario = 'EDNA APARECIDA FERREIRA DOS SANTOS'	then	15187575
-        when nm_Funcionario = 'EDNA FREITAS DE SOUSA PILAR'	then	15165488
-        when nm_Funcionario = 'EDNA GOMES CORDEIRO'	then	15187414
-        when nm_Funcionario = 'EDNEIA LUGAO ALVES'	then	15187554
-        when nm_Funcionario = 'EDSON FRANCISCO SANTANA DE SOUZA'	then	15187186
-        when nm_Funcionario = 'EDSON LOPES DA ROSA'	then	15187794
-        when nm_Funcionario = 'EDSON MOREIRA DOS SANTOS'	then	15187478
-        when nm_Funcionario = 'EDUARDO DIAS DE SOUZA'	then	15187813
-        when nm_Funcionario = 'EDUARDO SIQUEIRA DE SOUZA'	then	15187187
-        when nm_Funcionario = 'EDVALDO FERREIRA DA SILVA'	then	15187585
-        when nm_Funcionario = 'EGMAR APARECIDO FERREIRA'	then	15187188
-        when nm_Funcionario = 'ELAINE CRISTINA DE OLIVEIRA CRUZ'	then	15187189
-        when nm_Funcionario = 'ELAINE DAS GRACAS ROLIM'	then	15187553
-        when nm_Funcionario = 'ELAINE DE MELO MACHADO'	then	15187589
-        when nm_Funcionario = 'ELAINE GUEDES DE OLIVEIRA'	then	15187441
-        when nm_Funcionario = 'ELAINE RAINERI DA FONSECA'	then	15187302
-        when nm_Funcionario = 'ELENA ILINIR LORENI BORELA'	then	15187298
-        when nm_Funcionario = 'ELENICE DE JESUS SOUZA'	then	15187692
-        when nm_Funcionario = 'ELESSANDRA SOUZA DOS SANTOS'	then	15187461
-        when nm_Funcionario = 'ELIANA APARECIDA DE OLIVEIRA'	then	15187190
-        when nm_Funcionario = 'ELIANDRA DE ARAÚJO SELHRST'	then	15187742
-        when nm_Funcionario = 'ELIANE FRANCO OLIVEIRA LIMA'	then	15187354
-        when nm_Funcionario = 'ELIFRAN MENDONÇA ALTINO'	then	15187859
-        when nm_Funcionario = 'ELINEIA SOARES SIQUEIRA'	then	15187356
-        when nm_Funcionario = 'ELION BARRETO DE ARAUJO'	then	15187192
-        when nm_Funcionario = 'ELIONETE PROCHNOW FACHINI'	then	15187181
-        when nm_Funcionario = 'ELISANGELA SOUZA DOS SANTOS'	then	15187384
-        when nm_Funcionario = 'ELISMAR SANTOS DE OLIVEIRA'	then	15187792
-        when nm_Funcionario = 'ELIVERTON ALVES VITOR'	then	15187570
-        when nm_Funcionario = 'ELLEN CAROLINE DA PENHA ZANETTI'	then	15187517
-        when nm_Funcionario = 'ELOISA ESTEVAM NOGUEIRA DA SILVA'	then	15187365
-        when nm_Funcionario = 'ELTON SOUZA RIBEIRO'	then	15187577
-        when nm_Funcionario = 'ELZI AFONSO ALTINO'	then	15165494
-        when nm_Funcionario = 'EMERSON FRANCISCO BOHN'	then	15187426
-        when nm_Funcionario = 'EMERSON MATOS MOREIRA'	then	15187877
-        when nm_Funcionario = 'EMILHO DE SOUZA ANDRADE'	then	15187331
-        when nm_Funcionario = 'EMILIO ROMAIM ROMERO PEREZ'	then	15187391
-        when nm_Funcionario = 'EMIR RODRIGUES FILHO'	then	15187339
-        when nm_Funcionario = 'EMIR RODRIGUES NETO'	then	15187840
-        when nm_Funcionario = 'ENEDINA PIANCO DA SILVA'	then	15187193
-        when nm_Funcionario = 'ERICA DE BRITO TEIXEIRA'	then	15187194
-        when nm_Funcionario = 'ERICA SOUZA RAMOS'	then	15187795
-        when nm_Funcionario = 'EULALIA CANDINHO DE LIMA BLASI'	then	15187348
-        when nm_Funcionario = 'EURICO DOS SANTOS'	then	15187378
-        when nm_Funcionario = 'EURIDES TEIXEIRA DA SILVA'	then	15187195
-        when nm_Funcionario = 'EUTERPE PINHEIRO MATOS'	then	15185900
-        when nm_Funcionario = 'EVA ALVES DA SILVA PRADO'	then	15187351
-        when nm_Funcionario = 'ÉVELYN MENDONÇA ALTINO'	then	15187821
-        when nm_Funcionario = 'EVERSON GEORGE SETTE'	then	15187802
-        when nm_Funcionario = 'FABIENE ALVES DA SILVA'	then	15165499
-        when nm_Funcionario = 'FABIO XAVIER VALENTIM'	then	15187758
-        when nm_Funcionario = 'FABRICIO DA SILVA BERNARDO'	then	15187884
-        when nm_Funcionario = 'FABRICIO FERREIRA GOMES ROMANHA'	then	15187868
-        when nm_Funcionario = 'FERNANDA AGUIAR DA SILVA'	then	15187427
-        when nm_Funcionario = 'FERNANDA BAZONI'	then	15187497
-        when nm_Funcionario = 'FERNANDA DO CARMO SILVA'	then	15187735
-        when nm_Funcionario = 'FERNANDA MARGARIDA SOARES SOUZA'	then	15187437
-        when nm_Funcionario = 'FERNANDO ANTONIO FERREIRA DE ARAUJO'	then	15187345
-        when nm_Funcionario = 'FERNANDO DA SILVA MACHADO'	then	15187304
-        when nm_Funcionario = 'FERNANDO GALDINO DA SILVA'	then	15187550
-        when nm_Funcionario = 'FERNANDO GARCIA LIMA'	then	15187768
-        when nm_Funcionario = 'FLAVIA LUIZA ALVES'	then	15187309
-        when nm_Funcionario = 'FLAVIO EDUARDO SILVA'	then	15187468
-        when nm_Funcionario = 'FLORINDA MARREIRO CARVALHO'	then	15187196
-        when nm_Funcionario = 'FRANCIELE DA SILVA DUTRA'	then	15187818
-        when nm_Funcionario = 'FRANCIELE FERNANDA DA SILVA'	then	15187871
-        when nm_Funcionario = 'FRANCIELE SIMINHUK'	then	15187731
-        when nm_Funcionario = 'FRANCIELI MATOS BARBOSA'	then	15187815
-        when nm_Funcionario = 'FRANCIELI RITICEL MALOVINI'	then	15187870
-        when nm_Funcionario = 'FRANCISCA DOS SANTOS CALDEIRA'	then	15187789
-        when nm_Funcionario = 'FRANCISCO CORNELIO ALVES DE LIMA'	then	15187197
-        when nm_Funcionario = 'FREDERICO ANTÔNIO AUS VALLALVA'	then	15187450
-        when nm_Funcionario = 'GELSON FERREIRA DE SENA'	then	15185958
-        when nm_Funcionario = 'GENAIR  MARCILIO  FREZ'	then	15187539
-        when nm_Funcionario = 'GENESSY LISBOA DE SOUZA'	then	15187804
-        when nm_Funcionario = 'GENIR VIEIRA DA SILVA'	then	15165462
-        when nm_Funcionario = 'GENIVALDO VIEIRA DOS SANTOS'	then	15187379
-        when nm_Funcionario = 'GEORGETE ARAGAO RIOS'	then	15187333
-        when nm_Funcionario = 'GERLA DE SOUZA GONÇALVES'	then	15187499
-        when nm_Funcionario = 'GILDA MATOS PEREIRA'	then	15187396
-        when nm_Funcionario = 'GILDENE FARIA VIANA'	then	15187546
-        when nm_Funcionario = 'GILMAR CELESTINO GOBIRA'	then	15187552
-        when nm_Funcionario = 'GILSA DA GRACAS DE OLIVEIRA ANDRADE'	then	15187198
-        when nm_Funcionario = 'GILVÃ JOÃO ALVES'	then	15187481
-        when nm_Funcionario = 'GILVAN DE ARAUJO TERRA'	then	15187887
-        when nm_Funcionario = 'GISELIA ANDRADE DE OLIVEIRA'	then	15187199
-        when nm_Funcionario = 'GISELLE NICOLAU DE SOUZA VIEIRA'	then	15187513
-        when nm_Funcionario = 'GISELLE SOUZA GOMES'	then	15187854
-        when nm_Funcionario = 'GISLAINE NICOLAU DE SOUZA'	then	15187793
-        when nm_Funcionario = 'GISLENE FABIANA SANTOS CONTADINI'	then	15187869
-        when nm_Funcionario = 'GRAZIELI DOS SANTOS TOMAZ DE LIMA'	then	15187364
-        when nm_Funcionario = 'GREICYKELY PINHO BEZERRA'	then	15165489
-        when nm_Funcionario = 'GUILHERME DOS SANTOS RIBEIRO'	then	15187394
-        when nm_Funcionario = 'GUILHERME GULARTE'	then	15187340
-        when nm_Funcionario = 'GUSTAVO MESSIAS GOMES'	then	15187581
-        when nm_Funcionario = 'GUSTAVO TAKESHI FUJIHARA'	then	15187347
-        when nm_Funcionario = 'HELENA LOPES DE SOUZA'	then	15187200
-        when nm_Funcionario = 'HELENA PAULA MALTA CARDOSO'	then	15187796
-        when nm_Funcionario = 'HELENITO BARRETO PINTO JUNIOR'	then	15187201
-        when nm_Funcionario = 'HELI DA SILVA ROSSETO'	then	15187202
-        when nm_Funcionario = 'HELIO EGIDIO DA SILVA'	then	15187411
-        when nm_Funcionario = 'HELIO INACIO FERREIRA'	then	15187191
-        when nm_Funcionario = 'HELIO PEREIRA DA SILVA'	then	15165671
-        when nm_Funcionario = 'HELOISA CARDOSO COSTA'	then	15187873
-        when nm_Funcionario = 'HERMES ROBERTO GONÇALVES'	then	15187702
-        when nm_Funcionario = 'HIAGO BASTOS DO NASCIMENTO'	then	15187846
-        when nm_Funcionario = 'INEIS DE FATIMA TREVISAN'	then	15187711
-        when nm_Funcionario = 'IRACEMA SOUZA DE GOIS'	then	15165486
-        when nm_Funcionario = 'IRANI DE SOUZA'	then	15187353
-        when nm_Funcionario = 'IRANI OLIVEIRA COTRIM'	then	15187860
-        when nm_Funcionario = 'IRENE AUGUSTA CANDIDA'	then	15187290
-        when nm_Funcionario = 'IRINILDO JOSE GONCALVES'	then	15165691
-        when nm_Funcionario = 'IRMA HAMMER BERGER'	then	15187203
-        when nm_Funcionario = 'ISABEL DOS SANTOS ALBRES'	then	15187204
-        when nm_Funcionario = 'ISAU DA SILVA MONTELO'	then	15187205
-        when nm_Funcionario = 'ISDAEL JOSE VIEIRA'	then	15187206
-        when nm_Funcionario = 'ISRAEL DIVINO'	then	15187375
-        when nm_Funcionario = 'ISRAEL ELIAS DE OLIVEIRA'	then	15187470
-        when nm_Funcionario = 'ISTAEL RIBEIRO DOS S DE OLIVEIRA'	then	15187207
-        when nm_Funcionario = 'ISTAIANY RIBEIRO DOS SANTOS OLIVEIRA'	then	15187505
-        when nm_Funcionario = 'ITAECIO ALVES GOMES'	then	15187208
-        when nm_Funcionario = 'IURY NEVES DE ALMEIDA'	then	15187931
-        when nm_Funcionario = 'IVANETE APRECIDA ANDRETA SILVA'	then	15187209
-        when nm_Funcionario = 'IVANETE RIBEIRO DOS SANTOS'	then	15187210
-        when nm_Funcionario = 'IVANILDE MARIA BRAGANCA GULARTE'	then	15187211
-        when nm_Funcionario = 'IVANNILTON ALVES TEIXEIRA'	then	15187494
-        when nm_Funcionario = 'IVAN PAULA DA SILVA CLAUDIO'	then	15165478
-        when nm_Funcionario = 'IVONE DA SILVA ANDRADE'	then	15187443
-        when nm_Funcionario = 'IVONE DE PAULA NASCIMENTO ULIOA'	then	15187212
-        when nm_Funcionario = 'IVONE OLIVEIRA SANTOS DUARTE'	then	15187418
-        when nm_Funcionario = 'IVONEY APOLINARIO DA CRUZ'	then	15187213
-        when nm_Funcionario = 'IZAQUE ALVES'	then	15187303
-        when nm_Funcionario = 'JACSON ARISMEDE DOS SANTOS'	then	15187829
-        when nm_Funcionario = 'JADHY DA SILVA SOARES'	then	15187926
-        when nm_Funcionario = 'JAIME ARANDIA SALVATIERRA'	then	15187416
-        when nm_Funcionario = 'JAIR JOSE BLASI'	then	15187400
-        when nm_Funcionario = 'JAIR JOSE DE ANDRADE'	then	15187214
-        when nm_Funcionario = 'JAIRO DE JESUS CAETANO DE SOUZA'	then	15187215
-        when nm_Funcionario = 'JAIR PEREIRA DUARTE'	then	15187726
-        when nm_Funcionario = 'JAKIANY PINHO BEZERRA'	then	15187488
-        when nm_Funcionario = 'JAMILE MARIA BERNARDELLI'	then	15165675
-        when nm_Funcionario = 'JAQUELINE RODRIGUES DE SOUZA'	then	15187872
-        when nm_Funcionario = 'JARBAS LUIZ LUCAS'	then	15187838
-        when nm_Funcionario = 'JEAN MICHEL LOURES DO COUTO'	then	15187511
-        when nm_Funcionario = 'JESSICA DA CUNHA SANTOS'	then	15187856
-        when nm_Funcionario = 'JESSICA RENATA DA SILVA REDUZINO'	then	15187826
-        when nm_Funcionario = 'JEVERSON CONTRIN SOBRINHO'	then	15165680
-        when nm_Funcionario = 'JHADD HAMMAD ALABI SOBRINHO'	then	15187569
-        when nm_Funcionario = 'JOANA DE ABREU ANDRADE'	then	15187313
-        when nm_Funcionario = 'JOANILTON OLIVEIRA PEREIRA'	then	15187216
-        when nm_Funcionario = 'JOAO BELO DE OLIVEIRA'	then	15187217
-        when nm_Funcionario = 'JOAO CELESTINO DE FARIAS'	then	15187218
-        when nm_Funcionario = 'JOAO JOSE DE ANDRADE'	then	15187219
-        when nm_Funcionario = 'JOAO LEOPOLDO MORAES'	then	15165455
-        when nm_Funcionario = 'JOAO MAZINHO LISBOA DE SOUZA'	then	15187220
-        when nm_Funcionario = 'JOAO PAULO BATISTA DA CRUZ'	then	15187221
-        when nm_Funcionario = 'JOÃO PEDRO PACHECO RODRIGUES'	then	15187928
-        when nm_Funcionario = 'JOAO VIEIRA'	then	15187222
-        when nm_Funcionario = 'JOÃO VITOR DE OLIVEIRA ALENCAR'	then	15165694
-        when nm_Funcionario = 'JOAQUIM DONIZETE LISBOA DE SOUZA'	then	15187223
-        when nm_Funcionario = 'JOAQUIM NICOLAU DE SOUZA NETO'	then	15187522
-        when nm_Funcionario = 'JOAQUIM PEDRO ALEXANDRINO NETO'	then	15187291
-        when nm_Funcionario = 'JOCELI BORBA DE ALMEIDA'	then	15187527
-        when nm_Funcionario = 'JOCELINO DIOLINO DOS SANTOS'	then	15187352
-        when nm_Funcionario = 'JOCELINO VIEIRA PESSÔA'	then	15187745
-        when nm_Funcionario = 'JOÉLIA PESSOA DA SILVA CLAUDIO PAULA'	then	15187888
-        when nm_Funcionario = 'JOELMA ANDRIATO SANTOS DE OLIVEIRA'	then	15187923
-        when nm_Funcionario = 'JOICE POLIANE MERCLY DE ANDRADE'	then	15187421
-        when nm_Funcionario = 'JONAIR JOSE LUCAS'	then	15187224
-        when nm_Funcionario = 'JONAS SERAFIM DOS SANTOS'	then	15187744
-        when nm_Funcionario = 'JONES VAZ VIEIRA'	then	15165670
-        when nm_Funcionario = 'JORGE EDUARDO PACHECO RODRIGUES'	then	15187929
-        when nm_Funcionario = 'JORGE LUIZ RAIMUNDO DE MELO'	then	15187330
-        when nm_Funcionario = 'JOSE ANGELIM VENTURIM'	then	15165474
-        when nm_Funcionario = 'JOSE ANTONIO SOARES'	then	15165456
-        when nm_Funcionario = 'JOSE AUGUSTO DELFINO'	then	15187225
-        when nm_Funcionario = 'JOSE AUGUSTO PEREIRA COSTA'	then	15187507
-        when nm_Funcionario = 'JOSE AUREO TECHIO'	then	15187803
-        when nm_Funcionario = 'JOSE DA SILVA PEDROSO'	then	15187226
-        when nm_Funcionario = 'JOSEFA FERREIRA RIOS KURYAMA'	then	15187687
-        when nm_Funcionario = 'JOSEFA RIBEIRO PEREIRA'	then	15187770
-        when nm_Funcionario = 'JOSE FERREIRA BARROS'	then	15187738
-        when nm_Funcionario = 'JOSÉ JORGE ALVES DOS SANTOS'	then	15187439
-        when nm_Funcionario = 'JOSE LAFAIETE PEREIRA'	then	15187227
-        when nm_Funcionario = 'JOSELANE COSTA DA CRUZ'	then	15187344
-        when nm_Funcionario = 'JOSÉ LEMES CORDEIRO'	then	15187932
-        when nm_Funcionario = 'JOSE LEONIR LOPES'	then	15187772
-        when nm_Funcionario = 'JOSE MAURICIO SANTANA'	then	15165480
-        when nm_Funcionario = 'JOSE MAURO PRATES'	then	15187228
-        when nm_Funcionario = 'JOSÉ OGENIS SERAFIM DOS SANTOS'	then	15187819
-        when nm_Funcionario = 'JOSE ROBERTO INACIO DA ROSA'	then	15187307
-        when nm_Funcionario = 'JOSIANE DA SILVA ANDRADE'	then	15187858
-        when nm_Funcionario = 'JOSIEL CANDIDO'	then	15187229
-        when nm_Funcionario = 'JOSIMAR PEREIRA MORAES'	then	15187844
-        when nm_Funcionario = 'JOSIVALDO ABRANTES DA CONCEIÇÃO'	then	15185959
-        when nm_Funcionario = 'JOVENILSON DA SILVA MARCELINO'	then	15187537
-        when nm_Funcionario = 'JOVERCINA MAXIMO DOS SANTOS'	then	15187230
-        when nm_Funcionario = 'JULIANA ALVES SALAMAO'	then	15165473
-        when nm_Funcionario = 'JULIANA BADAN DUARTE'	then	15187707
-        when nm_Funcionario = 'JULIO MUCHINSKI'	then	15187534
-        when nm_Funcionario = 'JULISNEI RODRIGUES LAURO'	then	15187812
-        when nm_Funcionario = 'JUNIO CARDOSO DE FIGUEIREDO'	then	15165674
-        when nm_Funcionario = 'JURANDIR MARINHEIRO DE LIMA'	then	15187694
-        when nm_Funcionario = 'JUSTINA RODRIGUES DA SILVA'	then	15187442
-        when nm_Funcionario = 'KAMILA DA SILVA SALDANHA'	then	15187495
-        when nm_Funcionario = 'KARINA PONTES MARTINS'	then	15187718
-        when nm_Funcionario = 'KATIA REGINA DE SOUZA GOMES'	then	15187231
-        when nm_Funcionario = 'KATIUSA LOURENÇO DE OLIVEIRA'	then	15187406
-        when nm_Funcionario = 'KATIUSCIA OLIVEIRA WACHEKOWSKI'	then	15187576
-        when nm_Funcionario = 'KELIA MARTINS SOARES'	then	15187502
-        when nm_Funcionario = 'KELLY MACHADO DE OLIVEIRA'	then	15187308
-        when nm_Funcionario = 'KHRISLAYNE KETLIM FAUSTINO'	then	15187845
-        when nm_Funcionario = 'KLEBSON MOURA RODRIGUES'	then	15187530
-        when nm_Funcionario = 'KLEITON DE ALMEIDA WILL'	then	15187740
-        when nm_Funcionario = 'KLESIO BRESSAMI DOS SANTOS'	then	15165487
-        when nm_Funcionario = 'LAUDICEIA MENDES DA COSTA PRUDENCIO'	then	15187373
-        when nm_Funcionario = 'LAURINDO BARBOSA DE SOUZA'	then	15187315
-        when nm_Funcionario = 'LAURINDO FERREIRA DA SILVA'	then	15187541
-        when nm_Funcionario = 'LEIA BRESSANI DE FREITAS SANTOS'	then	15187232
-        when nm_Funcionario = 'LEIDIANE VIEIRA LIMA'	then	15187510
-        when nm_Funcionario = 'LEIDIANY PAULA DE OLIVEIRA GOBIRA'	then	15187593
-        when nm_Funcionario = 'LEIR JOSE DA SILVA'	then	15187766
-        when nm_Funcionario = 'LENYN BRITO SILVA'	then	15185919
-        when nm_Funcionario = 'LEONIDES DE CARVALHO JUNIOR'	then	15165461
-        when nm_Funcionario = 'LETICIA SESQUIM'	then	15185933
-        when nm_Funcionario = 'LIDIA NARA ALTOE'	then	15187335
-        when nm_Funcionario = 'LILIA DOS SANTOS ANTONIO'	then	15187807
-        when nm_Funcionario = 'LILIAN RODIRGUES ANTUNES'	then	15187311
-        when nm_Funcionario = 'LINCOLN FERREIRA DE OLIVEIRA'	then	15187477
-        when nm_Funcionario = 'LINDALCIR GOMES CORDEIRO'	then	15165503
-        when nm_Funcionario = 'LINDOMAR ALVES VITOR'	then	15187791
-        when nm_Funcionario = 'LINDOMAR DE JESUS FIRMIANO'	then	15187703
-        when nm_Funcionario = 'LORENA MACIEL DA COSTA'	then	15187852
-        when nm_Funcionario = 'LUCAS ESTEVAM NOGUEIRA DA ROSA'	then	15187851
-        when nm_Funcionario = 'LUCIANA DA SILVA'	then	15187493
-        when nm_Funcionario = 'LUCIANA DE OLIVEIRA PINTO'	then	15187759
-        when nm_Funcionario = 'LUCILENE DE SOUZA'	then	15187474
-        when nm_Funcionario = 'LUCIMAR CARDOSO DIAS'	then	15187409
-        when nm_Funcionario = 'LUCIMAR LIMEIRA DA SILVA OLIVEIRA'	then	15187590
-        when nm_Funcionario = 'LUCIMAR SOARES MIRANDA'	then	15187743
-        when nm_Funcionario = 'LUCINÉIA GONÇALVES DE SOUZA'	then	15187809
-        when nm_Funcionario = 'LUCIO BISPO NUNES'	then	15187289
-        when nm_Funcionario = 'LUCIVALDO FERREIRA ALVES'	then	15187525
-        when nm_Funcionario = 'LUIZ AMARAL DE BRITO'	then	15187326
-        when nm_Funcionario = 'LUIZ ANTONIO DE OLIVEIRA'	then	15187774
-        when nm_Funcionario = 'LUIZ CARLOS BRANDÃO'	then	15187498
-        when nm_Funcionario = 'LUIZ CARLOS ROSA DA SILVA'	then	15164924
-        when nm_Funcionario = 'LUIZ CARLOS VALENTIM DE SOUZA'	then	15165497
-        when nm_Funcionario = 'LUTERO ROSA PARAISO'	then	15187342
-        when nm_Funcionario = 'LUTERO ROSA PARAISO'	then	15187916
-        when nm_Funcionario = 'LUTERO ROSA PARAISO'	then	15187917
-        when nm_Funcionario = 'LUZENIR DE JESUS ANTONIO PEREIRA'	then	15187392
-        when nm_Funcionario = 'LUZIA RODRIGUES DE CARVALHO'	then	15187310
-        when nm_Funcionario = 'LUZIA SOUZA LOPES'	then	15187490
-        when nm_Funcionario = 'LUZIA STARNAITE CANDIDO'	then	15187233
-        when nm_Funcionario = 'MACIEL FERNANDES NICOLAU'	then	15187566
-        when nm_Funcionario = 'MANOEL XAVIER COTRIM'	then	15165484
-        when nm_Funcionario = 'MARCELE DAMO'	then	15187457
-        when nm_Funcionario = 'MARCELO ABELARDO SIEBE'	then	15187830
-        when nm_Funcionario = 'MARCELO DIAS FRANSKOVIAK'	then	15187327
-        when nm_Funcionario = 'MARCELO FIGUEIREDO MOTA'	then	15187526
-        when nm_Funcionario = 'MARCELO JUNIOR BLASI'	then	15187338
-        when nm_Funcionario = 'MARCELO MARINHO DE SOUZA'	then	15187430
-        when nm_Funcionario = 'MARCELO VIDOTTO'	then	15187565
-        when nm_Funcionario = 'MARCEL SILVA MONTELO'	then	15187459
-        when nm_Funcionario = 'MARCIA HELENA PASSOLONGO'	then	15187234
-        when nm_Funcionario = 'MARCIA NEVES DE ALMEIDA'	then	15187235
-        when nm_Funcionario = 'MARCIA RODRIGUES DE OLIVEIRA ALVES'	then	15187413
-        when nm_Funcionario = 'MARCIA SANTOS LIMA SOUZA'	then	15187236
-        when nm_Funcionario = 'MARCILEY DE CARVALHO'	then	15165690
-        when nm_Funcionario = 'MARCIO FERREIRA DOS SANTOS JUNIOR'	then	15187823
-        when nm_Funcionario = 'MARCIO VIEIRA DE FREITAS'	then	15187831
-        when nm_Funcionario = 'MARCONDES DE CARVALHO'	then	15165465
-        when nm_Funcionario = 'MARCOS ANDRADE WILL'	then	15165676
-        when nm_Funcionario = 'MARCOS ANTONIO RODRIGUES NERY'	then	15187480
-        when nm_Funcionario = 'MARCOS JÂNIO BLASI'	then	15187398
-        when nm_Funcionario = 'MARCO TULIO SANTOS DUARTE'	then	15187425
-        when nm_Funcionario = 'MARGARETE PEREIRA MARTINEZ'	then	15187237
-        when nm_Funcionario = 'MARIA ADILEUZA RODRIGUES DE LIMA'	then	15187399
-        when nm_Funcionario = 'MARIA APARECIDA DE ALMEIDA GABRIEL'	then	15187808
-        when nm_Funcionario = 'MARIA APARECIDA DE AMORIN'	then	15165469
-        when nm_Funcionario = 'MARIA APARECIDA DE SOUZA'	then	15187579
-        when nm_Funcionario = 'MARIA APARECIDA DIBERNADINO'	then	15187238
-        when nm_Funcionario = 'MARIA APARECIDA GOMES FRANQUI'	then	15187555
-        when nm_Funcionario = 'MARIA APARECIDA SOUZA DOS S SIMAO'	then	15187239
-        when nm_Funcionario = 'MARIA CONCEICAO DA SILVA'	then	15187240
-        when nm_Funcionario = 'MARIA CREUZA SILVA BARBOSA'	then	15187319
-        when nm_Funcionario = 'MARIA DA CONCEICAO DE ALMEIDA'	then	15187241
-        when nm_Funcionario = 'MARIA DA PENHA HOULANDES'	then	15187242
-        when nm_Funcionario = 'MARIA DAS GRACAS RACANELI SARDINHA'	then	15187243
-        when nm_Funcionario = 'MARIA DE FATIMA PEREIRA'	then	15187288
-        when nm_Funcionario = 'MARIA DE FATIMA PEREIRA DA SILVA SANTOS'	then	15187598
-        when nm_Funcionario = 'MARIA DO CARMO RODRIGUES DE CARVALHO SANTOS'	then	15165460
-        when nm_Funcionario = 'MARIA ELIZABETH RIBEIRO RODRIGUES'	then	15187521
-        when nm_Funcionario = 'MARIA HELENA FELISBERTO BATISTA'	then	15187244
-        when nm_Funcionario = 'MARIA ISABEL NOGUEIRA'	then	15187433
-        when nm_Funcionario = 'MARIA JOSE DE SOUZA REIS'	then	15187245
-        when nm_Funcionario = 'MARIA JOSE RODRIGUES'	then	15187549
-        when nm_Funcionario = 'MARIA MARTA DA SILVA ABREU'	then	15187246
-        when nm_Funcionario = 'MARIA NILVA CARDOSO CANDIDO'	then	15187247
-        when nm_Funcionario = 'MARIA PEREIRA DA SILVA'	then	15187458
-        when nm_Funcionario = 'MARIA QUELIS DE BRITO'	then	15187248
-        when nm_Funcionario = 'MARIA RODRIGUES COUTRIM'	then	15187389
-        when nm_Funcionario = 'MARIA ROSA SOARES DE MELO'	then	15187249
-        when nm_Funcionario = 'MARIA SOARES DA ROCHA'	then	15187848
-        when nm_Funcionario = 'MARIA VALDENIR GRANGEIRO SOUSA'	then	15187805
-        when nm_Funcionario = 'MARILDA CAMPOS DA CUNHA'	then	15187355
-        when nm_Funcionario = 'MARINALVA ALEXANDRINA'	then	15187698
-        when nm_Funcionario = 'MARINALVA APARECIDA NEVES'	then	15187250
-        when nm_Funcionario = 'MARINALVA DA SILVA PEREIRA'	then	15187405
-        when nm_Funcionario = 'MARINEIDE DE CAMPOS DA CUNHA'	then	15185918
-        when nm_Funcionario = 'MARINEIDE FERREIRA DE OLIVEIRA'	then	15187251
-        when nm_Funcionario = 'MARINES DA SILVA PEREIRA'	then	15187357
-        when nm_Funcionario = 'MARINETE CESARIO DE SOUZA'	then	15187788
-        when nm_Funcionario = 'MARIO LUCIO V DE OLIVEIRA'	then	15165669
-        when nm_Funcionario = 'MARIVALDA ROCHA DOS SANTOS'	then	15187841
-        when nm_Funcionario = 'MARIVANIA NOBRE MACHADO'	then	15187386
-        when nm_Funcionario = 'MARIVETE NOBRE MACHADO'	then	15187362
-        when nm_Funcionario = 'MARLEIDE CAMPOS DOS SANTOS'	then	15187516
-        when nm_Funcionario = 'MARLENE ZUNACHI NEVES'	then	15187573
-        when nm_Funcionario = 'MARLI DA CUNHA'	then	15187320
-        when nm_Funcionario = 'MARLI DA SILVA'	then	15187591
-        when nm_Funcionario = 'MARLI LUCIA DO CARMO SILVA'	then	15187252
-        when nm_Funcionario = 'MARLON KLEBER WUTZON BOZO'	then	15187775
-        when nm_Funcionario = 'MARLUCE DA CRUZ'	then	15187444
-        when nm_Funcionario = 'MARLUCIA COSTA DA SILVA VINHAL'	then	15187407
-        when nm_Funcionario = 'MARTA DA SILVA CARVALHO'	then	15165685
-        when nm_Funcionario = 'MAURICIO SERGIO DE LIMA E SILVA'	then	15187531
-        when nm_Funcionario = 'MAX DANIEL DE CARVALHO'	then	15165481
-        when nm_Funcionario = 'MAX DANIEL DE CARVALHO'	then	15187719
-        when nm_Funcionario = 'MAYCON DOUGLAS MACHADO'	then	15187850
-        when nm_Funcionario = 'MEIRE FRANCIANE GONÇALVES BORELLA'	then	15187701
-        when nm_Funcionario = 'MEIRE FRANCIELE GONÇALVES DE CARVALHO'	then	15187367
-        when nm_Funcionario = 'MESAQUE FERNANDO CAMARGO DA SILVA'	then	15187739
-        when nm_Funcionario = 'MICHAEL WENDERSON RECALCATI'	then	15187857
-        when nm_Funcionario = 'MICHELI NASCIMENTO SOARES'	then	15187736
-        when nm_Funcionario = 'MIRIAM ALVES TOMAZ MARTINS PEREIRA'	then	15187253
-        when nm_Funcionario = 'MIRIAM QUIRINO DA SILVA'	then	15187371
-        when nm_Funcionario = 'MIRIAN DUARTE'	then	15165470
-        when nm_Funcionario = 'MIRIAN ROSA DA SILVA'	then	15187254
-        when nm_Funcionario = 'NADIA MARIA SILVA MONTELO'	then	15187491
-        when nm_Funcionario = 'NADYA FERNANDES'	then	15165472
-        when nm_Funcionario = 'NAIARA ESTEVAN NOGUEIRA SA SILVA'	then	15187825
-        when nm_Funcionario = 'NARIA GOUVEIA VIEIRA'	then	15187704
-        when nm_Funcionario = 'NEILDE CORREIA BISPO TESH'	then	15187725
-        when nm_Funcionario = 'NELSON MLAK'	then	15187358
-        when nm_Funcionario = 'NELSON PEREIRA NUNES JUNIOR'	then	15187806
-        when nm_Funcionario = 'NEUCIDIANE ANTONIA SEGATTO'	then	15187797
-        when nm_Funcionario = 'NEUCIMEIRE APARECIDA MANZINI PETRECA'	then	15187377
-        when nm_Funcionario = 'NEUZA DA SILVA MENDES'	then	15187256
-        when nm_Funcionario = 'NEUZA HOFFMANN CARVALHO'	then	15187257
-        when nm_Funcionario = 'NEUZA MARIA CASAGRANDE'	then	15187255
-        when nm_Funcionario = 'NEUZA MARIA PEDROSO'	then	15187258
-        when nm_Funcionario = 'NEUZA XAVIER DO NASCIMENTO'	then	15187259
-        when nm_Funcionario = 'NILSON DE JESUS PEREIRA'	then	15187586
-        when nm_Funcionario = 'NILSON JACOS DE SOUSA'	then	15187305
-        when nm_Funcionario = 'NILTON PINTO DE ALMEIDA'	then	15187466
-        when nm_Funcionario = 'NILZETE DANTAS DA SILVA MATTE'	then	15187496
-        when nm_Funcionario = 'NISES MARILDA TRAVAINI BERNADELLI'	then	15187765
-        when nm_Funcionario = 'ODAIR JOSE DE MORAIS'	then	15187551
-        when nm_Funcionario = 'OEDES GONCALVES ULHIOA'	then	15187260
-        when nm_Funcionario = 'OLINTO ENEAS DE ALENCAR FILHO'	then	15187760
-        when nm_Funcionario = 'ORMANDINA ESTEVAN NOGUEIRA'	then	15187448
-        when nm_Funcionario = 'OSMAR BATISTA PENHA'	then	15187810
-        when nm_Funcionario = 'OSMAR FRANCISCO DO NASCIMENTO'	then	15165467
-        when nm_Funcionario = 'OSMAR TONINI DA SILVA'	then	15187374
-        when nm_Funcionario = 'OSVALDO ALBINO DO NASCIMENTO'	then	15187261
-        when nm_Funcionario = 'OSVALDO RODRIGUES COTRIM'	then	15165678
-        when nm_Funcionario = 'OTAMIR APARECIDO DE MORAIS'	then	15187699
-        when nm_Funcionario = 'OTAMIR DANIEL DE ARRUDA'	then	15187332
-        when nm_Funcionario = 'OZIANE MARIA DA SILVA'	then	15187318
-        when nm_Funcionario = 'PABLO THEOTONIO DE OLIVEIRA'	then	15187816
-        when nm_Funcionario = 'PATRICIA BARBOSA DE SOUZA'	then	15187832
-        when nm_Funcionario = 'PATRICIA DA SILVA MOURA'	then	15187486
-        when nm_Funcionario = 'PATRICIA MOREIRA DE OLIVEIRA'	then	15165471
-        when nm_Funcionario = 'PAULA SIMONE ROCHA'	then	15187482
-        when nm_Funcionario = 'PAULO BATISTA DA CRUZ'	then	15187262
-        when nm_Funcionario = 'PAULO CESAR BEZERRA'	then	15165479
-        when nm_Funcionario = 'PAULO CESAR DA SILVA'	then	15165682
-        when nm_Funcionario = 'PAULO EDSON DE BRITO PEREIRA'	then	15187504
-        when nm_Funcionario = 'PAULO FIGUEIREDO CALDEIRAS'	then	15187263
-        when nm_Funcionario = 'PAULO GERALDO PEREIRA'	then	15187453
-        when nm_Funcionario = 'PAULO HENRIQUE MARCELINO DE OLIVEIRA'	then	15187881
-        when nm_Funcionario = 'PAULO SERGIO DE SOUZA'	then	15187387
-        when nm_Funcionario = 'PEDRO SOUZA SILVA'	then	15187312
-        when nm_Funcionario = 'POLIANA NATALIA FERREIRA'	then	15187449
-        when nm_Funcionario = 'QUELI CRISTINA AGUIAR SILVA BARBOZA'	then	15187691
-        when nm_Funcionario = 'RAIMUNDO DA SILVA'	then	15187764
-        when nm_Funcionario = 'RAIULA DE SOUZA SILVA'	then	15187465
-        when nm_Funcionario = 'RAQUEL CORDEIRO DE OLIVEIRA'	then	15187880
-        when nm_Funcionario = 'REGIANE CRISTINA DOS SANTOS'	then	15187408
-        when nm_Funcionario = 'REGIANE LOPES DE OLIVEIRA'	then	15187709
-        when nm_Funcionario = 'REGILDO RAASCH'	then	15165500
-        when nm_Funcionario = 'REGINALDO GIL DA SILVA'	then	15187763
-        when nm_Funcionario = 'REGINALDO GONÇALVES DE OLIVEIRA'	then	15187689
-        when nm_Funcionario = 'REGINALDO RAASCH'	then	15187508
-        when nm_Funcionario = 'REINALDO CABRAL'	then	15187528
-        when nm_Funcionario = 'REINALDO FREIRE DE SOUZA'	then	15187683
-        when nm_Funcionario = 'REINALDO GONÇALVES ULHOA'	then	15187588
-        when nm_Funcionario = 'RELUY CHRISTINA DE OLIVEIRA TOLEDO'	then	15187489
-        when nm_Funcionario = 'RENATA BORGES DA SILVA'	then	15187346
-        when nm_Funcionario = 'RENATA KATLHIELLI GRACIOLLI'	then	15165677
-        when nm_Funcionario = 'RENATA LEPPAUS MEIRELES'	then	15165673
-        when nm_Funcionario = 'RENATA LEPPAUS MEIRELES'	then	15187734
-        when nm_Funcionario = 'RENATO ANTONIO PEREIRA'	then	15187545
-        when nm_Funcionario = 'RENICE FERREIRA CHAVES'	then	15187264
-        when nm_Funcionario = 'RENIVALDO BEZERRA'	then	15187265
-        when nm_Funcionario = 'RENIVALDO RAASCH'	then	15187523
-        when nm_Funcionario = 'RICARDO GOMES DA SILVA'	then	15187769
-        when nm_Funcionario = 'RICARDO MARÇAL FREIRE'	then	15187599
-        when nm_Funcionario = 'RITA DE CASSIA DOS SANTOS'	then	15187673
-        when nm_Funcionario = 'RITA SANTOS LIMA'	then	15187266
-        when nm_Funcionario = 'ROBERTO MACIEL MACHADO'	then	15187343
-        when nm_Funcionario = 'ROBERTO ROGERIO COSTA'	then	15187415
-        when nm_Funcionario = 'ROBERTO SEVERINO DA SILVA'	then	15187317
-        when nm_Funcionario = 'ROBSON WERIKIS OLIVEIRA'	then	15185901
-        when nm_Funcionario = 'RODRIGO SIEBRE'	then	15165496
-        when nm_Funcionario = 'ROGERIO MACHADO LOPES'	then	15187708
-        when nm_Funcionario = 'ROGERIO VICENTE MACHADO'	then	15187397
-        when nm_Funcionario = 'ROMARIO XAVIER LEPPAUS'	then	15165681
-        when nm_Funcionario = 'RONALDO ALENCAR GONCALVES DE OLIVEIRA'	then	15165482
-        when nm_Funcionario = 'RONILDO APARECIDO PEDRO ALEXANDRINO'	then	15165468
-        when nm_Funcionario = 'RONIS BATISTA DE OLIVEIRA'	then	15187733
-        when nm_Funcionario = 'RONNY TON ZANOTELLI'	then	15187401
-        when nm_Funcionario = 'ROSA ANTAO MALTA'	then	15187267
-        when nm_Funcionario = 'ROSÂNGELA FERNANDES DE ARAUJO'	then	15187798
-        when nm_Funcionario = 'ROSELI FERREIRA DE CIQUEIRA'	then	15187464
-        when nm_Funcionario = 'ROSELI JACOMINI DA SILVA'	then	15165459
-        when nm_Funcionario = 'ROSEMEIRE MARIA HERCULANO'	then	15187376
-        when nm_Funcionario = 'ROSENIRA ALEXANDRINO'	then	15187420
-        when nm_Funcionario = 'ROSICLEIA RODRIGUES CARVALHO'	then	15187876
-        when nm_Funcionario = 'ROSILENE GIL DA SILVA LEMES'	then	15187337
-        when nm_Funcionario = 'ROSILENE TAKAHASHI BRAVO'	then	15187314
-        when nm_Funcionario = 'ROSIMAR AGUIAR DA SILVA'	then	15187268
-        when nm_Funcionario = 'ROSIMERE ARAUJO DA SILVA'	then	15187543
-        when nm_Funcionario = 'ROSINEIA HAMMER SCHULTZ'	then	15187487
-        when nm_Funcionario = 'ROSINEIA LANDIM DE MIRA'	then	15187542
-        when nm_Funcionario = 'ROSINEIDE BEZERRA'	then	15187388
-        when nm_Funcionario = 'ROSINETE RIBEIRO DE OLIVEIRA'	then	15187761
-        when nm_Funcionario = 'ROXANE FERRETO LORENZON'	then	15187434
-        when nm_Funcionario = 'ROZIEL RODRIGUES A SILVA'	then	15187563
-        when nm_Funcionario = 'RUIZDAEL DE SOUZA'	then	15187422
-        when nm_Funcionario = 'RUTE CEZÁRIO DE SOUZA'	then	15187730
-        when nm_Funcionario = 'SABRINA DA COSTA CAMARGOS'	then	15185930
-        when nm_Funcionario = 'SALVINA LEMES DA SILVA BEZERRA'	then	15187300
-        when nm_Funcionario = 'SAMARA SOARES DA SILVA'	then	15187835
-        when nm_Funcionario = 'SAMMUEL VALENTIM BORGES'	then	15187431
-        when nm_Funcionario = 'SANDRA GOMES DA SILVA'	then	15187728
-        when nm_Funcionario = 'SANDRA MARIN'	then	15187561
-        when nm_Funcionario = 'SANDRA MELO DE CARVALHO BARRETO'	then	15187306
-        when nm_Funcionario = 'SANDRA REGINA DA SILVA'	then	15187269
-        when nm_Funcionario = 'SANDRA VIEIRA DE OLIVEIRA'	then	15187587
-        when nm_Funcionario = 'SEBASTIAO BATISTA DA CRUZ'	then	15187559
-        when nm_Funcionario = 'SEBASTIAO FERNANDES DE MOURA'	then	15187800
-        when nm_Funcionario = 'SEBASTIAO TEIXEIRA ABRANTES'	then	15187412
-        when nm_Funcionario = 'SEBASTIÃO VIEIRA DA COSTA'	then	15187688
-        when nm_Funcionario = 'SELMA DA SILVA BANDEIRA'	then	15187827
-        when nm_Funcionario = 'SERGIO ALVES DE ALMEIDA'	then	15187473
-        when nm_Funcionario = 'SERGIO CANDIDO DA ROCHA'	then	15187402
-        when nm_Funcionario = 'SERGIO LEAO DE ARAUJO'	then	15185957
-        when nm_Funcionario = 'SERGIO PERINI'	then	15187492
-        when nm_Funcionario = 'SIDINEI DOS ANJOS CARVALHO'	then	15187270
-        when nm_Funcionario = 'SIDNEI DA SILVA BARROS FILHO'	then	15185932
-        when nm_Funcionario = 'SIDNEI RIBEIRO ARAUJO'	then	15187834
-        when nm_Funcionario = 'SIMONE CHAGAS DE ALMEIDA PINTO'	then	15187271
-        when nm_Funcionario = 'SIMONE CLEMENTE MORAES'	then	15187514
-        when nm_Funcionario = 'SIMONE CRISTINA DA ROCHA H NUNES'	then	15187272
-        when nm_Funcionario = 'SIMONI MLAK DE SOUZA'	then	15187722
-        when nm_Funcionario = 'SIMONI MLAK DE SOUZA'	then	15187920
-        when nm_Funcionario = 'SIRLENE BRIGIDO OLIVEIRA'	then	15187540
-        when nm_Funcionario = 'SIRLENE LUIZA SILVA'	then	15187564
-        when nm_Funcionario = 'SOLANGE ALVES CESTARI'	then	15187273
-        when nm_Funcionario = 'SOLANGE APARECIDA DA SILVEIRA SILVA'	then	15187382
-        when nm_Funcionario = 'SOLANGE MAZUTTI'	then	15187276
-        when nm_Funcionario = 'SOLANGE PAVIM'	then	15187706
-        when nm_Funcionario = 'SONIA MARIA SILVA CORSINI'	then	15187429
-        when nm_Funcionario = 'SUELI ESTER DE FREITAS SIMINHUK'	then	15187274
-        when nm_Funcionario = 'SUELLEN RIOS KURYMA DE OLIVEIRA'	then	15187370
-        when nm_Funcionario = 'SUELY GOMES DE BRITO DA SILVA'	then	15187697
-        when nm_Funcionario = 'SUSANA CANDIDO DA ROCHA'	then	15187275
-        when nm_Funcionario = 'SYLARA SAYANNE COLLA SOARES'	then	15187428
-        when nm_Funcionario = 'TAINA LUIZA DE OLIVEIRA'	then	15187602
-        when nm_Funcionario = 'TAIS NEVES'	then	15187484
-        when nm_Funcionario = 'TATIANE SOUZA ROCHA'	then	15187717
-        when nm_Funcionario = 'TELMA DE SOUSA LEITE'	then	15187571
-        when nm_Funcionario = 'TENANDES NUNES MORAIS'	then	15187582
-        when nm_Funcionario = 'TERESINHA GOULART BENVENUT'	then	15187297
-        when nm_Funcionario = 'teste'	then	15165171
-        when nm_Funcionario = 'teste pessoa SL'	then	15122123
-        when nm_Funcionario = 'THAISA LOURENÇO'	then	15187886
-        when nm_Funcionario = 'THAYS GOMES DE CAMPOS'	then	15187686
-        when nm_Funcionario = 'THIAGO TEIXEIRA RODRIGUES'	then	15187867
-        when nm_Funcionario = 'TIAGO ABRANTES PORTO'	then	15187741
-        when nm_Funcionario = 'TIAGO ALENCAR GONÇALVES DE OLIVEIRA'	then	15187438
-        when nm_Funcionario = 'UANDERSON DOS SANTOS FAGUNDES'	then	15187842
-        when nm_Funcionario = 'UELÇO CONTADINI VIEIRA'	then	15187685
-        when nm_Funcionario = 'VALDECIR DA SILVA'	then	15187285
-        when nm_Funcionario = 'VALDECIR DEL NERO'	then	15165475
-        when nm_Funcionario = 'VALDEMIR APARECIDO RAIMUNDO'	then	15187536
-        when nm_Funcionario = 'VALDEVINO LISBOA DE SOUZA'	then	15187455
-        when nm_Funcionario = 'VALDIRENE ALVES DEL NERO'	then	15187705
-        when nm_Funcionario = 'VALDIRENE HAMMER BERGER'	then	15165679
-        when nm_Funcionario = 'VALDIRENE SIMOES DA SILVA'	then	15187548
-        when nm_Funcionario = 'VALMIR GOMES DA SILVA'	then	15187282
-        when nm_Funcionario = 'VALMIR LEMES DA SILVA SANTOS'	then	15187299
-        when nm_Funcionario = 'VANDER BARBOSA MEIRELES'	then	15187479
-        when nm_Funcionario = 'VANDERLEIA CRUZ DE LIMA'	then	15165491
-        when nm_Funcionario = 'VANDERLUCIO DA SILVA'	then	15187281
-        when nm_Funcionario = 'VANDERSON DEL NERO PEREIRA'	then	15187560
-        when nm_Funcionario = 'VANESSA CALGAROTO'	then	15187323
-        when nm_Funcionario = 'VANESSA DE LIMA DOMINGOS'	then	15187874
-        when nm_Funcionario = 'VANESSA PEREIRA DA SILVA'	then	15187328
-        when nm_Funcionario = 'VANIA JACOMINI DA SILVA'	then	15187512
-        when nm_Funcionario = 'VANIR DE ALBUQUERQUE BRITO'	then	15187446
-        when nm_Funcionario = 'VANUSA SANTOS ALVES'	then	15187817
-        when nm_Funcionario = 'VANUZE LOPES DA SILVA'	then	15187724
-        when nm_Funcionario = 'VERACI ALVES IGNACIO DE LIMA'	then	15187360
-        when nm_Funcionario = 'VERA FERREIRA DE OLIVEIRA'	then	15187286
-        when nm_Funcionario = 'VERA LUCIA DA SILVA GUIZOLF DE SOUZA'	then	15187501
-        when nm_Funcionario = 'VERONICA VIEIRA DA SILVA'	then	15187283
-        when nm_Funcionario = 'VICENTE FRANCISCO MONTELO'	then	15187284
-        when nm_Funcionario = 'VICTOR SMILL PILLACA QUISPILAYA'	then	15187460
-        when nm_Funcionario = 'VINICIUS GONCALVES SOARES'	then	15187828
-        when nm_Funcionario = 'VITOR HUGO MOURA RODRIGUES'	then	15187811
-        when nm_Funcionario = 'VIVIANE NUNES MAGALHAES'	then	15187503
-        when nm_Funcionario = 'VIVIANE RISSO DE PAIVA'	then	15187833
-        when nm_Funcionario = 'VIVIANE ZAN PEREIRA DOS SANTOS'	then	15165693
-        when nm_Funcionario = 'WAGNA VERANE VIDOTTO'	then	15187596
-        when nm_Funcionario = 'WALDEANE DE OLIVEIRA SILVA'	then	15165485
-        when nm_Funcionario = 'WALTER TERTO FERREIRA'	then	15187277
-        when nm_Funcionario = 'WANDERLEY DA ROSA'	then	15187324
-        when nm_Funcionario = 'WELITON  JOSÉ LUCAS'	then	15187710
-        when nm_Funcionario = 'WESLEI MAURO DE PAULA PRATES'	then	15187855
-        when nm_Funcionario = 'WESLEY BORGES DUARTE'	then	15187801
-        when nm_Funcionario = 'WESLEY LUCAS DE ABREU ANDRADE'	then	15187882
-        when nm_Funcionario = 'WESLWY FABIO LAUTERTE'	then	15187329
-        when nm_Funcionario = 'WESP FERREIRA DOS SANTOS'	then	15187278
-        when nm_Funcionario = 'WILIAN DE SOUZA MLAK'	then	15187837
-        when nm_Funcionario = 'WILLIAN RENAN DE MOURA SIQUEIRA'	then	15187883
-        when nm_Funcionario = 'WILLIAN RODRIGO FREZZE DA SILVA'	then	15187927
-        when nm_Funcionario = 'YAGO MENOZZI'	then	15187822
-        when nm_Funcionario = 'YEDA CUNHA SALES'	then	15187896
-        when nm_Funcionario = 'ZENAIR MARIA SCALZER LUCAS'	then	15187279
-        when nm_Funcionario = 'ZENILDA DAS VIRGENS FRANCINO DUARTE'	then	15187532
-        when nm_Funcionario = 'ZENILDA RODRIGUES COTRIM'	then	15187723
-        when nm_Funcionario = 'ZENILDA RODRIGUES COTRIM'	then	15187919
-        when nm_Funcionario = 'ZIGRID OHLESORGE CASELLI'	then	15187762
-        when nm_Funcionario = 'ZILDENETE ALBINO FARIAS'	then	15187515
-        when nm_Funcionario = 'ZILDETE RODIGUES DOS SANTOS'	then	15187280
-        when nm_Funcionario = 'ZILMAR DE OLIVEIRA ABREU'	then	15187544
-    END AS id
-FROM 
-    FOLHFuncionario
+		// Executar a consulta SQL
+		const userQuery = `
+            	select
+f.cd_Funcionario as idIntegracao,
+JSON_QUERY(
+(SELECT 
+	--CAST(f.cd_Funcionario AS INT) as id,
+	f.dt_Admissao as 'dataBase',
+	f.dt_Admissao as dataInicioContrato,
+	f.dt_Admissao as inicioVigencia,
+	'false' as geraRegistroPreliminar,
+	JSON_QUERY(
+		(SELECT 
+		case f.nm_Funcionario
+		when 'ABEL INACIO DE LIMA' then	15187120
+		when 'ADALBERTO AMARAL DE BRITO' then	16836552
+		when 'ADEGILDO ANTUNES DA SILVA' then	16843106
+		when 'ADELCIO AMARAL DE BRITO' then	16836015
+		when 'ADELINA AOIAGUI DA SILVA' then	16836173
+		when 'ADEMAL GONCALVES ULHIOA' then	16836024
+		when 'ADEMAR DA CONCEICAO' then	16836474
+		when 'ADENIR GOUVEIA DO PRADO VIEIRA' then	16836292
+		when 'ADEVANIR BARBOZA DA SILVA' then	16836566
+		when 'ADILSON HOULANDER' then	16836406
+		when 'ADIMILSON TEIXEIRA' then	16843189
+		when 'ADRIANA AIOAGUI DA SILVA' then	16836508
+		when 'ADRIANA CRISTINA DOS SANTOS FERREIRA' then	16836238
+		when 'ADRIANA THIANE BARBOSA DA SILVA' then	16836507
+		when 'ADRIANA TOMAZ' then	16836133
+		when 'ADRIANO IOLI' then	16843071
+		when 'ADRIEL SILVARES DE OLIVEIRA' then	16836466
+		when 'ADRIELE PAZARRO CHAGAS DA COSTA' then	16836497
+		when 'AGENOR DOS SANTOS BROILO' then	16836093
+		when 'AGNALDO FELISBERTO BATISTA' then	16836323
+		when 'AGNALDO RIBEIRO DE OLIVEIRA' then	16836565
+		when 'AGUIMAR BEIJO FERREIRA' then	16836027
+		when 'AIANA CAROLINE SETTE DUPINHAKE' then	16836256
+		when 'AIDALVO OLIVEIRA DA SILVA' then	16843099
+		when 'ALAN MATOS PEREIRA BASTOS' then	16836182
+		when 'ALBERTO BARTOLOMEU' then	16836388
+		when 'ALBERTO MARCELO CUSTODIO FACHINI' then	16836546
+		when 'ALCIONI FRANCISCO RODRIGUES' then	16836464
+		when 'ALESSANDRA FERREIRA DE SOUZA' then	16843074
+		when 'ALESSANDRO AGUIAR DA SILVA' then	16843011
+		when 'ALESSON SOUZA BRITO' then	16836235
+		when 'ALEXANDRE DE MORAIS GUIMARAES' then	16836398
+		when 'ALEXANDRE R BARRETO' then	16843125
+		when 'ALEXANDRE RIBEIRO RODRIGUES' then	16836575
+		when 'ALICE HONORATO RIBEIRO' then	16843162
+		when 'ALICE ISABELLY CARVALHO BIDA' then	16843081
+		when 'ALINE DA SILVA SETTE' then	16843018
+		when 'ALISON ADRIANO OLIVEIRA COIMBRA' then	16843132
+		when 'ALMIR FERREIRA DA CRUZ' then	16836293
+		when 'ALVIT DA ROSA' then	16836026
+		when 'AMALIA BENEDITA ALVES MARTINS' then	16836135
+		when 'AMAREY ALVES DOS SANTOS' then	16836372
+		when 'AMARILDO CARDOSO RIBEIRO' then	16836387
+		when 'AMELIA BORGERT SCHLICKMANN' then	16836025
+		when 'ANA BEATRIZ CHAGAS DA COSTA' then	16843184
+		when 'ANA BRAULINA PINHO' then	16836098
+		when 'ANA CAROLINA SILVA' then	16843100
+		when 'ANA DA SILVA' then 16836157
+		when 'ANA GOMES DE OLIVEIRA' then 16836445
+		when 'ANA LUCIA FRANCISCO DE AMORIM SOUZA' then	16836028
+		when 'ANA MARIA JOSE DE LIMA BICHI' then	16836326
+		when 'ANA PAULA DE OLIVEIRA DA SILVA' then	16836593
+		when 'ANA PAULA MONTIBELLER' then	16836178
+		when 'ANA PAULA WALKER' then	16836568
+		when 'anabella nathalia gularte guimaraes' then	16843161
+		when 'ANDERSON GALDINO DA SILVA' then	16836086
+		when 'ANDERSON LUCAS FAJARDO' then	16836383
+		when 'ANDRE LUCAS DE BRITO RODRIGUES' then	16843124
+		when 'ANDRE ROGERIO SATO DE FREITAS' then	16836414
+		when 'ÂNDREA RODRIGUES' then	16843120
+		when 'ANDREIA RIBEIRO RODRIGUES' then	16836324
+		when 'ANDRIELI PEREIRA DA SILVA' then	16836259
+		when 'ANGELA KACIELLY CHAVES PERIM' then	16843105
+		when 'ANGELICA TONINI DA SILVA' then	16836437
+		when 'ANGELITA INACIO LIMA' then	16836400
+		when 'ANITA LAUVERS PRATES' then	16843094
+		when 'ANNA VITORIA DA SILVA CARVALHO' then	16843176
+		when 'ANNE VITORIA DA SILVA' then	16843151
+		when 'ANTENOR DA COSTA BRANDAO' then	16836095
+		when 'ANTONELA LEMES MARCELINO' then	16843194
+		when 'ANTONIO BATISTA DA SILVA' then	16836542
+		when 'ANTONIO CARLOS ARGIONA OLIVEIRA' then	16836420
+		when 'ANTONIO CARLOS GUIMARÃES' then	16836181
+		when 'ANTONIO DE OLIVIERA' then	16836030
+		when 'ANTONIO DOS SANTOS SILVA' then	16836327
+		when 'ANTONIO FERREIRA SOARES' then	16836227
+		when 'ANTONIO FRANCISCO DA CRUZ' then	16842997
+		when 'ANTONIO GLBERTO DOS SANTOS' then	16843208
+		when 'ANTONIO JOSE DE ANDRADE' then	16842995
+		when 'ANTONIO MARCOS MOREIRA' then	16836191
+		when 'ANY CAROLINE SANTANA SALA' then	16836487
+		when 'APARECIDA GIL DA SILVA' then	16836543
+		when 'APARECIDA MARQUES ALVES KAISERKAMP' then	16836514
+		when 'APARECIDA RODRIGUES COTRIN' then	16836328
+		when 'ARCILIO JOSE FRANCISCO' then	16836307
+		when 'ARIANE LEMES DA SILVA' then	16843040
+		when 'ARISTOTELES FELIX GARCEZ FILHO' then	16836115
+		when 'ARLI BORBA DE ALMEIDA' then	16836183
+		when 'ARLINDO FERREIRA GOMES' then	16836295
+		when 'ARTHUR GUILHERME RIBEIRO DE SÁ' then	16843169
+		when 'ARTHUR PAULO DE LIMA' then	16836124
+		when 'ARVELINO GOMES DA SILVA' then	16836495
+		when 'AURINEIA PEREIRA LANDIS' then	16836564
+		when 'BENAIA FERREIRA GOMES ROMANHA' then	16836309
+		when 'BENEDITO SOARES' then	16836294
+		when 'BENICIO GAEL SIEBRE LUCAS' then	16843153
+		when 'BENIGNA HEIZEN DE LIMA' then	16836373
+		when 'BERNARDO SCHMIDT TEIXEIRA PENNA' then	16836578
+		when 'BRUNA EMANUELLY SIEBRE LUCAS' then	16843150
+		when 'BRUNO ELER MELOCRA' then	16836246
+		when 'BRUNO PÉTER AMORIM DE SOUZA' then	16843057
+		when 'BRUNO PRUDENTE RIBEIRO DE OLIVEIRA' then	16836223
+		when 'CAMILA DE SOUZA ULHOA' then	16836253
+		when 'CAMILA FRANCA' then	16836462
+		when 'CARINA SILVA CANDIDO' then	16836501
+		when 'CARLOS ALEXANDRE DE SOUZA AMORIM' then	16843091
+		when 'CARLOS EDUARDO BARRETO ACCIOLY' then	16836140
+		when 'CARLOS IVONEI PEREIRA SANTOS' then	16843148
+		when 'CARLOS PACHECO DOS SANTOS JUNIOR' then	16836489
+		when 'CARLOS ROBERTO SERAFIM SOUZA' then	16836190
+		when 'CECILIA SANTANA VENTURIM NUNES' then	16836325
+		when 'CELINA MARIA DA SILVA' then	16836428
+		when 'CELINA XAVIER DO NASCIMENTO SILVA' then	16843004
+		when 'CELINO JOSE DE ANDRADE' then	16843015
+		when 'CELSON CANDIDO DA ROCHA' then	16836029
+		when 'CHIRLY BRAGANÇA GULARTE' then	16843068
+		when 'CLAUDIA ANTONIA CARDOSO SILVA SANTOS' then	16836449
+		when 'CLAUDIA BARCELOS LIMA' then	16836172
+		when 'CLAUDILAINE PAULA DA SILVA FAUSTINO' then	16843019
+		when 'CLAUDINEI BUENO CANDIDO' then	16843182
+		when 'CLAUDINO BISPO SANTOS' then	16836116
+		when 'CLAUDIO APARECIDO TOMAZ' then	16836444
+		when 'CLEIDIANE MACHADO CAMPOS' then	16836557
+		when 'CLEIDIR DE FATIMA RAGNEL' then	16836258
+		when 'CLEIDSON MARTINS GRANJEIRO' then	16843114
+		when 'CLEILA GOCALVES DE ANDRADE BORGES' then	16836034
+		when 'CLEINE GONÇALVES DE ANDRADE' then	16836165
+		when 'CLETO APOLINARIO DA CRUZ' then	16836478
+		when 'CLEUNI INACIO OLIVEIRA' then	16836033
+		when 'CLEUS EDELSON GONCALVES DE ANDRADE' then	16836035
+		when 'CLEUS HUMBERTO GONCALVES DE ANDRADE' then	16836515
+		when 'CLEUS OMILTON GONÇALVES DE ANDRADE' then	16836195
+		when 'CLEUSMAR GONCALVES ANDRADE' then	16809278
+		when 'CLEUSOMAR DE LIMA' then	16836032
+		when 'CLOVIS SANTO BORELLA FILHO' then	16843005
+		when 'CONCEIÇAO DE JESUS REIS' then	16836591
+		when 'CREUZA MENDES DE SOUZA' then	16836545
+		when 'CRISTIANE DOS SANTOS LEMOS' then	16836551
+		when 'CRISTIANE ROMANHO PESSOA' then	16836558
+		when 'CRISTIANO APARECIDO TOMAZ' then	16836470
+		when 'CRISTIANO DA SILVA' then	16836151
+		when 'CRISTINA ALVES PEREIRA' then	16836476
+		when 'CRISTINO LEMES DOS SANTOS BRITO' then	16836207
+		when 'DAIANE PEREIRA BASTOS' then	16836318
+		when 'DAIANY DE OLIVEIRA BESCOROVAINE' then	16836264
+		when 'DAMIANA RAIMUNDA DO NASCIMENTO' then	16836516
+		when 'DAMIÃO GONÇALVES TORRES SOBRINHO' then	16836513
+		when 'DANIEL PAULO FOGAÇA HRYNIEWICZ' then	16843012
+		when 'DANIEL REDIVO' then	16836579
+		when 'DANIEL ROSA DA SILVA' then	16836329
+		when 'DANIEL ROXINSKE DE LA TORRE' then	16836517
+		when 'DANIELEN DE OLIVEIRA' then	16836379
+		when 'DANIELLY GABRIEL DA CRUZ' then	16843102
+		when 'DARLEY GONÇALVES ULHIÕA' then	16836317
+		when 'DAVI RUFINO SIQUEIRA' then	16843201
+		when 'DAVID R BARRETO' then	16843128
+		when 'DEIDIANE DA SILVA SANTOS' then	16843030
+		when 'DEISE APARECIDA BERNADELI' then	16836159
+		when 'DEISE KELY DA SILVA OLIVEIRA' then	16836446
+		when 'DEIVISON OLIVEIRA GOMES' then	16836467
+		when 'DENILSO DOS SANTOS CHAVEIRO' then	16836563
+		when 'DENILSON MIRANDA BARBOZA' then	16836210
+		when 'DENILTON LISBOA MATOS' then	16836274
+		when 'DENIVAL FORTUNADO DOS SANTOS' then	16836225
+		when 'DENY SIQUEIRA DE SOUZA' then	16836330
+		when 'DERNI MONTEIRO DE SOUZA' then	16836038
+		when 'DESIVALDO FURTUNATO DOS SANTOS' then	16836154
+		when 'DEVANI LOPES DE SOUZA' then	16836036
+		when 'DEVANIR ANTONIO DA SILVA' then	16836582
+		when 'DEZAIAS DE SOUZA' then	16836230
+		when 'DIAIR GONCALVES ALVES' then	16836331
+		when 'DIONE BARROS DA SILVA' then	16836216
+		when 'DIONEIA DE OLIVEIRA RODRIGUES TEIXEIRA' then	16836496
+		when 'DIVA RODRIGUES PEREIRA FERREIRA' then	16836266
+		when 'DIVANI PEREIRA DOS SANTOS ROQUE' then	16836130
+		when 'DOMINGOS DOS SANTOS' then	16836037
+		when 'DONIZETE VITOR ALVES' then	16843207
+		when 'DONIZETH FERREIRA DE OLIVEIRA' then	16836144
+		when 'DULCELEI DE LIMA ANDRADE' then	16836156
+		when 'EDELSON APARECIDO SETTE' then	16836092
+		when 'EDELSON DE CAMPOS' then	16836244
+		when 'EDEMILSON GOMES DA SILVA' then	16836390
+		when 'EDER PEREIRA DE LIMA' then	16843017
+		when 'EDIANE RODRIGUES DA SILVA CANDIDO' then	16836268
+		when 'EDIGIO BLASI' then	16836118
+		when 'EDINALVA BISPO NUNES BARRETO' then	16836332
+		when 'EDIVALTO FRANCISCO DE AMORIM' then	16836040
+		when 'EDIVANE COSTA DIAS' then	16836188
+		when 'EDLAINE MIGUEL DE OLIVEIRA' then	16836485
+		when 'EDMILSON LUGON ALVES LOPES' then	16836422
+		when 'EDNA APARECIDA FERREIRA DOS SANTOS' then	16836243
+		when 'EDNA GOMES CORDEIRO' then	16836167
+		when 'EDNEIA LUGAO ALVES' then	16836440
+		when 'EDSON FRANCISCO SANTANA DE SOUZA' then	16836333
+		when 'EDSON LOPES DA ROSA' then	16843060
+		when 'EDUARDO ANTONIO PEREIRA' then	16843134
+		when 'EDUARDO DIAS DE SOUZA' then	16836586
+		when 'EDUARDO SIQUEIRA DE SOUZA' then	16836044
+		when 'EDVALDO FERREIRA DA SILVA' then	16836260
+		when 'EDVARD SILVA FREZ' then	16843135
+		when 'EGMAR APARECIDO FERREIRA' then	16836043
+		when 'ELAINE CRISTINA DE OLIVEIRA CRUZ' then	16836041
+		when 'ELAINE DAS GRACAS ROLIM' then	16836443
+		when 'ELAINE DE MELO MACHADO' then	16836262
+		when 'ELAINE GUEDES DE OLIVEIRA' then	16836577
+		when 'ELAINE RAINERI DA FONSECA' then	16836100
+		when 'ELENA ILINIR LORENI BORELA' then	16836304
+		when 'ELENICE DE JESUS SOUZA' then	16843013
+		when 'ELESSANDRA SOUZA DOS SANTOS' then	16836196
+		when 'ELESSANDRO DOS SANTOS MATTIA' then	16843180
+		when 'ELI ENRIQUE DE ABREU' then	16843023
+		when 'ELIANA APARECIDA DE OLIVEIRA' then	16836042
+		when 'ELIANDRA DE ARAÚJO SELHRST' then	16843050
+		when 'ELIANE FRANCO OLIVEIRA LIMA' then	16836129
+		when 'ELIFRAN MENDONÇA ALTINO' then	16836483
+		when 'ELINEIA SOARES SIQUEIRA' then	16836382
+		when 'ELION BARRETO DE ARAUJO' then	16836148
+		when 'ELIONETE PROCHNOW FACHINI' then	16836039
+		when 'ELISANGELA SOUZA DOS SANTOS' then	16836153
+		when 'ELISMAR SANTOS DE OLIVEIRA' then	16843058
+		when 'ELIVERTON ALVES VITOR' then	16836241
+		when 'ELIZALETH HOFFMANN' then	16843075
+		when 'ELOISA ESTEVAM NOGUEIRA DA SILVA' then	16836310
+		when 'ELOÍSE FRANÇA VITOR' then	16843206
+		when 'ELTON SOUZA RIBEIRO' then	16836592
+		when 'EMERSON FRANCISCO BOHN' then	16836403
+		when 'EMERSON MATOS MOREIRA' then	16836499
+		when 'EMILHO DE SOUZA ANDRADE' then	16836120
+		when 'EMILIO ROMAIM ROMERO PEREZ' then	16836550
+		when 'EMIR RODRIGUES FILHO' then	16836137
+		when 'EMIR RODRIGUES NETO' then	16836242
+		when 'ENEDINA PIANCO DA SILVA' then	16836334
+		when 'ENZO GABRIEL PEREIRA DE AMORIM' then	16843092
+		when 'ENZO MIGUEL VIEIRA MENDES' then	16843111
+		when 'ERICA DE BRITO TEIXEIRA' then	16836047
+		when 'ERICA SOUZA RAMOS' then	16843062
+		when 'ERICK SILVA FREZ' then	16843137
+		when 'ESDRAS IOSSEF DE OLIVEIRA WACHEKOWSKI' then	16843158
+		when 'ESTÉFANE HADASSA OLIVEIRA WACHEKOWSKI' then	16843157
+		when 'ESTEVÃO ASAFE DE OLIVEIRA WACHEKOWSKI' then	16843160
+		when 'EULALIA CANDINHO DE LIMA BLASI' then	16836125
+		when 'EURICO DOS SANTOS' then	16836389
+		when 'EURIDES TEIXEIRA DA SILVA' then	16836048
+		when 'EVA ALVES DA SILVA PRADO' then	16836381
+		when 'ÉVELYN MENDONÇA ALTINO' then	16836588
+		when 'EVERSON GEORGE SETTE' then	16836421
+		when 'FABIENE ALVES DA SILVA' then	16836185
+		when 'FABIO XAVIER VALENTIM' then	16836296
+		when 'FABRICIO DA SILVA BERNARDO' then	16836275
+		when 'FABRICIO FERREIRA GOMES ROMANHA' then	16836490
+		when 'FAGNER P DA CRUZ' then	16843090
+		when 'FELIPE ALENCAR TOMAZ' then	16843140
+		when 'FERNANDA AGUIAR SILVA' then	16836569
+		when 'FERNANDA DO CARMO SILVA' then	16843031
+		when 'FERNANDA MARGARIDA SOARES SOUZA' then	16836175
+		when 'FERNANDO ANTONIO FERREIRA DE ARAUJO' then	16836121
+		when 'FERNANDO DA SILVA MACHADO' then	16836305
+		when 'FERNANDO GALDINO DA SILVA' then	16836224
+		when 'FERNANDO GARCIA LIMA' then	16836101
+		when 'FLAVIA LUIZA ALVES' then	16836102
+		when 'FLORINDA MARREIRO CARVALHO' then	16836335
+		when 'FRANCIELE DA SILVA DUTRA' then	16836221
+		when 'FRANCIELE FERNANDA DA SILVA' then	16836494
+		when 'FRANCIELE SIMINHUK' then	16843021
+		when 'FRANCIELI MATOS BARBOSA' then	16836217
+		when 'FRANCIELI RITICEL MALOVINI' then	16836269
+		when 'FRANCISCA DOS SANTOS CALDEIRA' then	16843059
+		when 'FRANCISCA LOPES DE ALENCAR FILHO' then	16843119
+		when 'FRANCISCO CORNÉLIO ALVES DE LIMA' then	16836141
+		when 'FREDERICO ANTÔNIO AUS VALLALVA' then	16836189
+		when 'GABRIEL BIDA' then	16843188
+		when 'GABRIEL QUIRINO DA SILVA' then	16843087
+		when 'GABRIELLI DE OLIVEIRA PEREIRA' then	16843186
+		when 'GEISA DE OLIVEIRA SILVA' then	16843088
+		when 'GELSON FERREIRA DE SENA' then	16836463
+		when 'GENAIR MARCILIO FREZ' then	16836215
+		when 'GENESSY LISBOA DE SOUZA' then	16843067
+		when 'GENIR VIEIRA DA SILVA' then	16836314
+		when 'GENIVALDO VIEIRA DOS SANTOS' then	16836311
+		when 'GEORGETE ARAGAO RIOS' then	16836134
+		when 'GILBERTO CESAR WACHEKOWSKI' then	16843155
+		when 'GILDA MATOS PEREIRA' then	16836555
+		when 'GILDENE FARIA VIANA' then	16836219
+		when 'GILMAR CELESTINO GOBIRA' then	16836226
+		when 'GILSA DA GRACAS DE OLIVEIRA ANDRADE' then	16836046
+		when 'GILVAN DE ARAUJO TERRA' then	16836511
+		when 'GISELIA ANDRADE DE OLIVEIRA' then	16836337
+		when 'GISELLE NICOLAU DE SOUZA' then	16836419
+		when 'GISELLE SOUZA GOMES' then	16836479
+		when 'GISLAINE NICOLAU DE SOUZA' then	16843063
+		when 'GISLENE FABIANA SANTOS CONTADINI' then	16836491
+		when 'GRAZIELI DOS SANTOS TOMAZ DE LIMA' then	16843264
+		when 'GUILHERME DOS SANTOS RIBEIRO' then	16836393
+		when 'GUILHERME GULARTE' then	16836539
+		when 'GUSTAVO MESSIAS GOMES' then	16836252
+		when 'GUSTAVO TAKESHI FUJIHARA' then	16836128
+		when 'HADRYAN DIEGO SANTOS IOLI' then	16843143
+		when 'HAGATA LORENA SANTOS IOLI' then	16843142
+		when 'HEITOR ANTONIO PEREIRA' then	16843144
+		when 'HELENA LOPES DE SOUZA' then	16836051
+		when 'HELENA PAULA MALTA CARDOSO' then	16843064
+		when 'HELENITO BARRETO PINTO JUNIOR' then	16836336
+		when 'HELI DA SILVA ROSSETO' then	16836053
+		when 'HELIO EGIDIO DA SILVA' then	16836163
+		when 'HELIO INACIO FERREIRA' then	16836045
+		when 'HELIO PEREIRA DA SILVA' then	16843042
+		when 'HELOISA CARDOSO COSTA' then	16836270
+		when 'HELOISA SANTOS SILVA' then	16843178
+		when 'HENRIQUE VINICIUS DE LIMA' then	16843127
+		when 'HERECLIS DA ROCHA ANDRADE' then	16843110
+		when 'HERMES ROBERTO GONÇALVES' then	16843033
+		when 'HIAGO BASTOS DO NASCIMENTO' then	16836471
+		when 'HIARA DE BRITO TEIXEIRA' then	16836052
+		when 'HIGOR GABRIEL DA CRUZ' then	16843097
+		when 'INEIS DE FATIMA TREVISAN' then	16843055
+		when 'INGREDI RUFINO SIQUEIRA' then	16843197
+		when 'IONÁ CAROLINY LEMES DA SILVA' then	16843190
+		when 'IRANI DE SOUZA' then	16836131
+		when 'IRANI OLIVEIRA COTRIM' then	16843072
+		when 'IRENE AUGUSTA CANDIDA' then	16836531
+		when 'IRINILDO JOSE GONCALVES' then	16836308
+		when 'IRMA HAMMER BERGER' then	16836339
+		when 'ISABEL DOS SANTOS ALBRES' then	16836049
+		when 'ISABELLI STELLA GULATE TERRA' then	16843202
+		when 'ISABELLI VICTÓRIA DA CUNHA DEL NERO PEREIRA' then	16843165
+		when 'ISADORA SOFHIA GULARTE TERRA' then	16843205
+		when 'ISAU DA SILVA MONTELO' then	16836050
+		when 'ISDAEL JOSE VIEIRA' then	16836054
+		when 'ISRAEL DIVINO' then	16836149
+		when 'ISRAEL ELIAS DE OLIVEIRA' then	16836213
+		when 'ISTAEL RIBEIRO DOS S DE OLIVEIRA' then	16836338
+		when 'ITAECIO ALVES GOMES' then	16836057
+		when 'ITALO JOSÉ SIQUEIRA SOUZA' then	16843199
+		when 'IURY NEVES DE ALMEIDA' then	16836509
+		when 'IVAN PAULA DA SILVA CLAUDIO' then	16843203
+		when 'IVANETE APRECIDA ANDRETA SILVA' then	16836340
+		when 'IVANETE RIBEIRO DOS SANTOS' then	16836342
+		when 'IVANILDE MARIA BRAGANCA GULARTE' then	16836343
+		when 'IVONE DA SILVA ANDRADE' then	16836410
+		when 'IVONE DE PAULA NASCIMENTO ULIOA' then	16836058
+		when 'IVONE OLIVEIRA SANTOS DUARTE' then	16836402
+		when 'IVONEY APOLINARIO DA CRUZ' then	16836341
+		when 'IZAQUE ALVES' then	16836104
+		when 'JACSON ARISMEDE DOS SANTOS' then	16836455
+		when 'JADHY DA SILVA SOARES' then	16836322
+		when 'JAIME ARANDIA SALVATIERRA' then	16836562
+		when 'JAIR JOSE BLASI' then	16836438
+		when 'JAIR JOSE DE ANDRADE' then	16836201
+		when 'JAIR PEREIRA DUARTE' then	16836401
+		when 'JAIRO DE JESUS CAETANO DE SOUZA' then	16836055
+		when 'JAQUELINE P DA CRUZ' then	16843093
+		when 'JAQUELINE RODRIGUES DE SOUZA' then	16836493
+		when 'JARBAS LUIZ LUCAS' then	16836237
+		when 'JESSICA DA CUNHA SANTOS' then	16836257
+		when 'JESSICA RENATA DA SILVA REDUZINO' then	16836456
+		when 'JHADD HAMMAD ALABI SOBRINHO' then	16836240
+		when 'JOANA DE ABREU ANDRADE' then	16836111
+		when 'JOANILTON OLIVEIRA PEREIRA' then	16836056
+		when 'JOAO BELO DE OLIVEIRA' then	16836297
+		when 'JOAO CELESTINO DE FARIAS' then	16836066
+		when 'JOÃO DIAS DOS REIS' then	16843101
+		when 'JOAO JOSE DE ANDRADE' then	16836059
+		when 'JOAO MAZINHO LISBOA DE SOUZA' then	16836064
+		when 'JOAO PAULO BATISTA DA CRUZ' then	16836061
+		when 'JOÃO PEDRO PACHECO RODRIGUES' then	16836484
+		when 'JOAO VIEIRA' then	16836065
+		when 'JOAO VITOR MLAK DE SOUZA ABRANTES' then	16843138
+		when 'JOAO VITOR O ALENCAR FILHO' then	16843118
+		when 'JOAQUIM DONIZETE LISBOA DE SOUZA' then	16836060
+		when 'JOAQUIM NICOLAU DE SOUZA NETO' then	16836415
+		when 'JOAQUIM PEDRO ALEXANDRINO NETO' then	16836094
+		when 'JOCELI BORBA DE ALMEIDA' then	16836583
+		when 'JOCELINO DEOLINO DOS SANTOS' then	16836380
+		when 'JOCELINO VIEIRA PESSÔA' then	16843053
+		when 'JOÉLIA PESSOA DA SILVA CLAUDIO PAULA' then	16836276
+		when 'JOELMA ANDRIATO SANTOS DE OLIVEIRA' then	16836468
+		when 'JOICE POLIANE MERCLY DE ANDRADE' then	16836170
+		when 'JONAIR JOSE LUCAS' then	16836062
+		when 'JONAS SERAFIM DOS SANTOS' then	16843054
+		when 'JORGE EDUARDO PACHECO RODRIGUES' then	16836488
+		when 'JORGE LUIZ RAIMUNDO DE MELO' then	16836537
+		when 'JOSE AUGUSTO DELFINO' then	16836063
+		when 'JOSE AUREO TECHIO' then	16836228
+		when 'JOSÉ CARLOS DIAS PINTO' then	16843104
+		when 'JOSE DA SILVA PEDROSO' then	16836344
+		when 'JOSE FERNANDES BOTELHO' then	16843181
+		when 'JOSE FERREIRA BARROS' then	16836197
+		when 'JOSÉ JORGE ALVES DOS SANTOS' then	16836180
+		when 'JOSE LAFAIETE PEREIRA' then	16836068
+		when 'JOSÉ LEMES CORDEIRO' then	16836512
+		when 'JOSE LEONIR LOPES' then	16843001
+		when 'JOSE MAURO PRATES' then	16836071
+		when 'JOSÉ OGENIS SERAFIM DOS SANTOS' then	16836222
+		when 'JOSE ROBERTO INACIO DA ROSA' then	16836193
+		when 'JOSEANE P DA CRUZ' then	16843096
+		when 'JOSEFA FERREIRA RIOS KURYAMA' then	16843008
+		when 'JOSEFA RIBEIRO PEREIRA' then	16836306
+		when 'JOSELANE COSTA DA CRUZ' then	16836122
+		when 'JOSIANE DA SILVA ANDRADE' then	16836261
+		when 'JOSIEL CANDIDO' then	16836070
+		when 'JOSIMAR CAMILO GOMES' then	16843145
+		when 'JOSIMAR PEREIRA MORAES' then	16836320
+		when 'JOSIMAR PEREIRA MORAES' then	16836321
+		when 'JOSUE PINHEIRO BREVES' then	16843149
+		when 'JOVENILSON DA SILVA MARCELINO' then	16836427
+		when 'JOVERCINA MAXIMO DOS SANTOS' then	16836345
+		when 'JUAREZ JOSE DE OLIVEIRA' then	16843173
+		when 'JULIA MICAELLY CHAVES PERIN' then	16843109
+		when 'JULIA RUFINO SIQUEIRA' then	16843196
+		when 'JULIANA ALVES SALOMÃO' then	16836316
+		when 'JULIANA BADAN DUARTE' then	16843041
+		when 'JULIO MUCHINSKI' then	16836426
+		when 'JULISNEI RODRIGUES LAURO' then	16836429
+		when 'JURANDIR MARINHEIRO DE LIMA' then	16843016
+		when 'JUSTINA RODRIGUES DA SILVA' then	16836408
+		when 'KARINA PONTES MARTINS' then	16836392
+		when 'KARLA LETICIA DE ALMEIDA PINTO' then	16843107
+		when 'KATIA REGINA DE SOUZA ALEXANDRINO' then	16836347
+		when 'KATIUSA LOURENÇO DE OLIVEIRA' then	16836161
+		when 'KATIUSCIA OLIVEIRA WACHEKOWSKI' then	16836245
+		when 'KEITY CASCIANY OLIVEIRA COIMBRA' then	16843131
+		when 'KEIZY CASCIELY OLIVEIRA COIMBRA' then	16843129
+		when 'KELLY MACHADO DE OLIVEIRA' then	16836099
+		when 'KETLEN BONETTO DOS SANTOS' then	16843171
+		when 'KHRISLAYNE KETLIM FAUSTINO' then	16836469
+		when 'KLEBSON MOURA RODRIGUES' then	16836205
+		when 'KLEITON DE ALMEIDA WILL' then	16843048
+		when 'LARA DE BRITO RODRIGUES' then	16843089
+		when 'LARISSA MARIA HOFFMANN OLIVEIRA' then	16843209
+		when 'LAUDICEIA MENDES DA COSTA PRUDENCIO' then	16836150
+		when 'LAURINDO BARBOSA DE SOUZA' then	16836376
+		when 'LAURINDO FERREIRA DA SILVA' then	16836430
+		when 'LEIA BRESSANI DE FREITAS SANTOS' then	16836067
+		when 'LEIDIANY PAULA DE OLIVEIRA GOBIRA' then	16836272
+		when 'LEIR JOSE DA SILVA' then	16842994
+		when 'LEONIDES DE CARVALHO JUNIOR' then	16836594
+		when 'LETICIA MANUELY SOUZA FERNANDES' then	16843187
+		when 'LEVI GULARTE GUIMARÃES' then	16843163
+		when 'LIDIA NARA ALTOE' then	16836540
+		when 'LILIA DOS SANTOS ANTONIO' then	16836585
+		when 'LILIAN RODIRGUES ANTUNES' then	16836108
+		when 'LINDOMAR ALVES VITOR' then	16843056
+		when 'LINDOMAR DE JESUS FIRMIANO' then	16843037
+		when 'LORENA MACIEL DA COSTA' then	16836250
+		when 'LORRANY STEFFANI PEREIRA DE CARVALHO' then	16843167
+		when 'LUCAS ESTEVAM NOGUEIRA DA ROSA' then	16836251
+		when 'LUCELENA DE ALMEIDA GABRIEL' then	16843098
+		when 'LUCIANA DE OLIVEIRA PINTO' then	16836069
+		when 'LUCIMAR CARDOSO DIAS' then	16836164
+		when 'LUCIMAR CORDEIRO BARBOSA DE OLIVEIRA' then	16843179
+		when 'LUCIMAR LIMEIRA DA SILVA OLIVEIRA' then	16836486
+		when 'LUCIMAR SOARES MIRANDA' then	16843051
+		when 'LUCINÉIA GONÇALVES DE SOUZA' then	16836425
+		when 'LUCIO BISPO NUNES' then	16836091
+		when 'LUCIVALDO FERREIRA ALVES' then	16836200
+		when 'LUIZ AMARAL DE BRITO' then	16836377
+		when 'LUIZ ANTONIO DE OLIVEIRA' then	16836126
+		when 'LUIZ HENRIQUE SIMINHUK CARRARO' then	16843195
+		when 'LURDES JAQUELINE PEREIRA' then	16843139
+		when 'LUTERO ROSA PARAISO' then	16836146
+		when 'LUZENIR DE JESUS ANTONIO PEREIRA' then	16836553
+		when 'LUZIA RODRIGUES DE CARVALHO' then	16836107
+		when 'LUZIA STARNAITE CANDIDO' then	16836349
+		when 'MACIEL FERNANDES NICOLAU' then	16836460
+		when 'MARCEL SILVA MONTELO' then	16836194
+		when 'MARCELE DAMO' then	16836581
+		when 'MARCELO ABELARDO SIEBE' then	16836457
+		when 'MARCELO DIAS FRANSKOVIAK' then	16836533
+		when 'MARCELO FIGUEIREDO MOTA' then	16836202
+		when 'MARCELO JOSÉ DA SILVA' then	16843154
+		when 'MARCELO JUNIOR BLASI' then	16836139
+		when 'MARCELO MARINHO DE SOUZA' then	16836404
+		when 'MARCELO VIDOTTO' then	16836458
+		when 'MARCIA HELENA PASSOLONGO DE OLIVEIRA' then	16836346
+		when 'MARCIA NEVES DE ALMEIDA' then	16836348
+		when 'MARCIA RODRIGUES DE OLIVEIRA ALVES' then	16836166
+		when 'MARCIA SANTOS LIMA SOUZA' then	16836518
+		when 'MARCILEY DE CARVALHO' then	16836073
+		when 'MARCIO FERREIRA DOS SANTOS JUNIOR' then	16836441
+		when 'MARCIO VIEIRA DE FREITAS' then	16836459
+		when 'MARCO TULIO SANTOS DUARTE' then	16836171
+		when 'MARCONDES DE CARVALHO' then	16836106
+		when 'MARCONDES DE CARVALHO FILHO' then	16843156
+		when 'MARCOS ANDRADE WILL' then	16836475
+		when 'MARCOS JÂNIO BLASI' then	16836554
+		when 'MARGARETE PEREIRA MARTINEZ' then	16836074
+		when 'MARIA ADILEUZA RODRIGUES DE LIMA' then	16836158
+		when 'MARIA APARECIDA DE ABREU BRANDÃO' then	16843112
+		when 'MARIA APARECIDA DE ALMEIDA GABRIEL' then	16836424
+		when 'MARIA APARECIDA DE AMORIM' then	16836298
+		when 'MARIA APARECIDA DE SOUZA' then	16836473
+		when 'MARIA APARECIDA DIBERNADINO' then	16836072
+		when 'MARIA APARECIDA GOMES FRANQUI' then	16836448
+		when 'MARIA APARECIDA SOUZA DOS S SIMAO' then	16836351
+		when 'MARIA CONCEICAO DA SILVA' then	16836352
+		when 'MARIA CREUZA SILVA BARBOSA' then	16836112
+		when 'MARIA DA CONCEICAO DE ALMEIDA' then	16836353
+		when 'MARIA DA PENHA HOULANDES' then	16836075
+		when 'MARIA DAS GRACAS RACANELI SARDINHA' then	16836350
+		when 'MARIA DE FATIMA PEREIRA' then	16836303
+		when 'MARIA DE FATIMA PEREIRA DA SILVA SANTOS' then	16836506
+		when 'MARIA EDUARDA RODRIGUES' then	16843121
+		when 'MARIA ELIZABETH RIBEIRO RODRIGUES' then	16836354
+		when 'MARIA ISABEL NOGUEIRA' then	16836405
+		when 'MARIA JOSE DE SOUZA REIS' then	16836078
+		when 'MARIA JOSE RODRIGUES' then	16836220
+		when 'MARIA MARTA DA SILVA ABREU' then	16836355
+		when 'MARIA NILVA CARDOSO DA COSTA' then	16836076
+		when 'MARIA PEREIRA DA SILVA' then	16836412
+		when 'MARIA QUELIS DE BRITO' then	16836077
+		when 'MARIA RODRIGUES COUTRIM' then	16836548
+		when 'MARIA ROSA SOARES DE MELO' then	16836519
+		when 'MARIA SOARES DA ROCHA' then	16836249
+		when 'MARIA VALDENIR GRANGEIRO SOUSA' then	16836206
+		when 'MARILDA CAMPOS DA CUNHA' then	16836544
+		when 'MARILZA RODRIGUES COTRIM' then	16843183
+		when 'MARINALVA ALEXANDRINA' then	16843028
+		when 'MARINALVA APARECIDA NEVES' then	16836520
+		when 'MARINALVA DA SILVA PEREIRA' then	16836407
+		when 'MARINEIDE FERREIRA DE OLIVEIRA' then	16836079
+		when 'MARINES DA SILVA PEREIRA' then	16836132
+		when 'MARINETE CESARIO DE SOUZA' then	16843052
+		when 'MARIVALDA ROCHA DOS SANTOS' then	16836247
+		when 'MARIVANIA NOBRE MACHADO' then	16836549
+		when 'MARIVETE NOBRE MACHADO' then	16836384
+		when 'MARLENE ZUNACHI NEVES' then	16836239
+		when 'MARLI DA CUNHA' then	16836145
+		when 'MARLI DA SILVA' then	16836267
+		when 'MARLI LUCIA DO CARMO SILVA' then	16836525
+		when 'MARLON JUNIOR VASCONCELOS BATISTA' then	16843084
+		when 'MARLON KLEBER WUTZON BOZO' then	16836127
+		when 'MARLUCE DA CRUZ' then	16836179
+		when 'MARLUCIA COSTA DA SILVA VINHAL' then	16836559
+		when 'MARTA DA SILVA CARVALHO' then	16836248
+		when 'MATHEUS DANIEL PEREIRA DE CARVALHO' then	16843164
+		when 'MAURICIO SERGIO DE LIMA E SILVA' then	16836204
+		when 'MAX DANIEL DE CARVALHO' then	16836155
+		when 'MAXSUEL QUIRINO DA SILVA' then	16843082
+		when 'MAYCON DOUGLAS MACHADO' then	16843070
+		when 'MAYCON OLIVEIRA DA COSTA' then	16843185
+		when 'MAYRA LUANA VASCONCELOS BATISTA' then	16843086
+		when 'MEIRE FRANCIANE GONÇALVES BORELLA' then	16843036
+		when 'MEIRE FRANCIELE GONCALVES DA SILVA' then	16836160
+		when 'MESAQUE FERNANDO CAMARGO DA SILVA' then	16836413
+		when 'MICAELY LEPPAUS CORDEIRO' then	16843210
+		when 'MICHAEL WENDERSON RECALCATI' then	16836480
+		when 'MICHELI NASCIMENTO SOARES' then	16843034
+		when 'MIGUEL MARIN GOMES' then	16843146
+		when 'MILENA DA SILVA CARVALHO' then	16843174
+		when 'MIRIAM ALVES TOMAZ MARTINS PEREIRA' then	16836526
+		when 'MIRIAN QUIRINO DA SILVA' then	16836386
+		when 'MIRIAN ROSA DA SILVA' then	16836521
+		when 'NADYA FERNANDES DUARTE' then	16836561
+		when 'NAIARA CRISTINA DOS SANTOS FERREIRA' then	16843083
+		when 'NAIARA ESTEVAN NOGUEIRA SA SILVA' then	16836451
+		when 'NARIA GOUVEIA VIEIRA' then	16843039
+		when 'NATANAEL FERNANDES GHUMARÃES' then	16843166
+		when 'NEILDE CORREIA BISPO TESH' then	16836176
+		when 'NELSON PEREIRA NUNES JUNIOR' then	16836208
+		when 'NEUCIDIANE ANTONIA SEGATTO' then	16836418
+		when 'NEUCIMEIRE APARECIDA MANZINI PETRECA' then	16836152
+		when 'NEUZA DA SILVA PEREIRA' then	16836523
+		when 'NEUZA HOFFMANN CARVALHO' then	16836357
+		when 'NEUZA MARIA CASAGRANDE' then	16842992
+		when 'NEUZA MARIA PEDROSO' then	16836522
+		when 'NEUZA XAVIER DO NASCIMENTO' then	16836524
+		when 'NILCIMAR BEIJO FERREIRA' then	16843122
+		when 'NILSON DE JESUS PEREIRA' then	16836482
+		when 'NILSON JACOS DE SOUSA' then	16836103
+		when 'NILSON MLAK' then	16836117
+		when 'NILTON PINTO DE ALMEIDA' then	16836417
+		when 'NISES MARILDA TRAVAINI BERNADELLI' then	16836136
+		when 'NIVALDO RODRIGUES DE CARVALHO' then	16843159
+		when 'ODAIR JOSE DE MORAIS' then	16836442
+		when 'ODETE ABREU FIRMINO SILVA' then	16843024
+		when 'OEDES GONCALVES ULHIOA' then	16836356
+		when 'OLINTO ENEAS DE ALENCAR FILHO' then	16836080
+		when 'ORMANDINA ESTEVAN NOGUEIRA' then	16836187
+		when 'OSMAR BATISTA PENHA' then	16836212
+		when 'OSMAR FRANCISCO DO NASCIMENTO' then	16843026
+		when 'OSMAR TONINI DA SILVA' then	16836147
+		when 'OSVALDO ALBINO DO NASCIMENTO' then	16836358
+		when 'OSVALDO RODRIGUES COTRIM' then	16836255
+		when 'OTAMIR APARECIDO DE MORAIS' then	16843032
+		when 'OTAMIR DANIEL DE ARRUDA' then	16836538
+		when 'OZIANE MARIA DA SILVA' then	16836114
+		when 'PABLO ABRAÃO CANDIDO DE OLIVEIRA' then	16843192
+		when 'PABLO THEOTONIO DE OLIVEIRA' then	16836436
+		when 'PATRICIA BARBOSA DE SOUZA' then	16836461
+		when 'PAULO BATISTA DA CRUZ' then	16836360
+		when 'PAULO CESAR BEZERRA' then	16836300
+		when 'PAULO CESAR DA SILVA' then	16836574
+		when 'PAULO FIGUEIREDO CALDEIRAS' then	16836361
+		when 'PAULO GERALDO PEREIRA' then	16836411
+		when 'PAULO HENRIQUE MARCELINO DE OLIVEIRA' then	16836498
+		when 'PAULO SERGIO DE SOUZA' then	16836395
+		when 'PEDRO HENRIQUE BASTOS ALEXANDRINO' then	16843115
+		when 'PEDRO SOUZA SILVA' then	16836375
+		when 'PIETRO PEREIRA DA SILVA' then	16843136
+		when 'PIETRO RAVI DE MOURA LISBOA' then	16843191
+		when 'POLIANA NATALIA FERREIRA' then	16836184
+		when 'QUELI CRISTINA AGUIAR SILVA BARBOZA' then	16843014
+		when 'RAIMUNDO DA SILVA' then	16836090
+		when 'RAIULA DE SOUZA SILVA' then	16836199
+		when 'RAPHAEL IVONEY GABRIEL DA CRUZ' then	16843095
+		when 'RAQUEL CORDEIRO DE OLIVEIRA' then	16836273
+		when 'REGIANE CRISTINA DOS SANTOS' then	16836162
+		when 'REGIANE LOPES DE OLIVEIRA' then	16843046
+		when 'REGINALDO GIL DA SILVA' then	16842993
+		when 'REGINALDO GONÇALVES DE OLIVEIRA' then	16843009
+		when 'REGINALDO RAASCH' then	16843069
+		when 'REINALDO CABRAL' then	16836584
+		when 'REINALDO FREIRE DE SOUZA' then	16843003
+		when 'REINALDO GONÇALVES ULHOA' then	16836263
+		when 'RENATA BORGES DA SILVA' then	16836378
+		when 'RENATA KATHIELLI GRACIOLLI' then	16836277
+		when 'RENATA LEPPAUS MEIRELES' then	16843029
+		when 'RENATO ANTONIO PEREIRA' then	16836433
+		when 'RENICE FERREIRA CHAVES PERIN' then	16836362
+		when 'RENILDO RAASCH' then	16843025
+		when 'RENIVALDO BEZERRA' then	16836299
+		when 'RENIVALDO RAASCH' then	16836416
+		when 'RICARDO GOMES DA SILVA' then	16842996
+		when 'RICARDO MARÇAL FREIRE' then	16836504
+		when 'RICARDO MARÇAL FREIRE' then	16836505
+		when 'RITA DE CASSIA DOS SANTOS' then	16843035
+		when 'RITA SANTOS LIMA' then	16836359
+		when 'ROBERTO MACIEL MACHADO' then	16836123
+		when 'ROBERTO ROGERIO COSTA' then	16836315
+		when 'ROBERTO SEVERINO DA SILVA' then	16843000
+		when 'ROBSON W.O A' then	16843117
+		when 'ROGERIO MACHADO LOPES' then	16843047
+		when 'ROGERIO VICENTE MACHADO' then	16836394
+		when 'ROMÁRIO XAVIER LEPPAUS' then	16836447
+		when 'RONILDO APARECIDO PEDRO ALEXANDRINO' then	16843027
+		when 'RONIS BATISTA DE OLIVEIRA' then	16836409
+		when 'RONNY TON ZANOTELLI' then	16836396
+		when 'ROSA ANTAO MALTA' then	16836528
+		when 'ROSANA SIEBRE LUCAS' then	16843152
+		when 'ROSANGELA FERNANDES DE ARAUJO' then	16836209
+		when 'ROSELI FERREIRA DE CIQUEIRA' then	16836198
+		when 'ROSELI JACOMINI DA SILVA' then	16836119
+		when 'ROSEMEIRE MARIA HERCULANO' then	16836547
+		when 'ROSENIRA ALEXANDRINO' then	16836168
+		when 'ROSICLEIA RODRIGUES CARVALHO' then	16836500
+		when 'ROSILENE GIL DA SILVA LEMES' then	16836541
+		when 'ROSILENE TAKAHASHI BRAVO' then	16836113
+		when 'ROSIMAR AGUIAR DA SILVA' then	16836081
+		when 'ROSIMERE ARAUJO DA SILVA' then	16836587
+		when 'ROSINEIA LANDIM DE MIRA' then	16836432
+		when 'ROSINEIDE BEZERRA' then	16836312
+		when 'ROSINETE RIBEIRO DE OLIVEIRA' then	16836301
+		when 'ROXANE FERRETO LORENZON' then	16836174
+		when 'ROZIEL RODRIGUES A SILVA' then	16836589
+		when 'RUAN VICTOR DE LIMA' then	16843080
+		when 'RUIZDAEL DE SOUZA' then	16836567
+		when 'RUTE CEZÁRIO DE SOUZA' then	16843020
+		when 'SALVINA LEMES DA SILVA BEZERRA' then	16836097
+		when 'SAMARA SOARES DA SILVA' then	16836319
+		when 'SAMMUEL VALENTIM BORGES' then	16836572
+		when 'SAMUEL VINICIUS ALMEIDA PINTO' then	16843103
+		when 'SANDRA GOMES DA SILVA' then	16836573
+		when 'SANDRA MARA' then	16843085
+		when 'SANDRA MARIN' then	16836452
+		when 'SANDRA MELO DE CARVALHO BARRETO' then	16836105
+		when 'SANDRA REGINA DA SILVA' then	16836366
+		when 'SANDRA VIEIRA DE OLIVEIRA' then	16836481
+		when 'SANDRAETY FV VASCONCELOS BATISTA' then	16808415
+		when 'SARA LUCIA DO CARMO SILVA' then	16843123
+		when 'SEBASTIAO BATISTA DA CRUZ' then	16836453
+		when 'SEBASTIAO FERNANDES DE MOURA' then	16843066
+		when 'SEBASTIAO TEIXEIRA ABRANTES' then	16836560
+		when 'SEBASTIÃO VIEIRA DA COSTA' then	16843010
+		when 'SELMA DA SILVA BANDEIRA' then	16836231
+		when 'SERGIO CANDIDO DA ROCHA' then	16836313
+		when 'SERGIO LEÃO DE ARAUJO' then	16836169
+		when 'SHEILA BRAGANÇA GULARTE' then	16843204
+		when 'SHIRLEI ZAFALAN DA SILVA' then	16843061
+		when 'SIDINEI DOS ANJOS CARVALHO' then	16836527
+		when 'SIDNEI RIBEIRO ARAUJO' then	16836233
+		when 'SIMONE CHAGAS DE ALMEIDA PINTO' then	16836363
+		when 'SIMONE CRISTINA DA ROCHA H NUNES' then	16836529
+		when 'SIMONI MLAK DE SOUZA' then	16836397
+		when 'SIRLEI SILVA PERIN' then	16843108
+		when 'SIRLENE BRIGIDO OLIVEIRA' then	16836214
+		when 'SIRLENE DE ALMEIDA GABRIEL DUARTE' then	16836364
+		when 'SIRLENE LUIZA SILVA' then	16836454
+		when 'SIVAIR JOSE ALVES' then	16843038
+		when 'SOLANGE ALVES CESTARI' then	16836082
+		when 'SOLANGE APARECIDA DA SILVEIRA SILVA' then	16836391
+		when 'SOLANGE MAZUTTI FELOMENO' then	16836367
+		when 'SOLANGE PAVIM' then	16843044
+		when 'SONIA MARIA SILVA CORSINI' then	16836571
+		when 'SUELI ESTER DE FREITAS SIMINHUK' then	16836365
+		when 'SUELLEN RIOS KURYMA DE OLIVEIRA' then	16836385
+		when 'SUELY GOMES DE BRITO DA SILVA' then	16843022
+		when 'SUSANA CANDIDO DA ROCHA' then	16836085
+		when 'SYLARA SAYANNE COLLA SOARES' then	16836570
+		when 'TAINA LUIZA DE OLIVEIRA' then	16836278
+		when 'TAIS NEVES' then	16836234
+		when 'TARICKSON CARLOS OLIVEIRA SILVA' then	16843175
+		when 'TARISON' then	16843113
+		when 'TATIANE SOUZA ROCHA' then	16836143
+		when 'TELMA DE SOUSA LEITE' then	16836236
+		when 'TENANDES NUNES MORAIS' then	16836477
+		when 'TERESINHA GOULART BENVENUTTI' then	16836374
+		when 'TEREZINHA IVONE DOS SANTOS CRISOSTHEMOS' then	16843198
+		when 'teste pessoa' then	15122123
+		when 'THAISA LOURENÇO' then	16836510
+		when 'THARIELLY PEREIRA DE OLIVEIRA' then	16843172
+		when 'THAYS GOMES DE CAMPOS' then	16843007
+		when 'THIAGO TEIXEIRA RODRIGUES' then	16836265
+		when 'TIAGO ABRANTES PORTO' then	16843049
+		when 'TIAGO ALENCAR GONÇALVES DE OLIVEIRA' then	16836576
+		when 'UANDERSON DOS SANTOS FAGUNDES' then	16836590
+		when 'UELÇO CONTADINI VIEIRA' then	16843006
+		when 'VALDECI LINARES' then	16843170
+		when 'VALDECIR ANDRETTA' then	16843130
+		when 'VALDECIR DA SILVA' then	16836089
+		when 'VALDECIR DEL NERO' then	16836203
+		when 'VALDEMIR APARECIDO RAIMUNDO' then	16836211
+		when 'VALDEVINO LISBOA DE SOUZA' then	16836192
+		when 'VALDIR BERGER' then	16843126
+		when 'VALDIRENE ALVES DEL NERO' then	16843043
+		when 'VALDIRENE EUGENIA DA SILVA' then	16843133
+		when 'VALDIRENE SIMOES DA SILVA' then	16836218
+		when 'VALMIR GOMES DA SILVA' then	16836368
+		when 'VALMIR LEMES DA SILVA SANTOS' then	16836096
+		when 'VANDERLEIA CRUZ DE LIMA SA' then	16836109
+		when 'VANDERLUCIO DA SILVA' then	16836088
+		when 'VANDERSON DEL NERO PEREIRA' then	16836450
+		when 'VANESSA CALGAROTO' then	16836532
+		when 'VANESSA DE LIMA DOMINGOS' then	16836271
+		when 'VANESSA PEREIRA DA SILVA' then	16836535
+		when 'VANIR DE ALBUQUERQUE BRITO' then	16836186
+		when 'VANUSA SANTOS ALVES' then	16836435
+		when 'VANUZA MARIA DE ALENCAR' then	16843141
+		when 'VANUZE LOPES DA SILVA' then	16836399
+		when 'VERA FERREIRA DE OLIVEIRA' then	16836087
+		when 'VERA LUCIA DA SILVA DE JESUS' then	16843116
+		when 'VERACI ALVES IGNACIO DE LIMA' then	16836138
+		when 'VERONICA VIEIRA DA SILVA' then	16836302
+		when 'VICENTE FRANCISCO MONTELO' then	16836371
+		when 'VICTOR GABRIEL DA CUNHA DEL NERO PEREIRA' then	16843168
+		when 'VICTOR SMILL PILLACA QUISPILAYA' then	16836580
+		when 'VINICIUS GONCALVES SOARES' then	16836229
+		when 'VITOR HUGO MOURA RODRIGUES' then	16836431
+		when 'VIVIANE RISSO DE PAIVA' then	16836232
+		when 'WAGNA VERANE VIDOTTO' then	16836502
+		when 'WALTER TERTO FERREIRA' then	16836370
+		when 'WANDERLEY DA ROSA' then	16836536
+		when 'WELITON JOSÉ LUCAS' then	16843045
+		when 'WERLANI BUZZO' then	16843002
+		when 'WESLEI MAURO DE PAULA PRATES' then	16836254
+		when 'WESLEY BORGES DUARTE' then	16843065
+		when 'WESLEY DE SOUZA REIS' then	16843193
+		when 'WESLEY LOPES ALVES' then	16843147
+		when 'WESLEY LUCAS DE ABREU ANDRADE' then	16836503
+		when 'WESLWY FABIO LAUTERTE' then	16836534
+		when 'WESP FERREIRA DOS SANTOS' then	16836084
+		when 'WILIAN DE SOUZA MLAK' then	16836465
+		when 'WILLIAN RENAN DE MOURA SIQUEIRA' then	16843073
+		when 'WILLIAN RODRIGO FREZZE DA SILVA' then	16836472
+		when 'YAGO MENOZZI' then	16836439
+		when 'YASMIN VICTORIA TEDEIA COTRIM' then	16843177
+		when 'YEDA CUNHA SALES' then	16842999
+		when 'YURI FERNANDO SIQUEIRA SOUZA' then	16843200
+		when 'ZAMIR LUIZ' then	16842998
+		when 'ZENAIR MARIA SCALZER LUCAS' then	16836083
+		when 'ZENILDA DAS VIRGENS FRANCINO DUARTE' then	16836423
+		when 'ZENILDA RODRIGUES COTRIM' then	16836556
+		when 'ZIGRID OHLESORGE CASELLI' then	16836530
+		when 'ZILDENETE ALBINO FARIAS' then	16836492
+		when 'ZILDETE RODRIGUES DOS SANTOS' then	16836369
+		when 'ZILMAR DE OLIVEIRA ABREU' then	16836434
+			Else dp.nr_CIC_CPF
+		END AS id,
+		f.nm_Funcionario as nome 
+    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS pessoa,
+	case 
+		when f.dt_Demissao is not null then 'DEMITIDO'
+		else 'TRABALHANDO'
+	End as situacao, --[ TRABALHANDO, FALTA, AFASTADO, CEDIDO, SUSPENSO, FERIAS, DEMITIDO, SEM_VINCULO, APOSENTADO, PENSIONISTA, CESSADO, BENEFICIO_SUSPENSO, EM_SERVICO, INATIVO ]
+	'FUNCIONARIO' as tipo,
+	JSON_QUERY(
+		(SELECT 
+		'1' as contrato,
+		'1' as digitoVerificador,
+		CAST(f.cd_Funcionario AS INT) as numero
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS codigoMatricula,
+
+	JSON_QUERY(
+		(SELECT 
+			CASE f.cd_VincEmpr
+				when '31' then 23564	--Cargo Eletivo - INSS
+				when '29' then 23580	--Comissionado - De Outras Instituições - INSS
+				when '14' then 23595	--Estagiario - Temporario - Outros
+				when '22' then 23575	--Estatutário - Efetivo - INSS
+				when '21' then 23574	--Estatutário - Efetivo - Mensalista -Prev. Própria
+				when '25' then 23576	--Estatutário - Em Comissão - INSS
+				when '91' then 23568	--Pensionista
+				when '92' then 23569	--Pensionista Judicial
+				when '41' then 23566	--Prestador de Serviço - Autônomo
+				when '13' then 23594	--Temporário - CLT
+				when '10' then 23571	--Trabalhador Urbano - CLT
+				else 23570 -- outros
+				End AS id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS vinculoEmpregaticio,
+	'NORMAL' as  indicativoAdmissao, --[ NORMAL, DECORRENTE_ACAO_FISCAL, DECORRENTE_DECISAO_JUDICIAL ]
+    'URBANO' as naturezaAtividade, --[ URBANO, RURAL ]
+	'ADMISSAO' as tipoAdmissao, --[ ADMISSAO, TRANSFERENCIA, SUBSTITUICAO, TRANSFERENCIA_DE_EMPRESA_DO_MESMO_GRUPO_ECONOMICO, TRANSFERENCIA_DE_EMPRESA_CONSORCIADA_OU_DE_CONSORCIO, MUDANCA_DE_CPF, TRANSFERENCIA_QUANDO_EMPRESA_SUCEDIDA_E_INAPTA_POR_INEXISTENCIA_DE_FATO ]
+	case f.fl_1Emprego
+		when 'N' then 'false'
+		when 'S' then 'true'
+		else 'false'
+	end as primeiroEmprego,
+	case f.fl_FGTS
+		when 'N' then 'false'
+		when 'S' then 'true'
+		else 'false'
+	end as optanteFgts,
+	f.dt_OpcaoFGTS as dataOpcao,
+    f.nr_ContaCorrenteFGTS as contaFgts,
+	JSON_QUERY(
+		(SELECT
+	case F.cd_Sindicato
+		when '3' then  16870085
+		when '1' then 16870085
+		when '2' then 16869656
+		when '4' then 16869702
+		when '5' then 16869701
+	end as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS sindicato,
+	case f.cd_VincEmpr
+		when '22' then 'NOMEACAO_CARGO_EFETIVO'	--Cargo Eletivo - INSS
+		when '29' then 'NOMEACAO_CARGO_COMISSAO'
+		when '13' then 'CONTRATACAO_POR_TEMPO_DETERMINADO'
+		when '31' then 'DIPLOMACAO'
+		when '41' then 'DIPLOMACAO'
+		else 'OUTRAS'
+	end as tipoProvimento, --[ NOMEACAO_CARGO_EFETIVO, NOMEACAO_CARGO_COMISSAO, INCORPORACAO_MATRICULA_OU_NOMEACAO_MILITAR, REDISTRIBUICAO, DIPLOMACAO, CONTRATACAO_POR_TEMPO_DETERMINADO, REMOCAO_EM_CASO_DE_ALTERACAO_DO_ORGAO_DECLARANTE, DESIGNACAO, MUDANCA_DE_CPF, OUTRAS, ESTABILIZADOS_ART_19_DO_ADCT ]
+	'' AS leiContrato,
+	'' as  atoContrato, 
+	f.dt_Admissao as dataNomeacao,
+    f.dt_Admissao as dataPosse,
+	case dp.fl_Sexo
+		when 'F' then 'FEMININO_30_ANOS'
+		when 'M' then 'MASCULINO_30_ANOS'
+		else ''
+	End as tempoAposentadoria, --[ FEMININO_30_ANOS, FEMININO_25_ANOS, FEMININO_20_ANOS, FEMININO_15_ANOS, MASCULINO_35_ANOS, MASCULINO_30_ANOS, MASCULINO_25_ANOS, MASCULINO_20_ANOS, MASCULINO_15_ANOS ]
+	'true' as previdenciaFederal,
+	'[]' as previdencias,
+	JSON_QUERY(
+		(SELECT 
+		case c.cd_CargoFuncao
+		when '1' then 874933
+		when '2' then 874934
+		when '3' then 874935
+		when '4' then 874936
+		when '5' then 874937
+		when '6' then 874938
+		when '7' then 874939
+		when '8' then 874940	
+		when '9' then 874941	
+		when '10' then 874942
+		when '11' then 874943
+		when '12' then 874944
+		when '14' then 874945		
+		when '15' then 874946		
+		when '16' then 874947
+		when '17' then 874948		
+		when '18' then 874949
+		when '19' then 874950
+		when '20' then 874951
+		when '21' then 874952
+		when '22' then 874953
+		when '23' then 874954		
+		when '24' then 874955		
+		when '25' then 874956		
+		when '26' then 874957			
+		when '27' then 874958			
+		when '28' then 874959			
+		when '29' then 874960		
+		when '30' then 874961				
+		when '31' then 874962				
+		when '32' then 874963		
+		when '33' then 874964		
+		when '34' then 874965		
+		when '35' then 874966		
+		when '36' then 874967		
+		when '38' then 874969		
+		when '39' then 874970		
+		when '40' then 874971					
+		when '42' then 874973		
+		when '41' then 874972		
+		when '43' then 874974		
+		when '44' then 874975	
+		when '45' then 874976	
+		when '46' then 874977		
+		when '47' then 874978		
+		when '48' then 874979		
+		when '49' then 874980				
+		when '50' then 874981				
+		when '51' then 874982		
+		when '52' then 874983		
+		when '53' then 874984		
+		when '54' then 874985				
+		when '55' then 874986		
+		when '56' then 874987		
+		when '57' then 874988		
+		when '58' then 874989					
+		when '59' then 874990		
+		when '62' then 874993		
+		when '60' then 874991		
+		when '61' then 874992		
+		when '63'then 874994		
+		when '64' then 874995		
+		when '65' then 874996					
+		when '66' then 874997		
+		when '67' then 874998		
+		when '68' then 874999		
+		when '69' then 875000		
+		when '70' then 875001		
+		when '71' then 875002		
+		when '72' then 875003		
+		when '73' then 875004		
+		when '74' then 875005		
+		when '75' then 875006		
+		when '76' then 875007		
+		when '77' then 875008		
+		when '78' then 875009				
+		when '79' then 875010		
+		when '80' then 875011		
+		when '81' then 875012		
+		when '82' then 875013		
+		when '83' then 875014		
+		when '85' then 875015		
+		when '86' then 875016		
+		when '87' then 875017		
+		when '88' then 875018		
+		when '91' then 875019		
+		when '93' then 875020		
+		when '95' then 875021		
+		when '96' then 875022	
+		when '98'	 then 875020
+		when '99' then 875023		
+		when '100' then 875024		
+		when '101' then 875025		
+		when '109' then 875026		
+		when '112' then 875027		
+		when '116' then 875028		
+		when '117' then 875029		
+		when '118' then 875030		
+		when '121' then 875031		
+		when '122' 	then 875032		
+		when '123'	then 875033		
+		when '125'	then 875034		
+		when '89'	then 875041		
+		when '90' then 875042			
+		when '92' then 875043		
+		when '94' then 875044		
+		when '97' then 875045		
+		when '102' then 875046		
+		when '105' then 875049		
+		when '113' then 875054		
+		when '103' then 875047				
+		when '104' then 875048		
+		when '124' then 875059		
+		when '106' then 875050		
+		when '107' then 875051		
+		when '108'	then 875052		
+		when '110'	then 875053		
+		when '119'	then 875057		
+		when '114'	then 875055		
+		when '115'	then 875056		
+		when '126'	then 875060		
+		when '120'	then 875058		
+		when '127'	then 875061		
+		when '13'	then 875064		
+		when '111'	then 875065		
+		when '37' then 874968		
+		when '84' then 975523		
+	end as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS cargo,
+	  '' as atoAlteracaoCargo,
+	  '' as motivoAlteracaoCargo,
+	  '' as processoTrabalhista,
+	  '' as nProcessoTrabalhista,
+      '' as profissionalSaudeSegurancaPublica,
+	/*case 
+		when f.dt_AbonoPermanenciaInicio is null then 'false'
+		when f.dt_AbonoPermanenciaInicio is not null then 'true'
+	end as*/ 
+	'' as recebeAbonoPermanencia,
+      f.dt_AbonoPermanenciaInicio  as inicioAbonoPermanencia,
+      '' as observacaoContrato,
+      '' as descricaoSalario,
+	  'LIMITADO_A_30_HORAS_SEMANAIS' as tipoContratoParcial, --[ LIMITADO_A_25_HORAS_SEMANAIS, LIMITADO_A_30_HORAS_SEMANAIS, LIMITADO_A_26_HORAS_SEMANAIS ]
+	  'false' as cargoAlterado,
+	  'false' as areaAtuacaoAlterada,
+	  'true' as ocupaVaga,
+	  'false' as salarioAlterado,
+	  'CARGO' as origemSalario, --[ CARGO, CARGO_COMISSIONADO ]
+	  '' as dataAlteracaoSalarioEsocial,
+	  '' as areaAtuacaoComissionado,
+	  'false' as ocupaVagaComissionado,
+	  '' as salarioComissionado,
+	  '' as nivelSalarialComissionado,
+	  '' as classeReferenciaComissionado,
+	  '' as dataSaidaCargoComissionado,
+	  '' as atoSaidaCargoComissionado,
+	  '' as atoAlteracaoSalarioComissionado,
+	  '' as motivoAlteracaoSalarioComissionado,
+	  '' as dataAgendamentoRescisao,
+	  '[]' as funcoesGratificadas,
+	  '' as matriculaEmpresaOrigem,
+	  '' as dataAdmissaoOrigem,
+	  '' as recebido,
+	  '[]' as matriculasAdicionais,
+	  '[]' as matriculaLicencasPremio,
+	  '' as inicioTurnoCorrido,
+	  '' as tipoContratacaoAprendiz,
+	  '' as cnpjEntidadeQualificadora,
+	  '' as dataInicialPeriodoAquisitivoFeriasAntesAdmissao,
+	JSON_QUERY(
+		(SELECT 
+		4811340 as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS nivelSalarial,
+	JSON_QUERY(
+		(SELECT 
+	case REPLACE(REPLACE(f.cd_NivSal, '.', ''), '-', '')
+		when 'AETECAG' 	then 38037340		
+		when 'AS300'	then 38037343		
+		when 'ASSIMPREN' then 38037348		
+		when 'ASSCONT'	then 38037353		
+		when 'CCACONT'	then 38037358		
+		when 'CCDIRDIV'  then 38037363		
+		when 'CCAEIII'	then 38037368		
+		when 'CCPGPG'	then 38037373		
+		when 'CONINTNI'	then 38037378		
+		when 'CONTREFII' then 38037383		
+		when 'DD'		then 38037388		
+		when 'NIVELMII'	then 38037448		
+		when 'NM200'	then 38037458		
+		when 'NM200'	then 38037468		
+		when 'NMII'		then 38037476		
+		when 'NMIIAOP'	then 38037485		
+		when 'NMIIREF1'	then 38037490		
+		when 'NS300CII'	then 38037499		
+		when 'NS200'	then 38037508		
+		when 'NSIII'	then 38037517		
+		when 'NSRNIII'	then 38037526		
+		when 'PRNS2O'	then 38037535		
+		when 'PROFNS20'	then 38037545		
+		when 'SECMUNII'	then 38037554		
+		when 'AEG'		then 38037341		
+		when 'ASSOPI'	then 38037349		
+		when 'ASSOPIII'	then 38037350		
+		when 'CAGIC'	then 38037359		
+		when 'CAGIII'	then 38037360		
+		when 'CCAENI'	then 38037369		
+		when 'CCAGI'	then 38037370		
+		when 'CONREFII'	then 38037379		
+		when 'CONSTUT'	then 38037380		
+		when 'DIRDIV'	then 38037389		
+		when 'NFPAII'	then 38037441		
+		when 'NFTNS'	then 38037444		
+		when 'NMII'		then 38037451		
+		when 'NMIIAO1'	then 38037454		
+		when 'NMSREF5'	then 38037461		
+		when 'NMSA'		then 38037464		
+		when 'NM2005'	then 38037470		
+		when 'NMI'		then 38037473		
+		when 'NMIAOP'	then 38037478		
+		when 'NMII'		then 38037481		
+		when 'NMIIAO7'	then 38037487		
+		when 'NS'		then 38037494		
+		when 'NS300C'	then 38037496		
+		when 'NSOAPW'	then 38037503		
+		when 'NS300'	then 38037505		
+		when 'NS350'	then 38037512		
+		when 'NS400'	then 38037514		
+		when 'NSMII'	then 38037521		
+		when 'NSMIII'	then 38037523		
+		when 'ORIENTADO' then 38037530		
+		when 'PISO'		then 38037532		
+		when 'PRESCPLI'	then 38037538		
+		when 'PROF20H'	then 38037541		
+		when 'PROFNS2O'	then 38037546		
+		when 'ROGERIO'	then 38037550		
+		when 'SECGOV'	then 38037555		
+		when 'SUSANA'	then 38037559		
+		when 'AGENCONTR' then 38037342		
+		when 'ASSOPEII'	then 38037351		
+		when 'ASTECTRI'	then 38037344		
+		when 'ASSN1'	then 38037354		
+		when 'CCENGCIV'	then 38037364		
+		when 'CG'		then 38037374		
+		when 'COORFUND'	then 38037384		
+		when 'NFPAI'	then 38037440		
+		when 'NFPA20'	then 38037443		
+		when 'NMIAOP1'	then 38037450		
+		when 'NMIITI'	then 38037453		
+		when 'NMS'		then 38037460		
+		when 'NMS1'		then 38037463		
+		when 'NM200'	then 38037469		
+		when 'NMAG20'	then 38037472		
+		when 'NMIII'	then 38037477		
+		when 'NMIAOP20'	then 38037480		
+		when 'NMIIAO6'	then 38037486		
+		when 'NMIIIREF2' then 38037489		
+		when 'NMS4'		then 38037493		
+		when 'NS300C2'	then 38037497		
+		when 'NSII'		then 38037502		
+		when 'NS1'		then 38037506		
+		when 'NS300'	then 38037511		
+		when 'NSI'		then 38037515		
+		when 'NSJUR2'	then 38037520		
+		when 'NSPROC'	then 38037524		
+		when 'OPMAQPES'	then 38037529		
+		when 'PRNS20'	then 38037533		
+		when 'PRESCPL'	then 38037537		
+		when 'PROF40H'	then 38037543		
+		when 'PROFPED25' then 38037548		
+		when 'SECEDUCA'	then 38037552		
+		when 'SECMUNI'	then 38037557		
+		when 'VPRE'		then 38037561		
+		when 'ASSECL'	then 38037345		
+		when 'ASSESGAB'	then 38037346		
+		when 'AUXENFII'	then 38037355		
+		when 'CGESESCO'	then 38037356		
+		when 'CCENGCGP'	then 38037365		
+		when 'CCAEI'	then 38037366		
+		when 'CHEFEGAB'	then 38037375		
+		when 'COFISCAD'	then 38037376		
+		when 'CORCON'	then 38037385		
+		when 'CTMEDVET'	then 38037386		
+		when 'NFPA2'	then 38037442		
+		when 'NMIAOP'	then 38037449		
+		when 'NMIIAO'	then 38037452		
+		when 'NM200'	then 38037459		
+		when 'NMST8'	then 38037462		
+		when 'NMAG'		then 38037471		
+		when 'NMIAOPT5'	then 38037479		
+		when 'NMIIAO8'	then 38037488		
+		when 'NS300'	then 38037495		
+		when 'NS300CI'	then 38037498		
+		when 'NS400'	then 38037504		
+		when 'NS2 '		then 38037507	
+		when 'NS2'		then 38037507	
+		when 'NS3I'		then 38037513		
+		when 'NSII'		then 38037516		
+		when 'NSM3'		then 38037522		
+		when 'NSRNII'	then 38037525		
+		when 'PENSJUD'	then 38037531		
+		when 'PRNS20H'	then 38037534		
+		when 'PROJURI'	then 38037539		
+		when 'PROCURADO' then 38037540		
+		when 'PROFMAG'	then 38037544		
+		when 'REEDMIL'	then 38037549		
+		when 'SECMUNEF' then 38037553		
+		when 'SUPPEDAG'	then 38037558		
+		when 'ASSGSO'	then 38037347		
+		when 'CPATESC'	then 38037357		
+		when 'CCAEII'	then 38037367		
+		when 'CONIN'	then 38037377		
+		when 'DAV'		then 38037387		
+		when 'NIVELI'	then 38037445		
+		when 'NMIAOP'	then 38037455		
+		when 'ASSTECN'	then 38037352		
+		when 'CCCPL'	then 38037362		
+		when 'CCGPMA'	then 38037372		
+		when 'CONTADOR'	then 38037382		
+		when 'NIVELII'	then 38037446		
+		when 'NMII'		then 38037456		
+		when 'NMSREF5A'	then 38037466		
+		when 'NMIAOP'	then 38037475		
+		when 'NMIIAO5'	then 38037483		
+		when 'NMSIII'  	then 38037491		
+		when 'NS300III'	then 38037500		
+		when 'NS3'  	then 38037509		
+		when 'NSJUR'	then 38037518		
+		when 'NSREF5'	then 38037527		
+		when 'PROF25H'	then 38037542		
+		when 'SECADJUNT' then 38037551		
+		when 'VITOR'	then 38037560		
+		when 'CCCJM'	then 38037361		
+		when 'CCAGII'	then 38037371		
+		when 'CONTINT'	then 38037381		
+		when 'NIVELM3'	then 38037447		
+		when 'NMII'		then 38037457		
+		when 'NMSREF5b'	then 38037467		
+		when 'NMIIAO6'	then 38037484		
+		when 'NMSNIII'	then 38037492		
+		when 'NSI' 		then 38037501		
+		when 'NS300'	then 38037510		
+		when 'NSJUR1'	then 38037519		
+		when 'NUTRICION' then 38037528		
+		when 'PRE'		then 38037536		
+		when 'DIRETORAD' then 38037390		
+		when 'ENGCIVI'	then 38037391		
+		when 'F'		then 38037392		
+		when 'FISCALCON' then 38037393		
+		when 'FRANCIS'	then 38037394		
+		when 'GENAIR' 	then 38037395		
+		when 'GER'	 	then 38037396		
+		when 'GERSEROP'	then 38037397		
+		when 'GERSERPU'	then 38037398		
+		when 'GERTRANSP' then 38037399		
+		when 'HIARA'	then 38037400		
+		when 'INSR' 	then 38037401		
+		when 'IVE'		then 38037402		
+		when 'JM' 		then 38037403		
+		when 'KADU'  	then 38037404		
+		when 'LUVERA'	then 38037405		
+		when 'NECT' 	then 38037406		
+		when 'NEI' 		then 38037407		
+		when 'NEII' 	then 38037408		
+		when 'NEII' 	then 38037409		
+		when 'NEIII'	then 38037410		
+		when 'NEIV' 	then 38037411		
+		when 'NEIV' 	then 38037412		
+		when 'NEV' 		then 38037413		
+		when 'NE100'	then 38037414		
+		when 'NE100'	then 38037415		
+		when 'NE100'	then 38037416		
+		when 'NE100'	then 38037417		
+		when 'NE100'	then 38037418		
+		when 'NEII' 	then 38037419		
+		when 'NEII' 	then 38037420		
+		when 'NEIV' 	then 38037421		
+		when 'NEIV5'	then 38037422		
+		when 'NEPATROL' then 38037423		
+		when 'NEPATROLI' then 38037424		
+		when 'NFBOII'	then 38037425		
+		when 'NFPAI'	then 38037426		
+		when 'NFBO' 	then 38037427		
+		when 'NFBOII'	then 38037428		
+		when 'NFBOII'	then 38037429		
+		when 'NFBOI10'	then 38037430		
+		when 'NFBOII'	then 38037431		
+		when 'NFBOII8'	then 38037432		
+		when 'NFBOIII'	then 38037433		
+		when 'NFBOIIIT6' then 38037434		
+		when 'NFI'   	then 38037435		
+		when 'NFII'  	then 38037436		
+		when 'NFIII' 	then 38037437		
+		when 'NFIIII'	then 38037438		
+		when 'NFOP20'	then 38037439		
+		when 'NMSI'		then 38037465		
+		when 'NMI' 		then 38037474		
+		when 'NMII'		then 38037482		
+		when 'PROFPED2'	then 38037547		
+		when 'SECMUN'	then 38037556		
+	End as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) as classeReferencia, --case com id's do cloud
+	'' as cargoComissionado,
+	'false' as cargoComissionadoAdicionado,
+	'false' as salarioComissionadoAlterado,
+	'MENSALISTA' as unidadePagamento,
+	JSON_QUERY(
+		(SELECT 
+			3714 as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) as configuracaoFerias,
+	c.qt_HrMensais as quantidadeHorasMes,
+    c.qt_HrSemanais as quantidadeHorasSemana,
+	'false' as jornadaParcial,
+	f.dt_vencimentoContrato as dataTerminoContratoTemporario,
+	'' as orgaoOrigem,
+	'' as motivoContratoTemporario,
+	'DEMANDA_COMPLEMENTAR_DE_SERVICO' as hipoteseLegalContratoTemporario,  --[ NECESSIDADE_SUBSTITUICAO_TRANSITORIA_PESSOAL, DEMANDA_COMPLEMENTAR_DE_SERVICO ]
+	'' as prazoDeterminadoContratoTemporario,
+	'' as clausulaAssecuratoriaContratoTemporario,
+	'LOCAIS_SEM_FILIAIS' as tipoInclusaoContratoTemporario, --[ LOCAIS_SEM_FILIAIS, ESTUDO_MERCADO, CONTRATACAO_SUPERIOR_TRES_MESES ]
+    '' as dataProrrogacaoContratoTemporario,
+	'' as numeroCartaoPonto,
+	'' as parametroPonto,
+	'false' as registraPonto,
+    '' as compensaHoras,
+    'false' as controlaHorasManual,
+    'NORMAL' as indicativoProvimento,
+	'NUNCA_EXPOSTO_AGENTES_NOCIVOS'	as ocorrenciaSefip, --[ NUNCA_EXPOSTO_AGENTES_NOCIVOS, EXPOSTO_ALGUMA_VEZ, EXPOSTO_APOSENTADORIA_15_ANOS, EXPOSTO_APOSENTADORIA_20_ANOS, EXPOSTO_APOSENTADORIA_25_ANOS ]
+	'SUBMETIDOS_HORARIO_TRABALHO' as controleJornada,	--[ SUBMETIDOS_HORARIO_TRABALHO, ATIVIDADES_EXTERNAS, OCUPANTE_CARGO_GESTAO, TELETRABALHO ]
+	case f.cd_VincEmpr
+		when '41' then 'true'
+		else 'false'
+	end as conselheiroTutelar,
+	JSON_QUERY(
+		(SELECT 
+		f.cd_TipoRescisao as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) as rescisao,
+	'[]' as reintegracoes,
+	'' AS concurso, --ver campo SISPEL
+	'' AS concursoProcessoSeletivo,
+	'false' as origemConcursoProcSeletivo,
+	'' as concursoCandidato,
+	'FOLHA' as origemConcurso,  -- [ RH, FOLHA ]
+	'false' as controlaPerAquisFeriasAntesAdmissao,
+	'false' as estagioObrigatorio,
+	'false' as possuiSeguroVida,
+	JSON_QUERY(
+		(SELECT 
+	case f.cd_TrabalhadorCategoria 
+		when 101 then 14474	
+		when 102 then 14475	
+		when 103 then 14476	
+		when 104 then 14477	
+		when 105 then 14478	
+		when 106 then 14479	
+		when 111 then 14480	
+		when 201 then 14481	
+		when 202 then 14482	
+		when 203 then 14483	
+		when 301 then 14484	
+		when 302 then 14485	
+		when 303 then 14486	
+		when 304 then 14487	
+		when 309 then 14488	
+		when 401 then 14489	
+		when 701 then 14490	
+		when 711 then 14491	
+		when 721 then 14492	
+		when 722 then 14493	
+		when 723 then 14494	
+		when 738 then 14495	
+		when 741 then 14496	
+		when 761 then 14497	
+		when 771 then 14498	
+		when 781 then 14499	
+		when 901 then 14500	
+		when 902 then 14501	
+		when 903 then 14502	
+		when 906 then 14503	
+		when 107 then 14504	
+		when 108 then 14505	
+		when 305 then 14506	
+		when 306 then 14507	
+		when 410 then 14508	
+		when 712 then 14509	
+		when 731 then 14510	
+		when 734 then 14511	
+		when 751 then 14512	
+		when 904 then 14513	
+	End as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) as categoriaTrabalhador,
+	'false' as beneficioConcedidoDecisaoJudicial,
+	IIF(f.cd_ESocialMAtricula is not null , CONVERT(varchar(10), f.cd_ESocialMAtricula),CONVERT(varchar(10), f.cd_Funcionario)) as eSocial,
+	'true' as enviarEsocial,
+	'[]' as grupoFuncional,
+	'' as jornadaTrabalho,
+	isnull(f.vl_salario,0)  as rendimentoMensal,
+	'' as atoAlteracaoSalario,
+	'' as motivoAlteracaoSalario,
+	'' as dataAdmissaoRetificadaProcTrab,
+	'VALID' as validationStatus,
+	'' as chaveMigracao,
+	'' as versaoMigracao,
+	'[]' as camposAdicionais,
+	'[]' as historicos,
+	case f.nr_ContaCorrente
+		when '.' then 'DINHEIRO'
+		when '' then 'DINHEIRO'
+		else 'CREDITO_EM_CONTA' 
+	End as formaPagamento,
+	JSON_QUERY(
+		(SELECT 
+		--case REPLACE(REPLACE(f.nr_ContaCorrente, '.', ''), '-', '')
+		case isnull(SUBSTRING(REPLACE(REPLACE(f.nr_ContaCorrente, '.', ''), '-', ''), 0, LEN(REPLACE(REPLACE(f.nr_ContaCorrente, '.', ''), '-', ''))),0)
+		when '15100' then 8547864
+			when '67733' then 8943493
+			when '15682' then 8943641
+			when '15177' then 8943494
+			when '34584' then 8943928
+			when '15127' then 8943746
+			when '15608' then 8944020
+			when '15633' then 8943860
+			when '115136' then 8943962
+			when '71884' then 8943705
+			when '138078' then 8943961
+			when '15430' then 8943601
+			when '76789' then 8944439
+			when '7932' then 8943920
+			when '13453' then 8943951
+			when '15146' then 8943562
+			when '8384' then 8943777
+			when '15579' then 8944019
+			when '15149' then 8943497
+			when '91692' then 8943723
+			when '15701' then 8943649
+			when '15449' then 8943842
+			when '15014' then 8943918
+			when '148865' then 8944442
+			when '38142' then 8943702
+			when '2606' then 8943852
+			when '15688' then 8944029
+			when '15231' then 8943747
+			when '15162' then 8943496
+			when '15258' then 8943603
+			when '13407' then 8943826
+			when '15467' then 8943841
+			when '15105' then 8943495
+			when '15324' then 8943567
+			when '15373' then 8943625
+			when '24924' then 8943899
+			when '15019' then 8943498
+			when '15262' then 8943780
+			when '15706' then 8943645
+			when '15283' then 8943555
+			when '3461' then 8943837
+			when '50407' then 8943868
+			when '15251' then 8943778
+			when '64680' then 8943726
+			when '9978' then 8943891
+			when '15532' then 8943854
+			when '15281' then 8943564
+			when '15563' then 8943874
+			when '15699' then 8943648
+			when '15931' then 8943500
+			when '15178' then 8943781
+			when '15443' then 8943694
+			when '15357' then 8944365
+			when '15269' then 8944363
+			when '15786' then 8943658
+			when '58253' then 8943941
+			when '15236' then 8943997
+			when '15254' then 8943968
+			when '15179' then 8943782
+			when '15400' then 8943761
+			when '15821' then 8944408
+			when '1517' then 8943583
+			when '15724' then 8943650
+			when '15232' then 8943749
+			when '15460' then 8943592
+			when '139247' then 8943949
+			when '15568' then 8944018
+			when '58661' then 8943763
+			when '15167' then 8943748
+			when '15311' then 8943827
+			when '66950' then 8943713
+			when '15993' then 8944425
+			when '5342' then 8943690
+			when '87393' then 8943720
+			when '32084' then 8943916
+			when '15109' then 8943955
+			when '15457' then 8943608
+			when '24659' then 8943943
+			when '15738' then 8943657
+			when '15157' then 8943779
+			when '115046' then 8943882
+			when '15578' then 8944383
+			when '15244' then 8943499
+			when '115049' then 8944436
+			when '15007' then 8943903
+			when '15630' then 8943640
+			when '15672' then 8944387
+			when '10101' then 8943584
+			when '115033' then 8943898
+			when '94647' then 8943725
+			when '15155' then 8943503
+			when '15168' then 8943633
+			when '15580' then 8943932
+			when '15180' then 8943502
+			when '15077' then 8943504
+			when '15079' then 8943969
+			when '15851' then 8943662
+			when '150860' then 8938086
+			when '15181' then 8943501
+			when '115154' then 8943924
+			when '15468' then 8943619
+			when '83863' then 8943930
+			when '115011' then 8943674
+			when '15921' then 8943772
+			when '108471' then 8943731
+			when '15260' then 8943970
+			when '103777' then 8943967
+			when '15585' then 8944380
+			when '15008' then 8943783
+			when '15152' then 8943971
+			when '15418' then 8943833
+			when '15895' then 8943771
+			when '15808' then 8944398
+			when '15506' then 8943627
+			when '19213' then 8943900
+			when '56479' then 8943921
+			when '15209' then 8943677
+			when '85920' then 8943741
+			when '9226' then 8943692
+			when '8396' then 8943784
+			when '15148' then 8943507
+			when '15475' then 8943622
+			when '15032' then 8943505
+			when '15147' then 8943697
+			when '15091' then 8943785
+			when '11' then 8943683
+			when '15099' then 8943950
+			when '14990' then 8943733
+			when '15424' then 8943598
+			when '15124' then 8943506
+			when '15448' then 8943612
+			when '15502' then 8943624
+			when '15272' then 8943561
+			when '70608' then 8943711
+			when '15471' then 8943844
+			when '15650' then 8944385
+			when '122348' then 8943735
+			when '15026' then 8943586
+			when '15103' then 8943786
+			when '15018' then 8943509
+			when '15730' then 8943655
+			when '115868'then 8943939
+			when '3380'	then 8943876
+			when '3328'	then 8943710
+			when '15541' then 8943635
+			when '15044' then 8943894
+			when '15041' then 8943787
+			when '15907' then 8944428
+			when '115126' then 8944040
+			when '11071' then 8943513
+			when '84828' then 8943727
+			when '15168' then 8943512
+			when '15010' then 8943510
+			when '15012' then 8943897
+			when '116167' then 8943729
+			when '15321' then 8943569
+			when '15271' then 8943758
+			when '15582' then 8944381
+			when '15831' then 8943663
+			when '15700' then 8944391
+			when '15001' then 8943511
+			when '15876' then 8944418
+			when '15411' then 8943597
+			when '83891' then 8943937
+			when '15415' then 8943836
+			when '15159' then 8943616
+			when '15025' then 8943508
+			when '15427' then 8943621
+			when '15999' then 8944426
+			when '45900' then 8943708
+			when '137961' then 8944443
+			when '58660' then 8943764
+			when '15029' then 8943857
+			when '137704' then 8943953
+			when '15172' then 8943588
+			when '15429' then 8943605
+			when '64739' then 8943709
+			when '15250' then 8943788
+			when '15182' then 8943516
+			when '15912' then 8944431
+			when '15026' then 8943593
+			when '15469' then 8943843
+			when '15089' then 8943517
+			when '15421' then 8943835
+			when '9029' then 8944042
+			when '15973' then 8943875
+			when '15595' then 8943652
+			when '15122' then 8943750
+			when '146815' then 8943742
+			when '118752' then 8943944
+			when '15600' then 8944023
+			when '15793' then 8944399
+			when '15697' then 8943643
+			when '15431' then 8943589
+			when '15327' then 8943759
+			when '56140' then 8943691
+			when '15337' then 8943570
+			when '15345' then 8943571
+			when '15183' then 8943789
+			when '21266' then 8943688
+			when '14993' then 8943948
+			when '15677' then 8944389
+			when '115059'then 8943684
+			when '123902'then 8943736
+			when '15900' then 8944427
+			when '15088' then 8943609
+			when '15736' then 8943656
+			when '32213' then 8943917
+			when '21975' then 8943682
+			when '15986' then 8944435
+			when '15051' then 8943768
+			when '15472' then 8943765
+			when '68550' then 8943602
+			when '15509' then 8944009
+			when '115185' then 8943686
+			when '40506' then 8943693
+			when '15184' then 8943515
+			when '15938' then 8943965
+			when '15083' then 8943791
+			when '15920' then 8943873
+			when '87445' then 8943933
+			when '123545' then 8943945
+			when '15519' then 8943847
+			when '65983' then 8943719
+			when '15408' then 8943596
+			when '15245' then 8943520
+			when '15925' then 8944432
+			when '15394' then 8943790
+			when '15022' then 8943522
+			when '15529' then 8943631
+			when '15110' then 8943514
+			when '15686' then 8944410
+			when '133933' then 8943737
+			when '15810' then 8944401
+			when '74512' then 8943925
+			when '15173' then 8943521
+			when '15991' then 8944423
+			when '15043' then 8943599
+			when '66439' then 8944440
+			when '15246' then 8943985
+			when '15273' then 8943762
+			when '15204' then 8943793
+			when '15047' then 8943518
+			when '15174' then 8943519
+			when '15185' then 8943523
+			when '15463' then 8943617
+			when '15983' then 8943680
+			when '15264' then 8943792
+			when '15186' then 8943526
+			when '162811' then 8943963
+			when '15328' then 8943794
+			when '1528'	then 8943796
+			when '1512'	then 8943797
+			when '1569'	then 8943864
+			when '1518'	then 8943527
+			when '1557'	then 8943856
+			when '1109'	then 8943795
+			when '1532'	then 8943573
+			when '3154'	then 8943909
+			when '6803'	then 8943776
+			when '9233 ' then 8943892
+			when '15142' then 8943668
+			when '175' then 8943855
+			when '15188' then 8943524
+			when '43039' then 8943947
+			when '115110' then 8943704
+			when '49209' then 8943724
+			when '29969' then 8943910
+			when '42826' then 8943707
+			when '15359' then 8943579
+			when '15170' then 8943525
+			when '15039' then 8943751
+			when '15151' then 8943535
+			when '15161' then 8943528
+			when '15252' then 8943534
+			when '15266' then 8943530
+			when '024659' then 8943938
+			when '15169' then 8943533
+			when '15006' then 8943529
+			when '15899' then 8943869
+			when '15276' then 8943563
+			when '15416' then 8943834
+			when '15994' then 8944421
+			when '134795' then 8943743
+			when '57440' then 8943922
+			when '15594' then 8943638
+			when '15150' then 8943531
+			when '15894' then 8944422
+			when '24659' then 8943942
+			when '15433' then 8943991
+			when '15123' then 8943532
+			when '15974' then 8943695
+			when '15137' then 8943798
+			when '30439' then 8943664
+			when '15690' then 8943647
+			when '15092' then 8943537
+			when '15813' then 8943966
+			when '15370' then 8944369
+			when '15175' then 8943540
+			when '15033' then 8943689
+			when '15805' then 8943660
+			when '15530' then 8944376
+			when '15353' then 8943760
+			when '15404' then 8943590
+			when '108107' then 8943728
+			when '11990' then 8943539
+			when '38639' then 8943774
+			when '38639' then 8943775
+			when '115054' then 8943881
+			when '15189' then 8943799
+			when '15686' then 8943770
+			when '15829' then 8944409
+			when '15654' then 8943880
+			when '115119' then 8943883
+			when '3032' then 8944384
+			when '15679' then 8943862
+			when '15497' then 8943846
+			when '68582' then 8943801
+			when '15516' then 8943629
+			when '64902' then 8943712
+			when '15338' then 8943568
+			when '73404' then 8943923
+			when '15869' then 8943672
+			when '15846' then 8944416
+			when '15453' then 8943618
+			when '15367' then 8943830
+			when '115128' then 8943884
+			when '15190' then 8943536
+			when '15078' then 8943739
+			when '15085' then 8944362
+			when '85886' then 8944048
+			when '115010' then 8944039
+			when '15352' then 8943577
+			when '15997' then 8944424
+			when '15815' then 8944405
+			when '72790' then 8943717
+			when '84464' then 8943718
+			when '15072' then 8943538
+			when '15527' then 8943632
+			when '116103' then 8943940
+			when '15883' then 8944419
+			when '115004' then 8943879
+			when '15279' then 8943560
+			when '15901' then 8943667
+			when '15002' then 8943831
+			when '15406' then 8943594
+			when '15452' then 8943614
+			when '15341' then 8943576
+			when '15237' then 8943803
+			when '31956' then 8943914
+			when '15451' then 8943661
+			when '32186' then 8943911
+			when '15919' then 8943669
+			when '15465' then 8943607
+			when '15610' then 8943858
+			when '15977' then 8943912
+			when '15080' then 8943800
+			when '15115' then 8943802
+			when '20246' then 8943634
+			when '15239' then 8943972
+			when '15132' then 8943542
+			when '12544' then 8943895
+			when '31836' then 8943913
+			when '13166' then 8943639
+			when '15340' then 8943575
+			when '15969' then 8943929
+			when '15191' then 8943543
+			when '15494' then 8943626
+			when '115015' then 8943878
+			when '15102' then 8943752
+			when '75015' then 8943927
+			when '15144' then 8943541
+			when '13813' then 8943902
+			when '15265' then 8943805
+			when '15013' then 8943806
+			when '15364' then 8943580
+			when '15192' then 8943807
+			when '15193' then 8943544
+			when '15263' then 8943804
+			when '15278' then 8943757
+			when '139507' then 8943960
+			when '15248' then 8943808
+			when '15632' then 8943859
+			when '15030' then 8943547
+			when '3166' then 8943687
+			when '15194' then 8943809
+			when '14992' then 8943545
+			when '15819' then 8943866
+			when '6340' then 8943546
+			when '15195' then 8943973
+			when '15399' then 8943716
+			when '115003' then 8943673
+			when '15417' then 8943998
+			when '15746' then 8944396
+			when '15247' then 8943974
+			when '15687' then 8943861
+			when '15165' then 8943548
+			when '15027' then 8943600
+			when '15896' then 8944420
+			when '65574' then 8943714
+			when '15478' then 8944003
+			when '15466' then 8943838
+			when '49042' then 8943706
+			when '15011' then 8943613
+			when '118760' then 8943734
+			when '15196' then 8943979
+			when '15402' then 8943595
+			when '15707' then 8943646
+			when '115019' then 8943715
+			when '15638' then 8943671
+			when '15495' then 8943623
+			when '15034' then 8943628
+			when '15823' then 8943867
+			when '101627' then 8943934
+			when '15811' then 8944402
+			when '15257' then 8943980
+			when '15444' then 8943840
+			when '15139' then 8943975
+			when '22684' then 8943905
+			when '15522' then 8944407
+			when '15643' then 8943644
+			when '115009' then 8943675
+			when '15927' then 8943872
+			when '15455' then 8943620
+			when '15094' then 8943977
+			when '15154' then 8943811
+			when '15114' then 8943976
+			when '15143' then 8943978
+			when '67666' then 8943936
+			when '15331' then 8943572
+			when '1517' then 8943585
+			when '15990' then 8943871
+			when '15052' then 8943604
+			when '9366' then 8943896
+			when '15733' then 8944392
+			when '15197' then 8943810
+			when '15198' then 8943549
+			when '15735' then 8943654
+			when '3288' then 8943679
+			when '15769' then 8944394
+			when '15454' then 8943615
+			when '15160' then 8943812
+			when '115013' then 8943722
+			when '3271' then 8943582
+			when '4005' then 8943890
+			when '31771' then 8943915
+			when '15075' then 8943814
+			when '15107' then 8943754
+			when '15668' then 8944028
+			when '15097' then 8943815
+			when '15781' then 8943865
+			when '22667' then 8943952
+			when '2034' then 8943849
+			when '15267' then 8943829
+			when '15734' then 8943651
+			when '15581' then 8944382
+			when '15280' then 8943559
+			when '15844' then 8943666
+			when '83103' then 8943740
+			when '15526' then 8943630
+			when '15834' then 8944414
+			when '15277' then 8944361
+			when '15023' then 8944437
+			when '2920' then 8944038
+			when '15470' then 8944371
+			when '3236' then 8943832
+			when '15981' then 8943744
+			when '15787' then 8944397
+			when '22079' then 8943887
+			when '56014' then 8943816
+			when '15768' then 8944393
+			when '15028' then 8943753
+			when '15892' then 8943870
+			when '15365' then 8944364
+			when '140825'then 8943958
+			when '140825'then 8943959
+			when '15817' then 8944403
+			when '15104' then 8943813
+			when '15414' then 8943591
+			when '15544' then 8943769
+			when '2965' then 8944415
+			when '15500' then 8943848
+			when '4333' then 8943901
+			when '15766' then 8944395
+			when '15728' then 8943863
+			when '15505' then 8943850
+			when '15255' then 8943982
+			when '15918' then 8943676
+			when '15841' then 8943665
+			when '15423' then 8943587
+			when '15577' then 8943636
+			when '138138' then 8943954
+			when '15366' then 8943581
+			when '15164' then 8943550
+			when '115134' then 8944041
+			when '2556' then 8943886
+			when '15496' then 8943766
+			when '15171' then 8943755
+			when '15669' then 8943642
+			when '15609' then 8944021
+			when '15671' then 8944388
+			when '15322' then 8943566
+			when '38482' then 8943773
+			when '15631' then 8944026
+			when '15623' then 8944027
+			when '15031' then 8943906
+			when '15336' then 8943574
+			when '15099' then 8943820
+			when '115331' then 8943935
+			when '67733' then 8937951
+			when '24128' then 8943907
+			when '15531' then 8944014
+			when '15078' then 8944378
+			when '30821' then 8943698
+			when '15510' then 8943767
+			when '15507' then 8943637
+			when '15922' then 8944429
+			when '15238' then 8943981
+			when '15176' then 8943700
+			when '15002' then 8943817
+			when '15129' then 8943983
+			when '15525' then 8943851
+			when '55881' then 8943681
+			when '15235' then 8943818
+			when '24585' then 8943908
+			when '15820' then 8944406
+			when '15125' then 8943551
+			when '15476' then 8943845
+			when '14989' then 8943821
+			when '15840' then 8944412
+			when '15598' then 8944025
+			when '15101' then 8943819
+			when '15214' then 8943839
+			when '15676' then 8944390
+			when '15021' then 8943554
+			when '15601' then 8944024
+			when '126075' then 8943745
+			when '7927' then 8943701
+			when '15446' then 8943611
+			when '29898' then 8943703
+			when '83880' then 8943931
+			when '15076' then 8943828
+			when '15100' then 8547864
+			when '114999 'then 8943964
+			when '15524' then 8944375
+			when '116817' then 8943732
+			when '15874' then 8944417
+			when '15517' then 8944374
+			when '15024' then 8943558
+			when '15048' then 8943670
+			when '115040' then 8943678
+			when '15082' then 8943659
+			when '15812' then 8944411
+			when '4328' then 8943685
+			when '15095' then 8943822
+			when '15163' then 8943565
+			when '15339' then 8943578
+			when '10844' then 8943557
+			when '22732' then 8943904
+			when '82009' then 8943738
+			when '15437' then 8943653
+			when '115149' then 8943889
+			when '15536' then 8943853
+			when '15268' then 8943556
+			when '15435' then 8943606
+			when '15117' then 8943756
+			when '15062' then 8943825
+			when '20958' then 8944034
+			when '31350' then 8943696
+			when '115109' then 8943885
+			when '31646' then 8943699
+			when '138752' then 8943956
+			when '15199' then 8943824
+			when '15397' then 8943990
+			when '15828' then 8944413
+			when '15369' then 8944370
+			when '93015' then 8943721
+			when '139660' then 8943957
+			when '7939' then 8943553
+			when '15042' then 8943919
+			when '44359' then 8944441
+			when '61559557' then 8943926
+			when '115090' then 8943893
+			when '15354' then 8944366
+			when '15141' then 8943552
+			when '2297' then 8943877
+			when '15230' then 8943984
+			when '131160' then 8943946
+			when '15130' then 8943823
+			when '115138' then 8943888
+			when '15570' then 8943856
+		end as id
+		FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS contaBancariaPagamento,
+	JSON_QUERY(
+		(SELECT
+		case CONCAT(
+        RIGHT(REPLICATE('0', 1) + CAST(cd_NivelAdm1 AS VARCHAR), 1), '', 
+        RIGHT(REPLICATE('0', 3) + CAST(cd_NivelAdm2 AS VARCHAR), 3), '', 
+        RIGHT(REPLICATE('0', 4) + CAST(cd_NivelAdm3 AS VARCHAR),4), '',
+        RIGHT(REPLICATE('0', 2) + 
+            CASE 
+                WHEN cd_NivelAdm4 = 0 OR cd_NivelAdm4 IS NULL THEN '1' 
+                ELSE CAST(cd_NivelAdm4 AS VARCHAR) 
+            END, 2
+        )) 
+			WHEN'1060060201'THEN'629909'
+			WHEN'1060050026'THEN'598869'
+			WHEN'1060060026'THEN'598870'
+			WHEN'1011060001'THEN'629897'
+			WHEN'1090060001'THEN'629913'
+			WHEN'1018050032'THEN'598875'
+			WHEN'1033050032'THEN'598876'
+			WHEN'1010050022'THEN'598865'
+			WHEN'1060050022'THEN'598866'
+			WHEN'1010030012'THEN'598812'
+			WHEN'1010050012'THEN'598813'
+			WHEN'1020020212'THEN'598814'
+			WHEN'1206020612'THEN'598815'
+			WHEN'1021050012'THEN'598816'
+			WHEN'1210020212'THEN'598817'
+			WHEN'1080050012'THEN'598818'
+			WHEN'1010030020'THEN'598855'
+			WHEN'1010050020'THEN'598856'
+			WHEN'1012050020'THEN'598857'
+			WHEN'1020020720'THEN'598858'
+			WHEN'1021010020'THEN'598859'
+			WHEN'1060050020'THEN'598860'
+			WHEN'1060060020'THEN'598861'
+			WHEN'1080050020'THEN'598862'
+			WHEN'1031030201'THEN'629906'
+			WHEN'1010010001'THEN'629893'
+			WHEN'1011100001'THEN'629896'
+			WHEN'1021010001'THEN'629901'
+			WHEN'1010030001'THEN'629894'
+			WHEN'1010050001'THEN'629895'
+			WHEN'1021090001'THEN'629902'
+			WHEN'1030030001'THEN'629903'
+			WHEN'1031030001'THEN'629904'
+			WHEN'1040040001'THEN'629907'
+			WHEN'1050050001'THEN'629908'
+			WHEN'1080040001'THEN'629911'
+			WHEN'1080080001'THEN'629912'
+			WHEN'1090090001'THEN'629915'
+			WHEN'1031030101'THEN'629905'
+			WHEN'1010050021'THEN'598863'
+			WHEN'1080050021'THEN'598864'
+			WHEN'1206020614'THEN'598829'
+			WHEN'1020020215'THEN'598830'
+			WHEN'1020020615'THEN'598831'
+			WHEN'1206020615'THEN'598832'
+			WHEN'1210020215'THEN'598833'
+			WHEN'1020020213'THEN'598819'
+			WHEN'1020020313'THEN'598820'
+			WHEN'1020020413'THEN'598821'
+			WHEN'1020020713'THEN'598822'
+			WHEN'1205020513'THEN'598823'
+			WHEN'1206020613'THEN'598824'
+			WHEN'1206020713'THEN'598825'
+			WHEN'1207020613'THEN'598826'
+			WHEN'1207020713'THEN'598827'
+			WHEN'1210020213'THEN'598828'
+			WHEN'1020020301'THEN'629899'
+			WHEN'1020020401'THEN'629900'
+			WHEN'1010060101'THEN'598797'
+			WHEN'1011050001'THEN'598798'
+			WHEN'1206020601'THEN'598799'
+			WHEN'1021050001'THEN'598800'
+			WHEN'1060050001'THEN'598801'
+			WHEN'1060060001'THEN'598802'
+			WHEN'1060060101'THEN'598803'
+			WHEN'1060060301'THEN'598804'
+			WHEN'1064050001'THEN'598805'
+			WHEN'1080050001'THEN'598806'
+			WHEN'1060050004'THEN'598877'
+			WHEN'1050050002'THEN'598852'
+			WHEN'1060050002'THEN'598853'
+			WHEN'1060060002'THEN'598854'
+			WHEN'1064060401'THEN'629910'
+			WHEN'1090060401'THEN'629914'
+			WHEN'1060050025'THEN'598868'
+			WHEN'1010030017'THEN'598844'
+			WHEN'1010050017'THEN'598845'
+			WHEN'1011050017'THEN'598846'
+			WHEN'1010010018'THEN'598847'
+			WHEN'1010050018'THEN'598848'
+			WHEN'1011050018'THEN'598849'
+			WHEN'1050050018'THEN'598850'
+			WHEN'1080050018'THEN'598851'
+			WHEN'1020020216'THEN'598834'
+			WHEN'1020020316'THEN'598835'
+			WHEN'1020020716'THEN'598836'
+			WHEN'1205020516'THEN'598837'
+			WHEN'1206020616'THEN'598838'
+			WHEN'1206020716'THEN'598839'
+			WHEN'1207020716'THEN'598840'
+			WHEN'1208020816'THEN'598841'
+			WHEN'1210020216'THEN'598842'
+			WHEN'1060050016'THEN'598843'
+			WHEN'1020020230'THEN'598871'
+			WHEN'1206020630'THEN'598872'
+			WHEN'1210020230'THEN'598873'
+			WHEN'1010050009'THEN'598880'
+			WHEN'1010050005'THEN'598878'
+			WHEN'1010050010'THEN'598807'
+			WHEN'1060050006'THEN'598879'
+			WHEN'1020020201'THEN'629898'
+			WHEN'1020020731'THEN'598874'
+			WHEN'1010030011'THEN'598808'
+			WHEN'1020020211'THEN'598809'
+			WHEN'1210020211'THEN'598810'
+			WHEN'1050050011'THEN'598811'
+			WHEN'1010030023'THEN'598867'
+			else 629893
+		end as id
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS organograma
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS content
+FROM FOLHFuncionario f, FOLHFuncDadosPess dp, FOLHCargoFuncao c
+	where f.cd_Cecam = c.cd_Cecam
+		and f.cd_Funcionario = dp.cd_Funcionario
+		and f.cd_CargoFuncao = c.cd_CargoFuncao
         `;
 
-        const result = await masterConnection.query(userQuery);
+		const result = await masterConnection.query(userQuery);
 
-        const resultData = result.recordset;
+		const resultData = result.recordset;
 
-        const transformedData = resultData.map(record => {
+		const transformedData = resultData.map(record => {
+			// Parse JSON string for content
+			const content = JSON.parse(record.content);
+		
+			return {
+				idIntegracao: record.idIntegracao, // Use idIntegracao as-is
+				conteudo: {
+					dataBase: content.dataBase,
+					dataInicioContrato: content.dataInicioContrato,
+					inicioVigencia: formatDate2(content.inicioVigencia),
+					geraRegistroPreliminar: content.geraRegistroPreliminar === "true", // Convert to boolean if needed
+					pessoa: {
+						id: content.pessoa.id,
+						nome: content.pessoa.nome
+					},
+					situacao: content.situacao,
+					tipo: content.tipo,
+					codigoMatricula: {
+						contrato: content.codigoMatricula.contrato,
+						digitoVerificador: content.codigoMatricula.digitoVerificador,
+						numero: content.codigoMatricula.numero
+					},
+					vinculoEmpregaticio: {
+						id: content.vinculoEmpregaticio.id
+					},
+					indicativoAdmissao: content.indicativoAdmissao,
+					naturezaAtividade: content.naturezaAtividade,
+					tipoAdmissao: content.tipoAdmissao,
+					primeiroEmprego: content.primeiroEmprego === "true",
+					optanteFgts: content.optanteFgts === "true",
+					dataOpcao: content.dataOpcao || null,
+					contaFgts: content.contaFgts || null,
+					sindicato: {
+						id: content.sindicato.id
+					},
+					tipoProvimento: content.tipoProvimento,
+					leiContrato: content.leiContrato || null,
+					atoContrato: content.atoContrato || null,
+					dataNomeacao: content.dataNomeacao,
+					dataPosse: content.dataPosse,
+					tempoAposentadoria: content.tempoAposentadoria,
+					previdenciaFederal: content.previdenciaFederal === "true",
+					//previdencias: content.previdencias || [],
+					cargo: {
+						id: content.cargo.id
+					},
+					nivelSalarial: content.nivelSalarial || { id: null },
+					classeReferencia: content.classeReferencia || { id: null },
+					unidadePagamento: content.unidadePagamento,
+					configuracaoFerias: {
+						id: content.configuracaoFerias.id
+					},
+					quantidadeHorasMes: content.quantidadeHorasMes,
+					quantidadeHorasSemana: content.quantidadeHorasSemana,
+					jornadaParcial: content.jornadaParcial === "true",
+					orgaoOrigem: content.orgaoOrigem || null,
+					registraPonto: content.registraPonto === "true",
+					controlaHorasManual: content.controlaHorasManual === "true",
+					indicativoProvimento: content.indicativoProvimento,
+					ocorrenciaSefip: content.ocorrenciaSefip,
+					controleJornada: content.controleJornada,
+					conselheiroTutelar: content.conselheiroTutelar === "true",
+					concurso: content.concurso || null,
+					origemConcursoProcSeletivo: content.origemConcursoProcSeletivo === "true",
+					origemConcurso: content.origemConcurso,
+					formaPagamento: content.formaPagamento,
+					contaBancariaPagamento: {
+						id: content.contaBancariaPagamento.id
+					},
+					categoriaTrabalhador: {
+						id: content.categoriaTrabalhador.id
+					},
+					eSocial: content.eSocial,
+					enviarEsocial: content.enviarEsocial === "true",
+					rendimentoMensal: content.rendimentoMensal,
+					organograma:content.organograma
+				}
+			};
+		});
 
-            return {
-                id: record.idIntegracao.toString(),
-                dataInicioContrato: formatDate(record.dataInicioContrato),
-                geraRegistroPreliminar: false,
-                situacao: record.situacao,
-                atoContrato: null,
-                inicioVigencia: formatDate2(record.dataInicioContrato),
-                tipo: record.tipo,
-                pessoa: {
-                    id: record.id,
-                    nome: record.nome,
-                },
-                codigoMatricula: {
-                    contrato: null,
-                    digitoVerificador: null,
-                    numero: null
-                },
-                "eSocial": "32425962-826",
-                "grupoFuncional": {
-                    "id": 29
-                },
-                "jornadaTrabalho": null,
-                "rendimentoMensal": 1173.1,
-                "atoAlteracaoSalario": null,
-                "motivoAlteracaoSalario": null,
-                "formaPagamento": null,
-                "contaBancariaPagamento": null,
-                "validationStatus": "VALID",
-                "enviarEsocial": true,
-                "organograma": {
-                    "id": 75
-                },
-                "dataAdmissaoRetificadaProcTrab": null,
-                "processoTrabalhista": null,
-                "chaveMigracao": null,
-                "versaoMigracao": null,
-                "camposAdicionais": [
-                    {
-                        "tipo": "FUNCIONARIO",
-                        "identificador": "betha_siope_padrao",
-                        "campos": [
-                            {
-                                "id": "6202f523709ddf000183a967",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "6202f523709ddf000183a969",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "6202f523709ddf000183a968",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "6202f523709ddf000183a96b",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "6202f523709ddf000183a96a",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "6202f523709ddf000183a96d",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "6202f523709ddf000183a96c",
-                                "valor": "N"
-                            }
-                        ]
-                    },
-                    {
-                        "tipo": "FUNCIONARIO",
-                        "identificador": "padrao",
-                        "campos": [
-                            {
-                                "id": "5f68dd7ef682a7014b4d9818",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9817",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d981a",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9819",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9814",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9813",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9816",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9815",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9820",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d981f",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9821",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d981c",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d981b",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d981e",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d981d",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9808",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9807",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d980a",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9809",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9804",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9803",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9805",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9810",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d980f",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9812",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d9811",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d980c",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d980b",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d980e",
-                                "valor": null
-                            },
-                            {
-                                "id": "5f68dd7ef682a7014b4d980d",
-                                "valor": null
-                            }
-                        ]
-                    },
-                    {
-                        "tipo": "FUNCIONARIO",
-                        "identificador": "betha_esfinge_padrao",
-                        "campos": [
-                            {
-                                "id": "66d99e66d2223500019830f1",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f2",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983105",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983106",
-                                "valor": "N"
-                            },
-                            {
-                                "id": "66d99e66d222350001983103",
-                                "valor": "S"
-                            },
-                            {
-                                "id": "66d99e66d222350001983104",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983109",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d22235000198310a",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983107",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983108",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f5",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f6",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f3",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f4",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f9",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830fa",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f7",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830f8",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830fd",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830fe",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830fb",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830fc",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983101",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983102",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d2223500019830ff",
-                                "valor": null
-                            },
-                            {
-                                "id": "66d99e66d222350001983100",
-                                "valor": null
-                            }
-                        ]
-                    }
-                ],
-                "historicos": [],
-                "rescisao": null,
-                "reintegracoes": [],
-                "dataBase": "2024-09-16",
-                "vinculoEmpregaticio": {
-                    "id": 29
-                },
-                "indicativoAdmissao": null,
-                "naturezaAtividade": null,
-                "tipoAdmissao": null,
-                "primeiroEmprego": false,
-                "optanteFgts": false,
-                "dataOpcao": null,
-                "contaFgts": null,
-                "sindicato": null,
-                "tipoProvimento": null,
-                "leiContrato": null,
-                "dataNomeacao": "2024-09-16",
-                "dataPosse": "2024-09-16",
-                "tempoAposentadoria": null,
-                "previdenciaFederal": true,
-                "previdencias": [],
-                "cargo": {
-                    "id": 37
-                },
-                "nProcessoTrabalhista": null,
-                "profissionalSaudeSegurancaPublica": null,
-                "recebeAbonoPermanencia": null,
-                "inicioAbonoPermanencia": null,
-                "observacaoContrato": null,
-                "descricaoSalario": null,
-                "tipoContratoParcial": null,
-                "cargoAlterado": false,
-                "atoAlteracaoCargo": null,
-                "motivoAlteracaoCargo": null,
-                "areaAtuacao": null,
-                "areaAtuacaoAlterada": false,
-                "motivoAlteracaoAreaAtuacao": null,
-                "ocupaVaga": false,
-                "salarioAlterado": false,
-                "dataAlteracaoSalarioEsocial": null,
-                "origemSalario": "CARGO",
-                "nivelSalarial": {
-                    "id": 81
-                },
-                "classeReferencia": {
-                    "id": 158
-                },
-                "cargoComissionado": null,
-                "areaAtuacaoComissionado": null,
-                "ocupaVagaComissionado": false,
-                "salarioComissionado": null,
-                "nivelSalarialComissionado": null,
-                "classeReferenciaComissionado": null,
-                "dataSaidaCargoComissionado": null,
-                "atoSaidaCargoComissionado": null,
-                "cargoComissionadoAdicionado": false,
-                "atoAlteracaoSalarioComissionado": null,
-                "motivoAlteracaoSalarioComissionado": null,
-                "salarioComissionadoAlterado": false,
-                "unidadePagamento": "MENSALISTA",
-                "configuracaoFerias": {
-                    "id": 15
-                },
-                "quantidadeHorasMes": 200.0,
-                "quantidadeHorasSemana": 40,
-                "jornadaParcial": false,
-                "dataAgendamentoRescisao": null,
-                "funcoesGratificadas": [],
-                "dataTerminoContratoTemporario": null,
-                "motivoContratoTemporario": null,
-                "hipoteseLegalContratoTemporario": null,
-                "prazoDeterminadoContratoTemporario": null,
-                "clausulaAssecuratoriaContratoTemporario": null,
-                "tipoInclusaoContratoTemporario": null,
-                "dataProrrogacaoContratoTemporario": null,
-                "numeroCartaoPonto": null,
-                "parametroPonto": null,
-                "registraPonto": false,
-                "compensaHoras": null,
-                "controlaHorasManual": false,
-                "indicativoProvimento": null,
-                "orgaoOrigem": null,
-                "matriculaEmpresaOrigem": null,
-                "dataAdmissaoOrigem": null,
-                "recebido": null,
-                "ocorrenciaSefip": null,
-                "controleJornada": null,
-                "matriculasAdicionais": [],
-                "matriculaLicencasPremio": [],
-                "conselheiroTutelar": false,
-                "concurso": null,
-                "concursoProcessoSeletivo": null,
-                "origemConcursoProcSeletivo": false,
-                "concursoCandidato": null,
-                "origemConcurso": null,
-                "inicioTurnoCorrido": null,
-                "tipoContratacaoAprendiz": null,
-                "cnpjEntidadeQualificadora": null,
-                "controlaPerAquisFeriasAntesAdmissao": false,
-                "dataInicialPeriodoAquisitivoFeriasAntesAdmissao": null,
-                "version": 1
-            }
-        });
-
-        const chunkSize = 50;
+		/* const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
@@ -1284,47 +2273,81 @@ FROM
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        // Armazenar as respostas do servidor
-        const serverResponses = [];
+		return */
+		
+		// Log transformed data to confirm structure
+		console.log(JSON.stringify(transformedData, null, 2));
+		
+		// Process and save data in chunks
+		const chunkArray = (array, size) => {
+			const chunked = [];
+			for (let i = 0; i < array.length; i += size) {
+				chunked.push(array.slice(i, i + size));
+			}
+			return chunked;
+		};
+		
+		const batchedData = chunkArray(transformedData, 50);
+		let report = [];
+		let reportIds = [];
+		
+		for (const batch of batchedData) {
+			try {
+				console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+		
+				const response = await fetch(`https://pessoal.betha.cloud/service-layer/v1/api/matricula`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+					},
+					body: JSON.stringify(batch)
+				});
+		
+				const responseBody = await response.json();
+				console.log('Resposta da API:', responseBody);
+		
+				if (response.ok) {
+					console.log('Dados enviados com sucesso para a API.');
+					batch.forEach(record => {
+						report.push({ record, status: 'success', response: responseBody });
+					});
+		
+					if (responseBody.idLote) {
+						reportIds.push(responseBody.idLote);
+					} else if (responseBody.id) {
+						reportIds.push(responseBody.id);
+					}
+				} else {
+					console.error('Erro ao enviar os dados para a API:', response.statusText);
+					batch.forEach(record => {
+						report.push({ record, status: 'failed', response: responseBody });
+					});
+				}
+			} catch (err) {
+				console.error('Erro ao enviar o batch para a API:', err);
+				batch.forEach(record => {
+					report.push({ record, status: 'error', error: err.message });
+				});
+			}
+		}
+		
+		// Save report and IDs to files
+		fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+		console.log('Relatório salvo em report.json com sucesso.');
+		
+		fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+		console.log('report_id.json salvo com sucesso.');
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const url = `https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/atos`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-     
-            const responseBody = await response.json();
-            serverResponses.push({
-                url: url,
-                status: response.status,
-                statusText: response.statusText,
-                responseBody: responseBody
-            });
-     
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para ${url}.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para ${url}:`, response.statusText);
-            }
-        } */
 
-        //fs.writeFileSync('log_bens.json', JSON.stringify(serverResponses, null, 2));
-        //console.log('Respostas do servidor salvas em log_bens.json');
 
-    } catch (error) {
-        console.error('Erro durante a execução do programa:', error);
-    } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
-    }
+	} catch (error) {
+		console.error('Erro no processo:', error);
+	} finally {
+		await sql.close(); // Fechar a conexão com o SQL Server
+		console.log('Conexão com o SQL Server fechada.');
+	}
 }
 
-// Chamar a função principal
+// Executar a função principal
 main();

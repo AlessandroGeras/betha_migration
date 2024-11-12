@@ -53,7 +53,7 @@ JSON_QUERY(
     (SELECT
         JSON_QUERY(
     (SELECT
-  '10069' as id
+  '10480' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS configuracao,
  cd_CategoriaEconomicaReceita as numero,
@@ -73,57 +73,88 @@ from CONTCategoriaEconomicaReceita
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
             const content = JSON.parse(record.content);
-            let numeroStr = content.numero.toString();
-            if (numeroStr.length > 8) {
-                numeroStr = numeroStr.substring(0, 8);
-            }
+
             return {
                 idIntegracao: record.ididIntegracao.toString(),
                 content: {
                     configuracao: {
                         id: parseInt(content.configuracao.id) // Convertendo para inteiro
                     },
-                    numero: numeroStr, // Ajustar para no máximo 8 caracteres
+                    numero: content.numero.toString(), // Ajustar para no máximo 8 caracteres
                     descricao: content.descricao.substring(0, 150),
                     tipo: content.tipo
                 }
             };
         });
+        
 
-        const chunkSize = 50;
-        for (let i = 0; i < transformedData.length; i += chunkSize) {
-            const chunk = transformedData.slice(i, i + chunkSize);
-            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
-            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
-            console.log(`Dados salvos em ${chunkFileName}`);
+        let report = [];
+        let reportIds = [];
 
-            // Enviar o chunk para a API
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-receitas', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(chunk)
-            });
+        // Function to divide data into chunks of specified size
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
+            }
+            return chunked;
+        };
 
-            const responseData = await response.json();
-            logResponse(responseData, i / chunkSize + 1);
+        const batchedData = chunkArray(transformedData, 50);
 
-            if (response.ok) {
-                console.log(`Dados do chunk ${i / chunkSize + 1} enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do chunk ${i / chunkSize + 1} para a rota:`, response.statusText);
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+
+                const response = await fetch(`https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-receitas`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+
+                const responseBody = await response.json();
+
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
             }
         }
+
+        // Salvar o relatório em 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+
+        // Salvar os reportIds no arquivo 'report_id.json'
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
+
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Fechar a conexão com o SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Executar a função principal
 main();

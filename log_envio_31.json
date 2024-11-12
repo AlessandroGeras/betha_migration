@@ -1,0 +1,1152 @@
+[
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207805
+      },
+      "quantidade": 360,
+      "valorUnitario": 15.22,
+      "valorTotal": 5479.2,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223280
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207805
+      },
+      "quantidade": 360,
+      "valorUnitario": 15.22,
+      "valorTotal": 5479.2,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223280
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207806
+      },
+      "quantidade": 10,
+      "valorUnitario": 65,
+      "valorTotal": 650,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223281
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207806
+      },
+      "quantidade": 10,
+      "valorUnitario": 65,
+      "valorTotal": 650,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223281
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207807
+      },
+      "quantidade": 110,
+      "valorUnitario": 26.8,
+      "valorTotal": 2948,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223282
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207807
+      },
+      "quantidade": 110,
+      "valorUnitario": 26.8,
+      "valorTotal": 2948,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223282
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207811
+      },
+      "quantidade": 60,
+      "valorUnitario": 15,
+      "valorTotal": 900,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223285
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207811
+      },
+      "quantidade": 60,
+      "valorUnitario": 15,
+      "valorTotal": 900,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223285
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207809
+      },
+      "quantidade": 25,
+      "valorUnitario": 100,
+      "valorTotal": 2500,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223286
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207809
+      },
+      "quantidade": 25,
+      "valorUnitario": 100,
+      "valorTotal": 2500,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223286
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207820
+      },
+      "quantidade": 16,
+      "valorUnitario": 3.8,
+      "valorTotal": 60.8,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223289
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207820
+      },
+      "quantidade": 16,
+      "valorUnitario": 3.8,
+      "valorTotal": 60.8,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223289
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207820
+      },
+      "quantidade": 10,
+      "valorUnitario": 55,
+      "valorTotal": 550,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223289
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207820
+      },
+      "quantidade": 10,
+      "valorUnitario": 55,
+      "valorTotal": 550,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223289
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207815
+      },
+      "quantidade": 55,
+      "valorUnitario": 3.77,
+      "valorTotal": 207.35,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223290
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207815
+      },
+      "quantidade": 55,
+      "valorUnitario": 3.77,
+      "valorTotal": 207.35,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223290
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207816
+      },
+      "quantidade": 35,
+      "valorUnitario": 4.27,
+      "valorTotal": 149.45,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223292
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207816
+      },
+      "quantidade": 35,
+      "valorUnitario": 4.27,
+      "valorTotal": 149.45,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223292
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207817
+      },
+      "quantidade": 30,
+      "valorUnitario": 25,
+      "valorTotal": 750,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223293
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207817
+      },
+      "quantidade": 30,
+      "valorUnitario": 25,
+      "valorTotal": 750,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223293
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207818
+      },
+      "quantidade": 9,
+      "valorUnitario": 296.3,
+      "valorTotal": 2666.7000000000003,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223295
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207818
+      },
+      "quantidade": 9,
+      "valorUnitario": 296.3,
+      "valorTotal": 2666.7000000000003,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223295
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312269
+      },
+      "materialEspecificacao": {
+        "id": 27207826
+      },
+      "quantidade": 50,
+      "valorUnitario": 20,
+      "valorTotal": 1000,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223301
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312264
+      },
+      "materialEspecificacao": {
+        "id": 27207826
+      },
+      "quantidade": 50,
+      "valorUnitario": 20,
+      "valorTotal": 1000,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223301
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207828
+      },
+      "quantidade": 142,
+      "valorUnitario": 119.99,
+      "valorTotal": 17038.579999999998,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223303
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207828
+      },
+      "quantidade": 142,
+      "valorUnitario": 119.99,
+      "valorTotal": 17038.579999999998,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223303
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312243
+      },
+      "materialEspecificacao": {
+        "id": 27207887
+      },
+      "quantidade": 8,
+      "valorUnitario": 284,
+      "valorTotal": 2272,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223362
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312251
+      },
+      "materialEspecificacao": {
+        "id": 27207887
+      },
+      "quantidade": 8,
+      "valorUnitario": 284,
+      "valorTotal": 2272,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223362
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207985
+      },
+      "quantidade": 25,
+      "valorUnitario": 81.4,
+      "valorTotal": 2035,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223462
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207985
+      },
+      "quantidade": 25,
+      "valorUnitario": 81.4,
+      "valorTotal": 2035,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223462
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207987
+      },
+      "quantidade": 175,
+      "valorUnitario": 22.98,
+      "valorTotal": 4021.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223463
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207987
+      },
+      "quantidade": 175,
+      "valorUnitario": 22.98,
+      "valorTotal": 4021.5,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223463
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207989
+      },
+      "quantidade": 20,
+      "valorUnitario": 88.9,
+      "valorTotal": 1778,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223464
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207989
+      },
+      "quantidade": 20,
+      "valorUnitario": 88.9,
+      "valorTotal": 1778,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223464
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207992
+      },
+      "quantidade": 105,
+      "valorUnitario": 43.89,
+      "valorTotal": 4608.45,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223467
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207992
+      },
+      "quantidade": 105,
+      "valorUnitario": 43.89,
+      "valorTotal": 4608.45,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223467
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207993
+      },
+      "quantidade": 105,
+      "valorUnitario": 43.97,
+      "valorTotal": 4616.849999999999,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223470
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207993
+      },
+      "quantidade": 105,
+      "valorUnitario": 43.97,
+      "valorTotal": 4616.849999999999,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223470
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27207998
+      },
+      "quantidade": 10,
+      "valorUnitario": 35.9,
+      "valorTotal": 359,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223473
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27207998
+      },
+      "quantidade": 10,
+      "valorUnitario": 35.9,
+      "valorTotal": 359,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223473
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27208002
+      },
+      "quantidade": 45,
+      "valorUnitario": 22.98,
+      "valorTotal": 1034.1,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223477
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27208002
+      },
+      "quantidade": 45,
+      "valorUnitario": 22.98,
+      "valorTotal": 1034.1,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223477
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27208007
+      },
+      "quantidade": 200,
+      "valorUnitario": 21.97,
+      "valorTotal": 4394,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223482
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27208007
+      },
+      "quantidade": 200,
+      "valorUnitario": 21.97,
+      "valorTotal": 4394,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223482
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27208009
+      },
+      "quantidade": 20,
+      "valorUnitario": 19.79,
+      "valorTotal": 395.7999999999999,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223483
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27208009
+      },
+      "quantidade": 20,
+      "valorUnitario": 19.79,
+      "valorTotal": 395.7999999999999,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223483
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312263
+      },
+      "materialEspecificacao": {
+        "id": 27208016
+      },
+      "quantidade": 25,
+      "valorUnitario": 88.99,
+      "valorTotal": 2224.75,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223491
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312257
+      },
+      "materialEspecificacao": {
+        "id": 27208016
+      },
+      "quantidade": 25,
+      "valorUnitario": 88.99,
+      "valorTotal": 2224.75,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223491
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312245
+      },
+      "materialEspecificacao": {
+        "id": 27208020
+      },
+      "quantidade": 4000,
+      "valorUnitario": 20.83,
+      "valorTotal": 83320,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223493
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  },
+  {
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312266
+      },
+      "materialEspecificacao": {
+        "id": 27208020
+      },
+      "quantidade": 4000,
+      "valorUnitario": 20.83,
+      "valorTotal": 83320,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56223493
+      },
+      "amostra": false,
+      "manufaturado": false
+    }
+  }
+]

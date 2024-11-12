@@ -42,386 +42,194 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            select
+            --envio de bens
+select
 JSON_QUERY(
 (SELECT
-   case TB.ds_tipobem
-when        'APARELHOS DE MEDIÇÃO E ORIENTAÇÃO'        then        5243
-when        'APARELHOS E EQUIPAMENTO DE COMUNICAÇÃO'        then        5244
-when        'APARELHOS EQUI. E UTEN. MED. ODON. LOBO. E HOSP.'        then        5245
-when        'EQUIPAMENTO DE PROTEÇÃO'        then        5246
-when        'APARELHOS E EQUIPAMENTOS PARA ESPORTES E DIVERSOS'        then        5247
-when        'APARELHOS E UTENSILIOS DOMESTICOS'        then        5248
-when        'COLEÇÃO E MATERIAIS BIBLIOGRAFICOS'        then        5249
-when        'MAQUINAS E EQUIPAMENTOS ENERGETICOS'        then        5250
-when        'MAQUINAS E EQUIPAMENTOS GRAFICOS'        then        5251
-when        'EQUIPAMENTO PARA AUDIO'        then        5252
-when        'MAQUINAS UTENSILIOS E EQUIPAMENTOS DIVERSOS'        then        5253
-when        'EQUIPAMENTO DE PROCESSAMENTO DE DADOS '        then        5254
-when        'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO'        then        5255
-when        'MAQUINAS FERRAMENTAS E UTENSILIOS DE OFICINA'        then        5256
-when        'EQUIPAMENTO E UTENSILIO HIDRAULICO E ELETRICO'        then        5257
-when        'MAQUINAS E EQUIPAMENTO AGRICOLAS E RODOVIARIOS  '        then        5258
-when        'MOBILIARIA EM GERAL'        then        5259
-when        'VEICULO DE TRAÇÃO MECANICA'        then        5260
-when        'BANDEIRAS'        then        5261
-when        'EDIFICIOS'        then        5262
-when        'TERRENOS/GLEBAS'        then        5263
-when        'OBRAS EM ANDAMENTO'        then        5264
-when        'APAR. DE MEDICAO E ORIENTAÇÃO'        then        5265
-when        'APAR. E EQUIP. DE COMUNICAÇÃO'        then        5266
-when        'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR'        then        5267
-when        'APAR. E EQUIP. P/ ESPORTES E DIVERSOES'        then        5268
-when        'APAR. E UTENS. DOMESTICOS'        then        5269
-when        'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS'        then        5270
-when        'EQUIP. DE MANOBRA E PATRULHAMENTO'        then        5271
-when        'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO'        then        5272
-when        'INSTRUMENTOS MUSICAIS E ARTISTICOS'        then        5273
-when        'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL'        then        5274
-when        'MAQ. E EQUIP. ENERGETICOS'        then        5275
-when        'MAQ. E EQUIP. GRAFICOS'        then        5276
-when        'EQUIP. P/ AUDIO VIDEO E FOTO'        then        5277
-when        'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS'        then        5278
-when        'EQUIP. DE PROCESSAMENTO DE DADOS'        then        5279
-when        'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO'        then        5280
-when        'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA'        then        5281
-when        'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS'        then        5282
-when        'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS'        then        5283
-when        'MOBILIARIO EM GERAL'        then        5284
-when        'VEICULOS DIVERSOS'        then        5285
-when        'VEICULOS DE TRAÇÃO MECANICA'        then        5286
-when        'ACESSORIOS PARA AUTOMOVEIS'        then        5287
-when        'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO'        then        5288
-when        'OUTROS MATERIAIS PERMANENTES'        then        5289
-when        'EDIFICIOS - REALIZAÇÃO DE OBRAS'        then        5290
-when        'TERRENOS'        then        5291
-when        'INSTALAÇÕES'        then        5292
-when        'CASAS E APARTAMENTOS'        then        5293
-when        'RUAS'        then        5294
-when        'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN'        then        5295
-when        'ESTUDOS E PROJETOS'        then        5296
-when        'PREÇAS'        then        5297
-when        'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS'        then        5298
-when        'ESTRADAS'        then        5299
-when        'OUTRAS OBRAS E INSTALAÇÕES'        then        5300
-when        'PONTES'        then        5301
-when        'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA'        then        5302
-when        'SISTEMA DE ABASECIMENTO DE ENERGIA'        then        5303
-when        'OUTROS BENS DE USO COMUM DO POVO'        then        5304
-when        'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO'        then        5305
-when        'TERRENOS PUBLICOS'        then        5306
- end as id
+        CASE TB.ds_tipobem
+      WHEN 'ACESSORIOS PARA AUTOMOVEIS' THEN '5709'
+      WHEN 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' THEN '5710'
+      WHEN 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' THEN '5710'
+      WHEN 'APARELHOS DE MEDIÇÃO E ORIENTAÇÃO' THEN '5709'
+      WHEN 'APARELHOS E EQUIPAMENTO DE COMUNICAÇÃO' THEN '5709'
+      WHEN 'APARELHOS EQUI. E UTEN. MED. ODON. LOBO. E HOSP.' THEN '5709'
+      WHEN 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' THEN '5709'
+      WHEN 'APARELHOS E UTENSILIOS DOMESTICOS' THEN '5709'
+      WHEN 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' THEN '5710'
+      WHEN 'CASAS E APARTAMENTOS' THEN '5710'
+      WHEN 'COLEÇÃO E MATERIAIS BIBLIOGRAFICOS' THEN '5709'
+      WHEN 'EDIFICIOS - REALIZAÇÃO DE OBRAS' THEN '5710'
+      WHEN 'EQUIP. DE MANOBRA E PATRULHAMENTO' THEN '5709'
+      WHEN 'EQUIPAMENTO DE PROCESSAMENTO DE DADOS ' THEN '5709'
+      WHEN 'EQUIPAMENTO DE PROTEÇÃO, SEGURANÇA E SOCORRO' THEN '5709'
+	  WHEN 'APARELHOS E EQUIPAMENTOS PARA ESPORTES E DIVERSOS' THEN '5709'
+      WHEN 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' THEN '5709'
+      WHEN 'EQUIPAMENTO PARA AUDIO, VIDEO E FOTO' THEN '5709'
+      WHEN 'ESTRADAS' THEN '5710'
+      WHEN 'ESTUDOS E PROJETOS' THEN '5710'
+      WHEN 'INSTALAÇÕES' THEN '5710'
+      WHEN 'INSTRUMENTOS MUSICAIS E ARTISTICOS' THEN '5709'
+      WHEN 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' THEN '5709'
+      WHEN 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' THEN '5709'
+      WHEN 'MAQUINAS E EQUIPAMENTOS ENERGETICOS' THEN '5709'
+      WHEN 'MAQUINAS E EQUIPAMENTOS GRAFICOS' THEN '5709'
+      WHEN 'MAQUINAS FERRAMENTAS E UTENSILIOS DE OFICINA' THEN '5709'
+      WHEN 'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' THEN '5709'
+      WHEN 'MAQUINAS UTENSILIOS E EQUIPAMENTOS DIVERSOS' THEN '5709'
+      WHEN 'MOBILIARIA EM GERAL' THEN '5709'
+      WHEN 'OBRAS EM ANDAMENTO' THEN '5710'
+      WHEN 'OUTRAS OBRAS E INSTALAÇÕES' THEN '5710'
+      WHEN 'OUTROS BENS DE USO COMUM DO POVO' THEN '5710'
+      WHEN 'OUTROS MATERIAIS PERMANENTES' THEN '5709'
+      WHEN 'PONTES' THEN '5710'
+      WHEN 'PRAÇAS' THEN '5710'
+      WHEN 'RUAS' THEN '5710'
+      WHEN 'SISTEMA DE ABASECIMENTO DE ENERGIA' THEN '5710'
+      WHEN 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' THEN '5710'
+      WHEN 'TERRENOS' THEN '5710'
+      WHEN 'TERRENOS PUBLICOS' THEN '5710'
+      WHEN 'VEICULO DE TRAÇÃO MECANICA' THEN '5709'
+      WHEN 'VEICULOS DIVERSOS' THEN '5709'
+    END AS id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS tipoBem,
+) AS tipoBem,-- ok
 JSON_QUERY( 
-(SELECT
- case TB.ds_tipobem
- when        'APAR. DE MEDICAO E ORIENTAÇÃO'        then        46492
-when        'APAR. E EQUIP. DE COMUNICAÇÃO'        then        46493
-when        'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR'        then        46494
-when        'APAR. E EQUIP. P/ ESPORTES E DIVERSOES'        then        46495
-when        'APAR. E UTENS. DOMESTICOS'        then        46496
-when        'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS'        then        46497
-when        'EQUIP. DE MANOBRA E PATRULHAMENTO'        then        46498
-when        'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO'        then        46499
-when        'INSTRUMENTOS MUSICAIS E ARTISTICOS'        then        46500
-when        'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL'        then        46501
-when        'MAQ. E EQUIP. ENERGETICOS'        then        46502
-when        'MAQ. E EQUIP. GRAFICOS'        then        46503
-when        'EQUIP. P/ AUDIO VIDEO E FOTO'        then        46504
-when        'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS'        then        46505
-when        'EQUIP. DE PROCESSAMENTO DE DADOS'        then        46506
-when        'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO'        then        46507
-when        'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA'        then        46508
-when        'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS'        then        46509
-when        'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS'        then        46510
-when        'MOBILIARIO EM GERAL'        then        46511
-when        'VEICULOS DIVERSOS'        then        46512
-when        'VEICULOS DE TRAÇÃO MECANICA'        then        46513
-when        'ACESSORIOS PARA AUTOMOVEIS'        then        46514
-when        'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO'        then        46515
-when        'OUTROS MATERIAIS PERMANENTES'        then        46516
-when        'EDIFICIOS - REALIZAÇÃO DE OBRAS'        then        46517
-when        'TERRENOS'        then        46518
-when        'INSTALAÇÕES'        then        46519
-when        'CASAS E APARTAMENTOS'        then        46520
-when        'RUAS'        then        46521
-when        'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN'        then        46522
-when        'ESTUDOS E PROJETOS'        then        46523
-when        'OBRAS EM ANDAMENTO'        then        46524
-when        'PREÇAS'        then        46525
-when        'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS'        then        46526
-when        'ESTRADAS'        then        46527
-when        'OUTRAS OBRAS E INSTALAÇÕES'        then        46528
-when        'PONTES'        then        46529
-when        'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA'        then        46530
-when        'SISTEMA DE ABASECIMENTO DE ENERGIA'        then        46531
-when        'OUTROS BENS DE USO COMUM DO POVO'        then        46532
-when        'TERRENOS PUBLICOS'        then        46533
- end as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS grupoBem, 
+  (SELECT
+    CASE TB.ds_tipobem
+ when 'ACESSORIOS PARA AUTOMOVEIS' then 51950
+ when 'MAQUINAS FERRAMENTAS E UTENSILIOS DE OFICINA' then 51951
+ when 'APARELHOS E EQUIPAMENTO DE COMUNICAÇÃO' then 51952
+ when 'MAQUINAS E EQUIPAMENTOS GRAFICOS' then 51953
+ when 'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then 51954
+ when 'EQUIPAMENTO DE PROTEÇÃO, SEGURANÇA E SOCORRO' then 51955
+ when 'EQUIPAMENTO DE PROCESSAMENTO DE DADOS ' then 51956
+ when 'COLEÇÃO E MATERIAIS BIBLIOGRAFICOS' then 51957
+ when 'MOBILIARIA EM GERAL' then 51958
+ when 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' then 51959
+ when 'INSTRUMENTOS MUSICAIS E ARTISTICOS' then 51960
+ when 'MAQUINAS UTENSILIOS E EQUIPAMENTOS DIVERSOS' then 51961
+ when 'EQUIPAMENTO PARA AUDIO, VIDEO E FOTO' then 51962
+ when 'EQUIP. DE MANOBRA E PATRULHAMENTO' then 51963
+ when 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' then 51964
+ when 'VEICULOS DIVERSOS' then 51965
+ when 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' then 51966
+ when 'MAQUINAS E EQUIPAMENTOS ENERGETICOS' then 51967
+ when 'VEICULO DE TRAÇÃO MECANICA' then 51968
+ when 'APARELHOS EQUI. E UTEN. MED. ODON. LOBO. E HOSP.' then 51969
+ when 'APARELHOS E UTENSILIOS DOMESTICOS' then 51970
+ when 'OUTROS MATERIAIS PERMANENTES' then 51971
+ when 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' then 51972
+ when 'APARELHOS DE MEDIÇÃO E ORIENTAÇÃO' then 51973
+ when 'TERRENOS' then 51974
+ when 'CASAS E APARTAMENTOS' then 51975
+ when 'OBRAS EM ANDAMENTO' then 51976
+ when 'TERRENOS PUBLICOS' then 51977
+ when 'SISTEMA DE ABASECIMENTO DE ENERGIA' then 51978
+ when 'OUTRAS OBRAS E INSTALAÇÕES' then 51979
+ when 'PONTES' then 51980
+ when 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' then 51981
+ when 'ESTUDOS E PROJETOS' then 51982
+ when 'RUAS' then 51983
+ when 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' then 51984
+ when 'OUTROS BENS DE USO COMUM DO POVO' then 51985
+ when 'EDIFICIOS - REALIZAÇÃO DE OBRAS' then 51986
+ when 'INSTALAÇÕES' then 51987
+ when 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' then 51988
+ when 'PRAÇAS' then 51989
+ when 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' then 51990
+ when 'ESTRADAS' then 51991
+ when 'APARELHOS E EQUIPAMENTOS PARA ESPORTES E DIVERSOS' then 51972
+    END AS id
+  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS grupoBem, -- ok
 JSON_QUERY((SELECT
- case bp.cd_tipobem
-  when        104        then                505162
-when        106        then                505163
-when        108        then                505164
-when        110        then                505165
-when        112        then                505166
-when        118        then                505167
-when        122        then                505168
-when        124        then                505169
-when        126        then                505170
-when        128        then                505171
-when        130        then                505172
-when        132        then                505173
-when        133        then                505174
-when        134        then                505175
-when        135        then                505176
-when        136        then                505177
-when        138        then                505178
-when        139        then                505179
-when        140        then                505180
-when        142        then                505181
-when        148        then                505182
-when        152        then                505183
-when        199        then                505184
-when        201        then                505185
-when        202        then                505186
-when        203        then                505187
-when        206        then                505188
-when        208        then                505189
-when        211        then                505190
-when        212        then                505191
-when        213        then                505192
-when        216        then                505193
-when        217        then                505193
-when        2003        then        505194
+ case tb.ds_tipobem
+ when 'VEICULO DE TRAÇÃO MECANICA' then 541243
+ when 'COLEÇÃO E MATERIAIS BIBLIOGRAFICOS' then 541244
+ when 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' then 541245
+ when 'APARELHOS E UTENSILIOS DOMESTICOS' then 541246
+ when 'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then 541247
+ when 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' then 541248
+ when 'EQUIPAMENTO DE PROCESSAMENTO DE DADOS ' then 541249
+ when 'EQUIPAMENTO DE PROTEÇÃO, SEGURANÇA E SOCORRO' then 541250
+ when 'MAQUINAS FERRAMENTAS E UTENSILIOS DE OFICINA' then 541251
+ when 'VEICULOS DIVERSOS' then 541252
+ when 'ACESSORIOS PARA AUTOMOVEIS' then 541253
+ when 'EQUIP. DE MANOBRA E PATRULHAMENTO' then 541254
+ when 'APARELHOS E EQUIPAMENTO DE COMUNICAÇÃO' then 541255
+ when 'MAQUINAS UTENSILIOS E EQUIPAMENTOS DIVERSOS' then 541256
+ when 'MAQUINAS E EQUIPAMENTOS GRAFICOS' then 541257
+ when 'EQUIPAMENTO PARA AUDIO, VIDEO E FOTO' then 541258
+ when 'APARELHOS DE MEDIÇÃO E ORIENTAÇÃO' then 541259
+ when 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' then 541260
+ when 'OUTROS MATERIAIS PERMANENTES' then 541261
+ when 'MOBILIARIA EM GERAL' then 541262
+ when 'MAQUINAS E EQUIPAMENTOS ENERGETICOS' then 541263
+ when 'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then 541264
+ when 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' then 541265
+ when 'APARELHOS EQUI. E UTEN. MED. ODON. LOBO. E HOSP.' then 541266
+ when 'INSTRUMENTOS MUSICAIS E ARTISTICOS' then 541267
+ when 'TERRENOS PUBLICOS' then 541268
+ when 'TERRENOS' then 541269
+ when 'ESTUDOS E PROJETOS' then 541270
+ when 'INSTALAÇÕES' then 541271
+ when 'PRAÇAS' then 541272
+ when 'RUAS' then 541273
+ when 'SISTEMA DE ABASECIMENTO DE ENERGIA' then 541274
+ when 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' then 541275
+ when 'EDIFICIOS - REALIZAÇÃO DE OBRAS' then 541276
+ when 'CASAS E APARTAMENTOS' then 541277
+ when 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' then 541278
+ when 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' then 541279
+ when 'PONTES' then 541280
+ when 'OBRAS EM ANDAMENTO' then 541281
+ when 'OUTROS BENS DE USO COMUM DO POVO' then 541282
+ when 'OUTRAS OBRAS E INSTALAÇÕES' then 541283
+ when 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' then 541284
+ when 'ESTRADAS' then 541285
+ when 'APARELHOS E EQUIPAMENTOS PARA ESPORTES E DIVERSOS' then 541248
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS especieBem, 
-JSON_QUERY( (SELECT
-   '4082' as id    --cadastrado
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS tipoUtilizacaoBem,
+) AS especieBem, --ok
+null AS tipoUtilizacaoBem,
 JSON_QUERY( (SELECT
 case bp.cd_tipoaquisicao
-when 2 then 8072
-else 8010
+when 2 then 8911
+else 8909
  end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS tipoAquisicao,
+) AS tipoAquisicao, -- ok
 JSON_QUERY( (SELECT
  case F.nm_fornecedor
- when        '2M COMERCIO DE VEICULOS LTDA'        then        36311331
-when        'A. J. ALVES E CIA LTDA - EPP'        then        36311225
-when        'A. PAZINATO MARINGA'        then        36311355
-when        'AGUIA EMPRESA DE TRANSPORTE E TURISMO LTDA - ME'        then        36311216
-when        'ALFA COMUNICAÇÃO VISUAL EIRELLI ME'        then        36311319
-when        'ALTA FREQUENCIA LTDA'        then        36311348
-when        'AMERICA COMERCIO DE PRODUTOS PARA INFORMATICA LTDA'        then        36311320
-when        'ANTONIO APARECIDO DIAS'        then        36311232
-when        'APFORM INDUSTRIA E COMERCIO DE MOVEIS LTDA'        then        36311325
-when        'ARUMAS INFORMATICAS LTDA'        then        36311327
-when        'AUDAX CONSTRUÇÕES E TERRAPLANAGEM EIRELI EPP'        then        36311299
-when        'AUTOVEMA MOTORS COMERCIO DE CAMINHONETAS LTDA'        then        36134708
-when        'AUTOVEMA VEICULOS LTDA'        then        36311293
-when        'AUTOVEMA VEICULOS LTDA'        then        36311317
-when        'BIDDEN COMERCIAL LTDA'        then        36311326
-when        'BIOCAL COMERCIO E REPRESENTAÇÕES LTDA'        then        36134545
-when        'BIOCAL COMERCIO E REPRESENTAÇÕES LTDA'        then        36311237
-when        'BIOTECNOPLUS ASSISTENCIA TECNICA EM EQUIPAMENTOS HOSPITALARES'        then        36134688
-when        'BOAS NOVAS TURISMO LTDA EPP'        then        36311242
-when        'BR PRIME COM.E SERVIÇOS LTDA'        then        36311318
-when        'BRUNO PETER AMORIM DE SOUZA 01212683226'        then        36311335
-when        'C E CARVALHO COMERCIAL ME'        then        36311338
-when        'CACOAL MOTO SERRAS LTDA.'        then        36311230
-when        'CAMARA INFORMATICA LTDA - ME'        then        36311262
-when        'CASA DA LAVOURA MAQUNAS E IMPLEMANTOS AGRICULAS'        then        36311264
-when        'CENTRO OESTE COMERCIO IMP. E EXP. DE PROD. HOSP.'        then        36311345
-when        'CICLO CAIRU LTDA'        then        36134575
-when        'CIRURGICA SAO FELIPE PROT. PARA SAUDE EIRELI'        then        36311344
-when        'CLAUDINEI BRITO VILA BOAS'        then        36134305
-when        'CLEIDE BEATRIZ IORIS EIRELI'        then        36311311
-when        'CODRASA COMÉRCIO E CONSTRUÇÕES EIRELI'        then        36311290
-when        'COIMBRA IMPORTAÇÃO E EXPORTAÇÃO LTDA'        then        36311257
-when        'COMERCIAL AGRICOLA CAPRI LTDA'        then        36311266
-when        'COMERCIAL VANGUARDEIRA EIRELLI ME'        then        36311273
-when        'COMPEX COMERCIAL LTDA'        then        36311265
-when        'CONERA CONSTUTORA NOVA ERA LTDA ME'        then        36134566
-when        'CONST.UMUARAMA LTDA/EGM SERV.CONTRUS.LTDA'        then        36311352
-when        'CONSTRULAR MATERIAIS PARA CONSTRUÇÃO'        then        36311200
-when        'CONSTRUTORA HC LTDA EPP'        then        36311289
-when        'CONSTRUTORA MCB EIRELI LTDA'        then        36311341
-when        'CONSTRUTORA VALTRAN LTDA'        then        36134444
-when        'COVEZI CAMINHOES E ONIBUS LTDA'        then        36311321
-when        'CR CONSTRUTORA E SERVIÇOS ESPECIALIZADO LTDA'        then        36311316
-when        'CRONO COMERCIO E DISTRIBUIÇÃO EIRELI'        then        36311282
-when        'CUSTOMIZAR DESING COMERCIO E SERVIÇOS LTDA'        then        36311329
-when        'CYBER INFORMATICA LTDA ME'        then        36134490
-when        'DALTO & DALTO LTDA'        then        36311301
-when        'DANTASTERRA LTDA EPP'        then        36311304
-when        'DARTORA & CIA LTDA'        then        36311214
-when        'DENTAL MEDICA'        then        36311204
-when        'DERLY S. DA SILVA METALURGICA  - ME'        then        36311245
-when        'DIEGO DE SOUZA ANDRADE'        then        36311332
-when        'DK INFORMATICA LTDA'        then        36311330
-when        'DLB COMERCIO DE PRODUTOS DE INFORMATICA EIRELI'        then        36134700
-when        'E. V. FERNANDES'        then        36311306
-when        'ECS CONST COM SERV LOC EQUIPAMENTOS LTDA'        then        36311354
-when        'EDIVALDO ALVES MORREIRA'        then        36311253
-when        'ELIZABETE PIRES GUEDES OLIVEIRA ME'        then        36134384
-when        'EMPRAL PESQUISAS LTDA'        then        36311231
-when        'ERICA DE FATIMA GENTIL'        then        36311308
-when        'EVALDO F.PESSOA ME'        then        36311300
-when        'FLORES E BORGES LTDA'        then        36311203
-when        'FOCO PROJETOS EDUCACIONAIS LTDA-ME'        then        36311279
-when        'FRIMOM CONSTRUÇÕES & SERVIÇOS LDA EPP'        then        36134478
-when        'G1 MOVEIS ELETRODOMESTICO LTDA -ME '        then        36311241
-when        'GIL INFORMATICA LTDA'        then        36311292
-when        'GOMES VEICULOS ESPECIAIS EIRELI'        then        36311296
-when        'GTA COMERCIO DE MATERIAIS ELETRICOS LTDA ME'        then        36311258
-when        'HIPER OBRAS LTDA'        then        36311337
-when        'HJ COMERCIO E SERVIÇOS LTDA'        then        36311334
-when        'IMPLEMENTOS AGRICOLAS OLIVEIRA LTDA'        then        36134634
-when        'INOVAX TELEINFORMATICA LTDA'        then        36311268
-when        'INSTRAMED IND.MEDICO HOSPITALAR LTDA'        then        36311358
-when        'ITAGUAI COMERCIO E EMPREENDIMENTOS LTDA'        then        36311210
-when        'ITALBUS CARROCERIAS DE ONIBUS LTDA'        then        36311297
-when        'J. L. CONSTRUÇÕES E SERVIÇOS DE JARDINAGEM LTDA'        then        36311227
-when        'JAIRO ANTONIO ZANATTA'        then        36311288
-when        'JIRAUTO AUTOMOVEIS LTDA'        then        36311252
-when        'JOAO APARECIDO NERI DOS SANTOS'        then        36311223
-when        'JOAQUIM ALVES MARTINS'        then        36134353
-when        'JOSE BENVINDO DE CARVALHO'        then        36311269
-when        'JOSE DONIZETE PICOLLI'        then        36311285
-when        'KCINCO CAMINHOES E ONIBUS LTDA'        then        36311249
-when        'KCR INDUTRIA E COMERCIO DE EQUIPAMENTOS EIRELI-EPP'        then        36311302
-when        'LAJA LTDA - ME'        then        36311271
-when        'LAURINDO FERREIRA DA SILVA'        then        36311234
-when        'LEISER COMERCIO CONST. E SERVIÇOS LTDA'        then        36311206
-when        'LONDRIHOSP IMP E EXPORT DE PRODUTOS HOSP.'        then        36311340
-when        'LOPES E SOUZA SOLUÇOES INTEGRADAS LTDA'        then        36311349
-when        'M. C. RODRIGUES MAQUINAS E EQUIPAMENTOS PARA ESCRITORIO - ME'        then        36311235
-when        'M. PICIANI PAZINATO COMERCIO DE MATERIAIS ELETRONICOS  - EIRELI'        then        36311305
-when        'MAM LATIM AMERICA INDUSTRIA E COMERCIO DE VEI CULO'        then        36311239
-when        'MAMORE MAQUINAS AGRICOLAS LTDA EPP'        then        36134714
-when        'MARIA LUIZA DA SILVA-ME'        then        36311277
-when        'MASCARELLO CARROCERIAS E ONIBUS LTDA'        then        36311276
-when        'MASTTER MOTO COMERCIO DE VEICULO E MOTOS LTDA'        then        36311243
-when        'MILANFLEX INDUSTRIA E COMERCIO DE MOVEIS E EQUIPAMENTOS LTDA'        then        36311270
-when        'MILANI CONSTRUTORA DE EDIF. E TERRAPL. LDTA'        then        36311314
-when        'MJ ENGENHARIA LTDA'        then        36311333
-when        'MOBEN COMERCIO DE VEICULOS LTDA'        then        36311260
-when        'MOVEIS CAMILA/YOKOTA E BARBOSA LTDA ME'        then        36311287
-when        'MOVEIS ROMERA LTDA'        then        36311240
-when        'MR TECH INFORMATICA LTDA'        then        36311347
-when        'MVP ELETRODOMESTICOS E EQUIPAMENTOS EIRELI'        then        36311323
-when        'NEIANDER STORCH EIRELI ME'        then        36311295
-when        'NELSON SILVA & CIA LTDA'        then        36311222
-when        'NFM SILVA CONSTRUÇOES EIRELI'        then        36311310
-when        'NISSEY MOTORS LTDA'        then        36311278
-when        'OLMI INFORMATICA LTDA - EPP'        then        36311286
-when        'OLMIRO THOMAZ MARTINS'        then        36311313
-when        'OLYMPUS'        then        36311244
-when        'P.A.R FRANCA INFORMATICA'        then        36311339
-when        'P.APOLINARIO FILHO-ME'        then        36311220
-when        'PACIFICO CONSTRUTORA LTDA ME'        then        36134530
-when        'PEDRO G. FERNANDES'        then        36311351
-when        'PINAFO ATERRO E CASCALHO LTDA ME'        then        36311322
-when        'PPS PRODUTOS PARA SAUDE LTDA EPP'        then        36311281
-when        'PRIMEMED EQUIPAPENTOS LTDA'        then        36311328
-when        'R K INDUSTRIA DE IMPLEMANTOS AGRICOLAS LTDA'        then        36311267
-when        'RAUL ALCANTARA SILVA'        then        36311251
-when        'REDNOV FERRAMENTAS LTDA'        then        36311353
-when        'REPREMIG REPRESENTACAO E COMERCIO DE MINAS GERAIS'        then        36311350
-when        'RODA BRASIL REPRESENTAÇOES COM E SERV LTDA EPP'        then        36311356
-when        'RONALDO ADRIANO ALEXANDRINO'        then        36311250
-when        'RONDOLAB DIAGNOSTICO COMERCIO E SERVIÇOS LTDA'        then        36134727
-when        'RONDONIA COMERCIO DE CAMINHOES E MAQUINAS LTDA'        then        36311259
-when        'ROQUE SETTE'        then        36134359
-when        'ROSSATO E BERTHOLD LTDA'        then        36311272
-when        'RR COMERCIO DE ELETROELETRONICOS EIRELI'        then        36311312
-when        'RR LOPES EIRELI ME'        then        36311342
-when        'S3 EMPREENDIMENTOS COMERCIO E LOCAÇÕES EIRELI - EPP'        then        36311283
-when        'SABENAUTO COMERCIO DE VEICULO LTDA'        then        36311254
-when        'SANTOS E MAYER COMERCIO DE EQUIPAMENTOS DE INFORMATICA LTDA'        then        36311261
-when        'SCROCCA ELETRO ELETRONICOS EIRELI ME'        then        36311274
-when        'SEC ENGENHARIA E CONSTRUTORA LTDA'        then        36134476
-when        'SIDNEY DO NASCIMENTO'        then        36311324
-when        'SISMED - COM E REPRESENTAÇÕES LTDA - ME'        then        36311212
-when        'SISTERPEL SUPRIMENTOS PARA INFORMÁTICA LTDA ME'        then        36311284
-when        'SOLUÇÃO PLANEJAMENTO E COMERCIO LTDA'        then        36311275
-when        'SOMBRA COM. SERVIÇSO LTDA ME'        then        36311315
-when        'STIGMA COMERCIAL LTDA'        then        36311209
-when        'SUPER MOTO . COM DE MOTOS E PEÇAS LTDA ME'        then        36311238
-when        'T. R. REFRIGERAÇÃO LTDA - ME'        then        36311229
-when        'TECHMED ENGENHARIA HOSPITALAR LTDA'        then        36134657
-when        'TERRA FORTE LTDA ME'        then        36311291
-when        'THACOL COMERCIO LTDA - ME'        then        36134494
-when        'TITO STIPP MEE'        then        36311218
-when        'TORK SUL COMERCIO DE PECAS MARQ E SERV LTDA'        then        36311201
-when        'TOYOTA DO BRASIL LTDA'        then        36311294
-when        'TRANSMAC LOCACOES LTDA'        then        36311343
-when        'V M CONSTRUTORA LTDA EPP'        then        36311298
-when        'V.S DOS SANTOS LIVRARIA E PAPELARIA ME'        then        36311255
-when        'VALE COMÉRCIO DE MOTOS LTDA'        then        36134721
-when        'VENEZIA COMERCIO DE CAMINHOES LTDA CACOAL'        then        36311247
-when        'VIXBOT SOLUÇÕES EM INFORMATICA LTDA ME'        then        36311303
-when        'VS COSTA E CIA LTDA'        then        36311280
-when        'W F DE ALMEIDA'        then        36311336
-when        'W.ISMAIL E CIA LTDA - ME'        then        36311202
-when        'ZICO DIAS DE PAULA  - ME'        then        36311263
- else 36067960 
+  when 'CÂMARA MUNICIPAL DE PARECIS' then 38536157
+ when 'GAZIN INDUSTRIA DE MOVEIS E ELETRO' then 38538616
+ when 'GANGUSSU E FURTADO LTDA' then 38584198
  end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS fornecedor,
 JSON_QUERY( (SELECT
-   '36134397' as id
+   '38429988' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS responsavel,
+) AS responsavel, -- ok
 JSON_QUERY( (SELECT
  case bp.cd_situacao
-when  1 then  4711
-when 2 then  4712
+when  1 then  4965
+when 2 then  4963
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS estadoConservacao,
+) AS estadoConservacao, -- ok
 JSON_QUERY( (SELECT
-   '3227' as id
+   '3417' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS tipoComprovante,
+) AS tipoComprovante, -- ok
 JSON_QUERY( (SELECT
-case cd_EntidadeContabil
-when 1 then 2076732
-when 2 then 2076743
-when 3 then 2076746
-when 4 then 2087643
-end  as id  -- cd_entidade contabil
+2137532  as id 
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS organograma,
+) AS organograma, -- ok
 JSON_QUERY( (SELECT
-   case BP.cd_local
-   when        1001        then        111585
-when        1010        then        111586
-when        1012        then        111587
-when        2001        then        111588
-when        3001        then        111589
-when        3010        then        111590
-when        3020        then        111591
-when        3030        then        111592
-when        4001        then        111593
-when        5001        then        111594
-when        6001        then        111595
-when        7001        then        111596
-when        8001        then        111597
-when        9001        then        111598
-when        9030        then        111599
-when        20800        then        111600
-else 112717
-   end as id
+125503 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS localizacaoFisica,
+) AS localizacaoFisica, --ok
 CASE 
     WHEN V.ds_Placa != '' THEN 'true' 
     ELSE 'false' 
@@ -429,36 +237,198 @@ END AS consomeCombustivel,
 JSON_QUERY( (SELECT
    CASE 
     WHEN BP.cd_situacao = '1' THEN 'EM_USO'
-    ELSE 'BAIXADO' 
+    ELSE 'EM_USO' 
         end as valor,
    CASE 
     WHEN BP.cd_situacao = 1 THEN 'EM_USO'
-    ELSE 'BAIXADO' 
+    ELSE 'EM_USO' 
         end as descricao
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS situacaoBem,
 BP.nr_chapa as numeroRegistro,
 BP.ds_descricao as descricao,
-BP.dt_registro as dataInclusao,
+BP.dt_aquisicao as dataInclusao,
 BP.dt_aquisicao as dataAquisicao,
-v.ds_Placa as numeroPlaca,
-BP.dt_garantia as dataInicioGarantia,
-BP.dt_ultimadepreciacao as dtUltimaDepreciacao ,
+bp.nr_chapa as numeroPlaca,
+BP.dt_aquisicao as dataInicioGarantia,
+JSON_QUERY(
+    (SELECT
+JSON_QUERY(
+    (SELECT
+case when pc_residual > 0  and BP.vl_anterior > 0 then 2101
+else '-1'
+end as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS metodoDepreciacao, -- ok
+JSON_QUERY(
+    (SELECT
+        '8' as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS moeda,
 bp.vl_aquisicao as vlAquisicao,
-bp.vl_Residual as vlResidual,
-vl_saldodepreciar as saldoDepreciar,
-vl_depreciar as  vlDepreciavel
+ bp.vl_aquisicao as vlAquisicaoConvertido,
+( bp.vl_aquisicao - bp.vl_residual )as  vlDepreciavel,
+'0' as vlDepreciado, --  select * from PAtrmovimentacao  cd_tipomovimento = 12
+( bp.vl_aquisicao - bp.vl_residual ) as saldoDepreciar,
+bp.vl_aquisicao as vlLiquidoContabil,
+case TB.ds_tipobem 
+when 'APAR. DE MEDICAO E ORIENTAÇÃO' then 10.0
+when 'APAR. E EQUIP. DE COMUNICAÇÃO' then 16.67
+when 'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR' then 6.25
+when 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' then 12.5
+when 'APAR. E UTENS. DOMESTICOS' then 10.0
+when 'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS' then 10.0
+when 'EQUIP. DE MANOBRA E PATRULHAMENTO' then 10.0
+when 'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO' then 10.0
+when 'INSTRUMENTOS MUSICAIS E ARTISTICOS' then 5
+when 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' then 6.25
+when 'MAQ. E EQUIP. ENERGETICOS' then 6.25
+when 'MAQ. E EQUIP. GRAFICOS' then 6.25
+when 'EQUIP. P/ AUDIO VIDEO E FOTO' then 10.0
+when 'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS' then 10.0
+when 'EQUIP. DE PROCESSAMENTO DE DADOS' then 10.0
+when 'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then 16.67
+when 'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA' then 10.0
+when 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' then 10.0
+when 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' then 12.5
+when 'MOBILIARIO EM GERAL' then 10.0
+when 'VEICULOS DIVERSOS' then 12.5
+when 'VEICULOS DE TRAÇÃO MECANICA' then 12.5
+when 'ACESSORIOS PARA AUTOMOVEIS' then 20.0
+when 'OUTROS MATERIAIS PERMANENTES' then null
+when 'EDIFICIOS - REALIZAÇÃO DE OBRAS' then null
+when 'TERRENOS' then null
+when 'INSTALAÇÕES' then null
+when 'CASAS E APARTAMENTOS' then null
+when 'RUAS' then null
+when 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' then null
+when 'ESTUDOS E PROJETOS' then null
+when 'OBRAS EM ANDAMENTO' then null
+when 'PRAÇAS' then null
+when 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' then null
+when 'ESTRADAS' then null
+when 'OUTRAS OBRAS E INSTALAÇÕES' then null
+when 'PONTES' then null
+when 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' then null
+when 'SISTEMA DE ABASECIMENTO DE ENERGIA' then null
+when 'OUTROS BENS DE USO COMUM DO POVO' then null
+when 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' then null
+when 'TERRENOS PUBLICOS' then null
+when 'ACESSORIOS PARA AUTOMOVEIS' then null
+when 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' then null
+when 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' then null
+when 'APAR. DE MEDICAO E ORIENTAÇÃO' then null
+when 'APAR. E EQUIP. DE COMUNICAÇÃO' then null
+when 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' then null
+when 'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR' then null
+when 'APAR. E UTENS. DOMESTICOS' then null
+when 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' then null
+when 'CASAS E APARTAMENTOS' then null
+when 'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS' then null
+when 'EDIFICIOS - REALIZAÇÃO DE OBRAS' then null
+when 'EQUIP. DE MANOBRA E PATRULHAMENTO' then null
+when 'EQUIP. DE PROCESSAMENTO DE DADOS' then null
+when 'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO' then null
+when 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' then null
+when 'EQUIP. P/ AUDIO VIDEO E FOTO' then null
+when 'ESTRADAS' then null
+when 'ESTUDOS E PROJETOS' then null
+when 'INSTALAÇÕES' then null
+when 'INSTRUMENTOS MUSICAIS E ARTISTICOS' then null
+when 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' then null
+when 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' then null
+when 'MAQ. E EQUIP. ENERGETICOS' then null
+when 'MAQ. E EQUIP. GRAFICOS' then null
+when 'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA' then null
+when 'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then null
+when 'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS' then null
+when 'MOBILIARIO EM GERAL' then null
+when 'OBRAS EM ANDAMENTO' then null
+when 'OUTRAS OBRAS E INSTALAÇÕES' then null
+when 'OUTROS BENS DE USO COMUM DO POVO' then null
+when 'OUTROS MATERIAIS PERMANENTES' then null
+when 'PONTES' then null
+when 'PRAÇAS' then null
+when 'RUAS' then null
+when 'SISTEMA DE ABASECIMENTO DE ENERGIA' then null
+when 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' then null
+when 'TERRENOS' then null
+when 'TERRENOS PUBLICOS' then null
+when 'VEICULOS DE TRAÇÃO MECANICA' then null
+when 'VEICULOS DIVERSOS' then null
+when 'ACESSORIOS PARA AUTOMOVEIS' then null
+when 'ALMOXARIFADO DE MATERIAIS A SEREM APLICADOS EM BEN' then null
+when 'ALMOX. DE MAT. A SEREM APLICADOS EM BENS ANDAMENTO' then null
+when 'APAR. DE MEDICAO E ORIENTAÇÃO' then null
+when 'APAR. E EQUIP. DE COMUNICAÇÃO' then null
+when 'APAR. E EQUIP. P/ ESPORTES E DIVERSÕES' then null
+when 'APAR. EQUIP. E UTENS. MED. ODOT. LABO E HOSPITALAR' then null
+when 'APAR. E UTENS. DOMESTICOS' then null
+when 'BENFEITORIAS EM PRORPIEDADES DE TERCEIROS' then null
+when 'CASAS E APARTAMENTOS' then null
+when 'COLEÇÕES E MATERIAIS BIBLIOGRAFICOS' then null
+when 'EDIFICIOS - REALIZAÇÃO DE OBRAS' then null
+when 'EQUIP. DE MANOBRA E PATRULHAMENTO' then null
+when 'EQUIP. DE PROCESSAMENTO DE DADOS' then null
+when 'EQUIP. DE PROTEÇÃO, SEGURANÇA E SOCORRO' then null
+when 'EQUIP. E UTENSILIOS HIDRAULICOS E ELETRICOS' then null
+when 'EQUIP. P/ AUDIO VIDEO E FOTO' then null
+when 'ESTRADAS' then null
+when 'ESTUDOS E PROJETOS' then null
+when 'INSTALAÇÕES' then null
+when 'INSTRUMENTOS MUSICAIS E ARTISTICOS' then null
+when 'MAQ. E EQUIP. AGRICOLAS E RODOVIARIOS' then null
+when 'MAQ. E EQUIP. DE NATUREZA INDUSTRIAL' then null
+when 'MAQ. E EQUIP. ENERGETICOS' then null
+when 'MAQ. E EQUIP. GRAFICOS' then null
+when 'MAQ. FERRAMENTA E UTENSILIOS DE OFICINA' then null
+when 'MAQ. INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then null
+when 'MAQ. UTENS. E EQUIPAMENTOS DIVERSOS' then null
+when 'MOBILIARIO EM GERAL' then null
+when 'OBRAS EM ANDAMENTO' then null
+when 'OUTRAS OBRAS E INSTALAÇÕES' then null
+when 'OUTROS BENS DE USO COMUM DO POVO' then null
+when 'OUTROS MATERIAIS PERMANENTES' then null
+when 'PONTES' then null
+when 'PRAÇAS' then null
+when 'RUAS' then null
+when 'SISTEMA DE ABASECIMENTO DE ENERGIA' then null
+when 'SISTEMA DE ESGOTO E ABASTECIMENTO DE AGUA' then null
+when 'TERRENOS' then null
+when 'TERRENOS PUBLICOS' then null
+when 'VEICULOS DE TRAÇÃO MECANICA' then null
+when 'VEICULOS DIVERSOS' then null
+when 'APARELHOS DE MEDIÇÃO E ORIENTAÇÃO' then null
+when 'APARELHOS E EQUIPAMENTO DE COMUNICAÇÃO' then null
+when 'APARELHOS EQUI. E UTEN. MED. ODON. LOBO. E HOSP.' then null
+when 'EQUIPAMENTO DE PROTEÇÃO, SEGURANÇA E SOCORRO' then null
+when 'APARELHOS E EQUIPAMENTOS PARA ESPORTES E DIVERSOS' then null
+when 'APARELHOS E UTENSILIOS DOMESTICOS' then null
+when 'MAQUINAS E EQUIPAMENTOS ENERGETICOS' then null
+when 'MAQUINAS E EQUIPAMENTOS GRAFICOS' then null
+when 'EQUIPAMENTO PARA AUDIO, VIDEO E FOTO' then null
+when 'MAQUINAS UTENSILIOS E EQUIPAMENTOS DIVERSOS' then null
+when 'EQUIPAMENTO DE PROCESSAMENTO DE DADOS' then null
+when 'MAQUINAS INSTALAÇÕES E UTENSILIOS DE ESCRITORIO' then null
+when 'MOBILIARIA EM GERAL' then null
+when 'VEICULO DE TRAÇÃO MECANICA' then null
+when 'EDIFICIOS' then null
+when 'TERRENOS/GLEBAS' then null
+when 'OBRAS EM ANDAMENTO' then null
+when 'EQUIPAMENTO E UTENSILIO HIDRAULICO E ELETRICO' then null
+ end as taxaDepreciacaoAnual,
+BP.dt_aquisicao as dtInicioDepreciacao,
+bp.vl_residual as vlResidual
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS bemValor
 from PATRBensPatrimoniais BP
-left join PATRVeiculo V ON V.nr_Chapa = BP.nr_chapa
-join PATRTiposBens TB ON TB.cd_tipobem = bp.cd_tipobem
+left  join PATRVeiculo V ON V.nr_Chapa = BP.nr_chapa
+left join PATRTiposBens TB ON TB.cd_tipobem = bp.cd_tipobem
 left JOIN COMPFornecedores F ON F.cd_fornecedor = BP.cd_fornecedor
-
-
+where BP.cd_situacao = 1 
         `;
 
         const result = await masterConnection.query(userQuery);
-
-        console.log(userQuery);
 
         const resultData = result.recordset;
 
@@ -468,90 +438,157 @@ left JOIN COMPFornecedores F ON F.cd_fornecedor = BP.cd_fornecedor
                 const date = new Date(dateStr);
                 return date.toISOString().split('T')[0]; // Format as YYYY-MM-DD
             };
-        
+
+            const bemValor = JSON.parse(record.bemValor);
+            let tipoUtilizacaoBem = null;
+            if (record.tipoUtilizacaoBem) {
+                const parsedTipoUtilizacaoBem = JSON.parse(record.tipoUtilizacaoBem);
+                if (!isNaN(parseInt(parsedTipoUtilizacaoBem.id, 10))) {
+                    tipoUtilizacaoBem = { id: parseInt(parsedTipoUtilizacaoBem.id, 10) };
+                }
+            }
+
             return {
-                tipoBem: {
-                    id: record.tipoBem ? JSON.parse(record.tipoBem).id : 0
+                conteudo: {
+                    tipoBem: {
+                        id:record.tipoBem ? parseInt(JSON.parse(record.tipoBem).id, 10) : 0
+                    },
+                    grupoBem: {
+                        id: record.grupoBem ? JSON.parse(record.grupoBem).id : 0
+                    },
+                    especieBem: {
+                        id: record.especieBem ? JSON.parse(record.especieBem).id : 0
+                    },
+                    tipoUtilizacaoBem: tipoUtilizacaoBem,
+                    tipoAquisicao: {
+                        id: record.tipoAquisicao ? JSON.parse(record.tipoAquisicao).id : 0
+                    },
+                    fornecedor: {
+                        id: record.fornecedor ? JSON.parse(record.fornecedor).id : 0
+                    },
+                    responsavel: {
+                        id: record.responsavel ? parseInt(JSON.parse(record.responsavel).id, 10) : 0
+                    },
+                    estadoConservacao: {
+                        id: record.estadoConservacao ? JSON.parse(record.estadoConservacao).id : 0
+                    },
+                    tipoComprovante: {
+                        id: record.tipoComprovante ? parseInt(JSON.parse(record.tipoComprovante).id, 10) : 0
+                    },
+                    organograma: {
+                        id: record.organograma ? JSON.parse(record.organograma).id : 0
+                    },
+                    localizacaoFisica: {
+                        id: record.localizacaoFisica ? JSON.parse(record.localizacaoFisica).id : 0
+                    },
+                    numeroRegistro: record.numeroRegistro ? record.numeroRegistro : 0,
+                    descricao: record.descricao ? record.descricao.trim() : "string",
+                    dataInclusao: formatDate(record.dataInclusao) || formatDate(record.dataAquisicao),
+                    dataAquisicao: formatDate(record.dataAquisicao),
+                    consomeCombustivel: record.consomeCombustivel === 'true',
+                    dataInicioGarantia: formatDate(record.dataInicioGarantia) || formatDate(record.dataAquisicao),
+                    //dtUltimaDepreciacao: formatDate(record.dtUltimaDepreciacao),
+                    situacaoBem: {
+                        valor: record.situacaoBem ? JSON.parse(record.situacaoBem).valor : "EM_EDICAO",
+                        descricao: record.situacaoBem ? JSON.parse(record.situacaoBem).descricao : "string"
+                    },
+                    numeroPlaca: `${record.numeroPlaca ? record.numeroPlaca : null}`,
+                    bemValor: {
+                        metodoDepreciacao: {
+                            id: parseInt(bemValor.metodoDepreciacao.id),
+                        },
+                        vlAquisicao: bemValor.vlAquisicao,
+                        vlAquisicaoConvertido: bemValor.vlAquisicaoConvertido,
+                        vlDepreciavel: bemValor.vlDepreciavel || 0,
+                        vlDepreciado: parseInt(bemValor.vlDepreciado),
+                        saldoDepreciar: bemValor.saldoDepreciar || 0,
+                        vlLiquidoContabil: bemValor.vlLiquidoContabil,
+                        taxaDepreciacaoAnual: bemValor.taxaDepreciacaoAnual || 0.1,
+                        dtInicioDepreciacao: formatDate(bemValor.dtInicioDepreciacao) || formatDate(record.dataAquisicao),
+                        vlResidual: bemValor.vlResidual || 0,
+                        moeda: {
+                            id: parseInt(bemValor.moeda.id),
+                        }
+                    }
                 },
-                grupoBem: {
-                    id: record.grupoBem ? JSON.parse(record.grupoBem).id : 0
-                },
-                especieBem: {
-                    id: record.especieBem ? JSON.parse(record.especieBem).id : 0
-                },
-                tipoUtilizacaoBem: {
-                    id: record.tipoUtilizacaoBem ? JSON.parse(record.tipoUtilizacaoBem).id : 0
-                },
-                tipoAquisicao: {
-                    id: record.tipoAquisicao ? JSON.parse(record.tipoAquisicao).id : 0
-                },
-                fornecedor: {
-                    id: record.fornecedor ? JSON.parse(record.fornecedor).id : 0
-                },
-                responsavel: {
-                    id: record.responsavel ? JSON.parse(record.responsavel).id : 0
-                },
-                estadoConservacao: {
-                    id: record.estadoConservacao ? JSON.parse(record.estadoConservacao).id : 0
-                },
-                tipoComprovante: {
-                    id: record.tipoComprovante ? JSON.parse(record.tipoComprovante).id : 0
-                },
-                organograma: {
-                    id: record.organograma ? JSON.parse(record.organograma).id : 0
-                },
-                localizacaoFisica: {
-                    id: record.localizacaoFisica ? JSON.parse(record.localizacaoFisica).id : 0
-                },
-                numeroRegistro: record.numeroRegistro ? record.numeroRegistro : 0,
-                descricao: record.descricao ? record.descricao.trim() : "string",
-                dataInclusao: formatDate(record.dataInclusao) || formatDate(record.dataAquisicao),
-                dataAquisicao: formatDate(record.dataAquisicao),
-                consomeCombustivel: record.consomeCombustivel === 'true',
-                dataInicioGarantia: formatDate(record.dataInicioGarantia) || formatDate(record.dataAquisicao),
-                //dtUltimaDepreciacao: formatDate(record.dtUltimaDepreciacao),
-                situacaoBem: {
-                    valor: record.situacaoBem ? JSON.parse(record.situacaoBem).valor : "EM_EDICAO",
-                    descricao: record.situacaoBem ? JSON.parse(record.situacaoBem).descricao : "string"
-                },
-                numeroPlaca: record.numeroPlaca ? record.numeroPlaca : "string",
-                //vlAquisicao: record.vlAquisicao ? record.vlAquisicao : 0,
-                //vlResidual: record.vlResidual ? record.vlResidual : 0,
-                //vlDepreciavel: record.vlDepreciavel ? record.vlDepreciavel : 0
             };
         });
-        
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        /*     const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://patrimonio.betha.cloud/patrimonio-services/api/conversoes/lotes/bens', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
+        return */
 
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://patrimonio.betha.cloud/patrimonio-services/api/conversoes/lotes/bens`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 601408b2-127b-46dc-9ceb-cfd9b7940808'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

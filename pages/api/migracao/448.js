@@ -47,19 +47,19 @@ ROW_NUMBER() OVER (ORDER BY cd_Febraban)  as idIntegracao,
 JSON_QUERY(
 (SELECT
 case cd_Febraban
-when 001then 'BANCO DO BRASIL S.A.'
+when 001        then 'BANCO DO BRASIL S.A.'
 when 033    then 'BANCO SANTANDER (BRASIL) S.A.'
-when 077then 'BANCO INTER S.A.'
-when 084then 'UNIPRIME DO BRASIL - COOPERATIVA DE CRÉDITO LTDA.'
-when 097then 'CREDISIS CENTRAL DE COOPERATIVAS DE CRÉDITO LTDA.'
-when 104then 'CAIXA ECONOMICA FEDERAL'
+when 077        then 'BANCO INTER S.A.'
+when 084        then 'UNIPRIME DO BRASIL - COOPERATIVA DE CRÉDITO LTDA.'
+when 097        then 'CREDISIS CENTRAL DE COOPERATIVAS DE CRÉDITO LTDA.'
+when 104        then 'CAIXA ECONOMICA FEDERAL'
 when 133    then 'CRESOL CONFEDERACAO'
-when 237then 'BANCO BRADESCO S.A.'
-when 260then 'NU PAGAMENTOS S.A. - INSTITUIÇÃO DE PAGAMENTO'
-when 341then 'ITAÚ UNIBANCO S.A.'
-when 748then 'BANCO COOPERATIVO SICREDI S.A.'
-when 756then 'BANCO COOPERATIVO SICOOB S.A. - BANCO SICOOB'
-end as nome,
+when 237        then 'BANCO BRADESCO S.A.'
+when 260        then 'NU PAGAMENTOS S.A. - INSTITUIÇÃO DE PAGAMENTO'
+when 341        then 'ITAÚ UNIBANCO S.A.'
+when 748        then 'BANCO COOPERATIVO SICREDI S.A.'
+when 756        then 'BANCO COOPERATIVO SICOOB S.A. - BANCO SICOOB'
+        end as nome,
 JSON_QUERY(
 (SELECT
 case cd_Febraban
@@ -68,13 +68,13 @@ when 104 then 148
 when 756 then 51
 when 237 then 35
 when 033 then 114
-when 077then 74
-when 084then 175
-when 097then 474
+when 077        then 74
+when 084        then 175
+when 097        then 474
 when 133 then 483
-when 260then 676
-when 341then 165
-when 748then 50
+when 260        then 676
+when 341        then 165
+when 748        then 50
     end as id
     FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     ) AS banco,
@@ -90,25 +90,23 @@ from CONTFornecedorContaBancaria
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            // Parse the JSON content
+            // Corrige o nome do campo 'conten' para 'content' e converte para JSON
             const content = JSON.parse(record.content);
 
             return {
-                idIntegracao: record.idIntegracao.toString(), // Convert idIntegracao to string
+                idIntegracao: record.idIntegracao.toString(), // Converte idIntegracao para string
                 content: {
                     nome: content.nome,
-                    banco: content.banco,
+                    banco: {
+                        id: content.banco.id
+                    },
                     numero: content.numero,
-                    digito: content.digito,
-                    logradouro: content.logradouro,
-                    numeroEndereco: content.numeroEndereco,
-                    municipio: content.municipio,
-                    bairro: content.bairro,
-                    cep: content.cep
+                    digito: content.digito
                 }
             };
-        }).filter(record => record !== null); // Filtrar registros nulos
+        }).filter(record => record !== null); // Filtra registros nulos
 
+        // Divide os dados em chunks de 50 e salva em arquivos JSON
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
@@ -117,30 +115,72 @@ from CONTFornecedorContaBancaria
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/agencias-bancarias', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/agencias-bancarias`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Salvar o relatório em 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Salvar os reportIds no arquivo 'report_id.json'
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
+        
 
     } catch (error) {
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        sql.close();
+        await sql.close(); // Fechar a conexão com o SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
+// Executar a função principal
 main();

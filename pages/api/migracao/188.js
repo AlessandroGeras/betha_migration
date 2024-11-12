@@ -47,7 +47,7 @@ JSON_QUERY(
     (SELECT
         JSON_QUERY(
     (SELECT
-  '11779' as id
+  '12449' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS configuracao,
  c.cd_CategoriaEconomicaDespesa as numero,
@@ -80,40 +80,67 @@ from CONTCategoriaEconomicaDespesa c
             };
         });
 
-        const chunkSize = 50;
-        for (let i = 0; i < transformedData.length; i += chunkSize) {
-            const chunk = transformedData.slice(i, i + chunkSize);
-            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
-            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
-            console.log(`Dados salvos em ${chunkFileName}`);
-        }
-
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-despesas', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
+        let report = [];
+        let reportIds = [];
+        
+        for (const record of transformedData) {
+            const idIntegracao = record.idIntegracao;
+        
+            if (idIntegracao) {
+                try {
+                    const requestBody = [record];
+        
+                    console.log('Enviando o seguinte corpo para a API:', JSON.stringify(requestBody, null, 2));
+        
+                    const response = await fetch(`https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/naturezas-despesas`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                        },
+                        body: JSON.stringify(requestBody)
+                    });
+        
+                    const responseBody = await response.json();
+        
+                    if (response.ok) {
+                        console.log('Dados enviados com sucesso para a API.');
+                        report.push({ record, status: 'success', response: responseBody });
+        
+                        if (responseBody.idLote) {
+                            reportIds.push(responseBody.idLote);
+                        }
+                    } else {
+                        console.error('Erro ao enviar os dados para a API:', response.statusText);
+                        report.push({ record, status: 'failed', response: responseBody });
+                    }
+        
+                } catch (err) {
+                    console.error('Erro ao enviar o registro para a API:', err);
+                    report.push({ record, status: 'error', error: err.message });
+                }
             } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+                console.warn('ID de integração inválido. O registro será ignorado.', record);
+                report.push({ record, status: 'invalid', error: 'ID de integração inválido.' });
             }
-        } */
+        }
+        
+        // Salvar o relatório em 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Salvar os reportIds no arquivo 'report_id.json'
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
+        
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Fechar a conexão com o SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Executar a função principal
 main();

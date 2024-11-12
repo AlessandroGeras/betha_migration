@@ -49,7 +49,7 @@ JSON_QUERY(
 'OUTROS' AS descricao
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS grandeza,
- 'true' AS fracionaria
+ 'TRUE' AS fracionaria
 FROM ALMOUnidadesDeMedida
         `;
 
@@ -74,7 +74,7 @@ FROM ALMOUnidadesDeMedida
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+                    'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
                 },
                 body: JSON.stringify(record)
             });

@@ -79,43 +79,67 @@ async function main() {
 JSON_QUERY(
                 (SELECT
 JSON_QUERY(
-                (SELECT
-        '17573' as id
+              (SELECT
+        19508 as id
                 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS parametroExerc,
+               ) AS parametroExerc,
 JSON_QUERY(
     (SELECT
-  case cd_formajulgamento  
-  when 1 then 16819
-  when 2 then 16820
+  case 
+  when nr_licitacao in (12, 15) THEN 17947
+  when nr_processo in (28, 20, 31, 30, 33, 29, 216, 333, 334, 335, 878, 877, 334, 1046, 1240, 1306, 1503) THEN 17947
+  when nr_processo in (18, 461, 784, 1185, 1331, 1451, 1566, 192, 399, 475, 398, 625, 629, 620, 588, 464, 625, 582, 589, 1194, 1218, 1203, 1341, 1317, 992, 1400, 1123, 1517, 401, 744) THEN 17945
   end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS formaJulgamento,
 JSON_QUERY(
     (SELECT
-  10778 as id
+  case 
+        when nr_processo in (28, 20, 18, 31, 30, 33, 29, 216, 333, 334, 335, 878, 877, 334,  1046, 1240, 1306, 1503) THEN 14331
+        when nr_licitacao in (12, 15) THEN 14331
+        when nr_processo in (784, 1185, 1331, 1451, 1566, 192, 399, 475, 398, 625, 629, 620, 588, 464, 625, 582, 589, 1194, 1218, 1203, 1341, 1317, 992, 1400, 1123, 1517) THEN 14338
+        when nr_processo in (461, 401, 744) THEN 14329
+        end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS formaPagamento,
 JSON_QUERY(
     (SELECT
-  10 as id
+  case
+  when nr_processo in (28, 20, 18, 31, 30, 33, 29, 216, 333, 334, 335, 878, 877, 334, 1046, 1240, 1306, 1503, 1331, 784, 192, 399, 398, 625, 629, 620, 588, 464, 625, 582, 1203, 1451, 1185, 589, 1194, 1218, 1341, 1317, 992, 1400, 1123, 1517) THEN 10
+  when nr_licitacao in (12, 15) THEN 10
+  when nr_processo in (461, 401, 744) THEN 11
+  when nr_processo in (784, 1331, 475) THEN 131
+  end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS tipoObjeto,
 JSON_QUERY(
     (SELECT
-  5974 as id
+  72541 as id
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS localEntrega,
+JSON_QUERY(
+    (SELECT
+  6375 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS regimeExecucao,
 JSON_QUERY(
     (SELECT
-  164027 as id
+  173405 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS prazoEntrega ,
 aa_processo as anoProtocolo,
 JSON_QUERY(
                 (SELECT
-                'Q'         as valor,
-                'QUANTIDADE' as descricao
+                CASE
+                                when nr_processo in (18, 216, 334, 335, 334, 1046, 1503, 1185, 1331, 192, 399, 475, 398, 625, 629, 620, 588, 464, 625, 582, 589, 1194, 1218, 1203, 1341, 1317, 992, 1400, 1517) THEN 'QUANTIDADE'
+                                when nr_processo in (28, 20, 31, 30, 33, 29, 333, 878, 877, 1240, 1306, 461, 784, 1451, 1566, 1123, 401, 744) THEN 'VALOR'
+                                when nr_licitacao in (12, 15) THEN 'VALOR'
+                                end as valor,
+                CASE
+                                when nr_processo in (18, 216, 334, 335, 334, 1046, 1503, 1185, 1331, 192, 399, 475, 398, 625, 629, 620, 588, 464, 625, 582, 589, 1194, 1218, 1203, 1341, 1317, 992, 1400, 1517) THEN 'QUANTIDADE'
+                                when nr_processo in (28, 20, 31, 30, 33, 29, 333, 878, 877, 1240, 1306, 461, 784, 1451, 1566, 1123, 401, 744) THEN 'VALOR'
+                                when nr_licitacao in (12, 15) THEN 'VALOR'
+                                end as descricao
                 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
                 ) AS controleSaldo,
 'false' as previsaoSubcontratacao,
@@ -123,60 +147,71 @@ JSON_QUERY(
 ds_justificativa as justificativa,
 ds_objeto as objeto,
 nr_processo as numeroProcesso,
-dt_licitacao as dataProcesso,
-dt_licitacao as dataInicioRecebimentoEnvelope,
-dt_abertura as dataAberturaEnvelope,
-dt_encerramento as dataFinalRecebimentoEnvelope,
-'false' as exigeSubcontratacao,
-nr_licitacao as numeroSequencial,
-aa_licitacao as anoSequencial,
+format(dt_licitacao, 'yyyy-MM-dd') as dataProcesso,
 'false' as controleSaldoOrganograma,
-'false' as itemExclusivoMPE,
-'false' as beneficiaMPELocais,
-'false' as registroPreco,
 JSON_QUERY(
     (SELECT
 JSON_QUERY(
     (SELECT
  case cd_modalidade
 when 'IN-G' then 202 
-when 'DISP' THEN 170
-when 'PR-E' THEN 273
+when 'DISP' THEN 314
+when 'CP-E' THEN 235
+when 'PR-E' THEN 225
+when 'PR-C' THEN 333
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS fundamentacaoLegal,
 JSON_QUERY(
     (SELECT
-  36067993 as id
+  37588195 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS responsavel,
- JSON_QUERY(
-    (SELECT
-  69142 as id
- FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS Localentrega,
 JSON_QUERY(
     (SELECT
-  '51989' as id
+  '53372' as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS comissao,
 JSON_QUERY(
     (SELECT
-case cd_modalidade
-when 'IN-G' then 'CONTRATACAO_DIRETA' 
-when 'DISP' THEN 'LICITACAO'
-end as valor
+'LICITACAO' as valor
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS formaContratacao,
 JSON_QUERY(
-    (SELECT
+    (SELECT        
         case cd_modalidade
 when 'IN-G' then 15 
 when 'DISP' THEN 14
+when 'CP-E' THEN 9
 when 'PR-E' THEN 13
+when 'PR-C' THEN 1043
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-) AS modalidade
+) AS modalidade,
+'false' as beneficiaMPELocais,
+'false' as registroPreco,
+JSON_QUERY(
+    (SELECT
+  'PENDENTE' as valor
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS situacaoLances,
+aa_licitacao as anoSequencial,
+format(dt_abertura, 'yyyy-MM-dd HH:MM:ss') as dataAberturaEnvelope,
+format(dt_licitacao, 'yyyy-MM-dd HH:MM:ss') as dataInicioRecebimentoEnvelope,
+format(dt_encerramento, 'yyyy-MM-dd HH:MM:ss') as dataFinalRecebimentoEnvelope,
+JSON_QUERY(
+    (SELECT
+  'CLASSIFICA' as valor
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS desclassificaPropostaInvalida,
+JSON_QUERY(
+    (SELECT
+  'NAO_APLICA' as valor
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS desclassificaPropostaInvalidaLote,
+'false' as exigeSubcontratacao,
+nr_licitacao as numeroSequencial,
+'false' as itemExclusivoMPE
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS formaContratacao
 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
@@ -187,7 +222,13 @@ JSON_QUERY(
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS context
 from COMPLicitacao
-where aa_processo = 2024
+where aa_processo = 2024 and nr_processo in (
+    28, 20, 18, 31, 30, 33, 29, 216, 333, 334, 335, 878, 
+    877, 879, 334, 1046, 1306, 1503, 461, 784, 1185, 1331, 
+    1451, 192, 398, 625, 629, 588, 464, 625, 582, 589, 
+    1218, 1203, 1341, 1317, 992, 1517, 401, 744
+)
+order by nr_processo asc;
 
         `;
 
@@ -196,107 +237,131 @@ where aa_processo = 2024
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => {
-            // Parse JSON strings
-            const conteudo = parseJsonSafe(record.conteudo);
-            const COMPLicitacao = parseJsonSafe(record.context);
+    // Parse JSON strings for conteudo and context fields
+    const conteudo = JSON.parse(record.conteudo || '{}');
+    const COMPLicitacao = JSON.parse(record.context || '{}');
 
-            return {
-                conteudo: {
-                    formaPagamento: {
-                        id: conteudo?.formaPagamento.id
-                    },
-                    formaJulgamento: {
-                        id: conteudo?.formaJulgamento.id
-                    },
-                    previsaoSubcontratacao: conteudo?.previsaoSubcontratacao === 'true',
-                    numeroProcesso: conteudo?.numeroProcesso,
-                    orcamentoSigiloso: conteudo?.orcamentoSigiloso === 'true',
-                    localEntrega: {
-                        id: conteudo?.formaContratacao?.Localentrega?.id
-                    },
-                    tipoObjeto: {
-                        id:conteudo?.tipoObjeto.id
-                    },
-                    objeto: conteudo?.objeto,
-                    controleSaldo:{
-                        valor:"QUANTIDADE"
-                    },
-                    justificativa: conteudo?.justificativa,
-                    dataProcesso: formatDate(conteudo.dataProcesso),
-                    formaContratacao: {
-                        /* modoDisputa: {
-                            valor: conteudo?.formaContratacao?.modoDisputa?.valor || null
-                        }, */
-                        dataInicioRecebimentoEnvelope: formatDate2(conteudo?.dataInicioRecebimentoEnvelope),
-                        beneficiaMPELocais: conteudo?.beneficiaMPELocais === 'true',
-                        fundamentacaoLegal: conteudo?.formaContratacao?.fundamentacaoLegal,
-                        situacaoLances: {
-                            valor: "PROPOSTA_FINAL_CONFIRMADA"
-                        },
-                        numeroSequencial: conteudo?.numeroSequencial,
-                        comissao: {
-                            id:parseInt(conteudo?.formaContratacao?.comissao.id, 10),
-                        },
-                        anoSequencial: conteudo?.anoSequencial || null,
-                        itemExclusivoMPE: conteudo?.itemExclusivoMPE === 'true',
-                        formaContratacao: conteudo?.formaContratacao?.formaContratacao || null,
-                        registroPreco: conteudo?.registroPreco === 'true',
-                        dataAberturaEnvelope: formatDate2(conteudo?.dataAberturaEnvelope),
-                        dataFinalRecebimentoEnvelope: formatDate2(conteudo?.dataFinalRecebimentoEnvelope),
-                        desclassificaPropostaInvalida: {
-                            valor: "CLASSIFICA"
-                        },
-                        responsavel: conteudo?.formaContratacao?.responsavel || null,
-                        desclassificaPropostaInvalidaLote: {
-                            valor: "NAO_APLICA"
-                        },
-                        exigeSubcontratacao: conteudo?.exigeSubcontratacao === 'true',
-                        modalidade: conteudo?.formaContratacao?.modalidade || null
-                    },
-                    parametroExerc:{
-                        id:parseInt(conteudo?.parametroExerc.id)
-                    },
-                    prazoEntrega:{
-                        id:conteudo?.prazoEntrega.id
-                    },
-                    controleSaldoOrganograma: conteudo?.controleSaldoOrganograma === 'false',
-                    regimeExecucao:{
-                        id:conteudo?.regimeExecucao.id
-                    },
-                },
-                context: {
-                    exercicio: COMPLicitacao?.exercicio.toString()
-                }
-            };
+    return {
+        conteudo: {
+            parametroExerc: { id: conteudo.parametroExerc?.id },
+            localEntrega: { id: conteudo.localEntrega?.id },
+            formaJulgamento: { id: conteudo.formaJulgamento?.id },
+            formaPagamento: { id: conteudo.formaPagamento?.id },
+            tipoObjeto: { id: conteudo.tipoObjeto?.id },
+            regimeExecucao: { id: conteudo.regimeExecucao?.id },
+            prazoEntrega: { id: conteudo.prazoEntrega?.id },
+            anoProtocolo: conteudo.anoProtocolo,
+            controleSaldo: {
+                valor: conteudo.controleSaldo?.valor || "QUANTIDADE",
+                descricao: conteudo.controleSaldo?.descricao || "QUANTIDADE"
+            },
+            previsaoSubcontratacao: conteudo.previsaoSubcontratacao === 'true',
+            orcamentoSigiloso: conteudo.orcamentoSigiloso === 'true',
+            justificativa: conteudo.justificativa,
+            objeto: conteudo.objeto,
+            numeroProcesso: conteudo.numeroProcesso,
+            dataProcesso: formatDate(conteudo.dataProcesso),
+            controleSaldoOrganograma: conteudo.controleSaldoOrganograma === 'false',
+            formaContratacao: {
+                fundamentacaoLegal: { id: conteudo.formaContratacao?.fundamentacaoLegal?.id },
+                responsavel: { id: conteudo.formaContratacao?.responsavel?.id },
+                comissao: { id: conteudo.formaContratacao?.comissao?.id },
+                formaContratacao: { valor: conteudo.formaContratacao?.formaContratacao?.valor || "LICITACAO" },
+                modalidade: { id: conteudo.formaContratacao?.modalidade?.id },
+                beneficiaMPELocais: conteudo.formaContratacao?.beneficiaMPELocais === 'true',
+                registroPreco: conteudo.formaContratacao?.registroPreco === 'true',
+                situacaoLances: { valor: conteudo.formaContratacao?.situacaoLances?.valor || "PENDENTE" },
+                anoSequencial: conteudo.formaContratacao?.anoSequencial,
+                dataInicioRecebimentoEnvelope: conteudo.formaContratacao?.dataInicioRecebimentoEnvelope,
+                dataAberturaEnvelope: conteudo.formaContratacao?.dataAberturaEnvelope,
+                dataFinalRecebimentoEnvelope: conteudo.formaContratacao?.dataFinalRecebimentoEnvelope,
+                desclassificaPropostaInvalida: { valor: conteudo.formaContratacao?.desclassificaPropostaInvalida?.valor || "CLASSIFICA" },
+                desclassificaPropostaInvalidaLote: { valor: conteudo.formaContratacao?.desclassificaPropostaInvalidaLote?.valor || "NAO_APLICA" },
+                exigeSubcontratacao: conteudo.formaContratacao?.exigeSubcontratacao === 'true',
+                numeroSequencial: conteudo.formaContratacao?.numeroSequencial,
+                itemExclusivoMPE: conteudo.formaContratacao?.itemExclusivoMPE === 'true'
+            }
+        },
+        context: {
+            exercicio: COMPLicitacao.exercicio.toString()
+        }
+    };
+});
+
+/* // Save data in chunks
+const chunkSize = 50;
+for (let i = 0; i < transformedData.length; i += chunkSize) {
+    const chunk = transformedData.slice(i, i + chunkSize);
+    const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+    fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+    console.log(`Dados salvos em ${chunkFileName}`);
+}
+
+return */
+
+// Helper function to split data into chunks
+const chunkArray = (array, size) => {
+    const chunked = [];
+    for (let i = 0; i < array.length; i += size) {
+        chunked.push(array.slice(i, i + size));
+    }
+    return chunked;
+};
+
+// Batch sending of transformed data
+const batchedData = chunkArray(transformedData, 50);
+let report = [];
+let reportIds = [];
+
+for (const batch of batchedData) {
+    try {
+        console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+
+        const response = await fetch(`https://compras.betha.cloud/compras-services/api/conversoes/lotes/processos-administrativo`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+            },
+            body: JSON.stringify(batch)
         });
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
+        const responseBody = await response.json();
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/processos-administrativo', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
+        if (response.ok) {
+            console.log('Dados enviados com sucesso para a API.');
+            batch.forEach(record => {
+                report.push({ record, status: 'success', response: responseBody });
             });
-    
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
-            }
-        } */
-
-    } catch (error) {
-        console.error('Erro durante o processamento:', error);
-    } finally {
-        await sql.close();
+            if (responseBody.idLote) reportIds.push(responseBody.idLote);
+        } else {
+            console.error('Erro ao enviar os dados para a API:', response.statusText);
+            batch.forEach(record => {
+                report.push({ record, status: 'failed', response: responseBody });
+            });
+        }
+    } catch (err) {
+        console.error('Erro ao enviar o batch para a API:', err);
+        batch.forEach(record => {
+            report.push({ record, status: 'error', error: err.message });
+        });
     }
 }
 
+// Save reports to files
+fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+console.log('Relatório salvo em report.json com sucesso.');
+
+fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+console.log('report_id.json salvo com sucesso.');
+
+    } catch (error) {
+        console.error('Erro no processo:', error);
+    } finally {
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
+    }
+}
+
+// Execute the main function
 main();

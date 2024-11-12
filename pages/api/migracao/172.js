@@ -31,16 +31,16 @@ async function connectToSqlServer() {
     }
 }
 
+function removeFormatting(value) {
+    return value.replace(/[^\d]/g, ''); // Remove tudo que não for número
+}
+
 async function main() {
     try {
-        // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
-
-        // Selecionar o banco de dados "COMP_ALMO_CAM"
         const selectDatabaseQuery = 'USE COMP_ALMO';
         await masterConnection.query(selectDatabaseQuery);
 
-        // Executar a consulta SQL
         const userQuery = `
             SELECT 
 mc.cd_modalidade as id,
@@ -84,48 +84,103 @@ FROM PNCP_ModalidadeCompra mc
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
-        // Transformar os resultados da consulta no formato desejado
+        console.log('Dados recebidos da consulta:', resultData);
+
         const transformedData = resultData.map(record => {
-            const modalidadeLegal = JSON.parse(record.modalidadeLegal);
+            console.log(record);
+        
+            // Safely parse modalidadeLegal JSON with fallback to a default structure if undefined
+            const modalidadeLegal = record.modalidadeLegal ? JSON.parse(record.modalidadeLegal) : { valor: null, descricao: null };
+        
             return {
-                descricao: record.descricao,
-                modalidadeLegal: modalidadeLegal,
-                sigla: record.sigla,
-                valorCompras: parseFloat(record.valorCompras),
-                valorObras: parseFloat(record.valorObras)
-            };
-        });
-
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
-
-        // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
-            const response = await fetch('https://compras.betha.cloud/compras-services/api/modalidades-licitacao', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+               conteudo:{
+                descricao: record.descricao || "string", // Fallback to "string" if descricao is undefined
+                modalidadeLegal: {
+                    valor: modalidadeLegal.valor || "CONVITE", // Default value if not provided
+                    descricao: modalidadeLegal.descricao || "string" // Default value if not provided
                 },
-                body: JSON.stringify(record)
-            });
+                sigla: record.sigla || "string", // Fallback to "string" if sigla is undefined
+                valorCompras: parseFloat(record.valorCompras) || 0, // Fallback to 0 if valorCompras is undefined
+                valorObras: parseFloat(record.valorObras) || 0 // Fallback to 0 if valorObras is undefined
+            }};
+        }).filter(record => record !== null); // Filter out null records
+        
+        /* const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
+        
 
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+        return */
+
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
+            }
+            return chunked;
+        };
+
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+
+                const response = await fetch(`https://compras.betha.cloud/compras-services/api/conversoes/lotes/modalidades-licitacao`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+
+                const responseBody = await response.json();
+
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
             }
         }
 
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
+
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

@@ -42,7 +42,7 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-           select
+            select
 JSON_QUERY(
 (SELECT  case when bp.cd_tipobem in (201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,2003) then 5492
 			  else 5491
@@ -193,6 +193,7 @@ when 'EDIFICIOS' then 48346
 when 'TERRENOS/GLEBAS' then 48347 
 when 'OBRAS EM ANDAMENTO' then 48348 
 when 'EQUIPAMENTO E UTENSILIO HIDRAULICO E ELETRICO' then 48349
+when 'APAR. E EQUIP. P/ ESPORTES E DIVERSOES' then 48194
  end as id   -- criar um geral
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS grupoBem, 
@@ -472,7 +473,10 @@ BP.dt_aquisicao as dataInclusao,
 BP.dt_aquisicao as dataAquisicao,
 bp.nr_chapa as numeroPlaca,
 BP.dt_aquisicao as dataInicioGarantia,
-JSON_QUERY((SELECT JSON_QUERY((SELECT '-1' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS metodoDepreciacao,
+JSON_QUERY((SELECT JSON_QUERY((SELECT 
+case when pc_residual > 0  and BP.vl_anterior > 0 then 1983
+else '-1' 
+end as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS metodoDepreciacao,
 				   JSON_QUERY((SELECT '8' as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS moeda,
 bp.vl_aquisicao as vlAquisicao,
  bp.vl_aquisicao as vlAquisicaoConvertido,
@@ -633,7 +637,10 @@ from PATRBensPatrimoniais BP
 left  join PATRVeiculo V ON V.nr_Chapa = BP.nr_chapa
 join PATRTiposBens TB ON TB.cd_tipobem = bp.cd_tipobem
 left JOIN COMPFornecedores F ON F.cd_fornecedor = BP.cd_fornecedor
-where BP.cd_situacao = 1 and bp.dt_aquisicao < ('2024-01-01 00:00:00') and BP.cd_EntidadeContabil = 1 and pc_residual > 0  and BP.vl_anterior = 0 --sem depreciação
+where BP.cd_situacao = 1 
+and BP.cd_EntidadeContabil = 1 
+
+
         `;
 
         const result = await masterConnection.query(userQuery);

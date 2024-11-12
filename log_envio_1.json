@@ -1,352 +1,3152 @@
 [
   {
-    "idIntegracao": "18093",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972703
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 2,
+      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10X0,60 CM",
+      "dataInclusao": "1997-12-30",
+      "dataAquisicao": "1997-12-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "1997-12-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "2",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 867.35,
+        "vlAquisicaoConvertido": 867.35,
+        "vlDepreciavel": 780.61,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 780.61,
+        "vlLiquidoContabil": 867.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "1997-12-30",
+        "vlResidual": 86.74,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18094",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972689
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 42,
+      "descricao": "MESA EM MADEIRA MACIÇA SEM GAVETAS MEDINDO 2,50 X 0,50 (PLENÁRIO)",
+      "dataInclusao": "2002-01-15",
+      "dataAquisicao": "2002-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2002-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "42",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1014,
+        "vlAquisicaoConvertido": 1014,
+        "vlDepreciavel": 912.6,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 912.6,
+        "vlLiquidoContabil": 1014,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2002-01-15",
+        "vlResidual": 101.4,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18095",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972725
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 43,
+      "descricao": "TRIBUNA EM MADEIRA MACIÇA MEDINDO 1,00 X 0,80-CM.",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "43",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1670.91,
+        "vlAquisicaoConvertido": 1670.91,
+        "vlDepreciavel": 1563.14,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1563.14,
+        "vlLiquidoContabil": 1670.91,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 107.77,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18096",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972806
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 44,
+      "descricao": "SUPORTE EM MADEIRA COM TRES CANOS EM INOX PARA SUPORTE DE BANDEIRAS",
+      "dataInclusao": "2002-01-15",
+      "dataAquisicao": "2002-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2002-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "44",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 499.33,
+        "vlAquisicaoConvertido": 499.33,
+        "vlDepreciavel": 449.4,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 449.4,
+        "vlLiquidoContabil": 499.33,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2002-01-15",
+        "vlResidual": 49.93,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18097",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146972813
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 45,
+      "descricao": "BANCO EM MADEIRA COM ENCOSTO MEDINDO 5,00 X 0,45 CM. (PARA USO PLENÁRIO).",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "45",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 438.75,
+        "vlAquisicaoConvertido": 438.75,
+        "vlDepreciavel": 402.29,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 402.29,
+        "vlLiquidoContabil": 438.75,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 36.46,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18098",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972807
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 46,
+      "descricao": "BANCO EM MADEIRA COM ENCOSTO MEDINDO 5,00 X 0,45 CM. (PARA USO PLENÁRIO).",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "46",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 438.75,
+        "vlAquisicaoConvertido": 438.75,
+        "vlDepreciavel": 402.29,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 402.29,
+        "vlLiquidoContabil": 438.75,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 36.46,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18099",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146972726
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 47,
+      "descricao": "MURAL EM MDEIRA COM 02 PORTAS DE VIDRO MEDINDO 1,50 X 0,90 X 0,10 CM.",
+      "dataInclusao": "2002-01-15",
+      "dataAquisicao": "2002-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2002-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "47",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 144.77,
+        "vlAquisicaoConvertido": 144.77,
+        "vlDepreciavel": 130.29,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 130.29,
+        "vlLiquidoContabil": 144.77,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2002-01-15",
+        "vlResidual": 14.48,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18100",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972767
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 50,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2002-01-05",
+      "dataAquisicao": "2002-01-05",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2002-01-05",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "50",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.55,
+        "vlAquisicaoConvertido": 159.55,
+        "vlDepreciavel": 143.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.59,
+        "vlLiquidoContabil": 159.55,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2002-01-05",
+        "vlResidual": 15.96,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18101",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146972651
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 51,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2002-01-15",
+      "dataAquisicao": "2002-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2002-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "51",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.55,
+        "vlAquisicaoConvertido": 159.55,
+        "vlDepreciavel": 143.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.59,
+        "vlLiquidoContabil": 159.55,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2002-01-15",
+        "vlResidual": 15.96,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18102",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146972745
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 52,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2002-02-21",
+      "dataAquisicao": "2002-02-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2002-02-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "52",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.55,
+        "vlAquisicaoConvertido": 159.55,
+        "vlDepreciavel": 143.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.59,
+        "vlLiquidoContabil": 159.55,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2002-02-21",
+        "vlResidual": 15.96,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18103",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972814
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 53,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "53",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18104",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972779
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 54,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "54",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18105",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972587
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 55,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "55",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18106",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972808
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 56,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "56",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18107",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972727
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 57,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "57",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18108",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972832
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 58,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "58",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18109",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972704
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 59,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "59",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18110",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972549
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 60,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "60",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18111",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972768
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 61,
+      "descricao": "QUADROS COM MOLDURA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "61",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 100,
+        "vlAquisicaoConvertido": 100,
+        "vlDepreciavel": 90,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 90,
+        "vlLiquidoContabil": 100,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 10,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18112",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972668
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 62,
+      "descricao": "BEBEDOURO IBBL MODELO GFN 110 WTS",
+      "dataInclusao": "2003-05-23",
+      "dataAquisicao": "2003-05-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2003-05-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "62",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 516.28,
+        "vlAquisicaoConvertido": 516.28,
+        "vlDepreciavel": 464.65,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 464.65,
+        "vlLiquidoContabil": 516.28,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2003-05-23",
+        "vlResidual": 51.63,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18113",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972833
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 63,
+      "descricao": "VENTILADOR DE PAREDE OSCIL. JATTRO",
+      "dataInclusao": "2003-05-23",
+      "dataAquisicao": "2003-05-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2003-05-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "63",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 199.54,
+        "vlAquisicaoConvertido": 199.54,
+        "vlDepreciavel": 179.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 179.59,
+        "vlLiquidoContabil": 199.54,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2003-05-23",
+        "vlResidual": 19.95,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18114",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972809
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 64,
+      "descricao": "VENTILADOR DE PAREDE OSCIL. JATTRO",
+      "dataInclusao": "2003-05-23",
+      "dataAquisicao": "2003-05-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2003-05-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "64",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 199.54,
+        "vlAquisicaoConvertido": 199.54,
+        "vlDepreciavel": 179.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 179.59,
+        "vlLiquidoContabil": 199.54,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2003-05-23",
+        "vlResidual": 19.95,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18115",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972669
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 65,
+      "descricao": "VENTILADOR DE PAREDE OSCIL. JATTRO",
+      "dataInclusao": "2003-05-23",
+      "dataAquisicao": "2003-05-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2003-05-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "65",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 199.54,
+        "vlAquisicaoConvertido": 199.54,
+        "vlDepreciavel": 179.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 179.59,
+        "vlLiquidoContabil": 199.54,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2003-05-23",
+        "vlResidual": 19.95,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18116",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972769
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 69,
+      "descricao": "QUADRO COM FOTOGRAFIA DOS VEREADORES LEGISLATURA 1997 A 2000",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "69",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 650,
+        "vlAquisicaoConvertido": 650,
+        "vlDepreciavel": 585,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 585,
+        "vlLiquidoContabil": 650,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 65,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18117",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972780
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 70,
+      "descricao": "QUADRO COM FOTOGRAFIA DOS VEREADORES LEGISLATURA 2001 A 2004",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "70",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 650,
+        "vlAquisicaoConvertido": 650,
+        "vlDepreciavel": 585,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 585,
+        "vlLiquidoContabil": 650,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 65,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18118",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972834
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51968
+      },
+      "especieBem": {
+        "id": 541243
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 72,
+      "descricao": "MOTOCICLETA NXR 125 CIL BROS/NXR KS ANO/MODELO FABRICACAO 2005/2005, COR",
+      "dataInclusao": "2005-06-16",
+      "dataAquisicao": "2005-06-16",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2005-06-16",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "72",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 7841,
+        "vlAquisicaoConvertido": 7841,
+        "vlDepreciavel": 7207.4,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 7207.4,
+        "vlLiquidoContabil": 7841,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2005-06-16",
+        "vlResidual": 633.6,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18119",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972781
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51961
+      },
+      "especieBem": {
+        "id": 541256
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 76,
+      "descricao": "CALCULADORA GRANDE",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "76",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 44.8,
+        "vlAquisicaoConvertido": 44.8,
+        "vlDepreciavel": 43.9,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 43.9,
+        "vlLiquidoContabil": 44.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 0.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18120",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146972810
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51961
+      },
+      "especieBem": {
+        "id": 541256
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 77,
+      "descricao": "CALCULADORA GRANDE",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "77",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 44.8,
+        "vlAquisicaoConvertido": 44.8,
+        "vlDepreciavel": 43.9,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 43.9,
+        "vlLiquidoContabil": 44.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 0.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18121",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972728
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 81,
+      "descricao": "TAPETE EM VINIL PERSONALIZADO",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "81",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 290,
+        "vlAquisicaoConvertido": 290,
+        "vlDepreciavel": 261,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 261,
+        "vlLiquidoContabil": 290,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 29,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18122",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146972835
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 82,
+      "descricao": "TAPETE EM VINIL PERSONALIZADO",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "82",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 290,
+        "vlAquisicaoConvertido": 290,
+        "vlDepreciavel": 261,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 261,
+        "vlLiquidoContabil": 290,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 29,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18123",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972770
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 83,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2006-06-26",
+      "dataAquisicao": "2006-06-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2006-06-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "83",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.55,
+        "vlAquisicaoConvertido": 159.55,
+        "vlDepreciavel": 143.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.59,
+        "vlLiquidoContabil": 159.55,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2006-06-26",
+        "vlResidual": 15.96,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18124",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146972690
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 85,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "85",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18125",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146972811
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 86,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "86",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18126",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972670
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 87,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "87",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18127",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972705
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 88,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "88",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18128",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972671
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 89,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "89",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18129",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972550
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 90,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "90",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18130",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972771
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 91,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "91",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18131",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972836
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 92,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "92",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18132",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972551
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 93,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "93",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18133",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972837
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 94,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "94",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18134",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972746
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 95,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "95",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18135",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972852
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 96,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "96",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18136",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972872
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 97,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "97",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18137",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972838
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 98,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "98",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18138",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972853
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 99,
+      "descricao": "CADEIRA LONGARINA 3 LUGARES C/ESPUMAS INJETADAS",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "99",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 452,
+        "vlAquisicaoConvertido": 452,
+        "vlDepreciavel": 406.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 406.8,
+        "vlLiquidoContabil": 452,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 45.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18139",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972747
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 100,
+      "descricao": "CADEIRA PRESIDENTE ESPUMA INJETADA GIRATORIA",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "100",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 629,
+        "vlAquisicaoConvertido": 629,
+        "vlDepreciavel": 566.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 566.1,
+        "vlLiquidoContabil": 629,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 62.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18140",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972691
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 102,
+      "descricao": "MESA REDONDA 1,20 CM X 0,74 CM",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "102",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 275,
+        "vlAquisicaoConvertido": 275,
+        "vlDepreciavel": 247.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 247.5,
+        "vlLiquidoContabil": 275,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 27.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18141",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972892
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 103,
+      "descricao": "ARMARIO DE ACO, 2 PORTAS COM CHAVE",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "103",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 648.34,
+        "vlAquisicaoConvertido": 648.34,
+        "vlDepreciavel": 606.52,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 606.52,
+        "vlLiquidoContabil": 648.34,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 41.82,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18142",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972839
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 104,
+      "descricao": "NOBREAK 700 W",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "104",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 330,
+        "vlAquisicaoConvertido": 330,
+        "vlDepreciavel": 264,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 264,
+        "vlLiquidoContabil": 330,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 66,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   }
 ]

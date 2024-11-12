@@ -1,352 +1,46 @@
 [
   {
-    "idIntegracao": "16843",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146971498
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312436
+      },
+      "materialEspecificacao": {},
+      "numero": "53",
+      "quantidade": 25,
+      "valorUnitario": 0,
+      "valorTotal": 0,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56208715
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   },
   {
-    "idIntegracao": "16844",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146971553
-    }
-  },
-  {
-    "idIntegracao": "16845",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146971479
-    }
-  },
-  {
-    "idIntegracao": "16846",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146971499
-    }
-  },
-  {
-    "idIntegracao": "16847",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146971343
-    }
-  },
-  {
-    "idIntegracao": "16848",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146971440
-    }
-  },
-  {
-    "idIntegracao": "16849",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146971541
-    }
-  },
-  {
-    "idIntegracao": "16850",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146971572
-    }
-  },
-  {
-    "idIntegracao": "16851",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146971263
-    }
-  },
-  {
-    "idIntegracao": "16852",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146971573
-    }
-  },
-  {
-    "idIntegracao": "16853",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146971480
-    }
-  },
-  {
-    "idIntegracao": "16854",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146971344
-    }
-  },
-  {
-    "idIntegracao": "16855",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146971441
-    }
-  },
-  {
-    "idIntegracao": "16856",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146971542
-    }
-  },
-  {
-    "idIntegracao": "16857",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146971386
-    }
-  },
-  {
-    "idIntegracao": "16858",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146971543
-    }
-  },
-  {
-    "idIntegracao": "16859",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146971345
-    }
-  },
-  {
-    "idIntegracao": "16860",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146971481
-    }
-  },
-  {
-    "idIntegracao": "16861",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146971346
-    }
-  },
-  {
-    "idIntegracao": "16862",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146971442
-    }
-  },
-  {
-    "idIntegracao": "16863",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146971514
-    }
-  },
-  {
-    "idIntegracao": "16864",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146971544
-    }
-  },
-  {
-    "idIntegracao": "16865",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146971500
-    }
-  },
-  {
-    "idIntegracao": "16866",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146971387
-    }
-  },
-  {
-    "idIntegracao": "16867",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146971264
-    }
-  },
-  {
-    "idIntegracao": "16868",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146971309
-    }
-  },
-  {
-    "idIntegracao": "16869",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146971554
-    }
-  },
-  {
-    "idIntegracao": "16870",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146971482
-    }
-  },
-  {
-    "idIntegracao": "16871",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146971574
-    }
-  },
-  {
-    "idIntegracao": "16872",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146971483
-    }
-  },
-  {
-    "idIntegracao": "16873",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146971347
-    }
-  },
-  {
-    "idIntegracao": "16874",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146971575
-    }
-  },
-  {
-    "idIntegracao": "16875",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146971484
-    }
-  },
-  {
-    "idIntegracao": "16876",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146971265
-    }
-  },
-  {
-    "idIntegracao": "16877",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146971485
-    }
-  },
-  {
-    "idIntegracao": "16878",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146971545
-    }
-  },
-  {
-    "idIntegracao": "16879",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146971310
-    }
-  },
-  {
-    "idIntegracao": "16880",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146971348
-    }
-  },
-  {
-    "idIntegracao": "16881",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146971555
-    }
-  },
-  {
-    "idIntegracao": "16882",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146971311
-    }
-  },
-  {
-    "idIntegracao": "16883",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146971501
-    }
-  },
-  {
-    "idIntegracao": "16884",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261392,
-      "idImoveisInfComplem": 3146971486
-    }
-  },
-  {
-    "idIntegracao": "16885",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261411,
-      "idImoveisInfComplem": 3146971349
-    }
-  },
-  {
-    "idIntegracao": "16886",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146971443
-    }
-  },
-  {
-    "idIntegracao": "16887",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261452,
-      "idImoveisInfComplem": 3146971502
-    }
-  },
-  {
-    "idIntegracao": "16888",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146971350
-    }
-  },
-  {
-    "idIntegracao": "16889",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261491,
-      "idImoveisInfComplem": 3146971592
-    }
-  },
-  {
-    "idIntegracao": "16890",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146971503
-    }
-  },
-  {
-    "idIntegracao": "16891",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261532,
-      "idImoveisInfComplem": 3146971388
-    }
-  },
-  {
-    "idIntegracao": "16892",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261556,
-      "idImoveisInfComplem": 3146971576
+    "conteudo": {
+      "processoAdministrativo": {
+        "id": 1312432
+      },
+      "materialEspecificacao": {},
+      "numero": "54",
+      "quantidade": 25,
+      "valorUnitario": 0,
+      "valorTotal": 0,
+      "percentual": 0,
+      "tipoParticipacao": {
+        "valor": "LIVRE",
+        "descricao": "LIVRE"
+      },
+      "material": {
+        "id": 56208715
+      },
+      "amostra": false,
+      "manufaturado": false
     }
   }
 ]

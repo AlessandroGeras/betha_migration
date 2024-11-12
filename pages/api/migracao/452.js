@@ -245,6 +245,8 @@ WHERE aa_licitacao = 2024
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
+        return
+
         // Enviar cada registro individualmente para a rota desejada
         /* for (const record of transformedData) {
             const response = await fetch('https://compras.betha.cloud/compras-services/api/conversoes/lotes/proposta-participante', {

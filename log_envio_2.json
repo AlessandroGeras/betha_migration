@@ -1,352 +1,3152 @@
 [
   {
-    "idIntegracao": "18143",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146972729
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 105,
+      "descricao": "CADEIRA DIRETOR, C/ ESPUMA INJETADA GIRATORIA",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "105",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 262.83,
+        "vlAquisicaoConvertido": 262.83,
+        "vlDepreciavel": 226.83,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 226.83,
+        "vlLiquidoContabil": 262.83,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 36,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18144",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972912
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 106,
+      "descricao": "CADEIRA DIRETOR, C/ ESPUMA INJETADA GIRATORIA",
+      "dataInclusao": "2007-01-23",
+      "dataAquisicao": "2007-01-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2007-01-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "106",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 262.83,
+        "vlAquisicaoConvertido": 262.83,
+        "vlDepreciavel": 226.83,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 226.83,
+        "vlLiquidoContabil": 262.83,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2007-01-23",
+        "vlResidual": 36,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18145",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146972893
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 108,
+      "descricao": "NOTEBOOK MARCA ACER MODELO ASPIRE 4710-2013 COM 1 GB DE MEMORIA, HD DE",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "108",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3900,
+        "vlAquisicaoConvertido": 3900,
+        "vlDepreciavel": 3276,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 3276,
+        "vlLiquidoContabil": 3900,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 624,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18146",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972815
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 110,
+      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "110",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 867.35,
+        "vlAquisicaoConvertido": 867.35,
+        "vlDepreciavel": 794.6,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 794.6,
+        "vlLiquidoContabil": 867.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 72.75,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18147",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146972873
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 111,
+      "descricao": "CADEIRA COM ALMOFADA RODAS/GIRATORIAS",
+      "dataInclusao": "2009-01-15",
+      "dataAquisicao": "2009-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "111",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 136.27,
+        "vlAquisicaoConvertido": 136.27,
+        "vlDepreciavel": 122.64,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 122.64,
+        "vlLiquidoContabil": 136.27,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-01-15",
+        "vlResidual": 13.63,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18148",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261711,
-      "idImoveisInfComplem": 3146972816
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 113,
+      "descricao": "MICRO COMPUTADOR ROCKET PC INTEL DC E 2180 2.8 GHZ",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "113",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 950.08,
+        "vlAquisicaoConvertido": 950.08,
+        "vlDepreciavel": 798.07,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 798.07,
+        "vlLiquidoContabil": 950.08,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 152.01,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18149",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972874
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 114,
+      "descricao": "MONITOR LCD 15   519 SW WIT AOC",
+      "dataInclusao": "2009-01-15",
+      "dataAquisicao": "2009-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "114",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 332.19,
+        "vlAquisicaoConvertido": 332.19,
+        "vlDepreciavel": 298.97,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 298.97,
+        "vlLiquidoContabil": 332.19,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-01-15",
+        "vlResidual": 33.22,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18150",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972840
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 115,
+      "descricao": "MONITOR LCD 15   519 SW WIT AOC",
+      "dataInclusao": "2009-01-15",
+      "dataAquisicao": "2009-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "115",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 332.19,
+        "vlAquisicaoConvertido": 332.19,
+        "vlDepreciavel": 298.97,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 298.97,
+        "vlLiquidoContabil": 332.19,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-01-15",
+        "vlResidual": 33.22,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18151",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972875
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 116,
+      "descricao": "MICRO COMPUTADOR ROCKET PC INTEL DC E 2180 2.8 GHZ",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "116",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 950.08,
+        "vlAquisicaoConvertido": 950.08,
+        "vlDepreciavel": 798.07,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 798.07,
+        "vlLiquidoContabil": 950.08,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 152.01,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18152",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972913
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 117,
+      "descricao": "REFRIGERADOR 240 L 1P CLASSE A BRANCO",
+      "dataInclusao": "2009-03-30",
+      "dataAquisicao": "2009-03-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-03-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "117",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 903.15,
+        "vlAquisicaoConvertido": 903.15,
+        "vlDepreciavel": 823.25,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 823.25,
+        "vlLiquidoContabil": 903.15,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-03-30",
+        "vlResidual": 79.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18153",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972817
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 118,
+      "descricao": "FOGAO 4B DAKO DELTA C/VALVULA/BRANCO",
+      "dataInclusao": "2009-03-30",
+      "dataAquisicao": "2009-03-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-03-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "118",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 372.51,
+        "vlAquisicaoConvertido": 372.51,
+        "vlDepreciavel": 335.26,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 335.26,
+        "vlLiquidoContabil": 372.51,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-03-30",
+        "vlResidual": 37.25,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18154",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972588
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 119,
+      "descricao": "PIA INOX GHEL-PLUS 1,20 CUBA OVAL CROMADA",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "119",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 129,
+        "vlAquisicaoConvertido": 129,
+        "vlDepreciavel": 116.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 116.1,
+        "vlLiquidoContabil": 129,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 12.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18155",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972894
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 120,
+      "descricao": "BALCAO TELASUL P/PIA 3 PTS GV BRANCO",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "120",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 369,
+        "vlAquisicaoConvertido": 369,
+        "vlDepreciavel": 332.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 332.1,
+        "vlLiquidoContabil": 369,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 36.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18156",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972841
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 122,
+      "descricao": "NOBREAK 600 VA SMS",
+      "dataInclusao": "2009-03-30",
+      "dataAquisicao": "2009-03-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-03-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "122",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 230.3,
+        "vlAquisicaoConvertido": 230.3,
+        "vlDepreciavel": 193.45,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 193.45,
+        "vlLiquidoContabil": 230.3,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-03-30",
+        "vlResidual": 36.85,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18157",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972730
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 129,
+      "descricao": "MESA EM MADEIRA COM 02 GAVETAS 1,10 X 0,60 CM.",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "129",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 867.35,
+        "vlAquisicaoConvertido": 867.35,
+        "vlDepreciavel": 795.21,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 795.21,
+        "vlLiquidoContabil": 867.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 72.14,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18158",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972932
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 130,
+      "descricao": "KIT DUAS GAVETAS",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "130",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 155.83,
+        "vlAquisicaoConvertido": 155.83,
+        "vlDepreciavel": 140.25,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 140.25,
+        "vlLiquidoContabil": 155.83,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 15.58,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18159",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972914
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 133,
+      "descricao": "MICRO COMPUTADOR SEMPRON 2.0 GB",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "133",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 760,
+        "vlAquisicaoConvertido": 760,
+        "vlDepreciavel": 744.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 744.8,
+        "vlLiquidoContabil": 760,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 15.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18160",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972854
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 134,
+      "descricao": "MONITOR DE LCD 15 POLEGADAS",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "134",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 332.19,
+        "vlAquisicaoConvertido": 332.19,
+        "vlDepreciavel": 279.58,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 279.58,
+        "vlLiquidoContabil": 332.19,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 52.61,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18161",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972895
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 135,
+      "descricao": "NOBREACK 500VA APC",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "135",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 371.03,
+        "vlAquisicaoConvertido": 371.03,
+        "vlDepreciavel": 296.82,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 296.82,
+        "vlLiquidoContabil": 371.03,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 74.21,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18162",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972842
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 137,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "137",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.35,
+        "vlAquisicaoConvertido": 159.35,
+        "vlDepreciavel": 143.41,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.41,
+        "vlLiquidoContabil": 159.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 15.94,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18163",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972589
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 138,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "138",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.35,
+        "vlAquisicaoConvertido": 159.35,
+        "vlDepreciavel": 143.41,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.41,
+        "vlLiquidoContabil": 159.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 15.94,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18164",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972933
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 139,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "139",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.35,
+        "vlAquisicaoConvertido": 159.35,
+        "vlDepreciavel": 143.41,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.41,
+        "vlLiquidoContabil": 159.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 15.94,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18165",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972896
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 141,
+      "descricao": "MESA TABACO ACETINADO 1,36",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "141",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 423.99,
+        "vlAquisicaoConvertido": 423.99,
+        "vlDepreciavel": 381.59,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 381.59,
+        "vlLiquidoContabil": 423.99,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 42.4,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18166",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261630,
-      "idImoveisInfComplem": 3146972855
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 142,
+      "descricao": "MESA TABACO ACETINATO 1,10",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "142",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 500.5,
+        "vlAquisicaoConvertido": 500.5,
+        "vlDepreciavel": 450.45,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 450.45,
+        "vlLiquidoContabil": 500.5,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 50.05,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18167",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972856
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 143,
+      "descricao": "MICROFONE PHILIPIS",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "143",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 104.8,
+        "vlAquisicaoConvertido": 104.8,
+        "vlDepreciavel": 92.22,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 92.22,
+        "vlLiquidoContabil": 104.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 12.58,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18168",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261672,
-      "idImoveisInfComplem": 3146972818
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 144,
+      "descricao": "GOTA ESQUERDA TABACO",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "144",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 242.04,
+        "vlAquisicaoConvertido": 242.04,
+        "vlDepreciavel": 217.84,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 217.84,
+        "vlLiquidoContabil": 242.04,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 24.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18169",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972857
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 145,
+      "descricao": "BALCAO DIRETOR TABACO",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "145",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 560.06,
+        "vlAquisicaoConvertido": 560.06,
+        "vlDepreciavel": 504.05,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 504.05,
+        "vlLiquidoContabil": 560.06,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 56.01,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18170",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261690,
-      "idImoveisInfComplem": 3146972843
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 146,
+      "descricao": "ESTACAO DE TRABALHO MAPLE",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "146",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 429.74,
+        "vlAquisicaoConvertido": 429.74,
+        "vlDepreciavel": 386.77,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 386.77,
+        "vlLiquidoContabil": 429.74,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 42.97,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18171",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261711,
-      "idImoveisInfComplem": 3146972915
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 147,
+      "descricao": "ESTACAO DE TRABALHO MAPLE",
+      "dataInclusao": "2009-08-19",
+      "dataAquisicao": "2009-08-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-08-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "147",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 429.74,
+        "vlAquisicaoConvertido": 429.74,
+        "vlDepreciavel": 386.77,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 386.77,
+        "vlLiquidoContabil": 429.74,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-08-19",
+        "vlResidual": 42.97,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18172",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972819
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 150,
+      "descricao": "MICRO COMPUTADOR ROCKET PC INTEL DC E 2180 2.8 GHZ",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "150",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1977.6,
+        "vlAquisicaoConvertido": 1977.6,
+        "vlDepreciavel": 1661.18,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1661.18,
+        "vlLiquidoContabil": 1977.6,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 316.42,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18173",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972916
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 151,
+      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "151",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 867.35,
+        "vlAquisicaoConvertido": 867.35,
+        "vlDepreciavel": 794.84,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 794.84,
+        "vlLiquidoContabil": 867.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 72.51,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18174",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972706
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 152,
+      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "152",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 867.35,
+        "vlAquisicaoConvertido": 867.35,
+        "vlDepreciavel": 794.84,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 794.84,
+        "vlLiquidoContabil": 867.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 72.51,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18175",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261354,
-      "idImoveisInfComplem": 3146972897
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 153,
+      "descricao": "PORTA DE VIDRO TEMPERADO FUMÊ 10 m.m. 1.60 x 2.10 mts",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "153",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1215,
+        "vlAquisicaoConvertido": 1215,
+        "vlDepreciavel": 1093.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1093.5,
+        "vlLiquidoContabil": 1215,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 121.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18176",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972707
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 154,
+      "descricao": "PORTA DE VIDRO TEMPERADO FUMÊ 10 mm 0,90 x 2,10 mts",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "154",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 526,
+        "vlAquisicaoConvertido": 526,
+        "vlDepreciavel": 473.4,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 473.4,
+        "vlLiquidoContabil": 526,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 52.6,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18177",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972917
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 155,
+      "descricao": "PERSIANAS HORIZONTAL 2.20 X 1,50",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "155",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 236.17,
+        "vlAquisicaoConvertido": 236.17,
+        "vlDepreciavel": 212.55,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 212.55,
+        "vlLiquidoContabil": 236.17,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 23.62,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18178",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972858
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 156,
+      "descricao": "PERSIANAS HORIZONTAL 2.20 X 1,50",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "156",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 236.17,
+        "vlAquisicaoConvertido": 236.17,
+        "vlDepreciavel": 212.55,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 212.55,
+        "vlLiquidoContabil": 236.17,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 23.62,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18179",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972918
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 157,
+      "descricao": "PERSIANAS HORIZONTAL 2.20 X 1,50",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "157",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 236.17,
+        "vlAquisicaoConvertido": 236.17,
+        "vlDepreciavel": 212.55,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 212.55,
+        "vlLiquidoContabil": 236.17,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 23.62,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18180",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972859
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 158,
+      "descricao": "CADEIRA COM ALMOFADA RODAS/GIRATORIAS",
+      "dataInclusao": "2009-01-15",
+      "dataAquisicao": "2009-01-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-01-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "158",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 136.27,
+        "vlAquisicaoConvertido": 136.27,
+        "vlDepreciavel": 122.64,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 122.64,
+        "vlLiquidoContabil": 136.27,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-01-15",
+        "vlResidual": 13.63,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18181",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972934
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 160,
+      "descricao": "armario de madeira 2 portas 9 portas",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "160",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3306.95,
+        "vlAquisicaoConvertido": 3306.95,
+        "vlDepreciavel": 3200.78,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 3200.78,
+        "vlLiquidoContabil": 3306.95,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 106.17,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18182",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972935
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 161,
+      "descricao": "BALÇÃO DE DUAS PORTAS 1/80 CM",
+      "dataInclusao": "2009-09-16",
+      "dataAquisicao": "2009-09-16",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-09-16",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "161",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 357.5,
+        "vlAquisicaoConvertido": 357.5,
+        "vlDepreciavel": 321.75,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 321.75,
+        "vlLiquidoContabil": 357.5,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-09-16",
+        "vlResidual": 35.75,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18183",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972782
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 162,
+      "descricao": "PRATELEIRA 3 METROS DE ALTURA POR 4 DE LARGURA",
+      "dataInclusao": "2009-09-16",
+      "dataAquisicao": "2009-09-16",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-09-16",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "162",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3217.5,
+        "vlAquisicaoConvertido": 3217.5,
+        "vlDepreciavel": 2895.75,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2895.75,
+        "vlLiquidoContabil": 3217.5,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-09-16",
+        "vlResidual": 321.75,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18184",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972936
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 163,
+      "descricao": "MESA EM MADEIRA COM 02 GAVETAS MEDINDO 1,10 X 0,60 CM.",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "163",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 867.35,
+        "vlAquisicaoConvertido": 867.35,
+        "vlDepreciavel": 794.78,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 794.78,
+        "vlLiquidoContabil": 867.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 72.57,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18185",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972820
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 164,
+      "descricao": "PLACA DE VIDEO WIRELESS",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "164",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 220,
+        "vlAquisicaoConvertido": 220,
+        "vlDepreciavel": 184.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 184.8,
+        "vlLiquidoContabil": 220,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 35.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18186",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972844
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 168,
+      "descricao": "KIT COMPLETO DE REDE SEM FIO",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "168",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 700,
+        "vlAquisicaoConvertido": 700,
+        "vlDepreciavel": 588,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 588,
+        "vlLiquidoContabil": 700,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 112,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18187",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972937
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 170,
+      "descricao": "CADEIRA COM ENCOSTO EM MADEIRA MACICA",
+      "dataInclusao": "2009-12-30",
+      "dataAquisicao": "2009-12-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-12-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "170",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 159.35,
+        "vlAquisicaoConvertido": 159.35,
+        "vlDepreciavel": 143.41,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 143.41,
+        "vlLiquidoContabil": 159.35,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-12-30",
+        "vlResidual": 15.94,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18188",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972821
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 171,
+      "descricao": "JOGO DE PERSIANAS",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "171",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 818,
+        "vlAquisicaoConvertido": 818,
+        "vlDepreciavel": 736.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 736.2,
+        "vlLiquidoContabil": 818,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 81.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18189",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972860
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 172,
+      "descricao": "PAINEL COM FOTOS EM MOLDURA DE ALUMINIO COM VIDRO MEDINDO 0,60X0,90 CM",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "172",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 895,
+        "vlAquisicaoConvertido": 895,
+        "vlDepreciavel": 805.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 805.5,
+        "vlLiquidoContabil": 895,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 89.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18190",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972845
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 173,
+      "descricao": "AR CONDICIONADO ELECTROLUX SPLIT 12.000 BTUS",
+      "dataInclusao": "2009-12-30",
+      "dataAquisicao": "2009-12-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-12-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "173",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1565.58,
+        "vlAquisicaoConvertido": 1565.58,
+        "vlDepreciavel": 1471.65,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1471.65,
+        "vlLiquidoContabil": 1565.58,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-12-30",
+        "vlResidual": 93.93,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18191",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972876
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51961
+      },
+      "especieBem": {
+        "id": 541256
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 174,
+      "descricao": "AR CONDICIONADO ELECTROLUX SPLIT 18.000 BTUS",
+      "dataInclusao": "2009-12-30",
+      "dataAquisicao": "2009-12-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2009-12-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "174",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1911.52,
+        "vlAquisicaoConvertido": 1911.52,
+        "vlDepreciavel": 1873.29,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1873.29,
+        "vlLiquidoContabil": 1911.52,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2009-12-30",
+        "vlResidual": 38.23,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18192",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261491,
-      "idImoveisInfComplem": 3146972919
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 176,
+      "descricao": "EQUIPAMENTO PARA INSTALACAO DE SISTEMA WIRELESS E SERVIDOR DE INTERNET",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "176",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3581.68,
+        "vlAquisicaoConvertido": 3581.68,
+        "vlDepreciavel": 3008.61,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 3008.61,
+        "vlLiquidoContabil": 3581.68,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 573.07,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   }
 ]

@@ -1,352 +1,2302 @@
 [
   {
-    "idIntegracao": "17043",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146971760
+    "idIntegracao": 559,
+    "conteudo": {
+      "data": "2012-02-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477121
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17044",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146971682
+    "idIntegracao": 560,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477125
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17045",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146971694
+    "idIntegracao": 561,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477128
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17046",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261530,
-      "idImoveisInfComplem": 3146971695
+    "idIntegracao": 562,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477132
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17047",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146971641
+    "idIntegracao": 563,
+    "conteudo": {
+      "data": "2011-09-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653196
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17048",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146971462
+    "idIntegracao": 564,
+    "conteudo": {
+      "data": "2012-08-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477139
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17049",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146971626
+    "idIntegracao": 565,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477146
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17050",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146971660
+    "idIntegracao": 566,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17051",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261630,
-      "idImoveisInfComplem": 3146971717
+    "idIntegracao": 567,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477150
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17052",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146971661
+    "idIntegracao": 568,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477153
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17053",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261670,
-      "idImoveisInfComplem": 3146971662
+    "idIntegracao": 569,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477155
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17054",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146971718
+    "idIntegracao": 570,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653239
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17055",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261690,
-      "idImoveisInfComplem": 3146971523
+    "idIntegracao": 571,
+    "conteudo": {
+      "data": "2012-08-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42701
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17056",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261710,
-      "idImoveisInfComplem": 3146971719
+    "idIntegracao": 572,
+    "conteudo": {
+      "data": "2013-07-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477162
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42701
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17057",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261730,
-      "idImoveisInfComplem": 3146971627
+    "idIntegracao": 573,
+    "conteudo": {
+      "data": "2013-08-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477166
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42701
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17058",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261750,
-      "idImoveisInfComplem": 3146971683
+    "idIntegracao": 574,
+    "conteudo": {
+      "data": "2013-05-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477170
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17059",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146971463
+    "idIntegracao": 575,
+    "conteudo": {
+      "data": "2013-08-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477175
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42701
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17060",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261355,
-      "idImoveisInfComplem": 3146971628
+    "idIntegracao": 576,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477178
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17061",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146971720
+    "idIntegracao": 577,
+    "conteudo": {
+      "data": "2013-05-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477183
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17062",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146971464
+    "idIntegracao": 578,
+    "conteudo": {
+      "data": "2012-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477188
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17063",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146971696
+    "idIntegracao": 579,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653242
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17064",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146971642
+    "idIntegracao": 580,
+    "conteudo": {
+      "data": "2011-09-19T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477194
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17065",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146971721
+    "idIntegracao": 581,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477199
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17066",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146971605
+    "idIntegracao": 582,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653244
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17067",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146971684
+    "idIntegracao": 583,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653245
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17068",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146971643
+    "idIntegracao": 584,
+    "conteudo": {
+      "data": "2011-10-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477204
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17069",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146971465
+    "idIntegracao": 585,
+    "conteudo": {
+      "data": "2012-05-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17070",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146971606
+    "idIntegracao": 586,
+    "conteudo": {
+      "data": "2013-08-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42701
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17071",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146971644
+    "idIntegracao": 587,
+    "conteudo": {
+      "data": "2012-10-09T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477214
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17072",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146971761
+    "idIntegracao": 588,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477218
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17073",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146971645
+    "idIntegracao": 589,
+    "conteudo": {
+      "data": "2014-01-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653248
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42701
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17074",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261630,
-      "idImoveisInfComplem": 3146971737
+    "idIntegracao": 590,
+    "conteudo": {
+      "data": "2012-11-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653249
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17075",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261652,
-      "idImoveisInfComplem": 3146971738
+    "idIntegracao": 591,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477225
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17076",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261672,
-      "idImoveisInfComplem": 3146971646
+    "idIntegracao": 592,
+    "conteudo": {
+      "data": "2012-11-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477229
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17077",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261657,
-      "idImoveisInfComplem": 3146971524
+    "idIntegracao": 593,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477232
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17078",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261691,
-      "idImoveisInfComplem": 3146971663
+    "idIntegracao": 594,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17079",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146971607
+    "idIntegracao": 595,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653251
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17080",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261732,
-      "idImoveisInfComplem": 3146971608
+    "idIntegracao": 596,
+    "conteudo": {
+      "data": "2012-12-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477240
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17081",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261752,
-      "idImoveisInfComplem": 3146971722
+    "idIntegracao": 597,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477245
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17082",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261771,
-      "idImoveisInfComplem": 3146971762
+    "idIntegracao": 598,
+    "conteudo": {
+      "data": "2012-08-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17083",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146971466
+    "idIntegracao": 599,
+    "conteudo": {
+      "data": "2012-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477250
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17084",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146971609
+    "idIntegracao": 600,
+    "conteudo": {
+      "data": "2012-02-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17085",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146971664
+    "idIntegracao": 601,
+    "conteudo": {
+      "data": "2012-04-02T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477257
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17086",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261411,
-      "idImoveisInfComplem": 3146971610
+    "idIntegracao": 602,
+    "conteudo": {
+      "data": "2011-12-31T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": null
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17087",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146971611
+    "idIntegracao": 603,
+    "conteudo": {
+      "data": "2012-10-10T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477263
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17088",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146971685
+    "idIntegracao": 604,
+    "conteudo": {
+      "data": "2012-04-05T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477267
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17089",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261471,
-      "idImoveisInfComplem": 3146971665
+    "idIntegracao": 605,
+    "conteudo": {
+      "data": "2012-12-12T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477270
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17090",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146971629
+    "idIntegracao": 606,
+    "conteudo": {
+      "data": "2012-10-09T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477275
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17091",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146971666
+    "idIntegracao": 607,
+    "conteudo": {
+      "data": "2012-03-01T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33653254
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42704
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   },
   {
-    "idIntegracao": "17092",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146971647
+    "idIntegracao": 608,
+    "conteudo": {
+      "data": "2012-08-17T00:00:00",
+      "saldoFgts": null,
+      "fgtsMesAnterior": false,
+      "reporVaga": true,
+      "ato": null,
+      "matricula": {
+        "id": 33477282
+      },
+      "avisoPrevio": null,
+      "motivoRescisao": {
+        "id": 42702
+      },
+      "trabalhouDiaRescisao": false,
+      "recalcularMensal": false,
+      "conversao": false,
+      "dataEfeitoFinanceiro": null,
+      "dataCancelamento": null,
+      "tipoCancelamento": null,
+      "numeroProcessoCancelamento": null,
+      "tipoAfastamentoAteEfeitoFinanceiro": null,
+      "tipoAfastamentoDoEfeitoFincanceiroAteCancelamento": null,
+      "atoCancelamento": null,
+      "afastamentos": [],
+      "reintegracaoExcedeVagaCargo": false,
+      "usuarioReintegracao": null,
+      "dataHoraReintegracao": null,
+      "aposentadoRevertido": null,
+      "empresaSucessora": null,
+      "dataFinalQuarentena": null,
+      "indicativoRemuneracao": null,
+      "pdv": false,
+      "processoTrabalhista": null,
+      "dataRescisaoRetificadaProcTrab": null,
+      "motivoRescisaoRetificadaProcTrab": null,
+      "consideraAvosPerdidosDecimoTerceiro": true,
+      "descontarFaltasFerias": true,
+      "observacao": null,
+      "avisoPrevioDescontado": false,
+      "avisoPrevioIndenizado": false,
+      "quantidadeDiasAvisoPrevio": null,
+      "numeroProcessoTrabalhista": null
     }
   }
 ]

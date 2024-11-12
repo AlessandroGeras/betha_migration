@@ -55,38 +55,31 @@ async function main() {
         const userQuery = `
             select 
 ROW_NUMBER() OVER (ORDER BY cd_almoxa) AS id,
-JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 4832
-                        WHEN cd_almoxa = 20200 THEN 4877
-                        WHEN cd_almoxa = 20300 THEN 4878
-                        WHEN cd_almoxa = 20500 THEN 4880
-                        WHEN cd_almoxa = 20600 THEN 4881
-                        WHEN cd_almoxa = 20800 THEN 4883
-                        WHEN cd_almoxa = 20900 THEN 4884
-                        WHEN cd_almoxa = 21000 THEN 4885
-                        WHEN cd_almoxa = 1 THEN 4830
-                   END AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
-JSON_QUERY((SELECT CASE WHEN  cd_almoxa = 20100  THEN  2134007
-                        WHEN  cd_almoxa = 20200  THEN  2134009
-                        WHEN  cd_almoxa = 20300   THEN 2134011
-                        WHEN  cd_almoxa =  20500 THEN 2134013
-                        WHEN  cd_almoxa = 20600  THEN 2134015
-                        WHEN  cd_almoxa = 20800  THEN 2134022
-                        WHEN  cd_almoxa = 20900  THEN 2134017
-                                                 END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
-JSON_QUERY((SELECT case when cd_tipomovimento = 'CO' then 11099
-                                                when cd_tipomovimento = 'CD' then 11097
-                                                when cd_tipomovimento = 'AJS' then 11093
-                                                when cd_tipomovimento = 'DS' then 11108
-                                                when cd_tipomovimento = 'CDI' then 11106
-                                                when cd_tipomovimento = 'BP' then 11096
-                                   end as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS naturezaMovimentacao,
+JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 5415
+                        WHEN cd_almoxa = 20200 THEN 5416
+                        WHEN cd_almoxa = 20300 THEN 5418
+                        WHEN cd_almoxa = 20500 THEN 5420
+                        WHEN cd_almoxa = 20600 THEN 5417
+                        WHEN cd_almoxa = 20800 THEN 5421
+                        WHEN cd_almoxa = 20900 THEN 5419
+                   END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
+JSON_QUERY((SELECT CASE WHEN  cd_almoxa = 20100  THEN  2137536
+                        WHEN  cd_almoxa = 20200  THEN  2137538
+                        WHEN  cd_almoxa = 20300   THEN 2137540
+                        WHEN  cd_almoxa =  20500 THEN 2137542
+                        WHEN  cd_almoxa = 20600  THEN 2137544
+                        WHEN  cd_almoxa = 20800  THEN 2194157
+                        WHEN  cd_almoxa = 20900  THEN 2194153
+                         END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
+12165 AS naturezaMovimentacao,
+2024 as Ano,
 dt_movimento as dataSaida,
-nr_docto as observacao,
-2024 as Ano
+nr_docto as observacao
 from ALMOMovimentacao
-WHERE sg_direcao = 'CD' and aa_movimento = '2024' and qt_movimento < 0 and fl_devolucao is null and (cd_almoxa = 20100 or cd_almoxa = 20200 or  cd_almoxa = 20300 or  cd_almoxa = 20500 or  cd_almoxa = 20600 or  cd_almoxa = 20800 or  cd_almoxa = 20900 )
+WHERE sg_direcao = 'CD' and aa_movimento = '2024' and qt_movimento < 0 and fl_devolucao is null 
+and (cd_almoxa = 20500)-- or cd_almoxa = 20200 or  cd_almoxa = 20300 or  cd_almoxa = 20500 or  cd_almoxa = 20600 or  cd_almoxa = 20800 or  cd_almoxa = 20900 )
 GROUP BY  nr_docto, cd_almoxa, cd_tipomovimento, dt_movimento
-order by nr_docto asc
+order by dt_movimento asc
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -97,7 +90,7 @@ order by nr_docto asc
             
             return {
                 context: {
-					almoxarifado: JSON.parse(record.almoxarifado).id.toString(),
+					almoxarifado: (JSON.parse(record.almoxarifado).id).toString(),
 					exercicio: record.Ano.toString(),
 				},
                 conteudo:{
@@ -108,14 +101,14 @@ order by nr_docto asc
                     id: JSON.parse(record.organograma).id
                 },
                 naturezaMovimentacao: {
-                    id: JSON.parse(record.naturezaMovimentacao).id
+                    id: JSON.parse(record.naturezaMovimentacao)
                 },
                 dataSaida: formatDate(record.dataSaida),
                 observacao: record.observacao.toString()
             }};
         });
 
-        const chunkSize = 50;
+        /* const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
@@ -123,32 +116,73 @@ order by nr_docto asc
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://services.almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/saidas', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
+        return */
 
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://services.almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/saidas`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

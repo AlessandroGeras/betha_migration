@@ -42,16 +42,23 @@ async function main() {
 
         // Executar a consulta SQL
         const userQuery = `
-            SELECT 
-                cd_restricao AS id,
-                ds_restricao AS descricao,
-                JSON_QUERY(
-                    (SELECT
-                        'ADVERTENCIA' AS valor,
-                        ds_restricao AS descricao
-                    FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-                ) AS classificacao
-            FROM COMPTipoRestricoes
+            select 
+cd_restricao as id,
+ds_restricao as descricao,
+JSON_QUERY(
+    (SELECT
+        case ds_restricao 
+                when 'Advertência' then 'ADVERTENCIA'
+                when 'Declaração de Inidoneidade' then 'INIDONEIDADE'
+                when 'Multa' then 'MULTA'
+                when 'Notificação' then 'OUTROS'
+                when 'Penalidade' then 'IMPEDIMENTO'
+                when 'Suspensão' then 'SUSPENSAO'
+                end as valor,
+        ds_restricao as descricao
+ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+) AS classificacao
+from COMPTipoRestricoes
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -59,41 +66,88 @@ async function main() {
 
         // Transformar os resultados da consulta no formato desejado
         const transformedData = resultData.map(record => ({
-            id: record.id,
+            conteudo:{
             descricao: record.descricao,
             classificacao: JSON.parse(record.classificacao)
+            }
         }));
 
-        // Salvar os resultados transformados em um arquivo JSON
-        fs.writeFileSync('log_envio.json', JSON.stringify(transformedData, null, 2));
-        console.log('Dados salvos em log_envio.json');
-
-        // Enviar cada registro individualmente para a rota desejada
-        for (const record of transformedData) {
-            const response = await fetch('https://contratos.betha.cloud/contratacao-services/api/tipos-sancao', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
-            }
+        /*  const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
         }
 
+        return   */ 
+        
+        // Function to split data into chunks
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
+            }
+            return chunked;
+        };
+        
+        // Batch the data and send to the API in chunks
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Sending the following batch to the API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://contratos.betha.cloud/contratacao-services/api/conversoes/lotes/tipos-sancao`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Data successfully sent to the API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Error sending data to the API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Error sending batch to the API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report and report IDs to JSON files
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Report saved successfully in report.json.');
+        
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json saved successfully.');
+
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

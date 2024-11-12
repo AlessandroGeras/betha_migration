@@ -55,6 +55,19 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             select
+                CASE 
+                WHEN nr_pedido = 1 THEN 1
+                WHEN nr_pedido = 2 THEN 3
+                WHEN nr_pedido = 4 THEN 2
+                WHEN nr_pedido = 5 THEN 4
+                WHEN nr_pedido = 9 THEN 5
+                WHEN nr_pedido = 6 THEN 6
+                WHEN nr_pedido = 16 THEN 7
+                WHEN nr_pedido = 27 THEN 8
+                WHEN nr_pedido = 30 THEN 9
+                WHEN nr_pedido = 36 THEN 10
+                WHEN nr_pedido = 38 THEN 11
+                END AS sequencial,
         JSON_QUERY(
         (SELECT
             JSON_QUERY(
@@ -123,18 +136,22 @@ async function main() {
                         'PROCESSO_ADMINISTRATIVO' as descricao
         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     ) AS origem,
-        JSON_QUERY(
-        (SELECT
-            'QUANTIDADE' AS valor,
-            'QUANTIDADE' as descricao
-        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
-    ) AS tipoControleSaldo,
         pedido.ds_objeto as objetoContratacao,
         format(licitacao.dt_ValidadeInicial, 'yyyy-MM-dd') as dataInicioVigencia,
-        format(licitacao.dt_ValidadeFinal, 'yyyy-MM-dd') as dataFimVigencia
+        format(licitacao.dt_ValidadeFinal, 'yyyy-MM-dd') as dataFimVigencia,
+                JSON_QUERY(
+        (SELECT
+            CASE 
+                                WHEN nr_pedido IN (2, 1, 27, 30, 36, 38) THEN 'QUANTIDADE'
+                                ELSE 'VALOR' END as valor,
+                        CASE
+                                WHEN nr_pedido IN (2, 1, 27, 30, 36, 38) THEN 'QUANTIDADE'
+                                ELSE 'VALOR' END as descricao
+        FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+    ) AS tipoControleSaldo
 from COMPPedidos pedido
 INNER JOIN COMPLicitacaoFornecedores licitacao ON licitacao.nr_licitacao = pedido.nr_licitacao
-where pedido.aa_licitacao = 2024 and licitacao.aa_licitacao = 2024 and pedido.nr_pedido not in (34, 35) and pedido.nr_pedido in (1,4,2,5,9,6,16,27,30,36,38);
+where pedido.aa_licitacao = 2024 and licitacao.aa_licitacao = 2024 and pedido.nr_pedido not in (34, 35) and pedido.nr_pedido in (4, 5, 6, 9, 16);
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -163,6 +180,7 @@ where pedido.aa_licitacao = 2024 and licitacao.aa_licitacao = 2024 and pedido.nr
                 const tipoControleSaldoDetalhes = tipoControleSaldo && tipoControleSaldo.length > 1 ? tipoControleSaldo[1] : null;
         
                 return {
+                    sequencial: record.sequencial,
                     processoAdministrativo: {
                         entidade: {
                             id: processoAdministrativo?.entidade?.id || null // Garantindo que entidade.id exista

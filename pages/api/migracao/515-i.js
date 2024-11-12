@@ -1,0 +1,953 @@
+const sql = require('mssql');
+const dotenv = require('dotenv');
+const fetch = require('node-fetch');
+const fs = require('fs');
+
+dotenv.config();
+
+async function connectToSqlServer() {
+    try {
+        const server = process.env.SERVER;
+        const database = process.env.DATABASE;
+        const username = process.env.USERNAME_SQLSERVER;
+        const password = process.env.PASSWORD;
+
+        const config = {
+            user: username,
+            password: password,
+            server: server,
+            database: database,
+            options: {
+                encrypt: false
+            }
+        };
+
+        const pool = await sql.connect(config);
+        console.log("Conectado ao SQL Server");
+        return pool;
+    } catch (error) {
+        console.error('Erro ao conectar ao SQL Server:', error);
+        throw error;
+    }
+}
+
+function formatDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = (`0${d.getMonth() + 1}`).slice(-2);
+    const day = (`0${d.getDate()}`).slice(-2);
+    const hours = (`0${d.getHours()}`).slice(-2);
+    const minutes = (`0${d.getMinutes()}`).slice(-2);
+    const seconds = (`0${d.getSeconds()}`).slice(-2);
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+function formatDate2(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = (`0${d.getMonth() + 1}`).slice(-2);
+    const day = (`0${d.getDate()}`).slice(-2);
+    const hours = (`0${d.getHours()}`).slice(-2);
+    const minutes = (`0${d.getMinutes()}`).slice(-2);
+    const seconds = (`0${d.getSeconds()}`).slice(-2);
+    return `${year}-${month}-${day}`;
+    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+async function main() {
+    try {
+        // Conectar ao SQL Server
+        const masterConnection = await connectToSqlServer();
+
+        // Selecionar o banco de dados
+        const selectDatabaseQuery = 'USE TRIBUTOS2024';
+        await masterConnection.query(selectDatabaseQuery);
+
+        // Executar a consulta SQL
+        const userQuery = `
+        select
+	ROW_NUMBER() OVER (ORDER BY imoveis.cd_cecam) + 321.472 AS idIntegracao,
+	JSON_QUERY(
+    (SELECT
+		imoveis.nm_AreaEdificio as vlAreaConstruidaUnidade, 
+		imoveis.nm_AreaTerreno as vlAreaTotalTerrenoUnidade, 
+		imoveis.nm_AreaEdificio as vlVenalConstruidoUnidade, 
+		imoveis.nm_AreaTerreno as vlVenalTerritorialUnidade, 
+		0 as vlVenalUnidade ,
+		'SIM' as benfeitorias,
+		'COMPRADOR' as financiado,
+		'SIm' as outros,
+		'PARCIAL' as tipoVenda,
+		438696 idMotivos,
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+CASE 
+WHEN c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA'THEN 28930485	
+WHEN c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura'THEN 27628332	
+WHEN c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura'THEN 28930358	
+WHEN c.nm_Contribuinte = 'SECUNDINO DE SOUZA NEVES'THEN 27628837	
+WHEN c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA'THEN 27629303	
+WHEN c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA'THEN 27628843	
+WHEN c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA'THEN 27628841	
+WHEN c.nm_Contribuinte = 'SERGIO ALVES DE ALMEIDA'THEN 27629155	
+WHEN c.nm_Contribuinte = 'SERGIO OLIVEIRA PRUDENCIO'THEN 27629084	
+WHEN c.nm_Contribuinte = 'SERGIO OLIVEIRA PRUDENCIO'THEN 27629085	
+WHEN c.nm_Contribuinte = 'SEVERINA PEREIRA NASCIMENTO'THEN 27629332	
+WHEN c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO'THEN 27629335	
+WHEN c.nm_Contribuinte = 'SILVANY BISPO DOS SANTOS DE ALMEIDA'THEN 28930432	
+WHEN c.nm_Contribuinte = 'SILVIO JOSE DE AMORIM'THEN 27628109	
+WHEN c.nm_Contribuinte = 'SIMONE BATISTA'THEN 28930435	
+WHEN c.nm_Contribuinte = 'SIMONE MORAES FLORENCIO'THEN 28930371	
+WHEN c.nm_Contribuinte = 'SIMONE ROCHA NUNES'THEN 27629172	
+WHEN c.nm_Contribuinte = 'SINDICATO DOS TRABALHADORES RURAIS DE PARECIS'THEN 27629276	
+WHEN c.nm_Contribuinte = 'SOLANGE ALVES CESTARI'THEN 27628368	
+WHEN c.nm_Contribuinte = 'SOLANGE APARECIDA DEL NERO'THEN 27629181	
+WHEN c.nm_Contribuinte = 'SOLANGE MUCHINSKI'THEN 27629391	
+WHEN c.nm_Contribuinte = 'SUELI ESTER DE FREITAS SIMINHUK'THEN 28930494	
+WHEN c.nm_Contribuinte = 'TENECIR LISBOA DE SOUZA'THEN 27629205	
+WHEN c.nm_Contribuinte = 'TEREZINA  ANDRETTA'THEN 27629107	
+WHEN c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE'THEN 27628687	
+WHEN c.nm_Contribuinte = 'TEREZINHA DE JESUS DA SILVA'THEN 27628383	
+WHEN c.nm_Contribuinte = 'TEREZINHA RACANELI'THEN 27628095	
+WHEN c.nm_Contribuinte = 'THAINA BARRETO AMARAL ANDRES'THEN 27629166	
+WHEN c.nm_Contribuinte = 'TIAGO DEIVIDI DA CRUZ'THEN 27628322	
+WHEN c.nm_Contribuinte = 'TIAGO ELLER GOIS'THEN 27629398	
+WHEN c.nm_Contribuinte = 'TOMAS EDSON SETTE'THEN 27628327	
+WHEN c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI'THEN 27629226	
+WHEN c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI'THEN 27629227	
+WHEN c.nm_Contribuinte = 'VALDECI NEVES ROSA 'THEN 27628692	
+WHEN c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA'THEN 27628065	
+WHEN c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA'THEN 27628790	
+WHEN c.nm_Contribuinte = 'VALDECIR ANDRETTA'THEN 27628356	
+WHEN c.nm_Contribuinte = 'VALDECIR GUILHERMES MLAK'THEN 28930475	
+WHEN c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835'THEN 28930381	
+WHEN c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835'THEN 27628694	
+WHEN c.nm_Contribuinte = 'VALDECIR P. CASTRO ALIEN SICOOB CREDIP CED 1263792'THEN 27628831	
+WHEN c.nm_Contribuinte = 'VALDEIR CLAUDINO GONCALVES'THEN 27628784	
+WHEN c.nm_Contribuinte = 'VALDENIR FERREIRA DA SILVA'THEN 27629194	
+WHEN c.nm_Contribuinte = 'VALDINEI JOSÉ DE OLIVEIRA'THEN 27629401	
+WHEN c.nm_Contribuinte = 'VALDIR BERGER'THEN 27629143	
+WHEN c.nm_Contribuinte = 'VALDIR BERGER'THEN 27628771	
+WHEN c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA'THEN 27629211	
+WHEN c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA'THEN 27629212	
+WHEN c.nm_Contribuinte = 'VALDIRENE HAMMER BERGER'THEN 27629381	
+WHEN c.nm_Contribuinte = 'VALERIA DE CARVALHO BARRETO'THEN 27628329	
+WHEN c.nm_Contribuinte = 'VAMDERLEY FRANCISCO DE AMORIM'THEN 27629163	
+WHEN c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA'THEN 27629097	
+WHEN c.nm_Contribuinte = 'VANDERLEIA NUNES FERREIRA FIGUEIREDO'THEN 27629142	
+WHEN c.nm_Contribuinte = 'VANESSA SABINA DE OLIVEIRA SILVA PETRINO'THEN 27629168	
+WHEN c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS'THEN 27629119	
+WHEN c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA'THEN 27628937	
+WHEN c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA'THEN 27629365	
+WHEN c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA'THEN 28930469	
+WHEN c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO'THEN 27628683	
+WHEN c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO'THEN 27628805	
+WHEN c.nm_Contribuinte = 'VICENTE SAMPAIO DE OLIVEIRA'THEN 27629352	
+WHEN c.nm_Contribuinte = 'VILMA DE JESUS DA COSTA'THEN 27629237	
+WHEN c.nm_Contribuinte = 'VILMA SALETE PIAZZA'THEN 27629281	
+WHEN c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES'THEN 28930464	
+WHEN c.nm_Contribuinte = 'WALLEN FERNANDO LEITE BALEEIRO'THEN 27629135	
+WHEN c.nm_Contribuinte = 'WALLEN FERNANDO LEITE BALEEIRO'THEN 27629136	
+WHEN c.nm_Contribuinte = 'WALLISSON HENRIQUE XAVIER'THEN 27629103	
+WHEN c.nm_Contribuinte = 'WANTUIR DE CAMARGOS'THEN 27628371	
+WHEN c.nm_Contribuinte = 'WANTUIR DE CAMARGOS'THEN 27628807	
+WHEN c.nm_Contribuinte = 'WANTUIR DE CAMARGOS'THEN 27628808	
+WHEN c.nm_Contribuinte = 'WANTUIR DE CAMARGOS'THEN 27628830	
+WHEN c.nm_Contribuinte = 'WEDSON ROQUE DINIZ CARRARO'THEN 27628829	
+WHEN c.nm_Contribuinte = 'WELIAN ANIEL DA SILVA FERREIRA'THEN 27628104	
+WHEN c.nm_Contribuinte = 'WELITON JOSÉ LUCAS'THEN 27629170	
+WHEN c.nm_Contribuinte = 'WELLEN LOURENÇO VIANA, WENDER L. VIANA E DANIELLLY F. VIANA'THEN 27629213	
+WHEN c.nm_Contribuinte = 'WÉRICK RUBENS RAGNEL DE SOUZA BARCELOS'THEN 27629042	
+WHEN c.nm_Contribuinte = 'WERIK MACIEL DA COSTA'THEN 27628823	
+WHEN c.nm_Contribuinte = 'WESLEI SILVA DE OLIVEIRA'THEN 27629366	
+WHEN c.nm_Contribuinte = 'WESLEY FABIO LAUTERTE'THEN 27629248	
+WHEN c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS'THEN 28930517	
+WHEN c.nm_Contribuinte = 'WILIAN DE SOUZA MLAK'THEN 27629108	
+WHEN c.nm_Contribuinte = 'WILLIAN CAMPOS DE ABREU'THEN 27628328	
+WHEN c.nm_Contribuinte = 'WILSON ALVES DE OLIVEIRA'THEN 28971356	
+WHEN c.nm_Contribuinte = 'ZAMIR LUIZ'THEN 28930427	
+WHEN c.nm_Contribuinte = 'ZENAIDE DE JESUS ANTONIO PEREIRA'THEN 27628087
+END as idImoveis,
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+CASE
+
+
+WHEN c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 77020790
+WHEN c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura' THEN 77021141
+WHEN c.nm_Contribuinte = 'SECUNDINO DE SOUZA NEVES' THEN 77021667
+WHEN c.nm_Contribuinte = 'SECUNDINO DE SOUZA NUNES' THEN 77520942
+WHEN c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 77020610
+WHEN c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA' THEN 77020871
+WHEN c.nm_Contribuinte = 'SERGIO ALVES DE ALMEIDA' THEN 77021636
+WHEN c.nm_Contribuinte = 'SERGIO BERNARDINO DE OLIVEIRA' THEN 77021252
+WHEN c.nm_Contribuinte = 'SERGIO LEAO DE ARAUJO' THEN 77021985
+WHEN c.nm_Contribuinte = 'SERGIO MENDES RODRIGUES' THEN 77021224
+WHEN c.nm_Contribuinte = 'SERGIO OLIVEIRA PRUDENCIO' THEN 77021334
+WHEN c.nm_Contribuinte = 'SERGIO SOARES DA COSTA' THEN 77021993
+WHEN c.nm_Contribuinte = 'SERVIÇO NACIONAL DE APRENDIZAGEM RURAL - SENAR/RO' THEN 77575467
+WHEN c.nm_Contribuinte = 'SEVERINA PEREIRA NASCIMENTO' THEN 77021467
+WHEN c.nm_Contribuinte = 'SEVERINO FERREIRA DOS SANTOS' THEN 77020606
+WHEN c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 77020688
+WHEN c.nm_Contribuinte = 'SIDNEI DOS ANJOS CARVALHO' THEN 77520941
+WHEN c.nm_Contribuinte = 'SILAS DOS SANTOS' THEN 77020375
+WHEN c.nm_Contribuinte = 'SILVA E MONTELO LTDA - ME' THEN 77520739
+WHEN c.nm_Contribuinte = 'SILVANY BISPO DOS SANTOS DE ALMEIDA' THEN 77021752
+WHEN c.nm_Contribuinte = 'SILVERO REGULARIZAR SEU CADASTRO' THEN 77020821
+WHEN c.nm_Contribuinte = 'SILVERO SAMPAIO COSTA' THEN 77021020
+WHEN c.nm_Contribuinte = 'SILVERO SANPAIO COSTA' THEN 77020839
+WHEN c.nm_Contribuinte = 'SILVIO JOSE DE AMORIM' THEN 77021540
+WHEN c.nm_Contribuinte = 'SIMONE BATISTA' THEN 77021287
+WHEN c.nm_Contribuinte = 'SIMONE MORAES FLORENCIO' THEN 77021666
+WHEN c.nm_Contribuinte = 'SIMONE MORAES FLORENCIO' THEN 77521112
+WHEN c.nm_Contribuinte = 'SIMONE ROCHA NUNES' THEN 77021364
+WHEN c.nm_Contribuinte = 'SINDICATO DOS TRABALHADORES RURAIS DE PARECIS' THEN 77020919
+WHEN c.nm_Contribuinte = 'SIRLEI APARECIDA GOMES DA ROSA' THEN 77021967
+WHEN c.nm_Contribuinte = 'SIRLENE BRIGIDO OLIVEIRA' THEN 77521039
+WHEN c.nm_Contribuinte = 'SIRLENE BROGIDO OLIVEIRA' THEN 77021533
+WHEN c.nm_Contribuinte = 'SIVAL & ALESSANDRA COMERCIO E ATACADO DE ALIMENTOS LTDA' THEN 77521151
+WHEN c.nm_Contribuinte = 'SIVAL PEREIRA DE SOUZA ALIENADO SICOOB CREDIP CED.2461138' THEN 77021371
+WHEN c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 77020549
+WHEN c.nm_Contribuinte = 'SOLANGE APARECIDA DEL NERO' THEN 77021025
+WHEN c.nm_Contribuinte = 'SOLANGE MUCHINSKI' THEN 77021593
+WHEN c.nm_Contribuinte = 'SONIA MARIA SILVA CORSINI' THEN 77521043
+WHEN c.nm_Contribuinte = 'SOUZA & CIQUEIRA COMERCIO LTDA-ME' THEN 77521014
+WHEN c.nm_Contribuinte = 'SOUZATUR TRANSPORTE & TURISMO LTDA - ME' THEN 77521031
+WHEN c.nm_Contribuinte = 'SPEED NET TELECOMUNICACOES LTDA' THEN 77521159
+WHEN c.nm_Contribuinte = 'SUELI DE LUCA SIQUEIRA' THEN 77021118
+WHEN c.nm_Contribuinte = 'SUELI ESTER DE FREITAS SIMINHUK' THEN 77021770
+WHEN c.nm_Contribuinte = 'SUPERMERCADO IDEAL LTDA' THEN 77521149
+WHEN c.nm_Contribuinte = 'SUSANA CANDIDA DA ROCHA' THEN 77021044
+WHEN c.nm_Contribuinte = 'SUZILENE DO NASCIMENTO' THEN 77020718
+WHEN c.nm_Contribuinte = 'T. I. DOS SANTOS CRISOSTHEMOS - ME' THEN 77520949
+WHEN c.nm_Contribuinte = 'Taiany de Oliveira Bescorovaine E Daiany de Oli. Bescorovane' THEN 77021171
+WHEN c.nm_Contribuinte = 'TATIANE ALVES DE LIMA' THEN 77020778
+WHEN c.nm_Contribuinte = 'TATIANE ALVES DE LIMA' THEN 77021039
+WHEN c.nm_Contribuinte = 'TELSAN ENGENHARIA E SERVICOS S A' THEN 77575965
+WHEN c.nm_Contribuinte = 'TENCEL ENGENHARIA EIRELI' THEN 77575961
+WHEN c.nm_Contribuinte = 'TENECIR LISBOA DE SOUZA' THEN 77020776
+WHEN c.nm_Contribuinte = 'TEODOLINA CORREIA PINTO' THEN 77021776
+WHEN c.nm_Contribuinte = 'TEODORO DE OLIVEIRA FRANQUE' THEN 77020893
+WHEN c.nm_Contribuinte = 'TEREZA DUARTE DOS SANTOS' THEN 77021257
+WHEN c.nm_Contribuinte = 'TEREZA RACANELI DOS SANTOS' THEN 77020379
+WHEN c.nm_Contribuinte = 'TEREZINA  ANDRETTA' THEN 77021576
+WHEN c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 77021005
+WHEN c.nm_Contribuinte = 'TEREZINHA DE JESUS DA SILVA' THEN 77021566
+WHEN c.nm_Contribuinte = 'TEREZINHA JANDIRA ANDRETA DE ALMEIDA' THEN 77020923
+WHEN c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 77020618
+WHEN c.nm_Contribuinte = 'TEREZINHA MARIA DA SILVA' THEN 77520945
+WHEN c.nm_Contribuinte = 'TEREZINHA RACANELI' THEN 77021978
+WHEN c.nm_Contribuinte = 'TEREZINHA RACANELLI VALENTIN' THEN 77020378
+WHEN c.nm_Contribuinte = 'TERRA LIMPA LOCAÇÃO DE MAQUINAS LTDA' THEN 77521103
+WHEN c.nm_Contribuinte = 'TESCH & CASTRO LTDA - ME' THEN 77521067
+WHEN c.nm_Contribuinte = 'THAINÁ BARRETO AMARAL ANDRADES' THEN 77021668
+WHEN c.nm_Contribuinte = 'THAINA BARRETO AMARAL ANDRES' THEN 77021683
+WHEN c.nm_Contribuinte = 'THAYS GOMES DE CAMPOS FARIA' THEN 77521033
+WHEN c.nm_Contribuinte = 'THAYS GOMES DE CAMPOS' THEN 77021232
+WHEN c.nm_Contribuinte = 'THELMO WAGNER CUSTODIO FACHINI' THEN 77021149
+WHEN c.nm_Contribuinte = 'THELMO WAGNER CUSTODIO FACHINI' THEN 77021778
+WHEN c.nm_Contribuinte = 'THEREZA MARIA DE BARROS GOMES' THEN 77520948
+WHEN c.nm_Contribuinte = 'TIAGO DEIVIDI DA CRUZ' THEN 77021562
+WHEN c.nm_Contribuinte = 'TIAGO DEIVIDI DA CRUZ' THEN 77521089
+WHEN c.nm_Contribuinte = 'TIAGO ELLER GOIS' THEN 77021464
+WHEN c.nm_Contribuinte = 'TIAGO ELLER GOIS' THEN 77521132
+WHEN c.nm_Contribuinte = 'TOMAS EDSON SETTE' THEN 77021167
+WHEN c.nm_Contribuinte = 'TRATORON COMERCIO DE MAQUINAS E IMPLEMENTOS AGRICOLAS LTDA' THEN 77575471
+WHEN c.nm_Contribuinte = 'V. EURIPEDES SANTOS MARTINS - ME' THEN 77520957
+WHEN c.nm_Contribuinte = 'V. L. DE MORAES - ME' THEN 77520986
+WHEN c.nm_Contribuinte = 'V. T. DE SOUZA' THEN 77521091
+WHEN c.nm_Contribuinte = 'VAGNA DA SILVA SOUZA' THEN 77020432
+WHEN c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 77020825
+WHEN c.nm_Contribuinte = 'VALCIMAR LUIZ DE BRITO' THEN 77020824
+WHEN c.nm_Contribuinte = 'VALCIRENE DEL NERO SILVA' THEN 77021555
+WHEN c.nm_Contribuinte = 'VALDECI ALVES DA SILVA' THEN 77020944
+WHEN c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 77021495
+WHEN c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 77021960
+WHEN c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA' THEN 77021512
+WHEN c.nm_Contribuinte = 'VALDECIR ALVES DA SILVA' THEN 77020498
+WHEN c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 77020874
+WHEN c.nm_Contribuinte = 'VALDECIR CILAS DO NASCIMENTO' THEN 77020877
+WHEN c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 77020666
+WHEN c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 77520954
+WHEN c.nm_Contribuinte = 'VALDECIR GUILHERMES MLAK' THEN 77020760
+WHEN c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835' THEN 77021103
+WHEN c.nm_Contribuinte = 'VALDECIR LIMA DE MORAES' THEN 77021152
+WHEN c.nm_Contribuinte = 'VALDECIR P. CASTRO ALIEN SICOOB CREDIP CED 1263792' THEN 77021971
+WHEN c.nm_Contribuinte = 'VALDECIR ROMANHA' THEN 77020365
+WHEN c.nm_Contribuinte = 'VALDEIR CLAUDINO GONCALVES' THEN 77020443
+WHEN c.nm_Contribuinte = 'VALDEMAR CRU DE LIMA' THEN 77020765
+WHEN c.nm_Contribuinte = 'VALDEMIR ROGERIO MENDES' THEN 77020396
+WHEN c.nm_Contribuinte = 'VALDENIR FERREIRA DA SILVA' THEN 77020989
+WHEN c.nm_Contribuinte = 'VALDETE APARECIDA RAFAEL BUENO' THEN 77020800
+WHEN c.nm_Contribuinte = 'VALDINEI JOSÉ DE OLIVEIRA' THEN 77021478
+WHEN c.nm_Contribuinte = 'VALDINEY SANTOS DA ROSA' THEN 77021054
+WHEN c.nm_Contribuinte = 'VALDINEY SANTOS DA ROSA' THEN 77520959
+WHEN c.nm_Contribuinte = 'VALDIR ALVES CANDIDO' THEN 77020552
+WHEN c.nm_Contribuinte = 'VALDIR BERGER' THEN 77021386
+WHEN c.nm_Contribuinte = 'VALDIR BERGER' THEN 77021453
+WHEN c.nm_Contribuinte = 'VALDIR DEL NERO - ME' THEN 77520952
+WHEN c.nm_Contribuinte = 'VALDIR DEL NERO' THEN 77021554
+WHEN c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 77020999
+WHEN c.nm_Contribuinte = 'VALDIRENE HAMMER BERGER' THEN 77021729
+WHEN c.nm_Contribuinte = 'VALDOMIRO SOARES ROCHA' THEN 77020773
+WHEN c.nm_Contribuinte = 'VALENTINA DE ALMEIDA' THEN 77021311
+WHEN c.nm_Contribuinte = 'VALERIA DE CARVALHO BARRETO' THEN 77021368
+WHEN c.nm_Contribuinte = 'VALERIA FERREIRA QUINTÃO ROMANHA 04218537275' THEN 77521118
+WHEN c.nm_Contribuinte = 'VALERIA MOREIRA GOMES' THEN 77021398
+WHEN c.nm_Contribuinte = 'VALMIR GONÇALVES MACHADO' THEN 77020917
+WHEN c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 77020550
+WHEN c.nm_Contribuinte = 'VALMIR MACHADO' THEN 77020866
+WHEN c.nm_Contribuinte = 'VALMIR MARIA DE OLIVEIRA' THEN 77020767
+WHEN c.nm_Contribuinte = 'VALTERNEI FERNANDES SENA' THEN 77020473
+WHEN c.nm_Contribuinte = 'VAMDERLEY FRANCISCO DE AMORIM' THEN 77020486
+WHEN c.nm_Contribuinte = 'VANDERLAN ANTONIO FERREIRA' THEN 77021332
+WHEN c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA' THEN 77021411
+WHEN c.nm_Contribuinte = 'VANDERLEIA NUNES FERREIRA FIGUEIREDO' THEN 77021627
+WHEN c.nm_Contribuinte = 'VANDERLEY CESARIO DE SOUZA' THEN 77020672
+WHEN c.nm_Contribuinte = 'VANDERLEY FRANCISCO DE AMORIM' THEN 77020487
+WHEN c.nm_Contribuinte = 'VANDERLUCIO DA SILVA' THEN 77020366
+WHEN c.nm_Contribuinte = 'VANDIR ZEFERINO DE MATOS' THEN 77021542
+WHEN c.nm_Contribuinte = 'VANESSA SABINA DE OLIVEIRA SILVA PETRINO' THEN 77021446
+WHEN c.nm_Contribuinte = 'VANI ALVES SILVA' THEN 77020739
+WHEN c.nm_Contribuinte = 'VANILDA BUENO DEL NERO' THEN 77021433
+WHEN c.nm_Contribuinte = 'VANIR DE ALBUQUERQUE BRITO' THEN 77021692
+WHEN c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 77020928
+WHEN c.nm_Contribuinte = 'VBC ENGENHARIA' THEN 77520955
+WHEN c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 77020479
+WHEN c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 77020580
+WHEN c.nm_Contribuinte = 'VERA LUCIA NEPOMUCENO DE JESUS DA LUZ' THEN 77020391
+WHEN c.nm_Contribuinte = 'VERÔNICA VIEIRA DA SILVA - ME' THEN 77520958
+WHEN c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA' THEN 77020462
+WHEN c.nm_Contribuinte = 'VERSONI ALCANTARA LOPES' THEN 77020784
+WHEN c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 77020570
+WHEN c.nm_Contribuinte = 'VICENTE SAMPAIO DE OLIVEIRA' THEN 77021705
+WHEN c.nm_Contribuinte = 'VICENTE SOARES DA COSTA' THEN 77020954
+WHEN c.nm_Contribuinte = 'VILMA DE JESUS DA COSTA' THEN 77021600
+WHEN c.nm_Contribuinte = 'VILMA EURIPEDES SANTOS MARTINS' THEN 77520988
+WHEN c.nm_Contribuinte = 'VILMA EURIPEDES SANTOS' THEN 77521134
+WHEN c.nm_Contribuinte = 'VILMA SALETE PIAZZA' THEN 77021614
+WHEN c.nm_Contribuinte = 'VILMAR NUNES' THEN 77021406
+WHEN c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES' THEN 77021551
+WHEN c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES' THEN 77521032
+WHEN c.nm_Contribuinte = 'VITORINO DOS SANTOS CALDEIRA' THEN 77021353
+WHEN c.nm_Contribuinte = 'VITORINO RODRIGUES DE MORAIS' THEN 77020481
+WHEN c.nm_Contribuinte = 'VIVIANE IND. E COM. DE MADEIRA LTDA.' THEN 77520956
+WHEN c.nm_Contribuinte = 'VONI JOSE DE OLIVEIRA' THEN 77520995
+WHEN c.nm_Contribuinte = 'W. J. DE LIMA - ME' THEN 77520951
+WHEN c.nm_Contribuinte = 'W. S. CAVALLARI - EPP' THEN 77575962
+WHEN c.nm_Contribuinte = 'WALDENIR MOTA PEREIRA' THEN 77021380
+WHEN c.nm_Contribuinte = 'WALDIR ALVES' THEN 77520953
+WHEN c.nm_Contribuinte = 'WALLEN FERNANDO LEITE BALEEIRO' THEN 77021746
+WHEN c.nm_Contribuinte = 'WALLISSON HENRIQUE XAVIER' THEN 77021617
+WHEN c.nm_Contribuinte = 'WALTEIR DA SILVA VIEIRA' THEN 77021998
+WHEN c.nm_Contribuinte = 'WANDERSON FARIA VIANA' THEN 77021092
+WHEN c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 77020662
+WHEN c.nm_Contribuinte = 'WASHINGTON SIQUEIRA DA SILVA' THEN 77521078
+WHEN c.nm_Contribuinte = 'WEDER BATISTA' THEN 77520950
+WHEN c.nm_Contribuinte = 'WEDSON ROQUE DINIZ CARRARO' THEN 77021760
+WHEN c.nm_Contribuinte = 'WEDSON ROQUE DINIZ CARRARO' THEN 77521090
+WHEN c.nm_Contribuinte = 'WELIAN ANIEL DA SILVA FERREIRA' THEN 77021372
+WHEN c.nm_Contribuinte = 'WELITON JOSÉ LUCAS' THEN 77021591
+WHEN c.nm_Contribuinte = 'WELLEN LOURENÇO VIANA, WENDER L. VIANA E DANIELLLY F. VIANA' THEN 77021574
+WHEN c.nm_Contribuinte = 'WÉRICK RUBENS RAGNEL DE SOUZA BARCELOS' THEN 77021679
+WHEN c.nm_Contribuinte = 'WERIK MACIEL DA COSTA' THEN 77021682
+WHEN c.nm_Contribuinte = 'WESLEI DA SILVA PINTO' THEN 77521102
+WHEN c.nm_Contribuinte = 'WESLEI SILVA DE OLIVEIRA' THEN 77021716
+WHEN c.nm_Contribuinte = 'WESLEY FABIO LAUTERTE' THEN 77020908
+WHEN c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 77021529
+WHEN c.nm_Contribuinte = 'WILIAN DE SOUZA MLAK' THEN 77021357
+WHEN c.nm_Contribuinte = 'WILLIAN CAMPOS DE ABREU' THEN 77021559
+WHEN c.nm_Contribuinte = 'WILSON ALVES DE OLIVEIRA' THEN 82222361
+WHEN c.nm_Contribuinte = 'WILSON JOSE DE LIMA' THEN 77020528
+WHEN c.nm_Contribuinte = 'YAGRO GESTAO E PLANEJAMENTO DE FAZENDAS LTDA' THEN 77521127
+WHEN c.nm_Contribuinte = 'Z. G. DA SILVA & MATOS LTDA - ME' THEN 77521058
+WHEN c.nm_Contribuinte = 'ZAMIR LUIZ' THEN 77021373
+WHEN c.nm_Contribuinte = 'ZENAIDE DE JESUS ANTONIO PEREIRA' THEN 77021623
+WHEN c.nm_Contribuinte = 'ZENAIR MARIA SCALZER LUCAS' THEN 77020493
+WHEN c.nm_Contribuinte = 'ZEZINHO' THEN 77020471
+WHEN c.nm_Contribuinte = 'ZIGRID OHNESORGE CAZELLI' THEN 77021112
+end as idProprietario,
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+CASE  
+
+
+
+
+
+
+when c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 10936139
+when c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 10936201
+when c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 10936231
+when c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 10936252
+when c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 10936273
+when c.nm_Contribuinte = 'SEBASTIAO VIEIRA DA COSTA' THEN 10936284
+when c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura' THEN 10933887
+when c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura' THEN 10933898
+when c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura' THEN 10933947
+when c.nm_Contribuinte = 'Secretaria Municipal de Educação e Cultura' THEN 10934034
+when c.nm_Contribuinte = 'SECUNDINO DE SOUZA NEVES' THEN 10935274
+when c.nm_Contribuinte = 'SECUNDINO DE SOUZA NEVES' THEN 10935328
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10934652
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10934664
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10934665
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10934666
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10935220
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10935261
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10935295
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10935296
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10935331
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10935365
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA ALIENADO A SICOOB CREDIP, 2115112' THEN 10938010
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA' THEN 10935278
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA' THEN 10935294
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA' THEN 10935334
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA' THEN 10938029
+when c.nm_Contribuinte = 'SERAFIM RODRIGUES DA COSTA' THEN 10938067
+when c.nm_Contribuinte = 'SERGIO ALVES DE ALMEIDA' THEN 10937284
+when c.nm_Contribuinte = 'SERGIO ALVES DE ALMEIDA' THEN 10937285
+when c.nm_Contribuinte = 'SERGIO BERNARDINO DE OLIVEIRA' THEN 10934661
+when c.nm_Contribuinte = 'SERGIO BERNARDINO DE OLIVEIRA' THEN 10934676
+when c.nm_Contribuinte = 'SERGIO BERNARDINO DE OLIVEIRA' THEN 10934692
+when c.nm_Contribuinte = 'SERGIO LEAO DE ARAUJO' THEN 10937093
+when c.nm_Contribuinte = 'SERGIO MENDES RODRIGUES' THEN 10936406
+when c.nm_Contribuinte = 'SERGIO OLIVEIRA PRUDENCIO' THEN 10936759
+when c.nm_Contribuinte = 'SERGIO OLIVEIRA PRUDENCIO' THEN 10936831
+when c.nm_Contribuinte = 'SERGIO SOARES DA COSTA' THEN 10936589
+when c.nm_Contribuinte = 'SEVERINA PEREIRA NASCIMENTO' THEN 10938257
+when c.nm_Contribuinte = 'SEVERINA PEREIRA NASCIMENTO' THEN 10938265
+when c.nm_Contribuinte = 'SEVERINA PEREIRA NASCIMENTO' THEN 10938281
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10935442
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10935492
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10935531
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10935547
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10938245
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10938273
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10938277
+when c.nm_Contribuinte = 'SIDINEI DOS ANJOS CARVALHO' THEN 10938282
+when c.nm_Contribuinte = 'SILVANY BISPO DOS SANTOS DE ALMEIDA' THEN 10935956
+when c.nm_Contribuinte = 'SILVERO SANPAIO COSTA' THEN 10936401
+when c.nm_Contribuinte = 'SILVERO SANPAIO COSTA' THEN 10936510
+when c.nm_Contribuinte = 'SILVERO SANPAIO COSTA' THEN 10936551
+when c.nm_Contribuinte = 'SILVIO JOSE DE AMORIM' THEN 10933660
+when c.nm_Contribuinte = 'SILVIO JOSE DE AMORIM' THEN 10933705
+when c.nm_Contribuinte = 'SILVIO JOSE DE AMORIM' THEN 10933884
+when c.nm_Contribuinte = 'SIMONE BATISTA' THEN 10936105
+when c.nm_Contribuinte = 'SIMONE BATISTA' THEN 10936015
+when c.nm_Contribuinte = 'SIMONE BATISTA' THEN 10936106
+when c.nm_Contribuinte = 'SIMONE MORAES FLORENCIO' THEN 10935360
+when c.nm_Contribuinte = 'SIMONE MORAES FLORENCIO' THEN 10935509
+when c.nm_Contribuinte = 'SIMONE ROCHA NUNES' THEN 10937160
+when c.nm_Contribuinte = 'SIMONE ROCHA NUNES' THEN 10937312
+when c.nm_Contribuinte = 'SIMONE ROCHA NUNES' THEN 10937299
+when c.nm_Contribuinte = 'SIMONE ROCHA NUNES' THEN 10937261
+when c.nm_Contribuinte = 'SIMONE ROCHA NUNES' THEN 10937282
+when c.nm_Contribuinte = 'SINDICATO DOS TRABALHADORES RURAIS DE PARECIS' THEN 10937801
+when c.nm_Contribuinte = 'SIRLEI APARECIDA GOMES DA ROSA' THEN 10936683
+when c.nm_Contribuinte = 'SIRLEI APARECIDA GOMES DA ROSA' THEN 10936864
+when c.nm_Contribuinte = 'SIVAL PEREIRA DE SOUZA ALIENADO SICOOB CREDIP CED.2461138' THEN 10937854
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934055
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934058
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934078
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934087
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934145
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934146
+when c.nm_Contribuinte = 'SOLANGE ALVES CESTARI' THEN 10934166
+when c.nm_Contribuinte = 'SOLANGE APARECIDA DEL NERO' THEN 10937353
+when c.nm_Contribuinte = 'SOLANGE APARECIDA DEL NERO' THEN 10937410
+when c.nm_Contribuinte = 'SOLANGE APARECIDA DEL NERO' THEN 10937426
+when c.nm_Contribuinte = 'SOLANGE MUCHINSKI' THEN 10938381
+when c.nm_Contribuinte = 'SOLANGE MUCHINSKI' THEN 10938416
+when c.nm_Contribuinte = 'SOLANGE MUCHINSKI' THEN 10938360
+when c.nm_Contribuinte = 'SOLANGE MUCHINSKI' THEN 10938351
+when c.nm_Contribuinte = 'SUELI DE LUCA SIQUEIRA' THEN 10936672
+when c.nm_Contribuinte = 'SUELI ESTER DE FREITAS SIMINHUK' THEN 10938426
+when c.nm_Contribuinte = 'SUSANA CANDIDA DA ROCHA' THEN 10935594
+when c.nm_Contribuinte = 'SUSANA CANDIDA DA ROCHA' THEN 10935605
+when c.nm_Contribuinte = 'SUSANA CANDIDA DA ROCHA' THEN 10935646
+when c.nm_Contribuinte = 'SUSANA CANDIDA DA ROCHA' THEN 10935647
+when c.nm_Contribuinte = 'SUSANA CANDIDA DA ROCHA' THEN 10935684
+when c.nm_Contribuinte = 'SUZILENE DO NASCIMENTO' THEN 10936534
+when c.nm_Contribuinte = 'SUZILENE DO NASCIMENTO' THEN 10936604
+when c.nm_Contribuinte = 'SUZILENE DO NASCIMENTO' THEN 10936605
+when c.nm_Contribuinte = 'TATIANE ALVES DE LIMA' THEN 10936972
+when c.nm_Contribuinte = 'TATIANE ALVES DE LIMA' THEN 10937007
+when c.nm_Contribuinte = 'TATIANE ALVES DE LIMA' THEN 10937008
+when c.nm_Contribuinte = 'TENECIR LISBOA DE SOUZA' THEN 10936919
+when c.nm_Contribuinte = 'TENECIR LISBOA DE SOUZA' THEN 10936950
+when c.nm_Contribuinte = 'TENECIR LISBOA DE SOUZA' THEN 10936971
+when c.nm_Contribuinte = 'TENECIR LISBOA DE SOUZA' THEN 10937460
+when c.nm_Contribuinte = 'TEODOLINA CORREIA PINTO' THEN 10934726
+when c.nm_Contribuinte = 'TEREZA DUARTE DOS SANTOS' THEN 10933724
+when c.nm_Contribuinte = 'TEREZINA  ANDRETTA' THEN 10936546
+when c.nm_Contribuinte = 'TEREZINA  ANDRETTA' THEN 10936417
+when c.nm_Contribuinte = 'TEREZINA  ANDRETTA' THEN 10936452
+when c.nm_Contribuinte = 'TEREZINA  ANDRETTA' THEN 10936970
+when c.nm_Contribuinte = 'TEREZINA  ANDRETTA' THEN 10937024
+when c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 10933226
+when c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 10933227
+when c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 10934319
+when c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 10937577
+when c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 10937591
+when c.nm_Contribuinte = 'TEREZINHA CEVOLANE ALTOE' THEN 10937684
+when c.nm_Contribuinte = 'TEREZINHA DE JESUS DA SILVA' THEN 10934183
+when c.nm_Contribuinte = 'TEREZINHA DE JESUS DA SILVA' THEN 10934200
+when c.nm_Contribuinte = 'TEREZINHA DE JESUS DA SILVA' THEN 10934219
+when c.nm_Contribuinte = 'TEREZINHA DE JESUS DA SILVA' THEN 10934230
+when c.nm_Contribuinte = 'TEREZINHA JANDIRA ANDRETA DE ALMEIDA' THEN 10936882
+when c.nm_Contribuinte = 'TEREZINHA JANDIRA ANDRETA DE ALMEIDA' THEN 10936941
+when c.nm_Contribuinte = 'TEREZINHA JANDIRA ANDRETA DE ALMEIDA' THEN 10937029
+when c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 10934679
+when c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 10934680
+when c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 10934697
+when c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 10934717
+when c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 10934727
+when c.nm_Contribuinte = 'TEREZINHA LOPES DE SOUZA' THEN 10934744
+when c.nm_Contribuinte = 'TEREZINHA RACANELI' THEN 10933592
+when c.nm_Contribuinte = 'TEREZINHA RACANELI' THEN 10933622
+when c.nm_Contribuinte = 'TEREZINHA RACANELI' THEN 10933560
+when c.nm_Contribuinte = 'TEREZINHA RACANELLI VALENTIN' THEN 10933463
+when c.nm_Contribuinte = 'TEREZINHA RACANELLI VALENTIN' THEN 10933465
+when c.nm_Contribuinte = 'TEREZINHA RACANELLI VALENTIN' THEN 10933468
+when c.nm_Contribuinte = 'THAINA BARRETO AMARAL ANDRES' THEN 10937276
+when c.nm_Contribuinte = 'THAINA BARRETO AMARAL ANDRES' THEN 10937333
+when c.nm_Contribuinte = 'THAYS GOMES DE CAMPOS' THEN 10935628
+when c.nm_Contribuinte = 'THAYS GOMES DE CAMPOS' THEN 10935689
+when c.nm_Contribuinte = 'THELMO WAGNER CUSTODIO FACHINI' THEN 10936380
+when c.nm_Contribuinte = 'THELMO WAGNER CUSTODIO FACHINI' THEN 10936446
+when c.nm_Contribuinte = 'TIAGO DEIVIDI DA CRUZ' THEN 10933805
+when c.nm_Contribuinte = 'TIAGO DEIVIDI DA CRUZ' THEN 10933955
+when c.nm_Contribuinte = 'TIAGO DEIVIDI DA CRUZ' THEN 10938267
+when c.nm_Contribuinte = 'TIAGO ELLER GOIS' THEN 10938408
+when c.nm_Contribuinte = 'TIAGO ELLER GOIS' THEN 10938432
+when c.nm_Contribuinte = 'TOMAS EDSON SETTE' THEN 10933844
+when c.nm_Contribuinte = 'TOMAS EDSON SETTE' THEN 10933859
+when c.nm_Contribuinte = 'TOMAS EDSON SETTE' THEN 10933893
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937536
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937615
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937616
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937628
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937695
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937696
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937697
+when c.nm_Contribuinte = 'VALCIMAR LUIZ BECALLI' THEN 10937706
+when c.nm_Contribuinte = 'VALCIRENE DEL NERO SILVA' THEN 10935453
+when c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 10933487
+when c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 10934330
+when c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 10934331
+when c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 10934353
+when c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 10935344
+when c.nm_Contribuinte = 'VALDECI NEVES ROSA ' THEN 10935345
+when c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA' THEN 10933392
+when c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA' THEN 10933409
+when c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA' THEN 10933451
+when c.nm_Contribuinte = 'VALDECI OLIVEIRA DA SILVA' THEN 10934990
+when c.nm_Contribuinte = 'VALDECIR ALVES DA SILVA' THEN 10937338
+when c.nm_Contribuinte = 'VALDECIR ALVES DA SILVA' THEN 10937387
+when c.nm_Contribuinte = 'VALDECIR ALVES DA SILVA' THEN 10937424
+when c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 10936578
+when c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 10936600
+when c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 10936615
+when c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 10936666
+when c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 10934044
+when c.nm_Contribuinte = 'VALDECIR ANDRETTA' THEN 10934043
+when c.nm_Contribuinte = 'VALDECIR CILAS DO NASCIMENTO' THEN 10936641
+when c.nm_Contribuinte = 'VALDECIR CILAS DO NASCIMENTO' THEN 10936642
+when c.nm_Contribuinte = 'VALDECIR CILAS DO NASCIMENTO' THEN 10936668
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935239
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935240
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935308
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935310
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935258
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935273
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935182
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935380
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935402
+when c.nm_Contribuinte = 'VALDECIR DEL NERO' THEN 10935342
+when c.nm_Contribuinte = 'VALDECIR GUILHERMES MLAK' THEN 10936076
+when c.nm_Contribuinte = 'VALDECIR GUILHERMES MLAK' THEN 10936094
+when c.nm_Contribuinte = 'VALDECIR GUILHERMES MLAK' THEN 10936126
+when c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835' THEN 10934195
+when c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835' THEN 10934215
+when c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835' THEN 10934216
+when c.nm_Contribuinte = 'VALDECIR L MORAES ALIENADO SICOOB CREDIP CED 2353835' THEN 10934354
+when c.nm_Contribuinte = 'VALDECIR P. CASTRO ALIEN SICOOB CREDIP CED 1263792' THEN 10935097
+when c.nm_Contribuinte = 'VALDECIR P. CASTRO ALIEN SICOOB CREDIP CED 1263792' THEN 10935305
+when c.nm_Contribuinte = 'VALDECIR P. CASTRO ALIEN SICOOB CREDIP CED 1263792' THEN 10937486
+when c.nm_Contribuinte = 'VALDECIR ROMANHA' THEN 10933373
+when c.nm_Contribuinte = 'VALDECIR ROMANHA' THEN 10933383
+when c.nm_Contribuinte = 'VALDECIR ROMANHA' THEN 10933378
+when c.nm_Contribuinte = 'VALDEIR CLAUDINO GONCALVES' THEN 10934876
+when c.nm_Contribuinte = 'VALDEIR CLAUDINO GONCALVES' THEN 10934889
+when c.nm_Contribuinte = 'VALDEIR CLAUDINO GONCALVES' THEN 10934912
+when c.nm_Contribuinte = 'VALDEIR CLAUDINO GONCALVES' THEN 10934971
+when c.nm_Contribuinte = 'VALDEMAR CRU DE LIMA' THEN 10936821
+when c.nm_Contribuinte = 'VALDEMAR CRU DE LIMA' THEN 10936927
+when c.nm_Contribuinte = 'VALDEMAR CRU DE LIMA' THEN 10936944
+when c.nm_Contribuinte = 'VALDEMIR ROGERIO MENDES' THEN 10935408
+when c.nm_Contribuinte = 'VALDEMIR ROGERIO MENDES' THEN 10935428
+when c.nm_Contribuinte = 'VALDEMIR ROGERIO MENDES' THEN 10935429
+when c.nm_Contribuinte = 'VALDENIR FERREIRA DA SILVA' THEN 10937515
+when c.nm_Contribuinte = 'VALDENIR FERREIRA DA SILVA' THEN 10937544
+when c.nm_Contribuinte = 'VALDENIR FERREIRA DA SILVA' THEN 10937545
+when c.nm_Contribuinte = 'VALDETE APARECIDA RAFAEL BUENO' THEN 10936314
+when c.nm_Contribuinte = 'VALDETE APARECIDA RAFAEL BUENO' THEN 10936349
+when c.nm_Contribuinte = 'VALDINEI JOSÉ DE OLIVEIRA' THEN 10938387
+when c.nm_Contribuinte = 'VALDINEI JOSÉ DE OLIVEIRA' THEN 10938393
+when c.nm_Contribuinte = 'VALDINEI JOSÉ DE OLIVEIRA' THEN 10938425
+when c.nm_Contribuinte = 'VALDINEI JOSÉ DE OLIVEIRA' THEN 10938427
+when c.nm_Contribuinte = 'VALDIR ALVES CANDIDO' THEN 10934003
+when c.nm_Contribuinte = 'VALDIR ALVES CANDIDO' THEN 10934106
+when c.nm_Contribuinte = 'VALDIR ALVES CANDIDO' THEN 10934151
+when c.nm_Contribuinte = 'VALDIR ALVES CANDIDO' THEN 10934185
+when c.nm_Contribuinte = 'VALDIR BERGER' THEN 10934845
+when c.nm_Contribuinte = 'VALDIR BERGER' THEN 10936607
+when c.nm_Contribuinte = 'VALDIR BERGER' THEN 10937186
+when c.nm_Contribuinte = 'VALDIR BERGER' THEN 10937102
+when c.nm_Contribuinte = 'VALDIR BERGER' THEN 10937103
+when c.nm_Contribuinte = 'VALDIR DEL NERO' THEN 10935311
+when c.nm_Contribuinte = 'VALDIR DEL NERO' THEN 10935434
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937462
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937463
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937481
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937482
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937500
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937556
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937557
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937558
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937572
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937573
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937606
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937607
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937608
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937624
+when c.nm_Contribuinte = 'VALDIR FERREIRA DE SOUZA' THEN 10937644
+when c.nm_Contribuinte = 'VALDIRENE HAMMER BERGER' THEN 10938344
+when c.nm_Contribuinte = 'VALDOMIRO SOARES ROCHA' THEN 10936783
+when c.nm_Contribuinte = 'VALDOMIRO SOARES ROCHA' THEN 10936878
+when c.nm_Contribuinte = 'VALDOMIRO SOARES ROCHA' THEN 10936915
+when c.nm_Contribuinte = 'VALDOMIRO SOARES ROCHA' THEN 10936949
+when c.nm_Contribuinte = 'VALDOMIRO SOARES ROCHA' THEN 10936988
+when c.nm_Contribuinte = 'VALENTINA DE ALMEIDA' THEN 10937380
+when c.nm_Contribuinte = 'VALENTINA DE ALMEIDA' THEN 10937488
+when c.nm_Contribuinte = 'VALERIA DE CARVALHO BARRETO' THEN 10933899
+when c.nm_Contribuinte = 'VALERIA DE CARVALHO BARRETO' THEN 10933957
+when c.nm_Contribuinte = 'VALERIA DE CARVALHO BARRETO' THEN 10934114
+when c.nm_Contribuinte = 'VALERIA MOREIRA GOMES' THEN 10933789
+when c.nm_Contribuinte = 'VALMIR GONÇALVES MACHADO' THEN 10935866
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10934074
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10934076
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10934094
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10934098
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10934112
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10938041
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10938187
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10938188
+when c.nm_Contribuinte = 'VALMIR LEMES SILVA SANTOS' THEN 10938197
+when c.nm_Contribuinte = 'VALMIR MACHADO' THEN 10936595
+when c.nm_Contribuinte = 'VALMIR MACHADO' THEN 10936538
+when c.nm_Contribuinte = 'VALMIR MACHADO' THEN 10936647
+when c.nm_Contribuinte = 'VALMIR MARIA DE OLIVEIRA' THEN 10936780
+when c.nm_Contribuinte = 'VALMIR MARIA DE OLIVEIRA' THEN 10936863
+when c.nm_Contribuinte = 'VALMIR MARIA DE OLIVEIRA' THEN 10936931
+when c.nm_Contribuinte = 'VALTERNEI FERNANDES SENA' THEN 10933502
+when c.nm_Contribuinte = 'VALTERNEI FERNANDES SENA' THEN 10933518
+when c.nm_Contribuinte = 'VALTERNEI FERNANDES SENA' THEN 10933520
+when c.nm_Contribuinte = 'VAMDERLEY FRANCISCO DE AMORIM' THEN 10937239
+when c.nm_Contribuinte = 'VAMDERLEY FRANCISCO DE AMORIM' THEN 10937294
+when c.nm_Contribuinte = 'VAMDERLEY FRANCISCO DE AMORIM' THEN 10937327
+when c.nm_Contribuinte = 'VANDERLAN ANTONIO FERREIRA' THEN 10936191
+when c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA' THEN 10936822
+when c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA' THEN 10936857
+when c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA' THEN 10936858
+when c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA' THEN 10936928
+when c.nm_Contribuinte = 'VANDERLEIA CRUZ DE LIMA' THEN 10936964
+when c.nm_Contribuinte = 'VANDERLEIA NUNES FERREIRA FIGUEIREDO' THEN 10937174
+when c.nm_Contribuinte = 'VANDERLUCIO DA SILVA' THEN 10933362
+when c.nm_Contribuinte = 'VANDERLUCIO DA SILVA' THEN 10933371
+when c.nm_Contribuinte = 'VANDERLUCIO DA SILVA' THEN 10933363
+when c.nm_Contribuinte = 'VANDIR ZEFERINO DE MATOS' THEN 10936370
+when c.nm_Contribuinte = 'VANESSA SABINA DE OLIVEIRA SILVA PETRINO' THEN 10937298
+when c.nm_Contribuinte = 'VANESSA SABINA DE OLIVEIRA SILVA PETRINO' THEN 10937309
+when c.nm_Contribuinte = 'VANI ALVES SILVA' THEN 10935927
+when c.nm_Contribuinte = 'VANI ALVES SILVA' THEN 10935899
+when c.nm_Contribuinte = 'VANI ALVES SILVA' THEN 10935900
+when c.nm_Contribuinte = 'VANI ALVES SILVA' THEN 10935944
+when c.nm_Contribuinte = 'VANILDA BUENO DEL NERO' THEN 10933391
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10936901
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10936955
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10936977
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10937015
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10937034
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10937049
+when c.nm_Contribuinte = 'VANTUIL RODRIGUES DE MORAIS' THEN 10937085
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10933521
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10933537
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10933542
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10935570
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10935782
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10936752
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10937583
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10937593
+when c.nm_Contribuinte = 'VERA FERREIRA DE OLIVEIRA' THEN 10937969
+when c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 10933235
+when c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 10933236
+when c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 10934337
+when c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 10934368
+when c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 10934369
+when c.nm_Contribuinte = 'VERA LUCIA ALVES DE OLIVEIRA' THEN 10934371
+when c.nm_Contribuinte = 'VERA LUCIA NEPOMUCENO DE JESUS DA LUZ' THEN 10935263
+when c.nm_Contribuinte = 'VERA LUCIA NEPOMUCENO DE JESUS DA LUZ' THEN 10935323
+when c.nm_Contribuinte = 'VERA LUCIA NEPOMUCENO DE JESUS DA LUZ' THEN 10935424
+when c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA' THEN 10935803
+when c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA' THEN 10935938
+when c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA' THEN 10938324
+when c.nm_Contribuinte = 'VERONICA VIEIRA DA SILVA' THEN 10938352
+when c.nm_Contribuinte = 'VERSONI ALCANTARA LOPES' THEN 10936135
+when c.nm_Contribuinte = 'VERSONI ALCANTARA LOPES' THEN 10936173
+when c.nm_Contribuinte = 'VERSONI ALCANTARA LOPES' THEN 10936227
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10933792
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10934293
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10934294
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10934307
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10934308
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10934309
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10935014
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10935035
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10935036
+when c.nm_Contribuinte = 'VICENTE FRANCISCO MONTELO' THEN 10935037
+when c.nm_Contribuinte = 'VICENTE SAMPAIO DE OLIVEIRA' THEN 10938268
+when c.nm_Contribuinte = 'VICENTE SAMPAIO DE OLIVEIRA' THEN 10938294
+when c.nm_Contribuinte = 'VICENTE SAMPAIO DE OLIVEIRA' THEN 10938308
+when c.nm_Contribuinte = 'VICENTE SOARES DA COSTA' THEN 10935626
+when c.nm_Contribuinte = 'VILMA DE JESUS DA COSTA' THEN 10937099
+when c.nm_Contribuinte = 'VILMA DE JESUS DA COSTA' THEN 10937728
+when c.nm_Contribuinte = 'VILMA DE JESUS DA COSTA' THEN 10937744
+when c.nm_Contribuinte = 'VILMA SALETE PIAZZA' THEN 10937909
+when c.nm_Contribuinte = 'VILMA SALETE PIAZZA' THEN 10937910
+when c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES' THEN 10935817
+when c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES' THEN 10935877
+when c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES' THEN 10935948
+when c.nm_Contribuinte = 'VITOR HUGO MOURA RODRIGUES' THEN 10935968
+when c.nm_Contribuinte = 'VITORINO DOS SANTOS CALDEIRA' THEN 10936410
+when c.nm_Contribuinte = 'VITORINO DOS SANTOS CALDEIRA' THEN 10936428
+when c.nm_Contribuinte = 'VITORINO DOS SANTOS CALDEIRA' THEN 10936465
+when c.nm_Contribuinte = 'VITORINO RODRIGUES DE MORAIS' THEN 10937142
+when c.nm_Contribuinte = 'VITORINO RODRIGUES DE MORAIS' THEN 10937202
+when c.nm_Contribuinte = 'VITORINO RODRIGUES DE MORAIS' THEN 10937253
+when c.nm_Contribuinte = 'VITORINO RODRIGUES DE MORAIS' THEN 10937288
+when c.nm_Contribuinte = 'VITORINO RODRIGUES DE MORAIS' THEN 10937289
+when c.nm_Contribuinte = 'WALDENIR MOTA PEREIRA' THEN 10935362
+when c.nm_Contribuinte = 'WALDENIR MOTA PEREIRA' THEN 10935418
+when c.nm_Contribuinte = 'WALDENIR MOTA PEREIRA' THEN 10935513
+when c.nm_Contribuinte = 'WALDENIR MOTA PEREIRA' THEN 10935514
+when c.nm_Contribuinte = 'WALLEN FERNANDO LEITE BALEEIRO' THEN 10937167
+when c.nm_Contribuinte = 'WALLEN FERNANDO LEITE BALEEIRO' THEN 10937204
+when c.nm_Contribuinte = 'WALLISSON HENRIQUE XAVIER' THEN 10936911
+when c.nm_Contribuinte = 'WALLISSON HENRIQUE XAVIER' THEN 10936933
+when c.nm_Contribuinte = 'WALTEIR DA SILVA VIEIRA' THEN 10936054
+when c.nm_Contribuinte = 'WALTEIR DA SILVA VIEIRA' THEN 10936948
+when c.nm_Contribuinte = 'WALTEIR DA SILVA VIEIRA' THEN 10937006
+when c.nm_Contribuinte = 'WANDERSON FARIA VIANA' THEN 10937559
+when c.nm_Contribuinte = 'WANDERSON FARIA VIANA' THEN 10937588
+when c.nm_Contribuinte = 'WANDERSON FARIA VIANA' THEN 10937625
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934107
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934126
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934109
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934133
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934147
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934119
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934237
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934268
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934269
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934270
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934238
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934239
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934240
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10934941
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935038
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935057
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935058
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935071
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935113
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935145
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935162
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935175
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935236
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935237
+when c.nm_Contribuinte = 'WANTUIR DE CAMARGOS' THEN 10935267
+when c.nm_Contribuinte = 'WEDSON ROQUE DINIZ CARRARO' THEN 10935210
+when c.nm_Contribuinte = 'WELIAN ANIEL DA SILVA FERREIRA' THEN 10933816
+when c.nm_Contribuinte = 'WELITON JOSÉ LUCAS' THEN 10937365
+when c.nm_Contribuinte = 'WELITON JOSÉ LUCAS' THEN 10937349
+when c.nm_Contribuinte = 'WELITON JOSÉ LUCAS' THEN 10937311
+when c.nm_Contribuinte = 'WELLEN LOURENÇO VIANA, WENDER L. VIANA E DANIELLLY F. VIANA' THEN 10937501
+when c.nm_Contribuinte = 'WELLEN LOURENÇO VIANA, WENDER L. VIANA E DANIELLLY F. VIANA' THEN 10937532
+when c.nm_Contribuinte = 'WELLEN LOURENÇO VIANA, WENDER L. VIANA E DANIELLLY F. VIANA' THEN 10937645
+when c.nm_Contribuinte = 'WÉRICK RUBENS RAGNEL DE SOUZA BARCELOS' THEN 10936516
+when c.nm_Contribuinte = 'WÉRICK RUBENS RAGNEL DE SOUZA BARCELOS' THEN 10936626
+when c.nm_Contribuinte = 'WERIK MACIEL DA COSTA' THEN 10935102
+when c.nm_Contribuinte = 'WERIK MACIEL DA COSTA' THEN 10935138
+when c.nm_Contribuinte = 'WESLEI SILVA DE OLIVEIRA' THEN 10938363
+when c.nm_Contribuinte = 'WESLEI SILVA DE OLIVEIRA' THEN 10938420
+when c.nm_Contribuinte = 'WESLEY FABIO LAUTERTE' THEN 10933597
+when c.nm_Contribuinte = 'WESLEY FABIO LAUTERTE' THEN 10933620
+when c.nm_Contribuinte = 'WESLEY FABIO LAUTERTE' THEN 10933726
+when c.nm_Contribuinte = 'WESLEY FABIO LAUTERTE' THEN 10937643
+when c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 10935710
+when c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 10936160
+when c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 10936176
+when c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 10936177
+when c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 10936390
+when c.nm_Contribuinte = 'WESP FERREIRA DOS SANTOS' THEN 10936447
+when c.nm_Contribuinte = 'WILIAN DE SOUZA MLAK' THEN 10936894
+when c.nm_Contribuinte = 'WILLIAN CAMPOS DE ABREU' THEN 10933903
+when c.nm_Contribuinte = 'WILLIAN CAMPOS DE ABREU' THEN 10934053
+when c.nm_Contribuinte = 'WILSON ALVES DE OLIVEIRA' THEN 10933929
+when c.nm_Contribuinte = 'WILSON ALVES DE OLIVEIRA' THEN 10933956
+when c.nm_Contribuinte = 'WILSON JOSE DE LIMA' THEN 10934071
+when c.nm_Contribuinte = 'WILSON JOSE DE LIMA' THEN 10933968
+when c.nm_Contribuinte = 'WILSON JOSE DE LIMA' THEN 10934081
+when c.nm_Contribuinte = 'WILSON JOSE DE LIMA' THEN 10934051
+when c.nm_Contribuinte = 'ZAMIR LUIZ' THEN 10935851
+when c.nm_Contribuinte = 'ZENAIDE DE JESUS ANTONIO PEREIRA' THEN 10933491
+when c.nm_Contribuinte = 'ZENAIDE DE JESUS ANTONIO PEREIRA' THEN 10933522
+when c.nm_Contribuinte = 'ZENAIR MARIA SCALZER LUCAS' THEN 10937011
+when c.nm_Contribuinte = 'ZENAIR MARIA SCALZER LUCAS' THEN 10937348
+when c.nm_Contribuinte = 'ZENAIR MARIA SCALZER LUCAS' THEN 10937384
+when c.nm_Contribuinte = 'ZENAIR MARIA SCALZER LUCAS' THEN 10937385
+when c.nm_Contribuinte = 'ZIGRID OHNESORGE CAZELLI' THEN 10935447
+end as idTransferenciaImoveis
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS transfImoveisItens
+from IPTUBicImoveis imoveis
+JOIN CECAMContribuintes c ON c.cd_Contribuinte = imoveis.cd_Proprietario;
+`;
+        const result = await masterConnection.query(userQuery);
+        const resultData = result.recordset;
+
+        // Transformar os resultados da consulta no formato desejado
+        const transformedData = resultData
+            .filter(record => {
+                const transfImoveisItens = JSON.parse(record.transfImoveisItens);
+
+                // Retorna true apenas para registros com idProprietario presente
+                if (!transfImoveisItens.idProprietario) {
+                    console.warn('Registro ignorado: idProprietario ausente', record);
+                    return false;
+                }
+                return true;
+            })
+            .map(record => {
+
+                // Parse JSON string for transfImoveisItens
+                const transfImoveisItens = JSON.parse(record.transfImoveisItens);
+
+                return {
+                    idIntegracao: record.idIntegracao.toString(),
+                    transfImoveisItens: {
+                        idImoveis: transfImoveisItens.idImoveis,
+                        idMotivos: transfImoveisItens.idMotivos,
+                        idProprietario: transfImoveisItens.idProprietario,
+                        idTransferenciaImoveis: transfImoveisItens.idTransferenciaImoveis,
+                        vlAreaConstruidaUnidade: transfImoveisItens.vlAreaConstruidaUnidade,
+                        vlAreaTotalTerrenoUnidade: transfImoveisItens.vlAreaTotalTerrenoUnidade,
+                        vlVenalConstruidoUnidade: transfImoveisItens.vlVenalConstruidoUnidade,
+                        vlVenalTerritorialUnidade: transfImoveisItens.vlVenalTerritorialUnidade,
+                        vlVenalUnidade: transfImoveisItens.vlVenalUnidade,
+                        benfeitorias: transfImoveisItens.benfeitorias,
+                        financiado: transfImoveisItens.financiado,
+                        outros: transfImoveisItens.outros,
+                        tipoVenda: transfImoveisItens.tipoVenda,
+                        unidadeFutura: 'SIM',
+                        benfeitorias: "SIM",
+                        financiado: "SIM",
+                        outros: "SIM",
+                        tipoVenda: "PARCIAL",
+                    }
+                };
+            });
+
+        /* const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
+
+        return */
+
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
+            }
+            return chunked;
+        };
+
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+
+                const response = await fetch(`https://tributos.betha.cloud/service-layer-tributos/api/transfImoveisItens`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+                    },
+                    body: JSON.stringify(batch)
+                });
+
+                const responseBody = await response.json();
+                console.log('Resposta da API:', responseBody);
+
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    } else if (responseBody.id) {
+                        reportIds.push(responseBody.id);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+
+        // Save report and IDs to files
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
+
+
+
+    } catch (error) {
+        console.error('Erro no processo:', error);
+    } finally {
+        await sql.close(); // Fechar a conexão com o SQL Server
+        console.log('Conexão com o SQL Server fechada.');
+    }
+}
+
+// Executar a função principal
+main();

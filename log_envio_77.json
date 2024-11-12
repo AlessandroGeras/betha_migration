@@ -1,0 +1,2333 @@
+[
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538675
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6638,
+      "descricao": "C O M P U T A D O R DESKTOP COMPLETO ESPECIFICAÇOES MINIMAS PROCESSADOR I5, MINIMO 4 NUCLEOS FISICOS ARMAZENAMENTO SSD DE NO MINIMO 512 GB, MEMORIA RAM DE NO MINIMO 8GB DDR3, EXPANSAO ATE 64GB, WINDOWS 11 OU SUPERIOR. MONITOR FULLHD 1920X1080 PIXELS A 60 HZ, LED COM RETRO ILUMINAÇAO LED,NO TAMANHO DE 21,5 POLEGADAS, 6 PORTAS USB,ENTRADAS HDMI E VGA, ETHERNET RJ.45,SLOT DE CARTAO DE EXPANSAO, ENTRADA DE HEADSET E CONECTOR DE AUDIO , GRAVADOR E REPRODUTOR DE CD.DVD , MOUSE 2 DOIS BOTOES , PARA SELEÇAO CLICK E UM BOTAO DE ROLAGEM SCROL, CONECTOR DO TIPO USB  NAO SERAO ACEITOS ADAPTADORES, O TECLADO NO PADRAO ABNT.2 COM TODOS OS CARACTERES DA LINGUA PORTUGUESA DO BRASIL, CONECTOR DO TIPO USB,SEM USO DE ADAPTADOR. TUDO CONFORME SOLIC. E AUTORIZADO NO MEMO 5 GP 2024.",
+      "dataInclusao": "2024-04-11",
+      "dataAquisicao": "2024-04-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6638",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1646.58,
+        "vlAquisicaoConvertido": 1646.58,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1646.58,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-11",
+        "vlResidual": 32.9316,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538675
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6639,
+      "descricao": "C O M P U T A D O R DESKTOP COMPLETO ESPECIFICAÇOES MINIMAS PROCESSADOR I5, MINIMO 4 NUCLEOS FISICOS ARMAZENAMENTO SSD DE NO MINIMO 512 GB, MEMORIA RAM DE NO MINIMO 8GB DDR3, EXPANSAO ATE 64GB, WINDOWS 11 OU SUPERIOR. MONITOR FULLHD 1920X1080 PIXELS A 60 HZ, LED COM RETRO ILUMINAÇAO LED,NO TAMANHO DE 21,5 POLEGADAS, 6 PORTAS USB,ENTRADAS HDMI E VGA, ETHERNET RJ.45,SLOT DE CARTAO DE EXPANSAO, ENTRADA DE HEADSET E CONECTOR DE AUDIO , GRAVADOR E REPRODUTOR DE CD.DVD , MOUSE 2 DOIS BOTOES , PARA SELEÇAO CLICK E UM BOTAO DE ROLAGEM SCROL, CONECTOR DO TIPO USB  NAO SERAO ACEITOS ADAPTADORES, O TECLADO NO PADRAO ABNT.2 COM TODOS OS CARACTERES DA LINGUA PORTUGUESA DO BRASIL, CONECTOR DO TIPO USB,SEM USO DE ADAPTADOR. TUDO CONFORME SOLIC. E AUTORIZADO NO MEMO 5 GP 2024.",
+      "dataInclusao": "2024-04-11",
+      "dataAquisicao": "2024-04-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6639",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1646.58,
+        "vlAquisicaoConvertido": 1646.58,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1646.58,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-11",
+        "vlResidual": 32.9316,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538675
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6640,
+      "descricao": "C O M P U T A D O R DESKTOP COMPLETO ESPECIFICAÇOES MINIMAS PROCESSADOR I5, MINIMO 4 NUCLEOS FISICOS ARMAZENAMENTO SSD DE NO MINIMO 512 GB, MEMORIA RAM DE NO MINIMO 8GB DDR3, EXPANSAO ATE 64GB, WINDOWS 11 OU SUPERIOR. MONITOR FULLHD 1920X1080 PIXELS A 60 HZ, LED COM RETRO ILUMINAÇAO LED,NO TAMANHO DE 21,5 POLEGADAS, 6 PORTAS USB,ENTRADAS HDMI E VGA, ETHERNET RJ.45,SLOT DE CARTAO DE EXPANSAO, ENTRADA DE HEADSET E CONECTOR DE AUDIO , GRAVADOR E REPRODUTOR DE CD.DVD , MOUSE 2 DOIS BOTOES , PARA SELEÇAO CLICK E UM BOTAO DE ROLAGEM SCROL, CONECTOR DO TIPO USB  NAO SERAO ACEITOS ADAPTADORES, O TECLADO NO PADRAO ABNT.2 COM TODOS OS CARACTERES DA LINGUA PORTUGUESA DO BRASIL, CONECTOR DO TIPO USB,SEM USO DE ADAPTADOR. TUDO CONFORME SOLIC. E AUTORIZADO NO MEMO 5 GP 2024.",
+      "dataInclusao": "2024-04-11",
+      "dataAquisicao": "2024-04-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6640",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1646.58,
+        "vlAquisicaoConvertido": 1646.58,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1646.58,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-11",
+        "vlResidual": 32.9316,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538675
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6641,
+      "descricao": "C O M P U T A D O R DESKTOP COMPLETO ESPECIFICAÇOES MINIMAS PROCESSADOR I5, MINIMO 4 NUCLEOS FISICOS ARMAZENAMENTO SSD DE NO MINIMO 512 GB, MEMORIA RAM DE NO MINIMO 8GB DDR3, EXPANSAO ATE 64GB, WINDOWS 11 OU SUPERIOR. MONITOR FULLHD 1920X1080 PIXELS A 60 HZ, LED COM RETRO ILUMINAÇAO LED,NO TAMANHO DE 21,5 POLEGADAS, 6 PORTAS USB,ENTRADAS HDMI E VGA, ETHERNET RJ.45,SLOT DE CARTAO DE EXPANSAO, ENTRADA DE HEADSET E CONECTOR DE AUDIO , GRAVADOR E REPRODUTOR DE CD.DVD , MOUSE 2 DOIS BOTOES , PARA SELEÇAO CLICK E UM BOTAO DE ROLAGEM SCROL, CONECTOR DO TIPO USB  NAO SERAO ACEITOS ADAPTADORES, O TECLADO NO PADRAO ABNT.2 COM TODOS OS CARACTERES DA LINGUA PORTUGUESA DO BRASIL, CONECTOR DO TIPO USB,SEM USO DE ADAPTADOR. TUDO CONFORME SOLIC. E AUTORIZADO NO MEMO 5 GP 2024.",
+      "dataInclusao": "2024-04-11",
+      "dataAquisicao": "2024-04-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6641",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1646.58,
+        "vlAquisicaoConvertido": 1646.58,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1646.58,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-11",
+        "vlResidual": 32.9316,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538675
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6642,
+      "descricao": "C O M P U T A D O R DESKTOP COMPLETO ESPECIFICAÇOES MINIMAS PROCESSADOR I5, MINIMO 4 NUCLEOS FISICOS ARMAZENAMENTO SSD DE NO MINIMO 512 GB, MEMORIA RAM DE NO MINIMO 8GB DDR3, EXPANSAO ATE 64GB, WINDOWS 11 OU SUPERIOR. MONITOR FULLHD 1920X1080 PIXELS A 60 HZ, LED COM RETRO ILUMINAÇAO LED,NO TAMANHO DE 21,5 POLEGADAS, 6 PORTAS USB,ENTRADAS HDMI E VGA, ETHERNET RJ.45,SLOT DE CARTAO DE EXPANSAO, ENTRADA DE HEADSET E CONECTOR DE AUDIO , GRAVADOR E REPRODUTOR DE CD.DVD , MOUSE 2 DOIS BOTOES , PARA SELEÇAO CLICK E UM BOTAO DE ROLAGEM SCROL, CONECTOR DO TIPO USB  NAO SERAO ACEITOS ADAPTADORES, O TECLADO NO PADRAO ABNT.2 COM TODOS OS CARACTERES DA LINGUA PORTUGUESA DO BRASIL, CONECTOR DO TIPO USB,SEM USO DE ADAPTADOR. TUDO CONFORME SOLIC. E AUTORIZADO NO MEMO 5 GP 2024.",
+      "dataInclusao": "2024-04-11",
+      "dataAquisicao": "2024-04-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6642",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1646.58,
+        "vlAquisicaoConvertido": 1646.58,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1646.58,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-11",
+        "vlResidual": 32.9316,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538675
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6643,
+      "descricao": "C O M P U T A D O R DESKTOP COMPLETO ESPECIFICAÇOES MINIMAS PROCESSADOR I5, MINIMO 4 NUCLEOS FISICOS ARMAZENAMENTO SSD DE NO MINIMO 512 GB, MEMORIA RAM DE NO MINIMO 8GB DDR3, EXPANSAO ATE 64GB, WINDOWS 11 OU SUPERIOR. MONITOR FULLHD 1920X1080 PIXELS A 60 HZ, LED COM RETRO ILUMINAÇAO LED,NO TAMANHO DE 21,5 POLEGADAS, 6 PORTAS USB,ENTRADAS HDMI E VGA, ETHERNET RJ.45,SLOT DE CARTAO DE EXPANSAO, ENTRADA DE HEADSET E CONECTOR DE AUDIO , GRAVADOR E REPRODUTOR DE CD.DVD , MOUSE 2 DOIS BOTOES , PARA SELEÇAO CLICK E UM BOTAO DE ROLAGEM SCROL, CONECTOR DO TIPO USB  NAO SERAO ACEITOS ADAPTADORES, O TECLADO NO PADRAO ABNT.2 COM TODOS OS CARACTERES DA LINGUA PORTUGUESA DO BRASIL, CONECTOR DO TIPO USB,SEM USO DE ADAPTADOR. TUDO CONFORME SOLIC. E AUTORIZADO NO MEMO 5 GP 2024.",
+      "dataInclusao": "2024-04-11",
+      "dataAquisicao": "2024-04-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6643",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1646.58,
+        "vlAquisicaoConvertido": 1646.58,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1646.58,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-11",
+        "vlResidual": 32.9316,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538689
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6644,
+      "descricao": "LIQUIDIFICADOR INDUSTRIAL KD ELETRO LAR-2 2, AÇO INOXIDAVEL,COPO COM CAPACIDADE DE 2 LITROS, 850W DE POTENCIA E LAMINAS COM ANGULOS DIFERENCIADOS PARA TRITURAR COM MAIS RAPIDEZ, ALEM DE FACILITAR NA HORA DA LIMPEZA FUNÇOES PICA, MISTURA, TRITURA GELO, PAINEL SIMPLES, APENAS COM BOTAO LIGA.DESLIGA CERTIFICAÇAO DO INMETRO, VOLTAGEM, BIVOLT, PRAZO DE GARANTIA 03 MESES DE GARANTIA LEGAL. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6644",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 560,
+        "vlAquisicaoConvertido": 560,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 560,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 56,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6645,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6645",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6646,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6646",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6647,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6647",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6648,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6648",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6649,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6649",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6650,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6650",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6651,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6651",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6652,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6652",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6653,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6653",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6654,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6654",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6655,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6655",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6656,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6656",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6657,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6657",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6658,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6658",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125099
+      },
+      "numeroRegistro": 6659,
+      "descricao": "CADEIRA GIRATORIA EXECUTIVA COM BRAÇOS, LARGURA 50 CM X ALTURA 134 CM X COMPRIMENTO 62 CM, COMPOSIÇAO 70 POR CENTO MALHA DE POLIESTER E 30 POR CENTO  POLIURETANO PU. SUPORTA ATE 120KG. TUDO CONFORME O PREGAO ELETRONICO 034.2023 E ID. 541.976.",
+      "dataInclusao": "2024-04-18",
+      "dataAquisicao": "2024-04-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-04-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6659",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 405,
+        "vlAquisicaoConvertido": 405,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 405,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-04-18",
+        "vlResidual": 64.8,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538703
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6670,
+      "descricao": "IMPRESSORA MULTIFUNCIONAL XEROX B215DNI LASER MONO IMPRESSAO, SISTEMAS OPERACIONAIS COMPATIVEIS WINDOWS,MAC OS, LINUX, CAP. DE ENTRADA DE PAPEL PADRAO FOLHAS BANDEJA ATE 250 FOLHAS E ALIMENTAÇAO MANUAL DE UMA FOLHA, IMPRESSAO FRENTE E VERSO AUTOMATICA, INTERFACES PADRAO WIRELESS, WI-FI DIRECT, REDE CABEADA ETHERNET, USB 2.0, TAMANHO MÁXIMO DE IMPRESSÃO ATE FORMATO OFICIO 21,6 X 35,6 CM, COMPATIBILIDADE COM DISPOSITIVOS MOVEIS AIRPRINT, GOOGLE CLOUD PRINT, BROTHER IPRINT&SCAN... TUDO CONFORME SOLICITADO E AUTORIZADO NO ID. 580.99C. E ID. 588.554.",
+      "dataInclusao": "2024-05-13",
+      "dataAquisicao": "2024-05-13",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-05-13",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6670",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1968.68,
+        "vlAquisicaoConvertido": 1968.68,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1968.68,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-05-13",
+        "vlResidual": 39.3736,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538703
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6671,
+      "descricao": "IMPRESSORA MULTIFUNCIONAL XEROX B215DNI LASER MONO IMPRESSAO, SISTEMAS OPERACIONAIS COMPATIVEIS WINDOWS,MAC OS, LINUX, CAP. DE ENTRADA DE PAPEL PADRAO FOLHAS BANDEJA ATE 250 FOLHAS E ALIMENTAÇAO MANUAL DE UMA FOLHA, IMPRESSAO FRENTE E VERSO AUTOMATICA, INTERFACES PADRAO WIRELESS, WI-FI DIRECT, REDE CABEADA ETHERNET, USB 2.0, TAMANHO MÁXIMO DE IMPRESSÃO ATE FORMATO OFICIO 21,6 X 35,6 CM, COMPATIBILIDADE COM DISPOSITIVOS MOVEIS AIRPRINT, GOOGLE CLOUD PRINT, BROTHER IPRINT&SCAN... TUDO CONFORME SOLICITADO E AUTORIZADO NO ID. 580.99C. E ID. 588.554.",
+      "dataInclusao": "2024-05-13",
+      "dataAquisicao": "2024-05-13",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-05-13",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6671",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1968.68,
+        "vlAquisicaoConvertido": 1968.68,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1968.68,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-05-13",
+        "vlResidual": 39.3736,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538703
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6672,
+      "descricao": "IMPRESSORA MULTIFUNCIONAL XEROX B215DNI LASER MONO IMPRESSAO, SISTEMAS OPERACIONAIS COMPATIVEIS WINDOWS,MAC OS, LINUX, CAP. DE ENTRADA DE PAPEL PADRAO FOLHAS BANDEJA ATE 250 FOLHAS E ALIMENTAÇAO MANUAL DE UMA FOLHA, IMPRESSAO FRENTE E VERSO AUTOMATICA, INTERFACES PADRAO WIRELESS, WI-FI DIRECT, REDE CABEADA ETHERNET, USB 2.0, TAMANHO MÁXIMO DE IMPRESSÃO ATE FORMATO OFICIO 21,6 X 35,6 CM, COMPATIBILIDADE COM DISPOSITIVOS MOVEIS AIRPRINT, GOOGLE CLOUD PRINT, BROTHER IPRINT&SCAN... TUDO CONFORME SOLICITADO E AUTORIZADO NO ID. 580.99C. E ID. 588.554.",
+      "dataInclusao": "2024-05-13",
+      "dataAquisicao": "2024-05-13",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-05-13",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6672",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1968.68,
+        "vlAquisicaoConvertido": 1968.68,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1968.68,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-05-13",
+        "vlResidual": 39.3736,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538703
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6673,
+      "descricao": "IMPRESSORA MULTIFUNCIONAL XEROX B215DNI LASER MONO IMPRESSAO, SISTEMAS OPERACIONAIS COMPATIVEIS WINDOWS,MAC OS, LINUX, CAP. DE ENTRADA DE PAPEL PADRAO FOLHAS BANDEJA ATE 250 FOLHAS E ALIMENTAÇAO MANUAL DE UMA FOLHA, IMPRESSAO FRENTE E VERSO AUTOMATICA, INTERFACES PADRAO WIRELESS, WI-FI DIRECT, REDE CABEADA ETHERNET, USB 2.0, TAMANHO MÁXIMO DE IMPRESSÃO ATE FORMATO OFICIO 21,6 X 35,6 CM, COMPATIBILIDADE COM DISPOSITIVOS MOVEIS AIRPRINT, GOOGLE CLOUD PRINT, BROTHER IPRINT&SCAN... TUDO CONFORME SOLICITADO E AUTORIZADO NO ID. 580.99C. E ID. 588.554.",
+      "dataInclusao": "2024-05-13",
+      "dataAquisicao": "2024-05-13",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-05-13",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6673",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1968.68,
+        "vlAquisicaoConvertido": 1968.68,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1968.68,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-05-13",
+        "vlResidual": 39.3736,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538703
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125107
+      },
+      "numeroRegistro": 6711,
+      "descricao": "IMPRESSORA MULTIFUNCIONAL XEROX B225DNI. IMPRESSAO, SISTEMAS OPERACIONAIS COMPATIVEIS WINDOWS, MAC OS, LINUX, CAP. DE ENTRADA DE PAPEL PADRAO FOLHAS BANDEJA ATE 250 FOLHAS E ALIMENTAÇAO MANUAL DE UMA FOLHA, IMPRESSAO FRENTE E VERSO AUTOMATICA, INTERFACES PADRAO WIRELESS, WIFI DIRECT, REDE CABEADA ETHERNET, USB 2.0, TAMANHO MAXIMO DE IMPRESSAO ATE FORMATO OFICIO 21,6 X 35,6 CM, COMPATIBILIDADE COM DISPOSITIVOS MOVEIS AIRPRINT, GOOGLE CLOUD PRINT, BROTHER IPRINT&SCAN.COPIA, RESOLUÇAO DE COPIA MAXIMA 600 X 600 DPI, OPÇOES DE COPIA ORDENADAS, N EM 1, COPIAS, MULTIPLAS.EMPILHADAS ATE 99 COPIAS, COPIA DE DOCUMENTOS DE IDENTIDADE, VELOCIDADE MAXIMA DE COPIA EM CORES COM ATE 34 COM, REDUÇAO. TUDO CONFORME O PREGAO ELETRONICO 034.2024.",
+      "dataInclusao": "2024-05-28",
+      "dataAquisicao": "2024-05-28",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-05-28",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6711",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1968.68,
+        "vlAquisicaoConvertido": 1968.68,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1968.68,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-05-28",
+        "vlResidual": 39.3736,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538703
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125107
+      },
+      "numeroRegistro": 6712,
+      "descricao": "IMPRESSORA MULTIFUNCIONAL XEROX B225DNI. IMPRESSAO, SISTEMAS OPERACIONAIS COMPATIVEIS WINDOWS, MAC OS, LINUX, CAP. DE ENTRADA DE PAPEL PADRAO FOLHAS BANDEJA ATE 250 FOLHAS E ALIMENTAÇAO MANUAL DE UMA FOLHA, IMPRESSAO FRENTE E VERSO AUTOMATICA, INTERFACES PADRAO WIRELESS, WIFI DIRECT, REDE CABEADA ETHERNET, USB 2.0, TAMANHO MAXIMO DE IMPRESSAO ATE FORMATO OFICIO 21,6 X 35,6 CM, COMPATIBILIDADE COM DISPOSITIVOS MOVEIS AIRPRINT, GOOGLE CLOUD PRINT, BROTHER IPRINT&SCAN.COPIA, RESOLUÇAO DE COPIA MAXIMA 600 X 600 DPI, OPÇOES DE COPIA ORDENADAS, N EM 1, COPIAS, MULTIPLAS.EMPILHADAS ATE 99 COPIAS, COPIA DE DOCUMENTOS DE IDENTIDADE, VELOCIDADE MAXIMA DE COPIA EM CORES COM ATE 34 COM, REDUÇAO. TUDO CONFORME O PREGAO ELETRONICO 034.2024.",
+      "dataInclusao": "2024-05-28",
+      "dataAquisicao": "2024-05-28",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-05-28",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6712",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 1968.68,
+        "vlAquisicaoConvertido": 1968.68,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 1968.68,
+        "taxaDepreciacaoAnual": 10,
+        "dtInicioDepreciacao": "2024-05-28",
+        "vlResidual": 39.3736,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51976
+      },
+      "especieBem": {
+        "id": 541281
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538708
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6718,
+      "descricao": "VALOR QUE SE EMPENHA PARA CONTRATAÇÃO DE EMPRESA PARA CONSTRUÇÃO DA SALA DE INFORMATICA NA ESCOLA JOSE CESTARI, TUDO CONFORME PLANO DE TRABALHO MEMORIAIS DESCRITIVOS E ESPECIFICAÇÃO TECNICAS... CONFORME LICITAÇÃO,  E QUE REGE O CONVENIO COM GOVERNO DO ESTADO Nº 002-PGE.2023",
+      "dataInclusao": "2024-07-25",
+      "dataAquisicao": "2024-07-25",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-07-25",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6718",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 118836.16,
+        "vlAquisicaoConvertido": 118836.16,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 224632.58,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-07-25",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51976
+      },
+      "especieBem": {
+        "id": 541281
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38536038
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6719,
+      "descricao": "VALOR QUE SE EMPENHA PARA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM REVITALIZAÇÃO DE ILUMINAÇÃO PUBLICA A SEREM REALIZADA NAS PRINCIPAIS AVENIDAS E RUAS DO MUNICIPIO DE PARECIS-RO. EM CONFORMIDADE COM OS PLANOS DE TRABALHO 01 E 02, SENDO 1. PLANO DE TRABALHO, PLANILHA ORÇAMENTARIA, CRONOGRAMA FISICO FINANCEIRO, PROJETOS 5. TERMO ADITIVO. 2. PLANO DE TRABALHO, PLANILHA ORÇAMENTARIA, CRONOGRAMA FISICO FINANCEIRO, PROJETO E AUTORIZAÇÃO SEI 0044345258. TUDO CONFORME SOLICIDADO E AUTORIZADO NO ID. 62C.849. CONTRATON005/2024 - CONVENIO 244-PGE-2020",
+      "dataInclusao": "2024-07-25",
+      "dataAquisicao": "2024-07-25",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-07-25",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6719",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 134870,
+        "vlAquisicaoConvertido": 134870,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 134870,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-07-25",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538707
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125100
+      },
+      "numeroRegistro": 6720,
+      "descricao": "APARELHO CELULAR SMARTPHONE 4GB RAM/ MEMORIA INTERNA 64 GB -MARCA XAIOMI.",
+      "dataInclusao": "2024-07-25",
+      "dataAquisicao": "2024-07-25",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-07-25",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6720",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 950,
+        "vlAquisicaoConvertido": 950,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 950,
+        "taxaDepreciacaoAnual": 16.67,
+        "dtInicioDepreciacao": "2024-07-25",
+        "vlResidual": 142.5,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51976
+      },
+      "especieBem": {
+        "id": 541281
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38535870
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6721,
+      "descricao": "VALOR QUE SE EMPENHA PARA LICAÇÃO DE MOTO NIVELADORA SOBRE PNEU, C. POT. MIN. 108 KW, EM BOM ESTRADO DE CONSERVAÇÃO, FAB. MIN. A PARTIR DE 2019; FICANDO SOBRE RESPONSABILIDADE DA CONTRATADA: REPOSIÇÃO DE PEÇAS, MATERIAIS OU ACESSORIOS NECESSARIO PARA MANUTENÇÃO, LUBRIFICANTES, GRAXAS, FILTROS, OPERADOR, ABASTECIMENTO, CONSEVAÇÃO, SEGURANÇA E DESLOCAMENTO ATE O LOCAL INDICADO, FICA SOBRE A RESPONSABILIDADE DA CONTRATADA FORNECER TODAS AS REFEIÇOES E ALOJAMENTO PARA O OPERADOR, OS TRABALHOS REALIZADO PELA CONTRATADA DURARÃO TODO HORARIO DE TRABALHO DESENVOLVIDO PELAS MAQUINAS DA SECRETARIA MUN. DE OBRAS EM ATIVIDADE LABORAL OU CONFORME CRONOGRAMA E HORARIOS ESTIPULADOS... TUDO CONFORME ATA DE REGISTRO DE PREÇO Nº 112.2023, PREGAO ELETRONICO Nº 45.2023... AS DESPESAS CORRERAO FORTES RECURSOS DO CONVENIO 087.2024.PGE.DER-GOVERNO DO ESTADO.",
+      "dataInclusao": "2024-08-06",
+      "dataAquisicao": "2024-08-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-08-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6721",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 509941.8,
+        "vlAquisicaoConvertido": 509941.8,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 509941.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-08-06",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51976
+      },
+      "especieBem": {
+        "id": 541281
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38535870
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6728,
+      "descricao": "VALOR QUE SE EMPENHA PARA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA CONSTRUÇÃO DA CICLOVIA NO MUNICIPIO DE PARECIS-RO. CONVENIO 422.PGE.2022 CONFORME PLANO DE TRABALHO, PLANILHA, MEMORIA DESCRITIVA  E TERMO DE REFERENCIA, MODALIDADE CONCORRENCIA PUBLICA ELETRONICA Nº 04.2024, CONTA 14.685.4. TUDO CONFORME O PEDIDO DE  EMPENHO ID. 6BB.1D8.",
+      "dataInclusao": "2024-08-06",
+      "dataAquisicao": "2024-08-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-08-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6728",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 94876.13,
+        "vlAquisicaoConvertido": 94876.13,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 234587.08,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-08-06",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51976
+      },
+      "especieBem": {
+        "id": 541281
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38535870
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6737,
+      "descricao": "AQUISIÇÃO DE MATERIAL DE CONSTRUÇÃO PARA A CONSTRUÇÃO DO MURO DO CEMITÉRIO MUNICIPAL, TUDO CONFORME SOLICITADO E AUTORIZADO PARECER 296.2024, PEDIDO DE EMPENHO ID. 742.4FE E ID. 745.BB5.",
+      "dataInclusao": "2024-09-11",
+      "dataAquisicao": "2024-09-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-09-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6737",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 25129.7,
+        "vlAquisicaoConvertido": 25129.7,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 25129.7,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-09-11",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51981
+      },
+      "especieBem": {
+        "id": 541278
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38535693
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6738,
+      "descricao": "AQUISIÇÃO DE MATERIAL DE CONSTRUÇÃO PARA A CONSTRUÇÃO DO MURO DO CEMITÉRIO MUNICIPAL, TUDO CONFORME SOLICITADO E AUTORIZADO PARECER 296.2024, PEDIDO DE EMPENHO ID. 742.4FE E ID. 745.BB5.",
+      "dataInclusao": "2024-09-11",
+      "dataAquisicao": "2024-09-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-09-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6738",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 25129.7,
+        "vlAquisicaoConvertido": 25129.7,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 50268.5,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-09-11",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5710"
+      },
+      "grupoBem": {
+        "id": 51976
+      },
+      "especieBem": {
+        "id": 541281
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38535701
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125104
+      },
+      "numeroRegistro": 6739,
+      "descricao": "VALOR QUE SE EMPENHA PARA COPLEMENTAR A OBRA DA REFORMA DA ESCOLA M.E.I.F. JOSE CESTARI, TUDO CONFORME PROJETO DE ENGENHARIA ID: 65F.787, PLANO DE TRABALHO ID: 6B2.955, MEMO 220.SEMED.2024, DO 4.TERMO ADITIVO DE CONVENIO NUMERO 459.PGE.2022.GOV.ESTADO.",
+      "dataInclusao": "2024-09-11",
+      "dataAquisicao": "2024-09-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-09-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6739",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 149779.26,
+        "vlAquisicaoConvertido": 149779.26,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 149779.26,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2024-09-11",
+        "vlResidual": 0,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  },
+  {
+    "conteudo": {
+      "tipoBem": {
+        "id": "5709"
+      },
+      "grupoBem": {
+        "id": 51969
+      },
+      "especieBem": {
+        "id": 541266
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38535870
+      },
+      "responsavel": {
+        "id": 37581593
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137536
+      },
+      "localizacaoFisica": {
+        "id": 125098
+      },
+      "numeroRegistro": 6746,
+      "descricao": "PMP/RO ESTEIRA ELÉTRICA DOBRÁVEL SEMIPROFISSIONAL 3.0 HP   MARCA:  Poli Sports",
+      "dataInclusao": "2024-10-29",
+      "dataAquisicao": "2024-10-29",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2024-10-29",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "6746",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": -1
+        },
+        "vlAquisicao": 6000,
+        "vlAquisicaoConvertido": 6000,
+        "vlDepreciavel": 0,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 0,
+        "vlLiquidoContabil": 6000,
+        "taxaDepreciacaoAnual": 6.25,
+        "dtInicioDepreciacao": "2024-10-29",
+        "vlResidual": 360,
+        "moeda": {
+          "id": 8
+        }
+      }
+    }
+  }
+]

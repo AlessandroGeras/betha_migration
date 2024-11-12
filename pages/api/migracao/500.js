@@ -50,17 +50,17 @@ async function main() {
             select
 nr_pedido,
                 CASE 
-                        WHEN nr_pedido = 1 THEN 21272135
-                        WHEN nr_pedido IN (4, 12, 18, 18, 19, 20, 21) THEN 21272149
-                        WHEN nr_pedido IN (2, 3) THEN 21272136
-                        WHEN nr_pedido IN (5, 15, 24, 40) THEN 21272150
-                        WHEN nr_pedido IN (9, 10, 11, 13, 22, 23, 41, 43) THEN 21272152
-                        WHEN nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 21272151
-                        WHEN nr_pedido IN (16, 17, 44, 45) THEN 21272153
-                        WHEN nr_pedido IN (27, 28) THEN 21272154
-                        WHEN nr_pedido IN (30, 31) THEN 21272173
-                        WHEN nr_pedido IN (36, 37) THEN 21272183
-                        WHEN nr_pedido IN (38, 39) THEN 21272211
+                        WHEN nr_pedido = 1 THEN 5878418
+                        WHEN nr_pedido IN (4, 12, 18, 18, 19, 20, 21) THEN 5894233
+                        WHEN nr_pedido IN (2, 3) THEN 5878419
+                        WHEN nr_pedido IN (5, 15, 24, 40) THEN 5894234
+                        WHEN nr_pedido IN (9, 10, 11, 13, 22, 23, 41, 43) THEN 5894236
+                        WHEN nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 5894235
+                        WHEN nr_pedido IN (16, 17, 44, 45) THEN 5894237
+                        WHEN nr_pedido IN (27, 28) THEN 5878426
+                        WHEN nr_pedido IN (30, 31) THEN 5878427
+                        WHEN nr_pedido IN (36, 37) THEN 5878428
+                        WHEN nr_pedido IN (38, 39) THEN 5889875
                         END AS contratacaoId,
         JSON_QUERY(
         (SELECT
@@ -68,42 +68,46 @@ nr_pedido,
                                 WHEN nr_pedido = 1 THEN 12040161
                 WHEN nr_pedido = 2 THEN 12040067
                 WHEN nr_pedido = 3 THEN 12040068
-                WHEN nr_pedido = 5 THEN 12040072
-                WHEN nr_pedido = 6 THEN 12040073
-                WHEN nr_pedido = 7 THEN 12040074
-                WHEN nr_pedido = 8 THEN 12040075
-                WHEN nr_pedido = 9 THEN 12040076
-                WHEN nr_pedido = 10 THEN 12040078
-                WHEN nr_pedido = 11 THEN 12040079
-                WHEN nr_pedido = 13 THEN 12040082
-                WHEN nr_pedido = 14 THEN 12040083
-                WHEN nr_pedido = 15 THEN 12040085
-                WHEN nr_pedido = 16 THEN 12040086
-                WHEN nr_pedido = 17 THEN 12040087
-                WHEN nr_pedido = 20 THEN 12040091
-                WHEN nr_pedido = 21 THEN 12040092
-                WHEN nr_pedido = 22 THEN 12040094
-                WHEN nr_pedido = 23 THEN 12040095
-                WHEN nr_pedido = 24 THEN 12040097
-                WHEN nr_pedido = 25 THEN 12040098
-                WHEN nr_pedido = 26 THEN 12040099
+                WHEN nr_pedido = 4 THEN 12054188
+                WHEN nr_pedido = 5 THEN 12054190
+                WHEN nr_pedido = 6 THEN 12054191
+                WHEN nr_pedido = 7 THEN 12054192
+                WHEN nr_pedido = 8 THEN 12054193
+                WHEN nr_pedido = 9 THEN 12054196
+                WHEN nr_pedido = 10 THEN 12054197
+                WHEN nr_pedido = 11 THEN 12054198
+                WHEN nr_pedido = 12 THEN 12054200
+                WHEN nr_pedido = 13 THEN 12054201
+                WHEN nr_pedido = 14 THEN 12054202
+                WHEN nr_pedido = 15 THEN 12054203
+                WHEN nr_pedido = 16 THEN 12054204
+                WHEN nr_pedido = 17 THEN 12054205
+                WHEN nr_pedido = 18 THEN 12054206
+                WHEN nr_pedido = 19 THEN 12054208
+                WHEN nr_pedido = 20 THEN 12054209
+                WHEN nr_pedido = 21 THEN 12054210
+                WHEN nr_pedido = 22 THEN 12054211
+                WHEN nr_pedido = 23 THEN 12054212
+                WHEN nr_pedido = 24 THEN 12054213
+                WHEN nr_pedido = 25 THEN 12054214
+                WHEN nr_pedido = 26 THEN 12054215
                 WHEN nr_pedido = 27 THEN 12040100
                 WHEN nr_pedido = 28 THEN 12040102
-                WHEN nr_pedido = 29 THEN 12040104
+                WHEN nr_pedido = 29 THEN 12054218
                 WHEN nr_pedido = 30 THEN 12040107
                 WHEN nr_pedido = 31 THEN 12040108
-                WHEN nr_pedido = 32 THEN 12040109
-                WHEN nr_pedido = 33 THEN 12040110
+                WHEN nr_pedido = 32 THEN 12054219
+                WHEN nr_pedido = 33 THEN 12054220
                 WHEN nr_pedido = 36 THEN 12040111
                 WHEN nr_pedido = 37 THEN 12040113
-                WHEN nr_pedido = 38 THEN 12040114
-                WHEN nr_pedido = 39 THEN 12040115
-                WHEN nr_pedido = 40 THEN 12040117
-                WHEN nr_pedido = 41 THEN 12040118
-                WHEN nr_pedido = 42 THEN 12040119
-                WHEN nr_pedido = 43 THEN 12040120
-                WHEN nr_pedido = 44 THEN 12040122
-                WHEN nr_pedido = 45 THEN 12040124
+                WHEN nr_pedido = 38 THEN 12045692
+                WHEN nr_pedido = 39 THEN 12045801
+                WHEN nr_pedido = 40 THEN 12054222
+                WHEN nr_pedido = 41 THEN 12054224
+                WHEN nr_pedido = 42 THEN 12054225
+                WHEN nr_pedido = 43 THEN 12054226
+                WHEN nr_pedido = 44 THEN 12054227
+                WHEN nr_pedido = 45 THEN 12054228
                 END AS id
         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     )as solicitacao,
@@ -189,22 +193,22 @@ nr_pedido,
         WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO)ALINHAMENTO E BALANCEAMENTO ' AND nr_pedido = 28 THEN 21272171
                 ------------------------------------------------------------------------------------------------------------------------------------------------------
                 -- 33 ---------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 21272151
+                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 21365667
                 ------------------------------------------------------------------------------------------------------------------------------------------------------
                 --28------------------------------------------------------------------------------------------------------------------------------------------------------
                 WHEN CONVERT(varchar(max), ds_produto) like '%ESTIMATIVO PARA PAGAMENTO DE CUSTOS DE BOLETOS/GUIAS DE EMISSÃO DOS REGISTROS E AUTENTICIDADES DAS ARTS (ANOTAÇÃO DE RESPONSABILIDADE TÉCNICA), POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.%' THEN 21272135
                 --------------------------------------------------------------------------------------------------------------------------------------------------------
         --20--------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' THEN 21272149
+                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' THEN 21365657
                 ----------------------------------------------------------------------------------------------------------------------------------------------------------
                 --31------------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' THEN 21272150
+                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' THEN 21365664
                 ----
         --30----------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' THEN 21272152
+                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' THEN 21365672
                 ------------------------------------------------------------------------------------------------------------------------------------------------------------
         --29--------------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' THEN 21272153
+                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' THEN 21365680
                 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
                 -- 18 ---------------------------------------------------------------------------------------------------------------------------------------
                 WHEN CONVERT(varchar(max), ds_produto) = 'PMP SERVIÇO REVISAO M1.' AND nr_pedido = 3 THEN 21272147

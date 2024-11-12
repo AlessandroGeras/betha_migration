@@ -48,170 +48,98 @@ JSON_QUERY(
     (SELECT
                                 JSON_QUERY(
                                         (SELECT
-                                                 15063 as id
+                                                 15749 as id
                                  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
                                 ) AS loa,
                                  JSON_QUERY(
     (SELECT
    case cd_categoriaeconomicareceita
-   when        1112500100        then        31983138
-when        1112500200        then        31983064
-when        1112500300        then        31983089
-when        1112500400        then        31983114
-when        1112530100        then        31983120
-when        1113031100        then        31983152
-when        1113034101        then        31983234
-when        1113034102        then        31983160
-when        1114511101        then        31983279
-when        1114511102        then        31983304
-when        1114511200        then        31983329
-when        1114511300        then        31983255
-when        1114511400        then        31983280
-when        1121010101        then        31983294
-when        1121010102        then        31983319
-when        1121010104        then        31983344
-when        1121010105        then        31983270
-when        1121010106        then        31983295
-when        1121010107        then        31983320
-when        1121500100        then        31983421
-when        1122010101        then        31983426
-when        1122010102        then        31983451
-when        1122010103        then        31983377
-when        1122010104        then        31983402
-when        1122010105        then        31983427
-when        1122010106        then        31983452
-when        1122010107        then        31983453
-when        1122010108        then        31983478
-when        1241500100        then        31984686
-when        1321010101        then        31984699
-when        1321010102        then        31984724
-when        1321010103        then        31984749
-when        1321010104        then        31984675
-when        1321010105        then        31984700
-when        1321010106        then        31984725
-when        1321010107        then        31984750
-when        1321010108        then        31984676
-when        1321010109        then        31984701
-when        1321010110        then        31984726
-when        1321010111        then        31984751
-when        1321010112        then        31984677
-when        1321010113        then        31984702
-when        1321010114        then        31984727
-when        1321010115        then        31984752
-when        1321010116        then        31984753
-when        1321010117        then        31984778
-when        1321010118        then        31984803
-when        1321010119        then        31984828
-when        1321010120        then        31984754
-when        1321010121        then        31984779
-when        1321010122        then        31984804
-when        1321010123        then        31984829
-when        1321010124        then        31984755
-when        1321010125        then        31984780
-when        1321010126        then        31984805
-when        1321010127        then        31984830
-when        1321010128        then        31984756
-when        1321010129        then        31984781
-when        1321010130        then        31984806
-when        1321010131        then        31984831
-when        1321010132        then        31984757
-when        1321010133        then        31984782
-when        1321010134        then        31984807
-when        1321010135        then        31984832
-when        1699990101        then        31985874
-when        1699990102        then        31985899
-when        1711511101        then        31985955
-when        1711511102        then        31985980
-when        1711511103        then        31986005
-when        1711511104        then        31986030
-when        1711512101        then        31985983
-when        1711512102        then        31986008
-when        1711520101        then        31985961
-when        1711520102        then        31985986
-when        1712510100        then        31986002
-when        1712524100        then        31986111
-when        1713501101        then        31986069
-when        1713501102        then        31986094
-when        1713501103        then        31986119
-when        1713501104        then        31986144
-when        1713501105        then        31986070
-when        1713502101        then        31986147
-when        1713503101        then        31986100
-when        1713503102        then        31986125
-when        1713503103        then        31986150
-when        1713503104        then        31986076
-when        1713504101        then        31986228
-when        1713504102        then        31986154
-when        1713505102        then        31986206
-when        1714500100        then        31986202
-when        1714520100        then        31986331
-when        1714530100        then        31986259
-when        1714990101        then        31986327
-when        1714990102        then        31986352
-when        1716500101        then        31986412
-when        1716500102        then        31986437
-when        1716500103        then        31986363
-when        1716500105        then        31986413
-when        1719580101        then        31986496
-when        1721500101        then        31986588
-when        1721500102        then        31986614
-when        1721510101        then        31986566
-when        1721510102        then        31986591
-when        1721520101        then        31986643
-when        1721520102        then        31986569
-when        1721530100        then        31986596
-when        1723500102        then        31986710
-when        1723500103        then        31986735
-when        1724500101        then        31986740
-when        1724510101        then        31986693
-when        1729510101        then        31986676
-when        1729510102        then        31986701
-when        1729510103        then        31986726
-when        1729510105        then        31986677
-when        1729990101        then        31986784
-when        1729990102        then        31986809
-when        1751500101        then        31986864
-when        1751500102        then        31986889
-when        1759990101        then        31986867
-when        1922011101        then        31987220
-when        1922990100        then        31987418
-when        1923990101        then        31987507
-when        1923990102        then        31987532
-when        1923990103        then        31987458
-when        1923990104        then        31987483
-when        1923990301        then        31987511
-when        1923990302        then        31987536
-when        1923990303        then        31987462
-when        1923990304        then        31987487
-when        1923990305        then        31987512
-when        1923990306        then        31987537
-when        1923990307        then        31987463
-when        1923990308        then        31987488
-when        1923990309        then        31987513
-when        1923990310        then        31987538
-when        1923990311        then        31987464
-when        1923990312        then        31987489
-when        1923990313        then        31987514
-when        1923990314        then        31987539
-when        1923990315        then        31987465
-when        1923990401        then        31987515
-when        1923990402        then        31987540
-when        1923990403        then        31987466
-when        1923990404        then        31987491
-when        1923990406        then        31987541
-when        1923990407        then        31987467
-when        1923990408        then        31987492
-when        1923990409        then        31987517
-when        1923990410        then        31987542
-when        1923990411        then        31987468
-when        1923990412        then        31987493
-when        1923990413        then        31987518
-when        1923990414        then        31987543
-when        1923990415        then        31987469
-when        1999992101        then        31988037
-when        2411513101        then        31988188
-when        2422540101        then        31988265
-when        2429990101        then        31988318
+   when        1112500200        then        33500425
+when        1112500400        then        33500426
+when        1112500100        then        33500449
+when        1112500300        then        33500450
+when        1112530100        then        33500463
+when        1113031100        then        33500502
+when        1114511102        then        33500606
+when        1114511300        then        33500607
+when        1114511101        then        33500630
+when        1114511200        then        33500631
+when        1114511400        then        33500632
+when        1121010102        then        33500661
+when        1121010105        then        33500662
+when        1121010107        then        33500663
+when        1121010101        then        33500685
+when        1121010104        then        33500686
+when        1121010106        then        33500687
+when        1122010102        then        33500776
+when        1122010104        then        33500777
+when        1121500100        then        33500790
+when        1122010101        then        33500800
+when        1122010103        then        33500801
+when        1122010105        then        33500802
+when        1122010106        then        33500803
+when        1122010108        then        33500804
+when        1122010107        then        33500828
+when        1241500100        then        33502020
+when        1321010101        then        33502071
+when        1321010103        then        33502072
+when        1321010105        then        33502073
+when        1321010107        then        33502074
+when        1321010109        then        33502075
+when        1321010111        then        33502076
+when        1321010113        then        33502077
+when        1321010102        then        33502096
+when        1321010104        then        33502097
+when        1321010106        then        33502098
+when        1321010108        then        33502099
+when        1321010110        then        33502100
+when        1321010112        then        33502101
+when        1321010114        then        33502102
+when        1321010115        then        33502103
+when        1699990101        then        33503271
+when        1699990102        then        33503296
+when        1711511101        then        33503308
+when        1711512102        then        33503315
+when        1711512101        then        33503339
+when        1711520101        then        33503345
+when        1712510100        then        33503403
+when        1712524100        then        33503446
+when        1713501102        then        33503462
+when        1713501104        then        33503463
+when        1713501101        then        33503486
+when        1713501103        then        33503487
+when        1713502101        then        33503497
+when        1713503101        then        33503503
+when        1713503103        then        33503504
+when        1713504101        then        33503510
+when        1713503102        then        33503528
+when        1713505102        then        33503540
+when        1714530100        then        33503621
+when        1714500100        then        33503632
+when        1714520100        then        33503641
+when        1716500101        then        33503753
+when        1716500103        then        33503754
+when        1716500105        then        33503755
+when        1716500102        then        33503778
+when        1719580101        then        33503871
+when        1721500101        then        33503955
+when        1721520101        then        33503966
+when        1721530100        then        33503971
+when        1721510101        then        33503985
+when        1723500103        then        33504025
+when        1723500102        then        33504049
+when        1724500101        then        33504060
+when        1724510101        then        33504065
+when        1729510102        then        33504106
+when        1729510101        then        33504130
+when        1729510103        then        33504131
+when        1729510105        then        33504132
+when        1751500101        then        33504257
+when        1759990101        then        33504263
+when        1751500102        then        33504282
+when        1922990101        then        33504769
+when        1999992101        then        33505364
+when        2422540101        then        33505695
    end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS natureza,
@@ -220,30 +148,30 @@ cd_ficharec as numero,
                                 JSON_QUERY(
                                         (SELECT
                                                  case cd_cecam
-                                                 when 1995 then 10768
-                                                 when 2783 then 10770
-                                                 when 3052 then 10771
-                                                 when 3068 then 10769
+                                                 when 1995 then 11241
+ when 2783 then 11358
+ when 3052 then 11357
+ when 3068 then 11292
                                                  end as id
                                  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
                                 ) AS entidade,
                                 JSON_QUERY(
     (SELECT
    case cd_unidorca
-when        '01.00.00'        then        163356
-when        '01.01.00'        then        163357
-when        '01.02.00'        then        163358
-when        '02.00.00'        then        163359
-when        '02.01.00'        then        163360
-when        '02.02.00'        then        163361
-when        '02.03.00'        then        163362
-when        '02.04.00'        then        163363
-when        '02.05.00'        then        163364
-when        '02.06.00'        then        164075
-when        '02.07.00'        then        164078
-when        '02.08.00'        then        164079
-when        '02.09.00'        then        164077
-when        '02.10.00'        then        164080
+when        '01.00.00'        then        163496
+when        '01.01.00'        then        163497
+when        '01.02.00'        then        163498
+when        '02.00.00'        then        163499
+when        '02.01.00'        then        163500
+when        '02.02.00'        then        163501
+when        '02.03.00'        then        163502
+when        '02.04.00'        then        163503
+when        '02.05.00'        then        163504
+when        '02.06.00'        then        165807
+when        '02.07.00'        then        165803
+when        '02.08.00'        then        165804
+when        '02.09.00'        then        165809
+when        '02.10.00'        then        165810
 end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS organograma,
@@ -252,35 +180,112 @@ JSON_QUERY(
         JSON_QUERY(
                                         (SELECT
         case cd_destinacaorecurso
-when 150000000000 then 744141
-when 150000150000 then 744143  
-when 150000250000 then 744145
-when 154000700000 then 744159
-when 155000000000 then 744177
-when 155200000000 then 744181
-when 155300000000 then 744183
-when 156900000000 then 744185
-when 157100000000 then 744189
-when 159900000000 then 744193
-when 160000000000 then 744203
-when 160100000000 then 744205
-when 160500000000 then 744213
-when 162100000000 then 744215
-when 163100000000 then   744219
-when 163200000000 then   744221
-when 165900000000 then   744231
-when 166000000000 then   744233
-when 166100000000 then   744235
-when 170000000000 then   744243
-when 170100000000 then   744245
-when 170500000000 then   744251
-when 170600003110  then  744255
-when 170800000000 then   744261        
-when 171000003210 then   744267
-when 171000003220 then   744269
-when 175000000000 then   744297
-when 175100000000 then   744299
-when 175900000000 then   744315                                                
+when        150000000000         then        774231
+when        150000150000         then        774232
+when        150000250000         then        774233
+when        150100000000         then        774234
+when        150200000000         then        774235
+when        150200150000         then        774236
+when        150200250000         then        774237
+when        154000000000         then        774238
+when        154000300000         then        774239
+when        154000700000         then        774240
+when        154100000000         then        774241
+when        154100300000         then        774242
+when        154100700000         then        774243
+when        154200000000         then        774244
+when        154200300000         then        774245
+when        154200700000         then        774246
+when        154300000000         then        774247
+when        154400000000         then        774248
+when        155000000000         then        774249
+when        155100000000         then        774250
+when        155200000000         then        774251
+when        155300000000         then        774252
+when        156900000000         then        774253
+when        157000000000         then        774254
+when        157100000000         then        774255
+when        157200000000         then        774256
+when        157300000000         then        774257
+when        157400000000         then        774258
+when        157500000000         then        774259
+when        157600000000         then        774260
+when        159900000000         then        774261
+when        160000000000         then        774262
+when        160100000000         then        774263
+when        160200000000         then        774264
+when        160300000000         then        774265
+when        160400000000         then        774266
+when        160500000000         then        774267
+when        162100000000         then        774268
+when        162200000000         then        774269
+when        163100000000         then        774270
+when        163200000000         then        774271
+when        163300000000         then        774272
+when        163400000000         then        774273
+when        163500000000         then        774274
+when        163600000000         then        774275
+when        165900000000         then        774276
+when        166000000000         then        774277
+when        166100000000         then        774278
+when        166200000000         then        774279
+when        166500000000         then        774280
+when        166900000000         then        774281
+when        170000000000         then        774282
+when        170100000000         then        774283
+when        170200000000         then        774284
+when        170300000000         then        774285
+when        170500000000         then        774286
+when        170600000000         then        774287
+when        170600003110         then        774288
+when        170600003120         then        774289
+when        170700000000         then        774290
+when        170800000000         then        774291
+when        170900000000         then        774292
+when        171000000000         then        774293
+when        171000003210         then        774294
+when        171000003220         then        774295
+when        171100000000         then        774296
+when        171200000000         then        774297
+when        171300000000         then        774298
+when        171400000000         then        774299
+when        171500000000         then        774300
+when        171600000000         then        774301
+when        171700000000         then        774302
+when        171800000000         then        774303
+when        171900000000         then        774304
+when        171900250000         then        774305
+when        172000000000         then        774306
+when        172100000000         then        774307
+when        174900000000         then        774308
+when        175000000000         then        774309
+when        175100000000         then        774310
+when        175200000000         then        774311
+when        175300000000         then        774312
+when        175400000000         then        774313
+when        175500000000         then        774314
+when        175600000000         then        774315
+when        175700000000         then        774316
+when        175800000000         then        774317
+when        175900000000         then        774318
+when        176000000000         then        774319
+when        176100000000         then        774320
+when        179900000000         then        774321
+when        180000000000         then        774322
+when        180000001111         then        774323
+when        180000001121         then        774324
+when        180100000000         then        774325
+when        180100002111         then        774326
+when        180100002121         then        774327
+when        180200000000         then        774328
+when        180300000000         then        774329
+when        186000000000         then        774330
+when        186100000000         then        774331
+when        186200000000         then        774332
+when        186900000000         then        774333
+when        188000000000         then        774334
+when        189800000000         then        774335
+when        189900000000         then        774336                                                
    end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS recurso
@@ -292,7 +297,7 @@ when 175900000000 then   744315
         vl_orcado as valor,
            JSON_QUERY(
     (SELECT
-   '12252' as id
+   12448 as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS deducao,
    JSON_QUERY(
@@ -302,35 +307,112 @@ when 175900000000 then   744315
            JSON_QUERY(
     (SELECT
    case cd_destinacaorecurso
-when 150000000000 then 744141
-when 150000150000 then 744143  
-when 150000250000 then 744145
-when 154000700000 then 744159
-when 155000000000 then 744177
-when 155200000000 then 744181
-when 155300000000 then 744183
-when 156900000000 then 744185
-when 157100000000 then 744189
-when 159900000000 then 744193
-when 160000000000 then 744203
-when 160100000000 then 744205
-when 160500000000 then 744213
-when 162100000000 then 744215
-when 163100000000 then   744219
-when 163200000000 then   744221
-when 165900000000 then   744231
-when 166000000000 then   744233
-when 166100000000 then   744235
-when 170000000000 then   744243
-when 170100000000 then   744245
-when 170500000000 then   744251
-when 170600003110  then  744255
-when 170800000000 then        744261        
-when 171000003210 then   744267
-when 171000003220 then   744269
-when 175000000000 then   744297
-when 175100000000 then   744299
-when 175900000000 then   744315                                                
+when        150000000000         then        774231
+when        150000150000         then        774232
+when        150000250000         then        774233
+when        150100000000         then        774234
+when        150200000000         then        774235
+when        150200150000         then        774236
+when        150200250000         then        774237
+when        154000000000         then        774238
+when        154000300000         then        774239
+when        154000700000         then        774240
+when        154100000000         then        774241
+when        154100300000         then        774242
+when        154100700000         then        774243
+when        154200000000         then        774244
+when        154200300000         then        774245
+when        154200700000         then        774246
+when        154300000000         then        774247
+when        154400000000         then        774248
+when        155000000000         then        774249
+when        155100000000         then        774250
+when        155200000000         then        774251
+when        155300000000         then        774252
+when        156900000000         then        774253
+when        157000000000         then        774254
+when        157100000000         then        774255
+when        157200000000         then        774256
+when        157300000000         then        774257
+when        157400000000         then        774258
+when        157500000000         then        774259
+when        157600000000         then        774260
+when        159900000000         then        774261
+when        160000000000         then        774262
+when        160100000000         then        774263
+when        160200000000         then        774264
+when        160300000000         then        774265
+when        160400000000         then        774266
+when        160500000000         then        774267
+when        162100000000         then        774268
+when        162200000000         then        774269
+when        163100000000         then        774270
+when        163200000000         then        774271
+when        163300000000         then        774272
+when        163400000000         then        774273
+when        163500000000         then        774274
+when        163600000000         then        774275
+when        165900000000         then        774276
+when        166000000000         then        774277
+when        166100000000         then        774278
+when        166200000000         then        774279
+when        166500000000         then        774280
+when        166900000000         then        774281
+when        170000000000         then        774282
+when        170100000000         then        774283
+when        170200000000         then        774284
+when        170300000000         then        774285
+when        170500000000         then        774286
+when        170600000000         then        774287
+when        170600003110         then        774288
+when        170600003120         then        774289
+when        170700000000         then        774290
+when        170800000000         then        774291
+when        170900000000         then        774292
+when        171000000000         then        774293
+when        171000003210         then        774294
+when        171000003220         then        774295
+when        171100000000         then        774296
+when        171200000000         then        774297
+when        171300000000         then        774298
+when        171400000000         then        774299
+when        171500000000         then        774300
+when        171600000000         then        774301
+when        171700000000         then        774302
+when        171800000000         then        774303
+when        171900000000         then        774304
+when        171900250000         then        774305
+when        172000000000         then        774306
+when        172100000000         then        774307
+when        174900000000         then        774308
+when        175000000000         then        774309
+when        175100000000         then        774310
+when        175200000000         then        774311
+when        175300000000         then        774312
+when        175400000000         then        774313
+when        175500000000         then        774314
+when        175600000000         then        774315
+when        175700000000         then        774316
+when        175800000000         then        774317
+when        175900000000         then        774318
+when        176000000000         then        774319
+when        176100000000         then        774320
+when        179900000000         then        774321
+when        180000000000         then        774322
+when        180000001111         then        774323
+when        180000001121         then        774324
+when        180100000000         then        774325
+when        180100002111         then        774326
+when        180100002121         then        774327
+when        180200000000         then        774328
+when        180300000000         then        774329
+when        186000000000         then        774330
+when        186100000000         then        774331
+when        186200000000         then        774332
+when        186900000000         then        774333
+when        188000000000         then        774334
+when        189800000000         then        774335
+when        189900000000         then        774336                                               
    end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS recurso
@@ -344,8 +426,6 @@ vl_orcado as metaFinanceira
 from CONTFICHARECEITA
 where cd_ReceitaPrevisaoTipo = 1
 and vl_orcado > 0
-
-
 
         `;
 
@@ -391,7 +471,7 @@ and vl_orcado > 0
         });
         
 
-        // Salvar os resultados transformados em um arquivo JSON
+       /*  // Salvar os resultados transformados em um arquivo JSON
         const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
@@ -400,30 +480,73 @@ and vl_orcado > 0
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const response = await fetch('https://pla-sl-rest.betha.cloud/planejamento/service-layer/v2/api/receitas-loa', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
+        return */
 
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para a rota.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para a rota:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
+            return chunked;
+        };
+
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+
+                const response = await fetch(`https://pla-sl-rest.betha.cloud/planejamento/service-layer/v2/api/receitas-loa`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+
+                const responseBody = await response.json();
+
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
+// Execute the main function
 main();

@@ -1,352 +1,3152 @@
 [
   {
-    "idIntegracao": "18193",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972898
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 177,
+      "descricao": "CAIXA ATIVA PL10A FRAHM",
+      "dataInclusao": "2011-04-30",
+      "dataAquisicao": "2011-04-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-04-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "177",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 450.8,
+        "vlAquisicaoConvertido": 450.8,
+        "vlDepreciavel": 396.7,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 396.7,
+        "vlLiquidoContabil": 450.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-04-30",
+        "vlResidual": 54.1,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18194",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972748
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 178,
+      "descricao": "CAIXA PASSIVA PL10 FRAHM",
+      "dataInclusao": "2011-04-30",
+      "dataAquisicao": "2011-04-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-04-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "178",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 450.8,
+        "vlAquisicaoConvertido": 450.8,
+        "vlDepreciavel": 396.7,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 396.7,
+        "vlLiquidoContabil": 450.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-04-30",
+        "vlResidual": 54.1,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18195",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972708
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 179,
+      "descricao": "PEDESTAL P/CAIXA DE SOM E VOZ",
+      "dataInclusao": "2011-04-30",
+      "dataAquisicao": "2011-04-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-04-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "179",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 115.83,
+        "vlAquisicaoConvertido": 115.83,
+        "vlDepreciavel": 101.93,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 101.93,
+        "vlLiquidoContabil": 115.83,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-04-30",
+        "vlResidual": 13.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18196",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972899
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 180,
+      "descricao": "MICROFONE S/FIO TSI MS215UHF",
+      "dataInclusao": "2011-04-30",
+      "dataAquisicao": "2011-04-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-04-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "180",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 420.52,
+        "vlAquisicaoConvertido": 420.52,
+        "vlDepreciavel": 370.06,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 370.06,
+        "vlLiquidoContabil": 420.52,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-04-30",
+        "vlResidual": 50.46,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18197",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972783
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51961
+      },
+      "especieBem": {
+        "id": 541256
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 181,
+      "descricao": "CABO PP 2X1,5",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "181",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 40,
+        "vlAquisicaoConvertido": 40,
+        "vlDepreciavel": 39.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 39.2,
+        "vlLiquidoContabil": 40,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 0.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18198",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972920
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 182,
+      "descricao": "NOTEBOOK PROCESSADOR 2.5 HD 500 GB MEMORIA 4GB TELA 14 DVD/RW WEB CAM",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "182",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2620,
+        "vlAquisicaoConvertido": 2620,
+        "vlDepreciavel": 2200.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2200.8,
+        "vlLiquidoContabil": 2620,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 419.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18199",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146972784
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 183,
+      "descricao": "IMPRESSORA LASER JET MONOCROMATICA WIRELLES",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "183",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 710,
+        "vlAquisicaoConvertido": 710,
+        "vlDepreciavel": 596.4,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 596.4,
+        "vlLiquidoContabil": 710,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 113.6,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18200",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972590
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 184,
+      "descricao": "ADAPTADOR WIRELLES USB 150 MBPS",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "184",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 179.5,
+        "vlAquisicaoConvertido": 179.5,
+        "vlDepreciavel": 150.78,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 150.78,
+        "vlLiquidoContabil": 179.5,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 28.72,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18201",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146972785
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 185,
+      "descricao": "ROTEADOR WIRELLES WGR240E 2.4 54MBPS",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "185",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 199,
+        "vlAquisicaoConvertido": 199,
+        "vlDepreciavel": 167.16,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 167.16,
+        "vlLiquidoContabil": 199,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 31.84,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18202",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972786
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 186,
+      "descricao": "MODEM ROTEADOR TD 8816 ADSL",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "186",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 180,
+        "vlAquisicaoConvertido": 180,
+        "vlDepreciavel": 151.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 151.2,
+        "vlLiquidoContabil": 180,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 28.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18203",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146972846
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 187,
+      "descricao": "CADEIRA PRESIDENTE COM RELAX, TRAVA RELAX, GIRATORIA BASE A GAS COM",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "187",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 629,
+        "vlAquisicaoConvertido": 629,
+        "vlDepreciavel": 566.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 566.1,
+        "vlLiquidoContabil": 629,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 62.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18204",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146972847
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 188,
+      "descricao": "CADEIRA PRESIDENTE COM RELAX, TRAVA RELAX, GIRATORIA BASE A GAS COM",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "188",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 629,
+        "vlAquisicaoConvertido": 629,
+        "vlDepreciavel": 566.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 566.1,
+        "vlLiquidoContabil": 629,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 62.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18205",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972900
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 189,
+      "descricao": "CADEIRA PRESIDENTE COM RELAX, TRAVA RELAX, GIRATORIA BASE A GAS COM",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "189",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 629,
+        "vlAquisicaoConvertido": 629,
+        "vlDepreciavel": 566.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 566.1,
+        "vlLiquidoContabil": 629,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 62.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18206",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972749
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 190,
+      "descricao": "CADEIRA PRESIDENTE COM RELAX, TRAVA RELAX, GIRATORIA BASE A GAS COM",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "190",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 629,
+        "vlAquisicaoConvertido": 629,
+        "vlDepreciavel": 566.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 566.1,
+        "vlLiquidoContabil": 629,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 62.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18207",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972787
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 191,
+      "descricao": "CADEIRA LONGARINA COM 3 LUGARES COM ASSENTO EM POLIPROPILENO COM BASE",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "191",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 262.26,
+        "vlAquisicaoConvertido": 262.26,
+        "vlDepreciavel": 236.03,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 236.03,
+        "vlLiquidoContabil": 262.26,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 26.23,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18208",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972861
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 192,
+      "descricao": "CADEIRA LONGARINA COM 3 LUGARES COM ASSENTO EM POLIPROPILENO COM BASE",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "192",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 262.26,
+        "vlAquisicaoConvertido": 262.26,
+        "vlDepreciavel": 236.03,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 236.03,
+        "vlLiquidoContabil": 262.26,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 26.23,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18209",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972822
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 193,
+      "descricao": "MESA DE CENTRO EM M.D.F. ALTURA 35 CM LARGURA 0,70X1,20 TAMPA 40 MM",
+      "dataInclusao": "2011-12-06",
+      "dataAquisicao": "2011-12-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2011-12-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "193",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 221.69,
+        "vlAquisicaoConvertido": 221.69,
+        "vlDepreciavel": 199.52,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 199.52,
+        "vlLiquidoContabil": 221.69,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2011-12-06",
+        "vlResidual": 22.17,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18210",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972862
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 194,
+      "descricao": "FAX PANASONIC KXFP 207BR 84433299",
+      "dataInclusao": "2012-03-05",
+      "dataAquisicao": "2012-03-05",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-03-05",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "194",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 520.3,
+        "vlAquisicaoConvertido": 520.3,
+        "vlDepreciavel": 437.05,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 437.05,
+        "vlLiquidoContabil": 520.3,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-03-05",
+        "vlResidual": 83.25,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18211",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972901
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 195,
+      "descricao": "AR CONDICIONADO SPLIT 270000BTUS 220W LG",
+      "dataInclusao": "2012-02-10",
+      "dataAquisicao": "2012-02-10",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-02-10",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "195",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2509.87,
+        "vlAquisicaoConvertido": 2509.87,
+        "vlDepreciavel": 2359.28,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2359.28,
+        "vlLiquidoContabil": 2509.87,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-02-10",
+        "vlResidual": 150.59,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18212",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972709
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 196,
+      "descricao": "AR CONDICIONADO SPLIT 270000BTUS 220W LG",
+      "dataInclusao": "2012-02-10",
+      "dataAquisicao": "2012-02-10",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-02-10",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "196",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2509.87,
+        "vlAquisicaoConvertido": 2509.87,
+        "vlDepreciavel": 2359.28,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2359.28,
+        "vlLiquidoContabil": 2509.87,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-02-10",
+        "vlResidual": 150.59,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18213",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972921
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 197,
+      "descricao": "TELEVISOR CCE 21 TELA PLANA ULTRA SLIM",
+      "dataInclusao": "2012-02-10",
+      "dataAquisicao": "2012-02-10",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-02-10",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "197",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 501.78,
+        "vlAquisicaoConvertido": 501.78,
+        "vlDepreciavel": 451.6,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 451.6,
+        "vlLiquidoContabil": 501.78,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-02-10",
+        "vlResidual": 50.18,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18214",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972938
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 198,
+      "descricao": "ANTENA PARABOLICA 1.5 COMPLETA",
+      "dataInclusao": "2012-02-10",
+      "dataAquisicao": "2012-02-10",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-02-10",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "198",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 271.15,
+        "vlAquisicaoConvertido": 271.15,
+        "vlDepreciavel": 216.92,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 216.92,
+        "vlLiquidoContabil": 271.15,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-02-10",
+        "vlResidual": 54.23,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18215",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972877
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 199,
+      "descricao": "SUPORTE TV E RECPTOR 14 A 21 TELA PLANA",
+      "dataInclusao": "2012-02-10",
+      "dataAquisicao": "2012-02-10",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-02-10",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "199",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 178.27,
+        "vlAquisicaoConvertido": 178.27,
+        "vlDepreciavel": 160.44,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 160.44,
+        "vlLiquidoContabil": 178.27,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-02-10",
+        "vlResidual": 17.83,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18216",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972939
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 200,
+      "descricao": "COMPUTADOR PROCESSADOR 2.5GHZ HD 500GB SATA MEM RAM 4GB",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "200",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1750,
+        "vlAquisicaoConvertido": 1750,
+        "vlDepreciavel": 1470,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1470,
+        "vlLiquidoContabil": 1750,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 280,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18217",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972823
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 201,
+      "descricao": "MONITOR LCD LED 15 POLEGADAS",
+      "dataInclusao": "2012-01-31",
+      "dataAquisicao": "2012-01-31",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-01-31",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "201",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 332.19,
+        "vlAquisicaoConvertido": 332.19,
+        "vlDepreciavel": 273.09,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 273.09,
+        "vlLiquidoContabil": 332.19,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-01-31",
+        "vlResidual": 59.1,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18218",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972878
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 202,
+      "descricao": "RACK PADRAO 12U",
+      "dataInclusao": "2012-01-30",
+      "dataAquisicao": "2012-01-30",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-01-30",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "202",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 352.74,
+        "vlAquisicaoConvertido": 352.74,
+        "vlDepreciavel": 317.47,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 317.47,
+        "vlLiquidoContabil": 352.74,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-01-30",
+        "vlResidual": 35.27,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18219",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972788
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 203,
+      "descricao": "NOBREAK 1400 VA UPS PRO 285 FLGF",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "203",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 690,
+        "vlAquisicaoConvertido": 690,
+        "vlDepreciavel": 552,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 552,
+        "vlLiquidoContabil": 690,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 138,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18220",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972863
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 204,
+      "descricao": "NOBREAK 700 VA UPS SOHO 1BS MONO 115 BLACK",
+      "dataInclusao": "2012-06-12",
+      "dataAquisicao": "2012-06-12",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-06-12",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "204",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 275.8,
+        "vlAquisicaoConvertido": 275.8,
+        "vlDepreciavel": 220.64,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 220.64,
+        "vlLiquidoContabil": 275.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-06-12",
+        "vlResidual": 55.16,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18221",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261611,
-      "idImoveisInfComplem": 3146972864
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 205,
+      "descricao": "NOBREAK 700 VA UPS SOHO 1BS MONO 115 BLACK",
+      "dataInclusao": "2012-06-12",
+      "dataAquisicao": "2012-06-12",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-06-12",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "205",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 275.8,
+        "vlAquisicaoConvertido": 275.8,
+        "vlDepreciavel": 220.64,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 220.64,
+        "vlLiquidoContabil": 275.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-06-12",
+        "vlResidual": 55.16,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18222",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261630,
-      "idImoveisInfComplem": 3146972865
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 206,
+      "descricao": "NOBREAK 700 VA UPS SOHO 1BS MONO 115 BLACK",
+      "dataInclusao": "2012-06-12",
+      "dataAquisicao": "2012-06-12",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-06-12",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "206",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 275.85,
+        "vlAquisicaoConvertido": 275.85,
+        "vlDepreciavel": 259.3,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 259.3,
+        "vlLiquidoContabil": 275.85,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-06-12",
+        "vlResidual": 16.55,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18223",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972824
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 207,
+      "descricao": "NOBREAK 700 VA UPS SOHO 1BS MONO 115 BLACK",
+      "dataInclusao": "2012-06-12",
+      "dataAquisicao": "2012-06-12",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-06-12",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "207",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 275.8,
+        "vlAquisicaoConvertido": 275.8,
+        "vlDepreciavel": 259.25,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 259.25,
+        "vlLiquidoContabil": 275.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-06-12",
+        "vlResidual": 16.55,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18224",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261672,
-      "idImoveisInfComplem": 3146972940
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 208,
+      "descricao": "CADEIRA PRESIDENTE EXTRA BRANCO E VASE PRETA",
+      "dataInclusao": "2012-10-26",
+      "dataAquisicao": "2012-10-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-10-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "208",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 650,
+        "vlAquisicaoConvertido": 650,
+        "vlDepreciavel": 588,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 588,
+        "vlLiquidoContabil": 650,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-10-26",
+        "vlResidual": 62,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18225",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972866
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 209,
+      "descricao": "CADEIRA PRESIDENTE EXTRA BRANCO E VASE PRETA",
+      "dataInclusao": "2012-10-26",
+      "dataAquisicao": "2012-10-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-10-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "209",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 650,
+        "vlAquisicaoConvertido": 650,
+        "vlDepreciavel": 588,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 588,
+        "vlLiquidoContabil": 650,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-10-26",
+        "vlResidual": 62,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18226",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261690,
-      "idImoveisInfComplem": 3146972879
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 210,
+      "descricao": "CADEIRA PRESIDENTE EXTRA BRANCO E VASE PRETA",
+      "dataInclusao": "2012-10-26",
+      "dataAquisicao": "2012-10-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-10-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "210",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 650,
+        "vlAquisicaoConvertido": 650,
+        "vlDepreciavel": 588,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 588,
+        "vlLiquidoContabil": 650,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-10-26",
+        "vlResidual": 62,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18227",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261710,
-      "idImoveisInfComplem": 3146972750
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51953
+      },
+      "especieBem": {
+        "id": 541257
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 211,
+      "descricao": "IMPRESSORA MULTI FUNCIONAL HP LASER PRO M1132 CE847A 6",
+      "dataInclusao": "2012-10-26",
+      "dataAquisicao": "2012-10-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-10-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "211",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 653.68,
+        "vlAquisicaoConvertido": 653.68,
+        "vlDepreciavel": 522.94,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 522.94,
+        "vlLiquidoContabil": 653.68,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-10-26",
+        "vlResidual": 130.74,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18228",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261730,
-      "idImoveisInfComplem": 3146972867
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 212,
+      "descricao": "ARMARIO AP 408SL 1600X750X400CC",
+      "dataInclusao": "2012-10-26",
+      "dataAquisicao": "2012-10-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2012-10-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "212",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 413.13,
+        "vlAquisicaoConvertido": 413.13,
+        "vlDepreciavel": 371.82,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 371.82,
+        "vlLiquidoContabil": 413.13,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2012-10-26",
+        "vlResidual": 41.31,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18229",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261750,
-      "idImoveisInfComplem": 3146972731
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 213,
+      "descricao": "MICROFONE SEM FIO",
+      "dataInclusao": "2013-06-27",
+      "dataAquisicao": "2013-06-27",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2013-06-27",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "213",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 400,
+        "vlAquisicaoConvertido": 400,
+        "vlDepreciavel": 352,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 352,
+        "vlLiquidoContabil": 400,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2013-06-27",
+        "vlResidual": 48,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18230",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972868
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 214,
+      "descricao": "MICROFONE SEM FIO",
+      "dataInclusao": "2013-06-27",
+      "dataAquisicao": "2013-06-27",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2013-06-27",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "214",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 400,
+        "vlAquisicaoConvertido": 400,
+        "vlDepreciavel": 352,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 352,
+        "vlLiquidoContabil": 400,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2013-06-27",
+        "vlResidual": 48,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18231",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261354,
-      "idImoveisInfComplem": 3146972751
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 215,
+      "descricao": "CADEIRA GIRATORIA EM COURO COM PES DE AÇO",
+      "dataInclusao": "2013-07-02",
+      "dataAquisicao": "2013-07-02",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2013-07-02",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "215",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 730,
+        "vlAquisicaoConvertido": 730,
+        "vlDepreciavel": 657,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 657,
+        "vlLiquidoContabil": 730,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2013-07-02",
+        "vlResidual": 73,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18232",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972789
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 216,
+      "descricao": "CADEIRA GIRATORIA EM COURO COM PES DE AÇO",
+      "dataInclusao": "2013-07-02",
+      "dataAquisicao": "2013-07-02",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2013-07-02",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "216",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 730,
+        "vlAquisicaoConvertido": 730,
+        "vlDepreciavel": 657,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 657,
+        "vlLiquidoContabil": 730,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2013-07-02",
+        "vlResidual": 73,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18233",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972952
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 217,
+      "descricao": "CADEIRA GIRATORIA EM COURO COM PES DE AÇO",
+      "dataInclusao": "2013-07-02",
+      "dataAquisicao": "2013-07-02",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2013-07-02",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "217",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 730,
+        "vlAquisicaoConvertido": 730,
+        "vlDepreciavel": 657,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 657,
+        "vlLiquidoContabil": 730,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2013-07-02",
+        "vlResidual": 73,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18234",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261411,
-      "idImoveisInfComplem": 3146972710
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 218,
+      "descricao": "PLACA DE MESA COM FOTO DO VEREADOR EM ACO INOX TAMANHO 0,8 CM X 20 CM",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "218",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 49,
+        "vlAquisicaoConvertido": 49,
+        "vlDepreciavel": 44.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 44.1,
+        "vlLiquidoContabil": 49,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 4.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18235",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972880
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 219,
+      "descricao": "PAINEL COM FOTOS DOS VEREADORES DA LEGISLATURA DE 2013 A 2016 EM",
+      "dataInclusao": "2014-05-05",
+      "dataAquisicao": "2014-05-05",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-05",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "219",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 898,
+        "vlAquisicaoConvertido": 898,
+        "vlDepreciavel": 808.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 808.2,
+        "vlLiquidoContabil": 898,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-05",
+        "vlResidual": 89.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18236",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972825
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 220,
+      "descricao": "CORTINA PERSIANA VERTICAL DE TECIDO COM 2,30 CM LARGURA X 1,50 DE ALTURA",
+      "dataInclusao": "2014-05-05",
+      "dataAquisicao": "2014-05-05",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-05",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "220",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 720,
+        "vlAquisicaoConvertido": 720,
+        "vlDepreciavel": 648,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 648,
+        "vlLiquidoContabil": 720,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-05",
+        "vlResidual": 72,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18237",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972711
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 221,
+      "descricao": "CORTINA PERSIANA VERTICAL DE TECIDO COM 2,30 CM LARGURA X 1,50 DE ALTURA",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "221",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 720,
+        "vlAquisicaoConvertido": 720,
+        "vlDepreciavel": 648,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 648,
+        "vlLiquidoContabil": 720,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 72,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18238",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972922
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 222,
+      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "222",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 765,
+        "vlAquisicaoConvertido": 765,
+        "vlDepreciavel": 688.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 688.5,
+        "vlLiquidoContabil": 765,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 76.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18239",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972902
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 223,
+      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "223",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 765,
+        "vlAquisicaoConvertido": 765,
+        "vlDepreciavel": 688.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 688.5,
+        "vlLiquidoContabil": 765,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 76.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18240",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972591
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 224,
+      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "224",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 765,
+        "vlAquisicaoConvertido": 765,
+        "vlDepreciavel": 688.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 688.5,
+        "vlLiquidoContabil": 765,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 76.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18241",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972869
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 225,
+      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "225",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 765,
+        "vlAquisicaoConvertido": 765,
+        "vlDepreciavel": 688.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 688.5,
+        "vlLiquidoContabil": 765,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 76.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18242",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972923
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 226,
+      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "226",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 765,
+        "vlAquisicaoConvertido": 765,
+        "vlDepreciavel": 688.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 688.5,
+        "vlLiquidoContabil": 765,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 76.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   }
 ]

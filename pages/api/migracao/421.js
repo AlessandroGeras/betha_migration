@@ -55,92 +55,118 @@ async function main() {
         // Executar a consulta SQL
         const userQuery = `
             	select 
-JSON_QUERY((SELECT CASE  WHEN cd_almoxa = 20100 THEN 4832
-                        WHEN cd_almoxa = 20200 THEN 4877
-                        WHEN cd_almoxa = 20300 THEN 4878
-                        WHEN cd_almoxa = 20500 THEN 4880
-                        WHEN cd_almoxa = 20600 THEN 4881
-                        WHEN cd_almoxa = 20800 THEN 4883
-                        WHEN cd_almoxa = 20900 THEN 4884
-                        WHEN cd_almoxa = 21000 THEN 4885
-                        WHEN cd_almoxa = 1 THEN 4830
+JSON_QUERY((SELECT CASE WHEN cd_almoxa = 20100 THEN 5415
+                        WHEN cd_almoxa = 20200 THEN 5416
+                        WHEN cd_almoxa = 20300 THEN 5418
+                        WHEN cd_almoxa = 20500 THEN 5420
+                        WHEN cd_almoxa = 20600 THEN 5417
+                        WHEN cd_almoxa = 20800 THEN 5421
+                        WHEN cd_almoxa = 20900 THEN 5419
                    END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
 JSON_QUERY((SELECT CASE al.nr_docto
-when        1346        then        11557868
-when        2218        then        11557869
-when        2232        then        11557870
-when        2720        then        11557871
-when        4002        then        11557872
-when        4619        then        11557873
-when        4816        then        11557874
-when        4817        then        11557875
-when        4830        then        11557876
-when        4840        then        11557877
-when        4841        then        11557878
-when        4842        then        11557879
-when        4843        then        11557880
-when        5145        then        11557881
-when        5166        then        11557882
-when        11193        then        11557883
-when        20815        then        11557884
-when        652406        then        11557885
-when        148        then        11558760
-when        149        then        11558761
-when        150        then        11558762
-when        152        then        11558763
-when        157        then        11558764
-when        158        then        11558765
-when        159        then        11558766
-when        160        then        11558767
-when        161        then        11558768
-when        162        then        11558769
-when        163        then        11558770
-when        223        then        11558771
-when        224        then        11558772
-when        227        then        11558773
-when        228        then        11558774
-when        230        then        11558775
-when        238        then        11558776
-when        239        then        11558777
-when        422        then        11558778
-when        431        then        11558779
-when        591        then        11558780
-when        592        then        11558781
-when        594        then        11558782
-when        605        then        11558783
-when        607        then        11558784
-when        608        then        11558785
-when        612        then        11558786
-when        613        then        11558787
-when        641        then        11558788
-when        642        then        11558789
-when        643        then        11558790
-when        644        then        11558791
-when        718        then        11558792
-when        723        then        11558793
-when        725        then        11558794
-when        728        then        11558795
-when        734        then        11558796
-when        737        then        11558797
-when        747        then        11558798
-when        757        then        11558799
-when        1201        then        11558800
-when        1203        then        11558801
-when        1204        then        11558802
-when        1207        then        11558803
-when        1208        then        11558804
-when        1209        then        11558805
-when        1210        then        11558806
-when        1212        then        11558807
-when        1214        then        11558808
-when        1215        then        11558809
+when 3800	then 13244660
+when 643	then 13244661
+when 652406	then 13244662
+when 5849	then 13244663
+when 1324	then 13244664
+when 667361	then 13244665
+when 5	then 13244666
+when 3339	then 13244667
+when 5841	then 13244668
+when 2698	then 13244669
+when 2504	then 13244670
+when 1953	then 13244671
+when 3981	then 13244672
+when 3976	then 13244673
+when 3808	then 13244674
+when 642	then 13244675
+when 613	then 13244676
+when 3795	then 13244677
+when 641	then 13244678
+when 661926	then 13244679
+when 4389	then 13244680
+when 162	then 13244681
+when 5514	then 13244682
+when 4890	then 13244683
+when 230	then 13244684
+when 1844	then 13244685
+when 148	then 13244686
+when 3796	then 13244687
+when 4576	then 13244688
+when 3336	then 13244689
+when 5283	then 13244690
+when 1952	then 13244691
+when 5842	then 13244692
+when 2506	then 13244693
+when 3809	then 13244694
+when 4390	then 13244695
+when 1	then 13244696
+when 5840	then 13244697
+when 3176	then 13244698
+when 3803	then 13244699
+when 594	then 13244700
+when 1956	then 13244701
+when 5733	then 13244702
+when 5276	then 13244703
+when 608	then 13244704
+when 3979	then 13244705
+when 163	then 13244706
+when 591	then 13244707
+when 5848	then 13244708
+when 238	then 13244709
+when 5275	then 13244710
+when 4996	then 13244711
+when 5622	then 13244712
+when 607	then 13244713
+when 1845	then 13244714
+when 4997	then 13244715
+when 1214	then 13244716
+when 5274	then 13244717
+when 5145	then 13244718
+when 3807	then 13244719
+when 3802	then 13244720
+when 161	then 13244721
+when 1322	then 13244722
+when 3811	then 13244723
+when 1215	then 13244724
+when 3801	then 13244725
+when 3178	then 13244726
+when 4565	then 13244727
+when 4566	then 13244728
+when 757	then 13244729
+when 2699	then 13244730
+when 747	then 13244731
+when 2505	then 13244732
+when 3810	then 13244733
+when 1323	then 13244734
+when 3	then 13244735
+when 4574	then 13244736
+when 612	then 13244737
+when 3337	then 13244738
+when 4891	then 13244739
+when 1016	then 13244740
+when 1846	then 13244741
+when 4391	then 13244742
+when 2696	then 13244743
+when 592	then 13244744
+when 2700	then 13244745
+when 5103	then 13244746
+when 3458	then 13244747
+when 3661	then 13244748
+when 1212	then 13244749
+when 3980	then 13244750
+when 3177	then 13244751
+when 5166	then 13244752
+when 1951	then 13244753
                                                 END AS  id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS entrada,
 al.dt_movimento as dataEntrada,
 '2024' as ano
         from ALMOMovimentacao AL
         join ALMOProdutos pr on AL.cd_produto = pr.cd_produto
-        WHERE al.sg_direcao = 'CD' and al.aa_movimento = '2024' and qt_movimento > 0 and al.fl_devolucao is null and (cd_almoxa = 20100 or cd_almoxa = 20200 or  cd_almoxa = 20300 or  cd_almoxa = 20500 or  cd_almoxa = 20600 or  cd_almoxa = 20800 or  cd_almoxa = 20900 )
+        WHERE al.sg_direcao = 'CD' and al.aa_movimento = '2024' and qt_movimento > 0 and al.fl_devolucao is null 
+		and (cd_almoxa = 20500) --or cd_almoxa = 20200 or  cd_almoxa = 20300 or  cd_almoxa = 20500 or  cd_almoxa = 20600 or  cd_almoxa = 20800 or  cd_almoxa = 20900 )
         group by cd_almoxa,nr_docto, dt_movimento
+		order by al.dt_movimento asc
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -162,7 +188,7 @@ al.dt_movimento as dataEntrada,
 			};
 		});
 
-        const chunkSize = 50;
+        /*   const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
@@ -170,48 +196,73 @@ al.dt_movimento as dataEntrada,
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        // Armazenar as respostas do servidor
-        const serverResponses = [];
+        return  */
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const url = `https://almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/entradas-finalizacao`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-     
-            const responseBody = await response.json();
-            serverResponses.push({
-                url: url,
-                status: response.status,
-                statusText: response.statusText,
-                responseBody: responseBody
-            });
-     
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para ${url}.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para ${url}:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
-
-        //fs.writeFileSync('log_bens.json', JSON.stringify(serverResponses, null, 2));
-        //console.log('Respostas do servidor salvas em log_bens.json');
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/entradas-finalizacao`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

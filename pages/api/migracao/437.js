@@ -63,7 +63,7 @@ JSON_QUERY(
         JSON_QUERY(
 (SELECT
    case cd_passivonaofinanceiroatualizacaoestorno
-   when 1 then 9802
+   when 1 then 9923
           end as id
  FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
 ) AS precatorio,
@@ -121,7 +121,7 @@ from CONTPASSIVONAOFINANCEIROATUALIZACAOESTORNO
         
         
         
-        const chunkSize = 50;
+       /*  const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
@@ -129,47 +129,73 @@ from CONTPASSIVONAOFINANCEIROATUALIZACAOESTORNO
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        // Armazenar as respostas do servidor
-        const serverResponses = [];
+        return */
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const url = `https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/cancelamentos-precatorios`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-     
-            const responseBody = await response.json();
-            serverResponses.push({
-                url: url,
-                status: response.status,
-                statusText: response.statusText,
-                responseBody: responseBody
-            });
-     
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para ${url}.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para ${url}:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
-
-        //fs.writeFileSync('log_bens.json', JSON.stringify(serverResponses, null, 2));
-        //console.log('Respostas do servidor salvas em log_bens.json');
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://con-sl-rest.betha.cloud/contabil/service-layer/v2/api/cancelamentos-precatorios`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 25a840ae-b57a-4030-903a-bcccf2386f30'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();

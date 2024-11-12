@@ -49,113 +49,113 @@ async function main() {
         const userQuery = `
             select
                 CASE 
-                        WHEN nr_pedido = 1 THEN 21272135
-                        WHEN nr_pedido IN (4, 12, 18, 18, 19, 20, 21) THEN 21272149
-                        WHEN nr_pedido IN (2, 3) THEN 21272136
-                        WHEN nr_pedido IN (5, 15, 24, 40) THEN 21272150
-                        WHEN nr_pedido IN (9, 10, 11, 13, 22, 23, 41, 43) THEN 21272152
-                        WHEN nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 21272151
-                        WHEN nr_pedido IN (16, 17, 44, 45) THEN 21272153
-                        WHEN nr_pedido IN (27, 28) THEN 21272154
-                        WHEN nr_pedido IN (30, 31) THEN 21272173
-                        WHEN nr_pedido IN (36, 37) THEN 21272183
-                        WHEN nr_pedido IN (38, 39) THEN 21272211
+                         WHEN nr_pedido = 1 THEN 5878418
+                        WHEN nr_pedido IN (4, 12, 18, 18, 19, 20, 21) THEN 5894233
+                        WHEN nr_pedido IN (2, 3) THEN 5878419
+                        WHEN nr_pedido IN (5, 15, 24, 40) THEN 5894234
+                        WHEN nr_pedido IN (9, 10, 11, 13, 22, 23, 41, 43) THEN 5894236
+                        WHEN nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 5894235
+                        WHEN nr_pedido IN (16, 17, 44, 45) THEN 5894237
+                        WHEN nr_pedido IN (27, 28) THEN 5878426
+                        WHEN nr_pedido IN (30, 31) THEN 5878427
+                        WHEN nr_pedido IN (36, 37) THEN 5878428
+                        WHEN nr_pedido IN (38, 39) THEN 5889875
                         END AS contratacaoId,
                 JSON_QUERY(
         (SELECT
             CASE 
-                                WHEN nr_pedido = 1 THEN 12040161
+                WHEN nr_pedido = 1 THEN 12040161
                 WHEN nr_pedido = 2 THEN 12040067
                 WHEN nr_pedido = 3 THEN 12040068
-                                WHEN nr_pedido = 4 THEN 12040070
-                WHEN nr_pedido = 5 THEN 12040072
-                WHEN nr_pedido = 6 THEN 12040073
-                WHEN nr_pedido = 7 THEN 12040074
-                WHEN nr_pedido = 8 THEN 12040075
-                WHEN nr_pedido = 9 THEN 12040076
-                WHEN nr_pedido = 10 THEN 12040078
-                WHEN nr_pedido = 11 THEN 12040079
-                                WHEN nr_pedido = 12 THEN 12040081
-                WHEN nr_pedido = 13 THEN 12040082
-                WHEN nr_pedido = 14 THEN 12040083
-                WHEN nr_pedido = 15 THEN 12040085
-                WHEN nr_pedido = 16 THEN 12040086
-                WHEN nr_pedido = 17 THEN 12040087
-                                WHEN nr_pedido = 18 THEN 12040088
-                                WHEN nr_pedido = 19 THEN 12040090
-                WHEN nr_pedido = 20 THEN 12040091
-                WHEN nr_pedido = 21 THEN 12040092
-                WHEN nr_pedido = 22 THEN 12040094
-                WHEN nr_pedido = 23 THEN 12040095
-                WHEN nr_pedido = 24 THEN 12040097
-                WHEN nr_pedido = 25 THEN 12040098
-                WHEN nr_pedido = 26 THEN 12040099
+                WHEN nr_pedido = 4 THEN 12054188
+                WHEN nr_pedido = 5 THEN 12054190
+                WHEN nr_pedido = 6 THEN 12054191
+                WHEN nr_pedido = 7 THEN 12054192
+                WHEN nr_pedido = 8 THEN 12054193
+                WHEN nr_pedido = 9 THEN 12054196
+                WHEN nr_pedido = 10 THEN 12054197
+                WHEN nr_pedido = 11 THEN 12054198
+                WHEN nr_pedido = 12 THEN 12054200
+                WHEN nr_pedido = 13 THEN 12054201
+                WHEN nr_pedido = 14 THEN 12054202
+                WHEN nr_pedido = 15 THEN 12054203
+                WHEN nr_pedido = 16 THEN 12054204
+                WHEN nr_pedido = 17 THEN 12054205
+                WHEN nr_pedido = 18 THEN 12054206
+                WHEN nr_pedido = 19 THEN 12054208
+                WHEN nr_pedido = 20 THEN 12054209
+                WHEN nr_pedido = 21 THEN 12054210
+                WHEN nr_pedido = 22 THEN 12054211
+                WHEN nr_pedido = 23 THEN 12054212
+                WHEN nr_pedido = 24 THEN 12054213
+                WHEN nr_pedido = 25 THEN 12054214
+                WHEN nr_pedido = 26 THEN 12054215
                 WHEN nr_pedido = 27 THEN 12040100
                 WHEN nr_pedido = 28 THEN 12040102
-                WHEN nr_pedido = 29 THEN 12040104
+                WHEN nr_pedido = 29 THEN 12054218
                 WHEN nr_pedido = 30 THEN 12040107
                 WHEN nr_pedido = 31 THEN 12040108
-                WHEN nr_pedido = 32 THEN 12040109
-                WHEN nr_pedido = 33 THEN 12040110
+                WHEN nr_pedido = 32 THEN 12054219
+                WHEN nr_pedido = 33 THEN 12054220
                 WHEN nr_pedido = 36 THEN 12040111
                 WHEN nr_pedido = 37 THEN 12040113
-                WHEN nr_pedido = 38 THEN 12040114
-                WHEN nr_pedido = 39 THEN 12040115
-                WHEN nr_pedido = 40 THEN 12040117
-                WHEN nr_pedido = 41 THEN 12040118
-                WHEN nr_pedido = 42 THEN 12040119
-                WHEN nr_pedido = 43 THEN 12040120
-                WHEN nr_pedido = 44 THEN 12040122
-                WHEN nr_pedido = 45 THEN 12040124
+                WHEN nr_pedido = 38 THEN 12045692
+                WHEN nr_pedido = 39 THEN 12045801
+                WHEN nr_pedido = 40 THEN 12054222
+                WHEN nr_pedido = 41 THEN 12054224
+                WHEN nr_pedido = 42 THEN 12054225
+                WHEN nr_pedido = 43 THEN 12054226
+                WHEN nr_pedido = 44 THEN 12054227
+                WHEN nr_pedido = 45 THEN 12054228
                 END AS id
         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     ) as solicitacaoId,
         JSON_QUERY(
         (SELECT
             CASE 
-                                WHEN nr_pedido = 1 THEN 4285508
-        WHEN nr_pedido = 2 THEN 4286203
-        WHEN nr_pedido = 3 THEN 4286354
-        WHEN nr_pedido = 4 THEN 4286355
-        WHEN nr_pedido = 5 THEN 4286356
-        WHEN nr_pedido = 6 THEN 4286357
-        WHEN nr_pedido = 7 THEN 4286358
-        WHEN nr_pedido = 8 THEN 4286359
-        WHEN nr_pedido = 9 THEN 4286360
-        WHEN nr_pedido = 10 THEN 4286361
-        WHEN nr_pedido = 11 THEN 4286362
-        WHEN nr_pedido = 12 THEN 4286363
-        WHEN nr_pedido = 13 THEN 4286364
-        WHEN nr_pedido = 14 THEN 4286366
-        WHEN nr_pedido = 15 THEN 4286367
-        WHEN nr_pedido = 16 THEN 4286368
-        WHEN nr_pedido = 17 THEN 4286369
-        WHEN nr_pedido = 18 THEN 4286370
-        WHEN nr_pedido = 19 THEN 4286371
-        WHEN nr_pedido = 20 THEN 4286372
-        WHEN nr_pedido = 21 THEN 4286373
-        WHEN nr_pedido = 22 THEN 4286374
-        WHEN nr_pedido = 23 THEN 4286375
-        WHEN nr_pedido = 24 THEN 4286376
-        WHEN nr_pedido = 25 THEN 4286377
-        WHEN nr_pedido = 26 THEN 4286378
-        WHEN nr_pedido = 27 THEN 4286379
-        WHEN nr_pedido = 28 THEN 4286380
-        WHEN nr_pedido = 29 THEN 4286381
-        WHEN nr_pedido = 30 THEN 4286382
-        WHEN nr_pedido = 31 THEN 4286383
-        WHEN nr_pedido = 32 THEN 4286384
-        WHEN nr_pedido = 33 THEN 4286385
-        WHEN nr_pedido = 36 THEN 4286386
-        WHEN nr_pedido = 37 THEN 4286387
-        WHEN nr_pedido = 38 THEN 4286388
-        WHEN nr_pedido = 39 THEN 4286389
-        WHEN nr_pedido = 40 THEN 4286391
-        WHEN nr_pedido = 41 THEN 4286392
-        WHEN nr_pedido = 42 THEN 4286394
-        WHEN nr_pedido = 43 THEN 4286395
-        WHEN nr_pedido = 44 THEN 4286396
-        WHEN nr_pedido = 45 THEN 4286397
+                WHEN nr_pedido = 1 THEN 4289950
+                WHEN nr_pedido = 2 THEN 4293012
+                WHEN nr_pedido = 3 THEN 4293013
+                WHEN nr_pedido = 4 THEN 4293014
+                WHEN nr_pedido = 5 THEN 4293015
+                WHEN nr_pedido = 6 THEN 4293016
+                WHEN nr_pedido = 7 THEN 4293017
+                WHEN nr_pedido = 8 THEN 4293018
+                WHEN nr_pedido = 9 THEN 4293019
+                WHEN nr_pedido = 10 THEN 4293020
+                WHEN nr_pedido = 11 THEN 4293021
+                WHEN nr_pedido = 12 THEN 4293022
+                WHEN nr_pedido = 13 THEN 4293023
+                WHEN nr_pedido = 14 THEN 4293024
+                WHEN nr_pedido = 15 THEN 4293025
+                WHEN nr_pedido = 16 THEN 4293026
+                WHEN nr_pedido = 17 THEN 4293027
+                WHEN nr_pedido = 18 THEN 4293028
+                WHEN nr_pedido = 19 THEN 4293029
+                WHEN nr_pedido = 20 THEN 4293030
+                WHEN nr_pedido = 21 THEN 4293031
+                WHEN nr_pedido = 22 THEN 4293032
+                WHEN nr_pedido = 23 THEN 4293033
+                WHEN nr_pedido = 24 THEN 4293034
+                WHEN nr_pedido = 25 THEN 4293035
+                WHEN nr_pedido = 26 THEN 4293036
+                WHEN nr_pedido = 27 THEN 4293037
+                WHEN nr_pedido = 28 THEN 4293038
+                WHEN nr_pedido = 29 THEN 4293039
+                WHEN nr_pedido = 30 THEN 4293040
+                WHEN nr_pedido = 31 THEN 4293041
+                WHEN nr_pedido = 32 THEN 4293042
+                WHEN nr_pedido = 33 THEN 4293043
+                WHEN nr_pedido = 36 THEN 4293044
+                WHEN nr_pedido = 37 THEN 4293045
+                WHEN nr_pedido = 38 THEN 4293011
+                WHEN nr_pedido = 39 THEN 4293046
+                WHEN nr_pedido = 40 THEN 4293047
+                WHEN nr_pedido = 41 THEN 4293048
+                WHEN nr_pedido = 42 THEN 4293049
+                WHEN nr_pedido = 43 THEN 4293050
+                WHEN nr_pedido = 44 THEN 4293051
+                WHEN nr_pedido = 45 THEN 4293052
                 END AS id
         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     )as solicitacaoRecebimento,
@@ -197,29 +197,30 @@ async function main() {
 
         ------------------------------------------------------------------------------------------------------------------------------------------------------
                 -- 334 ---------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) PASTILHA CJ, DIANTEIRO II' AND nr_pedido = 36 THEN 33303558
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) JUNTA, VEDACAO DRENO OLEO MOTO.' AND nr_pedido = 36 THEN 33303559
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) OLEO, MOTOR-SAE 5W30 API-SN.' AND nr_pedido = 36 THEN 33303560
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) ELEMENTO, FILTRANTE AR MOTOR.' AND nr_pedido = 36 THEN 33303562
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) FILTRO, OLEO MOTOR ' AND nr_pedido = 36 THEN 33303563
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) KIT LUBRIFICACAO I-MTECH.' AND nr_pedido = 36 THEN 33303564
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) LIMPADOR, SISTEMA COMB-DIESEL ' AND nr_pedido = 36 THEN 33303565
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO BUCHA, MOLA- SUSPENSÃO -TRASEIRA 1' AND nr_pedido = 36 THEN 33303566
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO FEIXE MOLAS CJ, SUSPENSÃO TRASEIRA' AND nr_pedido = 36 THEN 33303567
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO LAMPADA FAROL  12V 5W' AND nr_pedido = 36 THEN 33303568
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO FILTRO CJ, CABINE, CARVÃO' AND nr_pedido = 36 THEN 33303569
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO PALHETAS KIT, LIMPADOR PARABRISA' AND nr_pedido = 36 THEN 33303570
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO AMORTECEDOR KIT, SUSPENSÃO TRASEIRA' AND nr_pedido = 36 THEN 33303571
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO FILTRO, COMBUSTIVEL MOTOR  4N' AND nr_pedido = 36 THEN 33303572
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO SAPATA CJ, FREIO ' AND nr_pedido = 36 THEN 33303573
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO TIRANTE, TERMINAL DIR' AND nr_pedido = 36 THEN 33303574
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO LIMPADOR, SPRAY SISTEMA A/C ' AND nr_pedido = 36 THEN 33303575
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO LIMPA MOTOR FLUSH MTECH' AND nr_pedido = 36 THEN 33303576
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO BUCHA, MOLA SUSPENSÃO TRASEIRA 2' AND nr_pedido = 36 THEN 33303577
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO  (REVISÃO) OXI - SANITIZAÇÃO' AND nr_pedido = 37 THEN 33303578
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO (REVISÃO) 9.A REVISÃO - 90.000 KM ' AND nr_pedido = 37 THEN 33303579
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO)ALINHAMENTO E BALANCEAMENTO ' AND nr_pedido = 37 THEN 33303580
-        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO)MECÂNICA EM GERAL' AND nr_pedido = 37 THEN 33303581
+                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) PASTILHA CJ, DIANTEIRO II' AND nr_pedido = 36 THEN 33296937
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) JUNTA, VEDACAO DRENO OLEO MOTO.' AND nr_pedido = 36 THEN 33297043
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) OLEO, MOTOR-SAE 5W30 API-SN.' AND nr_pedido = 36 THEN 33297044
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) ELEMENTO, FILTRANTE AR MOTOR.' AND nr_pedido = 36 THEN 33296938
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) FILTRO, OLEO MOTOR ' AND nr_pedido = 36 THEN 33297045
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) KIT LUBRIFICACAO I-MTECH.' AND nr_pedido = 36 THEN 33297048
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO) LIMPADOR, SISTEMA COMB-DIESEL ' AND nr_pedido = 36 THEN 33296939
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO BUCHA, MOLA- SUSPENSÃO -TRASEIRA 1' AND nr_pedido = 36 THEN 33297050
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO FEIXE MOLAS CJ, SUSPENSÃO TRASEIRA' AND nr_pedido = 36 THEN 33297051
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO LAMPADA FAROL  12V 5W' AND nr_pedido = 36 THEN 33296940
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO FILTRO CJ, CABINE, CARVÃO' AND nr_pedido = 36 THEN 33297053
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO PALHETAS KIT, LIMPADOR PARABRISA' AND nr_pedido = 36 THEN 33297054
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO AMORTECEDOR KIT, SUSPENSÃO TRASEIRA' AND nr_pedido = 36 THEN 33296941
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO FILTRO, COMBUSTIVEL MOTOR  4N' AND nr_pedido = 36 THEN 33297055
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO SAPATA CJ, FREIO ' AND nr_pedido = 36 THEN 33297056
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO TIRANTE, TERMINAL DIR' AND nr_pedido = 36 THEN 33296943
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO LIMPADOR, SPRAY SISTEMA A/C ' AND nr_pedido = 36 THEN 33297057
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO LIMPA MOTOR FLUSH MTECH' AND nr_pedido = 36 THEN 33297059
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO BUCHA, MOLA SUSPENSÃO TRASEIRA 2' AND nr_pedido = 36 THEN 33296946
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO  (REVISÃO) OXI - SANITIZAÇÃO' AND nr_pedido = 37 THEN 33296948
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO (REVISÃO) 9.A REVISÃO - 90.000 KM ' AND nr_pedido = 37 THEN 33297062
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO)ALINHAMENTO E BALANCEAMENTO ' AND nr_pedido = 37 THEN 33297061
+        WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO)MECÂNICA EM GERAL' AND nr_pedido = 37 THEN 33297060
+
                 ------------------------------------------------------------------------------------------------------------------------------------------------------
                 -- 333------------------------------------------------------------------------------------------------------------------------------------------------------
                 WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE CUSTOS DE BOLETOS/GUIAS JUNTO AO ÓRGÃO COMPETENTE: CBMRO - CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDÔNIA, EM ATENDIMENTO A SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO E FAZENDA - SEMAF, COM PREVISÃO DE 12 (DOZE) MESES PARA O PERÍODO DE JANEIRO A DEZEMBRO DE 2024.' AND nr_pedido IN (30, 31) THEN 33296936
@@ -242,22 +243,49 @@ async function main() {
         WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO- (REVISÃO)ALINHAMENTO E BALANCEAMENTO ' AND nr_pedido = 28 THEN 33297042
                 ------------------------------------------------------------------------------------------------------------------------------------------------------
                 -- 33 ---------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido IN (6, 7, 8, 14, 25, 26, 29, 32, 33, 42) THEN 33299210
+                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 42 THEN 33329020
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 33 THEN 33328994
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 32 THEN 33328992
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 29 THEN 33328988
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 26 THEN 33328987
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 25 THEN 33328986
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 14 THEN 33328959
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 8 THEN 33328948
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 7 THEN 33328947
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO DE PAGAMENTO DE FATURAS DE ENERGIA ELÉTRICA, FORNECIDO POR ÓRGÃO COMPETENTE ENERGISA RONDÔNIA - DISTRIBUIDORA DE ENERGIA S. A' AND nr_pedido = 6 THEN 33328946
                 ------------------------------------------------------------------------------------------------------------------------------------------------------
                 --28------------------------------------------------------------------------------------------------------------------------------------------------------
                 WHEN CONVERT(varchar(max), ds_produto) like '%ESTIMATIVO PARA PAGAMENTO DE CUSTOS DE BOLETOS/GUIAS DE EMISSÃO DOS REGISTROS E AUTENTICIDADES DAS ARTS (ANOTAÇÃO DE RESPONSABILIDADE TÉCNICA), POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.%' THEN 33296504
                 --------------------------------------------------------------------------------------------------------------------------------------------------------
         --20--------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' THEN 33299241
+                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' AND nr_pedido = 21 THEN 33328969
+                                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' AND nr_pedido = 20 THEN 33328966
+                                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' AND nr_pedido = 19 THEN 33328964
+                                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' AND nr_pedido = 18 THEN 33328963
+                                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' AND nr_pedido = 12 THEN 33328957
+                                WHEN CONVERT(varchar(max), ds_produto) = 'TAXAS E TARIFAS BANCÁRIAS, DEBITADAS   POR TRANSAÇÕES BANCARIAS, EFETUADAS, DAS CONTAS EXISTENTES JUNTO AO BANCO POR UM PERIODO DE 12 MESES NO EXERCICIO DE 2024.' AND nr_pedido = 4 THEN 33328944
                 ----------------------------------------------------------------------------------------------------------------------------------------------------------
                 --31------------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' THEN 33296917
+                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' AND nr_pedido = 40 THEN 12054222
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' AND nr_pedido = 24 THEN 12054213
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' AND nr_pedido = 15 THEN 12054203
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMATIVO PARA PAGAMENTO DE FATURAS COM LINHA TELEFÔNICA, FORNECIDO PELA EMPRESA OI S. A - EM RECUPERAÇÃO JUDICIAL, PARA 12 MESES, NO DECORRER DO ANO DE 2024.' AND nr_pedido = 5 THEN 12054190
                 ----
         --30----------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' THEN 33299294
+                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 43 THEN 33329021
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 41 THEN 33329019
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 23 THEN 33328976
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 22 THEN 33328970
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 13 THEN 33328958
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 11 THEN 33328956
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 10 THEN 33328954
+                                WHEN CONVERT(varchar(max), ds_produto) = 'ESTIMADO PARA PAGAMENTO DE DESPESAS COM FATURAS DE ÁGUA POTÁVEL, FORNECIDO POR ÓRGÃO COMPETENTE (CAERD), POR UM PERÍODO ESTIMADO DE 12 (DOZE) MESES, VISANDO ATENDER AS NECESSIDADES DAS SECRETARIA MUNICIPAL' AND nr_pedido = 9 THEN 33328952
                 ------------------------------------------------------------------------------------------------------------------------------------------------------------
         --29--------------------------------------------------------------------------------------------------------------------------------------------------------------
-                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' THEN 33299312
+                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' AND vl_unitario = 6000 THEN 33327998
+                                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' AND vl_unitario = 12000 THEN 33329023
+                                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' AND vl_unitario = 5000 AND nr_pedido = 16 THEN 33328962
+                                WHEN CONVERT(varchar(max), ds_produto) = 'PMP/RO ESTIMATIVO PARA PAGAMENTOS DAS TAXAS DE LICENCIAMENTO DE VEÍCULOS JUNTO AO DEPARTAMENTO ESTADUAL DE TRÂNSITO DE RONDÔNIA-DETRAN.' AND vl_unitario = 5000 AND nr_pedido = 17 THEN 33328961
                 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
                 -- 18 ---------------------------------------------------------------------------------------------------------------------------------------
                 WHEN CONVERT(varchar(max), ds_produto) = 'OLEO MERITOR GL5 85W140 LT.' AND nr_pedido = 2 THEN 33293840
@@ -275,7 +303,7 @@ async function main() {
         END AS id
         FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
     )as solicitacaoFornecimentoItem
-from COMPPedidosItens where aa_pedido = 2024 and nr_pedido not in (34, 35);
+from COMPPedidosItens where aa_pedido = 2024 and nr_pedido not in (34, 35) and nr_pedido in (38, 39);
         `;
 
         const result = await masterConnection.query(userQuery);
@@ -285,13 +313,17 @@ from COMPPedidosItens where aa_pedido = 2024 and nr_pedido not in (34, 35);
             try {
                 const solicitacaoRecebimento = record.solicitacaoRecebimento ? JSON.parse(record.solicitacaoRecebimento) : null;
                 const solicitacaoFornecimentoItem = record.solicitacaoFornecimentoItem ? JSON.parse(record.solicitacaoFornecimentoItem) : null;
+                const solicitacaoId = record.solicitacaoId ? JSON.parse(record.solicitacaoId).id : null;
+                const recebimentoId = solicitacaoRecebimento?.id || null;
+                const contratacaoId = record.contratacaoId || null; // Para uso na URL apenas
         
                 return {
-                    solicitacaoRecebimento: solicitacaoRecebimento?.id || null,
-                    solicitacaoFornecimentoItem: solicitacaoFornecimentoItem?.id || null,
+                    solicitacaoRecebimento: { id: recebimentoId },
+                    solicitacaoFornecimentoItem: { id: solicitacaoFornecimentoItem?.id || null },
                     quantidade: record.quantidade || null,
                     valorTotal: record.valorTotal || null,
-                    contratacaoId: record.contratacaoId || null // Apenas para uso na URL
+                    solicitacaoId,
+                    contratacaoId // Armazenar para uso posterior, mas não incluir no relatório
                 };
             } catch (err) {
                 console.error('Erro ao processar registro:', err);
@@ -302,22 +334,16 @@ from COMPPedidosItens where aa_pedido = 2024 and nr_pedido not in (34, 35);
         let report = [];
         
         for (const record of transformedData) {
-            const { contratacaoId, solicitacaoRecebimento, solicitacaoFornecimentoItem, quantidade, valorTotal } = record;
+            const { solicitacaoId, solicitacaoRecebimento, solicitacaoFornecimentoItem, quantidade, valorTotal, contratacaoId } = record;
         
-            // Verificar se todos os campos necessários para a URL e corpo estão presentes
-            if (contratacaoId && solicitacaoRecebimento && solicitacaoFornecimentoItem && quantidade !== null && valorTotal !== null) {
-                const url = `https://services.contratos.betha.cloud/contratacao-services/api/exercicios/2024/contratacoes/${contratacaoId}/recebimentos/${solicitacaoRecebimento}/itens`;
+            if (solicitacaoId && solicitacaoRecebimento.id && solicitacaoFornecimentoItem.id && quantidade !== null && valorTotal !== null) {
+                const url = `https://services.contratos.betha.cloud/contratacao-services/api/exercicios/2024/contratacoes/${contratacaoId}/solicitacoes/${solicitacaoId}/recebimentos/${solicitacaoRecebimento.id}/itens`;
         
-                // Criar o corpo da requisição com os campos corretos
                 const body = {
-                    solicitacaoRecebimento: {
-                        id: solicitacaoRecebimento
-                    },
-                    solicitacaoFornecimentoItem: {
-                        id: solicitacaoFornecimentoItem
-                    },
-                    quantidade: quantidade,
-                    valorTotal: valorTotal
+                    solicitacaoRecebimento: { id: solicitacaoRecebimento.id },
+                    solicitacaoFornecimentoItem: { id: solicitacaoFornecimentoItem.id },
+                    quantidade,
+                    valorTotal
                 };
         
                 try {
@@ -329,40 +355,53 @@ from COMPPedidosItens where aa_pedido = 2024 and nr_pedido not in (34, 35);
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer 1d12dec7-0720-4b34-a2e5-649610d10806`
                         },
-                        body: JSON.stringify(body) // Apenas os campos necessários estão sendo enviados
+                        body: JSON.stringify(body)
                     });
         
                     const responseBody = await response.json();
         
+                    // Excluindo contratacaoId do relatório
+                    report.push({
+                        solicitacaoRecebimento: { id: solicitacaoRecebimento.id },
+                        solicitacaoFornecimentoItem: { id: solicitacaoFornecimentoItem.id },
+                        quantidade,
+                        valorTotal,
+                        response: responseBody
+                    });
+        
                     if (response.ok) {
                         console.log(`Dados enviados com sucesso para a rota ${url}`);
-                        report.push({ record, status: 'success', response: responseBody });
                     } else {
                         console.error(`Erro ao enviar os dados para a rota ${url}:`, response.statusText);
-                        console.error('Corpo enviado:', JSON.stringify(body, null, 2));
-                        console.error('Erro da API:', responseBody);
-                        report.push({ record, status: 'failed', response: responseBody });
                     }
                 } catch (err) {
                     console.error(`Erro ao enviar o registro para a rota ${url}:`, err);
-                    report.push({ record, status: 'error', error: err.message });
+                    report.push({
+                        solicitacaoRecebimento: { id: solicitacaoRecebimento.id },
+                        solicitacaoFornecimentoItem: { id: solicitacaoFornecimentoItem.id },
+                        quantidade,
+                        valorTotal,
+                        response: { error: err.message }
+                    });
                 }
             } else {
                 console.error('Dados inválidos. O registro será ignorado.');
-                report.push({ record, status: 'invalid', error: 'Dados insuficientes para envio.' });
             }
         }
         
-        // Salvar o relatório em 'report.json'
+        // Salvando o relatório
         fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
         console.log('Relatório salvo em report.json');
         
-        } catch (error) {
-            console.error('Erro durante a execução do programa:', error);
-        } finally {
-            sql.close();
-        }
-        }
         
-        main();
         
+        
+        
+    } catch (error) {
+        console.error('Erro durante a execução do programa:', error);
+    } finally {
+        sql.close();
+    }
+}
+
+main();

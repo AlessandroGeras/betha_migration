@@ -1,352 +1,3152 @@
 [
   {
-    "idIntegracao": "18243",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972941
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 227,
+      "descricao": "CADEIRA MODELO PRESIDENTE COM BRACOS E ASSENTO E ENCOSTO, SENDO O",
+      "dataInclusao": "2014-05-06",
+      "dataAquisicao": "2014-05-06",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-05-06",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "227",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 765,
+        "vlAquisicaoConvertido": 765,
+        "vlDepreciavel": 688.5,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 688.5,
+        "vlLiquidoContabil": 765,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-05-06",
+        "vlResidual": 76.5,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18244",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972870
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 228,
+      "descricao": "ROTEADOR PARA REDE INTERNA DE MICROCOMPUTADORES",
+      "dataInclusao": "2022-01-01",
+      "dataAquisicao": "2022-01-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-01-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "228",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 509,
+        "vlAquisicaoConvertido": 509,
+        "vlDepreciavel": 427.56,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 427.56,
+        "vlLiquidoContabil": 509,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-01-01",
+        "vlResidual": 81.44,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18245",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261630,
-      "idImoveisInfComplem": 3146972881
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 229,
+      "descricao": "NOBREAK PDV G II 2200VA + MOD, 2 BATERIA EXT. 45 AH-NHS",
+      "dataInclusao": "2014-12-01",
+      "dataAquisicao": "2014-12-01",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2014-12-01",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "229",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2799,
+        "vlAquisicaoConvertido": 2799,
+        "vlDepreciavel": 2239.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2239.2,
+        "vlLiquidoContabil": 2799,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2014-12-01",
+        "vlResidual": 559.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18246",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972972
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 230,
+      "descricao": "Aquisição de 02(Dois) microcomputadores, tendo processador CORE 15 GHZ, Placa Mãe",
+      "dataInclusao": "2015-10-21",
+      "dataAquisicao": "2015-10-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2015-10-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "230",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2776,
+        "vlAquisicaoConvertido": 2776,
+        "vlDepreciavel": 2331.84,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2331.84,
+        "vlLiquidoContabil": 2776,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2015-10-21",
+        "vlResidual": 444.16,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18247",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261670,
-      "idImoveisInfComplem": 3146972942
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 231,
+      "descricao": "Aquisição de 02(Dois) microcomputadores, tendo processador CORE 15 GHZ, Placa Mãe",
+      "dataInclusao": "2015-10-21",
+      "dataAquisicao": "2015-10-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2015-10-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "231",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2776,
+        "vlAquisicaoConvertido": 2776,
+        "vlDepreciavel": 2331.84,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2331.84,
+        "vlLiquidoContabil": 2776,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2015-10-21",
+        "vlResidual": 444.16,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18248",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972882
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 232,
+      "descricao": "BEBEDOURO DE COLUNA ESMALTEC BR ECG35B BRANCO 110V",
+      "dataInclusao": "2016-05-11",
+      "dataAquisicao": "2016-05-11",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2016-05-11",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "232",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 570,
+        "vlAquisicaoConvertido": 570,
+        "vlDepreciavel": 513,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 513,
+        "vlLiquidoContabil": 570,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2016-05-11",
+        "vlResidual": 57,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18249",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261690,
-      "idImoveisInfComplem": 3146972943
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 233,
+      "descricao": "FECHADURA P/PORTA DE BLINDEX",
+      "dataInclusao": "2016-08-10",
+      "dataAquisicao": "2016-08-10",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2016-08-10",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "233",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 480,
+        "vlAquisicaoConvertido": 480,
+        "vlDepreciavel": 432,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 432,
+        "vlLiquidoContabil": 480,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2016-08-10",
+        "vlResidual": 48,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18250",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261710,
-      "idImoveisInfComplem": 3146972871
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 234,
+      "descricao": "BATERIA EXTERNA ESTACIONARIA 12V 50AH COM AUTONOMIA MINIMA DE 03 A 04",
+      "dataInclusao": "2017-08-15",
+      "dataAquisicao": "2017-08-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2017-08-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "234",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 520,
+        "vlAquisicaoConvertido": 520,
+        "vlDepreciavel": 416,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 416,
+        "vlLiquidoContabil": 520,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2017-08-15",
+        "vlResidual": 104,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18251",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261730,
-      "idImoveisInfComplem": 3146972903
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 235,
+      "descricao": "BATERIA EXTERNA ESTACIONARIA 12V 50AH COM AUTONOMIA MINIMA DE 03 A 04",
+      "dataInclusao": "2017-08-15",
+      "dataAquisicao": "2017-08-15",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2017-08-15",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "235",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 520,
+        "vlAquisicaoConvertido": 520,
+        "vlDepreciavel": 416,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 416,
+        "vlLiquidoContabil": 520,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2017-08-15",
+        "vlResidual": 104,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18252",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261750,
-      "idImoveisInfComplem": 3146972883
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51953
+      },
+      "especieBem": {
+        "id": 541257
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 236,
+      "descricao": "IMPRESSORA LASER MULTIFUNCIONAL BROTHER DCP L5652 DN COM GARANTIA DE",
+      "dataInclusao": "2017-12-19",
+      "dataAquisicao": "2017-12-19",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2017-12-19",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "236",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3500,
+        "vlAquisicaoConvertido": 3500,
+        "vlDepreciavel": 2800,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2800,
+        "vlLiquidoContabil": 3500,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2017-12-19",
+        "vlResidual": 700,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18253",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146972953
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 237,
+      "descricao": "MESA MEDINDO 02 MTS X 50 CM X 76 CM DE ALTURA, FECHADA E NAS LATERAIS COM",
+      "dataInclusao": "2017-12-26",
+      "dataAquisicao": "2017-12-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2017-12-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "237",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 990,
+        "vlAquisicaoConvertido": 990,
+        "vlDepreciavel": 891,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 891,
+        "vlLiquidoContabil": 990,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2017-12-26",
+        "vlResidual": 99,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18254",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972826
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 238,
+      "descricao": "MESA REDONDA COM TAMO DE MDF E CIRCUNFERENCIA DE 120 CM COM O PE DE 80",
+      "dataInclusao": "2017-12-26",
+      "dataAquisicao": "2017-12-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2017-12-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "238",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 490,
+        "vlAquisicaoConvertido": 490,
+        "vlDepreciavel": 441,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 441,
+        "vlLiquidoContabil": 490,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2017-12-26",
+        "vlResidual": 49,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18255",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972924
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 239,
+      "descricao": "ESCRIVANINHA DE CANTO MEDINDO 130 CM X 50 CM DE PROFUNDIDADE ALTURA 76",
+      "dataInclusao": "2017-12-26",
+      "dataAquisicao": "2017-12-26",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2017-12-26",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "239",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 980,
+        "vlAquisicaoConvertido": 980,
+        "vlDepreciavel": 882,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 882,
+        "vlLiquidoContabil": 980,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2017-12-26",
+        "vlResidual": 98,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18256",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972992
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 240,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "240",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18257",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972848
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 241,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "241",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18258",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972884
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 242,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "242",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18259",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972827
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 243,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "243",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18260",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972954
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 244,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "244",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18261",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261491,
-      "idImoveisInfComplem": 3146972973
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 245,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "245",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18262",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972790
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 246,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "246",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18263",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146973012
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 247,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "247",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18264",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146972791
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 248,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "248",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18265",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972849
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 249,
+      "descricao": "CAMERA EXTERNA HDCVI VHD1220B G4 FULL HD 1080 P.",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "249",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 200,
+        "vlAquisicaoConvertido": 200,
+        "vlDepreciavel": 180,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 180,
+        "vlLiquidoContabil": 200,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 20,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18266",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972955
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 250,
+      "descricao": "HD 1TB SATA 3.5",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "250",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 349,
+        "vlAquisicaoConvertido": 349,
+        "vlDepreciavel": 293.16,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 293.16,
+        "vlLiquidoContabil": 349,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 55.84,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18267",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972850
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 251,
+      "descricao": "DVR MHBX 1016 MULT HD 5 EM 1 DE 16 CANAIS",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "251",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1000,
+        "vlAquisicaoConvertido": 1000,
+        "vlDepreciavel": 840,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 840,
+        "vlLiquidoContabil": 1000,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 160,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18268",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146972885
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 252,
+      "descricao": "TENDA SOMBREAMENTO MEDINDO 11,45X5,00 METROS",
+      "dataInclusao": "2018-12-03",
+      "dataAquisicao": "2018-12-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "252",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 6250,
+        "vlAquisicaoConvertido": 6250,
+        "vlDepreciavel": 5625,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 5625,
+        "vlLiquidoContabil": 6250,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-03",
+        "vlResidual": 625,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18269",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972956
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 253,
+      "descricao": "APARELHO DE CELULAR.SMARTPHONE, TELA DE 5.6, 32GB, CÂMERA FOTOGRAFICA E",
+      "dataInclusao": "2018-12-24",
+      "dataAquisicao": "2018-12-24",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-24",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "253",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 999,
+        "vlAquisicaoConvertido": 999,
+        "vlDepreciavel": 879.12,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 879.12,
+        "vlLiquidoContabil": 999,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-24",
+        "vlResidual": 119.88,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18270",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146972904
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 254,
+      "descricao": "MIXER LINE 16 CANAIS/USB/EFEITO DIG/PHANTOM POWER",
+      "dataInclusao": "2018-12-24",
+      "dataAquisicao": "2018-12-24",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-24",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "254",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2000,
+        "vlAquisicaoConvertido": 2000,
+        "vlDepreciavel": 1680,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1680,
+        "vlLiquidoContabil": 2000,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-24",
+        "vlResidual": 320,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18271",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972944
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51968
+      },
+      "especieBem": {
+        "id": 541243
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 255,
+      "descricao": "VEICULO MARCA FIAT MODELO UNO MILLE WAY ECON, ANO E MODELO 2013/2013",
+      "dataInclusao": "2018-12-28",
+      "dataAquisicao": "2018-12-28",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2018-12-28",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "255",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 24715.88,
+        "vlAquisicaoConvertido": 24715.88,
+        "vlDepreciavel": 22221.44,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 22221.44,
+        "vlLiquidoContabil": 24715.88,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2018-12-28",
+        "vlResidual": 2494.44,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18272",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146972905
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 256,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "256",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18273",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146973052
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 257,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "257",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18274",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146973072
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 258,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "258",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18275",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146972906
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 259,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "259",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18276",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261771,
-      "idImoveisInfComplem": 3146973073
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 260,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "260",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18277",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972957
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 261,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "261",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18278",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261390,
-      "idImoveisInfComplem": 3146973074
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 262,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "262",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18279",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261411,
-      "idImoveisInfComplem": 3146972851
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 263,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "263",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18280",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972886
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 264,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "264",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18281",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972974
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 265,
+      "descricao": "MICROFONE PROFISSIONAL DE ALTA SENSIBILIDADE - PHANTOM POWER OU PILHAS",
+      "dataInclusao": "2019-03-14",
+      "dataAquisicao": "2019-03-14",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-03-14",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "265",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 460,
+        "vlAquisicaoConvertido": 460,
+        "vlDepreciavel": 404.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 404.8,
+        "vlLiquidoContabil": 460,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-03-14",
+        "vlResidual": 55.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18282",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972945
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 266,
+      "descricao": "MESA PROJETORA EM L 100% EM MATERIAL MDF NA COR BRANCO, A MESA POSSUI",
+      "dataInclusao": "2019-12-23",
+      "dataAquisicao": "2019-12-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-12-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "266",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 910,
+        "vlAquisicaoConvertido": 910,
+        "vlDepreciavel": 819,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 819,
+        "vlLiquidoContabil": 910,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-12-23",
+        "vlResidual": 91,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18283",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972907
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 267,
+      "descricao": "CADEIRA MODELO PRESIDENTE EM CORANO, COM ENCOSTO ALTO, COM PÉS",
+      "dataInclusao": "2019-12-23",
+      "dataAquisicao": "2019-12-23",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2019-12-23",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "267",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 860,
+        "vlAquisicaoConvertido": 860,
+        "vlDepreciavel": 774,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 774,
+        "vlLiquidoContabil": 860,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2019-12-23",
+        "vlResidual": 86,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18284",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972975
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51954
+      },
+      "especieBem": {
+        "id": 541247
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 268,
+      "descricao": "RACK DE PISO 24U X 970 MM PADRÃO 19 COM PORTA DE ACRÍLICO ESTRUTURA",
+      "dataInclusao": "2020-08-24",
+      "dataAquisicao": "2020-08-24",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-08-24",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "268",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2625,
+        "vlAquisicaoConvertido": 2625,
+        "vlDepreciavel": 2205,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2205,
+        "vlLiquidoContabil": 2625,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-08-24",
+        "vlResidual": 420,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18285",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972976
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 269,
+      "descricao": "LAVADORA DE ALTA PRESSÃO: TENSÃO 127/220V. POTÊNCIA: 1200W PRESSÃO (PIS).",
+      "dataInclusao": "2020-11-03",
+      "dataAquisicao": "2020-11-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-11-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "269",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 499,
+        "vlAquisicaoConvertido": 499,
+        "vlDepreciavel": 449.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 449.1,
+        "vlLiquidoContabil": 499,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-11-03",
+        "vlResidual": 49.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18286",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146973092
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 270,
+      "descricao": "ESCADA. EM ALUMÍNIO, DOBRÁVEIS, ESTRUTURA EM TUBOS E CHAPAS DE ALUMÍNIO,",
+      "dataInclusao": "2020-11-03",
+      "dataAquisicao": "2020-11-03",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-11-03",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "270",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 229,
+        "vlAquisicaoConvertido": 229,
+        "vlDepreciavel": 206.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 206.1,
+        "vlLiquidoContabil": 229,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-11-03",
+        "vlResidual": 22.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18287",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146972946
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 271,
+      "descricao": "AR 12 BTU. GÁS ECOLÓGICO R410A GÁS QUE NÃO AGRIDE A CAMADA DE OZÔNIO.",
+      "dataInclusao": "2020-11-18",
+      "dataAquisicao": "2020-11-18",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-11-18",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "271",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1710,
+        "vlAquisicaoConvertido": 1710,
+        "vlDepreciavel": 1368,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1368,
+        "vlLiquidoContabil": 1710,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-11-18",
+        "vlResidual": 342,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18288",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972977
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 272,
+      "descricao": "SERVIDOR DE ALTA PERFORMACE; TRUSTEC PLATFORM MODULE (TPM): SEM",
+      "dataInclusao": "2020-10-13",
+      "dataAquisicao": "2020-10-13",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-10-13",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "272",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 13800,
+        "vlAquisicaoConvertido": 13800,
+        "vlDepreciavel": 11592,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 11592,
+        "vlLiquidoContabil": 13800,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-10-13",
+        "vlResidual": 2208,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18289",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972887
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 273,
+      "descricao": "MICROCOMPUTADOR CONTENDO: 1.1 PROCESSADOR: Nº DE NUCLEIOS: 4, Nº DE",
+      "dataInclusao": "2020-10-13",
+      "dataAquisicao": "2020-10-13",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-10-13",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "273",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3000,
+        "vlAquisicaoConvertido": 3000,
+        "vlDepreciavel": 2520,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2520,
+        "vlLiquidoContabil": 3000,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-10-13",
+        "vlResidual": 480,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18290",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146972925
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 274,
+      "descricao": "SERVIDOR DE ALTA PERFORMACE; TRUSTEC PLATFORM MODULE (TPM): SEM",
+      "dataInclusao": "2020-12-31",
+      "dataAquisicao": "2020-12-31",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-12-31",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "274",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 9000,
+        "vlAquisicaoConvertido": 9000,
+        "vlDepreciavel": 7560,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 7560,
+        "vlLiquidoContabil": 9000,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-12-31",
+        "vlResidual": 1440,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18291",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972947
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51967
+      },
+      "especieBem": {
+        "id": 541263
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 275,
+      "descricao": "AR 24 BTU. GÁS ECOLÓGICO R410A GÁS QUE NÃO AGRIDE A CAMADA DE OZÔNIO.",
+      "dataInclusao": "2020-12-31",
+      "dataAquisicao": "2020-12-31",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2020-12-31",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "275",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3299,
+        "vlAquisicaoConvertido": 3299,
+        "vlDepreciavel": 2639.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2639.2,
+        "vlLiquidoContabil": 3299,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2020-12-31",
+        "vlResidual": 659.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18292",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972828
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 276,
+      "descricao": "AR CONDICIONADOS 36000BTUS. AR CONDICIONADO SPLIT. PISO TETO ECO 36000BTUS FRIO 220V MONOFASICO. CAPACIDADE (BTU/H): 36.000CICLO: FRIO. SISTEMA: CONVENCIONAL VOLTAGEM (V): 220VCLASSIFICAÇÃO ENERGÉTICA: SELO PROCEL A. GARANTIA CONCEDIDAPELO FABRICANTE",
+      "dataInclusao": "2022-12-31",
+      "dataAquisicao": "2022-12-31",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-12-31",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "276",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 7199,
+        "vlAquisicaoConvertido": 7199,
+        "vlDepreciavel": 6479.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 6479.1,
+        "vlLiquidoContabil": 7199,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-12-31",
+        "vlResidual": 719.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   }
 ]

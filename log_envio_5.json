@@ -1,275 +1,1136 @@
 [
   {
-    "idIntegracao": "18293",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972926
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 277,
+      "descricao": "AR CONDICIONADOS 36000BTUS. AR CONDICIONADO SPLIT. PISO TETO ECO 36000BTUS FRIO 220V MONOFASICO. CAPACIDADE (BTU/H): 36.000CICLO: FRIO. SISTEMA: CONVENCIONAL VOLTAGEM (V): 220VCLASSIFICAÇÃO ENERGÉTICA: SELO PROCEL A. GARANTIA CONCEDIDAPELO FABRICANTE",
+      "dataInclusao": "2022-12-31",
+      "dataAquisicao": "2022-12-31",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-12-31",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "277",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 7199,
+        "vlAquisicaoConvertido": 7199,
+        "vlDepreciavel": 6479.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 6479.1,
+        "vlLiquidoContabil": 7199,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-12-31",
+        "vlResidual": 719.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18294",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972908
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51958
+      },
+      "especieBem": {
+        "id": 541262
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38536157
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 278,
+      "descricao": "AR CONDICIONADO 12000BTUS. AR CONDICIONADO SPLIT HW. ECOPOWER 12.000BTUS SÓ FRIO 220V. POTÊNCIA DOAPARELHO12.000BTUS CLASSIFICAÇÃO ENERGÉTICA: A NO SELOPROCEL/220V. TURBO.",
+      "dataInclusao": "2022-12-31",
+      "dataAquisicao": "2022-12-31",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2022-12-31",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "278",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1699,
+        "vlAquisicaoConvertido": 1699,
+        "vlDepreciavel": 1529.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1529.1,
+        "vlLiquidoContabil": 1699,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2022-12-31",
+        "vlResidual": 169.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18295",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972993
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38538616
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 279,
+      "descricao": "GELADEIRA 2p FROST FREE, COR BRANCO,  GELADEIRA/REFRIGERADOR - 2 PORTAS, 127V - CAPACIDADE TOTAL DE LITROS 375, CAPACIDADE DE FREEZER DE LITRO 86 - PRATELEIRAS REMOVÍVEIS, TIPO DE DEGELO FROST FREE. MARCA: BRASTEMPE",
+      "dataInclusao": "2023-05-08",
+      "dataAquisicao": "2023-05-08",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-05-08",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "279",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2999,
+        "vlAquisicaoConvertido": 2999,
+        "vlDepreciavel": 2699.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2699.1,
+        "vlLiquidoContabil": 2999,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-05-08",
+        "vlResidual": 299.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18296",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146973053
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51970
+      },
+      "especieBem": {
+        "id": 541246
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8911
+      },
+      "fornecedor": {
+        "id": 38538616
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 280,
+      "descricao": "REFRIGERAÇÃO: COMPRESSOR TEMPERATURA DA ÁGUA,  NATURAL/GELADA ALTURA (EM CM) 100,7 CAPACIDADE DO RESERVATÓRIO 1.8 LITROS LARGURA (EM CM) 31,8 PROFUNDIDADE (EM CM) 32,1 TIPO: BEBEDOURO/PURIFICADOR: ALIMENTAÇÃO: EM 110V. MARCA: ESMALTEC",
+      "dataInclusao": "2023-05-08",
+      "dataAquisicao": "2023-05-08",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-05-08",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "280",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 798,
+        "vlAquisicaoConvertido": 798,
+        "vlDepreciavel": 718.2,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 718.2,
+        "vlLiquidoContabil": 798,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-05-08",
+        "vlResidual": 79.8,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18297",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146972948
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51952
+      },
+      "especieBem": {
+        "id": 541255
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538616
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 281,
+      "descricao": "- CELULAR: MODELO - MOTO G14  -  DUAL SIM/OCTOR - CORE - MEMORIA RAM DE 4 GB.",
+      "dataInclusao": "2023-11-27",
+      "dataAquisicao": "2023-11-27",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-11-27",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "281",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1078.8,
+        "vlAquisicaoConvertido": 1078.8,
+        "vlDepreciavel": 949.344,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 949.344,
+        "vlLiquidoContabil": 1078.8,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-11-27",
+        "vlResidual": 129.456,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18298",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972958
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51956
+      },
+      "especieBem": {
+        "id": 541249
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538616
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 282,
+      "descricao": "- IMPRESSORA: JATO DE TINTA HEAT-FREE, MICRO PIEZO - RESOLUÇÃO MÁXIMA DE IMPRESSÃO: 5760X1440 DPI - VELOCIDADE DE IMPRESSÃO :33 PPM EM PRETO E 15 PPM EM CORES - CABO USB INCLUSO - CAPACIDADE DE ENTRADA DE PAPEL :100 FOLHAS DE PAPEL A4 - CAPACIDADE DE SAÍDA DO PAPEL :30 FOLHAS DE PAPEL A4 - TAMANHOS DE PAPEL SUPORTADOS :PADRÃO :A4, CARTA, OFÍCIO (215.9X 355 .6MM), MÉXICO-OFICIO (215.9 X 340.4MM), OFICIO 9(214. 9 X 315MM), FÓLIO (215.9 X 330.2MM. EXECUTIVO, MEIA CARTA, A6 FOTO: 10X15 CM (4X6 IN),16:9 WIDE (102X181 MM),13X18 CM (5X7 IN) ENVELOPES: # 10 DEFINIDO PELO USUÁRIO:54X86 TO 215.9X1200 MM - TIPOS DE PAPEL SUPORTADOS: COMUM E PAPÉIS ESPECIAIS EPSON IMPRESSÃO DUPLEX :MANUAL - EPSON SMART PANEL - EMAIL PRINT  - GOOGLE CHROMEBOOK NATIVE PRINT - TAMANHOS DAS CÓPIAS: A4/OFÍCIO - SCANNER - RESOLUÇÃO MÁXIMA DO SCANER :1200 X 2400 DPI - PROFUNDIDADE MÁXIMA DO SCANER: 48-BIT INTERNA (24-BIT EXTERNA - ÁREA DE ESCANEAMENTO: 21,6 X 29,7CM.",
+      "dataInclusao": "2023-11-27",
+      "dataAquisicao": "2023-11-27",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-11-27",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "282",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 1399,
+        "vlAquisicaoConvertido": 1399,
+        "vlDepreciavel": 1259.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 1259.1,
+        "vlLiquidoContabil": 1399,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-11-27",
+        "vlResidual": 139.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18299",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972978
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38538616
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 283,
+      "descricao": "- TELEVISÃO: SMART TV CRISTAL - 50 POLEGAS - 4K UHD CU7700 - TECNOLOGIA DE PAINEL PUR COLOR - RELANCE DE CONTRASTE - POTÊNCIA RMS 20W - CONFIGURAÇÃO FACILITADA.",
+      "dataInclusao": "2023-11-27",
+      "dataAquisicao": "2023-11-27",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-11-27",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "283",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 2599,
+        "vlAquisicaoConvertido": 2599,
+        "vlDepreciavel": 2339.1,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2339.1,
+        "vlLiquidoContabil": 2599,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-11-27",
+        "vlResidual": 259.9,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18300",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146973075
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 284,
+      "descricao": "B-HYPE 10 - CAIXA FALANTE DE 10.   MÁXIMA EFICIÊNCIA ATÉ 121 DB SPL DESEMPENHO ACÚSTICO PROFISSIONAL DESIGN INOVADOR DE CHIFRES PARA COBERTURA UNIFORME E EXTENSA PESO-PESCOÇO COMPACTO DESIGN LIMPO E CONTEMPORÂNEO QUE AUMENTA A PORTABILIDADE 3 ALÇAS ÂNGULO DO MONITOR DE DUPLO ESTÁGIO PRESET EQ FLAT / BOOS.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "284",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3749.42,
+        "vlAquisicaoConvertido": 3749.42,
+        "vlDepreciavel": 3374.478,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 3374.478,
+        "vlLiquidoContabil": 3749.42,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 374.942,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18301",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972927
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 285,
+      "descricao": "B-HYPE 10 - CAIXA FALANTE DE 10.   MÁXIMA EFICIÊNCIA ATÉ 121 DB SPL DESEMPENHO ACÚSTICO PROFISSIONAL DESIGN INOVADOR DE CHIFRES PARA COBERTURA UNIFORME E EXTENSA PESO-PESCOÇO COMPACTO DESIGN LIMPO E CONTEMPORÂNEO QUE AUMENTA A PORTABILIDADE 3 ALÇAS ÂNGULO DO MONITOR DE DUPLO ESTÁGIO PRESET EQ FLAT / BOOS.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "285",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3749.42,
+        "vlAquisicaoConvertido": 3749.42,
+        "vlDepreciavel": 3374.478,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 3374.478,
+        "vlLiquidoContabil": 3749.42,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 374.942,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18302",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146973093
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 286,
+      "descricao": "MICROFONE SEM FIO QUADRUPLO KT-04C MÃO.  (Não acompanha case) - > o pró KT-4C é um microfone profissional Quadruplo de 80 canais (4x20), receptor digital, controle de volume independente, excelente performance com alcance de até 80 metros (em ambientes sem interferências) graças as suas 4 antenas independentes, Os microfones, utilizam 2 pilhas AA de 1.5V, indicador de frequência, chave liga/desliga e chave para mudar de canal. Receptor com painel em alumínio e caixa de aço. 4 saídas XLR de áudio independentes.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "286",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3324,
+        "vlAquisicaoConvertido": 3324,
+        "vlDepreciavel": 2991.6,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2991.6,
+        "vlLiquidoContabil": 3324,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 332.4,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18303",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972928
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 287,
+      "descricao": "MICROFONE GOOSENECK KT82. ALIMENTAÇÃO: PHANTOM POWER OU 2 PILHAS AA DE 1.5V; ALTURA DO CONJUNTO (HASTE+BASE+ESPUMA) 50 CM; CÁPSULA: CONDENSADOR DE ELETRETO; LED INDICADOR DE ON NA CAPSULA. COMPRIMENTO DA HASTE DE 40 CM; IMPEDÂNCIA DE SAÍDA: 200 O ± 30% (A 1 KHZ); NÍVEL DE RUÍDO: 20 DB; PADRÃO POLAR CARDIÓIDE; RESPOSTA DE FREQUÊNCIA: 50 HZ A 16 KHZ; RELAÇÃO SINAL/RUÍDO: >90 DB, ACOMPANHA CABO 5M XLR X P10, ESPUMA ANTI PUFF.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "287",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 522,
+        "vlAquisicaoConvertido": 522,
+        "vlDepreciavel": 469.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 469.8,
+        "vlLiquidoContabil": 522,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 52.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18304",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261690,
-      "idImoveisInfComplem": 3146972909
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 288,
+      "descricao": "MICROFONE GOOSENECK KT82. ALIMENTAÇÃO: PHANTOM POWER OU 2 PILHAS AA DE 1.5V; ALTURA DO CONJUNTO (HASTE+BASE+ESPUMA) 50 CM; CÁPSULA: CONDENSADOR DE ELETRETO; LED INDICADOR DE ON NA CAPSULA. COMPRIMENTO DA HASTE DE 40 CM; IMPEDÂNCIA DE SAÍDA: 200 O ± 30% (A 1 KHZ); NÍVEL DE RUÍDO: 20 DB; PADRÃO POLAR CARDIÓIDE; RESPOSTA DE FREQUÊNCIA: 50 HZ A 16 KHZ; RELAÇÃO SINAL/RUÍDO: >90 DB, ACOMPANHA CABO 5M XLR X P10, ESPUMA ANTI PUFF.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "288",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 522,
+        "vlAquisicaoConvertido": 522,
+        "vlDepreciavel": 469.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 469.8,
+        "vlLiquidoContabil": 522,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 52.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18305",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261710,
-      "idImoveisInfComplem": 3146973076
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 289,
+      "descricao": "MICROFONE GOOSENECK KT82. ALIMENTAÇÃO: PHANTOM POWER OU 2 PILHAS AA DE 1.5V; ALTURA DO CONJUNTO (HASTE+BASE+ESPUMA) 50 CM; CÁPSULA: CONDENSADOR DE ELETRETO; LED INDICADOR DE ON NA CAPSULA. COMPRIMENTO DA HASTE DE 40 CM; IMPEDÂNCIA DE SAÍDA: 200 O ± 30% (A 1 KHZ); NÍVEL DE RUÍDO: 20 DB; PADRÃO POLAR CARDIÓIDE; RESPOSTA DE FREQUÊNCIA: 50 HZ A 16 KHZ; RELAÇÃO SINAL/RUÍDO: >90 DB, ACOMPANHA CABO 5M XLR X P10, ESPUMA ANTI PUFF.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "289",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 522,
+        "vlAquisicaoConvertido": 522,
+        "vlDepreciavel": 469.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 469.8,
+        "vlLiquidoContabil": 522,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 52.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18306",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146972994
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 290,
+      "descricao": "MICROFONE GOOSENECK KT82. ALIMENTAÇÃO: PHANTOM POWER OU 2 PILHAS AA DE 1.5V; ALTURA DO CONJUNTO (HASTE+BASE+ESPUMA) 50 CM; CÁPSULA: CONDENSADOR DE ELETRETO; LED INDICADOR DE ON NA CAPSULA. COMPRIMENTO DA HASTE DE 40 CM; IMPEDÂNCIA DE SAÍDA: 200 O ± 30% (A 1 KHZ); NÍVEL DE RUÍDO: 20 DB; PADRÃO POLAR CARDIÓIDE; RESPOSTA DE FREQUÊNCIA: 50 HZ A 16 KHZ; RELAÇÃO SINAL/RUÍDO: >90 DB, ACOMPANHA CABO 5M XLR X P10, ESPUMA ANTI PUFF.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "290",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 522,
+        "vlAquisicaoConvertido": 522,
+        "vlDepreciavel": 469.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 469.8,
+        "vlLiquidoContabil": 522,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 52.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18307",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261750,
-      "idImoveisInfComplem": 3146972910
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 291,
+      "descricao": "MICROFONE GOOSENECK KT82. ALIMENTAÇÃO: PHANTOM POWER OU 2 PILHAS AA DE 1.5V; ALTURA DO CONJUNTO (HASTE+BASE+ESPUMA) 50 CM; CÁPSULA: CONDENSADOR DE ELETRETO; LED INDICADOR DE ON NA CAPSULA. COMPRIMENTO DA HASTE DE 40 CM; IMPEDÂNCIA DE SAÍDA: 200 O ± 30% (A 1 KHZ); NÍVEL DE RUÍDO: 20 DB; PADRÃO POLAR CARDIÓIDE; RESPOSTA DE FREQUÊNCIA: 50 HZ A 16 KHZ; RELAÇÃO SINAL/RUÍDO: >90 DB, ACOMPANHA CABO 5M XLR X P10, ESPUMA ANTI PUFF.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "291",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 522,
+        "vlAquisicaoConvertido": 522,
+        "vlDepreciavel": 469.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 469.8,
+        "vlLiquidoContabil": 522,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 52.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18308",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261772,
-      "idImoveisInfComplem": 3146973013
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 292,
+      "descricao": "MICROFONE GOOSENECK KT82. ALIMENTAÇÃO: PHANTOM POWER OU 2 PILHAS AA DE 1.5V; ALTURA DO CONJUNTO (HASTE+BASE+ESPUMA) 50 CM; CÁPSULA: CONDENSADOR DE ELETRETO; LED INDICADOR DE ON NA CAPSULA. COMPRIMENTO DA HASTE DE 40 CM; IMPEDÂNCIA DE SAÍDA: 200 O ± 30% (A 1 KHZ); NÍVEL DE RUÍDO: 20 DB; PADRÃO POLAR CARDIÓIDE; RESPOSTA DE FREQUÊNCIA: 50 HZ A 16 KHZ; RELAÇÃO SINAL/RUÍDO: >90 DB, ACOMPANHA CABO 5M XLR X P10, ESPUMA ANTI PUFF.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "292",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 522,
+        "vlAquisicaoConvertido": 522,
+        "vlDepreciavel": 469.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 469.8,
+        "vlLiquidoContabil": 522,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 52.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18309",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261350,
-      "idImoveisInfComplem": 3146972949
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 293,
+      "descricao": "STAGE-8 PRO.  SISTEMA DE SOM PORTÁTIL, CONTA COM 3 COLUNAS DESMONTÁVEIS, COLUNA DE SOM (4X).",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "293",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 3250,
+        "vlAquisicaoConvertido": 3250,
+        "vlDepreciavel": 2925,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 2925,
+        "vlLiquidoContabil": 3250,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 325,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   },
   {
-    "idIntegracao": "18310",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261371,
-      "idImoveisInfComplem": 3146973054
-    }
-  },
-  {
-    "idIntegracao": "18311",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261391,
-      "idImoveisInfComplem": 3146972829
-    }
-  },
-  {
-    "idIntegracao": "18312",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261410,
-      "idImoveisInfComplem": 3146972950
-    }
-  },
-  {
-    "idIntegracao": "18313",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261430,
-      "idImoveisInfComplem": 3146973094
-    }
-  },
-  {
-    "idIntegracao": "18314",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261450,
-      "idImoveisInfComplem": 3146972979
-    }
-  },
-  {
-    "idIntegracao": "18315",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261470,
-      "idImoveisInfComplem": 3146972995
-    }
-  },
-  {
-    "idIntegracao": "18316",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261490,
-      "idImoveisInfComplem": 3146972830
-    }
-  },
-  {
-    "idIntegracao": "18317",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261510,
-      "idImoveisInfComplem": 3146972911
-    }
-  },
-  {
-    "idIntegracao": "18318",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261531,
-      "idImoveisInfComplem": 3146972888
-    }
-  },
-  {
-    "idIntegracao": "18319",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261550,
-      "idImoveisInfComplem": 3146973095
-    }
-  },
-  {
-    "idIntegracao": "18320",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261570,
-      "idImoveisInfComplem": 3146973055
-    }
-  },
-  {
-    "idIntegracao": "18321",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261590,
-      "idImoveisInfComplem": 3146972959
-    }
-  },
-  {
-    "idIntegracao": "18322",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261610,
-      "idImoveisInfComplem": 3146972889
-    }
-  },
-  {
-    "idIntegracao": "18323",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261631,
-      "idImoveisInfComplem": 3146973077
-    }
-  },
-  {
-    "idIntegracao": "18324",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261651,
-      "idImoveisInfComplem": 3146972831
-    }
-  },
-  {
-    "idIntegracao": "18325",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261674,
-      "idImoveisInfComplem": 3146973078
-    }
-  },
-  {
-    "idIntegracao": "18326",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261656,
-      "idImoveisInfComplem": 3146972951
-    }
-  },
-  {
-    "idIntegracao": "18327",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261693,
-      "idImoveisInfComplem": 3146973112
-    }
-  },
-  {
-    "idIntegracao": "18328",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261712,
-      "idImoveisInfComplem": 3146973079
-    }
-  },
-  {
-    "idIntegracao": "18329",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261731,
-      "idImoveisInfComplem": 3146973132
-    }
-  },
-  {
-    "idIntegracao": "18330",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261751,
-      "idImoveisInfComplem": 3146973080
-    }
-  },
-  {
-    "idIntegracao": "18331",
-    "imoveisInfComplemOp": {
-      "idCamposAdicionaisFilho": 1261771,
-      "idImoveisInfComplem": 3146972980
+    "conteudo": {
+      "tipoBem": {
+        "id": 5709
+      },
+      "grupoBem": {
+        "id": 51962
+      },
+      "especieBem": {
+        "id": 541258
+      },
+      "tipoUtilizacaoBem": null,
+      "tipoAquisicao": {
+        "id": 8909
+      },
+      "fornecedor": {
+        "id": 38584198
+      },
+      "responsavel": {
+        "id": 38429988
+      },
+      "estadoConservacao": {
+        "id": 4965
+      },
+      "tipoComprovante": {
+        "id": 3417
+      },
+      "organograma": {
+        "id": 2137532
+      },
+      "localizacaoFisica": {
+        "id": 125503
+      },
+      "numeroRegistro": 294,
+      "descricao": "CRONÔMETRO DIGITAL REGRESSIVO E PROGRESSIVO. LEDS DE ALTO BRILHO COM EXCELENTE VISIBILIDADE ATÉ 25 METROS DE DISTÂNCIA - CONTROLE SEM FIO - ALTO FALANTE INTERNO PARA ALARMES COM VOLUME AJUSTÁVEL - BATERIA INTERNA QUE ARMAZENA AS CONFIGURAÇÕES MESMO EM CASO DE QUEDA DE ENERGIA - FUNÇÃO \"3, 2, 1, JÁ\" ANTES DE INICIAR O CRONÔMETRO - CONTADOR DE DIAS - PERMITE INSTALAÇÃO DE SIRENE.  ITENS INCLUSOS: 01 - PAINEL CRONÔMETRO 6 DÍGITOS: 01 - CONTROLE DE RF: 01 - FONTE DE ALIMENTAÇÃO BIVOLT (110/220V): 01 - MANUAL DE INSTRUÇÕES.",
+      "dataInclusao": "2023-12-21",
+      "dataAquisicao": "2023-12-21",
+      "consomeCombustivel": false,
+      "dataInicioGarantia": "2023-12-21",
+      "situacaoBem": {
+        "valor": "EM_USO",
+        "descricao": "EM_USO"
+      },
+      "numeroPlaca": "294",
+      "bemValor": {
+        "metodoDepreciacao": {
+          "id": 2088
+        },
+        "vlAquisicao": 512,
+        "vlAquisicaoConvertido": 512,
+        "vlDepreciavel": 460.8,
+        "vlDepreciado": 0,
+        "saldoDepreciar": 460.8,
+        "vlLiquidoContabil": 512,
+        "taxaDepreciacaoAnual": 0.1,
+        "dtInicioDepreciacao": "2023-12-21",
+        "vlResidual": 51.2,
+        "moeda": {
+          "id": 8
+        }
+      }
     }
   }
 ]

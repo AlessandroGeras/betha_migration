@@ -1,0 +1,938 @@
+const sql = require('mssql');
+const dotenv = require('dotenv');
+const fetch = require('node-fetch');
+const fs = require('fs');
+
+dotenv.config();
+
+async function connectToSqlServer() {
+    try {
+        const server = process.env.SERVER;
+        const database = process.env.DATABASE;
+        const username = process.env.USERNAME_SQLSERVER;
+        const password = process.env.PASSWORD;
+
+        const config = {
+            user: username,
+            password: password,
+            server: server,
+            database: database,
+            options: {
+                encrypt: false
+            }
+        };
+
+        const pool = await sql.connect(config);
+        console.log("Conectado ao SQL Server");
+        return pool;
+    } catch (error) {
+        console.error('Erro ao conectar ao SQL Server:', error);
+        throw error;
+    }
+}
+
+function formatDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = (`0${d.getMonth() + 1}`).slice(-2);
+    const day = (`0${d.getDate()}`).slice(-2);
+    const hours = (`0${d.getHours()}`).slice(-2);
+    const minutes = (`0${d.getMinutes()}`).slice(-2);
+    const seconds = (`0${d.getSeconds()}`).slice(-2);
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+function formatDate2(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = (`0${d.getMonth() + 1}`).slice(-2);
+    const day = (`0${d.getDate()}`).slice(-2);
+    const hours = (`0${d.getHours()}`).slice(-2);
+    const minutes = (`0${d.getMinutes()}`).slice(-2);
+    const seconds = (`0${d.getSeconds()}`).slice(-2);
+    return `${year}-${month}-${day}`;
+    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+async function main() {
+    try {
+        // Conectar ao SQL Server
+        const masterConnection = await connectToSqlServer();
+
+        // Selecionar o banco de dados
+        const selectDatabaseQuery = 'USE TRIBUTOS2024';
+        await masterConnection.query(selectDatabaseQuery);
+
+        // Executar a consulta SQL
+        const userQuery = `
+        select
+	ROW_NUMBER() OVER (ORDER BY imoveis.cd_cecam) + 80.368 AS idIntegracao,
+	JSON_QUERY(
+    (SELECT
+		imoveis.nm_AreaEdificio as vlAreaConstruidaUnidade, 
+		imoveis.nm_AreaTerreno as vlAreaTotalTerrenoUnidade, 
+		imoveis.nm_AreaEdificio as vlVenalConstruidoUnidade, 
+		imoveis.nm_AreaTerreno as vlVenalTerritorialUnidade, 
+		0 as vlVenalUnidade ,
+		'SIM' as benfeitorias,
+		'COMPRADOR' as financiado,
+		'SIm' as outros,
+		'PARCIAL' as tipoVenda,
+		438696 idMotivos,
+CASE
+WHEN c.nm_Contribuinte = 'PARECIS MATERIAIS PARA CONSTRUÇÃO LTDA'THEN 28930477	
+WHEN c.nm_Contribuinte = 'PATRICIA DE ABREU BRANDÃO COSTA'THEN 28930502	
+WHEN c.nm_Contribuinte = 'PAULINO MONTIBELLER'THEN 27628783	
+WHEN c.nm_Contribuinte = 'PAULINO MONTIBELLER'THEN 27628782	
+WHEN c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS'THEN 28930423	
+WHEN c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA'THEN 27629271	
+WHEN c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA'THEN 27628753	
+WHEN c.nm_Contribuinte = 'PAULO HENRIQUE CONTADINI ARRUDA'THEN 27629404	
+WHEN c.nm_Contribuinte = 'PAULO HENRIQUE MARCELINO DE OLIVEIRA'THEN 27628695	
+WHEN c.nm_Contribuinte = 'PEDRO BLEM DA SILVA'THEN 28930352	
+WHEN c.nm_Contribuinte = 'PEDRO DE OLIVEIRA'THEN 28930419	
+WHEN c.nm_Contribuinte = 'PEDRO JOSE MARIA'THEN 27628385	
+WHEN c.nm_Contribuinte = 'PERCILIA MACHADO'THEN 27629045	
+WHEN c.nm_Contribuinte = 'PERCILIA MACHADO'THEN 27629048	
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL'THEN 27629217	
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL'THEN 27629330	
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL'THEN 27628899	
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL'THEN 28930467	
+WHEN c.nm_Contribuinte = 'QUADRA DE AREIA'THEN 27629008	
+WHEN c.nm_Contribuinte = 'QUERLE GONÇALVES BORGES'THEN 27628974	
+WHEN c.nm_Contribuinte = 'RAFAEL JORGE DA SILVA RIETZ'THEN 28930472	
+WHEN c.nm_Contribuinte = 'REGINALDO CURADACIU COSTA'THEN 27628772	
+WHEN c.nm_Contribuinte = 'REGINALDO GIL DA SILVA'THEN 28930373	
+WHEN c.nm_Contribuinte = 'REGINALDO GIL DA SILVA JUNIOR'THEN 27629207	
+WHEN c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA'THEN 28930376	
+WHEN c.nm_Contribuinte = 'REGINALDO PEDRO DA SILVA'THEN 27629247	
+WHEN c.nm_Contribuinte = 'REGINALDO RAASCH'THEN 27629403	
+WHEN c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL'THEN 28930380	
+WHEN c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL'THEN 27628686	
+WHEN c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL'THEN 28930367	
+WHEN c.nm_Contribuinte = 'RENATO PEREIRA GOMES'THEN 28930506	
+WHEN c.nm_Contribuinte = 'RICARDO PIO PEREIRA'THEN 27628732	
+WHEN c.nm_Contribuinte = 'RICARDO PIO PEREIRA'THEN 28930383	
+WHEN c.nm_Contribuinte = 'RITA SANTOS LIMA'THEN 28930543	
+WHEN c.nm_Contribuinte = 'ROBERIO GOMES DA SILVA'THEN 27628795	
+WHEN c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO'THEN 27629190	
+WHEN c.nm_Contribuinte = 'ROBSON NUNES DA SILVA'THEN 28930440	
+WHEN c.nm_Contribuinte = 'RODRIGO CLEMENTE MORAIS'THEN 27629150	
+WHEN c.nm_Contribuinte = 'RODRIGO PEDRO ALEXANDRINO'THEN 27629241	
+WHEN c.nm_Contribuinte = 'ROMENIGUE GOBBI GOIS'THEN 27628767	
+WHEN c.nm_Contribuinte = 'ROMENIGUE GOBBI GOIS'THEN 28930518	
+WHEN c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO'THEN 27629193	
+WHEN c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO'THEN 27629306	
+WHEN c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO'THEN 27629292	
+WHEN c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO'THEN 27628367	
+WHEN c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA'THEN 27629197	
+WHEN c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA'THEN 28930505	
+WHEN c.nm_Contribuinte = 'RONI NOVAIS GUTIERREZ'THEN 27629091	
+WHEN c.nm_Contribuinte = 'RONILDO LOPES DE FARIA'THEN 27629191	
+WHEN c.nm_Contribuinte = 'RONILDO LOPES DE FARIAS'THEN 28930404	
+WHEN c.nm_Contribuinte = 'RONNYE DA SILVA BANDEIRA'THEN 27629041	
+WHEN c.nm_Contribuinte = 'RONY HIAGO NUNES BARRETO'THEN 28930346	
+WHEN c.nm_Contribuinte = 'ROQUE SETTE'THEN 27629395	
+WHEN c.nm_Contribuinte = 'ROSANA OLIVEIRA DA SILVA'THEN 27629396	
+WHEN c.nm_Contribuinte = 'ROSANGELA APARECIDA MIRANDA'THEN 27629342	
+WHEN c.nm_Contribuinte = 'ROSENILDA SILVA GOMES'THEN 27629046	
+WHEN c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE'THEN 27628724	
+WHEN c.nm_Contribuinte = 'ROSILENE TAKAHASHI BRAVO'THEN 27628369	
+WHEN c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO'THEN 27628780	
+WHEN c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ'THEN 27628839	
+WHEN c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ'THEN 28930489	
+WHEN c.nm_Contribuinte = 'ROSINEIDE BEZERRA'THEN 27629208	
+WHEN c.nm_Contribuinte = 'ROSINEIDE LEITE DA ROCHA SANTOS'THEN 27628781	
+WHEN c.nm_Contribuinte = 'ROZIEL ANTUNES DE LIMA'THEN 28930478	
+WHEN c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA'THEN 27629288	
+WHEN c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA'THEN 27628106	
+WHEN c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA'THEN 27628107	
+WHEN c.nm_Contribuinte = 'RUSCELINO PASSOS BORGES'THEN 28930487	
+WHEN c.nm_Contribuinte = 'SALETE MOURA RODRIGUES'THEN 27628898	
+WHEN c.nm_Contribuinte = 'SARA CORSINI DE OLIVEIRA'THEN 27628678	
+WHEN c.nm_Contribuinte = 'SEBASTIANA GOMES DE CAMPOS'THEN 27628320	
+WHEN c.nm_Contribuinte = 'SEBASTIAO BATISTA DA CRUZ'THEN 27629379	
+WHEN c.nm_Contribuinte = 'SEBASTIAO DE SOUZA BENEVIDES'THEN 27629082	
+WHEN c.nm_Contribuinte = 'SEBASTIÃO DIAS DE SOUZA'THEN 28930452	
+WHEN c.nm_Contribuinte = 'SEBASTIAO FERNENDES DE MOURA'THEN 27629093	
+WHEN c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO'THEN 27629177	
+WHEN c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO'THEN 27628764
+end as idImoveis,
+--------------------------------------------------------------------------------
+CASE
+WHEN c.nm_Contribuinte = 'PALOMA JHEIME ALENCAR DE SOUZA 00370007212' THEN 77521121
+WHEN c.nm_Contribuinte = 'PARECIS MATERIAIS PARA CONSTRUÇÃO LTDA' THEN 77021517
+WHEN c.nm_Contribuinte = 'PARECIS MATERIAS PARA CONSTRUÇÃO LTDA - ME' THEN 77521068
+WHEN c.nm_Contribuinte = 'PASCOAL AFONSO' THEN 77020384
+WHEN c.nm_Contribuinte = 'PATRICIA DE ABREU BRANDÃO COSTA' THEN 77021626
+WHEN c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 77020480
+WHEN c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 77021083
+WHEN c.nm_Contribuinte = 'PAULO CABRAL' THEN 77020426
+WHEN c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 77020612
+WHEN c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 77520933
+WHEN c.nm_Contribuinte = 'PAULO CESAR BEZERRA' THEN 77020926
+WHEN c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 77020430
+WHEN c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 77020567
+WHEN c.nm_Contribuinte = 'PAULO HENRIQUE CONTADINI ARRUDA' THEN 77021751
+WHEN c.nm_Contribuinte = 'PAULO HENRIQUE MARCELINO DE OLIVEIRA' THEN 77021431
+WHEN c.nm_Contribuinte = 'PAULO RIBEIRO DOS SANTOS' THEN 77020788
+WHEN c.nm_Contribuinte = 'PAULO SCHLICKMANN' THEN 77021003
+WHEN c.nm_Contribuinte = 'PEDRO ALEXANDRE' THEN 77020469
+WHEN c.nm_Contribuinte = 'PEDRO BLEM DA SILVA' THEN 77021121
+WHEN c.nm_Contribuinte = 'PEDRO DE JESUS' THEN 77020980
+WHEN c.nm_Contribuinte = 'PEDRO DE OLIVEIRA' THEN 77020698
+WHEN c.nm_Contribuinte = 'PEDRO FERREIRA DE SOUZA' THEN 77021125
+WHEN c.nm_Contribuinte = 'PEDRO JOSE MARIA' THEN 77020563
+WHEN c.nm_Contribuinte = 'PEDRO MARTINS' THEN 77020465
+WHEN c.nm_Contribuinte = 'PEDRO SOUZA SILVA' THEN 77020873
+WHEN c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 77020740
+WHEN c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 77020863
+WHEN c.nm_Contribuinte = 'PERCILIA ROSA PRATES DOS SANTOS' THEN 77021527
+WHEN c.nm_Contribuinte = 'Pessoa teste.' THEN 77539040
+WHEN c.nm_Contribuinte = 'Pessoa teste..' THEN 77539840
+WHEN c.nm_Contribuinte = 'PETRINA CUSTODIA FACHINI' THEN 77020795
+WHEN c.nm_Contribuinte = 'PIAZZA & PIAZZA LTDA - ME' THEN 77521020
+WHEN c.nm_Contribuinte = 'PINTO & SILVA COMERCIO LTDA - ME' THEN 77521015
+WHEN c.nm_Contribuinte = 'PLINDO ALVES DA SILVA' THEN 77020367
+WHEN c.nm_Contribuinte = 'POSTO DE MOLAS E TRANSPORTADORA ANDRES LTDA' THEN 77521152
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL DE ARIPUANÃ' THEN 77575473
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL DE ROLIM DE MOURA' THEN 77575466
+WHEN c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 77020506
+WHEN c.nm_Contribuinte = 'PREFITURA MUNICIPAL' THEN 77020505
+WHEN c.nm_Contribuinte = 'QUADRA DE AREIA' THEN 77020799
+WHEN c.nm_Contribuinte = 'QUERLE GONÇALVES BORGES' THEN 77021984
+WHEN c.nm_Contribuinte = 'R P ALEXANDRINO LTDA' THEN 77521104
+WHEN c.nm_Contribuinte = 'R. A. ALVES FERREIRA MENDES - ME' THEN 77520759
+WHEN c.nm_Contribuinte = 'R. A. M. DE SOUZA - ME' THEN 77520935
+WHEN c.nm_Contribuinte = 'R. ANTAO DE ALMEIDA REPRESENTAÇÕES' THEN 77521077
+WHEN c.nm_Contribuinte = 'R. C. CABRAL - ME' THEN 77520938
+WHEN c.nm_Contribuinte = 'R. C. DOS SANTOS SOUZA E CIA LTDA - ME' THEN 77520937
+WHEN c.nm_Contribuinte = 'R. C. MORAES TRANSPORTES' THEN 77521076
+WHEN c.nm_Contribuinte = 'R. S. GONÇALVES - ME' THEN 77521072
+WHEN c.nm_Contribuinte = 'R. TABORDA COSTA ANALISES CLINICAS' THEN 77520939
+WHEN c.nm_Contribuinte = 'RAFAEL JORGE DA SILVA RIETZ' THEN 77021329
+WHEN c.nm_Contribuinte = 'RAFER COMÉRCIO E REPRESENTAÇÕES LTDA - ME' THEN 77520947
+WHEN c.nm_Contribuinte = 'RAIMUNDO VALENTIM DO PRADO' THEN 77020626
+WHEN c.nm_Contribuinte = 'REG' THEN 77021049
+WHEN c.nm_Contribuinte = 'REGINALDO CURADACIU COSTA' THEN 77021772
+WHEN c.nm_Contribuinte = 'REGINALDO DUARTE PRATES' THEN 77021090
+WHEN c.nm_Contribuinte = 'REGINALDO GIL DA SILVA JUNIOR' THEN 77021767
+WHEN c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 77020997
+WHEN c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 77020477
+WHEN c.nm_Contribuinte = 'REGINALDO PEDRO DA SILVA' THEN 77021029
+WHEN c.nm_Contribuinte = 'REGINALDO RAASCH' THEN 77021579
+WHEN c.nm_Contribuinte = 'REGULARIZAR SEU CADASTRO NA PREFEITURA' THEN 77020751
+WHEN c.nm_Contribuinte = 'REGULARIZAR SEU CADASTRO PREF.' THEN 77021023
+WHEN c.nm_Contribuinte = 'REGULARIZAR URG. CADASTRO PREFEITURA' THEN 77020834
+WHEN c.nm_Contribuinte = 'REGULRIZAR SEU CADASTRO PREFEITURA=' THEN 77020884
+WHEN c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 77020558
+WHEN c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 77021150
+WHEN c.nm_Contribuinte = 'RENATO PEREIRA GOMES' THEN 77021296
+WHEN c.nm_Contribuinte = 'RENATO XAVIER LEPPAUS LTDA' THEN 77521144
+WHEN c.nm_Contribuinte = 'RENOIR GONCALVES' THEN 77020830
+WHEN c.nm_Contribuinte = 'RIBEIRO E SILVA COMERCIO DE PRODUTOS FARMACEUTICOS LTDA-ME' THEN 77521022
+WHEN c.nm_Contribuinte = 'RICARDO ALTINOAFONSO' THEN 77021501
+WHEN c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 77020413
+WHEN c.nm_Contribuinte = 'RILDO DA SILVA' THEN 77021052
+WHEN c.nm_Contribuinte = 'RINALDO DA SILVA' THEN 77021022
+WHEN c.nm_Contribuinte = 'RITA DE CASSIA DOS SANTOS' THEN 77020907
+WHEN c.nm_Contribuinte = 'RITA SANTOS LIMA' THEN 77021426
+WHEN c.nm_Contribuinte = 'ROBERIO GOMES DA SILVA' THEN 77021182
+WHEN c.nm_Contribuinte = 'ROBERTO CARLOS DA SILVA' THEN 77520936
+WHEN c.nm_Contribuinte = 'ROBERTO JORGE DE MELO' THEN 77020862
+WHEN c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO' THEN 77021095
+WHEN c.nm_Contribuinte = 'ROBSON NUNES DA SILVA' THEN 77021442
+WHEN c.nm_Contribuinte = 'RODRIGO CLEMENTE MORAIS' THEN 77021532
+WHEN c.nm_Contribuinte = 'RODRIGO PEDRO ALEXANDRINO' THEN 77021557
+WHEN c.nm_Contribuinte = 'RODRIGUES & CAZAGRANDE LTDA - ME' THEN 77021486
+WHEN c.nm_Contribuinte = 'RODRIGUES & CAZAGRANDE LTDA - ME' THEN 77521023
+WHEN c.nm_Contribuinte = 'ROGERIO DA SILVA BARBOSA' THEN 77020904
+WHEN c.nm_Contribuinte = 'ROLIM NET SERVICOS & INTERNET LTDA' THEN 77521123
+WHEN c.nm_Contribuinte = 'ROMARIO XAVIER LEPPAUS' THEN 77521131
+WHEN c.nm_Contribuinte = 'ROMENIGUE GOBBI GOIS' THEN 77021428
+WHEN c.nm_Contribuinte = 'ROMILDO RODRIGUES ARAUJO' THEN 77021100
+WHEN c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 77020645
+WHEN c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA' THEN 77021377
+WHEN c.nm_Contribuinte = 'RONALDO PEDRO ALEXANDRINO' THEN 77020545
+WHEN c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA' THEN 77021524
+WHEN c.nm_Contribuinte = 'RONI NOVAIS GUTIERREZ' THEN 77021544
+WHEN c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 77021404
+WHEN c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 77521000
+WHEN c.nm_Contribuinte = 'RONILDO LOPES DE FARIA' THEN 77021745
+WHEN c.nm_Contribuinte = 'RONILDO LOPES DE FARIAS' THEN 77021457
+WHEN c.nm_Contribuinte = 'RONNYE DA SILVA BANDEIRA' THEN 77021450
+WHEN c.nm_Contribuinte = 'RONY HIAGO NUNES BARRETO' THEN 77021530
+WHEN c.nm_Contribuinte = 'ROQUE ALGUSTO DA CONCEICAO' THEN 77020892
+WHEN c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 77020467
+WHEN c.nm_Contribuinte = 'ROQUE SETTE' THEN 77020532
+WHEN c.nm_Contribuinte = 'ROQUE SETTE' THEN 77021460
+WHEN c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 77020445
+WHEN c.nm_Contribuinte = 'ROSANA OLIVEIRA DA SILVA' THEN 77021462
+WHEN c.nm_Contribuinte = 'ROSANGELA APARECIDA MIRANDA' THEN 77021585
+WHEN c.nm_Contribuinte = 'ROSANGELA RODRIGUES VIEIRA GARCIA' THEN 77021315
+WHEN c.nm_Contribuinte = 'ROSANGELO RODRIGUES GONCALVES' THEN 77020452
+WHEN c.nm_Contribuinte = 'ROSELI DOS SANTOS' THEN 77521160
+WHEN c.nm_Contribuinte = 'ROSELI MARIA DE OLIVEIRA' THEN 77020750
+WHEN c.nm_Contribuinte = 'ROSELI TAKAHASHI BRAVO PIAZZA' THEN 77021520
+WHEN c.nm_Contribuinte = 'ROSENEIDE ALVES CESTARI SOUZA' THEN 77021292
+WHEN c.nm_Contribuinte = 'ROSENILDA SILVA GOMES' THEN 77020949
+WHEN c.nm_Contribuinte = 'ROSENIRA ALEXANDRINO' THEN 77520946
+WHEN c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 77020408
+WHEN c.nm_Contribuinte = 'ROSILENE TAKAHASHI BRAVO' THEN 77021596
+WHEN c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO' THEN 77021393
+WHEN c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA' THEN 77021045
+WHEN c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ' THEN 77021249
+WHEN c.nm_Contribuinte = 'ROSINEIDE BEZERRA' THEN 77021367
+WHEN c.nm_Contribuinte = 'ROSINEIDE LEITE DA ROCHA SANTOS' THEN 77020441
+WHEN c.nm_Contribuinte = 'ROZIEL ANTUNES DE LIMA' THEN 77021769
+WHEN c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA 40842690263' THEN 77521117
+WHEN c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 77021401
+WHEN c.nm_Contribuinte = 'RUBENS TOSTA DE SOUZA' THEN 77020832
+WHEN c.nm_Contribuinte = 'RUBRNS TOSTA DE SOUZA' THEN 77020831
+WHEN c.nm_Contribuinte = 'RUDNEY RACANELI' THEN 77021284
+WHEN c.nm_Contribuinte = 'RUSCELINO PASSOS BORGES' THEN 77021764
+WHEN c.nm_Contribuinte = 'RUTE CEZARIO DE SOUZA' THEN 77021489
+WHEN c.nm_Contribuinte = 'S M F DA COSTA LTDA' THEN 77521093
+WHEN c.nm_Contribuinte = 'S. F. DE MOURA' THEN 77521084
+WHEN c.nm_Contribuinte = 'S. F. RIBEIRO DOS SANTOS EIRELI' THEN 77521088
+WHEN c.nm_Contribuinte = 'S. R. DA COSTA REPRESENTAÇÃO - ME' THEN 77521060
+WHEN c.nm_Contribuinte = 'S. S. DUARTE - ME' THEN 77521073
+WHEN c.nm_Contribuinte = 'S.COSTA E OLIVEIRA LTDA' THEN 77520981
+WHEN c.nm_Contribuinte = 'SABINO ALVES' THEN 77021988
+WHEN c.nm_Contribuinte = 'SALATIEL VITOR DE CAMARGO' THEN 77020890
+WHEN c.nm_Contribuinte = 'SALETE MOURA RODRIGUES' THEN 77021672
+WHEN c.nm_Contribuinte = 'SALETE PINHEIRO DE FREITAS' THEN 77021253
+WHEN c.nm_Contribuinte = 'SALVADOR RODRIGUES DE CARVALHO' THEN 77020910
+WHEN c.nm_Contribuinte = 'SAMUEL VITOR DE CAMARGO - ME' THEN 77520940
+WHEN c.nm_Contribuinte = 'SAMUEL VITOR DE CAMARGO' THEN 77020537
+WHEN c.nm_Contribuinte = 'SANDRA MELO DE CARVALHO BARRETO' THEN 77021961
+WHEN c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 77021086
+WHEN c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 77520943
+WHEN c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 77520944
+WHEN c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 77520971
+WHEN c.nm_Contribuinte = 'SARA CORSINI DE OLIVEIRA' THEN 77021743
+WHEN c.nm_Contribuinte = 'SEBASTIANA GOMES DE CAMPOS' THEN 77021599
+WHEN c.nm_Contribuinte = 'SEBASTIAO ALVES DOS SANTOS' THEN 77020680
+WHEN c.nm_Contribuinte = 'SEBASTIAO ANTUNES' THEN 77021007
+WHEN c.nm_Contribuinte = 'SEBASTIAO BATISTA DA CRUZ' THEN 77020870
+WHEN c.nm_Contribuinte = 'SEBASTIAO DA SILVA' THEN 77021228
+WHEN c.nm_Contribuinte = 'SEBASTIAO DE SOUZA BENEVIDES' THEN 77020909
+WHEN c.nm_Contribuinte = 'SEBASTIÃO DIAS DE SOUZA' THEN 77021420
+WHEN c.nm_Contribuinte = 'SEBASTIAO FERNENDES DE MOURA' THEN 77021349
+WHEN c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 77020499
+WHEN c.nm_Contribuinte = 'SEBASTIÃO SANTANA DE SA' THEN 77021110
+WHEN c.nm_Contribuinte = 'SEBASTIÃO SANTANA DE SA' THEN 77021111
+WHEN c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 77020401
+WHEN c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 77020402
+WHEN c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 77021563
+end as idProprietario,
+--------------------------------------------------------------------------------
+CASE
+when c.nm_Contribuinte = 'PARECIS MATERIAIS PARA CONSTRUÇÃO LTDA' THEN 10936111
+when c.nm_Contribuinte = 'PATRICIA DE ABREU BRANDÃO COSTA' THEN 10936138
+when c.nm_Contribuinte = 'PATRICIA DE ABREU BRANDÃO COSTA' THEN 10936230
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933573
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933543
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933548
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933606
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933609
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933625
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933591
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933656
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10933667
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934822
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934823
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934836
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934857
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934875
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934888
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934909
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934910
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934911
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934932
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934945
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934946
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934947
+when c.nm_Contribuinte = 'PAULINO MONTIBELLER' THEN 10934970
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10934272
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10934273
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10934274
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10934304
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10935696
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10935717
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10935751
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10935752
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10936675
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10936676
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10936750
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937121
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937210
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937264
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937860
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937903
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937939
+when c.nm_Contribuinte = 'PAULO BENEDITO DOS SANTOS' THEN 10937974
+when c.nm_Contribuinte = 'PAULO CABRAL' THEN 10933757
+when c.nm_Contribuinte = 'PAULO CABRAL' THEN 10933647
+when c.nm_Contribuinte = 'PAULO CABRAL' THEN 10933640
+when c.nm_Contribuinte = 'PAULO CABRAL' THEN 10933608
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934616
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934657
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934669
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934685
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934686
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934687
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10934705
+when c.nm_Contribuinte = 'PAULO CARDOSO DA SILVA' THEN 10937905
+when c.nm_Contribuinte = 'PAULO CESAR BEZERRA' THEN 10936943
+when c.nm_Contribuinte = 'PAULO CESAR BEZERRA' THEN 10937047
+when c.nm_Contribuinte = 'PAULO CESAR BEZERRA' THEN 10937065
+when c.nm_Contribuinte = 'PAULO CESAR BEZERRA' THEN 10938210
+when c.nm_Contribuinte = 'PAULO CESAR BEZERRA' THEN 10938269
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10933598
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10933661
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10933694
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10934271
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10934254
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10934255
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10934256
+when c.nm_Contribuinte = 'PAULO CEZAR BEZERRA' THEN 10936225
+when c.nm_Contribuinte = 'PAULO HENRIQUE CONTADINI ARRUDA' THEN 10938384
+when c.nm_Contribuinte = 'PAULO HENRIQUE CONTADINI ARRUDA' THEN 10938410
+when c.nm_Contribuinte = 'PAULO HENRIQUE CONTADINI ARRUDA' THEN 10938436
+when c.nm_Contribuinte = 'PAULO HENRIQUE MARCELINO DE OLIVEIRA' THEN 10933238
+when c.nm_Contribuinte = 'PAULO HENRIQUE MARCELINO DE OLIVEIRA' THEN 10934338
+when c.nm_Contribuinte = 'PAULO HENRIQUE MARCELINO DE OLIVEIRA' THEN 10934339
+when c.nm_Contribuinte = 'PAULO RIBEIRO DOS SANTOS' THEN 10936213
+when c.nm_Contribuinte = 'PAULO RIBEIRO DOS SANTOS' THEN 10936229
+when c.nm_Contribuinte = 'PAULO RIBEIRO DOS SANTOS' THEN 10936250
+when c.nm_Contribuinte = 'PAULO SCHLICKMANN' THEN 10937609
+when c.nm_Contribuinte = 'PAULO SCHLICKMANN' THEN 10937610
+when c.nm_Contribuinte = 'PAULO SCHLICKMANN' THEN 10937576
+when c.nm_Contribuinte = 'PEDRO ALEXANDRE' THEN 10933561
+when c.nm_Contribuinte = 'PEDRO ALEXANDRE' THEN 10933539
+when c.nm_Contribuinte = 'PEDRO ALEXANDRE' THEN 10933495
+when c.nm_Contribuinte = 'PEDRO BLEM DA SILVA' THEN 10935421
+when c.nm_Contribuinte = 'PEDRO BLEM DA SILVA' THEN 10935538
+when c.nm_Contribuinte = 'PEDRO BLEM DA SILVA' THEN 10935568
+when c.nm_Contribuinte = 'PEDRO BLEM DA SILVA' THEN 10935586
+when c.nm_Contribuinte = 'PEDRO DE JESUS' THEN 10937389
+when c.nm_Contribuinte = 'PEDRO DE JESUS' THEN 10937408
+when c.nm_Contribuinte = 'PEDRO DE JESUS' THEN 10937390
+when c.nm_Contribuinte = 'PEDRO DE OLIVEIRA' THEN 10935500
+when c.nm_Contribuinte = 'PEDRO DE OLIVEIRA' THEN 10935463
+when c.nm_Contribuinte = 'PEDRO DE OLIVEIRA' THEN 10935501
+when c.nm_Contribuinte = 'PEDRO FERREIRA DE SOUZA' THEN 10937853
+when c.nm_Contribuinte = 'PEDRO FERREIRA DE SOUZA' THEN 10937883
+when c.nm_Contribuinte = 'PEDRO JOSE MARIA' THEN 10934232
+when c.nm_Contribuinte = 'PEDRO JOSE MARIA' THEN 10934245
+when c.nm_Contribuinte = 'PEDRO JOSE MARIA' THEN 10934246
+when c.nm_Contribuinte = 'PEDRO JOSE MARIA' THEN 10934248
+when c.nm_Contribuinte = 'PEDRO JOSE MARIA' THEN 10934233
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10935928
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10935945
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10935781
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936592
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936629
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936610
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936495
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936520
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936630
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936462
+when c.nm_Contribuinte = 'PERCILIA MACHADO' THEN 10936498
+when c.nm_Contribuinte = 'PERCILIA ROSA PRATES DOS SANTOS' THEN 10937157
+when c.nm_Contribuinte = 'PERCILIA ROSA PRATES DOS SANTOS' THEN 10937215
+when c.nm_Contribuinte = 'PERCILIA ROSA PRATES DOS SANTOS' THEN 10937273
+when c.nm_Contribuinte = 'PERCILIA ROSA PRATES DOS SANTOS' THEN 10937304
+when c.nm_Contribuinte = 'PETRINA CUSTODIA FACHINI' THEN 10936219
+when c.nm_Contribuinte = 'PETRINA CUSTODIA FACHINI' THEN 10936237
+when c.nm_Contribuinte = 'PETRINA CUSTODIA FACHINI' THEN 10936310
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935601
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935602
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935634
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935692
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935693
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935727
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10935821
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10936006
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10936024
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10937534
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10937560
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10938295
+when c.nm_Contribuinte = 'PREFEITURA MUNICIPAL' THEN 10938327
+when c.nm_Contribuinte = 'QUADRA DE AREIA' THEN 10936293
+when c.nm_Contribuinte = 'QUADRA DE AREIA' THEN 10936332
+when c.nm_Contribuinte = 'QUADRA DE AREIA' THEN 10936312
+when c.nm_Contribuinte = 'QUADRA DE AREIA' THEN 10936386
+when c.nm_Contribuinte = 'QUERLE GONÇALVES BORGES' THEN 10936096
+when c.nm_Contribuinte = 'QUERLE GONÇALVES BORGES' THEN 10936115
+when c.nm_Contribuinte = 'QUERLE GONÇALVES BORGES' THEN 10936130
+when c.nm_Contribuinte = 'QUERLE GONÇALVES BORGES' THEN 10936149
+when c.nm_Contribuinte = 'RAFAEL JORGE DA SILVA RIETZ' THEN 10936067
+when c.nm_Contribuinte = 'RAIMUNDO VALENTIM DO PRADO' THEN 10934763
+when c.nm_Contribuinte = 'RAIMUNDO VALENTIM DO PRADO' THEN 10934782
+when c.nm_Contribuinte = 'RAIMUNDO VALENTIM DO PRADO' THEN 10934783
+when c.nm_Contribuinte = 'RAIMUNDO VALENTIM DO PRADO' THEN 10934792
+when c.nm_Contribuinte = 'RAIMUNDO VALENTIM DO PRADO' THEN 10934793
+when c.nm_Contribuinte = 'REG' THEN 10935661
+when c.nm_Contribuinte = 'REG' THEN 10935754
+when c.nm_Contribuinte = 'REG' THEN 10935638
+when c.nm_Contribuinte = 'REGINALDO CURADACIU COSTA' THEN 10934866
+when c.nm_Contribuinte = 'REGINALDO DUARTE PRATES' THEN 10936650
+when c.nm_Contribuinte = 'REGINALDO DUARTE PRATES' THEN 10936685
+when c.nm_Contribuinte = 'REGINALDO DUARTE PRATES' THEN 10936686
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA JUNIOR' THEN 10937461
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA JUNIOR' THEN 10937497
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10935419
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10935457
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10935493
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10935516
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10937363
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10937479
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10937523
+when c.nm_Contribuinte = 'REGINALDO GIL DA SILVA' THEN 10937530
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933500
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933513
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933523
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933532
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933578
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933596
+when c.nm_Contribuinte = 'REGINALDO GONCALVES DE OLIVEIRA' THEN 10933600
+when c.nm_Contribuinte = 'REGINALDO PEDRO DA SILVA' THEN 10937754
+when c.nm_Contribuinte = 'REGINALDO PEDRO DA SILVA' THEN 10937755
+when c.nm_Contribuinte = 'REGINALDO PEDRO DA SILVA' THEN 10937785
+when c.nm_Contribuinte = 'REGINALDO RAASCH' THEN 10938433
+when c.nm_Contribuinte = 'REGINALDO RAASCH' THEN 10938407
+when c.nm_Contribuinte = 'REGULARIZAR SEU CADASTRO PREF.' THEN 10936162
+when c.nm_Contribuinte = 'REGULARIZAR SEU CADASTRO PREF.' THEN 10936203
+when c.nm_Contribuinte = 'REGULARIZAR SEU CADASTRO PREF.' THEN 10936304
+when c.nm_Contribuinte = 'REGULARIZAR URG. CADASTRO PREFEITURA' THEN 10937656
+when c.nm_Contribuinte = 'REGULARIZAR URG. CADASTRO PREFEITURA' THEN 10937672
+when c.nm_Contribuinte = 'REGULARIZAR URG. CADASTRO PREFEITURA' THEN 10937765
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934193
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934210
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934211
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934212
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934280
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934299
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934314
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10934315
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10935043
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10936961
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10937108
+when c.nm_Contribuinte = 'REJANE PINTO BARRETO AMARAL' THEN 10937762
+when c.nm_Contribuinte = 'RENATO PEREIRA GOMES' THEN 10936291
+when c.nm_Contribuinte = 'RENOIR GONCALVES' THEN 10937725
+when c.nm_Contribuinte = 'RENOIR GONCALVES' THEN 10937631
+when c.nm_Contribuinte = 'RENOIR GONCALVES' THEN 10937726
+when c.nm_Contribuinte = 'RICARDO ALTINOAFONSO' THEN 10937351
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934421
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934422
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934423
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934471
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934489
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934508
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934509
+when c.nm_Contribuinte = 'RICARDO PIO PEREIRA' THEN 10934510
+when c.nm_Contribuinte = 'RILDO DA SILVA' THEN 10936383
+when c.nm_Contribuinte = 'RILDO DA SILVA' THEN 10936302
+when c.nm_Contribuinte = 'RILDO DA SILVA' THEN 10936412
+when c.nm_Contribuinte = 'RILDO DA SILVA' THEN 10936467
+when c.nm_Contribuinte = 'RINALDO DA SILVA' THEN 10937636
+when c.nm_Contribuinte = 'RINALDO DA SILVA' THEN 10937751
+when c.nm_Contribuinte = 'RINALDO DA SILVA' THEN 10937622
+when c.nm_Contribuinte = 'RINALDO DA SILVA' THEN 10937718
+when c.nm_Contribuinte = 'RINALDO DA SILVA' THEN 10937543
+when c.nm_Contribuinte = 'RITA DE CASSIA DOS SANTOS' THEN 10937743
+when c.nm_Contribuinte = 'RITA DE CASSIA DOS SANTOS' THEN 10937815
+when c.nm_Contribuinte = 'RITA DE CASSIA DOS SANTOS' THEN 10937816
+when c.nm_Contribuinte = 'RITA DE CASSIA DOS SANTOS' THEN 10937944
+when c.nm_Contribuinte = 'RITA SANTOS LIMA' THEN 10936481
+when c.nm_Contribuinte = 'RITA SANTOS LIMA' THEN 10937203
+when c.nm_Contribuinte = 'RITA SANTOS LIMA' THEN 10937216
+when c.nm_Contribuinte = 'ROBERIO GOMES DA SILVA' THEN 10934922
+when c.nm_Contribuinte = 'ROBERIO GOMES DA SILVA' THEN 10935411
+when c.nm_Contribuinte = 'ROBERTO JORGE DE MELO' THEN 10936536
+when c.nm_Contribuinte = 'ROBERTO JORGE DE MELO' THEN 10936591
+when c.nm_Contribuinte = 'ROBERTO JORGE DE MELO' THEN 10936609
+when c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO' THEN 10935262
+when c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO' THEN 10935297
+when c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO' THEN 10935333
+when c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO' THEN 10935367
+when c.nm_Contribuinte = 'ROBERTO PEDRO ALEXANDRINO' THEN 10937417
+when c.nm_Contribuinte = 'ROBSON NUNES DA SILVA' THEN 10935775
+when c.nm_Contribuinte = 'ROBSON NUNES DA SILVA' THEN 10935836
+when c.nm_Contribuinte = 'ROBSON NUNES DA SILVA' THEN 10935910
+when c.nm_Contribuinte = 'RODRIGO CLEMENTE MORAIS' THEN 10936486
+when c.nm_Contribuinte = 'RODRIGO CLEMENTE MORAIS' THEN 10937211
+when c.nm_Contribuinte = 'RODRIGO CLEMENTE MORAIS' THEN 10937233
+when c.nm_Contribuinte = 'RODRIGO PEDRO ALEXANDRINO' THEN 10934966
+when c.nm_Contribuinte = 'RODRIGO PEDRO ALEXANDRINO' THEN 10937716
+when c.nm_Contribuinte = 'RODRIGUES & CAZAGRANDE LTDA - ME' THEN 10935203
+when c.nm_Contribuinte = 'RODRIGUES & CAZAGRANDE LTDA - ME' THEN 10937130
+when c.nm_Contribuinte = 'ROGERIO DA SILVA BARBOSA' THEN 10935962
+when c.nm_Contribuinte = 'ROGERIO DA SILVA BARBOSA' THEN 10936014
+when c.nm_Contribuinte = 'ROGERIO DA SILVA BARBOSA' THEN 10936034
+when c.nm_Contribuinte = 'ROMENIGUE GOBBI GOIS' THEN 10934462
+when c.nm_Contribuinte = 'ROMENIGUE GOBBI GOIS' THEN 10934760
+when c.nm_Contribuinte = 'ROMENIGUE GOBBI GOIS' THEN 10936183
+when c.nm_Contribuinte = 'ROMILDO RODRIGUES ARAUJO' THEN 10936751
+when c.nm_Contribuinte = 'ROMILDO RODRIGUES ARAUJO' THEN 10936791
+when c.nm_Contribuinte = 'ROMILDO RODRIGUES ARAUJO' THEN 10936844
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10934110
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10935055
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10935056
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10935069
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10935070
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937250
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937371
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937383
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937401
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937416
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937431
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937432
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937449
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937469
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937471
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937489
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937494
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937525
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937901
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937912
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937935
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10937937
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10938024
+when c.nm_Contribuinte = 'RONALDO ADRIANO ALEXANDRINO' THEN 10938030
+when c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA' THEN 10937435
+when c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA' THEN 10937436
+when c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA' THEN 10937454
+when c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA' THEN 10937526
+when c.nm_Contribuinte = 'RONALDO BATISTA DE OLIVEIRA' THEN 10937548
+when c.nm_Contribuinte = 'RONALDO PEDRO ALEXANDRINO' THEN 10934001
+when c.nm_Contribuinte = 'RONALDO PEDRO ALEXANDRINO' THEN 10934038
+when c.nm_Contribuinte = 'RONALDO PEDRO ALEXANDRINO' THEN 10934062
+when c.nm_Contribuinte = 'RONALDO PEDRO ALEXANDRINO' THEN 10934097
+when c.nm_Contribuinte = 'RONALDO PEDRO ALEXANDRINO' THEN 10936392
+when c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA' THEN 10933230
+when c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA' THEN 10936290
+when c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA' THEN 10936329
+when c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA' THEN 10936818
+when c.nm_Contribuinte = 'RONE VON RODRIGUES DA COSTA' THEN 10936839
+when c.nm_Contribuinte = 'RONI NOVAIS GUTIERREZ' THEN 10936837
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10936299
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10936388
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10938184
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10938186
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10938189
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10938192
+when c.nm_Contribuinte = 'RONILDO APARECIDO PEDRO ALEXANDRINO' THEN 10938218
+when c.nm_Contribuinte = 'RONILDO LOPES DE FARIA' THEN 10937514
+when c.nm_Contribuinte = 'RONILDO LOPES DE FARIAS' THEN 10935581
+when c.nm_Contribuinte = 'RONILDO LOPES DE FARIAS' THEN 10935582
+when c.nm_Contribuinte = 'RONNYE DA SILVA BANDEIRA' THEN 10936492
+when c.nm_Contribuinte = 'RONY HIAGO NUNES BARRETO' THEN 10935468
+when c.nm_Contribuinte = 'RONY HIAGO NUNES BARRETO' THEN 10935526
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10933461
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10933462
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10933480
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10933482
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10933498
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10933510
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10935341
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10935355
+when c.nm_Contribuinte = 'ROQUE AUGUSTO DA CONCEICAO' THEN 10935446
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10935937
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10935985
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10935923
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10935986
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10938373
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10938378
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10938380
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10933967
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10933904
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934016
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934010
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10933873
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934005
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934027
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10933995
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934012
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934056
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10933951
+when c.nm_Contribuinte = 'ROQUE SETTE' THEN 10934130
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934859
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934860
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934861
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934877
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934892
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934914
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934915
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934951
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934974
+when c.nm_Contribuinte = 'ROSANA GORETE RACANELI' THEN 10934975
+when c.nm_Contribuinte = 'ROSANA OLIVEIRA DA SILVA' THEN 10938406
+when c.nm_Contribuinte = 'ROSANA OLIVEIRA DA SILVA' THEN 10938423
+when c.nm_Contribuinte = 'ROSANGELA APARECIDA MIRANDA' THEN 10938287
+when c.nm_Contribuinte = 'ROSANGELA APARECIDA MIRANDA' THEN 10938312
+when c.nm_Contribuinte = 'ROSANGELA APARECIDA MIRANDA' THEN 10938343
+when c.nm_Contribuinte = 'ROSANGELA APARECIDA MIRANDA' THEN 10938348
+when c.nm_Contribuinte = 'ROSANGELA RODRIGUES VIEIRA GARCIA' THEN 10936440
+when c.nm_Contribuinte = 'ROSANGELO RODRIGUES GONCALVES' THEN 10934900
+when c.nm_Contribuinte = 'ROSANGELO RODRIGUES GONCALVES' THEN 10934981
+when c.nm_Contribuinte = 'ROSANGELO RODRIGUES GONCALVES' THEN 10935004
+when c.nm_Contribuinte = 'ROSANGELO RODRIGUES GONCALVES' THEN 10935005
+when c.nm_Contribuinte = 'ROSELI TAKAHASHI BRAVO PIAZZA' THEN 10936251
+when c.nm_Contribuinte = 'ROSENEIDE ALVES CESTARI SOUZA' THEN 10937214
+when c.nm_Contribuinte = 'ROSENILDA SILVA GOMES' THEN 10934178
+when c.nm_Contribuinte = 'ROSENILDA SILVA GOMES' THEN 10936537
+when c.nm_Contribuinte = 'ROSENILDA SILVA GOMES' THEN 10937123
+when c.nm_Contribuinte = 'ROSENILDA SILVA GOMES' THEN 10937155
+when c.nm_Contribuinte = 'ROSENILDA SILVA GOMES' THEN 10937249
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934395
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934409
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934410
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934411
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934412
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934433
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934434
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934435
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934455
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934456
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934577
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934578
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934609
+when c.nm_Contribuinte = 'ROSILENE RAMOS DE SOUZA ANDRADE' THEN 10934644
+when c.nm_Contribuinte = 'ROSILENE TAKAHASHI BRAVO' THEN 10934091
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO' THEN 10934820
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO' THEN 10934837
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO' THEN 10934887
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO' THEN 10934965
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA CARVALHO' THEN 10934967
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA' THEN 10936478
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA' THEN 10936528
+when c.nm_Contribuinte = 'ROSIMAR AGUIAR DA SILVA' THEN 10936550
+when c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ' THEN 10935217
+when c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ' THEN 10935346
+when c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ' THEN 10936276
+when c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ' THEN 10936277
+when c.nm_Contribuinte = 'ROSINEIA HAMMER SCHULTZ' THEN 10936345
+when c.nm_Contribuinte = 'ROSINEIDE BEZERRA' THEN 10937480
+when c.nm_Contribuinte = 'ROSINEIDE LEITE DA ROCHA SANTOS' THEN 10934835
+when c.nm_Contribuinte = 'ROSINEIDE LEITE DA ROCHA SANTOS' THEN 10934856
+when c.nm_Contribuinte = 'ROSINEIDE LEITE DA ROCHA SANTOS' THEN 10934968
+when c.nm_Contribuinte = 'ROSINEIDE LEITE DA ROCHA SANTOS' THEN 10934969
+when c.nm_Contribuinte = 'ROZIEL ANTUNES DE LIMA' THEN 10936055
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933584
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933630
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933671
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933689
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933798
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933822
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10933915
+when c.nm_Contribuinte = 'RUBENS PEDRO BEZERRA' THEN 10937841
+when c.nm_Contribuinte = 'RUDNEY RACANELI' THEN 10938068
+when c.nm_Contribuinte = 'RUDNEY RACANELI' THEN 10938051
+when c.nm_Contribuinte = 'RUDNEY RACANELI' THEN 10938052
+when c.nm_Contribuinte = 'RUSCELINO PASSOS BORGES' THEN 10936142
+when c.nm_Contribuinte = 'RUTE CEZARIO DE SOUZA' THEN 10936209
+when c.nm_Contribuinte = 'SABINO ALVES' THEN 10934059
+when c.nm_Contribuinte = 'SABINO ALVES' THEN 10934031
+when c.nm_Contribuinte = 'SALETE MOURA RODRIGUES' THEN 10935654
+when c.nm_Contribuinte = 'SALETE MOURA RODRIGUES' THEN 10935725
+when c.nm_Contribuinte = 'SALETE PINHEIRO DE FREITAS' THEN 10937842
+when c.nm_Contribuinte = 'SALETE PINHEIRO DE FREITAS' THEN 10937900
+when c.nm_Contribuinte = 'SALETE PINHEIRO DE FREITAS' THEN 10937972
+when c.nm_Contribuinte = 'SALETE PINHEIRO DE FREITAS' THEN 10937973
+when c.nm_Contribuinte = 'SALVADOR RODRIGUES DE CARVALHO' THEN 10933962
+when c.nm_Contribuinte = 'SALVADOR RODRIGUES DE CARVALHO' THEN 10933982
+when c.nm_Contribuinte = 'SALVADOR RODRIGUES DE CARVALHO' THEN 10934067
+when c.nm_Contribuinte = 'SALVADOR RODRIGUES DE CARVALHO' THEN 10934108
+when c.nm_Contribuinte = 'SAMUEL VITOR DE CAMARGO' THEN 10933994
+when c.nm_Contribuinte = 'SAMUEL VITOR DE CAMARGO' THEN 10934006
+when c.nm_Contribuinte = 'SAMUEL VITOR DE CAMARGO' THEN 10934052
+when c.nm_Contribuinte = 'SAMUEL VITOR DE CAMARGO' THEN 10934095
+when c.nm_Contribuinte = 'SANDRA MELO DE CARVALHO BARRETO' THEN 10934063
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934735
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934756
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934771
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934772
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934773
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934787
+when c.nm_Contribuinte = 'SANTOLINA CARDOSO RIBEIRO' THEN 10934807
+when c.nm_Contribuinte = 'SARA CORSINI DE OLIVEIRA' THEN 10934286
+when c.nm_Contribuinte = 'SEBASTIANA GOMES DE CAMPOS' THEN 10934007
+when c.nm_Contribuinte = 'SEBASTIANA GOMES DE CAMPOS' THEN 10934080
+when c.nm_Contribuinte = 'SEBASTIAO ANTUNES' THEN 10937580
+when c.nm_Contribuinte = 'SEBASTIAO ANTUNES' THEN 10937690
+when c.nm_Contribuinte = 'SEBASTIAO ANTUNES' THEN 10937581
+when c.nm_Contribuinte = 'SEBASTIAO BATISTA DA CRUZ' THEN 10936503
+when c.nm_Contribuinte = 'SEBASTIAO BATISTA DA CRUZ' THEN 10936541
+when c.nm_Contribuinte = 'SEBASTIAO BATISTA DA CRUZ' THEN 10936684
+when c.nm_Contribuinte = 'SEBASTIAO BATISTA DA CRUZ' THEN 10938358
+when c.nm_Contribuinte = 'SEBASTIAO DA SILVA' THEN 10934404
+when c.nm_Contribuinte = 'SEBASTIAO DA SILVA' THEN 10934362
+when c.nm_Contribuinte = 'SEBASTIAO DA SILVA' THEN 10934405
+when c.nm_Contribuinte = 'SEBASTIAO DE SOUZA BENEVIDES' THEN 10936798
+when c.nm_Contribuinte = 'SEBASTIAO DE SOUZA BENEVIDES' THEN 10936810
+when c.nm_Contribuinte = 'SEBASTIAO DE SOUZA BENEVIDES' THEN 10936829
+when c.nm_Contribuinte = 'SEBASTIÃO DIAS DE SOUZA' THEN 10936193
+when c.nm_Contribuinte = 'SEBASTIAO FERNENDES DE MOURA' THEN 10936840
+when c.nm_Contribuinte = 'SEBASTIAO FERNENDES DE MOURA' THEN 10936841
+when c.nm_Contribuinte = 'SEBASTIAO FERNENDES DE MOURA' THEN 10936871
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937163
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937302
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937318
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937340
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937341
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937342
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937388
+when c.nm_Contribuinte = 'SEBASTIAO PEDRO ALEXANDRINO' THEN 10937406
+when c.nm_Contribuinte = 'SEBASTIÃO SANTANA DE SA' THEN 10933488
+when c.nm_Contribuinte = 'SEBASTIÃO SANTANA DE SA' THEN 10936430
+when c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 10933322
+when c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 10933324
+when c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 10933343
+when c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 10933345
+when c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 10933348
+when c.nm_Contribuinte = 'SEBASTIAO TEIXEIRA ABRANT' THEN 10933367
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934770
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934733
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934804
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934734
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934805
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934786
+when c.nm_Contribuinte = 'SEBASTIÃO VIDOTTO' THEN 10934806
+end as idTransferenciaImoveis
+	FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)
+	) AS transfImoveisItens
+from IPTUBicImoveis imoveis
+JOIN CECAMContribuintes c ON c.cd_Contribuinte = imoveis.cd_Proprietario;
+`;
+        const result = await masterConnection.query(userQuery);
+        const resultData = result.recordset;
+
+        // Transformar os resultados da consulta no formato desejado
+        const transformedData = resultData
+            .filter(record => {
+                const transfImoveisItens = JSON.parse(record.transfImoveisItens);
+
+                // Retorna true apenas para registros com idProprietario presente
+                if (!transfImoveisItens.idProprietario) {
+                    console.warn('Registro ignorado: idProprietario ausente', record);
+                    return false;
+                }
+                return true;
+            })
+            .map(record => {
+
+                // Parse JSON string for transfImoveisItens
+                const transfImoveisItens = JSON.parse(record.transfImoveisItens);
+
+                return {
+                    idIntegracao: record.idIntegracao.toString(),
+                    transfImoveisItens: {
+                        idImoveis: transfImoveisItens.idImoveis,
+                        idMotivos: transfImoveisItens.idMotivos,
+                        idProprietario: transfImoveisItens.idProprietario,
+                        idTransferenciaImoveis: transfImoveisItens.idTransferenciaImoveis,
+                        vlAreaConstruidaUnidade: transfImoveisItens.vlAreaConstruidaUnidade,
+                        vlAreaTotalTerrenoUnidade: transfImoveisItens.vlAreaTotalTerrenoUnidade,
+                        vlVenalConstruidoUnidade: transfImoveisItens.vlVenalConstruidoUnidade,
+                        vlVenalTerritorialUnidade: transfImoveisItens.vlVenalTerritorialUnidade,
+                        vlVenalUnidade: transfImoveisItens.vlVenalUnidade,
+                        benfeitorias: transfImoveisItens.benfeitorias,
+                        financiado: transfImoveisItens.financiado,
+                        outros: transfImoveisItens.outros,
+                        tipoVenda: transfImoveisItens.tipoVenda,
+                        unidadeFutura: 'SIM',
+                        benfeitorias: "SIM",
+                        financiado: "SIM",
+                        outros: "SIM",
+                        tipoVenda: "PARCIAL",
+                    }
+                };
+            });
+
+        /* const chunkSize = 50;
+        for (let i = 0; i < transformedData.length; i += chunkSize) {
+            const chunk = transformedData.slice(i, i + chunkSize);
+            const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
+            fs.writeFileSync(chunkFileName, JSON.stringify(chunk, null, 2));
+            console.log(`Dados salvos em ${chunkFileName}`);
+        }
+
+        return */
+
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
+            }
+            return chunked;
+        };
+
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+
+                const response = await fetch(`https://tributos.betha.cloud/service-layer-tributos/api/transfImoveisItens`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
+                    },
+                    body: JSON.stringify(batch)
+                });
+
+                const responseBody = await response.json();
+                console.log('Resposta da API:', responseBody);
+
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    } else if (responseBody.id) {
+                        reportIds.push(responseBody.id);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+
+        // Save report and IDs to files
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
+
+
+
+    } catch (error) {
+        console.error('Erro no processo:', error);
+    } finally {
+        await sql.close(); // Fechar a conexão com o SQL Server
+        console.log('Conexão com o SQL Server fechada.');
+    }
+}
+
+// Executar a função principal
+main();

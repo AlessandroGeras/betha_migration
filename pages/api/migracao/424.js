@@ -40,19 +40,6 @@ function formatDate(date) {
     const minutes = (`0${d.getMinutes()}`).slice(-2);
     const seconds = (`0${d.getSeconds()}`).slice(-2);
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-}
-
-function formatDate2(date) {
-    const d = new Date(date);
-    const year = d.getFullYear();
-    const month = (`0${d.getMonth() + 1}`).slice(-2);
-    const day = (`0${d.getDate()}`).slice(-2);
-    const hours = (`0${d.getHours()}`).slice(-2);
-    const minutes = (`0${d.getMinutes()}`).slice(-2);
-    const seconds = (`0${d.getSeconds()}`).slice(-2);
-    return `${year}`;
-    //return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
 
 async function main() {
@@ -60,26 +47,21 @@ async function main() {
         // Conectar ao SQL Server
         const masterConnection = await connectToSqlServer();
 
-        // Selecionar o banco de dados "COMP_ALMO"
+        // Selecionar o banco de dados "COMP_ALMO_CAM"
         const selectDatabaseQuery = 'USE COMP_ALMO';
         await masterConnection.query(selectDatabaseQuery);
 
         // Executar a consulta SQL
         const userQuery = `
-            	select 
+            select 
 ROW_NUMBER() OVER (ORDER BY cd_almoxa) AS id,
-JSON_QUERY((SELECT CASE when cd_almoxa = 20700 THEN 5268
+JSON_QUERY((SELECT CASE when cd_almoxa = 20700 THEN 5739
                    END AS id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS almoxarifado,
-JSON_QUERY((SELECT CASE  WHEN cd_almoxa = 20700  THEN 2144353
+JSON_QUERY((SELECT CASE  WHEN cd_almoxa = 20700  THEN 2194160
                                                  END as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS organograma,
-JSON_QUERY((SELECT case when cd_tipomovimento = 'CO' then 11099
-                                                when cd_tipomovimento = 'CD' then 11097
-                                                when cd_tipomovimento = 'AJS' then 11093
-                                                when cd_tipomovimento = 'DS' then 11108
-                                                when cd_tipomovimento = 'CDI' then 11106
-                                                when cd_tipomovimento = 'BP' then 11096
-                                   end as id FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS naturezaMovimentacao,
+12165 AS naturezaMovimentacao,
 dt_movimento as dataSaida,
+2024 as Ano,
 nr_docto as observacao
 from ALMOMovimentacao
 WHERE sg_direcao = 'CD' and aa_movimento = '2024' and qt_movimento < 0 and fl_devolucao is null and  cd_almoxa = 20700
@@ -90,25 +72,30 @@ order by nr_docto asc
         const result = await masterConnection.query(userQuery);
         const resultData = result.recordset;
 
-        const transformedData = resultData.map(record => ({
-            context: {
-                almoxarifado: JSON.parse(record.almoxarifado).id.toString(),
-                exercicio: formatDate2(record.dataSaida)
-            },
-            conteudo: {                
-                almoxarifado: JSON.parse(record.almoxarifado),
+        // Transformar os resultados da consulta no formato desejado
+        const transformedData = resultData.map(record => {
+            
+            return {
+                context: {
+					almoxarifado: (JSON.parse(record.almoxarifado).id).toString(),
+					exercicio: record.Ano.toString(),
+				},
+                conteudo:{
+                almoxarifado: {
+                    id: JSON.parse(record.almoxarifado).id
+                },
                 organograma: {
-                    id: parseInt(JSON.parse(record.organograma).id)
+                    id: JSON.parse(record.organograma).id
                 },
                 naturezaMovimentacao: {
-                    id: parseInt(JSON.parse(record.naturezaMovimentacao).id, 10)
+                    id: JSON.parse(record.naturezaMovimentacao)
                 },
-                observacao: record.observacao.toString(),
-                dataSaida: formatDate(record.dataSaida)
-            }
-        }));
+                dataSaida: formatDate(record.dataSaida),
+                observacao: record.observacao.toString()
+            }};
+        });
 
-        const chunkSize = 50;
+        /* const chunkSize = 50;
         for (let i = 0; i < transformedData.length; i += chunkSize) {
             const chunk = transformedData.slice(i, i + chunkSize);
             const chunkFileName = `log_envio_${i / chunkSize + 1}.json`;
@@ -116,48 +103,73 @@ order by nr_docto asc
             console.log(`Dados salvos em ${chunkFileName}`);
         }
 
-        // Enviar cada registro individualmente para a rota desejada
-        // Armazenar as respostas do servidor
-        const serverResponses = [];
+        return */
 
-        // Enviar cada registro individualmente para a rota desejada
-        /* for (const record of transformedData) {
-            const url = `https://almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/saidas`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 1d12dec7-0720-4b34-a2e5-649610d10806'
-                },
-                body: JSON.stringify(record)
-            });
-     
-            const responseBody = await response.json();
-            serverResponses.push({
-                url: url,
-                status: response.status,
-                statusText: response.statusText,
-                responseBody: responseBody
-            });
-     
-            if (response.ok) {
-                console.log(`Dados do registro enviados com sucesso para ${url}.`);
-            } else {
-                console.error(`Erro ao enviar os dados do registro para ${url}:`, response.statusText);
+        const chunkArray = (array, size) => {
+            const chunked = [];
+            for (let i = 0; i < array.length; i += size) {
+                chunked.push(array.slice(i, i + size));
             }
-        } */
-
-        //fs.writeFileSync('log_bens.json', JSON.stringify(serverResponses, null, 2));
-        //console.log('Respostas do servidor salvas em log_bens.json');
+            return chunked;
+        };
+        
+        const batchedData = chunkArray(transformedData, 50);
+        let report = [];
+        let reportIds = [];
+        
+        for (const batch of batchedData) {
+            try {
+                console.log('Enviando o seguinte corpo para a API:', JSON.stringify(batch, null, 2));
+        
+                const response = await fetch(`https://services.almoxarifado.betha.cloud/estoque-services/api/conversoes/lotes/saidas`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 4dfb70a8-62e5-4ec2-9028-622e50d1f4d1'
+                    },
+                    body: JSON.stringify(batch)
+                });
+        
+                const responseBody = await response.json();
+        
+                if (response.ok) {
+                    console.log('Dados enviados com sucesso para a API.');
+                    batch.forEach(record => {
+                        report.push({ record, status: 'success', response: responseBody });
+                    });
+        
+                    if (responseBody.idLote) {
+                        reportIds.push(responseBody.idLote);
+                    }
+                } else {
+                    console.error('Erro ao enviar os dados para a API:', response.statusText);
+                    batch.forEach(record => {
+                        report.push({ record, status: 'failed', response: responseBody });
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao enviar o batch para a API:', err);
+                batch.forEach(record => {
+                    report.push({ record, status: 'error', error: err.message });
+                });
+            }
+        }
+        
+        // Save the report in 'report.json'
+        fs.writeFileSync('report.json', JSON.stringify(report, null, 2));
+        console.log('Relatório salvo em report.json com sucesso.');
+        
+        // Save the reportIds in the 'report_id.json' file
+        fs.writeFileSync('report_id.json', JSON.stringify(reportIds, null, 2));
+        console.log('report_id.json salvo com sucesso.');
 
     } catch (error) {
-        // Lidar com erros de conexão ou consulta aqui
-        console.error('Erro durante a execução do programa:', error);
+        console.error('Erro no processo:', error);
     } finally {
-        // Fechar a conexão com o SQL Server
-        await sql.close();
+        await sql.close(); // Close the connection with SQL Server
+        console.log('Conexão com o SQL Server fechada.');
     }
 }
 
-// Chamar a função principal
+// Execute the main function
 main();
